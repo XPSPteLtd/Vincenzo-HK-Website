@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Menu as MenuIcon, X, Scissors, ShoppingBag, Languages, Clock, Users } from 'lucide-react';
+import { Menu as MenuIcon, X, Scissors, ShoppingBag, Languages, Clock, Users, Phone } from 'lucide-react';
 import { Language, translations } from '../translations';
 
 interface NavbarProps {
@@ -77,7 +77,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
         </a>
 
-        {/* Desktop Navigation - Enhanced for Tablet */}
+        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-4 lg:gap-8">
           <div className="flex items-center gap-4 lg:gap-6">
             {navLinks.map((link) => (
@@ -107,6 +107,14 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
           
           <div className="flex items-center gap-3 lg:gap-4 border-l border-white/10 pl-4 lg:pl-6 ml-2 lg:ml-0">
+            <a 
+              href="tel:+85212345678"
+              className="hidden lg:flex items-center gap-2 text-[10px] font-bold text-white/70 hover:text-gold transition-colors uppercase tracking-widest"
+            >
+              <Phone size={12} className="text-gold/50" />
+              +852 1234 5678
+            </a>
+
             <button 
               onClick={() => onLangChange(lang === 'en' ? 'zh' : 'en')}
               className="text-[9px] lg:text-[10px] font-bold text-white/50 hover:text-gold transition-colors flex items-center gap-1"
@@ -134,7 +142,14 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
 
         {/* Mobile Quick Controls */}
-        <div className="md:hidden flex items-center gap-2">
+        <div className="md:hidden flex items-center gap-1 sm:gap-2">
+          <a 
+            href="tel:+85212345678"
+            className="p-2 text-white/60 active:text-gold transition-colors"
+            aria-label="Call Restaurant"
+          >
+            <Phone size={18} />
+          </a>
           <button 
             onClick={() => onLangChange(lang === 'en' ? 'zh' : 'en')}
             className="p-2 text-white/40 active:text-gold transition-colors"
@@ -183,6 +198,14 @@ export const Navbar: React.FC<NavbarProps> = ({
             {lang === 'zh' ? '營業時間' : 'Hours'}
             <Clock size={16} className="text-gold/20" />
           </button>
+
+          <a 
+            href="tel:+85212345678"
+            className="text-2xl font-serif text-white hover:text-gold transition-colors py-3 border-b border-white/5 flex justify-between items-center"
+          >
+            {lang === 'zh' ? '致電預約' : 'Call Us'}
+            <Phone size={16} className="text-gold/20" />
+          </a>
           
           <div className="mt-auto space-y-4 pb-24">
             <button 

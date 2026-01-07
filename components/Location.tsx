@@ -12,8 +12,8 @@ export const Location: React.FC<LocationProps> = ({ onBookClick, lang }) => {
   const t = translations[lang].location;
 
   const openGoogleMaps = () => {
-    const address = "Shop G01, G/F, 200 Queen's Road East, Wan Chai, Hong Kong";
-    const url = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent("Vincenzo Capuano " + address)}`;
+    // Using the specific shared link for exact pinning
+    const url = `https://maps.app.goo.gl/mWac4KcwCQSUUibU9`;
     window.open(url, '_blank');
   };
 
@@ -68,7 +68,7 @@ export const Location: React.FC<LocationProps> = ({ onBookClick, lang }) => {
                  <h3 className="text-xs font-bold tracking-widest uppercase">{t.contact}</h3>
               </div>
               <p className="text-gray-400 font-light pl-8 md:pl-9 leading-relaxed text-sm">
-                +852 1234 5678<br />
+                <a href="tel:+85212345678" className="hover:text-gold transition-colors">+852 1234 5678</a><br />
                 booking@vincenzocapuano.hk
               </p>
             </div>

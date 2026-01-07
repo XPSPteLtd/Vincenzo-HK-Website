@@ -1,4 +1,3 @@
-
 export type Language = 'en' | 'zh';
 
 export const translations = {
@@ -60,7 +59,7 @@ export const translations = {
     location: {
       findUs: 'Find Us',
       hkCentral: 'Wan Chai, Hong Kong',
-      address: 'Shop G01, G04, G05, G/F & Shop F01A, 1/F, 200 Queen\'s Road East, Wan Chai, Hong Kong',
+      address: 'Shop G01, G04, G05 (G/F) & F01A (1/F), 200 Queen\'s Road East, Wan Chai, Hong Kong',
       hours: 'Hours',
       lunch: 'Lunch',
       dinner: 'Dinner',
@@ -140,7 +139,7 @@ export const translations = {
     location: {
       findUs: '聯絡我們',
       hkCentral: '香港灣仔',
-      address: '香港灣仔皇后大道東200號地下G01, G04, G05號舖及1樓F01A號舖',
+      address: '香港灣仔皇后大道東200號地下G01, G04, G05及1樓F01A號舖',
       hours: '營業時間',
       lunch: '午市',
       dinner: '晚市',

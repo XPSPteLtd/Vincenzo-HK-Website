@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { X, Clock, Phone, MapPin, ChevronRight, Scissors, Calendar, ExternalLink } from 'lucide-react';
 import { Language, translations } from '../translations';
@@ -27,8 +26,7 @@ export const QuickHours: React.FC<QuickHoursProps> = ({ isOpen, onClose, lang })
   }, []);
 
   const openGoogleMaps = () => {
-    const address = "Shop G01, G/F, 200 Queen's Road East, Wan Chai, Hong Kong";
-    const url = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent("Vincenzo Capuano " + address)}`;
+    const url = `https://maps.app.goo.gl/mWac4KcwCQSUUibU9`;
     window.open(url, '_blank');
   };
 
@@ -123,7 +121,9 @@ export const QuickHours: React.FC<QuickHoursProps> = ({ isOpen, onClose, lang })
             <Scissors size={12} className="text-gold" />
             <span className="text-[8px] uppercase tracking-mega text-gray-500">Vincenzo Capuano HK</span>
           </div>
-          <p className="text-[8px] text-gray-600 uppercase tracking-widest">200 Queen's Road East, Wan Chai</p>
+          <p className="text-[8px] text-gray-600 uppercase tracking-widest">
+            {lang === 'zh' ? '灣仔皇后大道東200號地下' : "G/F, 200 Queen's Road East, Wan Chai"}
+          </p>
         </div>
       </div>
     </div>

@@ -42,8 +42,7 @@ export const EventsModal: React.FC<EventsModalProps> = ({ isOpen, onClose, lang 
   };
 
   const openGoogleMaps = () => {
-    const address = "Shop G01, G/F, 200 Queen's Road East, Wan Chai, Hong Kong";
-    const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("Vincenzo Capuano " + address)}`;
+    const url = `https://maps.app.goo.gl/mWac4KcwCQSUUibU9`;
     window.open(url, '_blank');
   };
 
