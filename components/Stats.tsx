@@ -21,7 +21,7 @@ export const Stats: React.FC<StatsProps> = ({ lang, embedded = false }) => {
   const pendingPizzas = useRef(0);
   
   const config = useRef({
-    openingDate: new Date('2024-03-15T12:00:00'), 
+    openingDate: new Date('2026-01-01T12:00:00'), 
     baseGuestsPerDay: 420,
     weekendMultiplier: 1.45,
     pizzaToGuestRatio: 0.92,
@@ -46,7 +46,7 @@ export const Stats: React.FC<StatsProps> = ({ lang, embedded = false }) => {
       const isDinnerTime = currentHour >= config.current.hours.dinner.open && currentHour < config.current.hours.dinner.close;
       setIsOpen(isLunchTime || isDinnerTime);
 
-      const msSinceOpen = now.getTime() - config.current.openingDate.getTime();
+      const msSinceOpen = Math.max(0, now.getTime() - config.current.openingDate.getTime());
       const daysSinceOpen = msSinceOpen / (1000 * 60 * 60 * 24);
       
       const fullWeeks = Math.floor(daysSinceOpen / 7);
@@ -65,16 +65,19 @@ export const Stats: React.FC<StatsProps> = ({ lang, embedded = false }) => {
         return Math.max(0, 1 - Math.pow((current - mid) / halfDur, 2));
       };
 
-      if (currentHour > config.current.hours.lunch.open) {
-        const intensity = getSessionIntensity(config.current.hours.lunch.open, config.current.hours.lunch.close, currentHour);
-        const elapsed = Math.min(currentHour, config.current.hours.lunch.close) - config.current.hours.lunch.open;
-        if (elapsed > 0) sessionGuests += (elapsed * 60 * intensity * (isWeekend ? 1.2 : 0.8));
-      }
-      
-      if (currentHour > config.current.hours.dinner.open) {
-        const intensity = getSessionIntensity(config.current.hours.dinner.open, config.current.hours.dinner.close, currentHour);
-        const elapsed = Math.min(currentHour, config.current.hours.dinner.close) - config.current.hours.dinner.open;
-        if (elapsed > 0) sessionGuests += (elapsed * 85 * intensity * (isWeekend ? 1.3 : 0.9));
+      // Only add session guests if we have actually passed the opening date
+      if (msSinceOpen > 0) {
+        if (currentHour > config.current.hours.lunch.open) {
+          const intensity = getSessionIntensity(config.current.hours.lunch.open, config.current.hours.lunch.close, currentHour);
+          const elapsed = Math.min(currentHour, config.current.hours.lunch.close) - config.current.hours.lunch.open;
+          if (elapsed > 0) sessionGuests += (elapsed * 60 * intensity * (isWeekend ? 1.2 : 0.8));
+        }
+        
+        if (currentHour > config.current.hours.dinner.open) {
+          const intensity = getSessionIntensity(config.current.hours.dinner.open, config.current.hours.dinner.close, currentHour);
+          const elapsed = Math.min(currentHour, config.current.hours.dinner.close) - config.current.hours.dinner.open;
+          if (elapsed > 0) sessionGuests += (elapsed * 85 * intensity * (isWeekend ? 1.3 : 0.9));
+        }
       }
 
       const totalG = Math.floor(historicalGuests + sessionGuests);
@@ -90,6 +93,9 @@ export const Stats: React.FC<StatsProps> = ({ lang, embedded = false }) => {
 
     const interval = setInterval(() => {
       const now = new Date();
+      // Ensure we only simulate activity if the restaurant has launched
+      if (now < config.current.openingDate) return;
+
       const currentHour = now.getHours() + now.getMinutes() / 60;
       const dayOfWeek = now.getDay();
       const isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
@@ -152,7 +158,7 @@ export const Stats: React.FC<StatsProps> = ({ lang, embedded = false }) => {
            <div className={`flex flex-col md:flex-row justify-between items-end mb-8 gap-6 ${!embedded ? 'border-b border-white/10 pb-8' : ''}`}>
               <div>
                  <div className="flex items-center gap-3 mb-2">
-                    <span className={`w-2 h-2 rounded-full ${isOpen ? (isLive ? 'bg-green-500 shadow-[0_0:15px_#22c55e]' : 'bg-green-900') : 'bg-red'} transition-all duration-500`}></span>
+                    <span className={`w-2 h-2 rounded-full ${isOpen ? (isLive ? 'bg-green-500 shadow-[0_0_15px_#22c55e]' : 'bg-green-900') : 'bg-red'} transition-all duration-500`}></span>
                     <span className={`text-[9px] md:text-[10px] font-mono uppercase tracking-[0.3em] ${isOpen ? 'text-green-500' : 'text-red'}`}>
                         {isOpen ? (lang === 'en' ? "Kitchen Activity: ACTIVE" : "實時廚房狀態：營業中") : (lang === 'en' ? "System Standby: CLOSED" : "系統待命：目前暫停營業")}
                     </span>
