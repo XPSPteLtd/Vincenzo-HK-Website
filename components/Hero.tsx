@@ -12,9 +12,13 @@ interface HeroProps {
 }
 
 const backgroundImages = [
-  "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/restaurant_bg_1.jpg",
-  "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/restaurant_bg_2.jpg",
-  "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/restaurant_bg_3.jpg"
+  "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/hero-section/Family%20Baker%20Capuano-102.webp",
+  "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/hero-section/Family%20Baker%20Capuano-103.webp",
+  "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/hero-section/Family%20Baker%20Capuano-104.webp",
+  "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/hero-section/Family%20Baker%20Capuano-115.webp",
+  "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/hero-section/Family%20Baker%20Capuano-121.webp",
+  "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/hero-section/Family%20Baker%20Capuano-125.webp",
+  "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/hero-section/Family%20Baker%20Capuano.webp"
 ];
 
 export const Hero: React.FC<HeroProps> = ({ onBookClick, onDeliveryClick, lang }) => {
@@ -81,8 +85,8 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick, onDeliveryClick, lang }
             <span className="text-gold tracking-[0.25em] md:tracking-mega text-[9px] md:text-[10px] uppercase font-bold drop-shadow-sm">{t.champion}</span>
         </div>
 
-        <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-medium text-white mb-6 md:mb-8 leading-[1.1] md:leading-[1.0] tracking-tighter uppercase drop-shadow-2xl">
-          Vincenzo<br className="hidden sm:block"/>
+        <h1 className="font-display text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-medium text-white mb-6 md:mb-8 leading-[1.1] md:leading-[1.0] tracking-tighter uppercase drop-shadow-2xl">
+          Vincenzo<br className="hidden xs:block"/>
           <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-gray-400"> Capuano</span>
         </h1>
         

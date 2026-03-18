@@ -13,7 +13,7 @@ export const Signature: React.FC<SignatureProps> = ({ lang }) => {
 
   return (
     <section id="concept" className="py-24 md:py-32 bg-charcoal relative overflow-hidden">
-      <div className="absolute top-20 left-0 text-[15rem] md:text-[20rem] font-serif text-white/[0.02] leading-none select-none pointer-events-none">081</div>
+      <div className="absolute top-20 left-0 text-[10rem] xs:text-[15rem] md:text-[20rem] font-serif text-white/[0.02] leading-none select-none pointer-events-none">081</div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">

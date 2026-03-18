@@ -104,46 +104,46 @@ export const DeliveryModal: React.FC<DeliveryModalProps> = ({ isOpen, onClose, l
         <div className="flex-1 overflow-y-auto bg-gray-50 flex flex-col">
           {!selectedPlatform ? (
             /* PLATFORM SELECTION VIEW */
-            <div className="p-8 flex flex-col h-full animate-fade-in">
-              <div className="mb-8 text-center">
-                <h3 className="font-serif text-3xl mb-2 italic">{t.deliveryAnywhere}</h3>
-                <p className="text-xs text-gray-500 uppercase tracking-mega">{t.deliverySelect}</p>
+            <div className="p-6 xs:p-8 flex flex-col h-full animate-fade-in">
+              <div className="mb-6 xs:mb-8 text-center px-4">
+                <h3 className="font-serif text-2xl xs:text-3xl mb-2 italic">{t.deliveryAnywhere}</h3>
+                <p className="text-[10px] xs:text-xs text-gray-500 uppercase tracking-mega">{t.deliverySelect}</p>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-3 xs:space-y-4">
                 {(Object.keys(PLATFORMS) as Array<keyof typeof PLATFORMS>).map((key) => {
                   const p = PLATFORMS[key];
                   return (
                     <button
                       key={key}
                       onClick={() => setSelectedPlatform(key as Platform)}
-                      className="w-full group bg-white p-6 rounded-2xl border border-gray-100 hover:border-gold/30 hover:shadow-xl hover:shadow-gold/5 transition-all flex items-center justify-between"
+                      className="w-full group bg-white p-4 xs:p-6 rounded-2xl border border-gray-100 hover:border-gold/30 hover:shadow-xl hover:shadow-gold/5 transition-all flex items-center justify-between"
                     >
-                      <div className="flex items-center gap-4">
+                      <div className="flex items-center gap-3 xs:gap-4">
                         <div 
-                          className="w-12 h-12 rounded-xl flex items-center justify-center text-white"
+                          className="w-10 h-10 xs:w-12 xs:h-12 rounded-xl flex items-center justify-center text-white"
                           style={{ backgroundColor: p.color }}
                         >
-                          <ShoppingBag size={24} />
+                          <ShoppingBag size={20} className="xs:size-6" />
                         </div>
                         <div className="text-left">
-                          <h4 className="font-bold text-lg">{p.name}</h4>
-                          <p className="text-[10px] text-gray-400 uppercase tracking-widest">Available Now • 25-35 mins</p>
+                          <h4 className="font-bold text-base xs:text-lg">{p.name}</h4>
+                          <p className="text-[8px] xs:text-[10px] text-gray-400 uppercase tracking-widest leading-none">Available Now • 25-35 mins</p>
                         </div>
                       </div>
-                      <ChevronRight size={20} className="text-gray-300 group-hover:text-gold transition-colors" />
+                      <ChevronRight size={18} className="text-gray-300 group-hover:text-gold transition-colors" />
                     </button>
                   );
                 })}
 
-                <div className="pt-6 border-t border-gray-200">
-                  <button className="w-full p-6 rounded-2xl border-2 border-dashed border-gray-200 hover:border-gold/30 hover:bg-white transition-all flex items-center gap-4 group">
-                    <div className="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center text-gray-400 group-hover:text-gold group-hover:bg-gold/5 transition-colors">
-                      <PhoneCall size={24} />
+                <div className="pt-4 xs:pt-6 border-t border-gray-200">
+                  <button className="w-full p-4 xs:p-6 rounded-2xl border-2 border-dashed border-gray-200 hover:border-gold/30 hover:bg-white transition-all flex items-center gap-3 xs:gap-4 group">
+                    <div className="w-10 h-10 xs:w-12 xs:h-12 rounded-xl bg-gray-100 flex items-center justify-center text-gray-400 group-hover:text-gold group-hover:bg-gold/5 transition-colors">
+                      <PhoneCall size={20} className="xs:size-6" />
                     </div>
                     <div className="text-left">
-                      <h4 className="font-bold text-lg">{lang === 'zh' ? '餐飲外送及活動' : 'Catering & Events'}</h4>
-                      <p className="text-[10px] text-gray-400 uppercase tracking-widest">{lang === 'zh' ? '大額訂單專人服務' : 'Direct Large Order Concierge'}</p>
+                      <h4 className="font-bold text-base xs:text-lg">{lang === 'zh' ? '餐飲外送及活動' : 'Catering & Events'}</h4>
+                      <p className="text-[8px] xs:text-[10px] text-gray-400 uppercase tracking-widest">{lang === 'zh' ? '大額訂單專人服務' : 'Direct Large Order Concierge'}</p>
                     </div>
                   </button>
                 </div>

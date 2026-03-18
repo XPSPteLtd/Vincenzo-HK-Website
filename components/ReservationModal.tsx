@@ -42,16 +42,16 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({ isOpen, onCl
       <div className="relative bg-charcoal border-y md:border border-gold/20 w-full max-w-5xl h-full md:h-[85vh] shadow-2xl animate-fade-in-up flex flex-col overflow-hidden mt-[57px] mb-[64px] md:mt-0 md:mb-0">
         
         {/* Header */}
-        <div className="flex justify-between items-center p-4 md:px-8 md:py-6 border-b border-white/10 bg-black/40 z-30 shrink-0">
-          <div className="flex items-center gap-4">
-            <div className="p-2 border border-gold/20 rounded-full hidden sm:block">
+        <div className="flex justify-between items-center p-3 xs:p-4 md:px-8 md:py-6 border-b border-white/10 bg-black/40 z-30 shrink-0">
+          <div className="flex items-center gap-3 xs:gap-4">
+            <div className="p-1.5 xs:p-2 border border-gold/20 rounded-full hidden sm:block">
               <Scissors size={14} className="text-gold" />
             </div>
             <div>
-              <h2 className="font-display text-xl md:text-2xl text-white uppercase tracking-wider">{t.reservationTitle}</h2>
+              <h2 className="font-display text-lg xs:text-xl md:text-2xl text-white uppercase tracking-wider">{t.reservationTitle}</h2>
               <div className="flex items-center gap-2 mt-0.5">
                  <ShieldCheck size={10} className="text-green-500" />
-                 <span className="text-[9px] text-gray-500 uppercase tracking-widest font-bold">{t.reservationSecure}</span>
+                 <span className="text-[8px] xs:text-[9px] text-gray-500 uppercase tracking-widest font-bold">{t.reservationSecure}</span>
               </div>
             </div>
           </div>

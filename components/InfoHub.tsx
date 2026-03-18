@@ -24,7 +24,7 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang }) => {
   return (
     <section id="info-hub" className="py-20 md:py-24 bg-charcoal border-t border-white/5 relative overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute -right-20 top-40 text-[10rem] md:text-[15rem] font-serif text-white/[0.01] leading-none pointer-events-none select-none">INFO</div>
+      <div className="absolute -right-10 top-40 text-[8rem] xs:text-[10rem] md:text-[15rem] font-serif text-white/[0.01] leading-none pointer-events-none select-none">INFO</div>
       
       <div className="max-w-7xl mx-auto px-5 md:px-12">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-12 gap-6 md:gap-8">
@@ -35,18 +35,18 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang }) => {
 
           {/* Horizontal Scroll Tab Navigation */}
           <div className="w-full md:w-auto overflow-x-auto scrollbar-hide -mx-5 px-5 md:mx-0 md:px-0">
-            <div className="flex flex-nowrap gap-2 bg-white/5 p-1 rounded-xl backdrop-blur-md border border-white/10 min-w-max">
+            <div className="flex flex-nowrap gap-2 bg-white/5 p-1 rounded-xl backdrop-blur-md border border-white/10 min-w-max py-1 px-1">
               {tabs.map((tab) => (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id as InfoTab)}
-                  className={`flex items-center gap-2 px-4 md:px-5 py-2 md:py-2.5 rounded-lg text-[10px] md:text-xs font-bold uppercase tracking-widest transition-all ${
+                  className={`flex items-center gap-2 px-3 xs:px-4 md:px-5 py-2 md:py-2.5 rounded-lg text-[9px] xs:text-[10px] md:text-xs font-bold uppercase tracking-widest transition-all ${
                     activeTab === tab.id 
                       ? 'bg-gold text-charcoal shadow-lg' 
                       : 'text-gray-400 hover:text-white hover:bg-white/5'
                   }`}
                 >
-                  <tab.icon size={14} />
+                  <tab.icon size={12} className="md:size-[14px]" />
                   <span>{tab.label}</span>
                 </button>
               ))}

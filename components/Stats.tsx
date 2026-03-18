@@ -209,16 +209,16 @@ const StatCard: React.FC<{
   desc: string,
   embedded: boolean
 }> = ({ icon, title, value, desc, embedded }) => (
-  <div className={`${embedded ? 'bg-white/[0.03]' : 'bg-[#111]'} border border-white/5 p-5 md:p-8 relative group overflow-hidden hover:border-gold/30 transition-all duration-700 rounded-xl`}>
+  <div className={`${embedded ? 'bg-white/[0.03]' : 'bg-[#111]'} border border-white/5 p-4 xs:p-5 md:p-8 relative group overflow-hidden hover:border-gold/30 transition-all duration-700 rounded-xl`}>
     <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
       {icon}
     </div>
     <div className="relative z-10">
-      <span className="text-gold text-[8px] md:text-[9px] uppercase tracking-[0.3em] font-bold block mb-3 md:mb-5">{title}</span>
-      <div className="font-mono text-xl md:text-2xl lg:text-3xl xl:text-4xl text-white mb-1 md:mb-2 tracking-tighter tabular-nums">
+      <span className="text-gold text-[7px] xs:text-[8px] md:text-[9px] uppercase tracking-[0.3em] font-bold block mb-2 xs:mb-3 md:mb-5">{title}</span>
+      <div className="font-mono text-lg xs:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-white mb-1 md:mb-2 tracking-tighter tabular-nums">
           {value}
       </div>
-      <p className="text-[8px] md:text-[9px] text-gray-600 uppercase tracking-widest leading-tight">{desc}</p>
+      <p className="text-[7px] xs:text-[8px] md:text-[9px] text-gray-600 uppercase tracking-widest leading-tight">{desc}</p>
     </div>
   </div>
 );

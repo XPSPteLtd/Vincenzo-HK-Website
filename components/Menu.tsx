@@ -201,9 +201,9 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
 
         {/* Horizontal Scroll Filter Bar for Mobile */}
         <div className="flex items-center gap-3 md:gap-4 mb-10 md:mb-16 overflow-x-auto scrollbar-hide -mx-5 px-5 md:mx-0 md:px-0" id="menu-grid-top">
-          <span className="text-gray-500 text-[10px] uppercase tracking-widest self-center mr-2 shrink-0 font-bold hidden sm:inline">Filter:</span>
+          <span className="text-gray-500 text-[10px] uppercase tracking-widest self-center mr-2 shrink-0 font-bold hidden lg:inline">Filter:</span>
           
-          <div className="flex flex-nowrap items-center gap-3 min-w-max">
+          <div className="flex flex-nowrap items-center gap-3 min-w-max py-2">
             <button
               onClick={() => setShowPopular(!showPopular)}
               className={`flex items-center gap-2 px-4 md:px-5 py-2 md:py-2.5 rounded-full border text-[9px] md:text-[10px] uppercase tracking-wider transition-all font-bold ${
@@ -226,8 +226,8 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
                   {tag}
                 </button>
                 
-                {/* Tooltip - Hide on very small screens to prevent layout issues, or use focused tap for info */}
-                <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 px-5 py-3.5 bg-charcoal/95 backdrop-blur-md border border-gold/30 text-white text-[10px] whitespace-nowrap opacity-0 group-hover/diet:opacity-100 pointer-events-none transition-all duration-300 z-50 rounded-xl shadow-2xl flex flex-col items-center min-w-[220px] text-center hidden md:flex">
+                {/* Tooltip - Hide on smaller screens to prevent layout issues */}
+                <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 px-5 py-3.5 bg-charcoal/95 backdrop-blur-md border border-gold/30 text-white text-[10px] whitespace-nowrap opacity-0 group-hover/diet:opacity-100 pointer-events-none transition-all duration-300 z-50 rounded-xl shadow-2xl flex flex-col items-center min-w-[220px] text-center hidden lg:flex">
                   <span className="text-gold font-bold mb-2 flex items-center gap-2 tracking-widest">
                     <Info size={12} /> {translations[lang].dietary.info}
                   </span>

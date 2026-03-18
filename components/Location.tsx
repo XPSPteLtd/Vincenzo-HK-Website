@@ -21,9 +21,9 @@ export const Location: React.FC<LocationProps> = ({ onBookClick, lang }) => {
     <section id="location" className="bg-charcoal border-t border-white/5">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 min-h-[600px]">
         
-        <div className="flex flex-col justify-center p-8 md:p-12 lg:p-24 border-b md:border-b-0 md:border-r border-white/5">
-          <span className="text-gold tracking-mega text-[10px] md:text-xs uppercase font-bold mb-6 block">{t.findUs}</span>
-          <h2 className="font-display text-4xl md:text-5xl text-white mb-10 md:mb-12 uppercase leading-none">{t.hkCentral}</h2>
+        <div className="flex flex-col justify-center p-6 xs:p-8 md:p-12 lg:p-24 border-b md:border-b-0 md:border-r border-white/5">
+          <span className="text-gold tracking-mega text-[9px] xs:text-[10px] md:text-xs uppercase font-bold mb-4 xs:mb-6 block">{t.findUs}</span>
+          <h2 className="font-display text-3xl xs:text-4xl md:text-5xl text-white mb-8 md:mb-12 uppercase leading-none">{t.hkCentral}</h2>
           
           <div className="space-y-8 md:space-y-12">
             <div className="group">
