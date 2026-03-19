@@ -1,6 +1,6 @@
 
 import React, { useEffect } from 'react';
-import { X, Users, Mail, Download, ChevronRight, Scissors, Star, Award, MapPin, ExternalLink } from 'lucide-react';
+import { X, Users, Mail, Download, ChevronRight, Star, Award, MapPin, ExternalLink } from 'lucide-react';
 import { Language, translations } from '../translations';
 import { SafeImage } from './ui/SafeImage';
 
@@ -181,7 +181,11 @@ export const EventsModal: React.FC<EventsModalProps> = ({ isOpen, onClose, lang 
         {/* Footer info bar */}
         <div className="bg-black/80 px-8 py-3 border-t border-white/5 flex items-center justify-between shrink-0">
            <div className="flex items-center gap-2">
-              <Scissors size={14} className="text-gold" />
+              <img 
+                src="https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo/LOGO-CAPUANO-white.png" 
+                alt="Logo" 
+                className="h-3.5 w-auto object-contain" 
+              />
               <span className="text-[9px] uppercase tracking-mega text-gray-400">Vincenzo Capuano HK</span>
            </div>
            <p className="text-[9px] text-gray-600 uppercase tracking-widest">

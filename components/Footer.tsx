@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Scissors, Instagram } from 'lucide-react';
+import { Instagram } from 'lucide-react';
 import { Language } from '../translations';
 
 interface FooterProps {
@@ -13,8 +13,12 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
     <footer className="bg-black py-16 border-t border-white/10">
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col items-center">
         
-        <div className="mb-8 p-4 border border-white/10 rounded-full">
-            <Scissors className="text-gold w-6 h-6" />
+        <div className="mb-8 p-4">
+            <img 
+              src="https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo/LOGO-CAPUANO-white.png" 
+              alt="Vincenzo Capuano Logo" 
+              className="h-24 md:h-32 w-auto object-contain transition-transform duration-500 hover:scale-105" 
+            />
         </div>
 
         <h3 className="font-display text-2xl font-bold text-white mb-2 tracking-widest uppercase">Vincenzo Capuano</h3>

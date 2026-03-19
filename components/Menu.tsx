@@ -1,7 +1,7 @@
 
 import React, { useMemo, useEffect, useState } from 'react';
 import { menuItems } from '../menuData';
-import { Leaf, Flame, Star, ChevronLeft, ChevronRight, SearchX, ShoppingBag, Scissors, Info, Quote } from 'lucide-react';
+import { Leaf, Flame, Star, ChevronLeft, ChevronRight, SearchX, ShoppingBag, Info, Quote } from 'lucide-react';
 import { MenuItem } from '../types';
 import { SafeImage } from './ui/SafeImage';
 import { Language, translations } from '../translations';
@@ -95,7 +95,11 @@ const MenuItemCard: React.FC<{
               
               <div className="flex items-center gap-2 mb-2 md:mb-3">
                 {/* Fixed: Use responsive CSS classes for size as md:size prop is not supported */}
-                <Scissors className="w-2.5 h-2.5 md:w-3 md:h-3 text-gold rotate-90" />
+                <img 
+                  src="https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo/LOGO-CAPUANO-white.png" 
+                  alt="Logo" 
+                  className="h-2.5 md:h-3 w-auto object-contain" 
+                />
                 <span className="text-[9px] md:text-[10px] text-gold uppercase font-bold tracking-[0.2em]">
                   {t.chefNote}
                 </span>

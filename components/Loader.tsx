@@ -1,5 +1,5 @@
 import React from 'react';
-import { Scissors } from 'lucide-react';
+// import removed as unused
 
 interface LoaderProps {
   isLoading: boolean;

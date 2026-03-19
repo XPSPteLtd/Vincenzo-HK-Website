@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Scissors, Wheat } from 'lucide-react';
+import { Wheat } from 'lucide-react';
 import { SafeImage } from './ui/SafeImage';
 import { Language, translations } from '../translations';
 
@@ -42,7 +42,11 @@ export const Signature: React.FC<SignatureProps> = ({ lang }) => {
 
               <div className="relative">
                 <h3 className="text-lg md:text-xl font-serif text-white mb-3 flex items-center gap-3">
-                    <Scissors className="text-gold w-5 h-5" /> {t.scissorsTitle}
+                    <img 
+                      src="https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo/LOGO-CAPUANO-white.png" 
+                      alt="Logo" 
+                      className="h-5 w-auto object-contain" 
+                    /> {t.scissorsTitle}
                 </h3>
                 <p className="text-gray-500 text-xs md:text-sm leading-relaxed max-w-sm">
                    {t.scissorsDesc}

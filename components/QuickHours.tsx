@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { X, Clock, Phone, MapPin, ChevronRight, Scissors, Calendar, ExternalLink } from 'lucide-react';
+import { X, Clock, Phone, MapPin, ChevronRight, Calendar, ExternalLink } from 'lucide-react';
 import { Language, translations } from '../translations';
 
 interface QuickHoursProps {
@@ -118,7 +118,11 @@ export const QuickHours: React.FC<QuickHoursProps> = ({ isOpen, onClose, lang })
         {/* Footer */}
         <div className="bg-black/50 px-6 py-4 flex items-center justify-between border-t border-white/5 shrink-0">
           <div className="flex items-center gap-2">
-            <Scissors size={12} className="text-gold" />
+            <img 
+              src="https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo/LOGO-CAPUANO-white.png" 
+              alt="Logo" 
+              className="h-3 w-auto object-contain" 
+            />
             <span className="text-[8px] uppercase tracking-mega text-gray-500">Vincenzo Capuano HK</span>
           </div>
           <p className="text-[8px] text-gray-600 uppercase tracking-widest">

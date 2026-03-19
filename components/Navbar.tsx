@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Menu as MenuIcon, X, Scissors, ShoppingBag, Languages, Clock, Users, Phone } from 'lucide-react';
+import { Menu as MenuIcon, X, ShoppingBag, Languages, Clock, Users, Phone } from 'lucide-react';
 import { Language, translations } from '../translations';
 
 interface NavbarProps {

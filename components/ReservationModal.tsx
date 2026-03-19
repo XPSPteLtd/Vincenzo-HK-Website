@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { X, ShieldCheck, Scissors, Loader2 } from 'lucide-react';
+import { X, ShieldCheck, Loader2 } from 'lucide-react';
 import { Language, translations } from '../translations';
 
 interface ReservationModalProps {
@@ -45,7 +45,11 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({ isOpen, onCl
         <div className="flex justify-between items-center p-3 xs:p-4 md:px-8 md:py-6 border-b border-white/10 bg-black/40 z-30 shrink-0">
           <div className="flex items-center gap-3 xs:gap-4">
             <div className="p-1.5 xs:p-2 border border-gold/20 rounded-full hidden sm:block">
-              <Scissors size={14} className="text-gold" />
+              <img 
+                src="https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo/LOGO-CAPUANO-white.png" 
+                alt="Logo" 
+                className="h-3.5 w-auto object-contain" 
+              />
             </div>
             <div>
               <h2 className="font-display text-lg xs:text-xl md:text-2xl text-white uppercase tracking-wider">{t.reservationTitle}</h2>

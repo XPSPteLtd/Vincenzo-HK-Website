@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Quote, ChevronLeft, ChevronRight, Star, ExternalLink, ShieldCheck, Scissors } from 'lucide-react';
+import { Quote, ChevronLeft, ChevronRight, Star, ExternalLink, ShieldCheck } from 'lucide-react';
 import { fetchGoogleReviews } from '../services/aiService';
 import { Language } from '../translations';
 
@@ -81,9 +81,10 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ lang }) => {
           <div className="absolute inset-0 border border-gold/20 rounded-full animate-[ping_3s_cubic-bezier(0,0,0.2,1)_infinite]"></div>
           
           <div className="relative z-10 p-12 text-center">
-            <Scissors 
-                className="w-10 h-10 text-gold/30 mx-auto mb-8 transform -rotate-90 animate-pulse" 
-                strokeWidth={1}
+            <img 
+                src="https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo/LOGO-CAPUANO-white.png" 
+                alt="Logo" 
+                className="h-10 w-auto mx-auto mb-8 animate-pulse grayscale brightness-200 opacity-30" 
             />
             <div className="space-y-3">
                 <h3 className="font-display text-lg text-white/80 tracking-[0.2em] uppercase">Retrieving Guest Chronicles</h3>

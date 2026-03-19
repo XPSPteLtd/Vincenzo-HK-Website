@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { X, ShoppingBag, MapPin, Star, Clock, ChevronRight, CheckCircle2, Package, Bike, ArrowRight, Scissors, Truck, PhoneCall } from 'lucide-react';
+import { X, ShoppingBag, MapPin, Star, Clock, ChevronRight, CheckCircle2, Package, Bike, ArrowRight, Truck, PhoneCall } from 'lucide-react';
 import { Language, translations } from '../translations';
 
 type Platform = 'deliveroo' | 'foodpanda' | 'grab' | null;
@@ -91,7 +91,11 @@ export const DeliveryModal: React.FC<DeliveryModalProps> = ({ isOpen, onClose, l
               </>
             ) : (
               <>
-                <Scissors size={18} className="text-gold" />
+                <img 
+                  src="https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo/LOGO-CAPUANO-white.png" 
+                  alt="Logo" 
+                  className="h-4 w-auto object-contain" 
+                />
                 <span className="font-display uppercase tracking-widest text-lg">{t.deliveryTitle}</span>
               </>
             )}
@@ -191,7 +195,11 @@ export const DeliveryModal: React.FC<DeliveryModalProps> = ({ isOpen, onClose, l
         {/* Brand Footer */}
         <div className="bg-charcoal px-6 py-4 flex items-center justify-between text-white shrink-0">
            <div className="flex items-center gap-2">
-              <Scissors size={14} className="text-gold" />
+              <img 
+                src="https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo/LOGO-CAPUANO-white.png" 
+                alt="Logo" 
+                className="h-3.5 w-auto object-contain" 
+              />
               <span className="text-[9px] uppercase tracking-mega">Vincenzo Capuano HK</span>
            </div>
            <span className="text-[9px] text-gray-600 uppercase tracking-widest font-bold">{lang === 'zh' ? '拿坡里薄餅專門店' : 'Luxury Pizzeria Management'}</span>
