@@ -7,6 +7,7 @@ export interface MenuItem {
   description: string;
   descriptionZh?: string;
   price: string;
+  mainCategory: 'Ala-carte' | 'Beverages';
   category: string;
   categoryZh?: string;
   image: string;

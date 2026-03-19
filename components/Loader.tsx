@@ -19,10 +19,11 @@ export const Loader: React.FC<LoaderProps> = ({ isLoading }) => {
         
         {/* Main Container */}
         <div className="relative z-10 p-8">
-            {/* Scissor Icon */}
-            <Scissors 
-                className="w-16 h-16 text-gold mx-auto mb-6 transform -rotate-90 animate-pulse" 
-                strokeWidth={1.5}
+            {/* Official Logo */}
+            <img 
+                src="https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo/LOGO-CAPUANO-white.png" 
+                alt="Vincenzo Capuano Loading Logo" 
+                className="h-16 w-auto mx-auto mb-6 object-contain animate-pulse" 
             />
             
             {/* Text Content */}

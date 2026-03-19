@@ -15,10 +15,14 @@
         })(window, document, "clarity", "script", "uziyzcy6yk");
     </script>    
 
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍕</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍅</text></svg>">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@200;300;400;500;600&family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Tailwind Setup -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -30,16 +34,19 @@
               'xs': '400px',
             },
             colors: {
-              charcoal: '#050505', /* Deep Obsidian */
-              surface: '#121212', /* Slightly lighter black for cards */
-              gold: '#C5A059', /* Metallic Brand Gold */
-              red: '#D62828', /* Napoli Red */
-              offwhite: '#E5E5E5',
+              charcoal: '#050505',
+              surface: '#121212',
+              gold: '#F3CD69', /* Parmesan Gold */
+              red: '#C82323', /* Tomato Red */
+              green: '#678F26', /* Basil Green */
+              offwhite: '#FFE9CD', /* Toasted Crust */
+              blue: '#125F9A', /* Deep Blue */
+              spicy: '#FF5A27', /* Spicy Sauce */
             },
             fontFamily: {
-              serif: ['"Playfair Display"', 'serif'],
-              sans: ['"Inter"', 'sans-serif'],
-              display: ['"Oswald"', 'sans-serif'],
+              serif: ['"Lobster"', 'cursive'],
+              sans: ['"Quicksand"', 'sans-serif'],
+              display: ['"Lobster"', 'cursive'],
             },
             backgroundImage: {
               'hero-pattern': "url('https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=2070&auto=format&fit=crop')",
@@ -88,7 +95,7 @@
       }
       /* Custom selection color */
       ::selection {
-        background-color: #C5A059;
+        background-color: #F3CD69;
         color: #000;
       }
     </style>

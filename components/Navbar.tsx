@@ -68,13 +68,11 @@ export const Navbar: React.FC<NavbarProps> = ({
       <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 flex justify-between items-center">
         {/* Brand Logo */}
         <a href="#" className="flex items-center gap-2 md:gap-3 group">
-          <div className="relative shrink-0">
-             <Scissors className="w-4 h-4 md:w-5 md:h-5 text-gold transform -rotate-90 group-hover:rotate-0 transition-transform duration-500" />
-          </div>
-          <div className="flex flex-col">
-            <span className="font-display font-medium text-sm md:text-base lg:text-xl tracking-[0.1em] md:tracking-[0.12em] lg:tracking-[0.15em] text-white leading-none uppercase">VINCENZO CAPUANO</span>
-            <span className="text-[7px] md:text-[8px] lg:text-[9px] text-gold tracking-[0.3em] md:tracking-[0.35em] lg:tracking-[0.4em] uppercase mt-0.5">Hong Kong</span>
-          </div>
+          <img 
+            src="https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo/LOGO-CAPUANO-white.png" 
+            alt="Vincenzo Capuano Logo" 
+            className="h-[3.5rem] md:h-[4.5rem] lg:h-[5.5rem] w-auto object-contain transition-transform duration-500 group-hover:scale-105" 
+          />
         </a>
 
         {/* Desktop Navigation */}

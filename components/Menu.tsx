@@ -68,6 +68,9 @@ const MenuItemCard: React.FC<{
       
       {/* Content Area */}
       <div className="space-y-3 md:space-y-4 flex-1 flex flex-col">
+        <span className="text-gold/80 text-[10px] uppercase tracking-widest font-bold block -mb-1">
+          {lang === 'zh' ? (item.categoryZh || item.category) : item.category}
+        </span>
         <div className="flex justify-between items-start">
           <h3 className="font-serif text-xl md:text-2xl text-white group-hover:text-gold transition-colors leading-tight">
             {itemName}
@@ -120,9 +123,8 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
   const ITEMS_PER_PAGE = 6;
   
   const categories = useMemo(() => {
-    const uniqueCats = Array.from(new Set(items.map(item => lang === 'zh' ? item.categoryZh || item.category : item.category)));
-    return [lang === 'en' ? 'All' : '全部', ...uniqueCats];
-  }, [items, lang]);
+    return [lang === 'en' ? 'All' : '全部', 'Ala-carte', 'Beverages'];
+  }, [lang]);
 
   const dietaryTags = useMemo(() => {
     const tags = new Set<string>();
@@ -143,7 +145,7 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
 
   const filteredItems = useMemo(() => {
     return items.filter(item => {
-      const itemCat = lang === 'zh' ? item.categoryZh || item.category : item.category;
+      const itemCat = item.mainCategory;
       const matchesCategory = activeCategory === 'All' || activeCategory === '全部' || itemCat === activeCategory;
       const matchesDietary = activeDietary.length === 0 || activeDietary.every(tag => item.dietary?.includes(tag));
       const matchesPopular = showPopular ? item.popular === true : true;
