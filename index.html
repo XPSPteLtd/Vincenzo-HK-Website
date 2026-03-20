@@ -59,6 +59,8 @@
               'fade-in': 'fadeIn 0.8s ease-out forwards',
               'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
               'scroll': 'scroll 40s linear infinite',
+              'glow': 'glow 3s ease-in-out infinite',
+              'scroll-line': 'scrollLine 3s ease-in-out infinite',
             },
             keyframes: {
               fadeIn: {
@@ -72,6 +74,14 @@
               scroll: {
                 '0%': { transform: 'translateX(0)' },
                 '100%': { transform: 'translateX(-33.33%)' },
+              },
+              glow: {
+                '0%, 100%': { opacity: '0.3', filter: 'blur(2px)' },
+                '50%': { opacity: '1', filter: 'blur(0px)' },
+              },
+              scrollLine: {
+                '0%': { transform: 'translateY(-100%)' },
+                '100%': { transform: 'translateY(100%)' },
               }
             }
           }
@@ -93,11 +103,26 @@
           -ms-overflow-style: none;
           scrollbar-width: none;
       }
+      @keyframes glow {
+        0%, 100% { opacity: 0.3; filter: blur(2px); }
+        50% { opacity: 1; filter: blur(0px); }
+      }
+      .animate-glow {
+        animation: glow 3s ease-in-out infinite;
+      }
+      @keyframes scrollLine {
+        0% { transform: translateY(-100%); }
+        100% { transform: translateY(100%); }
+      }
+      .animate-scroll-line {
+        animation: scrollLine 3s ease-in-out infinite;
+      }
       /* Custom selection color */
       ::selection {
         background-color: #F3CD69;
         color: #000;
       }
+
     </style>
   <script type="importmap">
 {

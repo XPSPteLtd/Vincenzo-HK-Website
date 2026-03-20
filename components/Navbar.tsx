@@ -59,21 +59,27 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <nav 
-      className={`fixed w-full z-[120] transition-all duration-500 ${
+      className={`fixed w-full z-[120] transition-all duration-700 ${
         isScrolled 
           ? 'bg-charcoal/95 backdrop-blur-md py-3 md:py-4 shadow-2xl border-b border-white/5' 
-          : 'bg-transparent py-5 md:py-6 border-b border-transparent'
+          : 'bg-transparent py-6 md:py-8 border-b border-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 flex justify-between items-center">
-        {/* Brand Logo */}
-        <a href="#" className="flex items-center gap-2 md:gap-3 group">
+        {/* Brand Logo - Handover effect */}
+        <a 
+          href="#" 
+          className={`flex items-center gap-2 md:gap-3 group transition-all duration-700 ${
+            isScrolled ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'
+          }`}
+        >
           <img 
             src="https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo/LOGO-CAPUANO-white.png" 
             alt="Vincenzo Capuano Logo" 
-            className="h-[3.5rem] md:h-[4.5rem] lg:h-[5.5rem] w-auto object-contain transition-transform duration-500 group-hover:scale-105" 
+            className="h-10 md:h-12 lg:h-14 w-auto object-contain transition-transform duration-500 group-hover:scale-105" 
           />
         </a>
+
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-4 lg:gap-8">
