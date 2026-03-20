@@ -1,7 +1,7 @@
 
 import React, { useMemo, useEffect, useState } from 'react';
 import { menuItems } from '../menuData';
-import { Leaf, Flame, Star, ChevronLeft, ChevronRight, SearchX, ShoppingBag, Info, Quote } from 'lucide-react';
+import { Leaf, Flame, Star, ChevronLeft, ChevronRight, SearchX, ShoppingBag, Scissors, Info, Quote } from 'lucide-react';
 import { MenuItem } from '../types';
 import { SafeImage } from './ui/SafeImage';
 import { Language, translations } from '../translations';
@@ -27,6 +27,36 @@ const getDietaryDescription = (tag: string, lang: Language) => {
   return tag;
 };
 
+const formatTitle = (name: string) => {
+  if (!name) return "";
+  return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+};
+
+const getChefNote = (item: MenuItem, lang: Language) => {
+  if (lang === 'zh' && (item.chefNoteZh || item.chefNote)) return item.chefNoteZh || item.chefNote;
+  if (lang === 'en' && item.chefNote) return item.chefNote;
+
+  // Dynamic fallback notes based on category for items missing notes in data
+  const notes: Record<string, string> = {
+    "Pizza": "The secret is in our 'Cloud' dough—fermented for 36 hours for maximum lightness and digestibility.",
+    "Starter": "A classic Neapolitan selection, prepared following recipes handed down through generations.",
+    "Salad": "Fresh ingredients sourced with care, bringing the vibrant colors of Italy to your table.",
+    "Pasta": "Handcrafted excellence. Every bite carries the soul of true Neapolitan pasta tradition.",
+    "Sweets": "A sweet legacy from Nonno Enzo. The perfect ending to your Contemporary journey.",
+    "Beverages": "Expertly curated to pair perfectly with our specialized dough and robust flavors.",
+    "default": "Generations of tradition meet contemporary innovation. Vivere di pizza è meraviglioso."
+  };
+
+  const cat = item.category.toLowerCase();
+  if (cat.includes('pizza')) return notes.Pizza;
+  if (cat.includes('starter')) return notes.Starter;
+  if (cat.includes('salad')) return notes.Salad;
+  if (cat.includes('pasta') || cat.includes('main')) return notes.Pasta;
+  if (cat.includes('sweet') || cat.includes('dessert')) return notes.Sweets;
+  if (item.mainCategory === 'Beverages') return notes.Beverages;
+  return notes.default;
+};
+
 const MenuItemCard: React.FC<{ 
   item: MenuItem; 
   lang: Language; 
@@ -34,9 +64,9 @@ const MenuItemCard: React.FC<{
 }> = ({ item, lang, onDeliveryClick }) => {
   const t = translations[lang].menu;
   
-  const chefNote = lang === 'zh' ? item.chefNoteZh || item.chefNote : item.chefNote;
-  const itemName = lang === 'zh' ? item.nameZh || item.name : item.name;
+  const itemName = lang === 'zh' ? item.nameZh || item.name : formatTitle(item.name);
   const itemDesc = lang === 'zh' ? item.descriptionZh || item.description : item.description;
+  const chefNote = getChefNote(item, lang);
 
   return (
     <div className="group cursor-pointer flex flex-col h-full bg-white/[0.02] border border-white/5 rounded-2xl p-4 md:p-5 transition-all duration-500 hover:border-gold/20 hover:bg-white/[0.04]">
@@ -68,9 +98,6 @@ const MenuItemCard: React.FC<{
       
       {/* Content Area */}
       <div className="space-y-3 md:space-y-4 flex-1 flex flex-col">
-        <span className="text-gold/80 text-[10px] uppercase tracking-widest font-bold block -mb-1">
-          {lang === 'zh' ? (item.categoryZh || item.category) : item.category}
-        </span>
         <div className="flex justify-between items-start">
           <h3 className="font-serif text-xl md:text-2xl text-white group-hover:text-gold transition-colors leading-tight">
             {itemName}
@@ -95,11 +122,7 @@ const MenuItemCard: React.FC<{
               
               <div className="flex items-center gap-2 mb-2 md:mb-3">
                 {/* Fixed: Use responsive CSS classes for size as md:size prop is not supported */}
-                <img 
-                  src="https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo/LOGO-CAPUANO-white.png" 
-                  alt="Logo" 
-                  className="h-2.5 md:h-3 w-auto object-contain" 
-                />
+                <Scissors className="w-2.5 h-2.5 md:w-3 md:h-3 text-gold rotate-90" />
                 <span className="text-[9px] md:text-[10px] text-gold uppercase font-bold tracking-[0.2em]">
                   {t.chefNote}
                 </span>
@@ -156,6 +179,7 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
       return matchesCategory && matchesDietary && matchesPopular;
     });
   }, [activeCategory, activeDietary, showPopular, items, lang]);
+
 
   useEffect(() => {
     setCurrentPage(1);
