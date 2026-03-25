@@ -21,7 +21,7 @@ export const Signature: React.FC<SignatureProps> = ({ lang }) => {
           <div className="space-y-10 md:space-y-12 order-2 md:order-1">
             <div>
               <span className="text-gold font-bold tracking-mega text-[10px] md:text-xs uppercase mb-4 block">{t.thePhilosophy}</span>
-              <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-white mb-6 md:mb-8 leading-none uppercase">
+              <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-white mb-6 md:mb-8 leading-none">
                 {t.contemporary} <br/>
                 <span className="text-gray-500">{t.neapolitan}</span>
               </h2>
@@ -65,7 +65,7 @@ export const Signature: React.FC<SignatureProps> = ({ lang }) => {
                   className="w-full h-[400px] md:h-[500px] lg:h-[600px]"
                 />
                 <div className="absolute bottom-0 left-0 bg-gold p-6 md:p-8 max-w-[240px] md:max-w-xs">
-                    <p className="text-charcoal font-serif italic text-base md:text-lg leading-tight">
+                    <p className="text-charcoal font-light italic text-base md:text-lg leading-tight">
                         "{t.quote}"
                     </p>
                 </div>

@@ -15,6 +15,9 @@ export interface MenuItem {
   dietary?: string[];
   chefNote?: string;
   chefNoteZh?: string;
+  alcohol?: boolean;
+  profiles?: string[];
+  ingredients?: string[];
 }
 
 export interface Review {

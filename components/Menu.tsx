@@ -102,7 +102,6 @@ const MenuItemCard: React.FC<{
           <h3 className="font-serif text-xl md:text-2xl text-white group-hover:text-gold transition-colors leading-tight">
             {itemName}
           </h3>
-          <span className="text-gold font-display text-lg md:text-xl whitespace-nowrap ml-4">{item.price}</span>
         </div>
         
         <div className="h-px w-8 md:w-10 bg-gold/30 group-hover:w-full transition-all duration-700"></div>
@@ -113,30 +112,89 @@ const MenuItemCard: React.FC<{
 
         {/* Chef's Note */}
         {chefNote && (
-          <div className="mt-auto pt-4 md:pt-6">
-            <div className="bg-charcoal/50 border border-gold/10 rounded-xl p-4 md:p-5 relative overflow-hidden group-hover:border-gold/30 transition-colors">
-              <div className="absolute -right-2 -bottom-2 opacity-[0.03] md:opacity-[0.05] text-gold pointer-events-none">
-                {/* Fixed: Use responsive CSS classes for size as md:size prop is not supported */}
-                <Quote className="w-12 h-12 md:w-14 md:h-14 rotate-180" />
+          <div className="mt-auto pt-6">
+            <div className="bg-white/[0.03] border border-gold/20 rounded-2xl p-5 md:p-6 relative overflow-hidden group-hover:border-gold/40 transition-colors shadow-inner">
+              <div className="absolute -right-2 -bottom-2 opacity-[0.05] text-gold pointer-events-none">
+                <Quote className="w-16 h-16 md:w-20 md:h-20 rotate-180" />
               </div>
               
-              <div className="flex items-center gap-2 mb-2 md:mb-3">
-                {/* Fixed: Use responsive CSS classes for size as md:size prop is not supported */}
-                <Scissors className="w-2.5 h-2.5 md:w-3 md:h-3 text-gold rotate-90" />
-                <span className="text-[9px] md:text-[10px] text-gold uppercase font-bold tracking-[0.2em]">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-1.5 bg-gold/10 rounded-lg">
+                  <Scissors className="w-4 h-4 text-gold rotate-90" />
+                </div>
+                <span className="text-[10px] md:text-xs text-gold uppercase font-bold tracking-[0.2em]">
                   {t.chefNote}
                 </span>
               </div>
               
-              <p className="text-gray-300 text-xs md:text-sm italic font-serif leading-relaxed relative z-10">
+              <p className="text-white text-sm md:text-base italic font-serif leading-relaxed relative z-10 drop-shadow-sm">
                 "{chefNote}"
               </p>
               
-              <div className="mt-3 md:mt-4 flex items-center gap-2 opacity-30">
-                <div className="h-px w-3 md:w-4 bg-white/20"></div>
-                <span className="text-[7px] md:text-[8px] uppercase tracking-widest font-bold text-white">Vincenzo C.</span>
+              <div className="mt-5 md:mt-6 flex items-center gap-3">
+                <div className="h-px w-6 md:w-8 bg-gold/30"></div>
+                <span className="text-[9px] md:text-[10px] uppercase tracking-[0.3em] font-bold text-gold/60">Vincenzo Capuano</span>
               </div>
             </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+const BeverageCard: React.FC<{ 
+  item: MenuItem; 
+  lang: Language; 
+}> = ({ item, lang }) => {
+  const itemName = lang === 'zh' ? item.nameZh || item.name : item.name;
+  const itemDesc = lang === 'zh' ? item.descriptionZh || item.description : item.description;
+
+  return (
+    <div className="group relative flex flex-col h-full bg-[#1a0a0a] border border-white/5 rounded-2xl p-6 md:p-8 transition-all duration-500 hover:border-gold/30 hover:shadow-2xl overflow-hidden min-h-[400px]">
+      {/* Decorative Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-red-900/10 via-transparent to-transparent opacity-50"></div>
+      
+      <div className="relative z-10 flex flex-col h-full">
+        {/* Title */}
+        <h3 className="font-serif text-3xl md:text-4xl text-white group-hover:text-gold transition-colors leading-tight mb-4 drop-shadow-md">
+          {itemName}
+        </h3>
+
+        {/* Alcohol Tag */}
+        {item.alcohol !== undefined && (
+          <div className="mb-6">
+            <span className="inline-block px-3 py-1 border border-blue-500/30 text-blue-400 text-[10px] md:text-xs font-bold uppercase tracking-widest rounded bg-blue-500/5">
+              {item.alcohol ? (lang === 'zh' ? '含有酒精' : 'CONTAINS ALCOHOL') : (lang === 'zh' ? '不含酒精' : 'NON-ALCOHOLIC')}
+            </span>
+          </div>
+        )}
+
+        {/* Flavor Profiles */}
+        {item.profiles && item.profiles.length > 0 && (
+          <div className="flex flex-wrap gap-x-3 gap-y-2 mb-6">
+            {item.profiles.map((profile, idx) => (
+              <React.Fragment key={idx}>
+                <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-gray-500 uppercase">
+                  {profile}
+                </span>
+                {idx < item.profiles.length - 1 && <span className="text-gray-700 font-bold">•</span>}
+              </React.Fragment>
+            ))}
+          </div>
+        )}
+
+        {/* Description */}
+        <p className="text-gray-400 text-base md:text-lg italic font-serif leading-relaxed mb-8 drop-shadow-sm line-clamp-3">
+          "{itemDesc.replace(/Glass \$/g, 'G $').replace(/Bottle \$/g, 'B $')}"
+        </p>
+
+        {/* Ingredients */}
+        {item.ingredients && item.ingredients.length > 0 && (
+          <div className="mt-auto pt-6 border-l-2 border-gold/40 pl-5">
+            <p className="text-[10px] md:text-xs font-bold tracking-widest text-gold/80 uppercase flex flex-wrap gap-2 leading-loose">
+              {item.ingredients.join(' | ')}
+            </p>
           </div>
         )}
       </div>
@@ -271,36 +329,89 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
           </div>
         </div>
 
+        {/* Info Box - Beverages Only */}
+        {activeCategory === 'Beverages' && (
+          <div className="mb-12 animate-in fade-in slide-in-from-top-4 duration-1000">
+            <div className="bg-gold/5 border border-gold/20 rounded-2xl p-6 md:p-8 flex items-center gap-6">
+              <div className="h-12 w-12 rounded-full bg-gold/10 flex items-center justify-center shrink-0">
+                <Info size={24} className="text-gold" />
+              </div>
+              <div>
+                <h4 className="text-white font-serif text-lg md:text-xl mb-1">
+                  {lang === 'zh' ? '關於我們的飲品服務' : 'About Our Drinks Service'}
+                </h4>
+                <p className="text-gray-400 text-sm md:text-base font-light italic">
+                  {lang === 'zh' 
+                    ? '所有優質烈酒和精選葡萄酒均可按杯或整瓶形式供應，讓您靈活搭配用餐體驗。' 
+                    : 'Our premium spirits and curated wine selections are available by both the Glass and Bottle, offering ultimate flexibility for your dining experience.'}
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Grid Area */}
         <div className="min-h-[600px] flex flex-col">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 md:gap-x-8 gap-y-10 md:gap-y-16 flex-1">
-            {displayedItems.length > 0 ? (
-              displayedItems.map((item) => (
-                <div key={item.id}>
-                  <MenuItemCard 
-                    item={item} 
-                    lang={lang} 
-                    onDeliveryClick={onDeliveryClick} 
-                  />
+          {activeCategory === 'Beverages' ? (
+            <div className="space-y-20">
+              {Object.entries(
+                filteredItems.reduce((acc, item) => {
+                  const cat = item.category.replace('Wine — ', '').replace('Pizza — ', '');
+                  if (!acc[cat]) acc[cat] = [];
+                  acc[cat].push(item);
+                  return acc;
+                }, {} as Record<string, MenuItem[]>)
+              ).map(([category, catItems]: [string, MenuItem[]]) => (
+                <div key={category} className="animate-in fade-in slide-in-from-bottom-8 duration-1000">
+                  <div className="flex items-center gap-6 mb-12">
+                    <h3 className="text-gold font-display text-2xl md:text-4xl uppercase tracking-wider whitespace-nowrap">
+                      {category}
+                    </h3>
+                    <div className="h-[2px] w-full bg-gradient-to-r from-gold/40 to-transparent"></div>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+                    {catItems.map((item) => (
+                      <div key={item.id}>
+                        <BeverageCard 
+                          item={item} 
+                          lang={lang} 
+                        />
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              ))
-            ) : (
-              <div className="col-span-full py-24 md:py-32 text-center">
-                  <SearchX className="w-12 h-12 md:w-16 md:h-16 text-gray-700 mx-auto mb-6 md:mb-8" strokeWidth={1} />
-                  <h3 className="text-white font-serif text-2xl md:text-3xl mb-4 italic">{t.noItems}</h3>
-                  <button 
-                    onClick={() => {
-                      setActiveCategory(lang === 'en' ? 'All' : '全部');
-                      setActiveDietary([]);
-                      setShowPopular(false);
-                    }}
-                    className="text-gold text-[10px] font-bold uppercase tracking-mega hover:text-white transition-colors"
-                  >
-                    Clear All Filters
-                  </button>
-              </div>
-            )}
-          </div>
+              ))}
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 md:gap-x-8 gap-y-10 md:gap-y-16 flex-1">
+              {displayedItems.length > 0 ? (
+                displayedItems.map((item) => (
+                  <div key={item.id}>
+                    <MenuItemCard 
+                      item={item} 
+                      lang={lang} 
+                      onDeliveryClick={onDeliveryClick} 
+                    />
+                  </div>
+                ))
+              ) : (
+                <div className="col-span-full py-24 md:py-32 text-center">
+                    <SearchX className="w-12 h-12 md:w-16 md:h-16 text-gray-700 mx-auto mb-6 md:mb-8" strokeWidth={1} />
+                    <h3 className="text-white font-serif text-2xl md:text-3xl mb-4 italic">{t.noItems}</h3>
+                    <button 
+                      onClick={() => {
+                        setActiveCategory(lang === 'en' ? 'All' : '全部');
+                        setActiveDietary([]);
+                        setShowPopular(false);
+                      }}
+                      className="text-gold text-[10px] font-bold uppercase tracking-mega hover:text-white transition-colors"
+                    >
+                      Clear All Filters
+                    </button>
+                </div>
+              )}
+            </div>
+          )}
 
           {/* Pagination */}
           {totalPages > 1 && (

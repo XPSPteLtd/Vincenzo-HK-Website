@@ -63,7 +63,7 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick, onDeliveryClick, lang }
               src={img}
               alt={`Authentic Pizzeria Atmosphere ${index + 1}`}
               fallbackPrompt="Professional cinematic shot of an authentic high-end Neapolitan pizzeria"
-              aspectRatio="16:9"
+              aspectRatio="9:16"
               className={`w-full h-full brightness-[0.7] md:brightness-[0.75] transform transition-transform duration-[10000ms] ease-out ${
                 index === currentSlide ? 'scale-110' : 'scale-100'
               }`}
@@ -135,7 +135,7 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick, onDeliveryClick, lang }
         </div>
         
         {/* CTA Buttons - Centered on Mobile, Bottom Left on Desktop */}
-        <div className="flex flex-col sm:flex-row gap-4 md:gap-5 justify-center md:justify-start items-center w-full max-w-[320px] sm:max-w-none">
+        <div className="flex flex-col sm:flex-row gap-4 md:gap-5 justify-center md:justify-start items-center w-full max-w-[320px] sm:max-w-none mb-12 md:mb-16">
           <button 
             onClick={onDeliveryClick}
             className="w-full sm:w-auto px-10 md:px-14 py-3.5 md:py-4 bg-transparent border border-white/30 text-white font-bold text-[10px] md:text-xs tracking-mega uppercase hover:bg-white hover:text-charcoal transition-all duration-300"

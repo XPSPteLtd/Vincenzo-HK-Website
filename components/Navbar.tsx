@@ -76,7 +76,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <img 
             src="https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo/LOGO-CAPUANO-white.png" 
             alt="Vincenzo Capuano Logo" 
-            className="h-10 md:h-12 lg:h-14 w-auto object-contain transition-transform duration-500 group-hover:scale-105" 
+            className="h-10 md:h-12 lg:h-[5.5rem] w-auto object-contain transition-transform duration-500 group-hover:scale-105" 
           />
         </a>
 
