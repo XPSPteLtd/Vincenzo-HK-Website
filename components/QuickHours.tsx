@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { X, Clock, Phone, MapPin, ChevronRight, Calendar, ExternalLink } from 'lucide-react';
-import { Language, translations } from '../translations';
+import { Language, translations } from '../translations_new';
 
 interface QuickHoursProps {
   isOpen: boolean;
@@ -11,6 +11,7 @@ interface QuickHoursProps {
 export const QuickHours: React.FC<QuickHoursProps> = ({ isOpen, onClose, lang }) => {
   const [isLiveOpen, setIsLiveOpen] = useState(false);
   const locationT = translations[lang].location;
+  const commonT = translations[lang].common;
 
   useEffect(() => {
     const checkStatus = () => {
@@ -49,7 +50,7 @@ export const QuickHours: React.FC<QuickHoursProps> = ({ isOpen, onClose, lang })
           <div className="flex justify-between items-center mb-8">
             <div className="flex items-center gap-3">
               <Clock size={20} className="text-gold" />
-              <h3 className="font-display text-xl text-white uppercase tracking-widest">Operating Hours</h3>
+              <h3 className="font-display text-xl text-white uppercase tracking-widest">{commonT.operatingHours}</h3>
             </div>
             <button onClick={onClose} className="p-2 hover:bg-white/5 rounded-full transition-colors">
               <X size={20} className="text-gray-400" />
@@ -60,9 +61,9 @@ export const QuickHours: React.FC<QuickHoursProps> = ({ isOpen, onClose, lang })
           <div className="mb-8 flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/10">
             <div className={`w-3 h-3 rounded-full ${isLiveOpen ? 'bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.5)]' : 'bg-red-500 shadow-[0_0_10px_rgba(239,68,68,0.5)]'} animate-pulse`}></div>
             <div>
-              <p className="text-[10px] uppercase font-bold tracking-widest text-gray-400 mb-0.5">Kitchen Status</p>
+              <p className="text-[10px] uppercase font-bold tracking-widest text-gray-400 mb-0.5">{commonT.kitchenStatus}</p>
               <p className={`text-sm font-bold uppercase tracking-widest ${isLiveOpen ? 'text-green-500' : 'text-red-500'}`}>
-                {isLiveOpen ? (lang === 'zh' ? '營業中' : 'Active • Open Now') : (lang === 'zh' ? '目前休息' : 'Standby • Closed')}
+                {isLiveOpen ? commonT.activeStatus : commonT.closedStatus}
               </p>
             </div>
           </div>
@@ -92,7 +93,7 @@ export const QuickHours: React.FC<QuickHoursProps> = ({ isOpen, onClose, lang })
               className="flex flex-col items-center justify-center p-4 bg-white/5 border border-white/10 rounded-2xl hover:bg-gold/10 hover:border-gold/30 transition-all group"
             >
               <Phone size={20} className="text-gold mb-2 group-hover:scale-110 transition-transform" />
-              <span className="text-[10px] font-bold uppercase tracking-widest text-white">{lang === 'zh' ? '立即致電' : 'Call Now'}</span>
+               <span className="text-[10px] font-bold uppercase tracking-widest text-white">{commonT.callNow}</span>
             </a>
             <button 
               onClick={openGoogleMaps}
@@ -102,7 +103,7 @@ export const QuickHours: React.FC<QuickHoursProps> = ({ isOpen, onClose, lang })
                 <MapPin size={20} className="text-gold group-hover:scale-110 transition-transform" />
                 <ExternalLink size={10} className="absolute -top-1 -right-3 text-gold/50" />
               </div>
-              <span className="text-[10px] font-bold uppercase tracking-widest text-gold">{lang === 'zh' ? '開啟導航' : 'Navigate'}</span>
+               <span className="text-[10px] font-bold uppercase tracking-widest text-gold">{commonT.navigate}</span>
             </button>
           </div>
 
@@ -110,7 +111,7 @@ export const QuickHours: React.FC<QuickHoursProps> = ({ isOpen, onClose, lang })
             onClick={scrollToLocation}
             className="w-full mt-4 py-3 text-[9px] text-gray-500 uppercase tracking-widest hover:text-white transition-colors flex items-center justify-center gap-2"
           >
-            {lang === 'zh' ? '查看分店詳情' : 'View Branch Details'}
+             {commonT.viewDetails}
             <ChevronRight size={10} />
           </button>
         </div>
@@ -125,8 +126,8 @@ export const QuickHours: React.FC<QuickHoursProps> = ({ isOpen, onClose, lang })
             />
             <span className="text-[8px] uppercase tracking-mega text-gray-500">Vincenzo Capuano HK</span>
           </div>
-          <p className="text-[8px] text-gray-600 uppercase tracking-widest">
-            {lang === 'zh' ? '灣仔皇后大道東200號地下' : "G/F, 200 Queen's Road East, Wan Chai"}
+           <p className="text-[8px] text-gray-600 uppercase tracking-widest">
+            {commonT.addressShort}
           </p>
         </div>
       </div>

@@ -1,7 +1,7 @@
 
 import React, { useEffect } from 'react';
 import { X, Users, Mail, Download, ChevronRight, Star, Award, MapPin, ExternalLink } from 'lucide-react';
-import { Language, translations } from '../translations';
+import { Language, translations } from '../translations_new';
 import { SafeImage } from './ui/SafeImage';
 
 interface EventsModalProps {
@@ -12,6 +12,8 @@ interface EventsModalProps {
 
 export const EventsModal: React.FC<EventsModalProps> = ({ isOpen, onClose, lang }) => {
   const t = translations[lang].nav;
+  const eventT = translations[lang].infoHub.events;
+  const modalT = translations[lang].modals;
   const locationT = translations[lang].location;
 
   useEffect(() => {
@@ -78,8 +80,8 @@ export const EventsModal: React.FC<EventsModalProps> = ({ isOpen, onClose, lang 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/20 to-transparent"></div>
               <div className="absolute bottom-8 left-8">
-                 <div className="bg-gold/90 text-charcoal px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 inline-block">
-                   Capacity: 60 Guests
+                <div className="bg-gold/90 text-charcoal px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 inline-block">
+                   {eventT.capacity}
                  </div>
                  <h2 className="text-4xl md:text-5xl font-serif italic text-white leading-tight">Host Your<br/>Masterpiece</h2>
               </div>
@@ -89,18 +91,18 @@ export const EventsModal: React.FC<EventsModalProps> = ({ isOpen, onClose, lang 
             <div className="p-8 md:p-12 space-y-10">
               <div className="space-y-4">
                 <p className="text-gray-400 text-sm leading-relaxed">
-                  From corporate galas to intimate celebrations, Vincenzo Capuano provides a high-energy, sophisticated atmosphere for Neapolitan excellence in Hong Kong.
+                  {eventT.description}
                 </p>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-white/5 border border-white/10 p-4 rounded-xl">
                     <Star size={16} className="text-gold mb-2" />
-                    <h4 className="text-white text-[10px] font-bold uppercase mb-1">Custom Menus</h4>
-                    <p className="text-[8px] text-gray-500 uppercase tracking-widest">Tailored to You</p>
+                    <h4 className="text-white text-[10px] font-bold uppercase mb-1">{eventT.tailoredMenus}</h4>
+                    <p className="text-[8px] text-gray-500 uppercase tracking-widest">{eventT.planning}</p>
                   </div>
                   <div className="bg-white/5 border border-white/10 p-4 rounded-xl">
                     <Award size={16} className="text-gold mb-2" />
-                    <h4 className="text-white text-[10px] font-bold uppercase mb-1">Buyouts</h4>
-                    <p className="text-[8px] text-gray-500 uppercase tracking-widest">Full Exclusivity</p>
+                    <h4 className="text-white text-[10px] font-bold uppercase mb-1">{eventT.fullBuyout}</h4>
+                    <p className="text-[8px] text-gray-500 uppercase tracking-widest">{eventT.corporate}</p>
                   </div>
                 </div>
               </div>
@@ -112,7 +114,7 @@ export const EventsModal: React.FC<EventsModalProps> = ({ isOpen, onClose, lang 
                       <Mail size={20} />
                     </div>
                     <div>
-                      <p className="text-[8px] text-gray-500 uppercase font-bold tracking-widest leading-none mb-1">Direct Inquiries</p>
+                      <p className="text-[8px] text-gray-500 uppercase font-bold tracking-widest leading-none mb-1">{eventT.directInquiries}</p>
                       <a href="mailto:events@vincenzocapuano.hk" className="text-lg text-white font-mono hover:text-gold transition-colors block">events@vincenzocapuano.hk</a>
                     </div>
                   </div>
@@ -124,8 +126,8 @@ export const EventsModal: React.FC<EventsModalProps> = ({ isOpen, onClose, lang 
                       <Download size={20} />
                     </div>
                     <div>
-                      <p className="text-[8px] text-gray-500 uppercase font-bold tracking-widest leading-none mb-1">Download Guide</p>
-                      <p className="text-lg text-white font-serif italic">Event Brochure PDF</p>
+                      <p className="text-[8px] text-gray-500 uppercase font-bold tracking-widest leading-none mb-1">{eventT.download}</p>
+                      <p className="text-lg text-white font-serif italic">{eventT.brochure}</p>
                     </div>
                   </div>
                   <ChevronRight size={20} className="text-gray-600 group-hover:text-gold transition-colors" />
@@ -134,10 +136,10 @@ export const EventsModal: React.FC<EventsModalProps> = ({ isOpen, onClose, lang 
 
               <div className="pt-6 border-t border-white/5 flex flex-col gap-3">
                  <button className="w-full bg-gold text-charcoal py-4 font-bold tracking-mega uppercase text-xs hover:bg-white transition-all shadow-xl shadow-gold/10">
-                   Request a Proposal
+                   {translations[lang].infoHub.overlay.request}
                  </button>
                  <button className="w-full border border-white/20 text-white py-4 font-bold tracking-mega uppercase text-xs hover:bg-white/10 transition-all">
-                   Book a Virtual Tour
+                   {eventT.viewPackages}
                  </button>
               </div>
 
@@ -149,9 +151,9 @@ export const EventsModal: React.FC<EventsModalProps> = ({ isOpen, onClose, lang 
                       <MapPin size={20} className="text-gold" />
                     </div>
                     <div>
-                      <h4 className="text-white font-display uppercase tracking-widest text-sm mb-1">{lang === 'zh' ? '旗艦店位置' : 'Flagship Location'}</h4>
+                      <h4 className="text-white font-display uppercase tracking-widest text-sm mb-1">{modalT.flagshipLocation}</h4>
                       <p className="text-gray-400 text-[11px] leading-relaxed">
-                        {lang === 'zh' ? '坐落於灣仔核心地帶，交通便利。' : 'Located in the heart of Wan Chai, Hong Kong.'}
+                        {modalT.locationDesc}
                       </p>
                     </div>
                   </div>
@@ -161,14 +163,14 @@ export const EventsModal: React.FC<EventsModalProps> = ({ isOpen, onClose, lang 
                       onClick={openGoogleMaps}
                       className="flex-1 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl py-3 px-4 flex items-center justify-center gap-2 transition-all group"
                     >
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-white">{lang === 'zh' ? '查看地圖' : 'View Map'}</span>
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-white">{lang === 'hk' ? '查看地圖' : 'View Map'}</span>
                       <ExternalLink size={12} className="text-gold group-hover:scale-110 transition-transform" />
                     </button>
                     <button 
                       onClick={scrollToLocation}
                       className="flex-1 bg-gold/5 hover:bg-gold/10 border border-gold/20 rounded-xl py-3 px-4 flex items-center justify-center gap-2 transition-all group"
                     >
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-gold">{lang === 'zh' ? '營業資訊' : 'Our Location'}</span>
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-gold">{lang === 'hk' ? '營業資訊' : 'Our Location'}</span>
                       <ChevronRight size={12} className="text-gold group-hover:translate-x-1 transition-transform" />
                     </button>
                   </div>

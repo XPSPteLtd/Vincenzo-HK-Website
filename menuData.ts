@@ -14,8 +14,12 @@ export const menuItems: MenuItem[] = [
   // ====================== ALA-CARTE ======================
   // THE WORLD CHAMPION
   {
-    id: "pwc-1", name: "PROVOLA E PEPE", description: "Smoked provola from the mountains, hand-crushed San Marzano tomatoes, pepper mix, seasoned roasted cherry tomatoes, evoo & basil. ★ ICONIC PIZZA WINNER THE 19TH WORLD CHAMPIONSHIP",
-    price: "$ 34", mainCategory: "Ala-carte", category: "Pizza — The World Champion", image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=800&auto=format&fit=crop", popular: true
+    id: "pwc-1", name: "PROVOLA E PEPE", nameZh: "煙燻芝士黑椒薄餅", 
+    description: "Smoked provola from the mountains, hand-crushed San Marzano tomatoes, pepper mix, seasoned roasted cherry tomatoes, evoo & basil. ★ ICONIC PIZZA WINNER THE 19TH WORLD CHAMPIONSHIP",
+    descriptionZh: "2019 世界冠軍作品。煙燻芝士、手壓番茄、特調胡椒及烤小番茄。",
+    price: "$ 34", mainCategory: "Ala-carte", category: "Pizza — The World Champion", categoryZh: "世界冠軍薄餅",
+    image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=800&auto=format&fit=crop", 
+    popular: true, chefNoteZh: "2019年世界冠軍作品。煙燻芝士與新鮮胡椒的平衡完美征服了評委。"
   },
   
   // THE BESTSELLER
@@ -24,16 +28,24 @@ export const menuItems: MenuItem[] = [
     price: "$ 32", mainCategory: "Ala-carte", category: "Pizza — The Bestseller", image: "https://images.unsplash.com/photo-1628840042765-356cda07504e?q=80&w=800&auto=format&fit=crop"
   },
   {
-    id: "pbs-2", name: "MARGHERITA", description: "San Marzano sauce, fior di latte, evoo & basil (+2 Add Garlic Chili Onion & Extra virgin olive oil)",
-    price: "$ 28", mainCategory: "Ala-carte", category: "Pizza — The Bestseller", image: "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?q=80&w=800&auto=format&fit=crop", popular: true, dietary: ["Vegetarian"]
+    id: "pbs-2", name: "MARGHERITA", nameZh: "瑪格麗特薄餅",
+    description: "San Marzano sauce, fior di latte, evoo & basil (+2 Add Garlic Chili Onion & Extra virgin olive oil)",
+    descriptionZh: "手壓番茄、高山莫札瑞拉芝士、初榨橄欖油及羅勒。",
+    price: "$ 28", mainCategory: "Ala-carte", category: "Pizza — The Bestseller", categoryZh: "暢銷薄餅",
+    image: "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?q=80&w=800&auto=format&fit=crop", 
+    popular: true, dietary: ["Vegetarian"], chefNoteZh: "薄餅之後。San Marzano 番茄和 Fior di Latte 芝士象徵著意大利的色彩。"
   },
   {
     id: "pbs-3", name: "MARGHERITA CON BUFALA", description: "Hand-crushed San Marzano tomatoes, bufala mozzarella DOP, evoo & basil (+2 Add Garlic Chili Onion & Extra virgin olive oil)",
     price: "$ 32", mainCategory: "Ala-carte", category: "Pizza — The Bestseller", image: "https://images.unsplash.com/photo-1595854341625-f33eeeb2680a?q=80&w=800&auto=format&fit=crop", dietary: ["Vegetarian"]
   },
   {
-    id: "pbs-4", name: "CENTRO CALABRIA", description: "For lovers of Calabrian Nduja. San Marzano sauce, smoked provola, Calabrian Nduja, Neapolitan sausage, evoo & basil",
-    price: "$ 33", mainCategory: "Ala-carte", category: "Pizza — The Bestseller", image: "https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?q=80&w=800&auto=format&fit=crop", dietary: ["Spicy"]
+    id: "pbs-4", name: "CENTRO CALABRIA", nameZh: "卡拉布里亞之星",
+    description: "For lovers of Calabrian Nduja. San Marzano sauce, smoked provola, Calabrian Nduja, Neapolitan sausage, evoo & basil",
+    descriptionZh: "San Marzano 番茄醬、煙燻芝士、卡拉布里亞辣肉醬、拿坡里肉腸、橄欖油及羅勒。",
+    price: "$ 33", mainCategory: "Ala-carte", category: "Pizza — The Bestseller", categoryZh: "暢銷薄餅",
+    image: "https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?q=80&w=800&auto=format&fit=crop", 
+    dietary: ["Spicy"], chefNoteZh: "香辣、大膽。卡拉布里亞辣肉醬融化在醬汁中，如同液態黃金。"
   },
   {
     id: "pbs-5", name: "DIAVOLA ALLA NONNO ENZO", description: "San Marzano sauce, fior di latte, spicy Napoli salami according to nonno Enzo tradition, evoo & basil",
@@ -148,8 +160,12 @@ export const menuItems: MenuItem[] = [
     price: "$ 15", mainCategory: "Ala-carte", category: "The Starters", image: "https://images.unsplash.com/photo-1593504049359-74330189a345?q=80&w=800&auto=format&fit=crop", dietary: ["Vegetarian"]
   },
   {
-    id: "st-7", name: "PARMIGIANA DI MELANZANE ALLA NONNO ENZO", description: "Over-baked eggplant parmigiana, San Marzano ragu, smoked provola, parmigiano, basil",
-    price: "$ 20", mainCategory: "Ala-carte", category: "The Starters", image: "https://images.unsplash.com/photo-1627042633145-b780d842bacb?q=80&w=800&auto=format&fit=crop", dietary: ["Vegetarian"]
+    id: "st-7", name: "PARMIGIANA DI MELANZANE ALLA NONNO ENZO", nameZh: "焗芝士千層茄子",
+    description: "Over-baked eggplant parmigiana, San Marzano ragu, smoked provola, parmigiano, basil",
+    descriptionZh: "番茄、炸茄子、帕馬森芝士及羅勒。遵循 Enzo 祖父的傳統食譜。",
+    price: "$ 20", mainCategory: "Ala-carte", category: "The Starters", categoryZh: "精選前菜",
+    image: "https://images.unsplash.com/photo-1627042633145-b780d842bacb?q=80&w=800&auto=format&fit=crop", 
+    dietary: ["Vegetarian"], chefNoteZh: "來自祖父 Enzo 的家傳食譜。關鍵在於將茄子切得極薄。"
   },
 
   // SALADS
@@ -184,8 +200,12 @@ export const menuItems: MenuItem[] = [
     price: "$ 36", mainCategory: "Ala-carte", category: "The Pastas & Mains", image: "https://images.unsplash.com/photo-1626844131082-256783844137?q=80&w=800&auto=format&fit=crop", popular: true
   },
   {
-    id: "pm-2", name: "CARBONARA", description: "Fettuccine, guanciale pork cheeks, egg yolk, parmigiano, pepper",
-    price: "$ 34", mainCategory: "Ala-carte", category: "The Pastas & Mains", image: "https://images.unsplash.com/photo-1612874742237-6526221588e3?q=80&w=800&auto=format&fit=crop", popular: true
+    id: "pm-2", name: "CARBONARA", nameZh: "傳統卡邦尼意粉",
+    description: "Fettuccine, guanciale pork cheeks, egg yolk, parmigiano, pepper",
+    descriptionZh: "自家製闊麵、慢煮伊比利亞豬頰肉、蛋黃及帕馬森芝士。",
+    price: "$ 34", mainCategory: "Ala-carte", category: "The Pastas & Mains", categoryZh: "手製意粉及主菜",
+    image: "https://images.unsplash.com/photo-1612874742237-6526221588e3?q=80&w=800&auto=format&fit=crop", 
+    popular: true, chefNoteZh: "絕不加忌廉！純粹以蛋黃、羊奶芝士和胡椒乳化而成。向羅馬傳統致敬。"
   },
   {
     id: "pm-3", name: "GAMBERO ALLA MARINARA", description: "Linguine, black tiger prawns, cherry tomatoes, lobster bisque sauce, brandy",
@@ -226,8 +246,12 @@ export const menuItems: MenuItem[] = [
 
   // SWEETS
   {
-    id: "sw-1", name: "TIRAMISU", description: "Mascarpone cream, pistachio, savoiardi biscuit, coffee & kahlua",
-    price: "$ 14", mainCategory: "Ala-carte", category: "The Sweets", image: "https://images.unsplash.com/photo-1571115177098-24edf646f906?q=80&w=800&auto=format&fit=crop", popular: true, dietary: ["Contains Nuts"]
+    id: "sw-1", name: "TIRAMISU", nameZh: "杏仁酒提拉米蘇",
+    description: "Mascarpone cream, pistachio, savoiardi biscuit, coffee & kahlua",
+    descriptionZh: "倫巴第馬斯卡彭芝士、手指餅乾、開心果碎、杏仁酒及燈籠果。",
+    price: "$ 14", mainCategory: "Ala-carte", category: "The Sweets", categoryZh: "甜品",
+    image: "https://images.unsplash.com/photo-1571115177098-24edf646f906?q=80&w=800&auto=format&fit=crop", 
+    popular: true, dietary: ["Contains Nuts"], chefNoteZh: "杏仁酒為咖啡浸透的手指餅乾增添了一抹溫暖的果仁香氣。"
   },
   {
     id: "sw-2", name: "CRÈME BRULEE", description: "Custard base, caramelized rapadura, berries",

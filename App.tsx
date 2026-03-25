@@ -16,7 +16,9 @@ import { QuickHours } from './components/QuickHours';
 import { Loader } from './components/Loader';
 import { Maintenance } from './components/Maintenance';
 import { MobileBottomNav } from './components/MobileBottomNav';
-import { Language } from './translations';
+import { Language } from './translations_new';
+
+export type Page = 'home' | 'menu' | 'contact';
 
 const App: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -24,6 +26,7 @@ const App: React.FC = () => {
   const [isEventsOpen, setIsEventsOpen] = useState(false);
   const [isHoursOpen, setIsHoursOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [activePage, setActivePage] = useState<Page>('home');
   const [lang, setLang] = useState<Language>(() => {
     const saved = localStorage.getItem('app_lang');
     return (saved as Language) || 'en';
@@ -31,8 +34,13 @@ const App: React.FC = () => {
 
   useEffect(() => {
     localStorage.setItem('app_lang', lang);
-    document.documentElement.lang = lang === 'zh' ? 'zh-HK' : 'en';
+    const htmlLang = lang === 'hk' ? 'zh-HK' : (lang === 'zh' ? 'zh-CN' : 'en');
+    document.documentElement.lang = htmlLang;
   }, [lang]);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [activePage]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -87,41 +95,55 @@ const App: React.FC = () => {
         onEventsClick={openEvents}
         onHoursClick={openHours}
         lang={lang} 
-        onLangChange={setLang} 
+        onLangChange={setLang}
+        activePage={activePage}
+        onPageChange={setActivePage}
       />
       
-      <Hero 
-        onBookClick={openModal} 
-        onDeliveryClick={openDelivery} 
-        lang={lang} 
-      />
+      {activePage === 'home' && (
+        <>
+          <Hero 
+            onBookClick={openModal} 
+            onDeliveryClick={openDelivery} 
+            lang={lang} 
+          />
+          <Signature lang={lang} />
+          <Testimonials lang={lang} />
+          <InfoHub lang={lang} />
+          <Social lang={lang} />
+        </>
+      )}
+
+      {activePage === 'menu' && (
+        <div className="pt-24 md:pt-32">
+          <Menu 
+            onDeliveryClick={openDelivery} 
+            lang={lang} 
+          />
+        </div>
+      )}
+
+      {activePage === 'contact' && (
+        <div className="pt-24 md:pt-32">
+          <Location 
+            onBookClick={openModal} 
+            lang={lang} 
+          />
+          <Social lang={lang} />
+        </div>
+      )}
       
-      <Signature lang={lang} />
-      
-      <Testimonials lang={lang} />
-      
-      <Menu 
-        onDeliveryClick={openDelivery} 
-        lang={lang} 
-      />
-      
-      <InfoHub lang={lang} />
-      
-      <Social lang={lang} />
-      
-      <Location 
-        onBookClick={openModal} 
-        lang={lang} 
-      />
-      
-      <Footer lang={lang} />
+      <Footer lang={lang} onPageChange={setActivePage} />
       
       <MobileBottomNav 
         onBookClick={openModal} 
         onDeliveryClick={openDelivery} 
         onEventsClick={openEvents}
         onHoursClick={openHours}
-        onMenuClick={clearOverlays}
+        onMenuClick={() => {
+          clearOverlays();
+          setActivePage('menu');
+        }}
         lang={lang} 
       />
       

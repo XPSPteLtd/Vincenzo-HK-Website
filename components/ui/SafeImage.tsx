@@ -47,7 +47,7 @@ export const SafeImage: React.FC<SafeImageProps> = ({
 
       try {
         const cached = await getCachedImage(fallbackPrompt, aspectRatio);
-        const targetSrc = cached || src;
+        const targetSrc = src || cached;
 
         // Only update and reset loaded state if the source is truly different
         if (targetSrc !== currentSrcRef.current) {

@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState, useRef } from 'react';
 import { Users, Pizza, Droplets, Wheat } from 'lucide-react';
-import { Language, translations } from '../translations';
+import { Language, translations } from '../translations_new';
 
 interface StatsProps {
   lang: Language;

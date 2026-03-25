@@ -2,7 +2,7 @@
 import React from 'react';
 import { Wheat } from 'lucide-react';
 import { SafeImage } from './ui/SafeImage';
-import { Language, translations } from '../translations';
+import { Language, translations } from '../translations_new';
 
 interface SignatureProps {
   lang: Language;
@@ -58,11 +58,11 @@ export const Signature: React.FC<SignatureProps> = ({ lang }) => {
           <div className="relative order-1 md:order-2">
             <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
                 <SafeImage 
-                  src="https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/pizza-eating.png" 
+                  src="https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/Family%20Baker%20Capuano-147.webp" 
                   alt="Vincenzo Capuano Signature Pizza Experience" 
                   fallbackPrompt="Professional lifestyle shot of someone enjoying an authentic Neapolitan pizza, contemporary setting, warm lighting"
                   aspectRatio="4:3"
-                  className="w-full h-[400px] md:h-[500px] lg:h-[600px]"
+                  className="w-full h-[350px] md:h-[450px] lg:h-[550px] rounded-2xl shadow-inner object-top"
                 />
                 <div className="absolute bottom-0 left-0 bg-gold p-6 md:p-8 max-w-[240px] md:max-w-xs">
                     <p className="text-charcoal font-light italic text-base md:text-lg leading-tight">

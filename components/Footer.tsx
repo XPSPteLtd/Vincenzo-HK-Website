@@ -1,14 +1,16 @@
 
 import React from 'react';
 import { Instagram } from 'lucide-react';
-import { Language } from '../translations';
+import { Language, translations } from '../translations_new';
+import { Page } from '../App';
 
 interface FooterProps {
   lang: Language;
+  onPageChange: (page: Page) => void;
 }
 
 // Fixed the FC type to accept lang prop as required by App.tsx
-export const Footer: React.FC<FooterProps> = ({ lang }) => {
+export const Footer: React.FC<FooterProps> = ({ lang, onPageChange }) => {
   return (
     <footer className="bg-black py-16 border-t border-white/10">
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col items-center">
@@ -35,7 +37,21 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
             <span>Instagram</span>
           </a>
           
-          {['Facebook', 'Concept', 'Privacy'].map((item) => (
+          <button 
+            onClick={() => onPageChange('home')}
+            className="text-gray-500 hover:text-white text-xs uppercase tracking-widest transition-colors"
+          >
+            {translations[lang].nav.philosophy}
+          </button>
+          
+          <button 
+            onClick={() => onPageChange('menu')}
+            className="text-gray-500 hover:text-white text-xs uppercase tracking-widest transition-colors"
+          >
+            {translations[lang].nav.menu}
+          </button>
+
+          {['Facebook', 'Privacy'].map((item) => (
             <a key={item} href="#" className="text-gray-500 hover:text-white text-xs uppercase tracking-widest transition-colors">
                 {item}
             </a>

@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { ShoppingBag } from 'lucide-react';
 import { SafeImage } from './ui/SafeImage';
-import { Language, translations } from '../translations';
+import { Language, translations } from '../translations_new';
 import { Stats } from './Stats';
 
 interface HeroProps {
@@ -12,12 +12,10 @@ interface HeroProps {
 }
 
 const backgroundImages = [
-  "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/hero/Family%20Baker%20Capuano-53.jpg",
-  "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/hero/Family%20Baker%20Capuano-55.jpg",
-  "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/hero/Family%20Baker%20Capuano-76.jpg",
-  "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/hero/Family%20Baker%20Capuano-77.jpg",
-  "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/hero/Family%20Baker%20Capuano-82.jpg",
-  "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/hero/Family%20Baker%20Capuano-96.jpg"
+  "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/hero-section/Family%20Baker%20Capuano-119.webp",
+  "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/hero-section/Family%20Baker%20Capuano-121.webp",
+  "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/hero-section/Family%20Baker%20Capuano-53%20(1).webp",
+  "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/hero-section/Family%20Baker%20Capuano-121.webp"
 ];
 
 export const Hero: React.FC<HeroProps> = ({ onBookClick, onDeliveryClick, lang }) => {
@@ -136,12 +134,14 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick, onDeliveryClick, lang }
         
         {/* CTA Buttons - Centered on Mobile, Bottom Left on Desktop */}
         <div className="flex flex-col sm:flex-row gap-4 md:gap-5 justify-center md:justify-start items-center w-full max-w-[320px] sm:max-w-none mb-12 md:mb-16">
+          {/* 
           <button 
             onClick={onDeliveryClick}
             className="w-full sm:w-auto px-10 md:px-14 py-3.5 md:py-4 bg-transparent border border-white/30 text-white font-bold text-[10px] md:text-xs tracking-mega uppercase hover:bg-white hover:text-charcoal transition-all duration-300"
           >
             {t.orderDelivery}
           </button>
+          */}
 
           <button 
             onClick={onBookClick}

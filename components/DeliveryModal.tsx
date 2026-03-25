@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { X, ShoppingBag, MapPin, Star, Clock, ChevronRight, CheckCircle2, Package, Bike, ArrowRight, Truck, PhoneCall } from 'lucide-react';
-import { Language, translations } from '../translations';
+import { Language, translations } from '../translations_new';
 
 type Platform = 'deliveroo' | 'foodpanda' | 'grab' | null;
 
@@ -146,15 +146,15 @@ export const DeliveryModal: React.FC<DeliveryModalProps> = ({ isOpen, onClose, l
                       <PhoneCall size={20} className="xs:size-6" />
                     </div>
                     <div className="text-left">
-                      <h4 className="font-bold text-base xs:text-lg">{lang === 'zh' ? '餐飲外送及活動' : 'Catering & Events'}</h4>
-                      <p className="text-[8px] xs:text-[10px] text-gray-400 uppercase tracking-widest">{lang === 'zh' ? '大額訂單專人服務' : 'Direct Large Order Concierge'}</p>
+                      <h4 className="font-bold text-base xs:text-lg">{t.cateringTitle}</h4>
+                      <p className="text-[8px] xs:text-[10px] text-gray-400 uppercase tracking-widest">{t.cateringDesc}</p>
                     </div>
                   </button>
                 </div>
               </div>
 
               <div className="mt-auto pt-8 text-center">
-                <p className="text-[9px] text-gray-400 uppercase tracking-[0.3em]">{lang === 'zh' ? '招牌當代拿坡里手工麵團' : 'Signature contemporary neapolitan dough'}</p>
+                <p className="text-[9px] text-gray-400 uppercase tracking-[0.3em]">{translations[lang].signature.neapolitan} {translations[lang].signature.contemporary}</p>
               </div>
             </div>
           ) : (
@@ -164,8 +164,8 @@ export const DeliveryModal: React.FC<DeliveryModalProps> = ({ isOpen, onClose, l
                 style={{ backgroundColor: currentPlatform?.color }}
               >
                 <div className="relative z-10">
-                  <h3 className="font-bold text-xl mb-1">{lang === 'zh' ? '高達 8 折優惠' : 'UP TO 20% OFF'}</h3>
-                  <p className="text-xs opacity-90">{lang === 'zh' ? '優惠碼：' : 'Use Code:'} {currentPlatform?.promoCode}</p>
+                  <h3 className="font-bold text-xl mb-1">{t.discountMsg}</h3>
+                  <p className="text-xs opacity-90">{t.promoCodeLabel} {currentPlatform?.promoCode}</p>
                 </div>
                 <div className="absolute -right-4 -bottom-4 opacity-20">
                    <ShoppingBag size={100} />
@@ -179,13 +179,13 @@ export const DeliveryModal: React.FC<DeliveryModalProps> = ({ isOpen, onClose, l
                   style={{ backgroundColor: currentPlatform?.color }}
                 >
                   <ArrowRight size={18} />
-                  {lang === 'zh' ? '開始模擬訂餐' : 'Start Simulated Order'}
+                  {t.simulatedOrder}
                 </button>
                 <button 
                   onClick={() => setSelectedPlatform(null)}
                   className="w-full py-2 text-[10px] text-gray-400 uppercase tracking-widest hover:text-charcoal transition-colors"
                 >
-                  {lang === 'zh' ? '切換平台' : 'Change Platform'}
+                  {t.changePlatform}
                 </button>
               </div>
             </div>
@@ -202,7 +202,7 @@ export const DeliveryModal: React.FC<DeliveryModalProps> = ({ isOpen, onClose, l
               />
               <span className="text-[9px] uppercase tracking-mega">Vincenzo Capuano HK</span>
            </div>
-           <span className="text-[9px] text-gray-600 uppercase tracking-widest font-bold">{lang === 'zh' ? '拿坡里薄餅專門店' : 'Luxury Pizzeria Management'}</span>
+           <span className="text-[9px] text-gray-600 uppercase tracking-widest font-bold">{t.managementLabel}</span>
         </div>
       </div>
     </div>

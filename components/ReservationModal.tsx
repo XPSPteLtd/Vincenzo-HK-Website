@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { X, ShieldCheck, Loader2 } from 'lucide-react';
-import { Language, translations } from '../translations';
+import { Language, translations } from '../translations_new';
 
 interface ReservationModalProps {
   isOpen: boolean;
@@ -68,28 +68,49 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({ isOpen, onCl
           </button>
         </div>
 
-        {/* Content Area - Seamless SevenRooms Embed */}
-        <div className="flex-1 relative bg-white">
-          {iframeLoading && (
-            <div className="absolute inset-0 z-20 bg-charcoal flex flex-col items-center justify-center text-center p-12">
-               <div className="relative mb-8">
-                 <div className="absolute inset-0 border border-gold/20 rounded-full animate-ping scale-150 opacity-20"></div>
-                 <div className="bg-gold/5 p-6 rounded-full border border-gold/10">
-                    <Loader2 size={32} className="text-gold animate-spin" />
-                 </div>
-               </div>
-               <h3 className="font-serif text-2xl text-white italic mb-2">{t.reservationLoading}</h3>
-               <p className="text-[10px] text-gray-500 uppercase tracking-mega">{t.reservationChecking}</p>
+        {/* Content Area - Coming Soon UI */}
+        <div className="flex-1 relative bg-charcoal flex flex-col items-center justify-center p-6 md:p-12 text-center overflow-y-auto">
+          <div className="max-w-md w-full space-y-8 animate-fade-in">
+            {/* Animated Decoration */}
+            <div className="relative flex justify-center">
+              <div className="absolute inset-0 bg-gold/5 blur-3xl rounded-full scale-150"></div>
+              <div className="relative p-6 border border-gold/20 rounded-2xl bg-black/40 backdrop-blur-sm">
+                <Loader2 size={48} className="text-gold animate-[spin_3s_linear_infinite]" />
+              </div>
             </div>
-          )}
-          
-          <iframe 
-            src="https://www.sevenrooms.com/reservations/vincenzosg"
-            className={`w-full h-full border-none transition-opacity duration-1000 ${iframeLoading ? 'opacity-0' : 'opacity-100'}`}
-            onLoad={() => setIframeLoading(false)}
-            title="SevenRooms Reservation"
-            allow="payment; geolocation"
-          />
+
+            <div className="space-y-4">
+              <h3 className="font-display text-3xl md:text-5xl text-white uppercase tracking-[0.2em]">
+                {t.comingSoonTitle}
+              </h3>
+              <div className="h-px w-12 bg-gold/50 mx-auto"></div>
+              <p className="text-gray-400 text-sm md:text-base font-light leading-relaxed">
+                {t.instagramPrompt}
+              </p>
+            </div>
+
+            <div className="pt-4">
+              <a 
+                href="https://www.instagram.com/vincenzocapuano.hk" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 px-10 py-4 bg-gold text-charcoal font-bold tracking-widest uppercase text-xs hover:bg-white transition-all duration-300 group shadow-xl shadow-gold/5"
+              >
+                <img 
+                  src="https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo/LOGO-CAPUANO-white.png" 
+                  alt="" 
+                  className="h-4 w-auto invert grayscale" 
+                />
+                {t.followUs}
+              </a>
+            </div>
+
+            <div className="pt-8 grid grid-cols-3 gap-4 opacity-50 grayscale">
+               {[1,2,3].map(i => (
+                 <div key={i} className="aspect-square bg-white/5 rounded-lg border border-white/5 animate-pulse"></div>
+               ))}
+            </div>
+          </div>
         </div>
 
         {/* Footer info bar */}

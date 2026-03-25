@@ -1,4 +1,5 @@
 import React from 'react';
+import { Language } from '../translations_new';
 // import removed as unused
 
 interface LoaderProps {

@@ -1,7 +1,8 @@
 
 import React, { useState, useEffect } from 'react';
 import { Menu as MenuIcon, X, ShoppingBag, Languages, Clock, Users, Phone } from 'lucide-react';
-import { Language, translations } from '../translations';
+import { Language, translations } from '../translations_new';
+import { Page } from '../App';
 
 interface NavbarProps {
   onBookClick: () => void;
@@ -10,6 +11,8 @@ interface NavbarProps {
   onHoursClick: () => void;
   lang: Language;
   onLangChange: (lang: Language) => void;
+  activePage: Page;
+  onPageChange: (page: Page) => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({ 
@@ -18,11 +21,14 @@ export const Navbar: React.FC<NavbarProps> = ({
   onEventsClick,
   onHoursClick,
   lang, 
-  onLangChange 
+  onLangChange,
+  activePage,
+  onPageChange
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const t = translations[lang].nav;
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,29 +38,16 @@ export const Navbar: React.FC<NavbarProps> = ({
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleNavLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleNavLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, page: Page) => {
     e.preventDefault();
-    const targetId = href.replace('#', '');
-    const element = document.getElementById(targetId);
-    if (element) {
-      const offset = 70;
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = element.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
+    onPageChange(page);
     setIsMobileMenuOpen(false);
   };
 
-  const navLinks = [
-    { name: t.menu, href: '#menu' },
-    { name: t.philosophy, href: '#concept' },
-    { name: t.location, href: '#location' },
+  const navLinks: { name: string; page: Page }[] = [
+    { name: t.menu, page: 'menu' },
+    { name: t.philosophy, page: 'home' },
+    { name: t.location, page: 'contact' },
   ];
 
   return (
@@ -69,8 +62,9 @@ export const Navbar: React.FC<NavbarProps> = ({
         {/* Brand Logo - Handover effect */}
         <a 
           href="#" 
+          onClick={(e) => { e.preventDefault(); onPageChange('home'); }}
           className={`flex items-center gap-2 md:gap-3 group transition-all duration-700 ${
-            isScrolled ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'
+            isScrolled ? 'opacity-100 translate-y-0' : 'opacity-100 translate-y-0'
           }`}
         >
           <img 
@@ -87,9 +81,11 @@ export const Navbar: React.FC<NavbarProps> = ({
             {navLinks.map((link) => (
               <a 
                 key={link.name} 
-                href={link.href}
-                onClick={(e) => handleNavLinkClick(e, link.href)}
-                className="text-[10px] lg:text-xs font-bold tracking-widest hover:text-gold transition-colors text-white uppercase cursor-pointer"
+                href="#"
+                onClick={(e) => handleNavLinkClick(e, link.page)}
+                className={`text-[10px] lg:text-xs font-bold tracking-widest hover:text-gold transition-colors uppercase cursor-pointer ${
+                  activePage === link.page ? 'text-gold' : 'text-white'
+                }`}
               >
                 {link.name}
               </a>
@@ -106,7 +102,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               className="text-[10px] lg:text-xs font-bold tracking-widest hover:text-gold transition-colors text-white uppercase flex items-center gap-1.5"
             >
               <Clock size={12} className="text-gold/50" />
-              {lang === 'zh' ? '時間' : 'Hours'}
+               {t.hours}
             </button>
           </div>
           
@@ -119,15 +115,30 @@ export const Navbar: React.FC<NavbarProps> = ({
               +852 1234 5678
             </a>
 
-            <button 
-              onClick={() => onLangChange(lang === 'en' ? 'zh' : 'en')}
-              className="text-[9px] lg:text-[10px] font-bold text-white/50 hover:text-gold transition-colors flex items-center gap-1"
-            >
-              <Languages size={12} className="text-gold/50" />
-              <span className="hidden lg:inline">{lang === 'en' ? '繁體中文' : 'ENGLISH'}</span>
-              <span className="lg:hidden">{lang === 'en' ? 'ZH' : 'EN'}</span>
-            </button>
+            <div className="flex items-center gap-2 lg:gap-3 text-[9px] lg:text-[10px] font-bold">
+               <button 
+                 onClick={() => onLangChange('en')}
+                 className={`hover:text-gold transition-colors tracking-widest ${lang === 'en' ? 'text-gold' : 'text-white/40'}`}
+               >
+                 EN
+               </button>
+               <span className="text-white/10">|</span>
+               <button 
+                 onClick={() => onLangChange('hk')}
+                 className={`hover:text-gold transition-colors tracking-widest ${lang === 'hk' ? 'text-gold' : 'text-white/40'}`}
+               >
+                 繁
+               </button>
+               <span className="text-white/10">|</span>
+               <button 
+                 onClick={() => onLangChange('zh')}
+                 className={`hover:text-gold transition-colors tracking-widest ${lang === 'zh' ? 'text-gold' : 'text-white/40'}`}
+               >
+                 简
+               </button>
+            </div>
 
+            {/* 
             <button 
               onClick={onDeliveryClick}
               className="flex items-center gap-1.5 text-[10px] lg:text-xs font-bold tracking-widest hover:text-gold transition-colors text-white uppercase"
@@ -135,6 +146,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               <ShoppingBag size={12} className="text-gold" />
               {t.order}
             </button>
+            */}
             
             <button 
               onClick={onBookClick}
@@ -154,12 +166,28 @@ export const Navbar: React.FC<NavbarProps> = ({
           >
             <Phone size={18} />
           </a>
-          <button 
-            onClick={() => onLangChange(lang === 'en' ? 'zh' : 'en')}
-            className="p-2 text-white/40 active:text-gold transition-colors"
-          >
-            <Languages size={18} />
-          </button>
+          <div className="flex items-center gap-1.5 text-[10px] font-bold mr-1">
+             <button 
+               onClick={() => onLangChange('en')}
+               className={`transition-colors ${lang === 'en' ? 'text-gold' : 'text-white/40'}`}
+             >
+               EN
+             </button>
+             <span className="text-white/10">|</span>
+             <button 
+               onClick={() => onLangChange('hk')}
+               className={`transition-colors ${lang === 'hk' ? 'text-gold' : 'text-white/40'}`}
+             >
+               繁
+             </button>
+             <span className="text-white/10">|</span>
+             <button 
+               onClick={() => onLangChange('zh')}
+               className={`transition-colors ${lang === 'zh' ? 'text-gold' : 'text-white/40'}`}
+             >
+               简
+             </button>
+          </div>
           <button 
             className="text-white p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -177,9 +205,11 @@ export const Navbar: React.FC<NavbarProps> = ({
           {navLinks.map((link, idx) => (
             <a 
               key={link.name}
-              href={link.href}
-              onClick={(e) => handleNavLinkClick(e, link.href)}
-              className="text-2xl font-serif text-white hover:text-gold transition-colors py-3 border-b border-white/5 flex justify-between items-center"
+              href="#"
+              onClick={(e) => handleNavLinkClick(e, link.page)}
+              className={`text-2xl font-serif hover:text-gold transition-colors py-3 border-b border-white/5 flex justify-between items-center ${
+                activePage === link.page ? 'text-gold' : 'text-white'
+              }`}
               style={{ transitionDelay: `${idx * 40}ms` }}
             >
               {link.name}
@@ -199,7 +229,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             onClick={() => { setIsMobileMenuOpen(false); onHoursClick(); }}
             className="text-2xl font-serif text-white hover:text-gold transition-colors py-3 border-b border-white/5 flex justify-between items-center"
           >
-            {lang === 'zh' ? '營業時間' : 'Hours'}
+             {t.hours}
             <Clock size={16} className="text-gold/20" />
           </button>
 
@@ -207,11 +237,12 @@ export const Navbar: React.FC<NavbarProps> = ({
             href="tel:+85212345678"
             className="text-2xl font-serif text-white hover:text-gold transition-colors py-3 border-b border-white/5 flex justify-between items-center"
           >
-            {lang === 'zh' ? '致電預約' : 'Call Us'}
+             {t.callUs}
             <Phone size={16} className="text-gold/20" />
           </a>
           
           <div className="mt-auto space-y-4 pb-24">
+            {/* 
             <button 
               onClick={() => {
                 setIsMobileMenuOpen(false);
@@ -222,6 +253,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               <ShoppingBag size={16} className="text-gold" />
               {t.order}
             </button>
+            */}
             
             <button 
               onClick={() => {

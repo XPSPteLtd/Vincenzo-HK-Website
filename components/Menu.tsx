@@ -4,7 +4,7 @@ import { menuItems } from '../menuData';
 import { Leaf, Flame, Star, ChevronLeft, ChevronRight, SearchX, ShoppingBag, Scissors, Info, Quote } from 'lucide-react';
 import { MenuItem } from '../types';
 import { SafeImage } from './ui/SafeImage';
-import { Language, translations } from '../translations';
+import { Language, translations } from '../translations_new';
 
 interface MenuProps {
   onDeliveryClick?: () => void;
@@ -33,7 +33,7 @@ const formatTitle = (name: string) => {
 };
 
 const getChefNote = (item: MenuItem, lang: Language) => {
-  if (lang === 'zh' && (item.chefNoteZh || item.chefNote)) return item.chefNoteZh || item.chefNote;
+  if (lang !== 'en' && (item.chefNoteZh || item.chefNote)) return item.chefNoteZh || item.chefNote;
   if (lang === 'en' && item.chefNote) return item.chefNote;
 
   // Dynamic fallback notes based on category for items missing notes in data
@@ -64,8 +64,8 @@ const MenuItemCard: React.FC<{
 }> = ({ item, lang, onDeliveryClick }) => {
   const t = translations[lang].menu;
   
-  const itemName = lang === 'zh' ? item.nameZh || item.name : formatTitle(item.name);
-  const itemDesc = lang === 'zh' ? item.descriptionZh || item.description : item.description;
+  const itemName = lang !== 'en' ? item.nameZh || item.name : formatTitle(item.name);
+  const itemDesc = lang !== 'en' ? item.descriptionZh || item.description : item.description;
   const chefNote = getChefNote(item, lang);
 
   return (
@@ -143,12 +143,12 @@ const MenuItemCard: React.FC<{
   );
 };
 
-const BeverageCard: React.FC<{ 
-  item: MenuItem; 
-  lang: Language; 
-}> = ({ item, lang }) => {
-  const itemName = lang === 'zh' ? item.nameZh || item.name : item.name;
-  const itemDesc = lang === 'zh' ? item.descriptionZh || item.description : item.description;
+   const BeverageCard: React.FC<{ 
+    item: MenuItem; 
+    lang: Language; 
+  }> = ({ item, lang }) => {
+    const itemName = lang !== 'en' ? item.nameZh || item.name : item.name;
+    const itemDesc = lang !== 'en' ? item.descriptionZh || item.description : item.description;
 
   return (
     <div className="group relative flex flex-col h-full bg-[#1a0a0a] border border-white/5 rounded-2xl p-6 md:p-8 transition-all duration-500 hover:border-gold/30 hover:shadow-2xl overflow-hidden min-h-[400px]">
@@ -165,7 +165,7 @@ const BeverageCard: React.FC<{
         {item.alcohol !== undefined && (
           <div className="mb-6">
             <span className="inline-block px-3 py-1 border border-blue-500/30 text-blue-400 text-[10px] md:text-xs font-bold uppercase tracking-widest rounded bg-blue-500/5">
-              {item.alcohol ? (lang === 'zh' ? '含有酒精' : 'CONTAINS ALCOHOL') : (lang === 'zh' ? '不含酒精' : 'NON-ALCOHOLIC')}
+              {item.alcohol ? (lang !== 'en' ? '含有酒精' : 'CONTAINS ALCOHOL') : (lang !== 'en' ? '不含酒精' : 'NON-ALCOHOLIC')}
             </span>
           </div>
         )}
@@ -208,7 +208,7 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
   const ITEMS_PER_PAGE = 6;
   
   const categories = useMemo(() => {
-    return [lang === 'en' ? 'All' : '全部', 'Ala-carte', 'Beverages'];
+    return [lang === 'en' ? 'All' : (lang === 'hk' ? '全部' : '全部'), 'Ala-carte', 'Beverages'];
   }, [lang]);
 
   const dietaryTags = useMemo(() => {
@@ -219,7 +219,7 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
     return Array.from(tags).sort();
   }, [items]);
 
-  const [activeCategory, setActiveCategory] = useState<string>(lang === 'en' ? 'All' : '全部');
+  const [activeCategory, setActiveCategory] = useState<string>(lang === 'en' ? 'All' : (lang === 'hk' ? '全部' : '全部'));
   const [activeDietary, setActiveDietary] = useState<string[]>([]);
   const [showPopular, setShowPopular] = useState<boolean>(false);
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -338,12 +338,10 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
               </div>
               <div>
                 <h4 className="text-white font-serif text-lg md:text-xl mb-1">
-                  {lang === 'zh' ? '關於我們的飲品服務' : 'About Our Drinks Service'}
+                  {t.aboutDrinks}
                 </h4>
                 <p className="text-gray-400 text-sm md:text-base font-light italic">
-                  {lang === 'zh' 
-                    ? '所有優質烈酒和精選葡萄酒均可按杯或整瓶形式供應，讓您靈活搭配用餐體驗。' 
-                    : 'Our premium spirits and curated wine selections are available by both the Glass and Bottle, offering ultimate flexibility for your dining experience.'}
+                  {t.drinksDesc}
                 </p>
               </div>
             </div>

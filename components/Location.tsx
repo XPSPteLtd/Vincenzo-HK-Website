@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { MapPin, Clock, Phone, ArrowRight, CalendarDays, Users, ExternalLink } from 'lucide-react';
-import { Language, translations } from '../translations';
+import { Language, translations } from '../translations_new';
 
 interface LocationProps {
   onBookClick: () => void;
@@ -29,7 +29,7 @@ export const Location: React.FC<LocationProps> = ({ onBookClick, lang }) => {
             <div className="group">
               <div className="flex items-center gap-4 mb-2 text-white group-hover:text-gold transition-colors">
                  <MapPin size={18} className="md:size-5" />
-                 <h3 className="text-xs font-bold tracking-widest uppercase">LOCATION</h3>
+                 <h3 className="text-xs font-bold tracking-widest uppercase">{t.locationLabel}</h3>
               </div>
               <div className="pl-8 md:pl-9 space-y-4">
                 <p className="text-gray-400 font-light leading-relaxed text-sm">
@@ -40,7 +40,7 @@ export const Location: React.FC<LocationProps> = ({ onBookClick, lang }) => {
                   className="flex items-center gap-2 bg-white/5 hover:bg-gold/10 border border-white/10 hover:border-gold/30 rounded-xl px-5 py-2.5 transition-all group/map w-fit shadow-lg shadow-black/20"
                 >
                   <span className="text-[10px] font-bold uppercase tracking-widest text-white group-hover/map:text-gold transition-colors">
-                    {lang === 'zh' ? '查看地圖' : 'View Map'}
+                    {t.viewMap}
                   </span>
                   <ExternalLink size={12} className="text-gold group-hover/map:scale-110 transition-transform" />
                 </button>
@@ -106,7 +106,7 @@ export const Location: React.FC<LocationProps> = ({ onBookClick, lang }) => {
                       <Users size={18} className="text-gold" />
                       <div>
                         <p className="text-[9px] md:text-[10px] uppercase text-gray-500 font-bold tracking-widest">{t.guests}</p>
-                        <p className="text-sm text-white font-mono">2 {lang === 'zh' ? '位' : 'People'}</p>
+                        <p className="text-sm text-white font-mono">2 {t.people}</p>
                       </div>
                     </div>
                     <ArrowRight size={14} className="text-gray-600 group-hover:text-gold transition-colors" />
@@ -117,7 +117,7 @@ export const Location: React.FC<LocationProps> = ({ onBookClick, lang }) => {
                       <Clock size={18} className="text-gold" />
                       <div>
                         <p className="text-[9px] md:text-[10px] uppercase text-gray-500 font-bold tracking-widest">{t.nextAvailable}</p>
-                        <p className="text-sm text-white font-mono">{lang === 'zh' ? '今日' : 'Today'}, 18:30</p>
+                        <p className="text-sm text-white font-mono">{t.today}, 18:30</p>
                       </div>
                     </div>
                     <ArrowRight size={14} className="text-gray-600 group-hover:text-gold transition-colors" />

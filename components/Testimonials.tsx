@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Quote, ChevronLeft, ChevronRight, Star, ExternalLink, ShieldCheck } from 'lucide-react';
 import { fetchGoogleReviews } from '../services/aiService';
-import { Language } from '../translations';
+import { Language, translations } from '../translations_new';
 
 interface Review {
   id: string | number;
@@ -87,10 +87,10 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ lang }) => {
                 className="h-10 w-auto mx-auto mb-8 animate-pulse grayscale brightness-200 opacity-30" 
             />
             <div className="space-y-3">
-                <h3 className="font-display text-lg text-white/80 tracking-[0.2em] uppercase">Retrieving Guest Chronicles</h3>
+                <h3 className="font-display text-lg text-white/80 tracking-[0.2em] uppercase">{translations[lang].testimonials.retrieving}</h3>
                 <div className="flex items-center justify-center gap-3">
                     <span className="h-px w-4 bg-gold/20"></span>
-                    <span className="text-[9px] text-gold/50 tracking-mega uppercase font-bold">Authenticating Feedback</span>
+                    <span className="text-[9px] text-gold/50 tracking-mega uppercase font-bold">{translations[lang].testimonials.authenticating}</span>
                     <span className="h-px w-4 bg-gold/20"></span>
                 </div>
             </div>
@@ -129,7 +129,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ lang }) => {
 
                      <div className="flex items-center gap-2 mb-8 bg-white/5 px-4 py-1.5 rounded-full border border-white/10">
                         <ShieldCheck size={12} className="text-green-500" />
-                        <span className="text-[9px] text-gray-400 uppercase tracking-mega font-bold">Verified Guest Experience</span>
+                        <span className="text-[9px] text-gray-400 uppercase tracking-mega font-bold">{translations[lang].testimonials.verified}</span>
                      </div>
 
                      <p className="font-serif text-2xl md:text-4xl text-white leading-relaxed italic mb-10 tracking-wide">
@@ -147,7 +147,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ lang }) => {
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-2 text-[10px] text-gray-500 hover:text-white uppercase tracking-widest group transition-colors"
                         >
-                          View Source <ExternalLink size={10} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                          {translations[lang].testimonials.viewSource} <ExternalLink size={10} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                         </a>
                      </div>
                 </div>
