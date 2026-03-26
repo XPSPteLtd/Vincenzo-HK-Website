@@ -32,7 +32,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 80);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -64,7 +64,9 @@ export const Navbar: React.FC<NavbarProps> = ({
           href="#" 
           onClick={(e) => { e.preventDefault(); onPageChange('home'); }}
           className={`flex items-center gap-2 md:gap-3 group transition-all duration-700 ${
-            isScrolled ? 'opacity-100 translate-y-0' : 'opacity-100 translate-y-0'
+            isScrolled || activePage !== 'home' 
+              ? 'opacity-100 translate-y-0 scale-100' 
+              : 'opacity-0 translate-y-8 scale-90 pointer-events-none'
           }`}
         >
           <img 
