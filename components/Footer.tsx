@@ -29,8 +29,8 @@ export const Footer: React.FC<FooterProps> = ({ lang, onPageChange }) => {
               <div className="flex items-start gap-4">
                 <MapPin size={20} className="text-gold shrink-0 mt-1" />
                 <p className="text-gray-400 text-sm md:text-base italic font-serif capitalize leading-relaxed">
-                  200 Queen's Rd E,<br />
-                  Wan Chai, Hong Kong
+                  Lee Tung Avenue,<br />
+                  GF Unit 01 04 05, Hong Kong
                 </p>
               </div>
             </div>
@@ -66,7 +66,7 @@ export const Footer: React.FC<FooterProps> = ({ lang, onPageChange }) => {
           <div className="flex flex-col h-[300px] md:h-full w-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative">
             <div className="absolute inset-0 pointer-events-none border border-white/5 z-10 rounded-2xl"></div>
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.6888636450257!2d114.16853511116631!3d22.290885143391854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34040061e8884de7%3A0xcda6b2aeb2885994!2s200%20Queen&#39;s%20Rd%20E%2C%20Wan%20Chai%2C%20Hong%20Kong!5e0!3m2!1sen!2sus!4v1714088998141!5m2!1sen!2sus" 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.8023180429!2d114.1706684760594!3d22.288764979695662!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404006093d9370f%3A0xe7f920fec3662d5!2sLee%20Tung%20Avenue!5e0!3m2!1sen!2shk!4v1714088998141!5m2!1sen!2shk" 
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 

@@ -16,6 +16,7 @@ import { QuickHours } from './components/QuickHours';
 import { Loader } from './components/Loader';
 import { Maintenance } from './components/Maintenance';
 import { MobileBottomNav } from './components/MobileBottomNav';
+import { AnnouncementBanner } from './components/AnnouncementBanner';
 import { FloatingActionButton } from './components/FloatingActionButton';
 import { Language } from './translations_new';
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
@@ -28,7 +29,16 @@ const App: React.FC = () => {
   const [isDeliveryOpen, setIsDeliveryOpen] = useState(false);
   const [isEventsOpen, setIsEventsOpen] = useState(false);
   const [isHoursOpen, setIsHoursOpen] = useState(false);
+  const [isBannerActive, setIsBannerActive] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Show banner after 3 seconds
+    const timer = setTimeout(() => {
+      setIsBannerActive(true);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, []);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -104,6 +114,7 @@ const App: React.FC = () => {
 
   return (
     <main className="bg-charcoal min-h-screen text-white selection:bg-gold selection:text-charcoal relative pb-20 md:pb-0">
+      <AnnouncementBanner lang={lang} onDismiss={() => setIsBannerActive(false)} isActive={isBannerActive} />
       <Loader isLoading={isLoading} />
       
       <Navbar 
@@ -115,6 +126,7 @@ const App: React.FC = () => {
         onLangChange={setLang}
         activePage={activePage}
         onPageChange={handlePageChange}
+        isBannerActive={isBannerActive}
       />
       
       <Routes>

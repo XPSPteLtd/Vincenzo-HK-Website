@@ -13,6 +13,7 @@ interface NavbarProps {
   onLangChange: (lang: Language) => void;
   activePage: Page;
   onPageChange: (page: Page) => void;
+  isBannerActive: boolean;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({ 
@@ -23,7 +24,8 @@ export const Navbar: React.FC<NavbarProps> = ({
   lang, 
   onLangChange,
   activePage,
-  onPageChange
+  onPageChange,
+  isBannerActive
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -52,7 +54,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <nav 
-      className={`fixed w-full z-[120] transition-all duration-700 ${
+      className={`fixed w-full z-[120] transition-all duration-700 ${isBannerActive ? 'top-10 md:top-12' : 'top-0'} ${
         isScrolled || activePage !== 'home'
           ? 'bg-charcoal/95 backdrop-blur-md py-3 md:py-4 shadow-2xl border-b border-white/5 lg:min-h-[10.5rem]' 
           : 'bg-transparent py-6 md:py-8 border-b border-transparent lg:min-h-[10.5rem]'

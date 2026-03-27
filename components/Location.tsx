@@ -53,10 +53,10 @@ export const Location: React.FC<LocationProps> = ({ onBookClick, lang }) => {
               </div>
               <div className="text-gray-400 font-light pl-8 md:pl-9 leading-relaxed space-y-2 text-sm">
                 <p>
-                  <span className="text-white/60 font-bold mr-2">{t.lunch}:</span> 12:00 – 15:00
+                  <span className="text-white/60 font-bold mr-2">{t.lunch}:</span> 12:00 – 23:00
                 </p>
                 <p>
-                  <span className="text-white/60 font-bold mr-2">{t.dinner}:</span> 18:00 – 23:00
+                  <span className="text-white/60 font-bold mr-2 uppercase tracking-widest text-[10px]">{t.dinner}</span>
                 </p>
               </div>
             </div>
@@ -95,7 +95,7 @@ export const Location: React.FC<LocationProps> = ({ onBookClick, lang }) => {
         <div className="relative min-h-[500px] md:h-auto flex items-center justify-center p-6 md:p-8 lg:p-12 overflow-hidden shadow-inner">
              <div className="absolute inset-0 z-0">
                <iframe 
-                 src="https://maps.google.com/maps?q=200%20Queen's%20Rd%20E,%20Wan%20Chai,%20Hong%20Kong&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+                 src="https://maps.google.com/maps?q=Vincenzo%20Capuano%20Hong%20Kong,%20Lee%20Tung%20Avenue&t=&z=16&ie=UTF8&iwloc=&output=embed" 
                  className="w-full h-full border-0 grayscale-[0.3] contrast-125 hover:grayscale-0 transition-all duration-1000"
                  allowFullScreen
                  loading="lazy"

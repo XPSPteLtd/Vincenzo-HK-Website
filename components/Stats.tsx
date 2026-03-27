@@ -29,10 +29,7 @@ export const Stats: React.FC<StatsProps> = ({ lang, embedded = false }) => {
     maxOvenCapacity: 5,
     bakeTimeMinutes: 2.5,
     prepTimeMinutes: 1.5, // Before & after oven
-    hours: {
-      lunch: { open: 12, close: 15 },
-      dinner: { open: 18, close: 23 }
-    }
+    hours: { open: 12, close: 23 }
   });
 
   useEffect(() => {
@@ -42,9 +39,8 @@ export const Stats: React.FC<StatsProps> = ({ lang, embedded = false }) => {
       const dayOfWeek = now.getDay(); 
       const isWeekend = dayOfWeek === 0 || dayOfWeek === 6 || (dayOfWeek === 5 && currentHour > 17);
 
-      const isLunchTime = currentHour >= config.current.hours.lunch.open && currentHour < config.current.hours.lunch.close;
-      const isDinnerTime = currentHour >= config.current.hours.dinner.open && currentHour < config.current.hours.dinner.close;
-      setIsOpen(isLunchTime || isDinnerTime);
+      const isOpenTime = currentHour >= config.current.hours.open && currentHour < config.current.hours.close;
+      setIsOpen(isOpenTime);
 
       const msSinceOpen = Math.max(0, now.getTime() - config.current.openingDate.getTime());
       const daysSinceOpen = msSinceOpen / (1000 * 60 * 60 * 24);
@@ -65,18 +61,11 @@ export const Stats: React.FC<StatsProps> = ({ lang, embedded = false }) => {
         return Math.max(0, 1 - Math.pow((current - mid) / halfDur, 2));
       };
 
-      // Only add session guests if we have actually passed the opening date
       if (msSinceOpen > 0) {
-        if (currentHour > config.current.hours.lunch.open) {
-          const intensity = getSessionIntensity(config.current.hours.lunch.open, config.current.hours.lunch.close, currentHour);
-          const elapsed = Math.min(currentHour, config.current.hours.lunch.close) - config.current.hours.lunch.open;
-          if (elapsed > 0) sessionGuests += (elapsed * 60 * intensity * (isWeekend ? 1.2 : 0.8));
-        }
-        
-        if (currentHour > config.current.hours.dinner.open) {
-          const intensity = getSessionIntensity(config.current.hours.dinner.open, config.current.hours.dinner.close, currentHour);
-          const elapsed = Math.min(currentHour, config.current.hours.dinner.close) - config.current.hours.dinner.open;
-          if (elapsed > 0) sessionGuests += (elapsed * 85 * intensity * (isWeekend ? 1.3 : 0.9));
+        if (currentHour > config.current.hours.open) {
+          const intensity = getSessionIntensity(config.current.hours.open, config.current.hours.close, currentHour);
+          const elapsed = Math.min(currentHour, config.current.hours.close) - config.current.hours.open;
+          if (elapsed > 0) sessionGuests += (elapsed * 75 * intensity * (isWeekend ? 1.3 : 0.85));
         }
       }
 
@@ -93,7 +82,6 @@ export const Stats: React.FC<StatsProps> = ({ lang, embedded = false }) => {
 
     const interval = setInterval(() => {
       const now = new Date();
-      // Ensure we only simulate activity if the restaurant has launched
       if (now < config.current.openingDate) return;
 
       const currentHour = now.getHours() + now.getMinutes() / 60;
@@ -102,12 +90,9 @@ export const Stats: React.FC<StatsProps> = ({ lang, embedded = false }) => {
 
       if (isOpen) {
         let intensity = 0;
-        if (currentHour >= 12 && currentHour < 15) {
-          const mid = 13.5;
-          intensity = 1 - Math.abs(currentHour - mid) / 1.5;
-        } else if (currentHour >= 18 && currentHour < 23) {
-          const mid = 20.5;
-          intensity = 1 - Math.abs(currentHour - mid) / 2.5;
+        if (currentHour >= 12 && currentHour < 23) {
+          const mid = 17.5;
+          intensity = 1 - Math.abs(currentHour - mid) / 5.5;
         }
 
         const arrivalChance = 0.3 * intensity * (isWeekend ? 1.5 : 1.0);

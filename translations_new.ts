@@ -19,6 +19,9 @@ export const translations = {
       bookNow: 'Book Now',
       orderDelivery: 'Order Delivery'
     },
+    banner: {
+      launch: 'Vincenzo Capuano Hong Kong: Launching April 1st at Lee Tung Avenue!'
+    },
     signature: {
       thePhilosophy: 'The Philosophy',
       contemporary: 'Contemporary',
@@ -64,10 +67,10 @@ export const translations = {
     location: {
       findUs: 'Find Us',
       hkCentral: 'Wan Chai, Hong Kong',
-      address: 'Shop G01, G04, G05 (G/F) & F01A (1/F), 200 Queen\'s Road East, Wan Chai, Hong Kong',
+      address: 'Vincenzo Capuano Hong Kong, Lee Tung Avenue, 200 Queens Road East, GF Unit 01 04 05',
       hours: 'Hours',
-      lunch: 'Lunch',
-      dinner: 'Dinner',
+      lunch: 'Open Daily',
+      dinner: '7 Days a Week',
       contact: 'GET IN TOUCH',
       makeReservation: 'Make a Reservation',
       reserveExperience: 'Reserve Your Experience',
@@ -83,12 +86,12 @@ export const translations = {
     common: {
       operatingHours: 'Operating Hours',
       kitchenStatus: 'Kitchen Status',
-      activeStatus: 'Active • Open Now',
+      activeStatus: 'Open 7 days',
       closedStatus: 'Standby • Closed',
       callNow: 'Call Now',
       navigate: 'Navigate',
       viewDetails: 'View Branch Details',
-      addressShort: "G/F, 200 Queen's Road East, Wan Chai"
+      addressShort: "Lee Tung Avenue, GF Unit 01 04 05"
     },
     modals: {
       reservationTitle: 'Booking Inquiry',
@@ -202,6 +205,9 @@ export const translations = {
       bookNow: '預約座席',
       orderDelivery: '外賣服務'
     },
+    banner: {
+      launch: 'Vincenzo Capuano 香港店：4月1日於利東街盛大開幕！'
+    },
     signature: {
       thePhilosophy: '品牌理念',
       contemporary: '當代風格',
@@ -247,10 +253,10 @@ export const translations = {
     location: {
       findUs: '親臨門店',
       hkCentral: '香港灣仔',
-      address: '香港灣仔皇后大道東200號地下G01, G04, G05及1樓F01A號舖',
+      address: '香港灣仔皇后大道東200號, 利東街地下 G01, 04, 05 號舖',
       hours: '營業時間',
-      lunch: '午市',
-      dinner: '晚市',
+      lunch: '每日營業',
+      dinner: '每週 7 天',
       contact: '聯絡方式',
       makeReservation: '立即訂座',
       reserveExperience: '預約您的美味體驗',
@@ -266,12 +272,12 @@ export const translations = {
     common: {
       operatingHours: '營業時間',
       kitchenStatus: '廚房狀態',
-      activeStatus: '營業中 • 歡迎蒞臨',
+      activeStatus: '每週 7 天營業',
       closedStatus: '目前休息 • 稍後再會',
       callNow: '立即致電',
       navigate: '開啟導航',
       viewDetails: '查看分店詳情',
-      addressShort: '灣仔皇后大道東200號地下'
+      addressShort: '利東街地下 G01, 04, 05 號舖'
     },
     modals: {
       reservationTitle: '座席預約',
@@ -382,6 +388,9 @@ export const translations = {
       philosophy: '「当代薄饼不只是一个流派，更是一套哲学。」',
       bookNow: '预约座席',
       orderDelivery: '外送服务'
+    },
+    banner: {
+      launch: 'Vincenzo Capuano 香港店：4月1日于利东街盛大开幕！'
     },
     signature: {
       thePhilosophy: '品牌理念',

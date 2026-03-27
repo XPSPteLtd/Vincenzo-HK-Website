@@ -17,9 +17,7 @@ export const QuickHours: React.FC<QuickHoursProps> = ({ isOpen, onClose, lang })
     const checkStatus = () => {
       const now = new Date();
       const hour = now.getHours() + now.getMinutes() / 60;
-      const isLunch = hour >= 12 && hour < 15;
-      const isDinner = hour >= 18 && hour < 23;
-      setIsLiveOpen(isLunch || isDinner);
+      setIsLiveOpen(hour >= 12 && hour < 23);
     };
     checkStatus();
     const timer = setInterval(checkStatus, 60000);
@@ -75,14 +73,7 @@ export const QuickHours: React.FC<QuickHoursProps> = ({ isOpen, onClose, lang })
                 <Calendar size={16} className="text-gold/50" />
                 <span className="text-xs uppercase tracking-widest text-gray-300 font-bold">{locationT.lunch}</span>
               </div>
-              <span className="font-mono text-white">12:00 — 15:00</span>
-            </div>
-            <div className="flex justify-between items-center py-3 border-b border-white/5">
-              <div className="flex items-center gap-3">
-                <Calendar size={16} className="text-gold/50" />
-                <span className="text-xs uppercase tracking-widest text-gray-300 font-bold">{locationT.dinner}</span>
-              </div>
-              <span className="font-mono text-white">18:00 — 23:00</span>
+              <span className="font-mono text-white">12:00 — 23:00</span>
             </div>
           </div>
 
