@@ -53,15 +53,15 @@ export const Navbar: React.FC<NavbarProps> = ({
   return (
     <nav 
       className={`fixed w-full z-[120] transition-all duration-700 ${
-        isScrolled 
-          ? 'bg-charcoal/95 backdrop-blur-md py-3 md:py-4 shadow-2xl border-b border-white/5' 
-          : 'bg-transparent py-6 md:py-8 border-b border-transparent'
+        isScrolled || activePage !== 'home'
+          ? 'bg-charcoal/95 backdrop-blur-md py-3 md:py-4 shadow-2xl border-b border-white/5 lg:min-h-[10.5rem]' 
+          : 'bg-transparent py-6 md:py-8 border-b border-transparent lg:min-h-[10.5rem]'
       }`}
     >
       <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 flex justify-between items-center">
         {/* Brand Logo - Handover effect */}
         <a 
-          href="#" 
+          href="/" 
           onClick={(e) => { e.preventDefault(); onPageChange('home'); }}
           className={`flex items-center gap-2 md:gap-3 group transition-all duration-700 ${
             isScrolled || activePage !== 'home' 
@@ -72,7 +72,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <img 
             src="https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo/LOGO-CAPUANO-white.png" 
             alt="Vincenzo Capuano Logo" 
-            className="h-10 md:h-12 lg:h-[5.5rem] w-auto object-contain transition-transform duration-500 group-hover:scale-105" 
+            className="h-12 md:h-16 lg:h-[8.5rem] w-auto object-contain transition-transform duration-500 group-hover:scale-105" 
           />
         </a>
 
@@ -83,7 +83,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             {navLinks.map((link) => (
               <a 
                 key={link.name} 
-                href="#"
+                href={link.page === 'home' ? '/' : `/${link.page}`}
                 onClick={(e) => handleNavLinkClick(e, link.page)}
                 className={`text-[10px] lg:text-xs font-bold tracking-widest hover:text-gold transition-colors uppercase cursor-pointer ${
                   activePage === link.page ? 'text-gold' : 'text-white'
@@ -92,6 +92,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 {link.name}
               </a>
             ))}
+            {/* 
             <button 
               onClick={onEventsClick}
               className="text-[10px] lg:text-xs font-bold tracking-widest hover:text-gold transition-colors text-white uppercase flex items-center gap-1.5"
@@ -99,6 +100,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               <Users size={12} className="text-gold/50" />
               {t.events}
             </button>
+            */}
             <button 
               onClick={onHoursClick}
               className="text-[10px] lg:text-xs font-bold tracking-widest hover:text-gold transition-colors text-white uppercase flex items-center gap-1.5"
@@ -131,6 +133,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                >
                  繁
                </button>
+               {/*
                <span className="text-white/10">|</span>
                <button 
                  onClick={() => onLangChange('zh')}
@@ -138,6 +141,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                >
                  简
                </button>
+               */}
             </div>
 
             {/* 
@@ -182,6 +186,7 @@ export const Navbar: React.FC<NavbarProps> = ({
              >
                繁
              </button>
+             {/*
              <span className="text-white/10">|</span>
              <button 
                onClick={() => onLangChange('zh')}
@@ -189,6 +194,7 @@ export const Navbar: React.FC<NavbarProps> = ({
              >
                简
              </button>
+             */}
           </div>
           <button 
             className="text-white p-2"
@@ -207,9 +213,9 @@ export const Navbar: React.FC<NavbarProps> = ({
           {navLinks.map((link, idx) => (
             <a 
               key={link.name}
-              href="#"
+              href={link.page === 'home' ? '/' : `/${link.page}`}
               onClick={(e) => handleNavLinkClick(e, link.page)}
-              className={`text-2xl font-serif hover:text-gold transition-colors py-3 border-b border-white/5 flex justify-between items-center ${
+              className={`text-2xl font-serif capitalize hover:text-gold transition-colors py-3 border-b border-white/5 flex justify-between items-center ${
                 activePage === link.page ? 'text-gold' : 'text-white'
               }`}
               style={{ transitionDelay: `${idx * 40}ms` }}
@@ -219,17 +225,19 @@ export const Navbar: React.FC<NavbarProps> = ({
             </a>
           ))}
           
+          {/*
           <button 
             onClick={() => { setIsMobileMenuOpen(false); onEventsClick(); }}
-            className="text-2xl font-serif text-white hover:text-gold transition-colors py-3 border-b border-white/5 flex justify-between items-center"
+            className="text-2xl font-serif capitalize text-white hover:text-gold transition-colors py-3 border-b border-white/5 flex justify-between items-center"
           >
             {t.events}
             <Users size={16} className="text-gold/20" />
           </button>
+          */}
 
           <button 
             onClick={() => { setIsMobileMenuOpen(false); onHoursClick(); }}
-            className="text-2xl font-serif text-white hover:text-gold transition-colors py-3 border-b border-white/5 flex justify-between items-center"
+            className="text-2xl font-serif capitalize text-white hover:text-gold transition-colors py-3 border-b border-white/5 flex justify-between items-center"
           >
              {t.hours}
             <Clock size={16} className="text-gold/20" />
@@ -237,7 +245,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           <a 
             href="tel:+85212345678"
-            className="text-2xl font-serif text-white hover:text-gold transition-colors py-3 border-b border-white/5 flex justify-between items-center"
+            className="text-2xl font-serif capitalize text-white hover:text-gold transition-colors py-3 border-b border-white/5 flex justify-between items-center"
           >
              {t.callUs}
             <Phone size={16} className="text-gold/20" />

@@ -1,5 +1,5 @@
-
 import React, { useMemo, useEffect, useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { menuItems } from '../menuData';
 import { Leaf, Flame, Star, ChevronLeft, ChevronRight, SearchX, ShoppingBag, Scissors, Info, Quote } from 'lucide-react';
 import { MenuItem } from '../types';
@@ -99,7 +99,7 @@ const MenuItemCard: React.FC<{
       {/* Content Area */}
       <div className="space-y-3 md:space-y-4 flex-1 flex flex-col">
         <div className="flex justify-between items-start">
-          <h3 className="font-serif text-xl md:text-2xl text-white group-hover:text-gold transition-colors leading-tight">
+          <h3 className="font-serif capitalize text-xl md:text-2xl text-white group-hover:text-gold transition-colors leading-tight">
             {itemName}
           </h3>
         </div>
@@ -127,7 +127,7 @@ const MenuItemCard: React.FC<{
                 </span>
               </div>
               
-              <p className="text-white text-sm md:text-base italic font-serif leading-relaxed relative z-10 drop-shadow-sm">
+              <p className="text-white text-sm md:text-base italic font-serif capitalize leading-relaxed relative z-10 drop-shadow-sm">
                 "{chefNote}"
               </p>
               
@@ -151,13 +151,13 @@ const MenuItemCard: React.FC<{
     const itemDesc = lang !== 'en' ? item.descriptionZh || item.description : item.description;
 
   return (
-    <div className="group relative flex flex-col h-full bg-[#1a0a0a] border border-white/5 rounded-2xl p-6 md:p-8 transition-all duration-500 hover:border-gold/30 hover:shadow-2xl overflow-hidden min-h-[400px]">
+    <div className="group relative flex flex-col h-full bg-white/[0.02] border border-white/5 rounded-2xl p-6 md:p-8 transition-all duration-500 hover:border-gold/20 hover:bg-white/[0.04] hover:shadow-2xl overflow-hidden min-h-[400px]">
       {/* Decorative Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-red-900/10 via-transparent to-transparent opacity-50"></div>
       
       <div className="relative z-10 flex flex-col h-full">
         {/* Title */}
-        <h3 className="font-serif text-3xl md:text-4xl text-white group-hover:text-gold transition-colors leading-tight mb-4 drop-shadow-md">
+        <h3 className="font-serif capitalize text-3xl md:text-4xl text-white group-hover:text-gold transition-colors leading-tight mb-4 drop-shadow-md">
           {itemName}
         </h3>
 
@@ -185,7 +185,7 @@ const MenuItemCard: React.FC<{
         )}
 
         {/* Description */}
-        <p className="text-gray-400 text-base md:text-lg italic font-serif leading-relaxed mb-8 drop-shadow-sm line-clamp-3">
+        <p className="text-gray-400 text-base md:text-lg italic font-serif capitalize leading-relaxed mb-8 drop-shadow-sm line-clamp-3">
           "{itemDesc.replace(/Glass \$/g, 'G $').replace(/Bottle \$/g, 'B $')}"
         </p>
 
@@ -219,14 +219,35 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
     return Array.from(tags).sort();
   }, [items]);
 
-  const [activeCategory, setActiveCategory] = useState<string>(lang === 'en' ? 'All' : (lang === 'hk' ? '全部' : '全部'));
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const [activeCategory, setActiveCategory] = useState<string>(() => {
+    const p = location.pathname.toLowerCase();
+    if (p.includes('alacarte') || p.includes('ala-carte')) return 'Ala-carte';
+    if (p.includes('beverage')) return 'Beverages';
+    return lang === 'en' ? 'All' : (lang === 'hk' ? '全部' : '全部');
+  });
+
   const [activeDietary, setActiveDietary] = useState<string[]>([]);
   const [showPopular, setShowPopular] = useState<boolean>(false);
   const [currentPage, setCurrentPage] = useState<number>(1);
 
   useEffect(() => {
-    setActiveCategory(lang === 'en' ? 'All' : '全部');
-  }, [lang]);
+    // Only reset if not explicitly on a deep link, or just rely on the URL
+    const p = location.pathname.toLowerCase();
+    if (p.includes('alacarte') || p.includes('ala-carte')) setActiveCategory('Ala-carte');
+    else if (p.includes('beverage')) setActiveCategory('Beverages');
+    else setActiveCategory(lang === 'en' ? 'All' : '全部');
+  }, [lang, location.pathname]);
+
+  const handleCategoryClick = (category: string) => {
+    setActiveCategory(category);
+    setCurrentPage(1);
+    if (category === 'Ala-carte') navigate('/menu/alacarte');
+    else if (category === 'Beverages') navigate('/menu/beverages');
+    else navigate('/menu');
+  };
 
   const filteredItems = useMemo(() => {
     return items.filter(item => {
@@ -266,7 +287,7 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-16 gap-8">
           <div className="w-full md:w-auto">
             <span className="text-gold tracking-[0.2em] md:tracking-mega text-[10px] md:text-xs uppercase font-bold block mb-3 md:mb-4">{t.tasteOfNapoli}</span>
-            <h2 className="font-display text-4xl md:text-6xl text-white uppercase leading-tight md:leading-none">{t.selectedWorks}</h2>
+            <h2 className="font-display text-4xl md:text-6xl text-white capitalize leading-tight md:leading-none">{t.selectedWorks}</h2>
           </div>
           
           {/* Horizontal Scroll Categories for Mobile */}
@@ -275,7 +296,7 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
               {categories.map((category) => (
                 <button
                   key={category}
-                  onClick={() => setActiveCategory(category)}
+                  onClick={() => handleCategoryClick(category)}
                   className={`text-xs md:text-sm tracking-[0.2em] uppercase transition-all pb-3 border-b-2 font-bold whitespace-nowrap ${
                     activeCategory === category ? 'text-white border-gold' : 'text-gray-600 border-transparent hover:text-gray-400'
                   }`}
@@ -337,7 +358,7 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
                 <Info size={24} className="text-gold" />
               </div>
               <div>
-                <h4 className="text-white font-serif text-lg md:text-xl mb-1">
+                <h4 className="text-white font-serif capitalize text-lg md:text-xl mb-1">
                   {t.aboutDrinks}
                 </h4>
                 <p className="text-gray-400 text-sm md:text-base font-light italic">
@@ -362,7 +383,7 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
               ).map(([category, catItems]: [string, MenuItem[]]) => (
                 <div key={category} className="animate-in fade-in slide-in-from-bottom-8 duration-1000">
                   <div className="flex items-center gap-6 mb-12">
-                    <h3 className="text-gold font-display text-2xl md:text-4xl uppercase tracking-wider whitespace-nowrap">
+                    <h3 className="text-gold font-display text-2xl md:text-4xl capitalize tracking-wider whitespace-nowrap">
                       {category}
                     </h3>
                     <div className="h-[2px] w-full bg-gradient-to-r from-gold/40 to-transparent"></div>
@@ -395,7 +416,7 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
               ) : (
                 <div className="col-span-full py-24 md:py-32 text-center">
                     <SearchX className="w-12 h-12 md:w-16 md:h-16 text-gray-700 mx-auto mb-6 md:mb-8" strokeWidth={1} />
-                    <h3 className="text-white font-serif text-2xl md:text-3xl mb-4 italic">{t.noItems}</h3>
+                    <h3 className="text-white font-serif capitalize text-2xl md:text-3xl mb-4 italic">{t.noItems}</h3>
                     <button 
                       onClick={() => {
                         setActiveCategory(lang === 'en' ? 'All' : '全部');
@@ -423,7 +444,7 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
                 <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
               </button>
               <div className="flex flex-col items-center">
-                <span className="text-gold font-display text-xl md:text-2xl tracking-widest">{currentPage} / {totalPages}</span>
+                <span className="text-gold font-display capitalize text-xl md:text-2xl tracking-widest">{currentPage} / {totalPages}</span>
               </div>
               <button
                 onClick={() => handlePageChange(currentPage + 1)}

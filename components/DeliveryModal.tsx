@@ -96,7 +96,7 @@ export const DeliveryModal: React.FC<DeliveryModalProps> = ({ isOpen, onClose, l
                   alt="Logo" 
                   className="h-4 w-auto object-contain" 
                 />
-                <span className="font-display uppercase tracking-widest text-lg">{t.deliveryTitle}</span>
+                <span className="font-display capitalize tracking-widest text-lg">{t.deliveryTitle}</span>
               </>
             )}
           </div>
@@ -110,7 +110,7 @@ export const DeliveryModal: React.FC<DeliveryModalProps> = ({ isOpen, onClose, l
             /* PLATFORM SELECTION VIEW */
             <div className="p-6 xs:p-8 flex flex-col h-full animate-fade-in">
               <div className="mb-6 xs:mb-8 text-center px-4">
-                <h3 className="font-serif text-2xl xs:text-3xl mb-2 italic">{t.deliveryAnywhere}</h3>
+                <h3 className="font-serif capitalize text-2xl xs:text-3xl mb-2 italic">{t.deliveryAnywhere}</h3>
                 <p className="text-[10px] xs:text-xs text-gray-500 uppercase tracking-mega">{t.deliverySelect}</p>
               </div>
 

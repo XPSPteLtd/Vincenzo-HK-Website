@@ -60,7 +60,7 @@ export const EventsModal: React.FC<EventsModalProps> = ({ isOpen, onClose, lang 
         <div className="px-6 py-4 flex justify-between items-center bg-charcoal border-b border-white/10 shrink-0">
           <div className="flex items-center gap-3">
             <Users size={18} className="text-gold" />
-            <span className="font-display uppercase tracking-widest text-lg text-white">{t.events}</span>
+            <span className="font-display capitalize tracking-widest text-lg text-white">{t.events}</span>
           </div>
           <button onClick={onClose} className="p-2 hover:bg-white/5 rounded-full transition-colors">
             <X size={24} className="text-gray-400 hover:text-white" />
@@ -83,7 +83,7 @@ export const EventsModal: React.FC<EventsModalProps> = ({ isOpen, onClose, lang 
                 <div className="bg-gold/90 text-charcoal px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 inline-block">
                    {eventT.capacity}
                  </div>
-                 <h2 className="text-4xl md:text-5xl font-serif italic text-white leading-tight">Host Your<br/>Masterpiece</h2>
+                 <h2 className="text-4xl md:text-5xl font-serif capitalize italic text-white leading-tight">Host Your<br/>Masterpiece</h2>
               </div>
             </div>
 
@@ -115,7 +115,7 @@ export const EventsModal: React.FC<EventsModalProps> = ({ isOpen, onClose, lang 
                     </div>
                     <div>
                       <p className="text-[8px] text-gray-500 uppercase font-bold tracking-widest leading-none mb-1">{eventT.directInquiries}</p>
-                      <a href="mailto:events@vincenzocapuano.hk" className="text-lg text-white font-mono hover:text-gold transition-colors block">events@vincenzocapuano.hk</a>
+                      <p className="text-lg text-white font-mono block">+852 1234 5678</p>
                     </div>
                   </div>
                 </div>
@@ -127,7 +127,7 @@ export const EventsModal: React.FC<EventsModalProps> = ({ isOpen, onClose, lang 
                     </div>
                     <div>
                       <p className="text-[8px] text-gray-500 uppercase font-bold tracking-widest leading-none mb-1">{eventT.download}</p>
-                      <p className="text-lg text-white font-serif italic">{eventT.brochure}</p>
+                      <p className="text-lg text-white font-serif capitalize italic">{eventT.brochure}</p>
                     </div>
                   </div>
                   <ChevronRight size={20} className="text-gray-600 group-hover:text-gold transition-colors" />
@@ -151,7 +151,7 @@ export const EventsModal: React.FC<EventsModalProps> = ({ isOpen, onClose, lang 
                       <MapPin size={20} className="text-gold" />
                     </div>
                     <div>
-                      <h4 className="text-white font-display uppercase tracking-widest text-sm mb-1">{modalT.flagshipLocation}</h4>
+                      <h4 className="text-white font-display capitalize tracking-widest text-sm mb-1">{modalT.flagshipLocation}</h4>
                       <p className="text-gray-400 text-[11px] leading-relaxed">
                         {modalT.locationDesc}
                       </p>

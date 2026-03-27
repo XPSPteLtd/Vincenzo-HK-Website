@@ -61,8 +61,7 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick, onDeliveryClick, lang }
               src={img}
               alt={`Authentic Pizzeria Atmosphere ${index + 1}`}
               fallbackPrompt="Professional cinematic shot of an authentic high-end Neapolitan pizzeria"
-              aspectRatio="9:16"
-              className={`w-full h-full brightness-[0.7] md:brightness-[0.75] transform transition-transform duration-[10000ms] ease-out ${
+              className={`w-full h-full object-cover object-center brightness-[0.7] md:brightness-[0.75] transform transition-transform duration-[10000ms] ease-out ${
                 index === currentSlide ? 'scale-110' : 'scale-100'
               }`}
             />
@@ -127,7 +126,7 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick, onDeliveryClick, lang }
             <span className="text-gold tracking-[0.2em] md:tracking-mega text-[10px] md:text-xs uppercase font-bold drop-shadow-sm block mb-4 opacity-80">
               {t.tasteOfNapoli}
             </span>
-            <p className="text-white text-sm md:text-base lg:text-lg font-serif italic tracking-wide drop-shadow-md leading-relaxed md:border-l-2 border-gold/40 md:pl-6 max-w-lg">
+            <p className="text-white text-sm md:text-base lg:text-lg font-serif capitalize italic tracking-wide drop-shadow-md leading-relaxed md:border-l-2 border-gold/40 md:pl-6 max-w-lg">
               {t.philosophy}
             </p>
         </div>

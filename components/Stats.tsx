@@ -163,7 +163,7 @@ export const Stats: React.FC<StatsProps> = ({ lang, embedded = false }) => {
                         {isOpen ? (lang === 'en' ? "Kitchen Activity: ACTIVE" : "實時廚房狀態：營業中") : (lang === 'en' ? "System Standby: CLOSED" : "系統待命：目前暫停營業")}
                     </span>
                  </div>
-                 {!embedded && <h2 className="text-3xl font-display text-white uppercase tracking-mega">{t.performance}</h2>}
+                 {!embedded && <h2 className="text-3xl font-display text-white capitalize tracking-mega">{t.performance}</h2>}
               </div>
            </div>
 

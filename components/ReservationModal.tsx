@@ -52,7 +52,7 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({ isOpen, onCl
               />
             </div>
             <div>
-              <h2 className="font-display text-lg xs:text-xl md:text-2xl text-white uppercase tracking-wider">{t.reservationTitle}</h2>
+              <h2 className="font-display text-lg xs:text-xl md:text-2xl text-white capitalize tracking-wider">{t.reservationTitle}</h2>
               <div className="flex items-center gap-2 mt-0.5">
                  <ShieldCheck size={10} className="text-green-500" />
                  <span className="text-[8px] xs:text-[9px] text-gray-500 uppercase tracking-widest font-bold">{t.reservationSecure}</span>
@@ -80,7 +80,7 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({ isOpen, onCl
             </div>
 
             <div className="space-y-4">
-              <h3 className="font-display text-3xl md:text-5xl text-white uppercase tracking-[0.2em]">
+              <h3 className="font-display text-3xl md:text-5xl text-white capitalize tracking-[0.2em]">
                 {t.comingSoonTitle}
               </h3>
               <div className="h-px w-12 bg-gold/50 mx-auto"></div>

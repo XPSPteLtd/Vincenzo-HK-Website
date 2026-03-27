@@ -85,7 +85,7 @@ export const Social: React.FC<SocialProps> = ({ lang }) => {
       <div className="max-w-7xl mx-auto px-6 md:px-12 mb-12 flex flex-col md:flex-row justify-between items-end gap-6">
         <div>
           <span className="text-gold tracking-mega text-[10px] xs:text-xs uppercase font-bold block mb-3 xs:mb-4">Social Media</span>
-          <h2 className="font-display text-3xl xs:text-4xl md:text-5xl text-white uppercase leading-none">Follow The<br/>Journey</h2>
+          <h2 className="font-display text-3xl xs:text-4xl md:text-5xl text-white capitalize leading-none">Follow The<br/>Journey</h2>
         </div>
         
         <a 

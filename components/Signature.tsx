@@ -13,7 +13,7 @@ export const Signature: React.FC<SignatureProps> = ({ lang }) => {
 
   return (
     <section id="concept" className="py-24 md:py-32 bg-charcoal relative overflow-hidden">
-      <div className="absolute top-20 left-0 text-[10rem] xs:text-[15rem] md:text-[20rem] font-serif text-white/[0.02] leading-none select-none pointer-events-none">081</div>
+      <div className="absolute top-20 left-0 text-[10rem] xs:text-[15rem] md:text-[20rem] font-serif capitalize text-white/[0.02] leading-none select-none pointer-events-none">081</div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -21,7 +21,7 @@ export const Signature: React.FC<SignatureProps> = ({ lang }) => {
           <div className="space-y-10 md:space-y-12 order-2 md:order-1">
             <div>
               <span className="text-gold font-bold tracking-mega text-[10px] md:text-xs uppercase mb-4 block">{t.thePhilosophy}</span>
-              <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-white mb-6 md:mb-8 leading-none">
+              <h2 className="font-display capitalize text-4xl md:text-5xl lg:text-6xl text-white mb-6 md:mb-8 leading-none">
                 {t.contemporary} <br/>
                 <span className="text-gray-500">{t.neapolitan}</span>
               </h2>
@@ -32,7 +32,7 @@ export const Signature: React.FC<SignatureProps> = ({ lang }) => {
 
             <div className="space-y-8 md:space-y-10 border-l border-white/10 pl-6 md:pl-8">
               <div className="relative">
-                <h3 className="text-lg md:text-xl font-serif text-white mb-3 flex items-center gap-3">
+                <h3 className="text-lg md:text-xl font-serif capitalize text-white mb-3 flex items-center gap-3">
                     <Wheat className="text-gold w-5 h-5" /> {t.nuvolaTitle}
                 </h3>
                 <p className="text-gray-500 text-xs md:text-sm leading-relaxed max-w-sm">
@@ -41,7 +41,7 @@ export const Signature: React.FC<SignatureProps> = ({ lang }) => {
               </div>
 
               <div className="relative">
-                <h3 className="text-lg md:text-xl font-serif text-white mb-3 flex items-center gap-3">
+                <h3 className="text-lg md:text-xl font-serif capitalize text-white mb-3 flex items-center gap-3">
                     <img 
                       src="https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo/LOGO-CAPUANO-white.png" 
                       alt="Logo" 

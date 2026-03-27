@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { MapPin, Clock, Phone, ArrowRight, CalendarDays, Users, ExternalLink } from 'lucide-react';
+import { MapPin, Clock, Phone, ArrowRight, CalendarDays, Users, ExternalLink, Train } from 'lucide-react';
 import { Language, translations } from '../translations_new';
 
 interface LocationProps {
@@ -23,7 +22,7 @@ export const Location: React.FC<LocationProps> = ({ onBookClick, lang }) => {
         
         <div className="flex flex-col justify-center p-6 xs:p-8 md:p-12 lg:p-24 border-b md:border-b-0 md:border-r border-white/5">
           <span className="text-gold tracking-mega text-[9px] xs:text-[10px] md:text-xs uppercase font-bold mb-4 xs:mb-6 block">{t.findUs}</span>
-          <h2 className="font-display text-3xl xs:text-4xl md:text-5xl text-white mb-8 md:mb-12 uppercase leading-none">{t.hkCentral}</h2>
+          <h2 className="font-display text-3xl xs:text-4xl md:text-5xl text-white mb-8 md:mb-12 capitalize leading-none">{t.hkCentral}</h2>
           
           <div className="space-y-8 md:space-y-12">
             <div className="group">
@@ -64,12 +63,22 @@ export const Location: React.FC<LocationProps> = ({ onBookClick, lang }) => {
 
             <div className="group">
                <div className="flex items-center gap-4 mb-2 text-white group-hover:text-gold transition-colors">
+                 <Train size={18} className="md:size-5" />
+                 <h3 className="text-xs font-bold tracking-widest uppercase">{t.transit || 'Transit'}</h3>
+              </div>
+              <p className="text-gray-400 font-light pl-8 md:pl-9 leading-relaxed text-sm">
+                MTR Wan Chai Station – Exit D<br />
+                <span className="text-white/50 text-[10px] uppercase">5 Minutes Walk</span>
+              </p>
+            </div>
+
+            <div className="group">
+               <div className="flex items-center gap-4 mb-2 text-white group-hover:text-gold transition-colors">
                  <Phone size={18} className="md:size-5" />
                  <h3 className="text-xs font-bold tracking-widest uppercase">{t.contact}</h3>
               </div>
               <p className="text-gray-400 font-light pl-8 md:pl-9 leading-relaxed text-sm">
-                <a href="tel:+85212345678" className="hover:text-gold transition-colors">+852 1234 5678</a><br />
-                booking@vincenzocapuano.hk
+                <a href="tel:+85212345678" className="hover:text-gold transition-colors">+852 1234 5678</a>
               </p>
             </div>
           </div>
@@ -78,25 +87,27 @@ export const Location: React.FC<LocationProps> = ({ onBookClick, lang }) => {
             onClick={onBookClick}
             className="mt-12 md:mt-16 group flex items-center gap-4 text-white hover:text-gold transition-colors w-fit"
           >
-            <span className="font-display text-base md:text-lg tracking-widest uppercase border-b border-white/20 pb-1 group-hover:border-gold">{t.makeReservation}</span>
+            <span className="font-display text-base md:text-lg tracking-widest capitalize border-b border-white/20 pb-1 group-hover:border-gold">{t.makeReservation}</span>
             <ArrowRight className="group-hover:translate-x-2 transition-transform duration-300" />
           </button>
         </div>
 
-        <div className="relative min-h-[500px] md:h-auto flex items-center justify-center p-6 md:p-8 lg:p-12 overflow-hidden">
+        <div className="relative min-h-[500px] md:h-auto flex items-center justify-center p-6 md:p-8 lg:p-12 overflow-hidden shadow-inner">
              <div className="absolute inset-0 z-0">
-               <img 
-                 src="https://images.unsplash.com/photo-1579751626657-72bc17010498?q=80&w=2069&auto=format&fit=crop" 
-                 alt="Pizzeria Atmosphere" 
-                 className="w-full h-full object-cover opacity-30 grayscale"
-               />
-               <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/50 to-charcoal"></div>
+               <iframe 
+                 src="https://maps.google.com/maps?q=200%20Queen's%20Rd%20E,%20Wan%20Chai,%20Hong%20Kong&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+                 className="w-full h-full border-0 grayscale-[0.3] contrast-125 hover:grayscale-0 transition-all duration-1000"
+                 allowFullScreen
+                 loading="lazy"
+                 referrerPolicy="no-referrer-when-downgrade"
+                 title="Vincenzo Capuano Hong Kong Location"
+               ></iframe>
              </div>
              
-             <div className="relative z-10 w-full max-w-sm lg:max-w-md bg-white/[0.03] backdrop-blur-xl border border-white/10 p-8 md:p-10 lg:p-12 shadow-2xl rounded-2xl">
+             <div className="relative z-10 w-full max-w-sm lg:max-w-md bg-charcoal/90 backdrop-blur-xl border border-white/10 p-8 md:p-10 lg:p-12 shadow-2xl rounded-2xl">
                 <div className="text-center mb-8 md:mb-10">
                   <CalendarDays size={32} className="text-gold mx-auto mb-6 md:size-10" strokeWidth={1} />
-                  <h3 className="font-serif text-2xl lg:text-3xl text-white mb-2 italic">{t.reserveExperience}</h3>
+                  <h3 className="font-serif capitalize text-2xl lg:text-3xl text-white mb-2 italic">{t.reserveExperience}</h3>
                   <p className="text-gray-400 text-[10px] tracking-widest uppercase mt-2">{t.checkAvailability}</p>
                 </div>
 

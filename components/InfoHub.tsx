@@ -8,9 +8,10 @@ type InfoTab = 'operations' | 'events' | 'seasonal' | 'heritage';
 
 interface InfoHubProps {
   lang: Language;
+  onBookClick: () => void;
 }
 
-export const InfoHub: React.FC<InfoHubProps> = ({ lang }) => {
+export const InfoHub: React.FC<InfoHubProps> = ({ lang, onBookClick }) => {
   const [activeTab, setActiveTab] = useState<InfoTab>('operations');
   const [showEventDeepDive, setShowEventDeepDive] = useState(false);
   const t = translations[lang].infoHub;
@@ -25,13 +26,13 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang }) => {
   return (
     <section id="info-hub" className="py-20 md:py-24 bg-charcoal border-t border-white/5 relative overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute -right-10 top-40 text-[8rem] xs:text-[10rem] md:text-[15rem] font-serif text-white/[0.01] leading-none pointer-events-none select-none">INFO</div>
+      <div className="absolute -right-10 top-40 text-[8rem] xs:text-[10rem] md:text-[15rem] font-serif capitalize text-white/[0.01] leading-none pointer-events-none select-none">INFO</div>
       
       <div className="max-w-7xl mx-auto px-5 md:px-12">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-12 gap-6 md:gap-8">
           <div>
             <span className="text-gold tracking-[0.2em] md:tracking-mega text-[10px] md:text-xs uppercase font-bold block mb-3 md:mb-4">{t.badge}</span>
-            <h2 className="font-display text-3xl md:text-5xl text-white uppercase leading-tight">{t.title}</h2>
+            <h2 className="font-display text-3xl md:text-5xl text-white capitalize leading-tight">{t.title}</h2>
           </div>
 
           {/* Horizontal Scroll Tab Navigation */}
@@ -61,7 +62,7 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang }) => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               <div className="md:col-span-2 bg-surface border border-white/10 p-6 md:p-10 lg:p-12 rounded-3xl relative overflow-hidden group">
                 <div className="relative z-10">
-                  <h3 className="text-2xl md:text-3xl font-serif italic text-white mb-8 md:mb-10">{t.operations.title}</h3>
+                  <h3 className="text-2xl md:text-3xl font-serif capitalize italic text-white mb-8 md:mb-10">{t.operations.title}</h3>
                   <div className="space-y-8 md:space-y-10">
                     {/* Lunch Section */}
                     <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 pb-6 md:pb-8 border-b border-white/5">
@@ -118,7 +119,7 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang }) => {
                 </div>
                 <div className="relative z-10">
                   <Award className="text-charcoal mb-4 md:mb-6 w-8 h-8 md:w-10 md:h-10" strokeWidth={1} />
-                  <h3 className="text-xl md:text-2xl font-display text-charcoal uppercase leading-none mb-3 md:mb-4">{t.operations.walkInTitle}</h3>
+                  <h3 className="text-xl md:text-2xl font-display text-charcoal capitalize leading-none mb-3 md:mb-4">{t.operations.walkInTitle}</h3>
                   <p className="text-charcoal/70 text-xs md:text-sm leading-relaxed font-medium max-w-sm md:max-w-none">{t.operations.walkInDesc}</p>
                 </div>
                 <div className="pt-6 md:pt-8 border-t border-charcoal/10 mt-6 md:mt-8 relative z-10">
@@ -141,7 +142,7 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang }) => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-transparent"></div>
                   <div className="absolute bottom-6 md:bottom-10 left-6 md:left-10">
-                    <h3 className="text-2xl md:text-4xl font-serif italic text-white mb-1 md:mb-2">{t.events.title}</h3>
+                    <h3 className="text-2xl md:text-4xl font-serif capitalize italic text-white mb-1 md:mb-2">{t.events.title}</h3>
                     <p className="text-gold text-[9px] md:text-xs uppercase tracking-mega font-bold">{t.events.capacity}</p>
                   </div>
                 </div>
@@ -162,7 +163,7 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang }) => {
 
               <div className="bg-surface border border-white/10 p-6 md:p-10 lg:p-12 rounded-3xl flex flex-col h-full shadow-2xl">
                 <div className="mb-8 md:mb-10">
-                  <h3 className="text-2xl md:text-3xl font-display text-white uppercase mb-3 md:mb-4 leading-none tracking-tight" dangerouslySetInnerHTML={{ __html: t.events.mainTitle.replace('Your', 'Your<br/><span class="text-gold">').replace('饗宴', '<br/><span class="text-gold">饗宴</span>') + (lang === 'en' ? '</span>' : '') }}></h3>
+                  <h3 className="text-2xl md:text-3xl font-display text-white capitalize mb-3 md:mb-4 leading-none tracking-tight" dangerouslySetInnerHTML={{ __html: t.events.mainTitle.replace('Your', 'Your<br/><span class="text-gold">').replace('饗宴', '<br/><span class="text-gold">饗宴</span>') + (lang === 'en' ? '</span>' : '') }}></h3>
                   <p className="text-gray-400 text-xs md:text-sm leading-relaxed max-w-md">
                     {t.events.description}
                   </p>
@@ -176,7 +177,7 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang }) => {
                       </div>
                       <div className="overflow-hidden">
                         <p className="text-[8px] md:text-[10px] text-gray-500 uppercase font-bold tracking-widest leading-none mb-1">{t.events.directInquiries}</p>
-                        <a href="mailto:events@vincenzocapuano.hk" className="text-sm md:text-lg text-white font-mono hover:text-gold transition-colors block truncate">events@vincenzocapuano.hk</a>
+                        <p className="text-sm md:text-lg text-white font-mono block truncate">+852 1234 5678</p>
                       </div>
                     </div>
                   </div>
@@ -188,7 +189,7 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang }) => {
                       </div>
                       <div>
                         <p className="text-[8px] md:text-[10px] text-gray-500 uppercase font-bold tracking-widest leading-none mb-1">{t.events.planning}</p>
-                        <p className="text-sm md:text-lg text-white font-serif italic">{t.events.brochure}</p>
+                        <p className="text-sm md:text-lg text-white font-serif capitalize italic">{t.events.brochure}</p>
                       </div>
                     </div>
                   </div>
@@ -213,7 +214,7 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang }) => {
                    <div className="bg-red/10 text-red px-3 py-1 rounded-full text-[9px] md:text-[10px] font-bold uppercase tracking-widest">Dec 1st</div>
                    <Gift className="text-red animate-bounce w-5 h-5 md:w-6 md:h-6" />
                 </div>
-                <h3 className="text-xl md:text-2xl font-serif text-white mb-2">{t.seasonal.title}</h3>
+                <h3 className="text-xl md:text-2xl font-serif capitalize text-white mb-2">{t.seasonal.title}</h3>
                 <p className="text-[10px] text-gray-500 uppercase tracking-widest mb-4 md:mb-6 italic">{t.seasonal.subtitle}</p>
                 <p className="text-gray-400 text-xs md:text-sm leading-relaxed mb-6 md:mb-8">{t.seasonal.description}</p>
                 <button className="mt-auto flex items-center gap-2 text-[10px] text-gold font-bold uppercase tracking-widest hover:text-white transition-colors">
@@ -226,7 +227,7 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang }) => {
                    <div className="bg-gold/10 text-gold px-3 py-1 rounded-full text-[9px] md:text-[10px] font-bold uppercase tracking-widest">Oct 24</div>
                    <Award className="text-gold w-5 h-5 md:w-6 md:h-6" />
                 </div>
-                <h3 className="text-xl md:text-2xl font-serif text-white mb-2">{t.seasonal.masterclassTitle}</h3>
+                <h3 className="text-xl md:text-2xl font-serif capitalize text-white mb-2">{t.seasonal.masterclassTitle}</h3>
                 <p className="text-[10px] text-gray-500 uppercase tracking-widest mb-4 md:mb-6 italic">{t.seasonal.masterclassSeats}</p>
                 <p className="text-gray-400 text-xs md:text-sm leading-relaxed mb-6 md:mb-8">{t.seasonal.masterclassDesc}</p>
                 <div className="mt-auto flex items-center justify-between">
@@ -240,7 +241,7 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang }) => {
                    <div className="bg-white/10 text-white px-3 py-1 rounded-full text-[9px] md:text-[10px] font-bold uppercase tracking-widest">Latest News</div>
                    <Newspaper className="text-white/50 w-5 h-5 md:w-6 md:h-6" />
                 </div>
-                <h3 className="text-xl md:text-2xl font-serif text-white mb-2">{t.seasonal.newsTitle}</h3>
+                <h3 className="text-xl md:text-2xl font-serif capitalize text-white mb-2">{t.seasonal.newsTitle}</h3>
                 <p className="text-gray-400 text-xs md:text-sm leading-relaxed mb-6 md:mb-8">{t.seasonal.newsDesc}</p>
                 <div className="mt-auto border-t border-white/10 pt-4 md:pt-6">
                   <div className="flex items-center gap-2 text-[9px] text-gray-500 uppercase tracking-widest">
@@ -256,26 +257,26 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang }) => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
               <div className="space-y-6 md:space-y-10">
                 <div className="text-center md:text-left">
-                   <h3 className="text-2xl md:text-4xl lg:text-5xl font-serif text-white italic mb-4 md:mb-6">{t.heritage.title}</h3>
+                   <h3 className="text-2xl md:text-4xl lg:text-5xl font-serif capitalize text-white italic mb-4 md:mb-6">{t.heritage.title}</h3>
                    <p className="text-gray-400 leading-relaxed text-xs md:text-base lg:text-lg">
                      {t.heritage.description}
                    </p>
                 </div>
                 <div className="grid grid-cols-2 gap-6 md:gap-10 border-l border-gold/30 pl-6 md:pl-10">
                    <div>
-                      <h4 className="text-gold text-xl md:text-3xl font-display uppercase leading-none">1922</h4>
+                      <h4 className="text-gold text-xl md:text-3xl font-display capitalize leading-none">1922</h4>
                       <p className="text-[8px] md:text-[10px] text-gray-500 uppercase tracking-widest mt-1 md:mt-2">{t.heritage.stats.family}</p>
                    </div>
                    <div>
-                      <h4 className="text-gold text-xl md:text-3xl font-display uppercase leading-none">2019</h4>
+                      <h4 className="text-gold text-xl md:text-3xl font-display capitalize leading-none">2019</h4>
                       <p className="text-[8px] md:text-[10px] text-gray-500 uppercase tracking-widest mt-1 md:mt-2">{t.heritage.stats.champion}</p>
                    </div>
                    <div>
-                      <h4 className="text-gold text-xl md:text-3xl font-display uppercase leading-none">2022</h4>
+                      <h4 className="text-gold text-xl md:text-3xl font-display capitalize leading-none">2022</h4>
                       <p className="text-[8px] md:text-[10px] text-gray-500 uppercase tracking-widest mt-1 md:mt-2">{t.heritage.stats.icon}</p>
                    </div>
                    <div>
-                      <h4 className="text-gold text-xl md:text-3xl font-display uppercase leading-none">2025</h4>
+                      <h4 className="text-gold text-xl md:text-3xl font-display capitalize leading-none">2025</h4>
                       <p className="text-[8px] md:text-[10px] text-gray-500 uppercase tracking-widest mt-1 md:mt-2">{t.heritage.stats.hk}</p>
                    </div>
                 </div>
@@ -314,12 +315,12 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang }) => {
                 <X size={20} />
               </button>
               <div className="max-w-2xl mx-auto md:mx-0">
-                 <h2 className="text-3xl md:text-5xl font-display text-white uppercase mb-8 md:mb-12">{t.overlay.details}</h2>
+                 <h2 className="text-3xl md:text-5xl font-display text-white capitalize mb-8 md:mb-12">{t.overlay.details}</h2>
 
                  <div className="space-y-10 md:space-y-16">
                    <div>
                      <div className="flex items-center gap-4 mb-4 md:mb-6">
-                        <h3 className="text-lg md:text-xl font-serif text-white italic">{t.overlay.packageTitle}</h3>
+                        <h3 className="text-lg md:text-xl font-serif capitalize text-white italic">{t.overlay.packageTitle}</h3>
                         <div className="h-px bg-white/10 flex-1"></div>
                      </div>
                      <p className="text-gray-400 text-xs md:text-sm lg:text-base mb-6 md:mb-8 leading-relaxed">
@@ -335,9 +336,9 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang }) => {
                   </div>
 
                    <div className="bg-gold/5 border border-gold/20 p-6 md:p-10 rounded-2xl text-center md:text-left">
-                     <h4 className="text-white font-serif text-lg md:text-xl mb-4 italic">{t.overlay.tailored}</h4>
+                     <h4 className="text-white font-serif capitalize text-lg md:text-xl mb-4 italic">{t.overlay.tailored}</h4>
                      <div className="flex flex-col sm:flex-row gap-3">
-                        <a href="mailto:events@vincenzocapuano.hk" className="flex-1 bg-gold text-charcoal px-6 py-4 font-bold text-[10px] uppercase tracking-mega text-center hover:bg-white transition-all">{t.overlay.request}</a>
+                        <button onClick={onBookClick} className="flex-1 bg-gold text-charcoal px-6 py-4 font-bold text-[10px] uppercase tracking-mega text-center hover:bg-white transition-all">{t.overlay.request}</button>
                         <button className="flex-1 border border-white/20 text-white px-6 py-4 font-bold text-[10px] uppercase tracking-mega hover:bg-white/5 transition-all">{t.overlay.download}</button>
                      </div>
                    </div>

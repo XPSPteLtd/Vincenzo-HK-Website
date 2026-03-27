@@ -16,7 +16,10 @@ import { QuickHours } from './components/QuickHours';
 import { Loader } from './components/Loader';
 import { Maintenance } from './components/Maintenance';
 import { MobileBottomNav } from './components/MobileBottomNav';
+import { FloatingActionButton } from './components/FloatingActionButton';
 import { Language } from './translations_new';
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
+import { NotFound } from './components/NotFound';
 
 export type Page = 'home' | 'menu' | 'contact';
 
@@ -26,7 +29,21 @@ const App: React.FC = () => {
   const [isEventsOpen, setIsEventsOpen] = useState(false);
   const [isHoursOpen, setIsHoursOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [activePage, setActivePage] = useState<Page>('home');
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const activePage: Page = location.pathname.startsWith('/menu')
+    ? 'menu'
+    : location.pathname.startsWith('/contact')
+      ? 'contact'
+      : 'home';
+
+  const handlePageChange = (page: Page) => {
+    if (page === 'home') navigate('/');
+    else if (page === 'menu') navigate('/menu');
+    else if (page === 'contact') navigate('/contact');
+  };
+
   const [lang, setLang] = useState<Language>(() => {
     const saved = localStorage.getItem('app_lang');
     return (saved as Language) || 'en';
@@ -40,7 +57,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [activePage]);
+  }, [location.pathname]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -97,43 +114,47 @@ const App: React.FC = () => {
         lang={lang} 
         onLangChange={setLang}
         activePage={activePage}
-        onPageChange={setActivePage}
+        onPageChange={handlePageChange}
       />
       
-      {activePage === 'home' && (
-        <>
-          <Hero 
-            onBookClick={openModal} 
-            onDeliveryClick={openDelivery} 
-            lang={lang} 
-          />
-          <Signature lang={lang} />
-          <Testimonials lang={lang} />
-          <InfoHub lang={lang} />
-          <Social lang={lang} />
-        </>
-      )}
+      <Routes>
+        <Route path="/" element={
+          <>
+            <Hero 
+              onBookClick={openModal} 
+              onDeliveryClick={openDelivery} 
+              lang={lang} 
+            />
+            <Signature lang={lang} />
+            <Testimonials lang={lang} />
+            <InfoHub lang={lang} onBookClick={openModal} />
+            <Social lang={lang} />
+          </>
+        } />
+        
+        <Route path="/menu/*" element={
+          <div className="pt-24 lg:pt-64">
+            <Menu 
+              onDeliveryClick={openDelivery} 
+              lang={lang} 
+            />
+          </div>
+        } />
 
-      {activePage === 'menu' && (
-        <div className="pt-24 md:pt-32">
-          <Menu 
-            onDeliveryClick={openDelivery} 
-            lang={lang} 
-          />
-        </div>
-      )}
+        <Route path="/contact" element={
+          <div className="pt-24 lg:pt-64">
+            <Location 
+              onBookClick={openModal} 
+              lang={lang} 
+            />
+            <Social lang={lang} />
+          </div>
+        } />
 
-      {activePage === 'contact' && (
-        <div className="pt-24 md:pt-32">
-          <Location 
-            onBookClick={openModal} 
-            lang={lang} 
-          />
-          <Social lang={lang} />
-        </div>
-      )}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
       
-      <Footer lang={lang} onPageChange={setActivePage} />
+      <Footer lang={lang} onPageChange={handlePageChange} />
       
       <MobileBottomNav 
         onBookClick={openModal} 
@@ -142,10 +163,12 @@ const App: React.FC = () => {
         onHoursClick={openHours}
         onMenuClick={() => {
           clearOverlays();
-          setActivePage('menu');
+          handlePageChange('menu');
         }}
         lang={lang} 
       />
+
+      <FloatingActionButton onClick={openModal} lang={lang} />
       
       <ReservationModal isOpen={isModalOpen} onClose={closeModal} lang={lang} />
       <DeliveryModal isOpen={isDeliveryOpen} onClose={closeDelivery} lang={lang} />

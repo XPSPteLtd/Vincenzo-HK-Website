@@ -87,7 +87,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ lang }) => {
                 className="h-10 w-auto mx-auto mb-8 animate-pulse grayscale brightness-200 opacity-30" 
             />
             <div className="space-y-3">
-                <h3 className="font-display text-lg text-white/80 tracking-[0.2em] uppercase">{translations[lang].testimonials.retrieving}</h3>
+                <h3 className="font-display text-lg text-white/80 tracking-[0.2em] capitalize">{translations[lang].testimonials.retrieving}</h3>
                 <div className="flex items-center justify-center gap-3">
                     <span className="h-px w-4 bg-gold/20"></span>
                     <span className="text-[9px] text-gold/50 tracking-mega uppercase font-bold">{translations[lang].testimonials.authenticating}</span>
@@ -104,7 +104,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ lang }) => {
 
   return (
     <section id="testimonials" className="py-32 bg-[#090909] border-t border-white/5 relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/3 text-[30rem] md:text-[40rem] text-white/[0.02] pointer-events-none font-serif leading-none select-none font-bold">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/3 text-[30rem] md:text-[40rem] text-white/[0.02] pointer-events-none font-serif capitalize leading-none select-none font-bold">
             "
         </div>
 
@@ -132,12 +132,12 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ lang }) => {
                         <span className="text-[9px] text-gray-400 uppercase tracking-mega font-bold">{translations[lang].testimonials.verified}</span>
                      </div>
 
-                     <p className="font-serif text-2xl md:text-4xl text-white leading-relaxed italic mb-10 tracking-wide">
+                     <p className="font-serif capitalize text-2xl md:text-4xl text-white leading-relaxed italic mb-10 tracking-wide">
                         "{activeReview?.text}"
                      </p>
 
                      <div className="space-y-4">
-                        <h4 className="text-gold font-display text-lg md:text-xl tracking-[0.2em] uppercase font-medium">
+                        <h4 className="text-gold font-display text-lg md:text-xl tracking-[0.2em] capitalize font-medium">
                             {activeReview?.author}
                         </h4>
                         
