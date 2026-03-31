@@ -21,18 +21,33 @@ export const Navbar: React.FC<NavbarProps> = ({
   onLangChange 
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const t = translations[lang].nav;
 
   useEffect(() => {
     const handleScroll = () => {
+<<<<<<< Updated upstream
       setIsScrolled(window.scrollY > 20);
+=======
+      const y = window.scrollY;
+      setScrollY(y);
+      setIsScrolled(y > 80);
+>>>>>>> Stashed changes
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+<<<<<<< Updated upstream
   const handleNavLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+=======
+  // Cross-fade with hero logo: 0 at top → 1 at 150px. Always visible on non-home pages.
+  const navLogoOpacity = activePage !== 'home' ? 1 : Math.min(1, scrollY / 150);
+  const navLogoTranslateY = activePage !== 'home' ? 0 : Math.max(0, 10 * (1 - scrollY / 150));
+
+  const handleNavLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, page: Page) => {
+>>>>>>> Stashed changes
     e.preventDefault();
     const targetId = href.replace('#', '');
     const element = document.getElementById(targetId);
@@ -59,6 +74,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <nav 
+<<<<<<< Updated upstream
       className={`fixed w-full z-[120] transition-all duration-500 ${
         isScrolled 
           ? 'bg-charcoal/95 backdrop-blur-md py-3 md:py-4 shadow-2xl border-b border-white/5' 
@@ -75,6 +91,31 @@ export const Navbar: React.FC<NavbarProps> = ({
             <span className="font-display font-medium text-sm md:text-base lg:text-xl tracking-[0.1em] md:tracking-[0.12em] lg:tracking-[0.15em] text-white leading-none uppercase">VINCENZO CAPUANO</span>
             <span className="text-[7px] md:text-[8px] lg:text-[9px] text-gold tracking-[0.3em] md:tracking-[0.35em] lg:tracking-[0.4em] uppercase mt-0.5">Hong Kong</span>
           </div>
+=======
+      className={`fixed w-full z-[120] transition-all duration-700 ${isBannerActive && !isScrolled ? 'top-10 md:top-12' : 'top-0'} ${
+        isScrolled || activePage !== 'home'
+          ? 'bg-charcoal/95 backdrop-blur-md py-3 md:py-4 shadow-2xl border-b border-white/5 lg:min-h-[10.5rem]' 
+          : 'bg-transparent py-6 md:py-8 border-b border-transparent lg:min-h-[10.5rem]'
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 flex justify-between items-center">
+        {/* Brand Logo - Handover effect */}
+        <a
+          href="/"
+          onClick={(e) => { e.preventDefault(); onPageChange('home'); }}
+          className="flex items-center gap-2 md:gap-3 group"
+          style={{
+            opacity: navLogoOpacity,
+            transform: `translateY(${navLogoTranslateY}px)`,
+            pointerEvents: navLogoOpacity < 0.05 ? 'none' : 'auto',
+          }}
+        >
+          <img
+            src="https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo/LOGO-CAPUANO-white.png"
+            alt="Vincenzo Capuano Logo"
+            className="h-12 md:h-16 lg:h-[8.5rem] w-auto object-contain transition-transform duration-500 group-hover:scale-105"
+          />
+>>>>>>> Stashed changes
         </a>
 
         {/* Desktop Navigation */}
@@ -83,9 +124,17 @@ export const Navbar: React.FC<NavbarProps> = ({
             {navLinks.map((link) => (
               <a 
                 key={link.name} 
+<<<<<<< Updated upstream
                 href={link.href}
                 onClick={(e) => handleNavLinkClick(e, link.href)}
                 className="text-[10px] lg:text-xs font-bold tracking-widest hover:text-gold transition-colors text-white uppercase cursor-pointer"
+=======
+                href={link.page === 'home' ? '/' : `/${link.page}`}
+                onClick={(e) => handleNavLinkClick(e, link.page)}
+                className={`text-[11px] lg:text-[13px] font-semibold tracking-[0.15em] hover:text-gold transition-colors uppercase cursor-pointer ${
+                  activePage === link.page ? 'text-gold' : 'text-white'
+                }`}
+>>>>>>> Stashed changes
               >
                 {link.name}
               </a>
@@ -99,7 +148,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
             <button 
               onClick={onHoursClick}
-              className="text-[10px] lg:text-xs font-bold tracking-widest hover:text-gold transition-colors text-white uppercase flex items-center gap-1.5"
+              className="text-[11px] lg:text-[13px] font-semibold tracking-[0.15em] hover:text-gold transition-colors text-white uppercase flex items-center gap-1.5"
             >
               <Clock size={12} className="text-gold/50" />
               {lang === 'zh' ? '時間' : 'Hours'}
@@ -132,9 +181,17 @@ export const Navbar: React.FC<NavbarProps> = ({
               {t.order}
             </button>
             
+<<<<<<< Updated upstream
             <button 
               onClick={onBookClick}
               className="px-4 lg:px-8 py-2.5 lg:py-3 bg-gold text-charcoal text-[10px] lg:text-xs font-bold tracking-widest hover:bg-white transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 shadow-lg shadow-gold/10"
+=======
+            <a
+              href="https://book.bistrochat.com/vincenzo-capuano-wanchai-hk"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 lg:px-7 py-2.5 lg:py-3 bg-gold hover:bg-white text-charcoal text-[10px] lg:text-xs font-bold tracking-widest rounded-xl transition-all duration-300 shadow-lg shadow-gold/10 active:scale-[0.97]"
+>>>>>>> Stashed changes
             >
               {t.reservations}
             </button>
@@ -219,12 +276,20 @@ export const Navbar: React.FC<NavbarProps> = ({
               {t.order}
             </button>
             
+<<<<<<< Updated upstream
             <button 
               onClick={() => {
                 setIsMobileMenuOpen(false);
                 onBookClick();
               }}
               className="w-full py-4 bg-gold text-charcoal rounded-xl font-bold tracking-widest uppercase text-[10px]"
+=======
+            <a
+              href="https://book.bistrochat.com/vincenzo-capuano-wanchai-hk"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full py-4 bg-gold hover:bg-white text-charcoal text-[10px] font-bold tracking-widest rounded-xl transition-all duration-300 shadow-lg shadow-gold/10 active:scale-[0.97] text-center uppercase block"
+>>>>>>> Stashed changes
             >
               {t.reservations}
             </button>

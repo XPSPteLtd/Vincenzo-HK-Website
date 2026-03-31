@@ -64,6 +64,7 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({ isOpen, onCl
           </button>
         </div>
 
+<<<<<<< Updated upstream
         {/* Content Area - Seamless SevenRooms Embed */}
         <div className="flex-1 relative bg-white">
           {iframeLoading && (
@@ -76,22 +77,43 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({ isOpen, onCl
                </div>
                <h3 className="font-serif text-2xl text-white italic mb-2">{t.reservationLoading}</h3>
                <p className="text-[10px] text-gray-500 uppercase tracking-mega">{t.reservationChecking}</p>
+=======
+        {/* Content Area - BistroChat Iframe */}
+        <div className="flex-1 relative bg-white flex flex-col items-center justify-center overflow-hidden">
+          {iframeLoading && (
+            <div className="absolute inset-0 z-40 bg-charcoal flex flex-col items-center justify-center gap-6 p-8 text-center animate-in fade-in duration-500">
+               <div className="relative p-6 border border-gold/20 rounded-2xl bg-black/40 backdrop-blur-sm">
+                  <Loader2 size={40} className="text-gold animate-spin" />
+               </div>
+               <div className="space-y-2">
+                 <h3 className="font-display text-xl text-white tracking-widest">{t.reservationSecure}</h3>
+                 <p className="text-gray-500 text-[10px] uppercase tracking-[0.2em]">{t.reservationLoading}</p>
+               </div>
+>>>>>>> Stashed changes
             </div>
           )}
           
           <iframe 
+<<<<<<< Updated upstream
             src="https://www.sevenrooms.com/reservations/vincenzosg"
             className={`w-full h-full border-none transition-opacity duration-1000 ${iframeLoading ? 'opacity-0' : 'opacity-100'}`}
             onLoad={() => setIframeLoading(false)}
             title="SevenRooms Reservation"
             allow="payment; geolocation"
+=======
+            src="https://book.bistrochat.com/vincenzo-capuano-wanchai-hk"
+            className={`w-full h-full border-none transition-opacity duration-700 ${iframeLoading ? 'opacity-0' : 'opacity-100'}`}
+            onLoad={() => setIframeLoading(false)}
+            title="Book a table"
+            allow="payment"
+>>>>>>> Stashed changes
           />
         </div>
 
         {/* Footer info bar */}
         <div className="bg-black/80 px-8 py-3 border-t border-white/5 flex justify-center md:justify-end shrink-0">
            <p className="text-[9px] text-gray-600 uppercase tracking-widest text-center md:text-right">
-             {locationT.address} • {locationT.lunch} 12:00-15:00 / {locationT.dinner} 18:00-23:00
+             {locationT.address} • {locationT.hkCentral}
            </p>
         </div>
       </div>

@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from 'react';
+<<<<<<< Updated upstream
 import { X, Clock, Phone, MapPin, ChevronRight, Scissors, Calendar, ExternalLink } from 'lucide-react';
 import { Language, translations } from '../translations';
+=======
+import { X, Clock, MapPin, ChevronRight, Calendar, ExternalLink } from 'lucide-react';
+import { Language, translations } from '../translations_new';
+>>>>>>> Stashed changes
 
 interface QuickHoursProps {
   isOpen: boolean;
@@ -87,12 +92,23 @@ export const QuickHours: React.FC<QuickHoursProps> = ({ isOpen, onClose, lang })
 
           {/* Quick Actions */}
           <div className="grid grid-cols-2 gap-4">
+<<<<<<< Updated upstream
             <a 
               href="tel:+85212345678"
               className="flex flex-col items-center justify-center p-4 bg-white/5 border border-white/10 rounded-2xl hover:bg-gold/10 hover:border-gold/30 transition-all group"
             >
               <Phone size={20} className="text-gold mb-2 group-hover:scale-110 transition-transform" />
               <span className="text-[10px] font-bold uppercase tracking-widest text-white">{lang === 'zh' ? '立即致電' : 'Call Now'}</span>
+=======
+            <a
+              href="https://book.bistrochat.com/vincenzo-capuano-wanchai-hk"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center justify-center p-4 bg-gold/5 border border-gold/20 rounded-2xl hover:bg-gold/10 hover:border-gold/30 transition-all group"
+            >
+              <Clock size={20} className="text-gold mb-2 group-hover:scale-110 transition-transform" />
+              <span className="text-[10px] font-bold uppercase tracking-widest text-gold">Book Now</span>
+>>>>>>> Stashed changes
             </a>
             <button 
               onClick={openGoogleMaps}

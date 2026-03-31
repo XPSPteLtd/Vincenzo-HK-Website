@@ -2,7 +2,9 @@
 import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
+import { Accolades } from './components/Accolades';
 import { Signature } from './components/Signature';
+import { Story } from './components/Story';
 import { Menu } from './components/Menu';
 import { Location } from './components/Location';
 import { InfoHub } from './components/InfoHub';
@@ -90,11 +92,53 @@ const App: React.FC = () => {
         onLangChange={setLang} 
       />
       
+<<<<<<< Updated upstream
       <Hero 
         onBookClick={openModal} 
         onDeliveryClick={openDelivery} 
         lang={lang} 
       />
+=======
+      <Routes>
+        <Route path="/" element={
+          <>
+            <Hero 
+              onBookClick={openModal} 
+              onDeliveryClick={openDelivery} 
+              onMenuClick={() => handlePageChange('menu')}
+              lang={lang} 
+            />
+            <Accolades lang={lang} />
+            <Signature lang={lang} />
+            <Story lang={lang} />
+            {/* <Testimonials lang={lang} /> */}
+            <InfoHub lang={lang} onBookClick={openModal} />
+            <Social lang={lang} />
+          </>
+        } />
+        
+        <Route path="/menu/*" element={
+          <div className="pt-24 lg:pt-64">
+            <Menu 
+              onDeliveryClick={openDelivery} 
+              lang={lang} 
+            />
+          </div>
+        } />
+
+        <Route path="/contact" element={
+          <div className="pt-24 lg:pt-64">
+            <InfoHub 
+              onBookClick={openModal} 
+              lang={lang} 
+            />
+            <Social lang={lang} />
+          </div>
+        } />
+
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+>>>>>>> Stashed changes
       
       <Signature lang={lang} />
       
