@@ -92,13 +92,6 @@ const App: React.FC = () => {
         onLangChange={setLang} 
       />
       
-<<<<<<< Updated upstream
-      <Hero 
-        onBookClick={openModal} 
-        onDeliveryClick={openDelivery} 
-        lang={lang} 
-      />
-=======
       <Routes>
         <Route path="/" element={
           <>
@@ -138,7 +131,6 @@ const App: React.FC = () => {
 
         <Route path="*" element={<NotFound />} />
       </Routes>
->>>>>>> Stashed changes
       
       <Signature lang={lang} />
       

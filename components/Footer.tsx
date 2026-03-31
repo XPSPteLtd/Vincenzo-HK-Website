@@ -35,14 +35,6 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
             <a key={item} href="#" className="text-gray-500 hover:text-white text-xs uppercase tracking-widest transition-colors">
                 {item}
             </a>
-<<<<<<< Updated upstream
-          ))}
-        </div>
-        
-        <p className="text-gray-700 text-[10px] tracking-wider">
-          © {new Date().getFullYear()} Vincenzo Capuano Hong Kong. All rights reserved.
-        </p>
-=======
             <a 
               href="https://www.instagram.com/vincenzocapuano.hk" 
               target="_blank" 
@@ -99,7 +91,6 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
             <span className="border-b border-gray-800 group-hover:border-gold pb-0.5">Pulse n Pixels</span>
           </a>
         </div>
->>>>>>> Stashed changes
       </div>
     </footer>
   );

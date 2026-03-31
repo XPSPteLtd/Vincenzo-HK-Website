@@ -28,46 +28,6 @@ export const Social: React.FC<SocialProps> = ({ lang }) => {
         setLoading(true);
         // Simulating network delay for realism
         await new Promise(resolve => setTimeout(resolve, 1500));
-<<<<<<< Updated upstream
-        
-        // Mock Data reflecting the requested @vincenzocapuano.sg content style
-        const mockResponse: InstagramPost[] = [
-          {
-            id: "ig-1",
-            media_url: "https://images.unsplash.com/photo-1579751626657-72bc17010498?q=80&w=2069&auto=format&fit=crop",
-            permalink: "https://www.instagram.com/vincenzocapuano.sg",
-            caption: "The art of contemporary pizza making. #napoli #hongkong"
-          },
-          {
-            id: "ig-2",
-            media_url: "https://images.unsplash.com/photo-1593560708920-6316e4e61f32?q=80&w=2070&auto=format&fit=crop",
-            permalink: "https://www.instagram.com/vincenzocapuano.sg",
-            caption: "Fresh ingredients, daily passion."
-          },
-          {
-            id: "ig-3",
-            media_url: "https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=2070&auto=format&fit=crop",
-            permalink: "https://www.instagram.com/vincenzocapuano.sg",
-            caption: "Wood fired perfection."
-          },
-          {
-            id: "ig-4",
-            media_url: "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?q=80&w=2069&auto=format&fit=crop",
-            permalink: "https://www.instagram.com/vincenzocapuano.sg",
-            caption: "Provola e Pepe - The World Champion."
-          },
-          {
-            id: "ig-5",
-            media_url: "https://images.unsplash.com/photo-1555072956-7758afb20e8f?q=80&w=1974&auto=format&fit=crop",
-            permalink: "https://www.instagram.com/vincenzocapuano.sg",
-            caption: "Dough prep is a ritual."
-          },
-          {
-            id: "ig-6",
-            media_url: "https://images.unsplash.com/photo-1520201163981-8cc95007dd2a?q=80&w=1974&auto=format&fit=crop",
-            permalink: "https://www.instagram.com/vincenzocapuano.sg",
-            caption: "Sunday vibes at Vincenzo Capuano."
-=======
 
         // Mock Data reflecting the requested @vincenzocapuano.hk content style
         const mockResponse: InstagramPost[] = [
@@ -94,7 +54,6 @@ export const Social: React.FC<SocialProps> = ({ lang }) => {
             media_url: "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/oven-pizza.jpg",
             permalink: "https://www.instagram.com/vincenzocapuano.hk",
             caption: "Cutting through tradition with my golden scissors. ✂️"
->>>>>>> Stashed changes
           }
         ];
 
@@ -113,15 +72,6 @@ export const Social: React.FC<SocialProps> = ({ lang }) => {
     <section className="py-28 md:py-40 bg-[#050505] overflow-hidden border-t border-white/5 relative">
       <div className="max-w-7xl mx-auto px-6 md:px-12 mb-12 flex flex-col md:flex-row justify-between items-end gap-6">
         <div>
-<<<<<<< Updated upstream
-          <span className="text-gold tracking-mega text-xs uppercase font-bold block mb-4">Social Media</span>
-          <h2 className="font-display text-4xl md:text-5xl text-white uppercase leading-none">Follow The<br/>Journey</h2>
-        </div>
-        
-        <a 
-          href="https://www.instagram.com/vincenzocapuano.sg" 
-          target="_blank" 
-=======
           <span className="text-gold/50 tracking-[0.3em] text-[10px] uppercase font-bold block mb-3">
             {translations[lang].social.badge}
           </span>
@@ -133,16 +83,11 @@ export const Social: React.FC<SocialProps> = ({ lang }) => {
         <a
           href="https://www.instagram.com/vincenzocapuano.hk"
           target="_blank"
->>>>>>> Stashed changes
           rel="noopener noreferrer"
           className="flex items-center gap-3 text-white hover:text-gold transition-colors group border border-white/20 px-6 py-3 rounded-full hover:border-gold/50 hover:bg-gold/5"
         >
           <Instagram className="w-5 h-5" />
-<<<<<<< Updated upstream
-          <span className="text-xs font-bold tracking-widest uppercase">@vincenzocapuano.sg</span>
-=======
           <span className="text-xs font-bold tracking-widest uppercase">@vincenzocapuano.hk</span>
->>>>>>> Stashed changes
           <ExternalLink className="w-3 h-3 opacity-50 group-hover:opacity-100 transition-opacity" />
         </a>
       </div>

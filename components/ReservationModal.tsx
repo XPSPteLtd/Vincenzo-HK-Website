@@ -64,20 +64,6 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({ isOpen, onCl
           </button>
         </div>
 
-<<<<<<< Updated upstream
-        {/* Content Area - Seamless SevenRooms Embed */}
-        <div className="flex-1 relative bg-white">
-          {iframeLoading && (
-            <div className="absolute inset-0 z-20 bg-charcoal flex flex-col items-center justify-center text-center p-12">
-               <div className="relative mb-8">
-                 <div className="absolute inset-0 border border-gold/20 rounded-full animate-ping scale-150 opacity-20"></div>
-                 <div className="bg-gold/5 p-6 rounded-full border border-gold/10">
-                    <Loader2 size={32} className="text-gold animate-spin" />
-                 </div>
-               </div>
-               <h3 className="font-serif text-2xl text-white italic mb-2">{t.reservationLoading}</h3>
-               <p className="text-[10px] text-gray-500 uppercase tracking-mega">{t.reservationChecking}</p>
-=======
         {/* Content Area - BistroChat Iframe */}
         <div className="flex-1 relative bg-white flex flex-col items-center justify-center overflow-hidden">
           {iframeLoading && (
@@ -89,24 +75,15 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({ isOpen, onCl
                  <h3 className="font-display text-xl text-white tracking-widest">{t.reservationSecure}</h3>
                  <p className="text-gray-500 text-[10px] uppercase tracking-[0.2em]">{t.reservationLoading}</p>
                </div>
->>>>>>> Stashed changes
             </div>
           )}
           
           <iframe 
-<<<<<<< Updated upstream
-            src="https://www.sevenrooms.com/reservations/vincenzosg"
-            className={`w-full h-full border-none transition-opacity duration-1000 ${iframeLoading ? 'opacity-0' : 'opacity-100'}`}
-            onLoad={() => setIframeLoading(false)}
-            title="SevenRooms Reservation"
-            allow="payment; geolocation"
-=======
             src="https://book.bistrochat.com/vincenzo-capuano-wanchai-hk"
             className={`w-full h-full border-none transition-opacity duration-700 ${iframeLoading ? 'opacity-0' : 'opacity-100'}`}
             onLoad={() => setIframeLoading(false)}
             title="Book a table"
             allow="payment"
->>>>>>> Stashed changes
           />
         </div>
 

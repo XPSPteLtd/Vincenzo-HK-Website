@@ -3,41 +3,6 @@ import { MenuItem } from './types';
 
 export const menuItems: MenuItem[] = [
   {
-<<<<<<< Updated upstream
-    id: "sp-1",
-    name: "Chef's Seasonal Special",
-    nameZh: "主廚季節限定",
-    description: "Our latest creation featuring exclusive seasonal ingredients imported directly from Napoli.",
-    descriptionZh: "主廚最新創作，選用由拿坡里直接進口的獨家季節性食材。",
-    price: "HK$ 298",
-    category: "Contemporary Pizza",
-    categoryZh: "當代薄餅",
-    image: "https://images.unsplash.com/photo-1593560708920-6316e4e61f32?q=80&w=2000&auto=format&fit=crop",
-    popular: true,
-    dietary: [],
-    chefNote: "Every season brings new gifts from the earth. This is my homage to the current harvest.",
-    chefNoteZh: "每個季節都帶來大地的新禮物。這是對當前收成的致敬。"
-  },
-  {
-    id: "st-1",
-    name: "Frittatina Napoletana",
-    nameZh: "拿坡里炸意粉球",
-    description: "Bucatini pasta, bechamel, pepper, minced meat, grana padano, Provola, basil.",
-    descriptionZh: "長通粉、白汁、胡椒、肉碎、帕馬森芝士、煙燻芝士及羅勒。",
-    price: "HK$ 118",
-    category: "Starters",
-    categoryZh: "精選前菜",
-    image: "https://images.unsplash.com/photo-1541529086526-db283c563270?q=80&w=2000&auto=format&fit=crop",
-    dietary: [],
-    chefNote: "A classic Neapolitan street food. The crunch outside must protect the creamy treasure inside.",
-    chefNoteZh: "拿坡里經典街頭小食。香脆的外殼包裹著內裡豐富的忌廉內餡。"
-  },
-  {
-    id: "st-2",
-    name: "Parmigiana Di Melanzane",
-    nameZh: "焗芝士千層茄子",
-    description: "Tomato, fried aubergines, grana padano cheese, basil. Alla Nonno Enzo style.",
-=======
     id: "pwc-1", name: "PROVOLA E PEPE", nameZh: "煙燻芝士黑椒薄餅", 
     description: "Smoked provola from the mountains, hand-crushed San Marzano tomatoes, pepper mix, seasoned roasted cherry tomatoes, evoo & basil. ★ ICONIC PIZZA WINNER THE 19TH WORLD CHAMPIONSHIP",
     descriptionZh: "2019 世界冠軍作品。煙燻芝士、手壓番茄、特調胡椒及烤小番茄。",
@@ -196,7 +161,6 @@ export const menuItems: MenuItem[] = [
   {
     id: "st-7", name: "PARMIGIANA DI MELANZANE ALLA NONNO ENZO", nameZh: "焗芝士千層茄子",
     description: "Over-baked eggplant parmigiana, San Marzano ragu, smoked provola, parmigiano, basil",
->>>>>>> Stashed changes
     descriptionZh: "番茄、炸茄子、帕馬森芝士及羅勒。遵循 Enzo 祖父的傳統食譜。",
     price: "HK$ 148",
     category: "Starters",
@@ -256,21 +220,11 @@ export const menuItems: MenuItem[] = [
     nameZh: "傳統卡邦尼意粉",
     description: "Home-made fettuccine, slow cooked iberico pork jowl, egg yolk, parmigiano.",
     descriptionZh: "自家製闊麵、慢煮伊比利亞豬頰肉、蛋黃及帕馬森芝士。",
-<<<<<<< Updated upstream
-    price: "HK$ 228",
-    category: "Pasta",
-    categoryZh: "手製意粉",
-    image: "https://images.unsplash.com/photo-1612874742237-6526221588e3?q=80&w=2000&auto=format&fit=crop",
-    dietary: [],
-    chefNote: "No cream! Just egg yolk, pecorino, and pepper emulsion. Roman tradition respected.",
-    chefNoteZh: "絕不加忌廉！純粹以蛋黃、羊奶芝士和胡椒乳化而成。向羅馬傳統致敬。"
-=======
     price: "$ 34", mainCategory: "Ala-carte", category: "The Pastas & Mains", categoryZh: "手製意粉及主菜",
     image: "https://images.unsplash.com/photo-1612874742237-6526221588e3?q=80&w=800&auto=format&fit=crop", 
     popular: true, 
     chefNote: "No cream, ever! Just the perfect emulsification of egg yolk and Pecorino. A true tribute to Roman tradition.",
     chefNoteZh: "絕不加忌廉！純粹以蛋黃和羊奶芝士完美乳化而成。向羅馬傳統致敬。"
->>>>>>> Stashed changes
   },
   {
     id: "dst-1",

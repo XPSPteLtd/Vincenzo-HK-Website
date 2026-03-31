@@ -32,8 +32,6 @@ const getDietaryDescription = (tag: string, lang: Language) => {
   return tag;
 };
 
-<<<<<<< Updated upstream
-=======
 const formatTitle = (name: string) => {
   if (!name) return "";
   return name.toUpperCase();
@@ -82,7 +80,6 @@ const getChefNote = (item: MenuItem, lang: Language) => {
   return uniqueNotes[index];
 };
 
->>>>>>> Stashed changes
 const MenuItemCard: React.FC<{ 
   item: MenuItem; 
   lang: Language; 
@@ -124,21 +121,6 @@ const MenuItemCard: React.FC<{
       </div>
       
       {/* Content Area */}
-<<<<<<< Updated upstream
-      <div className="space-y-3 md:space-y-4 flex-1 flex flex-col">
-        <div className="flex justify-between items-start">
-          <h3 className="font-serif text-xl md:text-2xl text-white group-hover:text-gold transition-colors leading-tight">
-            {itemName}
-          </h3>
-          <span className="text-gold font-display text-lg md:text-xl whitespace-nowrap ml-4">{item.price}</span>
-        </div>
-        
-        <div className="h-px w-8 md:w-10 bg-gold/30 group-hover:w-full transition-all duration-700"></div>
-        
-        <p className="text-gray-400 text-sm md:text-[15px] leading-relaxed font-light">
-          {itemDesc}
-        </p>
-=======
       <div className="flex-1 flex flex-col justify-center md:mt-6">
         <div className="mb-1 md:mb-4">
           <div className="flex justify-between items-start mb-0.5 md:mb-4">
@@ -154,34 +136,9 @@ const MenuItemCard: React.FC<{
             {itemDesc}
           </p>
         </div>
->>>>>>> Stashed changes
 
         {/* Collapsible Chef's Note - Mobile Focus */}
         {chefNote && (
-<<<<<<< Updated upstream
-          <div className="mt-auto pt-4 md:pt-6">
-            <div className="bg-charcoal/50 border border-gold/10 rounded-xl p-4 md:p-5 relative overflow-hidden group-hover:border-gold/30 transition-colors">
-              <div className="absolute -right-2 -bottom-2 opacity-[0.03] md:opacity-[0.05] text-gold pointer-events-none">
-                {/* Fixed: Use responsive CSS classes for size as md:size prop is not supported */}
-                <Quote className="w-12 h-12 md:w-14 md:h-14 rotate-180" />
-              </div>
-              
-              <div className="flex items-center gap-2 mb-2 md:mb-3">
-                {/* Fixed: Use responsive CSS classes for size as md:size prop is not supported */}
-                <Scissors className="w-2.5 h-2.5 md:w-3 md:h-3 text-gold rotate-90" />
-                <span className="text-[9px] md:text-[10px] text-gold uppercase font-bold tracking-[0.2em]">
-                  {t.chefNote}
-                </span>
-              </div>
-              
-              <p className="text-gray-300 text-xs md:text-sm italic font-serif leading-relaxed relative z-10">
-                "{chefNote}"
-              </p>
-              
-              <div className="mt-3 md:mt-4 flex items-center gap-2 opacity-30">
-                <div className="h-px w-3 md:w-4 bg-white/20"></div>
-                <span className="text-[7px] md:text-[8px] uppercase tracking-widest font-bold text-white">Vincenzo C.</span>
-=======
           <div className="mt-2.5 md:mt-6">
             <button 
               onClick={(e) => { e.stopPropagation(); setIsNoteOpen(!isNoteOpen); }}
@@ -217,7 +174,6 @@ const MenuItemCard: React.FC<{
                   <div className="h-px w-4 md:w-6 bg-gold/30"></div>
                   <span className="text-[7px] md:text-[9px] uppercase tracking-[0.3em] font-bold text-gold/60">Vincenzo Capuano</span>
                 </div>
->>>>>>> Stashed changes
               </div>
             </div>
           </div>
@@ -227,8 +183,6 @@ const MenuItemCard: React.FC<{
   );
 };
 
-<<<<<<< Updated upstream
-=======
    const BeverageCard: React.FC<{ 
     item: MenuItem; 
     lang: Language; 
@@ -288,7 +242,6 @@ const MenuItemCard: React.FC<{
   );
 };
 
->>>>>>> Stashed changes
 export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
   const t = translations[lang].menu;
   const items = menuItems;
@@ -307,9 +260,6 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
     return Array.from(tags).sort();
   }, [items]);
 
-<<<<<<< Updated upstream
-  const [activeCategory, setActiveCategory] = useState<string>(lang === 'en' ? 'All' : '全部');
-=======
   const beverageTags = ['Alcoholic', 'Non-Alcoholic', 'Refreshing', 'Strong'];
 
   const navigate = useNavigate();
@@ -322,7 +272,6 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
     return lang === 'en' ? 'All' : (lang === 'hk' ? '全部' : '全部');
   });
 
->>>>>>> Stashed changes
   const [activeDietary, setActiveDietary] = useState<string[]>([]);
   const [activeSection, setActiveSection] = useState<string>('all');
   const [showPopular, setShowPopular] = useState<boolean>(false);
@@ -338,10 +287,6 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
   ];
 
   useEffect(() => {
-<<<<<<< Updated upstream
-    setActiveCategory(lang === 'en' ? 'All' : '全部');
-  }, [lang]);
-=======
     const p = location.pathname.toLowerCase();
     if (p.includes('alacarte') || p.includes('ala-carte')) setActiveCategory('Ala-carte');
     else if (p.includes('beverage')) setActiveCategory('Beverages');
@@ -358,7 +303,6 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
     else if (category === 'Beverages') navigate('/menu/beverages');
     else navigate('/menu');
   };
->>>>>>> Stashed changes
 
   const filteredItems = useMemo(() => {
     return items.filter(item => {
@@ -511,36 +455,6 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
 
         {/* Grid Area */}
         <div className="min-h-[600px] flex flex-col">
-<<<<<<< Updated upstream
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 md:gap-x-8 gap-y-10 md:gap-y-16 flex-1">
-            {displayedItems.length > 0 ? (
-              displayedItems.map((item) => (
-                <div key={item.id}>
-                  <MenuItemCard 
-                    item={item} 
-                    lang={lang} 
-                    onDeliveryClick={onDeliveryClick} 
-                  />
-                </div>
-              ))
-            ) : (
-              <div className="col-span-full py-24 md:py-32 text-center">
-                  <SearchX className="w-12 h-12 md:w-16 md:h-16 text-gray-700 mx-auto mb-6 md:mb-8" strokeWidth={1} />
-                  <h3 className="text-white font-serif text-2xl md:text-3xl mb-4 italic">{t.noItems}</h3>
-                  <button 
-                    onClick={() => {
-                      setActiveCategory(lang === 'en' ? 'All' : '全部');
-                      setActiveDietary([]);
-                      setShowPopular(false);
-                    }}
-                    className="text-gold text-[10px] font-bold uppercase tracking-mega hover:text-white transition-colors"
-                  >
-                    Clear All Filters
-                  </button>
-              </div>
-            )}
-          </div>
-=======
           {activeCategory === 'Beverages' ? (
             <div className="space-y-20">
               {Object.entries(
@@ -602,7 +516,6 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
               )}
             </div>
           )}
->>>>>>> Stashed changes
 
           {/* Pagination */}
           {totalPages > 1 && (

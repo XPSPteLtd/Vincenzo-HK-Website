@@ -1,137 +1,13 @@
 
-<<<<<<< Updated upstream
-import React, { useState } from 'react';
-import { Clock, Calendar, Gift, History, Newspaper, Users, ChevronRight, X, Info, Star, Award, MapPin, Mail, Download, Utensils, GlassWater } from 'lucide-react';
-import { SafeImage } from './ui/SafeImage';
-import { Language } from '../translations';
-
-type InfoTab = 'operations' | 'events' | 'seasonal' | 'heritage';
-=======
 import React, { useEffect, useState } from 'react';
 import { MapPin, Users, ArrowRight, Calendar, ExternalLink, Train } from 'lucide-react';
 import { Language, translations } from '../translations_new';
->>>>>>> Stashed changes
 
 interface InfoHubProps {
   lang: Language;
 }
 
 export const InfoHub: React.FC<InfoHubProps> = ({ lang }) => {
-<<<<<<< Updated upstream
-  const [activeTab, setActiveTab] = useState<InfoTab>('operations');
-  const [showEventDeepDive, setShowEventDeepDive] = useState(false);
-
-  const tabs = [
-    { id: 'operations', label: 'Service', icon: Clock },
-    { id: 'events', label: 'Hosting', icon: Users },
-    { id: 'seasonal', label: 'Seasonal', icon: Gift },
-    { id: 'heritage', label: 'Heritage', icon: History },
-  ];
-
-  return (
-    <section id="info-hub" className="py-20 md:py-24 bg-charcoal border-t border-white/5 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute -right-20 top-40 text-[10rem] md:text-[15rem] font-serif text-white/[0.01] leading-none pointer-events-none select-none">INFO</div>
-      
-      <div className="max-w-7xl mx-auto px-5 md:px-12">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-12 gap-6 md:gap-8">
-          <div>
-            <span className="text-gold tracking-[0.2em] md:tracking-mega text-[10px] md:text-xs uppercase font-bold block mb-3 md:mb-4">Vincenzo Capuano Hub</span>
-            <h2 className="font-display text-3xl md:text-5xl text-white uppercase leading-tight">News &<br/>Experience</h2>
-          </div>
-
-          {/* Horizontal Scroll Tab Navigation */}
-          <div className="w-full md:w-auto overflow-x-auto scrollbar-hide -mx-5 px-5 md:mx-0 md:px-0">
-            <div className="flex flex-nowrap gap-2 bg-white/5 p-1 rounded-xl backdrop-blur-md border border-white/10 min-w-max">
-              {tabs.map((tab) => (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id as InfoTab)}
-                  className={`flex items-center gap-2 px-4 md:px-5 py-2 md:py-2.5 rounded-lg text-[10px] md:text-xs font-bold uppercase tracking-widest transition-all ${
-                    activeTab === tab.id 
-                      ? 'bg-gold text-charcoal shadow-lg' 
-                      : 'text-gray-400 hover:text-white hover:bg-white/5'
-                  }`}
-                >
-                  <tab.icon size={14} />
-                  <span>{tab.label}</span>
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Dynamic Content Area */}
-        <div className="min-h-[450px] md:min-h-[500px] animate-fade-in">
-          {activeTab === 'operations' && (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-              <div className="md:col-span-2 bg-surface border border-white/10 p-6 md:p-10 lg:p-12 rounded-3xl relative overflow-hidden group">
-                <div className="relative z-10">
-                  <h3 className="text-2xl md:text-3xl font-serif italic text-white mb-8 md:mb-10">Service Hours</h3>
-                  <div className="space-y-8 md:space-y-10">
-                    {/* Lunch Section */}
-                    <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 pb-6 md:pb-8 border-b border-white/5">
-                      <div className="flex items-center gap-4 md:gap-5 min-w-[200px]">
-                        <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl bg-gold/10 flex items-center justify-center shrink-0 border border-gold/20">
-                          <Clock className="text-gold w-5 h-5 md:w-6 md:h-6" />
-                        </div>
-                        <div>
-                          <p className="text-[9px] text-gray-500 uppercase tracking-widest mb-1 font-bold">Lunch</p>
-                          <p className="text-2xl md:text-3xl text-white font-mono tracking-tighter">12:00 — 15:00</p>
-                        </div>
-                      </div>
-                      
-                      <div className="flex flex-wrap gap-2 md:gap-3">
-                        <div className="flex items-center gap-2 md:gap-3 px-3 md:px-4 py-2 md:py-3 bg-red/10 border border-red/30 rounded-xl">
-                          <Utensils className="text-red w-3 h-3 md:w-3.5 md:h-3.5" />
-                          <div>
-                            <p className="text-[8px] md:text-[9px] text-gray-400 uppercase font-bold tracking-widest leading-none mb-1">Last Order</p>
-                            <p className="text-xs md:text-sm text-red font-mono font-bold leading-none">14:30</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Dinner Section */}
-                    <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 pb-6 md:pb-8 border-b border-white/5">
-                      <div className="flex items-center gap-4 md:gap-5 min-w-[200px]">
-                        <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl bg-gold/10 flex items-center justify-center shrink-0 border border-gold/20">
-                          <Clock className="text-gold w-5 h-5 md:w-6 md:h-6" />
-                        </div>
-                        <div>
-                          <p className="text-[9px] text-gray-500 uppercase tracking-widest mb-1 font-bold">Dinner</p>
-                          <p className="text-2xl md:text-3xl text-white font-mono tracking-tighter">18:00 — 23:00</p>
-                        </div>
-                      </div>
-
-                      <div className="flex flex-wrap gap-2 md:gap-3">
-                        <div className="flex items-center gap-2 md:gap-3 px-3 md:px-4 py-2 md:py-3 bg-red/10 border border-red/30 rounded-xl">
-                          <Utensils className="text-red w-3 h-3 md:w-3.5 md:h-3.5" />
-                          <div>
-                            <p className="text-[8px] md:text-[9px] text-gray-400 uppercase font-bold tracking-widest leading-none mb-1">Last Order</p>
-                            <p className="text-xs md:text-sm text-red font-mono font-bold leading-none">22:00</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-gold p-6 md:p-8 rounded-3xl flex flex-col justify-between group overflow-hidden relative md:col-span-2 lg:col-span-1">
-                <div className="absolute -right-4 -top-4 opacity-10 group-hover:scale-110 transition-transform duration-700">
-                    <Award className="text-charcoal w-32 h-32 md:w-40 md:h-40" />
-                </div>
-                <div className="relative z-10">
-                  <Award className="text-charcoal mb-4 md:mb-6 w-8 h-8 md:w-10 md:h-10" strokeWidth={1} />
-                  <h3 className="text-xl md:text-2xl font-display text-charcoal uppercase leading-none mb-3 md:mb-4">Walk-in Policy</h3>
-                  <p className="text-charcoal/70 text-xs md:text-sm leading-relaxed font-medium max-w-sm md:max-w-none">We reserve 30% of our seating for walk-ins. To experience our Contemporary dough without a booking, we recommend arriving within the first 45 minutes of each session.</p>
-                </div>
-                <div className="pt-6 md:pt-8 border-t border-charcoal/10 mt-6 md:mt-8 relative z-10">
-                  <p className="text-[9px] uppercase font-bold tracking-widest text-charcoal mb-1">Live Availability</p>
-                  <p className="text-base md:text-lg font-mono text-charcoal">+852 1234 5678</p>
-                </div>
-=======
   const t = translations[lang].location;
   const infoT = translations[lang].infoHub;
 
@@ -311,7 +187,6 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang }) => {
                 <span className="text-[8px] uppercase tracking-[0.4em] text-gold/50 font-bold">
                   {infoT.operations.walkInTitle}
                 </span>
->>>>>>> Stashed changes
               </div>
               <p className="text-white/60 text-sm leading-relaxed font-light">
                 {infoT.operations.walkInDesc}
@@ -319,38 +194,6 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang }) => {
             </div>
           )}
 
-<<<<<<< Updated upstream
-          {activeTab === 'events' && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-stretch">
-              <div className="flex flex-col gap-6 md:gap-8">
-                <div className="relative rounded-3xl overflow-hidden h-[250px] md:h-[350px] group shadow-2xl">
-                  <SafeImage 
-                    src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1974" 
-                    alt="Event Space" 
-                    fallbackPrompt="Luxury restaurant event space for private parties, elegant long table setting"
-                    className="w-full h-full group-hover:scale-105 transition-transform duration-1000"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-transparent"></div>
-                  <div className="absolute bottom-6 md:bottom-10 left-6 md:left-10">
-                    <h3 className="text-2xl md:text-4xl font-serif italic text-white mb-1 md:mb-2">Private Hosting</h3>
-                    <p className="text-gold text-[9px] md:text-xs uppercase tracking-mega font-bold">Capacity: Up to 60 Guests</p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-3 md:gap-4">
-                   <div className="bg-surface border border-white/5 p-4 md:p-6 rounded-2xl flex flex-col justify-center hover:border-gold/20 transition-all">
-                      <Star size={18} className="text-gold mb-2 md:mb-3" />
-                      <h4 className="text-white text-[10px] md:text-xs font-bold uppercase mb-1">Tailored Menus</h4>
-                      <p className="text-[8px] md:text-[10px] text-gray-500 uppercase">Pairings & Flights</p>
-                   </div>
-                   <div className="bg-surface border border-white/5 p-4 md:p-6 rounded-2xl flex flex-col justify-center hover:border-gold/20 transition-all">
-                      <Award size={18} className="text-gold mb-2 md:mb-3" />
-                      <h4 className="text-white text-[10px] md:text-xs font-bold uppercase mb-1">Full Buyout</h4>
-                      <p className="text-[8px] md:text-[10px] text-gray-500 uppercase">Corporate Exclusivity</p>
-                   </div>
-                </div>
-              </div>
-=======
             {/* Cell 2 — Location */}
             <div className="p-8 md:p-10 hover:bg-white/[0.02] transition-colors duration-500">
               <div className="flex items-center gap-2.5 mb-5">
@@ -398,7 +241,6 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang }) => {
                 <ArrowRight size={14} className="group-hover/cta:translate-x-1 transition-transform" />
               </a>
             </div>
->>>>>>> Stashed changes
 
               <div className="bg-surface border border-white/10 p-6 md:p-10 lg:p-12 rounded-3xl flex flex-col h-full shadow-2xl">
                 <div className="mb-8 md:mb-10">
@@ -532,8 +374,6 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang }) => {
             </div>
           )}
         </div>
-<<<<<<< Updated upstream
-=======
 
         {/* ── Cinematic Map Strip ─────────────────────────────── */}
         <div className="mt-5 rounded-[2rem] overflow-hidden border border-white/[0.06] relative group/map" style={{ aspectRatio: '21/5' }}>
@@ -574,7 +414,6 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang }) => {
           </div>
         </div>
 
->>>>>>> Stashed changes
       </div>
 
       {/* Deep Dive Sub-page Overlay - Refined for Tablet */}
