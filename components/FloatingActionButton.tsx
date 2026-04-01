@@ -35,7 +35,7 @@ export const FloatingActionButton: React.FC<FloatingActionButtonProps> = ({ onCl
           <path id="fabTextPath" d="M 50, 50 m -45, 0 a 45,45 0 1,1 90,0 a 45,45 0 1,1 -90,0" fill="none" />
           <text className="text-[10px] font-bold tracking-[0.15em] uppercase fill-gold">
             <textPath href="#fabTextPath" startOffset="0%">
-              • BOOK NOW • BOOK NOW • BOOK NOW • BOOK NOW
+              • 12:00–23:00 • 7 DAYS OPEN • 12:00–23:00 • 7 DAYS OPEN
             </textPath>
           </text>
         </svg>

@@ -162,8 +162,8 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang, onBookClick }) => {
             {/* Cell 1 — Walk-in Policy */}
             <div className="p-8 md:p-10 hover:bg-white/[0.02] transition-colors duration-500">
               <div className="flex items-center gap-2.5 mb-5">
-                <Users size={14} className="text-gold/50 shrink-0" />
-                <span className="text-[8px] uppercase tracking-[0.4em] text-gold/50 font-bold">
+                <Users size={15} className="text-gold/70 shrink-0" />
+                <span className="text-xs md:text-sm uppercase tracking-[0.2em] text-gold/80 font-bold">
                   {infoT.operations.walkInTitle}
                 </span>
               </div>
@@ -175,8 +175,8 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang, onBookClick }) => {
             {/* Cell 2 — Location */}
             <div className="p-8 md:p-10 hover:bg-white/[0.02] transition-colors duration-500">
               <div className="flex items-center gap-2.5 mb-5">
-                <MapPin size={14} className="text-gold/50 shrink-0" />
-                <span className="text-[8px] uppercase tracking-[0.4em] text-gold/50 font-bold">
+                <MapPin size={15} className="text-gold/70 shrink-0" />
+                <span className="text-xs md:text-sm uppercase tracking-[0.2em] text-gold/80 font-bold">
                   {t.locationLabel}
                 </span>
               </div>
@@ -200,8 +200,8 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang, onBookClick }) => {
             <div className="p-8 md:p-10 flex flex-col justify-between hover:bg-white/[0.02] transition-colors duration-500">
               <div>
                 <div className="flex items-center gap-2.5 mb-5">
-                  <Calendar size={14} className="text-gold/50 shrink-0" />
-                  <span className="text-[8px] uppercase tracking-[0.4em] text-gold/50 font-bold">
+                  <Calendar size={15} className="text-gold/70 shrink-0" />
+                  <span className="text-xs md:text-sm uppercase tracking-[0.2em] text-gold/80 font-bold">
                     {t.hours}
                   </span>
                 </div>

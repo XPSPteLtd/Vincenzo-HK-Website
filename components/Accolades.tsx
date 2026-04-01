@@ -45,7 +45,7 @@ export const Accolades: React.FC<AccoladesProps> = ({ lang }) => {
         <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mb-14 md:mb-20">
           <div className="flex items-center gap-3 shrink-0">
             <Trophy size={14} className="text-gold" />
-            <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.35em] text-gold/70">
+            <span className="text-[11px] md:text-xs font-bold uppercase tracking-[0.35em] text-gold/70">
               {lang === 'hk' ? '世界冠軍殊榮' : 'Awards & Recognition'}
             </span>
           </div>
@@ -67,7 +67,7 @@ export const Accolades: React.FC<AccoladesProps> = ({ lang }) => {
 
               {/* Title */}
               <div>
-                <h3 className={`font-sans font-bold text-[11px] md:text-xs uppercase tracking-[0.15em] ${item.accent} mb-3 leading-snug`}>
+                <h3 className={`font-sans font-bold text-base md:text-lg uppercase tracking-[0.15em] ${item.accent} mb-3 leading-snug`}>
                   {item.title}
                 </h3>
                 <div className="h-px w-8 bg-white/10 mb-4 group-hover:w-full transition-all duration-700" />

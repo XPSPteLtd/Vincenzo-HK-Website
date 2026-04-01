@@ -134,7 +134,7 @@ export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
           >
             <div className="flex items-start gap-4 md:gap-5 max-w-xs sm:max-w-sm md:max-w-lg">
               <span className="w-[3px] h-auto self-stretch bg-gold/40 rounded-full shrink-0 mt-1" />
-              <p className="text-white/75 font-serif italic text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed tracking-wide">
+              <p className="text-white/40 font-sans font-bold text-[10px] sm:text-xs uppercase tracking-[0.25em] leading-relaxed">
                 {t.philosophy.replace(/^["「]|["」]$/g, '')}
               </p>
             </div>

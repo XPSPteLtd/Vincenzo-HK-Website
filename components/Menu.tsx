@@ -153,7 +153,7 @@ const MenuItemCard: React.FC<{
               <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isNoteOpen ? 'max-h-64 mt-1.5' : 'max-h-0'}`}>
                 <div className="bg-[#0f1f11] border border-[#2a4a2e]/60 rounded-b-lg px-3 pt-3 pb-3.5 relative overflow-hidden">
                   <Scissors className="absolute -right-1 -bottom-1 w-7 h-7 text-[#2a4a2e]/40 rotate-90" />
-                  <p className="text-[#a8d4ab] text-[10px] italic font-serif leading-relaxed">
+                  <p className="text-[#a8d4ab] text-[10px] font-sans leading-relaxed">
                     "{chefNote}"
                   </p>
                   <div className="mt-2.5 flex items-center gap-2">
@@ -186,7 +186,7 @@ const MenuItemCard: React.FC<{
                   </div>
 
                   {/* Note text */}
-                  <p className="text-[#a8d4ab] text-[11px] leading-[1.8] font-serif italic">
+                  <p className="text-[#a8d4ab] text-[11px] leading-[1.8] font-sans">
                     "{chefNote}"
                   </p>
 
@@ -207,57 +207,58 @@ const MenuItemCard: React.FC<{
   );
 };
 
-   const BeverageCard: React.FC<{ 
-    item: MenuItem; 
-    lang: Language; 
-  }> = ({ item, lang }) => {
-    const itemName = lang !== 'en' ? item.nameZh || item.name : item.name;
-    const itemDesc = lang !== 'en' ? item.descriptionZh || item.description : item.description;
+const BeverageCard: React.FC<{
+  item: MenuItem;
+  lang: Language;
+}> = ({ item, lang }) => {
+  const itemName = lang !== 'en' ? item.nameZh || item.name : item.name;
+  const itemDesc = lang !== 'en' ? item.descriptionZh || item.description : item.description;
 
   return (
-    <div className="group relative flex flex-col h-full bg-white/[0.02] border border-white/5 rounded-2xl p-5 md:p-8 transition-all duration-500 hover:border-gold/20 hover:bg-white/[0.04] hover:shadow-2xl overflow-hidden min-h-[320px] md:min-h-[400px]">
-      {/* Decorative Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-red-900/10 via-transparent to-transparent opacity-50"></div>
-      
-      <div className="relative z-10 flex flex-col h-full">
-        {/* Title */}
-        <h3 className="font-sans uppercase text-2xl md:text-4xl font-bold text-white group-hover:text-gold transition-colors leading-tight mb-3 md:mb-4 drop-shadow-md">
+    <div className="group flex flex-col h-full bg-white/[0.02] border border-white/[0.06] rounded-xl md:rounded-2xl p-2 sm:p-3 md:p-5 transition-all duration-500 hover:border-gold/20 hover:bg-white/[0.04]">
+
+      {/* Text content */}
+      <div className="flex-1 flex flex-col">
+
+        {/* Name + divider */}
+        <h3 className="font-sans uppercase text-[13px] sm:text-[15px] md:text-xl font-bold text-white group-hover:text-gold transition-colors leading-tight mb-1.5 md:mb-3">
           {itemName}
         </h3>
+        <div className="h-px w-6 bg-gold/30 group-hover:w-full transition-all duration-700 mb-2 md:mb-3" />
 
-        {/* Alcohol Tag */}
-        {item.alcohol !== undefined && (
-          <div className="mb-4 md:mb-6">
-            <span className="inline-block px-2 py-0.5 md:px-3 md:py-1 border border-blue-500/30 text-blue-400 text-[8px] md:text-xs font-bold uppercase tracking-widest rounded bg-blue-500/5">
-              {item.alcohol ? (lang !== 'en' ? '含有酒精' : 'CONTAINS ALCOHOL') : (lang !== 'en' ? '不含酒精' : 'NON-ALCOHOLIC')}
+        {/* Alcohol / profile tags */}
+        <div className="flex flex-wrap gap-1.5 mb-2 md:mb-3">
+          {item.alcohol !== undefined && (
+            <span className={`px-2 py-0.5 border text-[7px] md:text-[9px] font-bold uppercase tracking-widest rounded ${item.alcohol ? 'border-red/40 text-red/80 bg-red/[0.06]' : 'border-green-500/30 text-green-400/80 bg-green-500/[0.05]'}`}>
+              {item.alcohol ? (lang !== 'en' ? '含酒精' : 'Alcoholic') : (lang !== 'en' ? '無酒精' : 'Non-Alcoholic')}
             </span>
-          </div>
-        )}
-
-        {/* Flavor Profiles */}
-        {item.profiles && item.profiles.length > 0 && (
-          <div className="flex flex-wrap gap-x-2 md:gap-x-3 gap-y-1.5 md:gap-y-2 mb-4 md:mb-6">
-            {item.profiles.map((profile, idx) => (
-              <React.Fragment key={idx}>
-                <span className="text-[8px] md:text-xs font-bold tracking-[0.2em] text-gray-500 uppercase">
-                  {profile}
-                </span>
-                {idx < item.profiles.length - 1 && <span className="text-gray-700 font-bold">•</span>}
-              </React.Fragment>
-            ))}
-          </div>
-        )}
+          )}
+          {item.profiles?.map((profile: string, idx: number) => {
+            const profileColors = [
+              'border-gold/30 text-gold/70 bg-gold/[0.05]',
+              'border-blue-400/30 text-blue-300/70 bg-blue-400/[0.05]',
+              'border-purple-400/30 text-purple-300/70 bg-purple-400/[0.05]',
+              'border-amber-400/30 text-amber-300/70 bg-amber-400/[0.05]',
+              'border-cyan-400/30 text-cyan-300/70 bg-cyan-400/[0.05]',
+            ];
+            return (
+              <span key={idx} className={`px-2 py-0.5 border text-[7px] md:text-[9px] font-bold uppercase tracking-widest rounded ${profileColors[idx % profileColors.length]}`}>
+                {profile}
+              </span>
+            );
+          })}
+        </div>
 
         {/* Description */}
-        <p className="text-gray-400 text-sm md:text-lg italic font-sans capitalize leading-relaxed mb-6 md:mb-8 drop-shadow-sm line-clamp-3">
-          "{itemDesc.replace(/Glass \$/g, 'G $').replace(/Bottle \$/g, 'B $')}"
+        <p className="text-white/45 text-[10px] sm:text-xs md:text-[13px] leading-relaxed font-light line-clamp-2 md:line-clamp-none mb-3 md:mb-5">
+          {itemDesc.replace(/Glass \$/g, 'G $').replace(/Bottle \$/g, 'B $')}
         </p>
 
         {/* Ingredients */}
         {item.ingredients && item.ingredients.length > 0 && (
-          <div className="mt-auto pt-4 md:pt-6 border-l-2 border-gold/40 pl-4 md:pl-5">
-            <p className="text-[8px] md:text-xs font-bold tracking-widest text-gold/80 uppercase flex flex-wrap gap-1.5 md:gap-2 leading-loose">
-              {item.ingredients.join(' | ')}
+          <div className="mt-auto pt-3 md:pt-4 border-t border-white/[0.06]">
+            <p className="text-[9px] md:text-[10px] font-bold tracking-widest text-white/25 uppercase">
+              {item.ingredients.join(' · ')}
             </p>
           </div>
         )}
@@ -394,7 +395,7 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-16 gap-8">
           <div className="w-full md:w-auto">
             <span className="text-gold tracking-[0.2em] md:tracking-mega text-[10px] md:text-xs uppercase font-bold block mb-3 md:mb-4">{t.tasteOfNapoli}</span>
-            <h2 className="font-display text-4xl md:text-6xl text-white uppercase leading-tight md:leading-none">{t.selectedWorks}</h2>
+            <h2 className="font-display text-4xl md:text-6xl text-white leading-tight md:leading-none">{t.selectedWorks}</h2>
           </div>
           
           {/* Horizontal Scroll Categories for Mobile */}
@@ -403,7 +404,7 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
               {categories.map((category) => (
                 <button
                   key={category}
-                  onClick={() => setActiveCategory(category)}
+                  onClick={() => handleCategoryClick(category)}
                   className={`text-xs md:text-sm tracking-[0.2em] uppercase transition-all pb-3 border-b-2 font-bold whitespace-nowrap ${
                     activeCategory === category ? 'text-white border-gold' : 'text-gray-600 border-transparent hover:text-gray-400'
                   }`}
