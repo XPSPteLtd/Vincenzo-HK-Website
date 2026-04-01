@@ -105,7 +105,7 @@ export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
             className={`mb-6 md:mb-8 transition-all duration-700 delay-100 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`}
             style={{ opacity: isLoaded ? contentOpacity : 0 }}
           >
-            <span className="inline-flex items-center gap-3 text-gold text-[11px] md:text-xs font-bold uppercase tracking-[0.35em]">
+            <span className="inline-flex items-center gap-3 text-gold text-xs md:text-sm font-bold uppercase tracking-[0.35em]">
               <span className="w-5 h-px bg-gold/50" />
               {lang === 'hk' ? '拿坡里 · 2022 世界薄餅冠軍' : 'Napoli · 2022 World Pizza Champion'}
             </span>

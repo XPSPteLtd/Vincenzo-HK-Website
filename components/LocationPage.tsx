@@ -100,7 +100,7 @@ export const LocationPage: React.FC<LocationPageProps> = ({ lang, onBookClick })
             {isHK ? '每週 7 天' : 'Open 7 Days a Week'}
           </p>
           <p className="text-white/50 text-sm font-sans font-light mb-4">12:00 — 23:00</p>
-          <div className="space-y-1.5 text-[11px] font-sans text-white/40">
+          <div className="space-y-1.5 text-xs font-sans text-white/55">
             <p>{isHK ? '午餐：12:00 — 15:00' : 'Lunch: 12:00 — 15:00'}</p>
             <p>{isHK ? '晚餐：17:00 — 23:00' : 'Dinner: 17:00 — 23:00'}</p>
             <p>{isHK ? '最後落單：22:30' : 'Last order: 22:30'}</p>
@@ -187,7 +187,7 @@ export const LocationPage: React.FC<LocationPageProps> = ({ lang, onBookClick })
               <div className="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0" />
               <div>
                 <p className="text-white text-sm font-bold font-sans tracking-wide">{item.label}</p>
-                <p className="text-white/40 text-xs font-sans font-light mt-1">{item.detail}</p>
+                <p className="text-white/55 text-xs font-sans font-light mt-1">{item.detail}</p>
               </div>
             </div>
           ))}
@@ -212,7 +212,7 @@ export const LocationPage: React.FC<LocationPageProps> = ({ lang, onBookClick })
             ].map((item, i) => (
               <div key={i} className="text-center p-6 border border-white/[0.07] hover:border-gold/30 transition-colors">
                 <p className="text-white text-sm font-bold font-sans mb-1">{isHK ? item.hk : item.en}</p>
-                <p className="text-white/40 text-xs font-sans font-light">{isHK ? item.hk_sub : item.en_sub}</p>
+                <p className="text-white/55 text-xs font-sans font-light">{isHK ? item.hk_sub : item.en_sub}</p>
               </div>
             ))}
           </div>

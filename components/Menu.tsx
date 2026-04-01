@@ -130,7 +130,7 @@ const MenuItemCard: React.FC<{
         <div className="h-px w-6 bg-gold/30 group-hover:w-full transition-all duration-700 mb-2 md:mb-3" />
 
         {/* Description */}
-        <p className="text-white/45 text-[10px] sm:text-xs md:text-[13px] leading-relaxed font-light line-clamp-2 md:line-clamp-none mb-3 md:mb-5">
+        <p className="text-white/60 text-xs sm:text-sm md:text-[15px] leading-relaxed font-light line-clamp-2 md:line-clamp-none mb-3 md:mb-5">
           {itemDesc}
         </p>
 
@@ -250,7 +250,7 @@ const BeverageCard: React.FC<{
         </div>
 
         {/* Description */}
-        <p className="text-white/45 text-[10px] sm:text-xs md:text-[13px] leading-relaxed font-light line-clamp-2 md:line-clamp-none mb-3 md:mb-5">
+        <p className="text-white/60 text-xs sm:text-sm md:text-[15px] leading-relaxed font-light line-clamp-2 md:line-clamp-none mb-3 md:mb-5">
           {itemDesc.replace(/Glass \$/g, 'G $').replace(/Bottle \$/g, 'B $')}
         </p>
 

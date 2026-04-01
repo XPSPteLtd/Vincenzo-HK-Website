@@ -35,7 +35,7 @@ export const Footer: React.FC<FooterProps> = ({ lang, onPageChange }) => {
             alt="Vincenzo Capuano"
             className="h-28 md:h-36 w-auto object-contain drop-shadow-2xl"
           />
-          <p className="text-xs text-white/40 tracking-[0.35em] uppercase font-light mt-3 font-sans">
+          <p className="text-xs text-white/55 tracking-[0.35em] uppercase font-light mt-3 font-sans">
             vivere di pizza è meraviglioso
           </p>
         </div>
@@ -98,7 +98,7 @@ export const Footer: React.FC<FooterProps> = ({ lang, onPageChange }) => {
             href="https://maps.app.goo.gl/mWac4KcwCQSUUibU9"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2.5 text-white/40 hover:text-white/70 transition-colors group"
+            className="flex items-center gap-2.5 text-white/55 hover:text-white/80 transition-colors group"
           >
             <MapPin size={13} className="text-white/30 group-hover:text-gold transition-colors shrink-0" />
             <span className="text-xs font-light tracking-wide">
@@ -115,7 +115,7 @@ export const Footer: React.FC<FooterProps> = ({ lang, onPageChange }) => {
 
         {/* Bottom bar */}
         <div className="w-full border-t border-white/[0.06] pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-[11px] text-white/30 uppercase tracking-[0.3em] font-bold">
+          <p className="text-xs text-white/50 uppercase tracking-[0.3em] font-bold">
             © {new Date().getFullYear()} HK Capvin Private Limited
           </p>
           <a
