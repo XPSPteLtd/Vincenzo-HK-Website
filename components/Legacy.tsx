@@ -41,7 +41,7 @@ export const Legacy: React.FC<LegacyProps> = ({ lang }) => {
         <div className="flex flex-col justify-center lg:pr-16 xl:pr-24">
 
           {/* Eyebrow */}
-          <span className="inline-flex items-center gap-3 text-[#f5eedc]/50 text-[9px] md:text-[10px] font-bold uppercase tracking-[0.35em] mb-5 md:mb-7">
+          <span className="inline-flex items-center gap-3 text-[#f5eedc]/60 text-[11px] md:text-xs font-bold uppercase tracking-[0.35em] mb-5 md:mb-7">
             <span className="w-6 h-px bg-[#f5eedc]/20" />
             {story.eyebrow}
           </span>
@@ -52,7 +52,7 @@ export const Legacy: React.FC<LegacyProps> = ({ lang }) => {
           </h2>
 
           {/* Story paragraphs */}
-          <div className="space-y-4 text-[#f5eedc]/65 font-sans font-light text-sm md:text-base leading-relaxed mb-8 md:mb-10">
+          <div className="space-y-4 text-[#f5eedc]/75 font-sans font-light text-sm md:text-base leading-relaxed mb-8 md:mb-10">
             <p>{story.p1}</p>
             <p>{story.p2}</p>
           </div>
@@ -64,7 +64,7 @@ export const Legacy: React.FC<LegacyProps> = ({ lang }) => {
             </p>
             <footer className="mt-3 flex items-center gap-3">
               <span className="w-6 h-px bg-[#c1272d]" />
-              <span className="text-[#f5eedc]/40 text-[9px] uppercase font-bold tracking-[0.2em]">{story.author}</span>
+              <span className="text-[#f5eedc]/50 text-[10px] uppercase font-bold tracking-[0.2em]">{story.author}</span>
             </footer>
           </blockquote>
 
@@ -76,7 +76,7 @@ export const Legacy: React.FC<LegacyProps> = ({ lang }) => {
               </div>
               <div>
                 <p className="text-[#f5eedc] text-[11px] font-bold uppercase tracking-[0.15em] mb-1">{sig.nuvolaTitle}</p>
-                <p className="text-[#f5eedc]/45 text-[10px] leading-relaxed font-light">{sig.nuvolaDesc}</p>
+                <p className="text-[#f5eedc]/55 text-xs leading-relaxed font-light">{sig.nuvolaDesc}</p>
               </div>
             </div>
             <div className="flex items-start gap-3 p-4 rounded-xl bg-white/[0.03] border border-white/[0.06]">
@@ -85,7 +85,7 @@ export const Legacy: React.FC<LegacyProps> = ({ lang }) => {
               </div>
               <div>
                 <p className="text-[#f5eedc] text-[11px] font-bold uppercase tracking-[0.15em] mb-1">{sig.scissorsTitle}</p>
-                <p className="text-[#f5eedc]/45 text-[10px] leading-relaxed font-light">{sig.scissorsDesc}</p>
+                <p className="text-[#f5eedc]/55 text-xs leading-relaxed font-light">{sig.scissorsDesc}</p>
               </div>
             </div>
           </div>
@@ -96,14 +96,14 @@ export const Legacy: React.FC<LegacyProps> = ({ lang }) => {
               href="https://book.bistrochat.com/vincenzo-capuano-wanchai-hk"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center gap-2.5 bg-[#c1272d] hover:bg-white text-white hover:text-[#c1272d] text-[10px] font-bold uppercase tracking-[0.2em] px-7 py-3.5 rounded-xl transition-all duration-300 shadow-[0_8px_24px_rgba(193,39,45,0.25)] active:scale-[0.97]"
+              className="group inline-flex items-center justify-center gap-2.5 bg-[#c1272d] hover:bg-white text-white hover:text-[#c1272d] text-xs font-bold uppercase tracking-[0.2em] px-7 py-3.5 rounded-xl transition-all duration-300 shadow-[0_8px_24px_rgba(193,39,45,0.25)] active:scale-[0.97]"
             >
               {story.bookCTA}
               <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform" />
             </a>
             <button
               onClick={() => { window.scrollTo(0, 0); navigate('/menu'); }}
-              className="inline-flex items-center justify-center gap-2.5 border border-[#f5eedc]/20 text-[#f5eedc]/70 hover:border-[#f5eedc]/50 hover:text-[#f5eedc] text-[10px] font-bold uppercase tracking-[0.2em] px-7 py-3.5 rounded-xl transition-all duration-300 active:scale-[0.97]"
+              className="inline-flex items-center justify-center gap-2.5 border border-[#f5eedc]/20 text-[#f5eedc]/70 hover:border-[#f5eedc]/50 hover:text-[#f5eedc] text-xs font-bold uppercase tracking-[0.2em] px-7 py-3.5 rounded-xl transition-all duration-300 active:scale-[0.97]"
             >
               {story.menuCTA}
             </button>
@@ -150,7 +150,7 @@ export const Legacy: React.FC<LegacyProps> = ({ lang }) => {
           <div className="absolute top-[38%] -left-[8%] md:-left-[12%] z-30 bg-[#c1272d] text-white px-4 py-3 md:px-5 md:py-4 shadow-2xl -rotate-6 hover:rotate-0 transition-all duration-500 hidden sm:flex items-center gap-3 rounded border border-white/10">
             <Trophy size={18} className="text-[#f3c65f] shrink-0 md:w-6 md:h-6" />
             <div className="flex flex-col">
-              <span className="text-[7px] md:text-[9px] uppercase tracking-widest font-black leading-none mb-0.5">Napoli 2022</span>
+              <span className="text-[9px] md:text-[11px] uppercase tracking-widest font-black leading-none mb-0.5">Napoli 2022</span>
               <span className="text-xs md:text-sm font-display italic leading-none whitespace-nowrap">World Pizza Champion</span>
             </div>
           </div>

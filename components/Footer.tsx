@@ -35,13 +35,13 @@ export const Footer: React.FC<FooterProps> = ({ lang, onPageChange }) => {
             alt="Vincenzo Capuano"
             className="h-28 md:h-36 w-auto object-contain drop-shadow-2xl"
           />
-          <p className="text-[10px] text-white/30 tracking-[0.35em] uppercase font-light mt-3 font-sans">
+          <p className="text-xs text-white/40 tracking-[0.35em] uppercase font-light mt-3 font-sans">
             vivere di pizza è meraviglioso
           </p>
         </div>
 
         {/* Philosophy quote */}
-        <p className="text-white/40 text-[10px] sm:text-xs font-bold tracking-[0.25em] uppercase text-center leading-relaxed mb-12 max-w-xl">
+        <p className="text-white/55 text-xs sm:text-sm font-bold tracking-[0.25em] uppercase text-center leading-relaxed mb-12 max-w-xl">
           {quote}
         </p>
 
@@ -50,13 +50,13 @@ export const Footer: React.FC<FooterProps> = ({ lang, onPageChange }) => {
           <a
             href="/"
             onClick={(e) => { e.preventDefault(); onPageChange('home'); }}
-            className="text-white/60 hover:text-white text-[11px] font-bold tracking-[0.2em] uppercase transition-colors py-2 px-1"
+            className="text-white/60 hover:text-white text-xs font-bold tracking-[0.2em] uppercase transition-colors py-2 px-1"
           >
             {t.nav.home}
           </a>
           <button
             onClick={() => onPageChange('menu')}
-            className="text-white/60 hover:text-white text-[11px] font-bold tracking-[0.2em] uppercase transition-colors"
+            className="text-white/60 hover:text-white text-xs font-bold tracking-[0.2em] uppercase transition-colors"
           >
             {t.nav.menu}
           </button>
@@ -64,7 +64,7 @@ export const Footer: React.FC<FooterProps> = ({ lang, onPageChange }) => {
             href="https://book.bistrochat.com/vincenzo-capuano-wanchai-hk"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gold text-[11px] font-bold tracking-[0.2em] uppercase border-b border-gold pb-0.5 hover:text-white hover:border-white transition-colors"
+            className="text-gold text-xs font-bold tracking-[0.2em] uppercase border-b border-gold pb-0.5 hover:text-white hover:border-white transition-colors"
           >
             {t.nav.reservations}
           </a>
@@ -72,7 +72,7 @@ export const Footer: React.FC<FooterProps> = ({ lang, onPageChange }) => {
             href="https://www.instagram.com/vincenzocapuano.hk"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-white/60 hover:text-white text-[11px] font-bold tracking-[0.2em] uppercase transition-colors"
+            className="flex items-center gap-2 text-white/60 hover:text-white text-xs font-bold tracking-[0.2em] uppercase transition-colors"
           >
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
@@ -83,7 +83,7 @@ export const Footer: React.FC<FooterProps> = ({ lang, onPageChange }) => {
             href="https://www.facebook.com/vincenzocapuano.hk"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-white/60 hover:text-white text-[11px] font-bold tracking-[0.2em] uppercase transition-colors"
+            className="flex items-center gap-2 text-white/60 hover:text-white text-xs font-bold tracking-[0.2em] uppercase transition-colors"
           >
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
               <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
@@ -101,28 +101,28 @@ export const Footer: React.FC<FooterProps> = ({ lang, onPageChange }) => {
             className="flex items-center gap-2.5 text-white/40 hover:text-white/70 transition-colors group"
           >
             <MapPin size={13} className="text-white/30 group-hover:text-gold transition-colors shrink-0" />
-            <span className="text-[11px] font-light tracking-wide">
+            <span className="text-xs font-light tracking-wide">
               {lang === 'hk'
                 ? '利東街, GF Unit 01 04 05, 灣仔, 香港'
                 : 'Lee Tung Avenue, GF Unit 01 04 05, Wan Chai, HK'}
             </span>
           </a>
           <span className="hidden sm:block w-1 h-1 rounded-full bg-white/20" />
-          <p className="text-[11px] font-bold tracking-[0.15em] uppercase text-white/40">
+          <p className="text-xs font-bold tracking-[0.15em] uppercase text-white/50">
             {lang === 'hk' ? '每週 7 天 · 12:00 — 23:00' : 'OPEN 7 DAYS · 12:00 — 23:00'}
           </p>
         </div>
 
         {/* Bottom bar */}
         <div className="w-full border-t border-white/[0.06] pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-[9px] text-white/20 uppercase tracking-[0.3em] font-bold">
+          <p className="text-[11px] text-white/30 uppercase tracking-[0.3em] font-bold">
             © {new Date().getFullYear()} HK Capvin Private Limited
           </p>
           <a
             href="https://pulsenpixels.com?utm_source=vincenzo-capuano-hk&utm_medium=website&utm_campaign=footer-credit"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[9px] text-white/10 hover:text-white/30 tracking-[0.2em] font-bold transition-colors"
+            className="text-[10px] text-white/15 hover:text-white/40 tracking-[0.2em] font-bold transition-colors"
           >
             Design by Pulse n Pixels
           </a>
