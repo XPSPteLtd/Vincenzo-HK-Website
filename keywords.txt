@@ -952,3 +952,658 @@ Most important for menu / long-tail
 	•	diavola pizza hong kong
 	•	truffle pizza hong kong
 	•	vegetarian pizza hong kong
+
+
+
+
+    Perfect. Below is the execution-ready SEO page map for Capvin Hong Kong — structured so your developer, SEO team, or content writer can actually implement it.
+
+This is designed around what tends to matter most for local restaurant visibility:
+	•	hyperlocal keywords
+	•	clear cuisine/category signals
+	•	menu crawlability
+	•	GBP ↔ website keyword consistency
+	•	and district-level relevance, which is especially important in a dense market like Hong Kong.  ￼
+
+Also, looking at visible HK competitors, you can clearly see how strong the local competition is clustered around Central / Soho / Wan Chai / TST — places like The Pizza Project, La Camionetta, FINI’S, and Pici already reinforce “pizza / Italian / neighborhood” intent strongly. That means your site architecture needs to be cleaner and more intentional, not broader.
+
+⸻
+
+CAPVIN HONG KONG — SEO PAGE MAP
+
+⸻
+
+1) Homepage
+
+URL
+
+/
+
+Primary Keyword
+
+pizzeria hong kong
+
+Secondary Keywords
+	•	neapolitan pizza hong kong
+	•	pizza restaurant hong kong
+	•	italian pizza hong kong
+	•	authentic pizza hong kong
+	•	contemporary neapolitan pizza hong kong
+	•	wood fired pizza hong kong
+
+Search Intent
+
+Brand discovery + category relevance + first impression
+
+Recommended H1
+
+Contemporary Neapolitan Pizza in Hong Kong
+
+Meta Title
+
+Vincenzo Capuano Hong Kong | Contemporary Neapolitan Pizzeria
+
+Meta Description
+
+Discover contemporary Neapolitan pizza in Hong Kong by Vincenzo Capuano — rooted in Naples, crafted with heritage, technique, and premium ingredients.
+
+Suggested H2s
+	•	A Slice of Naples, Reimagined
+	•	The Vincenzo Capuano Story
+	•	Crafted the Contemporary Neapolitan Way
+	•	Explore the Menu
+	•	Reserve Your Table
+
+FAQ Targets
+	•	What makes your pizza Neapolitan?
+	•	Is Vincenzo Capuano an authentic Italian pizzeria?
+	•	Do you take reservations in Hong Kong?
+
+Internal Links
+
+Link out to:
+	•	Menu
+	•	Reservations
+	•	About / Story
+	•	Location page
+	•	FAQ
+
+Notes
+
+This page should establish:
+	•	pizza
+	•	Hong Kong
+	•	Naples heritage
+	•	contemporary style
+
+Not just “Italian restaurant vibes.”
+
+⸻
+
+2) Location Page
+
+(This is one of your highest-value SEO pages.)
+
+URL
+
+Use one strong URL only, e.g.:
+	•	/hong-kong-pizzeria
+or if district-led:
+	•	/pizza-central-hong-kong
+	•	/pizza-wan-chai-hong-kong
+
+Primary Keyword
+
+[district] pizzeria
+Examples:
+	•	central hong kong pizzeria
+	•	wan chai pizza
+	•	tsim sha tsui pizza
+	•	causeway bay pizza
+
+Secondary Keywords
+	•	neapolitan pizza [district]
+	•	italian restaurant [district]
+	•	pizza restaurant hong kong
+	•	pizza near [landmark]
+	•	best pizza in [district]
+
+Search Intent
+
+Visit intent + map relevance + local discovery
+
+Recommended H1
+
+Neapolitan Pizza in [District], Hong Kong
+
+Meta Title
+
+Neapolitan Pizza in [District] | Vincenzo Capuano Hong Kong
+
+Meta Description
+
+Looking for authentic Neapolitan pizza in [District], Hong Kong? Discover Vincenzo Capuano — a contemporary pizzeria rooted in Naples and crafted for modern dining.
+
+Suggested H2s
+	•	Located in the Heart of [District]
+	•	A Pizza Destination in Hong Kong
+	•	Great for Dinner, Date Nights & Group Dining
+	•	How to Find Us
+	•	Reservations & Walk-Ins
+
+FAQ Targets
+	•	Where are you located in Hong Kong?
+	•	Are you near [landmark / MTR / mall]?
+	•	Do you accept walk-ins?
+	•	Is this a good spot for dinner in [district]?
+
+Internal Links
+
+Link to:
+	•	Reservations
+	•	Menu
+	•	About
+	•	FAQ
+
+Notes
+
+This page should include:
+	•	exact district / landmark references
+	•	directions
+	•	dining occasions
+	•	local context
+
+This page often does more SEO heavy lifting than blog posts.
+
+⸻
+
+3) Menu Page
+
+URL
+
+/menu
+
+Primary Keyword
+
+italian pizza hong kong
+
+Secondary Keywords
+	•	neapolitan pizza hong kong
+	•	pizza menu hong kong
+	•	wood fired pizza hong kong
+	•	authentic pizza hong kong
+	•	pizza restaurant hong kong
+
+Dish-Level Keywords
+
+Use naturally in headings / descriptions:
+	•	margherita pizza hong kong
+	•	burrata pizza hong kong
+	•	diavola pizza hong kong
+	•	truffle pizza hong kong
+	•	vegetarian pizza hong kong
+	•	spicy salami pizza hong kong
+
+Search Intent
+
+Menu exploration + food-specific discovery
+
+Recommended H1
+
+Our Contemporary Neapolitan Pizza Menu
+
+Meta Title
+
+Pizza Menu Hong Kong | Contemporary Neapolitan Pizza | Vincenzo Capuano
+
+Meta Description
+
+Explore our contemporary Neapolitan pizza menu in Hong Kong — crafted with premium ingredients, signature crust, and modern Naples-inspired flavour.
+
+Suggested H2s
+	•	Signature Pizzas
+	•	Classics from Naples
+	•	Contemporary Favourites
+	•	Starters & Sharing
+	•	Desserts & Drinks
+
+FAQ Targets
+	•	Do you have vegetarian pizza?
+	•	What are your signature pizzas?
+	•	Do you serve authentic Neapolitan pizza in Hong Kong?
+
+Internal Links
+
+Link to:
+	•	Reservations
+	•	Homepage
+	•	About
+	•	FAQ
+
+Critical Technical Note
+
+Do not use PDF menu only.
+Menu items should be in crawlable HTML text, because dish-level keywords and ingredient intent can actually rank when Google can read them. That’s also one of the most practical restaurant SEO wins people keep overlooking.  ￼
+
+⸻
+
+4) Reservations Page
+
+URL
+
+/reservations
+
+Primary Keyword
+
+pizza reservation hong kong
+
+Secondary Keywords
+	•	book pizza restaurant hong kong
+	•	italian restaurant reservation hong kong
+	•	pizza dinner hong kong
+	•	pizza date night hong kong
+	•	group dining pizza hong kong
+
+Search Intent
+
+Booking / conversion
+
+Recommended H1
+
+Reserve a Table at Vincenzo Capuano Hong Kong
+
+Meta Title
+
+Book a Table | Pizza Reservation Hong Kong | Vincenzo Capuano
+
+Meta Description
+
+Reserve your table at Vincenzo Capuano Hong Kong for contemporary Neapolitan pizza, date nights, group dining, and authentic Italian hospitality.
+
+Suggested H2s
+	•	Book Your Table
+	•	Dining at Vincenzo Capuano
+	•	Perfect for Dinner, Celebrations & Sharing
+	•	Reservation FAQs
+
+FAQ Targets
+	•	Do I need a reservation?
+	•	Do you accept walk-ins?
+	•	Is this suitable for groups?
+	•	Can I book for celebrations?
+
+Internal Links
+
+Link to:
+	•	Menu
+	•	Location
+	•	About
+	•	Homepage
+
+Notes
+
+This page should not just be a booking widget dumped on a blank page.
+It should still carry:
+	•	location signals
+	•	dining occasion signals
+	•	category signals
+
+⸻
+
+5) About / Founder Story Page
+
+URL
+
+/about or /our-story
+
+Primary Keyword
+
+pizza chef from naples
+
+Secondary Keywords
+	•	authentic neapolitan pizzeria
+	•	contemporary neapolitan pizza
+	•	third generation pizza chef
+	•	pizza heritage naples
+	•	italian pizza chef hong kong
+
+Search Intent
+
+Trust + authority + brand differentiation
+
+Recommended H1
+
+From Naples to Hong Kong: The Vincenzo Capuano Story
+
+Meta Title
+
+Our Story | Vincenzo Capuano Hong Kong | Pizza Chef from Naples
+
+Meta Description
+
+Discover the story behind Vincenzo Capuano — a contemporary Neapolitan pizza experience rooted in family tradition, Naples heritage, and modern craftsmanship.
+
+Suggested H2s
+	•	A Third-Generation Pizza Legacy
+	•	Tradition, Reimagined
+	•	Contemporary Neapolitan Pizza
+	•	From Naples to Hong Kong
+
+FAQ Targets
+	•	Who is Vincenzo Capuano?
+	•	What makes Vincenzo Capuano different?
+	•	Why is your pizza style contemporary Neapolitan?
+
+Internal Links
+
+Link to:
+	•	Homepage
+	•	Menu
+	•	Reservations
+	•	FAQ
+
+Notes
+
+This page helps:
+	•	entity clarity
+	•	PR / backlinks
+	•	trust
+	•	AI answer visibility
+
+This is especially important for a personality-led restaurant brand.
+
+⸻
+
+6) FAQ Page
+
+URL
+
+/faq
+
+Primary Keyword
+
+neapolitan pizza hong kong
+
+Secondary Keywords
+	•	authentic pizza hong kong
+	•	pizza reservation hong kong
+	•	vegetarian pizza hong kong
+	•	italian restaurant hong kong
+	•	pizza restaurant hong kong
+
+Search Intent
+
+Question-based search + AI answer retrieval
+
+Recommended H1
+
+Frequently Asked Questions
+
+Meta Title
+
+FAQ | Neapolitan Pizza Hong Kong | Vincenzo Capuano
+
+Meta Description
+
+Answers to common questions about our contemporary Neapolitan pizza, reservations, menu, and dining experience in Hong Kong.
+
+Recommended FAQ Questions
+
+Pizza / Product
+	•	What is Neapolitan pizza?
+	•	What makes contemporary Neapolitan pizza different?
+	•	What makes your crust different?
+
+Dining / Visit
+	•	Do you take reservations?
+	•	Do you accept walk-ins?
+	•	Are you family-friendly?
+	•	Do you serve vegetarian pizza?
+
+Brand / Experience
+	•	Why do you cut pizza with scissors?
+	•	What makes Vincenzo Capuano different from other pizzerias?
+
+Internal Links
+
+Link to:
+	•	Menu
+	•	Reservations
+	•	About
+	•	Location
+
+Notes
+
+This page is excellent for:
+	•	long-tail SEO
+	•	AI visibility
+	•	reducing user friction
+	•	structured FAQ schema
+
+⸻
+
+7) Private Events / Group Dining Page
+
+(If you offer this, build it. If not, skip.)
+
+URL
+
+/group-dining or /private-events
+
+Primary Keyword
+
+group dining pizza hong kong
+
+Secondary Keywords
+	•	private dining italian restaurant hong kong
+	•	pizza party venue hong kong
+	•	birthday dinner pizza hong kong
+	•	casual private dining hong kong
+	•	pizza restaurant for groups hong kong
+
+Search Intent
+
+Commercial / event bookings
+
+Recommended H1
+
+Group Dining & Private Events in Hong Kong
+
+Meta Title
+
+Group Dining & Private Events | Vincenzo Capuano Hong Kong
+
+Meta Description
+
+Host birthdays, celebrations, and group dinners at Vincenzo Capuano Hong Kong — a contemporary Neapolitan pizza destination built for sharing.
+
+Suggested H2s
+	•	Celebrate Over Pizza
+	•	Ideal for Groups & Special Occasions
+	•	Shared Dining, Naples Style
+	•	Event Enquiries
+
+FAQ Targets
+	•	Can I book for a group?
+	•	Do you host birthday dinners?
+	•	Is there a set menu for groups?
+
+Internal Links
+
+Link to:
+	•	Reservations
+	•	Menu
+	•	Location
+
+⸻
+
+8) BLOG / SEO SUPPORTING CONTENT MAP
+
+This is where you build authority — but only if it supports actual search intent.
+
+Blog 1
+
+URL
+
+/what-is-neapolitan-pizza
+
+Primary Keyword
+
+what is neapolitan pizza
+
+Secondary Keywords
+	•	authentic neapolitan pizza
+	•	contemporary neapolitan pizza
+	•	pizza from naples
+	•	neapolitan crust
+
+H1
+
+What Is Neapolitan Pizza?
+
+⸻
+
+Blog 2
+
+URL
+
+/contemporary-neapolitan-pizza-hong-kong
+
+Primary Keyword
+
+contemporary neapolitan pizza hong kong
+
+Secondary Keywords
+	•	authentic pizza hong kong
+	•	neapolitan pizza hong kong
+	•	modern pizza naples
+
+H1
+
+Why Contemporary Neapolitan Pizza Is Finding a Place in Hong Kong
+
+⸻
+
+Blog 3
+
+URL
+
+/why-we-cut-pizza-with-scissors
+
+Primary Keyword
+
+why cut pizza with scissors
+
+Secondary Keywords
+	•	pizza scissors tradition
+	•	neapolitan pizza ritual
+	•	cornicione pizza
+
+H1
+
+Why We Cut Pizza with Scissors
+
+⸻
+
+Blog 4
+
+URL
+
+/best-pizza-for-sharing-hong-kong
+
+Primary Keyword
+
+best pizza for sharing hong kong
+
+Secondary Keywords
+	•	pizza dinner hong kong
+	•	group dining pizza hong kong
+	•	date night pizza hong kong
+
+H1
+
+Why Pizza Is One of the Best Meals for Sharing in Hong Kong
+
+⸻
+
+Blog 5
+
+URL
+
+/vincenzo-capuano-story
+
+Primary Keyword
+
+pizza chef from naples
+
+Secondary Keywords
+	•	third generation pizza chef
+	•	pizza heritage naples
+	•	authentic neapolitan pizzeria
+
+H1
+
+The Story Behind Vincenzo Capuano
+
+⸻
+
+9) INTERNAL LINKING RULES
+
+This matters more than people think.
+
+Every core page should link to
+	•	Homepage
+	•	Menu
+	•	Reservations
+	•	About
+	•	Location
+	•	FAQ
+
+Every blog post should link back to
+	•	Menu
+	•	Reservations
+	•	About
+	•	Homepage
+
+Use anchor text like
+	•	contemporary Neapolitan pizza in Hong Kong
+	•	reserve a table
+	•	explore our pizza menu
+	•	discover our story
+	•	visit us in [district]
+
+Avoid lazy anchors like:
+	•	click here
+	•	read more
+	•	learn more
+
+⸻
+
+10) SCHEMA / TECHNICAL SEO YOU SHOULD IMPLEMENT
+
+Your developer should add:
+
+Must-have
+	•	Restaurant schema
+	•	LocalBusiness schema
+	•	Menu schema
+	•	FAQ schema
+	•	Breadcrumb schema
+	•	Open Graph / social meta
+	•	Image alt text optimization
+	•	proper canonicals
+	•	fast mobile performance
+
+Critical
+
+Your site should clearly reinforce:
+	•	name
+	•	category
+	•	location
+	•	hours
+	•	menu
+	•	reservation option
+	•	brand story
+
+That consistency is a major local SEO signal for restaurant visibility.  ￼
+

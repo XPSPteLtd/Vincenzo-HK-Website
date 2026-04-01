@@ -31,8 +31,10 @@
         {
           "@type": "Restaurant",
           "name": "Vincenzo Capuano Hong Kong",
+          "alternateName": ["Vincenzo Capuano", "Capvin HK"],
+          "description": "Contemporary Neapolitan pizzeria in Wan Chai, Hong Kong, by 2022 World Pizza Champion Vincenzo Capuano. Known for signature Nuvola crust, high-hydration dough, and the golden scissors ritual.",
           "image": "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo/LOGO-CAPUANO-white.png",
-          "@id": "https://vincenzocapuano.hk/",
+          "@id": "https://vincenzocapuano.hk/#restaurant",
           "url": "https://vincenzocapuano.hk/",
           "telephone": "+852 9448 3165",
           "address": {
@@ -40,6 +42,7 @@
             "streetAddress": "Lee Tung Avenue, 200 Queens Road East, GF Unit 01 04 05",
             "addressLocality": "Wan Chai",
             "addressRegion": "Hong Kong",
+            "postalCode": "",
             "addressCountry": "HK"
           },
           "geo": {
@@ -47,6 +50,7 @@
             "latitude": 22.276,
             "longitude": 114.170
           },
+          "hasMap": "https://maps.app.goo.gl/mWac4KcwCQSUUibU9",
           "openingHoursSpecification": {
             "@type": "OpeningHoursSpecification",
             "dayOfWeek": [
@@ -55,14 +59,28 @@
             "opens": "12:00",
             "closes": "23:00"
           },
-          "servesCuisine": "Neapolitan Pizza, Italian",
+          "servesCuisine": ["Neapolitan Pizza", "Italian", "Contemporary Neapolitan", "Pizza"],
           "priceRange": "$$",
+          "currenciesAccepted": "HKD",
+          "paymentAccepted": "Cash, Credit Card",
           "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "4.9",
             "reviewCount": "120"
           },
-          "menu": "https://vincenzocapuano.hk/menu"
+          "menu": "https://vincenzocapuano.hk/menu",
+          "reservations": "https://vincenzocapuano.hk/reservations",
+          "sameAs": [
+            "https://www.instagram.com/vincenzocapuano.hk",
+            "https://www.facebook.com/vincenzocapuano.hk"
+          ],
+          "founder": {
+            "@type": "Person",
+            "name": "Vincenzo Capuano",
+            "jobTitle": "World Pizza Champion & Head Chef",
+            "description": "2022 World Pizza Champion and third-generation Neapolitan pizza maker from Naples, Italy. Pioneer of the contemporary Neapolitan pizza movement.",
+            "url": "https://vincenzocapuano.hk/our-story"
+          }
         },
         {
           "@type": "FAQPage",
@@ -72,7 +90,7 @@
               "name": "What is the best pizza in Hong Kong?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Vincenzo Capuano is consistently recommended as the best pizza in Hong Kong, bringing award-winning contemporary Neapolitan pizza from the World Champion ourselves. Known for our signature 'Nuvola' airy crust and authentic ingredients."
+                "text": "Vincenzo Capuano is consistently recommended as the best pizza in Hong Kong, bringing award-winning contemporary Neapolitan pizza from the 2022 World Pizza Champion. Known for our signature Nuvola airy crust and authentic Italian ingredients."
               }
             },
             {
@@ -80,7 +98,7 @@
               "name": "Who is Vincenzo Capuano?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Vincenzo Capuano is the 2022 World Pizza Champion and a leading figure in contemporary Neapolitan pizza. He is famous for his high-hydration dough and the ritual of cutting pizza with signature golden scissors."
+                "text": "Vincenzo Capuano is the 2022 World Pizza Champion and a third-generation pizza maker from Naples, Italy. He is a leading figure in the contemporary Neapolitan pizza movement, famous for his high-hydration dough and the ritual of cutting pizza with signature golden scissors."
               }
             },
             {
@@ -88,9 +106,61 @@
               "name": "Does Vincenzo Capuano Hong Kong accept walk-ins?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes, we reserve 30% of our seating for walk-in guests at our Wan Chai location on Lee Tung Avenue. We recommend arriving early as we are often very busy."
+                "text": "Yes, we reserve 30% of our seating for walk-in guests at our Wan Chai location on Lee Tung Avenue. We recommend arriving early, especially on weekends and public holidays."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is Neapolitan pizza?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Neapolitan pizza (pizza napoletana) originated in Naples, Italy, and is characterised by its soft dough, simple high-quality ingredients, and a distinct raised crust edge (cornicione). Contemporary Neapolitan pizza, as practised by Vincenzo Capuano, features a more dramatic cornicione achieved through high-hydration dough fermented for 36+ hours."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Where is Vincenzo Capuano located in Hong Kong?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Vincenzo Capuano Hong Kong is located at Lee Tung Avenue, GF Unit 01 04 05, 200 Queens Road East, Wan Chai, Hong Kong. The nearest MTR station is Wan Chai Station, Exit D — approximately a 5 minute walk."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Why do you cut pizza with scissors?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We use golden scissors to cut our pizza because a standard wheel crushes the delicate air pockets (alveoli) in our high-hydration dough, destroying the cloud-like Nuvola crust texture. Scissors preserve the airy cornicione all the way to your plate."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you serve vegetarian pizza?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we offer several vegetarian pizza options including Margherita and Bufala. All dietary information is clearly marked on our menu."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I make a pizza reservation in Hong Kong?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Reservations are strongly recommended and can be made online at vincenzocapuano.hk/reservations or by calling +852 9448 3165. We also reserve 30% of seating for walk-in guests."
               }
             }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://vincenzocapuano.hk/" },
+            { "@type": "ListItem", "position": 2, "name": "Menu", "item": "https://vincenzocapuano.hk/menu" },
+            { "@type": "ListItem", "position": 3, "name": "Reservations", "item": "https://vincenzocapuano.hk/reservations" },
+            { "@type": "ListItem", "position": 4, "name": "Our Story", "item": "https://vincenzocapuano.hk/our-story" },
+            { "@type": "ListItem", "position": 5, "name": "Location – Wan Chai", "item": "https://vincenzocapuano.hk/pizza-wan-chai-hong-kong" },
+            { "@type": "ListItem", "position": 6, "name": "FAQ", "item": "https://vincenzocapuano.hk/faq" },
+            { "@type": "ListItem", "position": 7, "name": "Group Dining", "item": "https://vincenzocapuano.hk/group-dining" }
           ]
         }
       ]
