@@ -82,7 +82,7 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang, onBookClick }) => {
                     {lang !== 'en' ? '計劃營業時間' : 'Planned Service Hours'}
                   </p>
                   <div className="flex items-center gap-1.5 bg-white/[0.04] border border-white/10 rounded-lg px-3 py-1 shrink-0">
-                    <span className="text-[10px] uppercase tracking-widest text-white/40 font-bold">
+                    <span className="text-xs uppercase tracking-widest text-white/55 font-bold">
                       {lang !== 'en' ? '暫定' : 'Tentative'}
                     </span>
                   </div>
@@ -97,7 +97,7 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang, onBookClick }) => {
 
                 {/* Tentative opening date */}
                 <div className="mt-6 pt-5 border-t border-white/[0.05]">
-                  <p className="text-[10px] uppercase tracking-[0.35em] text-white/40 font-bold mb-2">
+                  <p className="text-xs uppercase tracking-[0.35em] text-white/55 font-bold mb-2">
                     {lang !== 'en' ? '暫定開幕日期' : 'Tentative Opening Date'}
                   </p>
                   <div className="flex items-baseline gap-3">
@@ -114,7 +114,7 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang, onBookClick }) => {
               {/* Right side: clock + countdown */}
               <div className="flex flex-row lg:flex-col items-center lg:items-end justify-between lg:justify-start gap-4 lg:gap-5 shrink-0 lg:pt-1">
                 <div className="text-right">
-                  <p className="text-[10px] uppercase tracking-[0.4em] text-white/40 font-bold mb-1">
+                  <p className="text-xs uppercase tracking-[0.4em] text-white/55 font-bold mb-1">
                     {lang !== 'en' ? '香港現在' : 'Now in HK'}
                   </p>
                   <div className="font-mono text-2xl md:text-3xl text-white/50 font-bold tabular-nums leading-none">
@@ -158,9 +158,17 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang, onBookClick }) => {
                   {t.locationLabel}
                 </span>
               </div>
-              <p className="text-white/70 text-sm leading-relaxed font-light mb-2">
-                {t.address}
-              </p>
+              <div className="mb-2">
+                <p className="text-white/70 text-sm font-light leading-snug">
+                  {lang === 'hk' ? '利東街' : 'Lee Tung Avenue'}
+                </p>
+                <p className="text-white/70 text-sm font-light leading-snug">
+                  {lang === 'hk' ? '地下 G01, 04, 05 號舖' : 'GF Unit 01 04 05'}
+                </p>
+                <p className="text-white/50 text-xs font-light leading-snug mt-1">
+                  {lang === 'hk' ? '皇后大道東200號 · 灣仔, 香港' : '200 Queens Road East · Wan Chai, HK'}
+                </p>
+              </div>
               <div className="flex items-center gap-2 text-white/45 text-xs font-light mb-5">
                 <Train size={11} className="text-gold/50 shrink-0" />
                 <span>{t.mtrInfo}</span>
@@ -228,8 +236,8 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang, onBookClick }) => {
             <p className="text-[10px] uppercase tracking-[0.45em] text-gold/50 font-bold mb-1">
               Wan Chai · Hong Kong
             </p>
-            <p className="text-white/40 text-xs sm:text-sm font-light max-w-[200px] leading-snug">
-              {translations[lang].common.addressShort}
+            <p className="text-white/55 text-xs font-light leading-snug">
+              {lang === 'hk' ? '利東街 · 地下 G01, 04, 05' : 'Lee Tung Avenue · GF Unit 01 04 05'}
             </p>
           </div>
 
