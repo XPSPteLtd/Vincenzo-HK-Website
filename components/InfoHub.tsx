@@ -8,7 +8,7 @@ interface InfoHubProps {
   onBookClick?: () => void;
 }
 
-const TENTATIVE_OPENING = new Date('2026-04-25T00:00:00+08:00');
+const TENTATIVE_OPENING = new Date('2026-04-29T00:00:00+08:00');
 
 export const InfoHub: React.FC<InfoHubProps> = ({ lang, onBookClick }) => {
   const t = translations[lang].location;
@@ -102,7 +102,7 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang, onBookClick }) => {
                   </p>
                   <div className="flex items-baseline gap-3">
                     <span className="font-display text-2xl text-gold font-bold">
-                      {lang !== 'en' ? '2026年4月25日' : '25 April 2026'}
+                      {lang !== 'en' ? '2026年4月29日' : '29 April 2026'}
                     </span>
                     <span className="text-[9px] text-white/25 font-light">
                       {lang !== 'en' ? '· 日期或有更改' : '· subject to change'}
@@ -183,9 +183,15 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang, onBookClick }) => {
                     {t.hours}
                   </span>
                 </div>
-                <p className="text-white/50 text-sm leading-relaxed font-light mb-8">
+                <p className="text-white/50 text-sm leading-relaxed font-light mb-4">
                   {t.reservationDesc}
                 </p>
+                <div className="flex items-center gap-2 mb-8 px-3 py-2.5 rounded-lg bg-gold/[0.06] border border-gold/20">
+                  <div className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse shrink-0" />
+                  <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-gold/80">
+                    {lang !== 'en' ? '立即訂座 · 5月1日起接受預約' : 'Book Now · Reservations available from 1 May 2026'}
+                  </p>
+                </div>
               </div>
               <a
                 href="https://book.bistrochat.com/vincenzo-capuano-wanchai-hk"
