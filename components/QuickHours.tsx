@@ -8,7 +8,7 @@ interface QuickHoursProps {
   lang: Language;
 }
 
-const TENTATIVE_OPENING = new Date('2026-04-25T00:00:00+08:00');
+const TENTATIVE_OPENING = new Date('2026-04-29T00:00:00+08:00');
 
 export const QuickHours: React.FC<QuickHoursProps> = ({ isOpen, onClose, lang }) => {
   const [daysUntilOpening, setDaysUntilOpening] = useState(0);
@@ -86,13 +86,21 @@ export const QuickHours: React.FC<QuickHoursProps> = ({ isOpen, onClose, lang })
               </div>
               <div className="text-right">
                 <span className="font-mono text-gold text-sm">
-                  {lang !== 'en' ? '4月25日' : '25 Apr'}
+                  {lang !== 'en' ? '4月29日' : '29 Apr'}
                 </span>
                 <span className="text-[9px] text-white/25 block">
                   {daysUntilOpening}d {lang !== 'en' ? '後' : 'away'}
                 </span>
               </div>
             </div>
+          </div>
+
+          {/* Booking notice */}
+          <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-gold/[0.06] border border-gold/20 mb-1">
+            <div className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse shrink-0" />
+            <p className="text-[9px] font-bold uppercase tracking-[0.18em] text-gold/80">
+              {lang !== 'en' ? '立即訂座 · 5月1日起接受預約' : 'Book Now · Reservations available from 1 May 2026'}
+            </p>
           </div>
 
           {/* Quick Actions */}

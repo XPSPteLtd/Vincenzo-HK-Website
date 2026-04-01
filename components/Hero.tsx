@@ -163,6 +163,14 @@ export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
             </button>
           </div>
 
+          {/* Booking notice */}
+          <div className="flex items-center gap-2.5 mt-1">
+            <div className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse shrink-0" />
+            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-gold/70">
+              {lang !== 'en' ? '立即訂座 · 5月1日起接受預約' : 'Book Now · Reservations available from 1 May 2026'}
+            </p>
+          </div>
+
         </div>
       </div>
 
