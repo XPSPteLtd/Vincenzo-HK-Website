@@ -273,9 +273,42 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
   const ITEMS_PER_PAGE = 6;
   
   const categories = useMemo(() => {
-    const uniqueCats = Array.from(new Set(items.map(item => item.mainCategory || 'Ala-carte')));
-    return [lang === 'en' ? 'All' : '全部', ...uniqueCats];
-  }, [items, lang]);
+    return Array.from(new Set(items.map(item => item.mainCategory || 'Ala-carte')));
+  }, [items]);
+
+  const getCategoryLabel = (cat: string) => {
+    if (lang === 'hk') {
+      if (cat === 'Ala-carte') return '單點菜單';
+      if (cat === 'Beverages') return '飲品';
+    }
+    return cat;
+  };
+
+  const getDietaryLabel = (tag: string) => {
+    if (lang === 'hk') {
+      const map: Record<string, string> = {
+        'Vegetarian': '素食', 'Vegan': '純素', 'Spicy': '辛辣', 'Contains Nuts': '含堅果',
+        'Alcoholic': '含酒精', 'Non-Alcoholic': '無酒精', 'Refreshing': '清新', 'Strong': '濃郁',
+      };
+      return map[tag] || tag;
+    }
+    return tag;
+  };
+
+  const getBeverageCategoryLabel = (cat: string) => {
+    if (lang === 'hk') {
+      const map: Record<string, string> = {
+        'Cocktails': '雞尾酒', 'Whiskies': '威士忌', 'Gin': '琴酒', 'Vodka': '伏特加',
+        'Rum': '冧酒', 'Agave': '龍舌蘭', 'Bitters': '苦酒', 'Beer': '啤酒',
+        'Non-Alcoholic': '無酒精飲品', 'Coffee': '咖啡', 'Tea': '茶',
+        'Wine — Prosecco': '氣泡酒', 'Wine — Champagne': '香檳',
+        'Wine — Rosato': '玫瑰紅酒', 'Wine — House White': '精選白酒',
+        'Wine — House Red': '精選紅酒', 'Wine — White': '白酒', 'Wine — Red': '紅酒',
+      };
+      return map[cat] || cat;
+    }
+    return cat;
+  };
 
   const dietaryTags = useMemo(() => {
     const tags = new Set<string>();
@@ -294,7 +327,7 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
     const p = location.pathname.toLowerCase();
     if (p.includes('alacarte') || p.includes('ala-carte')) return 'Ala-carte';
     if (p.includes('beverage')) return 'Beverages';
-    return lang === 'en' ? 'All' : (lang === 'hk' ? '全部' : '全部');
+    return 'Ala-carte';
   });
 
   const [activeDietary, setActiveDietary] = useState<string[]>([]);
@@ -315,7 +348,7 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
     const p = location.pathname.toLowerCase();
     if (p.includes('alacarte') || p.includes('ala-carte')) setActiveCategory('Ala-carte');
     else if (p.includes('beverage')) setActiveCategory('Beverages');
-    else setActiveCategory(lang === 'en' ? 'All' : '全部');
+    else setActiveCategory('Ala-carte');
     setActiveSection('all');
   }, [lang, location.pathname]);
 
@@ -324,15 +357,14 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
     setActiveSection('all');
     setActiveDietary([]);
     setCurrentPage(1);
-    if (category === 'Ala-carte') navigate('/menu/alacarte');
-    else if (category === 'Beverages') navigate('/menu/beverages');
-    else navigate('/menu');
+    if (category === 'Beverages') navigate('/menu/beverages');
+    else navigate('/menu/alacarte');
   };
 
   const filteredItems = useMemo(() => {
     return items.filter(item => {
       const itemMainCat = item.mainCategory || 'Ala-carte';
-      const matchesCategory = activeCategory === 'All' || activeCategory === '全部' || itemMainCat === activeCategory;
+      const matchesCategory = itemMainCat === activeCategory;
       
       let matchesDietary = true;
       if (activeDietary.length > 0) {
@@ -409,7 +441,7 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
                     activeCategory === category ? 'text-white border-gold' : 'text-gray-600 border-transparent hover:text-gray-400'
                   }`}
                 >
-                  {category}
+                  {getCategoryLabel(category)}
                 </button>
               ))}
             </div>
@@ -439,7 +471,7 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
 
         {/* Horizontal Scroll Filter Bar for Mobile */}
         <div className="flex items-center gap-3 md:gap-4 mb-10 md:mb-16 overflow-x-auto scrollbar-hide -mx-5 px-5 md:mx-0 md:px-0" id="menu-grid-top">
-          <span className="text-gray-500 text-[10px] uppercase tracking-widest self-center mr-2 shrink-0 font-bold hidden sm:inline">Filter:</span>
+          <span className="text-gray-500 text-[10px] uppercase tracking-widest self-center mr-2 shrink-0 font-bold hidden sm:inline">{lang === 'hk' ? '篩選：' : 'Filter:'}</span>
           
           <div className="flex flex-nowrap items-center gap-3 min-w-max">
             <button
@@ -461,7 +493,7 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
                   }`}
                 >
                   {getDietaryIcon(tag)}
-                  {tag}
+                  {getDietaryLabel(tag)}
                 </button>
                 
                 {/* Tooltip - Hide on very small screens to prevent layout issues, or use focused tap for info */}
@@ -494,7 +526,7 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
                 <div key={category} className="animate-in fade-in slide-in-from-bottom-8 duration-1000">
                   <div className="flex items-center gap-6 mb-12">
                     <h3 className="text-gold font-sans font-bold text-2xl md:text-3xl uppercase tracking-wider whitespace-nowrap">
-                      {category}
+                      {getBeverageCategoryLabel(category)}
                     </h3>
                     <div className="h-[2px] w-full bg-gradient-to-r from-gold/40 to-transparent"></div>
                   </div>
@@ -529,14 +561,14 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
                     <h3 className="text-white font-sans font-bold capitalize text-2xl md:text-3xl mb-4 italic">{t.noItems}</h3>
                     <button
                       onClick={() => {
-                        setActiveCategory(lang === 'en' ? 'All' : '全部');
+                        setActiveCategory('Ala-carte');
                         setActiveDietary([]);
                         setActiveSection('all');
                         setShowPopular(false);
                       }}
                       className="text-gold text-[10px] font-bold uppercase tracking-mega hover:text-white transition-colors"
                     >
-                      Clear All Filters
+                      {lang === 'hk' ? '清除篩選' : 'Clear All Filters'}
                     </button>
                 </div>
               )}
@@ -544,26 +576,36 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
           )}
 
           {/* Pagination */}
-          {totalPages > 1 && (
-            <div className="mt-16 md:mt-20 flex justify-center items-center gap-8 md:gap-10 border-t border-white/5 pt-12 md:pt-16">
+          {totalPages > 1 && activeCategory !== 'Beverages' && (
+            <div className="mt-16 md:mt-20 flex justify-center items-center gap-3 md:gap-4 border-t border-white/5 pt-12 md:pt-16 flex-wrap">
               <button
                 onClick={() => handlePageChange(currentPage - 1)}
                 disabled={currentPage === 1}
-                className="p-4 md:p-5 rounded-full border border-white/10 text-white disabled:opacity-10 hover:border-gold hover:text-gold transition-all duration-300"
+                className="p-3 md:p-4 rounded-full border border-white/10 text-white disabled:opacity-10 hover:border-gold hover:text-gold transition-all duration-300 shrink-0"
               >
-                {/* Fixed: Use responsive CSS classes for size as md:size prop is not supported */}
-                <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
+                <ChevronLeft className="w-4 h-4 md:w-5 md:h-5" />
               </button>
-              <div className="flex flex-col items-center">
-                <span className="text-gold font-display text-xl md:text-2xl tracking-widest">{currentPage} / {totalPages}</span>
+              <div className="flex items-center gap-2 flex-wrap justify-center">
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+                  <button
+                    key={page}
+                    onClick={() => handlePageChange(page)}
+                    className={`w-9 h-9 md:w-10 md:h-10 rounded-full text-[11px] md:text-xs font-bold transition-all duration-300 border ${
+                      currentPage === page
+                        ? 'bg-gold text-charcoal border-gold'
+                        : 'border-white/10 text-gray-500 hover:border-gold/40 hover:text-white'
+                    }`}
+                  >
+                    {page}
+                  </button>
+                ))}
               </div>
               <button
                 onClick={() => handlePageChange(currentPage + 1)}
                 disabled={currentPage === totalPages}
-                className="p-4 md:p-5 rounded-full border border-white/10 text-white disabled:opacity-10 hover:border-gold hover:text-gold transition-all duration-300"
+                className="p-3 md:p-4 rounded-full border border-white/10 text-white disabled:opacity-10 hover:border-gold hover:text-gold transition-all duration-300 shrink-0"
               >
-                {/* Fixed: Use responsive CSS classes for size as md:size prop is not supported */}
-                <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
+                <ChevronRight className="w-4 h-4 md:w-5 md:h-5" />
               </button>
             </div>
           )}

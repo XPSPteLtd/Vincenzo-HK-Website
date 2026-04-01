@@ -116,7 +116,10 @@ const App: React.FC = () => {
       : 'home';
 
   const handlePageChange = (page: Page) => {
-    if (page === 'home') navigate('/');
+    if (page === 'home') {
+      navigate('/');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
     else if (page === 'menu') navigate('/menu');
     else if (page === 'contact') navigate('/contact');
   };
