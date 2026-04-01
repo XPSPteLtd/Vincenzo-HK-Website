@@ -70,7 +70,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
           <div className="bg-gold p-2.5 rounded-full -mt-8 shadow-xl shadow-gold/20 border-4 border-charcoal">
             <CalendarDays size={18} className="text-charcoal" />
           </div>
-          <span className="text-[7px] uppercase tracking-widest font-bold text-gold">{lang === 'zh' ? '訂座' : 'Book'}</span>
+          <span className="text-[7px] uppercase tracking-widest font-bold text-gold">{t.book}</span>
         </button>
 
         {/* Events */}
@@ -79,7 +79,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
           className="flex flex-col items-center justify-center flex-1 gap-1 transition-all active:scale-95"
         >
           <Users size={18} className="text-gray-400" />
-          <span className="text-[7px] uppercase tracking-widest font-bold text-gray-500">{lang === 'zh' ? '活動' : 'Events'}</span>
+          <span className="text-[7px] uppercase tracking-widest font-bold text-gray-500">{t.events_short}</span>
         </button>
 
         {/* Hours */}
@@ -88,7 +88,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
           className="flex flex-col items-center justify-center flex-1 gap-1 transition-all active:scale-95"
         >
           <Clock size={18} className="text-gray-400" />
-          <span className="text-[7px] uppercase tracking-widest font-bold text-gray-500">{lang === 'zh' ? '時間' : 'Hours'}</span>
+          <span className="text-[7px] uppercase tracking-widest font-bold text-gray-500">{t.hours}</span>
         </button>
       </div>
     </div>

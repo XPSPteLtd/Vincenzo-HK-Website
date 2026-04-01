@@ -19,23 +19,12 @@ export const Loader: React.FC<LoaderProps> = ({ isLoading }) => {
         
         {/* Main Container */}
         <div className="relative z-10 p-8">
-            {/* Scissor Icon */}
-            <Scissors 
-                className="w-16 h-16 text-gold mx-auto mb-6 transform -rotate-90 animate-pulse" 
-                strokeWidth={1.5}
+            {/* Brand Logo */}
+            <img 
+              src="https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo/LOGO-CAPUANO-white.png" 
+              alt="Vincenzo Capuano Loading Logo" 
+              className="h-28 md:h-44 lg:h-56 w-auto mx-auto object-contain animate-pulse drop-shadow-[0_0_30px_rgba(255,255,255,0.1)]"
             />
-            
-            {/* Text Content */}
-            <div className="text-center space-y-3 overflow-hidden">
-                <h1 className="font-display text-3xl md:text-4xl text-white tracking-[0.2em] uppercase animate-fade-in-up">
-                    Vincenzo Capuano
-                </h1>
-                <div className="flex items-center justify-center gap-3 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
-                    <span className="h-px w-6 bg-gold/50"></span>
-                    <span className="text-[10px] md:text-xs text-gold tracking-[0.4em] uppercase">Hong Kong</span>
-                    <span className="h-px w-6 bg-gold/50"></span>
-                </div>
-            </div>
         </div>
       </div>
     </div>

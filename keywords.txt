@@ -1,0 +1,954 @@
+
+
+You should not heavily chase “best pizza hong kong” as a core SEO keyword on your own site.
+That query often has listicle / review / aggregator intent, not direct restaurant intent, so Google often prefers Tripadvisor, Time Out, Reddit, and “best of” pages for that kind of search.  ￼
+
+Instead, you should build around:
+	1.	high-intent local restaurant keywords
+	2.	style-specific pizza keywords
+	3.	area-based discovery keywords
+	4.	brand authority / story keywords
+	5.	reservation + menu intent keywords
+
+And yes — because this is local restaurant SEO in Hong Kong, you should also make sure you are benchmarked against visible players like Little Napoli Pizzeria, La Camionetta, The Pizza Project, FINI’S, and Amalfitana Repulse Bay, because these are the kinds of businesses Google already understands as “pizza / Italian / local dining intent” in Hong Kong.
+
+⸻
+
+The Keyword Clusters You Should Target
+
+1) Highest-Priority Core Keywords
+
+These should appear naturally across:
+	•	homepage
+	•	title tags
+	•	H1/H2s
+	•	menu page
+	•	location page
+	•	reservation page
+	•	Google Business Profile
+
+Primary Core Terms
+	•	pizzeria hong kong
+	•	pizza restaurant hong kong
+	•	italian pizza hong kong
+	•	neapolitan pizza hong kong
+	•	naples style pizza hong kong
+	•	authentic pizza hong kong
+	•	wood fired pizza hong kong
+	•	contemporary neapolitan pizza hong kong
+
+Why these matter
+
+These are the closest match to your actual business and align with how Google evaluates relevance in local SEO. Location-specific keywords and service/category relevance are particularly important for local ranking.  ￼
+
+⸻
+
+2) “Money Keywords” (Highest Commercial Intent)
+
+These are the ones most likely to convert into bookings or visits.
+
+Use heavily on your key landing pages
+	•	best pizzeria in hong kong
+	•	best neapolitan pizza hong kong
+	•	best pizza restaurant hong kong
+	•	pizza in hong kong
+	•	where to eat pizza in hong kong
+	•	pizza dinner hong kong
+	•	pizza lunch hong kong
+	•	pizza date night hong kong
+	•	italian restaurant pizza hong kong
+	•	pizza place hong kong
+
+Important
+
+Use these carefully in supporting copy, not in spammy ways.
+
+For example:
+	•	“Looking for a contemporary pizzeria in Hong Kong?”
+	•	“A destination for Neapolitan pizza in Hong Kong”
+	•	“Ideal for pizza date nights in Hong Kong”
+
+Do not stuff:
+	•	“best pizza hong kong” 15 times on the homepage
+That’s how websites end up sounding like they were written by a desperate robot.
+
+⸻
+
+3) Area / District Keywords (Very Important for Local Discovery)
+
+This is where local SEO often wins.
+
+You should build content around the actual neighborhood / district / landmark catchment once your exact HK location is confirmed.
+
+Examples
+
+If you’re in Central / Soho / Wan Chai / TST / Causeway Bay etc:
+	•	pizzeria central hong kong
+	•	pizza soho hong kong
+	•	pizza wan chai
+	•	pizza causeway bay
+	•	pizza tsim sha tsui
+	•	italian restaurant central hong kong
+	•	neapolitan pizza central hong kong
+	•	pizza near [district / landmark]
+
+Also useful:
+	•	pizza near me hong kong
+(You won’t optimize a page literally for this phrase, but your local SEO setup should support it.)
+
+Best practice:
+
+Create one strong location landing page, not 12 thin spam pages.
+
+Example:
+	•	/hong-kong-pizzeria
+	•	/pizza-central-hong-kong (if that’s truly your area)
+
+⸻
+
+4) Brand Positioning Keywords (Important for Capvin specifically)
+
+This is where you can win because your brand is not generic.
+
+You’re not just selling “pizza.”
+You’re selling:
+	•	Naples heritage
+	•	contemporary craft
+	•	Vincenzo identity
+	•	scissor-cut ritual
+	•	premium casual experience
+
+These should be embedded in copy
+	•	contemporary neapolitan pizza
+	•	naples pizza experience
+	•	pizza chef from naples
+	•	authentic neapolitan pizzeria
+	•	traditional italian pizza with modern style
+	•	artisan pizza hong kong
+	•	pizza chef hong kong
+	•	italian pizza experience hong kong
+	•	signature pizza hong kong
+	•	premium pizza hong kong
+
+These are great semantic support keywords.
+They help Google understand what kind of pizza experience you are.
+
+⸻
+
+5) Reservation / Action Keywords
+
+These are underrated and very useful.
+
+Include across reservation/menu pages
+	•	book pizza restaurant hong kong
+	•	pizza reservation hong kong
+	•	reserve italian restaurant hong kong
+	•	pizza restaurant for dinner hong kong
+	•	group dining pizza hong kong
+	•	pizza restaurant for date night hong kong
+	•	family pizza restaurant hong kong
+	•	casual italian dining hong kong
+
+These terms won’t always be the biggest search-volume terms, but they often map better to actual conversions.
+
+⸻
+
+6) Menu / Product Keywords
+
+These should sit on:
+	•	menu pages
+	•	product sections
+	•	FAQ
+	•	image alt text
+	•	schema-supported menu content
+
+Important pizza-specific terms
+	•	margherita pizza hong kong
+	•	bufala pizza hong kong
+	•	truffle pizza hong kong
+	•	burrata pizza hong kong
+	•	spicy salami pizza hong kong
+	•	diavola pizza hong kong
+	•	napoli pizza hong kong
+	•	pizza with burrata hong kong
+	•	fresh mozzarella pizza hong kong
+	•	pizza with pistachio hong kong (if applicable)
+
+Why this matters:
+
+Many restaurant sites ignore dish-level search intent.
+That’s a mistake.
+
+People absolutely search around:
+	•	dish names
+	•	ingredients
+	•	cravings
+	•	specific styles
+
+That’s where you can quietly win.
+
+⸻
+
+7) “Experience” Keywords (Great for Homepage + Blog + PR SEO)
+
+These are useful because they align with how people discover places now.
+
+Use in editorial-style content
+	•	best date night pizza hong kong
+	•	fun pizza restaurant hong kong
+	•	instagrammable pizza hong kong
+	•	authentic italian dining hong kong
+	•	casual luxury dining hong kong
+	•	best pizza for sharing hong kong
+	•	pizza with friends hong kong
+	•	family-friendly italian restaurant hong kong
+
+These are especially good if your site has:
+	•	lifestyle photography
+	•	a strong atmosphere
+	•	a distinct brand personality
+
+⸻
+
+8) Bilingual / Hong Kong Search Reality
+
+One very important thing for HK:
+
+You should not rely on English SEO only.
+
+Hong Kong search behavior is mixed, and local SEO guidance specifically notes that English + Chinese localization materially improves discoverability.  ￼
+
+So you should also create a Chinese keyword layer for:
+	•	homepage metadata
+	•	location page
+	•	Google Business Profile description
+	•	FAQ
+	•	alt text / structured content where relevant
+
+Chinese examples to target
+
+You should build pages / metadata around variants like:
+	•	香港薄餅店
+	•	香港披薩餐廳
+	•	香港拿坡里薄餅
+	•	香港意大利餐廳 薄餅
+	•	中環薄餅
+	•	灣仔薄餅
+	•	香港正宗拿坡里披薩
+	•	香港木烤披薩
+
+If you want, I can build the full English + Traditional Chinese keyword map for you next.
+
+⸻
+
+Your Actual Priority Keyword List (Shortlist)
+
+If I were prioritizing what to build content around first, I’d go with this:
+
+Tier 1 (Must target immediately)
+	1.	pizzeria hong kong
+	2.	neapolitan pizza hong kong
+	3.	pizza restaurant hong kong
+	4.	italian pizza hong kong
+	5.	authentic pizza hong kong
+	6.	wood fired pizza hong kong
+	7.	[your district] pizza
+	8.	[your district] italian restaurant
+	9.	contemporary neapolitan pizza hong kong
+	10.	pizza in hong kong
+
+Tier 2 (Strong supporting targets)
+	11.	best neapolitan pizza hong kong
+	12.	best pizzeria in hong kong
+	13.	pizza date night hong kong
+	14.	pizza dinner hong kong
+	15.	pizza reservation hong kong
+	16.	artisan pizza hong kong
+	17.	naples style pizza hong kong
+	18.	authentic neapolitan pizzeria hong kong
+	19.	family pizza restaurant hong kong
+	20.	pizza lunch hong kong
+
+Tier 3 (Menu / experience / semantic layer)
+	21.	margherita pizza hong kong
+	22.	burrata pizza hong kong
+	23.	truffle pizza hong kong
+	24.	diavola pizza hong kong
+	25.	casual italian dining hong kong
+	26.	premium pizza hong kong
+	27.	pizza chef from naples
+	28.	italian dining hong kong
+	29.	pizza near [landmark]
+	30.	best pizza for sharing hong kong
+
+⸻
+
+How to Actually Use These on the Website
+
+This is where most restaurant sites mess it up.
+
+Homepage
+
+Target:
+	•	pizzeria hong kong
+	•	neapolitan pizza hong kong
+	•	authentic pizza hong kong
+	•	contemporary neapolitan pizza hong kong
+
+Location Page
+
+Target:
+	•	[district] pizza
+	•	[district] italian restaurant
+	•	pizza restaurant hong kong
+	•	pizza near [landmark]
+
+Menu Page
+
+Target:
+	•	italian pizza hong kong
+	•	wood fired pizza hong kong
+	•	dish-level keywords
+
+Reservation Page
+
+Target:
+	•	pizza reservation hong kong
+	•	book pizza restaurant hong kong
+	•	pizza dinner hong kong
+
+Founder / Story Section
+
+Target:
+	•	pizza chef from naples
+	•	authentic neapolitan pizzeria
+	•	contemporary neapolitan pizza
+
+FAQ Section
+
+Target:
+	•	what is neapolitan pizza
+	•	what makes neapolitan pizza different
+	•	where to eat neapolitan pizza in hong kong
+	•	do you take reservations
+	•	do you serve vegetarian pizza
+	•	do you have group dining
+
+⸻
+
+The Smart SEO Move Most Restaurants Miss
+
+You should also build supporting content, not just static pages.
+
+Best content pages for Capvin HK
+
+You’d likely rank better with pages like:
+	•	What Makes Neapolitan Pizza Different?
+	•	Why Contemporary Neapolitan Pizza Is Rising in Hong Kong
+	•	The Story Behind Vincenzo Capuano
+	•	How to Spot Authentic Neapolitan Pizza
+	•	Best Pizza for Sharing in Hong Kong
+	•	Why We Cut Pizza with Scissors
+
+That gives Google:
+	•	topical authority
+	•	semantic depth
+	•	better internal linking
+	•	more chances to rank
+
+⸻
+
+My blunt recommendation
+
+If you want rankings that actually matter:
+
+Don’t build your SEO around
+	•	“best pizza hong kong” only
+	•	generic blog spam
+	•	thin neighborhood pages
+	•	keyword stuffing in homepage copy
+
+Do build it around
+	•	brand + style + location + experience
+	•	strong local landing pages
+	•	dish-level content
+	•	bilingual optimization
+	•	Google Business Profile alignment
+	•	reviews + photography + local citations
+
+That’s far more likely to get you:
+	•	visibility
+	•	map pack support
+	•	branded search growth
+	•	reservation traffic
+
+
+
+
+Perfect. Here’s the page-by-page keyword map you should actually build around for Capvin Hong Kong — not generic SEO fluff, but a structure that can support rankings + bookings + brand discovery.
+
+I’m also anchoring this to the reality of Hong Kong local dining search:
+	•	district and landmark intent matters a lot
+	•	local pack / Maps visibility is critical
+	•	menu and category clarity matter
+	•	and Google already understands Hong Kong pizza demand through visible competitors like The Pizza Project, Little Napoli Pizzeria, La Camionetta, Emmer Pizzeria & Café, and Motorino SoHo.  ￼
+
+⸻
+
+Capvin Hong Kong — SEO Keyword Map by Page
+
+0) Before Anything: Your SEO Rule
+
+Each page should target:
+	•	1 primary keyword
+	•	3–6 secondary keywords
+	•	semantic support phrases
+	•	1 clear user intent
+
+If every page tries to rank for everything, it will rank for nothing.
+
+⸻
+
+1) Homepage
+
+Primary Intent
+
+Brand + category + city discovery
+
+This page should answer:
+
+“Who are you, what kind of pizza do you serve, and why should I care?”
+
+Primary Keyword
+	•	pizzeria hong kong
+
+Secondary Keywords
+	•	neapolitan pizza hong kong
+	•	pizza restaurant hong kong
+	•	italian pizza hong kong
+	•	authentic pizza hong kong
+	•	contemporary neapolitan pizza hong kong
+	•	wood fired pizza hong kong
+
+Semantic / Support Phrases
+	•	pizza chef from naples
+	•	authentic neapolitan pizzeria
+	•	pizza in hong kong
+	•	premium pizza hong kong
+	•	artisan pizza hong kong
+	•	naples style pizza hong kong
+
+Best places to use these
+	•	Hero headline
+	•	Intro paragraph
+	•	Founder story section
+	•	Why-us section
+	•	Image alt text
+	•	Footer paragraph
+
+Example Homepage H1
+
+Contemporary Neapolitan Pizza in Hong Kong
+
+Suggested Meta Title
+
+Vincenzo Capuano Hong Kong | Contemporary Neapolitan Pizzeria
+
+Suggested Meta Description
+
+Discover contemporary Neapolitan pizza in Hong Kong by Vincenzo Capuano — rooted in Naples, crafted with heritage, technique, and premium ingredients.
+
+⸻
+
+2) Location Page
+
+(This is one of your most important pages.)
+
+If your actual site doesn’t yet have a strong location page, fix that first.
+
+Primary Intent
+
+Local discovery + maps relevance + visit intent
+
+Primary Keyword
+	•	[district] pizzeria
+Example:
+	•	central hong kong pizzeria
+	•	pizza central hong kong
+	•	pizza tsim sha tsui
+	•	pizza causeway bay
+
+Secondary Keywords
+	•	pizza near [landmark]
+	•	italian restaurant [district]
+	•	neapolitan pizza [district]
+	•	pizza restaurant hong kong
+	•	pizza near me hong kong (indirect support)
+	•	best pizza in [district]
+
+Semantic / Support Phrases
+	•	easy dinner spot in [district]
+	•	pizza near [mall / station / landmark]
+	•	dine in pizza hong kong
+	•	family pizza restaurant hong kong
+	•	date night pizza hong kong
+
+Best places to use these
+	•	page title
+	•	H1
+	•	opening paragraph
+	•	embedded map area
+	•	directions / neighborhood copy
+	•	FAQ
+
+Example H1
+
+Neapolitan Pizza in [District], Hong Kong
+
+Example Supporting Copy Angle
+
+Talk about:
+	•	exact area
+	•	nearby landmarks
+	•	what kind of occasion you’re good for
+	•	what makes you worth visiting
+
+Suggested FAQ targets
+	•	Where are you located in Hong Kong?
+	•	Do I need a reservation?
+	•	Are you near [landmark]?
+	•	Do you serve lunch and dinner?
+
+Blunt truth: this page often matters more than half your blog content combined.
+
+⸻
+
+3) Menu Page
+
+This page is often under-optimized on restaurant sites.
+
+That’s a mistake.
+
+Primary Intent
+
+Dish / food-style / menu exploration
+
+Primary Keyword
+	•	italian pizza hong kong
+
+Secondary Keywords
+	•	neapolitan pizza hong kong
+	•	wood fired pizza hong kong
+	•	pizza menu hong kong
+	•	authentic pizza hong kong
+	•	pizza restaurant hong kong
+
+Dish-Level Supporting Keywords
+
+These should be embedded naturally if they exist on your menu:
+	•	margherita pizza hong kong
+	•	bufala pizza hong kong
+	•	diavola pizza hong kong
+	•	burrata pizza hong kong
+	•	truffle pizza hong kong
+	•	spicy salami pizza hong kong
+	•	fresh mozzarella pizza hong kong
+	•	vegetarian pizza hong kong
+	•	napoli pizza hong kong
+
+Critical SEO Rule
+
+Your menu should be:
+	•	HTML text
+	•	not a PDF
+	•	not an image-only menu
+
+Because Google can actually crawl the dish names and ingredient intent when menu content is structured properly. That’s also a common local SEO recommendation for restaurant sites.  ￼
+
+Example H1
+
+Our Contemporary Neapolitan Pizza Menu
+
+Bonus move
+
+Add short text under each pizza:
+	•	ingredients
+	•	style note
+	•	flavor cue
+
+That helps:
+	•	SEO
+	•	conversion
+	•	AI search visibility
+	•	menu understanding
+
+⸻
+
+4) Reservations Page
+
+This page is usually wasted by restaurants.
+
+It shouldn’t be.
+
+Primary Intent
+
+Booking / conversion
+
+Primary Keyword
+	•	pizza reservation hong kong
+
+Secondary Keywords
+	•	book pizza restaurant hong kong
+	•	italian restaurant reservation hong kong
+	•	pizza dinner hong kong
+	•	pizza date night hong kong
+	•	group dining pizza hong kong
+	•	family pizza restaurant hong kong
+
+Support Phrases
+	•	reserve a table
+	•	book dinner
+	•	walk-ins welcome
+	•	weekend pizza dinner
+	•	celebration dining
+	•	casual dining hong kong
+
+Best places to use
+	•	H1
+	•	intro paragraph
+	•	reservation instructions
+	•	FAQ
+	•	confirmation / booking section
+
+Example H1
+
+Reserve a Table at Vincenzo Capuano Hong Kong
+
+Suggested FAQ
+	•	Do I need a reservation?
+	•	Do you accept walk-ins?
+	•	Is this good for groups?
+	•	Is there indoor / outdoor seating?
+	•	Can I book for celebrations?
+
+⸻
+
+5) About / Founder Story Page
+
+This is where Capvin can actually differentiate.
+
+Primary Intent
+
+Trust + brand depth + authority
+
+Primary Keyword
+	•	pizza chef from naples
+
+Secondary Keywords
+	•	authentic neapolitan pizzeria
+	•	contemporary neapolitan pizza
+	•	naples pizza experience
+	•	italian pizza chef hong kong
+	•	third generation pizza chef
+	•	pizza heritage naples
+
+Support Phrases
+	•	born in Naples
+	•	family pizza tradition
+	•	modern neapolitan vision
+	•	rooted in heritage
+	•	crafted with technique
+	•	global pizza experience
+
+Example H1
+
+From Naples to Hong Kong: The Vincenzo Capuano Story
+
+Why this page matters
+
+It won’t be your biggest traffic page, but it helps:
+	•	brand authority
+	•	entity understanding
+	•	PR linking
+	•	“about the chef / founder” search intent
+	•	conversion trust
+
+This page also gives AI systems and search engines more confidence about:
+	•	who you are
+	•	why you’re different
+	•	what your expertise is
+
+⸻
+
+6) Private Events / Group Dining Page
+
+If you offer this and don’t have a page for it, you’re leaving value on the table.
+
+Primary Intent
+
+Higher-value commercial intent
+
+Primary Keyword
+	•	group dining pizza hong kong
+
+Secondary Keywords
+	•	private dining italian restaurant hong kong
+	•	pizza restaurant for groups hong kong
+	•	birthday dinner pizza hong kong
+	•	pizza party venue hong kong
+	•	casual private dining hong kong
+
+Support Phrases
+	•	celebrations
+	•	team dinners
+	•	birthday groups
+	•	shared dining
+	•	event-friendly restaurant
+
+Example H1
+
+Group Dining & Private Events in Hong Kong
+
+This is less about huge SEO volume and more about:
+	•	monetizable traffic
+	•	event conversions
+	•	long-tail search wins
+
+⸻
+
+7) FAQ Page
+
+Very underrated.
+
+This is one of the easiest ways to capture:
+	•	long-tail keywords
+	•	conversational search
+	•	AI answer engine visibility
+
+Primary Intent
+
+Question-based discovery
+
+Primary Keyword
+	•	neapolitan pizza hong kong (or broader conversational support)
+
+Best FAQ Keyword Themes
+
+Use real questions like:
+
+Category / Style
+	•	What is Neapolitan pizza?
+	•	What makes Neapolitan pizza different?
+	•	What is contemporary Neapolitan pizza?
+
+Local Intent
+	•	Where can I get Neapolitan pizza in Hong Kong?
+	•	Do you have a pizza restaurant in [district]?
+
+Visit / Booking
+	•	Do I need a reservation?
+	•	Do you accept walk-ins?
+	•	Are you family-friendly?
+	•	Do you serve vegetarian pizza?
+
+Brand / Experience
+	•	Why do you cut pizza with scissors?
+	•	What makes Vincenzo Capuano different?
+
+This helps both:
+	•	SEO
+	•	AI summaries
+	•	user trust
+
+⸻
+
+8) Blog / Editorial Content
+
+This is where you build topical authority, not just “content for content’s sake.”
+
+Your blog should not be random.
+
+It should support:
+	•	your pizza style
+	•	your brand story
+	•	your local dining intent
+
+⸻
+
+Best Blog Topic Targets
+
+A. Education + Style
+
+Target Keyword:
+	•	what is neapolitan pizza
+
+Other support:
+	•	authentic neapolitan pizza
+	•	contemporary neapolitan pizza
+	•	neapolitan crust
+	•	pizza from naples
+
+B. Hong Kong Discovery
+
+Target Keyword:
+	•	best neapolitan pizza hong kong
+
+Support:
+	•	pizza in hong kong
+	•	authentic pizza hong kong
+	•	italian pizza hong kong
+
+C. Brand Story
+
+Target Keyword:
+	•	pizza chef from naples
+
+Support:
+	•	third generation pizza chef
+	•	naples pizza tradition
+	•	contemporary neapolitan pizza
+
+D. Food / Menu Intent
+
+Target Keyword:
+	•	best pizza for sharing hong kong
+
+Support:
+	•	pizza dinner hong kong
+	•	date night pizza hong kong
+	•	group dining pizza hong kong
+
+E. Signature Differentiator
+
+Target Keyword:
+	•	why cut pizza with scissors
+
+This is a sneaky-good content angle because:
+	•	it’s memorable
+	•	brand-distinctive
+	•	linkable
+	•	social-friendly
+
+⸻
+
+9) Image SEO (Most Restaurant Sites Underuse This)
+
+Your photos are not just decoration.
+
+They can reinforce:
+	•	menu relevance
+	•	local SEO
+	•	dish discoverability
+
+Use keyword-rich but natural file names
+
+Examples:
+	•	neapolitan-pizza-hong-kong.jpg
+	•	margherita-pizza-vincenzo-capuano-hk.jpg
+	•	pizza-restaurant-hong-kong-interior.jpg
+	•	wood-fired-pizza-hong-kong.jpg
+
+Use alt text like
+	•	“Contemporary Neapolitan pizza at Vincenzo Capuano Hong Kong”
+	•	“Wood-fired Margherita pizza in Hong Kong”
+	•	“Italian pizza restaurant interior in Hong Kong”
+
+Fresh, original restaurant imagery also supports visibility and click-through in local search environments.  ￼
+
+⸻
+
+10) Google Business Profile Keyword Alignment
+
+This matters more than many restaurant owners want to admit.
+
+Your site and GBP should use aligned language around:
+	•	category
+	•	cuisine
+	•	neighborhood
+	•	menu style
+	•	booking behavior
+
+Keywords to reinforce in GBP
+	•	pizzeria hong kong
+	•	neapolitan pizza hong kong
+	•	italian restaurant hong kong
+	•	[district] pizza
+	•	wood fired pizza hong kong
+
+Also reinforce via reviews
+
+You should encourage natural review language around:
+	•	pizza style
+	•	district / location
+	•	dishes
+	•	atmosphere
+	•	occasions
+
+Example review cues:
+	•	“best Neapolitan pizza in Central”
+	•	“great pizza date night in Hong Kong”
+	•	“authentic Italian pizza”
+	•	“best crust / cornicione”
+
+That helps search engines better connect your restaurant to the right local intent patterns.  ￼
+
+⸻
+
+Your Final Priority Map (If You Do Nothing Else)
+
+Must Win First
+
+If I were sequencing this for Capvin HK, I’d prioritize:
+
+Phase 1
+	1.	Homepage
+	2.	Location Page
+	3.	Menu Page
+	4.	Reservation Page
+
+Phase 2
+	5.	About / Founder Page
+	6.	FAQ Page
+	7.	Private Events Page
+
+Phase 3
+	8.	Blog / Editorial Content
+	9.	Chinese-language support layer
+	10.	Dish landing / feature content if needed
+
+⸻
+
+Your Core Keyword Set by Business Priority
+
+Most important overall
+	•	pizzeria hong kong
+	•	neapolitan pizza hong kong
+	•	pizza restaurant hong kong
+	•	italian pizza hong kong
+	•	authentic pizza hong kong
+	•	[district] pizza
+	•	pizza reservation hong kong
+	•	wood fired pizza hong kong
+	•	contemporary neapolitan pizza hong kong
+	•	pizza in hong kong
+
+Most important for conversion
+	•	book pizza restaurant hong kong
+	•	pizza dinner hong kong
+	•	pizza date night hong kong
+	•	group dining pizza hong kong
+	•	family pizza restaurant hong kong
+
+Most important for brand authority
+	•	pizza chef from naples
+	•	authentic neapolitan pizzeria
+	•	contemporary neapolitan pizza
+	•	third generation pizza chef
+	•	naples pizza experience
+
+Most important for menu / long-tail
+	•	margherita pizza hong kong
+	•	burrata pizza hong kong
+	•	diavola pizza hong kong
+	•	truffle pizza hong kong
+	•	vegetarian pizza hong kong

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { MapPin, Clock, Phone, ArrowRight, CalendarDays, Users, ExternalLink } from 'lucide-react';
+import { MapPin, Clock, Phone, ArrowRight, CalendarDays, Users, ExternalLink, TrainFront } from 'lucide-react';
 import { Language, translations } from '../translations';
 
 interface LocationProps {
@@ -60,10 +60,10 @@ export const Location: React.FC<LocationProps> = ({ lang }) => {
         {/* Left Panel — Info */}
         <div className="flex flex-col justify-center p-8 xs:p-10 md:p-16 lg:p-20">
 
-          <span className="text-gold/50 tracking-[0.3em] text-[10px] uppercase font-bold mb-3 block">
+          <span className="text-gold/60 tracking-[0.3em] text-[9px] md:text-xs uppercase font-bold mb-4 block">
             {t.findUs}
           </span>
-          <h2 className="font-display italic text-3xl xs:text-4xl md:text-5xl text-white mb-8 md:mb-12 uppercase leading-none">
+          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-white mb-6 md:mb-8 leading-[1.1]">
             {t.hkCentral}
           </h2>
 
@@ -78,7 +78,7 @@ export const Location: React.FC<LocationProps> = ({ lang }) => {
               <div className="pl-7 space-y-3">
                 <p className="text-gray-400 font-light leading-relaxed text-sm">{t.address}</p>
                 <div className="flex items-center gap-3 text-white/50 text-xs font-light">
-                  <Train size={12} className="text-gold/70 shrink-0" />
+                  <TrainFront size={12} className="text-gold/70 shrink-0" />
                   <span>MTR Wan Chai Station – Exit D (5 min walk)</span>
                 </div>
                 <button
@@ -86,7 +86,7 @@ export const Location: React.FC<LocationProps> = ({ lang }) => {
                   className="flex items-center gap-2 bg-white/5 hover:bg-gold/10 border border-white/10 hover:border-gold/30 rounded-xl px-5 py-2.5 transition-all group/map w-fit"
                 >
                   <span className="text-[10px] font-bold uppercase tracking-widest text-white group-hover/map:text-gold transition-colors">
-                    {lang === 'zh' ? '查看地圖' : 'View Map'}
+                    {lang !== 'en' ? '查看地圖' : 'View Map'}
                   </span>
                   <ExternalLink size={11} className="text-gold group-hover/map:scale-110 transition-transform" />
                 </button>
@@ -113,7 +113,7 @@ export const Location: React.FC<LocationProps> = ({ lang }) => {
             rel="noopener noreferrer"
             className="mt-10 md:mt-14 group flex items-center gap-4 text-white hover:text-gold transition-colors w-fit"
           >
-            <span className="font-display italic text-base md:text-lg tracking-widest uppercase border-b border-white/20 pb-1 group-hover:border-gold">
+            <span className="font-sans font-bold text-xs md:text-sm tracking-widest uppercase border-b border-white/20 pb-1 group-hover:border-gold group-hover:text-gold transition-colors">
               {t.makeReservation}
             </span>
             <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform duration-300" />
@@ -126,7 +126,7 @@ export const Location: React.FC<LocationProps> = ({ lang }) => {
 
             <div className="text-center mb-8">
               <CalendarDays size={28} className="text-gold mx-auto mb-5" strokeWidth={1} />
-              <h3 className="font-serif text-2xl lg:text-3xl text-white mb-2 italic">
+              <h3 className="font-serif text-2xl lg:text-3xl text-white mb-2">
                 {t.reserveExperience}
               </h3>
               <p className="text-gray-500 text-[10px] tracking-widest uppercase">{t.checkAvailability}</p>

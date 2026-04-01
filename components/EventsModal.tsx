@@ -149,9 +149,9 @@ export const EventsModal: React.FC<EventsModalProps> = ({ isOpen, onClose, lang 
                       <MapPin size={20} className="text-gold" />
                     </div>
                     <div>
-                      <h4 className="text-white font-display uppercase tracking-widest text-sm mb-1">{lang === 'zh' ? '旗艦店位置' : 'Flagship Location'}</h4>
+                      <h4 className="text-white font-display uppercase tracking-widest text-sm mb-1">{lang !== 'en' ? '旗艦店位置' : 'Flagship Location'}</h4>
                       <p className="text-gray-400 text-[11px] leading-relaxed">
-                        {lang === 'zh' ? '坐落於灣仔核心地帶，交通便利。' : 'Located in the heart of Wan Chai, Hong Kong.'}
+                        {lang !== 'en' ? '坐落於灣仔核心地帶，交通便利。' : 'Located in the heart of Wan Chai, Hong Kong.'}
                       </p>
                     </div>
                   </div>
@@ -161,14 +161,14 @@ export const EventsModal: React.FC<EventsModalProps> = ({ isOpen, onClose, lang 
                       onClick={openGoogleMaps}
                       className="flex-1 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl py-3 px-4 flex items-center justify-center gap-2 transition-all group"
                     >
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-white">{lang === 'zh' ? '查看地圖' : 'View Map'}</span>
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-white">{lang !== 'en' ? '查看地圖' : 'View Map'}</span>
                       <ExternalLink size={12} className="text-gold group-hover:scale-110 transition-transform" />
                     </button>
                     <button 
                       onClick={scrollToLocation}
                       className="flex-1 bg-gold/5 hover:bg-gold/10 border border-gold/20 rounded-xl py-3 px-4 flex items-center justify-center gap-2 transition-all group"
                     >
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-gold">{lang === 'zh' ? '營業資訊' : 'Our Location'}</span>
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-gold">{lang !== 'en' ? '營業資訊' : 'Our Location'}</span>
                       <ChevronRight size={12} className="text-gold group-hover:translate-x-1 transition-transform" />
                     </button>
                   </div>

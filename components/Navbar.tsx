@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu as MenuIcon, X, Scissors, ShoppingBag, Languages, Clock, Users, Phone } from 'lucide-react';
 import { Language, translations } from '../translations';
+import { Page } from '../App';
 
 interface NavbarProps {
   onBookClick: () => void;
@@ -10,6 +11,9 @@ interface NavbarProps {
   onHoursClick: () => void;
   lang: Language;
   onLangChange: (lang: Language) => void;
+  activePage: Page;
+  onPageChange: (page: Page) => void;
+  isBannerActive: boolean;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({ 
@@ -18,7 +22,10 @@ export const Navbar: React.FC<NavbarProps> = ({
   onEventsClick,
   onHoursClick,
   lang, 
-  onLangChange 
+  onLangChange,
+  activePage,
+  onPageChange,
+  isBannerActive
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [scrollY, setScrollY] = useState(0);
@@ -41,27 +48,13 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   const handleNavLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, page: Page) => {
     e.preventDefault();
-    const targetId = href.replace('#', '');
-    const element = document.getElementById(targetId);
-    if (element) {
-      const offset = 70;
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = element.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
+    onPageChange(page);
     setIsMobileMenuOpen(false);
   };
 
-  const navLinks = [
-    { name: t.menu, href: '#menu' },
-    { name: t.philosophy, href: '#concept' },
-    { name: t.location, href: '#location' },
+  const navLinks: { name: string; page: Page }[] = [
+    { name: t.home, page: 'home' },
+    { name: t.menu, page: 'menu' },
   ];
 
   return (
@@ -72,7 +65,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           : 'bg-transparent py-6 md:py-8 border-b border-transparent lg:min-h-[10.5rem]'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 flex justify-between items-center h-full">
         {/* Brand Logo - Handover effect */}
         <a
           href="/"
@@ -107,72 +100,43 @@ export const Navbar: React.FC<NavbarProps> = ({
               </a>
             ))}
             <button 
-              onClick={onEventsClick}
-              className="text-[10px] lg:text-xs font-bold tracking-widest hover:text-gold transition-colors text-white uppercase flex items-center gap-1.5"
-            >
-              <Users size={12} className="text-gold/50" />
-              {t.events}
-            </button>
-            <button 
               onClick={onHoursClick}
               className="text-[11px] lg:text-[13px] font-semibold tracking-[0.15em] hover:text-gold transition-colors text-white uppercase flex items-center gap-1.5"
+              aria-label={lang !== 'en' ? '時間' : 'Hours'}
             >
-              <Clock size={12} className="text-gold/50" />
-              {lang === 'zh' ? '時間' : 'Hours'}
+              <Clock size={16} className="text-gold/50" />
             </button>
           </div>
           
           <div className="flex items-center gap-3 lg:gap-4 border-l border-white/10 pl-4 lg:pl-6 ml-2 lg:ml-0">
-            <a 
-              href="tel:+85212345678"
-              className="hidden lg:flex items-center gap-2 text-[10px] font-bold text-white/70 hover:text-gold transition-colors uppercase tracking-widest"
+            <button
+              onClick={() => onLangChange(lang === 'en' ? 'hk' : 'en')}
+              className="text-[9px] lg:text-[10px] font-bold text-white/50 hover:text-gold transition-colors flex items-center gap-1.5"
             >
-              <Phone size={12} className="text-gold/50" />
-              +852 1234 5678
-            </a>
-
-            <button 
-              onClick={() => onLangChange(lang === 'en' ? 'zh' : 'en')}
-              className="text-[9px] lg:text-[10px] font-bold text-white/50 hover:text-gold transition-colors flex items-center gap-1"
-            >
-              <Languages size={12} className="text-gold/50" />
-              <span className="hidden lg:inline">{lang === 'en' ? '繁體中文' : 'ENGLISH'}</span>
-              <span className="lg:hidden">{lang === 'en' ? 'ZH' : 'EN'}</span>
-            </button>
-
-            <button 
-              onClick={onDeliveryClick}
-              className="flex items-center gap-1.5 text-[10px] lg:text-xs font-bold tracking-widest hover:text-gold transition-colors text-white uppercase"
-            >
-              <ShoppingBag size={12} className="text-gold" />
-              {t.order}
+              <Languages size={14} className="text-gold/50" />
+              <span className="hidden lg:inline uppercase">{lang === 'en' ? '繁體中文' : 'ENGLISH'}</span>
+              <span className="lg:hidden">{lang === 'en' ? '繁' : 'EN'}</span>
             </button>
             
             <a
               href="https://book.bistrochat.com/vincenzo-capuano-wanchai-hk"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 lg:px-7 py-2.5 lg:py-3 bg-gold hover:bg-white text-charcoal text-[10px] lg:text-xs font-bold tracking-widest rounded-xl transition-all duration-300 shadow-lg shadow-gold/10 active:scale-[0.97]"
+              className="px-5 lg:px-7 py-2.5 lg:py-3 bg-gold hover:bg-white text-charcoal text-[10px] lg:text-xs font-bold tracking-widest rounded-xl transition-all duration-300 shadow-lg shadow-gold/10 active:scale-[0.97] text-center uppercase block"
             >
               {t.reservations}
-            </button>
+            </a>
           </div>
         </div>
 
-        {/* Mobile Quick Controls */}
-        <div className="md:hidden flex items-center gap-1 sm:gap-2">
-          <a 
-            href="tel:+85212345678"
-            className="p-2 text-white/60 active:text-gold transition-colors"
-            aria-label="Call Restaurant"
-          >
-            <Phone size={18} />
-          </a>
-          <button 
-            onClick={() => onLangChange(lang === 'en' ? 'zh' : 'en')}
-            className="p-2 text-white/40 active:text-gold transition-colors"
+        <div className="md:hidden flex items-center gap-2">
+          <button
+            onClick={() => onLangChange(lang === 'en' ? 'hk' : 'en')}
+            className="p-2 text-white/40 active:text-gold transition-colors flex items-center gap-1"
+            aria-label={lang === 'en' ? 'Switch to Traditional Chinese' : 'Switch to English'}
           >
             <Languages size={18} />
+            <span className="text-[9px] font-bold uppercase">{lang === 'en' ? '繁' : 'EN'}</span>
           </button>
           <button 
             className="text-white p-2"
@@ -191,8 +155,8 @@ export const Navbar: React.FC<NavbarProps> = ({
           {navLinks.map((link, idx) => (
             <a 
               key={link.name}
-              href={link.href}
-              onClick={(e) => handleNavLinkClick(e, link.href)}
+              href={link.page === 'home' ? '/' : `/${link.page}`}
+              onClick={(e) => handleNavLinkClick(e, link.page)}
               className="text-2xl font-serif text-white hover:text-gold transition-colors py-3 border-b border-white/5 flex justify-between items-center"
               style={{ transitionDelay: `${idx * 40}ms` }}
             >
@@ -202,41 +166,14 @@ export const Navbar: React.FC<NavbarProps> = ({
           ))}
           
           <button 
-            onClick={() => { setIsMobileMenuOpen(false); onEventsClick(); }}
-            className="text-2xl font-serif text-white hover:text-gold transition-colors py-3 border-b border-white/5 flex justify-between items-center"
-          >
-            {t.events}
-            <Users size={16} className="text-gold/20" />
-          </button>
-
-          <button 
             onClick={() => { setIsMobileMenuOpen(false); onHoursClick(); }}
-            className="text-2xl font-serif text-white hover:text-gold transition-colors py-3 border-b border-white/5 flex justify-between items-center"
+            className="text-24 font-serif text-white hover:text-gold transition-colors py-4 border-b border-white/5 flex justify-between items-center"
           >
-            {lang === 'zh' ? '營業時間' : 'Hours'}
+            {lang !== 'en' ? '營業時間' : 'Hours'}
             <Clock size={16} className="text-gold/20" />
           </button>
 
-          <a 
-            href="tel:+85212345678"
-            className="text-2xl font-serif text-white hover:text-gold transition-colors py-3 border-b border-white/5 flex justify-between items-center"
-          >
-            {lang === 'zh' ? '致電預約' : 'Call Us'}
-            <Phone size={16} className="text-gold/20" />
-          </a>
-          
           <div className="mt-auto space-y-4 pb-24">
-            <button 
-              onClick={() => {
-                setIsMobileMenuOpen(false);
-                onDeliveryClick();
-              }}
-              className="w-full py-4 border border-white/10 rounded-xl text-white font-bold tracking-widest uppercase text-[10px] flex items-center justify-center gap-3"
-            >
-              <ShoppingBag size={16} className="text-gold" />
-              {t.order}
-            </button>
-            
             <a
               href="https://book.bistrochat.com/vincenzo-capuano-wanchai-hk"
               target="_blank"
@@ -244,7 +181,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               className="w-full py-4 bg-gold hover:bg-white text-charcoal text-[10px] font-bold tracking-widest rounded-xl transition-all duration-300 shadow-lg shadow-gold/10 active:scale-[0.97] text-center uppercase block"
             >
               {t.reservations}
-            </button>
+            </a>
           </div>
         </div>
       </div>

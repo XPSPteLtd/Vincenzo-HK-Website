@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { Instagram, ExternalLink, Loader2 } from 'lucide-react';
-import { Language } from '../translations';
+import { Language, translations } from '../translations';
 
 interface InstagramPost {
   id: string;

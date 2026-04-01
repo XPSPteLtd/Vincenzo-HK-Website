@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Scissors, Wheat } from 'lucide-react';
+import { Scissors, Wheat, Cloud, Quote } from 'lucide-react';
 import { SafeImage } from './ui/SafeImage';
 import { Language, translations } from '../translations';
 
@@ -72,6 +72,7 @@ export const Signature: React.FC<SignatureProps> = ({ lang }) => {
 
             </div>
           </div>
+        </div>
 
         {/* ── Right: Image ──────────────────────────────── */}
         <div className="w-full lg:w-[58%] relative min-h-[420px] md:min-h-[500px] lg:min-h-0 order-first lg:order-last">
@@ -94,7 +95,7 @@ export const Signature: React.FC<SignatureProps> = ({ lang }) => {
           {/* Quote seal */}
           <div className="absolute bottom-8 right-8 md:bottom-10 md:right-10 bg-charcoal/90 backdrop-blur-md w-36 h-36 md:w-44 md:h-44 lg:w-48 lg:h-48 rounded-full flex flex-col items-center justify-center p-5 md:p-6 text-center shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-30 border border-gold/20 pointer-events-none">
             <Quote className="text-gold/10 w-7 h-7 md:w-10 md:h-10 absolute top-4 md:top-5 opacity-30" />
-            <p className="text-gold font-sans italic font-bold text-[9px] md:text-[10px] leading-snug relative z-10 px-2">
+            <p className="text-gold font-serif text-[10px] md:text-[12px] leading-snug relative z-10 px-2 italic">
               "{t.quote.replace(/"/g, '')}"
             </p>
             <div className="mt-2 md:mt-3 text-[6px] uppercase tracking-[0.3em] font-bold text-gold/40 border-t border-gold/10 pt-2">

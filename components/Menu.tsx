@@ -1,7 +1,8 @@
 
 import React, { useMemo, useEffect, useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { menuItems } from '../menuData';
-import { Leaf, Flame, Star, ChevronLeft, ChevronRight, SearchX, ShoppingBag, Scissors, Info, Quote } from 'lucide-react';
+import { Leaf, Flame, Star, ChevronLeft, ChevronRight, SearchX, ShoppingBag, Scissors, Info } from 'lucide-react';
 import { MenuItem } from '../types';
 import { SafeImage } from './ui/SafeImage';
 import { Language, translations } from '../translations';
@@ -80,103 +81,126 @@ const getChefNote = (item: MenuItem, lang: Language) => {
   return uniqueNotes[index];
 };
 
-const MenuItemCard: React.FC<{ 
-  item: MenuItem; 
-  lang: Language; 
+const MenuItemCard: React.FC<{
+  item: MenuItem;
+  lang: Language;
   onDeliveryClick?: () => void;
 }> = ({ item, lang, onDeliveryClick }) => {
   const t = translations[lang].menu;
-  
-  const chefNote = lang === 'zh' ? item.chefNoteZh || item.chefNote : item.chefNote;
-  const itemName = lang === 'zh' ? item.nameZh || item.name : item.name;
-  const itemDesc = lang === 'zh' ? item.descriptionZh || item.description : item.description;
+  const [isNoteOpen, setIsNoteOpen] = useState(false);
+
+  const resolvedNote = getChefNote(item, lang);
+  const chefNote = lang !== 'en' ? item.chefNoteZh || resolvedNote : resolvedNote;
+  const itemName = lang !== 'en' ? item.nameZh || item.name : item.name;
+  const itemDesc = lang !== 'en' ? item.descriptionZh || item.description : item.description;
 
   return (
-    <div className="group cursor-pointer flex flex-col h-full bg-white/[0.02] border border-white/5 rounded-xl md:rounded-2xl p-2 sm:p-3 md:p-5 transition-all duration-500 hover:border-gold/20 hover:bg-white/[0.04] gap-3 md:gap-0">
-      
-      {/* Square image for all sizes now that we have 2 columns */}
+    <div className="group flex flex-col h-full bg-white/[0.02] border border-white/[0.06] rounded-xl md:rounded-2xl p-2 sm:p-3 md:p-5 transition-all duration-500 hover:border-gold/20 hover:bg-white/[0.04] gap-3 md:gap-0">
+
+      {/* Image */}
       <div className="w-full aspect-square overflow-hidden relative bg-[#111] rounded-lg md:rounded-xl shrink-0">
-        <SafeImage 
-          src={item.image} 
-          alt={itemName} 
+        <SafeImage
+          src={item.image}
+          alt={itemName}
           fallbackPrompt={`${item.category}: ${item.name}. Detailed high-end food close-up.`}
           aspectRatio="1:1"
           className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
         />
         {item.popular && (
-          <div className="absolute top-0 left-0 bg-gold text-charcoal text-[7px] md:text-[10px] font-bold uppercase tracking-widest px-2 md:px-4 py-1 md:py-2 flex items-center gap-1 z-20 shadow-xl">
+          <div className="absolute top-0 left-0 bg-gold text-charcoal text-[7px] md:text-[10px] font-bold uppercase tracking-widest px-2 md:px-4 py-1 md:py-2 flex items-center gap-1 z-20">
             <Star size={8} className="fill-charcoal md:w-2.5 md:h-2.5" />
-            <span className="md:inline">{t.signature}</span>
+            {t.signature}
           </div>
         )}
-        <button 
-          onClick={(e) => {
-            e.stopPropagation();
-            onDeliveryClick?.();
-          }}
-          className="absolute bottom-2 right-2 md:bottom-4 md:right-4 bg-white/10 backdrop-blur-md hover:bg-gold p-1.5 md:p-3 rounded-full border border-white/20 transition-all duration-300 opacity-100 md:opacity-0 group-hover:opacity-100 transform md:translate-y-2 group-hover:translate-y-0"
+        <button
+          onClick={(e) => { e.stopPropagation(); onDeliveryClick?.(); }}
+          className="absolute bottom-2 right-2 md:bottom-3 md:right-3 bg-white/10 backdrop-blur-md hover:bg-gold p-1.5 md:p-2.5 rounded-full border border-white/20 transition-all duration-300 opacity-100 md:opacity-0 group-hover:opacity-100 md:translate-y-1 group-hover:translate-y-0"
         >
-          <ShoppingBag size={12} className="text-white group-hover:text-charcoal md:w-4 md:h-4" />
+          <ShoppingBag size={11} className="text-white group-hover:text-charcoal md:w-3.5 md:h-3.5" />
         </button>
       </div>
-      
-      {/* Content Area */}
-      <div className="flex-1 flex flex-col justify-center md:mt-6">
-        <div className="mb-1 md:mb-4">
-          <div className="flex justify-between items-start mb-0.5 md:mb-4">
-            <h3 className="font-sans uppercase text-[13px] sm:text-[15px] md:text-2xl font-bold text-white group-hover:text-gold transition-colors leading-tight">
-              {itemName}
-            </h3>
-          </div>
-          <div className="h-px w-6 md:w-10 bg-gold/30 group-hover:w-full transition-all duration-700 mb-1.5 md:mb-4"></div>
-        </div>
-        
-        <div className="flex-1">
-          <p className="text-gray-400 text-[10px] sm:text-xs md:text-[15px] leading-relaxed font-light line-clamp-2 md:line-clamp-none">
-            {itemDesc}
-          </p>
-        </div>
 
-        {/* Collapsible Chef's Note - Mobile Focus */}
+      {/* Text content */}
+      <div className="flex-1 flex flex-col md:mt-5">
+
+        {/* Name + divider */}
+        <h3 className="font-sans uppercase text-[13px] sm:text-[15px] md:text-xl font-bold text-white group-hover:text-gold transition-colors leading-tight mb-1.5 md:mb-3">
+          {itemName}
+        </h3>
+        <div className="h-px w-6 bg-gold/30 group-hover:w-full transition-all duration-700 mb-2 md:mb-3" />
+
+        {/* Description */}
+        <p className="text-white/45 text-[10px] sm:text-xs md:text-[13px] leading-relaxed font-light line-clamp-2 md:line-clamp-none mb-3 md:mb-5">
+          {itemDesc}
+        </p>
+
+        {/* ── Chef's Note ─────────────────────────────── */}
         {chefNote && (
-          <div className="mt-2.5 md:mt-6">
-            <button 
-              onClick={(e) => { e.stopPropagation(); setIsNoteOpen(!isNoteOpen); }}
-              className="md:hidden w-full py-1 text-[7px] uppercase font-bold tracking-widest text-gold/60 border border-gold/10 rounded-md flex items-center justify-between px-2 hover:bg-gold/5"
-            >
-              <span className="flex items-center gap-1.5">
-                <Scissors className="w-2.5 h-2.5 text-gold/40 rotate-90" />
-                {t.chefNote}
-              </span>
-              <span className="text-[10px] font-light">{isNoteOpen ? '−' : '+'}</span>
-            </button>
-            
-            <div className={`transition-all duration-500 overflow-hidden ${isNoteOpen ? 'max-h-[500px] mt-2 opacity-100' : 'max-h-0 md:max-h-none opacity-0 md:opacity-100'}`}>
-              <div className="bg-white/[0.03] border border-gold/20 rounded-xl md:rounded-2xl p-3.5 md:p-6 relative overflow-hidden group-hover:border-gold/40 transition-colors shadow-inner">
-                <div className="absolute -right-2 -bottom-2 opacity-[0.05] text-gold pointer-events-none">
-                  <Quote className="w-10 h-10 md:w-20 md:h-20 rotate-180" />
-                </div>
-                
-                <div className="hidden md:flex items-center gap-3 mb-4">
-                  <div className="p-1.5 bg-gold/10 rounded-lg">
-                    <Scissors className="w-4 h-4 text-gold rotate-90" />
+          <>
+            {/* MOBILE — collapsible */}
+            <div className="md:hidden mt-auto">
+              <button
+                onClick={(e: React.MouseEvent) => { e.stopPropagation(); setIsNoteOpen((o: boolean) => !o); }}
+                className="w-full flex items-center justify-between px-3 py-2 rounded-lg border border-[#2a4a2e]/60 hover:border-[#3d6b42]/80 hover:bg-[#1a2e1c]/40 transition-all duration-300"
+              >
+                <span className="flex items-center gap-2 text-[8px] uppercase font-bold tracking-widest text-[#6aab6e]">
+                  <Scissors className="w-2.5 h-2.5 rotate-90" />
+                  {t.chefNote}
+                </span>
+                <span className={`text-[#6aab6e]/60 text-sm leading-none transition-transform duration-300 ${isNoteOpen ? 'rotate-45' : ''}`}>+</span>
+              </button>
+
+              <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isNoteOpen ? 'max-h-64 mt-1.5' : 'max-h-0'}`}>
+                <div className="bg-[#0f1f11] border border-[#2a4a2e]/60 rounded-b-lg px-3 pt-3 pb-3.5 relative overflow-hidden">
+                  <Scissors className="absolute -right-1 -bottom-1 w-7 h-7 text-[#2a4a2e]/40 rotate-90" />
+                  <p className="text-[#a8d4ab] text-[10px] italic font-serif leading-relaxed">
+                    "{chefNote}"
+                  </p>
+                  <div className="mt-2.5 flex items-center gap-2">
+                    <span className="h-px w-4 bg-[#3d6b42]/50" />
+                    <span className="text-[7px] uppercase tracking-[0.3em] font-bold text-[#6aab6e]/50">Vincenzo</span>
                   </div>
-                  <span className="text-[10px] text-gold uppercase font-bold tracking-[0.2em]">
-                    {t.chefNote}
-                  </span>
-                </div>
-                
-                <p className="text-white text-[10px] sm:text-[11px] md:text-sm italic font-sans capitalize leading-relaxed relative z-10 drop-shadow-sm">
-                  "{chefNote}"
-                </p>
-                
-                <div className="mt-3 md:mt-5 flex items-center gap-2 md:gap-3">
-                  <div className="h-px w-4 md:w-6 bg-gold/30"></div>
-                  <span className="text-[7px] md:text-[9px] uppercase tracking-[0.3em] font-bold text-gold/60">Vincenzo Capuano</span>
                 </div>
               </div>
             </div>
-          </div>
+
+            {/* DESKTOP — always visible */}
+            <div className="hidden md:block mt-auto">
+              <div className="relative bg-[#0d1f10] border border-[#253d28]/70 rounded-xl overflow-hidden group-hover:border-[#3d6b42]/60 transition-colors duration-500">
+
+                {/* Subtle ruled lines */}
+                <div className="absolute inset-0 pointer-events-none"
+                  style={{ backgroundImage: 'repeating-linear-gradient(transparent, transparent 22px, rgba(106,171,110,0.04) 22px, rgba(106,171,110,0.04) 23px)', backgroundPositionY: '38px' }}
+                />
+
+                {/* Left accent bar */}
+                <div className="absolute top-0 left-0 w-[3px] h-full bg-gradient-to-b from-[#3d6b42]/60 via-[#6aab6e]/30 to-transparent" />
+
+                <div className="relative z-10 p-4 pl-5">
+                  {/* Header */}
+                  <div className="flex items-center gap-2 mb-3">
+                    <Scissors className="w-3 h-3 text-[#6aab6e]/70 rotate-90 shrink-0" />
+                    <span className="text-[8px] font-bold uppercase tracking-[0.28em] text-[#6aab6e]/70">
+                      {lang === 'hk' ? '主廚筆記' : "Chef's Note"}
+                    </span>
+                  </div>
+
+                  {/* Note text */}
+                  <p className="text-[#a8d4ab] text-[11px] leading-[1.8] font-serif italic">
+                    "{chefNote}"
+                  </p>
+
+                  {/* Signature */}
+                  <div className="mt-3 flex items-center gap-2.5">
+                    <span className="h-px w-5 bg-[#3d6b42]/50" />
+                    <span className="font-display italic text-[#6aab6e]/60 text-[12px] leading-none">
+                      Vincenzo
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </>
         )}
       </div>
     </div>
@@ -248,7 +272,7 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
   const ITEMS_PER_PAGE = 6;
   
   const categories = useMemo(() => {
-    const uniqueCats = Array.from(new Set(items.map(item => lang === 'zh' ? item.categoryZh || item.category : item.category)));
+    const uniqueCats = Array.from(new Set(items.map(item => item.mainCategory || 'Ala-carte')));
     return [lang === 'en' ? 'All' : '全部', ...uniqueCats];
   }, [items, lang]);
 
@@ -306,12 +330,12 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
 
   const filteredItems = useMemo(() => {
     return items.filter(item => {
-      const itemCat = lang === 'zh' ? item.categoryZh || item.category : item.category;
-      const matchesCategory = activeCategory === 'All' || activeCategory === '全部' || itemCat === activeCategory;
+      const itemMainCat = item.mainCategory || 'Ala-carte';
+      const matchesCategory = activeCategory === 'All' || activeCategory === '全部' || itemMainCat === activeCategory;
       
       let matchesDietary = true;
       if (activeDietary.length > 0) {
-        if (itemCat === 'Beverages') {
+        if (itemMainCat === 'Beverages') {
           const alcoholTags = activeDietary.filter(t => t === 'Alcoholic' || t === 'Non-Alcoholic');
           const profileTags = activeDietary.filter(t => t !== 'Alcoholic' && t !== 'Non-Alcoholic');
           
@@ -332,12 +356,13 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
       }
 
       const matchesPopular = showPopular ? item.popular === true : true;
+      const lowerCat = item.category.toLowerCase();
       const matchesSection = activeSection === 'all' ||
-        (activeSection === 'pizza' && item.category.toLowerCase().startsWith('pizza')) ||
-        (activeSection === 'starters' && item.category === 'The Starters') ||
-        (activeSection === 'salads' && item.category === 'The Salads') ||
-        (activeSection === 'mains' && item.category === 'The Pastas & Mains') ||
-        (activeSection === 'sweets' && item.category === 'The Sweets');
+        (activeSection === 'pizza' && lowerCat.includes('pizza')) ||
+        (activeSection === 'starters' && lowerCat.includes('starter')) ||
+        (activeSection === 'salads' && lowerCat.includes('salad')) ||
+        (activeSection === 'mains' && lowerCat.includes('main')) ||
+        (activeSection === 'sweets' && (lowerCat.includes('sweet') || lowerCat.includes('dessert')));
       return matchesCategory && matchesDietary && matchesPopular && matchesSection;
     });
   }, [activeCategory, activeDietary, activeSection, showPopular, items, lang]);

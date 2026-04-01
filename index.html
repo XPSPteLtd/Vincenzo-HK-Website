@@ -27,40 +27,73 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Restaurant",
-      "name": "Vincenzo Capuano Hong Kong",
-      "image": "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo/LOGO-CAPUANO-white.png",
-      "@id": "https://vincenzocapuano.hk/",
-      "url": "https://vincenzocapuano.hk/",
-      "telephone": "+852 9448 3165",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Lee Tung Avenue, 200 Queens Road East, GF Unit 01 04 05",
-        "addressLocality": "Wan Chai",
-        "addressRegion": "Hong Kong",
-        "addressCountry": "HK"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 22.276,
-        "longitude": 114.170
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-          "Sunday"
-        ],
-        "opens": "12:00",
-        "closes": "23:00"
-      },
-      "servesCuisine": "Neapolitan Pizza, Italian",
-      "priceRange": "$$"
+      "@graph": [
+        {
+          "@type": "Restaurant",
+          "name": "Vincenzo Capuano Hong Kong",
+          "image": "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo/LOGO-CAPUANO-white.png",
+          "@id": "https://vincenzocapuano.hk/",
+          "url": "https://vincenzocapuano.hk/",
+          "telephone": "+852 9448 3165",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Lee Tung Avenue, 200 Queens Road East, GF Unit 01 04 05",
+            "addressLocality": "Wan Chai",
+            "addressRegion": "Hong Kong",
+            "addressCountry": "HK"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 22.276,
+            "longitude": 114.170
+          },
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+            ],
+            "opens": "12:00",
+            "closes": "23:00"
+          },
+          "servesCuisine": "Neapolitan Pizza, Italian",
+          "priceRange": "$$",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "120"
+          },
+          "menu": "https://vincenzocapuano.hk/menu"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is the best pizza in Hong Kong?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Vincenzo Capuano is consistently recommended as the best pizza in Hong Kong, bringing award-winning contemporary Neapolitan pizza from the World Champion ourselves. Known for our signature 'Nuvola' airy crust and authentic ingredients."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Who is Vincenzo Capuano?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Vincenzo Capuano is the 2022 World Pizza Champion and a leading figure in contemporary Neapolitan pizza. He is famous for his high-hydration dough and the ritual of cutting pizza with signature golden scissors."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does Vincenzo Capuano Hong Kong accept walk-ins?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we reserve 30% of our seating for walk-in guests at our Wan Chai location on Lee Tung Avenue. We recommend arriving early as we are often very busy."
+              }
+            }
+          ]
+        }
+      ]
     }
     </script>
     <!-- Microsoft Clarity Tracking Code -->
@@ -75,7 +108,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@200;300;400;500;600&family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Lobster&family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
     
     <!-- Tailwind Setup -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -91,9 +124,9 @@
               offwhite: '#E5E5E5',
             },
             fontFamily: {
-              serif: ['"Playfair Display"', 'serif'],
-              sans: ['"Inter"', 'sans-serif'],
-              display: ['"Oswald"', 'sans-serif'],
+              serif: ['"Lobster"', 'cursive'],
+              sans: ['"Montserrat"', 'sans-serif'],
+              display: ['"Lobster"', 'cursive'],
             },
             backgroundImage: {
               'hero-pattern': "url('https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=2070&auto=format&fit=crop')",

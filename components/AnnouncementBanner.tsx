@@ -1,6 +1,6 @@
 import React from 'react';
 import { Sparkles, X } from 'lucide-react';
-import { Language, translations } from '../translations_new';
+import { Language, translations } from '../translations';
 
 interface AnnouncementBannerProps {
   lang: Language;

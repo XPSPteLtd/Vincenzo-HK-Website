@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowRight, Scissors, Trophy } from 'lucide-react';
 import { SafeImage } from './ui/SafeImage';
-import { Language, translations } from '../translations_new';
+import { Language, translations } from '../translations';
 import { useNavigate } from 'react-router-dom';
 
 interface StoryProps {
@@ -11,7 +11,7 @@ interface StoryProps {
 export const Story: React.FC<StoryProps> = ({ lang }) => {
   const t = (translations[lang] as any).story;
   const navigate = useNavigate();
-  
+
   // Destructure with fallbacks just in case
   const {
     eyebrow = 'FROM NAPLES TO HONG KONG',
@@ -35,35 +35,35 @@ export const Story: React.FC<StoryProps> = ({ lang }) => {
 
   return (
     <section className="bg-[#0c1d13] relative py-24 md:py-32 overflow-hidden selection:bg-[#c1272d] selection:text-white border-t border-white/5">
-      
+
       {/* Redesigned Background Design & Patterns */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          {/* Primary Gradient Base */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(17,43,29,0.8)_0%,rgba(12,29,19,1)_100%)]"></div>
-          
-          {/* Subtle Grid Overlay */}
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(245,238,220,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(245,238,220,0.02)_1px,transparent_1px)] bg-[size:50px_50px] opacity-40"></div>
-          
-          {/* Naples Color Essence: Subtle Pomodoro & Gold Glows */}
-          <div className="absolute top-[-15%] right-[-10%] w-[60%] h-[60%] bg-[#c1272d]/10 blur-[150px] rounded-full opacity-50"></div>
-          <div className="absolute bottom-[-15%] left-[-10%] w-[60%] h-[60%] bg-[#f3c65f]/5 blur-[150px] rounded-full opacity-50"></div>
-          
-          {/* Artistic "081" Watermark */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none pointer-events-none">
-             <h2 className="text-[35vw] font-display font-black italic text-white/[0.012] uppercase tracking-[ -0.05em] leading-none transform -rotate-12 translate-y-10 whitespace-nowrap">
-               081 Napoli
-             </h2>
-          </div>
+        {/* Primary Gradient Base */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(17,43,29,0.8)_0%,rgba(12,29,19,1)_100%)]"></div>
 
-          {/* Mediterranean Texture Hint */}
-          <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/black-paper.png')] mix-blend-overlay"></div>
+        {/* Subtle Grid Overlay */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(245,238,220,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(245,238,220,0.02)_1px,transparent_1px)] bg-[size:50px_50px] opacity-40"></div>
+
+        {/* Naples Color Essence: Subtle Pomodoro & Gold Glows */}
+        <div className="absolute top-[-15%] right-[-10%] w-[60%] h-[60%] bg-[#c1272d]/10 blur-[150px] rounded-full opacity-50"></div>
+        <div className="absolute bottom-[-15%] left-[-10%] w-[60%] h-[60%] bg-[#f3c65f]/5 blur-[150px] rounded-full opacity-50"></div>
+
+        {/* Artistic "081" Watermark */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none pointer-events-none">
+          <h2 className="text-[35vw] font-display font-black italic text-white/[0.012] uppercase tracking-[ -0.05em] leading-none transform -rotate-12 translate-y-10 whitespace-nowrap">
+            081 Napoli
+          </h2>
+        </div>
+
+        {/* Mediterranean Texture Hint */}
+        <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/black-paper.png')] mix-blend-overlay"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 lg:gap-8 items-center relative z-10">
-        
+
         {/* LEFT COLUMN: Storytelling & Conversion */}
         <div className="lg:col-span-6 relative z-10 py-8 md:py-0">
-          
+
           <div className="animate-in fade-in slide-in-from-left-8 duration-1000">
             <span className="text-[#f5eedc]/60 text-[8px] md:text-xs font-bold uppercase tracking-[0.3em] block mb-3 md:mb-5">
               {eyebrow}
@@ -83,8 +83,8 @@ export const Story: React.FC<StoryProps> = ({ lang }) => {
               {pullQuote}
             </p>
             <footer className="mt-4 md:mt-5 flex items-center gap-3 md:gap-4">
-               <span className="w-8 md:w-10 h-[1.5px] bg-[#c1272d]"></span>
-               <span className="text-[#f5eedc]/60 text-[9px] uppercase font-bold tracking-[0.2em]">{author}</span>
+              <span className="w-8 md:w-10 h-[1.5px] bg-[#c1272d]"></span>
+              <span className="text-[#f5eedc]/60 text-[9px] uppercase font-bold tracking-[0.2em]">{author}</span>
             </footer>
           </blockquote>
 
@@ -94,10 +94,10 @@ export const Story: React.FC<StoryProps> = ({ lang }) => {
             </h3>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 md:gap-y-4 gap-x-6">
               {[
-                {text: exp1, bg: 'bg-[#f3c65f]'}, 
-                {text: exp2, bg: 'bg-[#c1272d]'}, 
-                {text: exp3, bg: 'bg-[#f3c65f]'}, 
-                {text: exp4, bg: 'bg-[#c1272d]'}
+                { text: exp1, bg: 'bg-[#f3c65f]' },
+                { text: exp2, bg: 'bg-[#c1272d]' },
+                { text: exp3, bg: 'bg-[#f3c65f]' },
+                { text: exp4, bg: 'bg-[#c1272d]' }
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-2.5 group">
                   <div className={`w-1 h-1 md:w-1.5 md:h-1.5 rounded-full ${item.bg} mt-2 group-hover:scale-150 transition-transform duration-300`}></div>
@@ -108,9 +108,9 @@ export const Story: React.FC<StoryProps> = ({ lang }) => {
           </div>
 
           <div className="flex flex-col sm:flex-row items-center gap-4 md:gap-5 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-700">
-            <a 
-              href="https://book.bistrochat.com/vincenzo-capuano-wanchai-hk" 
-              target="_blank" 
+            <a
+              href="https://book.bistrochat.com/vincenzo-capuano-wanchai-hk"
+              target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto px-7 py-3.5 bg-[#c1272d] text-white font-bold uppercase tracking-[0.2em] text-[9px] md:text-xs hover:bg-white hover:text-[#c1272d] transition-colors text-center shadow-[0_10px_30px_rgba(193,39,45,0.25)] flex items-center justify-center gap-3 group"
             >
@@ -118,7 +118,7 @@ export const Story: React.FC<StoryProps> = ({ lang }) => {
               <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
             </a>
             <button
-              onClick={() => { window.scrollTo(0,0); navigate('/menu'); }}
+              onClick={() => { window.scrollTo(0, 0); navigate('/menu'); }}
               className="w-full sm:w-auto px-7 py-3.5 border border-[#f5eedc]/30 text-[#f5eedc] font-bold uppercase tracking-[0.2em] text-[9px] md:text-xs hover:border-[#f5eedc] hover:bg-[#f5eedc]/5 transition-colors text-center"
             >
               {menuCTA}
@@ -128,7 +128,7 @@ export const Story: React.FC<StoryProps> = ({ lang }) => {
 
         {/* RIGHT COLUMN: Editorial Collage */}
         <div className="lg:col-span-6 relative mt-8 md:mt-16 lg:mt-0 min-h-[480px] md:min-h-[700px] w-full flex items-center justify-center lg:justify-end animate-in fade-in zoom-in-95 duration-1000 delay-300 p-2 md:p-8">
-          
+
           {/* Background Shadow Box */}
           <div className="absolute right-[5%] top-[10%] w-[85%] h-[75%] bg-[#08170f] shadow-2xl skew-y-2 origin-bottom-left transform border border-white/5 opacity-80"></div>
 
@@ -139,15 +139,15 @@ export const Story: React.FC<StoryProps> = ({ lang }) => {
 
           {/* Primary Main Image */}
           <div className="relative z-10 w-[85%] lg:w-[80%] h-[75%] lg:h-[80%] shadow-[0_30px_60px_rgba(0,0,0,0.6)] group border border-white/5 overflow-hidden rounded-sm">
-             {/* Sepia/gold wash overlay removed on hover */}
-             <div className="absolute inset-0 bg-[#f3c65f] mix-blend-color z-20 opacity-20 pointer-events-none group-hover:opacity-0 transition-opacity duration-700"></div>
-             <div className="absolute inset-0 bg-gradient-to-t from-[#112b1d]/80 via-transparent to-transparent z-10 pointer-events-none"></div>
-             
-             <SafeImage 
-                src="https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/Family%20Baker%20Capuano-147.webp" 
-                alt="Vincenzo Capuano and Grandfather"
-                className="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-[2000ms] ease-out"
-              />
+            {/* Sepia/gold wash overlay removed on hover */}
+            <div className="absolute inset-0 bg-[#f3c65f] mix-blend-color z-20 opacity-20 pointer-events-none group-hover:opacity-0 transition-opacity duration-700"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#112b1d]/80 via-transparent to-transparent z-10 pointer-events-none"></div>
+
+            <SafeImage
+              src="https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/Family%20Baker%20Capuano-147.webp"
+              alt="Vincenzo Capuano and Grandfather"
+              className="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-[2000ms] ease-out"
+            />
           </div>
 
           {/* Badge Overlay */}
