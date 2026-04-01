@@ -301,12 +301,8 @@ const App: React.FC = () => {
       <Footer lang={lang} onPageChange={handlePageChange} />
       
       <MobileBottomNav
-        onBookClick={openModal}
-        onHoursClick={openHours}
-        onMenuClick={() => {
-          clearOverlays();
-          handlePageChange('menu');
-        }}
+        onDeliveryClick={openDelivery}
+        onEventsClick={openEvents}
         lang={lang}
       />
 
