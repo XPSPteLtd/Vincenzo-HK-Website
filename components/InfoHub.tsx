@@ -8,24 +8,24 @@ interface InfoHubProps {
   onBookClick?: () => void;
 }
 
+const TENTATIVE_OPENING = new Date('2026-04-25T00:00:00+08:00');
+
 export const InfoHub: React.FC<InfoHubProps> = ({ lang, onBookClick }) => {
   const t = translations[lang].location;
   const infoT = translations[lang].infoHub;
 
   const [currentTime, setCurrentTime] = useState(new Date());
-  const [isOpen, setIsOpen] = useState(false);
-  const [progressPercent, setProgressPercent] = useState(0);
+  const [daysUntilOpening, setDaysUntilOpening] = useState(0);
 
   useEffect(() => {
     const tick = () => {
       const now = new Date();
       setCurrentTime(now);
-      const hour = now.getHours() + now.getMinutes() / 60;
-      setIsOpen(hour >= 12 && hour < 23);
-      setProgressPercent(Math.max(0, Math.min(100, ((hour - 12) / 11) * 100)));
+      const diff = Math.ceil((TENTATIVE_OPENING.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
+      setDaysUntilOpening(Math.max(0, diff));
     };
     tick();
-    const interval = setInterval(tick, 30000);
+    const interval = setInterval(tick, 60000);
     return () => clearInterval(interval);
   }, []);
 
@@ -39,11 +39,8 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang, onBookClick }) => {
   return (
     <section id="info-hub" className="py-28 md:py-40 bg-charcoal border-t border-white/5 relative overflow-hidden">
 
-      {/* Ambient radial glow — pulses when kitchen is open */}
-      <div
-        className={`absolute inset-0 pointer-events-none transition-opacity duration-[3000ms] ${isOpen ? 'opacity-100' : 'opacity-20'}`}
-        aria-hidden="true"
-      >
+      {/* Ambient radial glow */}
+      <div className="absolute inset-0 pointer-events-none opacity-60" aria-hidden="true">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] rounded-full bg-gold/[0.04] blur-[140px]" />
       </div>
 
@@ -60,29 +57,11 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang, onBookClick }) => {
             </h2>
           </div>
 
-          {/* Live status pill */}
-          <div
-            className={`flex items-center gap-2.5 self-start sm:self-auto px-4 py-2.5 rounded-full border backdrop-blur-md transition-colors duration-700 ${
-              isOpen
-                ? 'bg-green-500/10 border-green-500/25'
-                : 'bg-white/[0.03] border-white/10'
-            }`}
-          >
-            <div
-              className={`w-2 h-2 rounded-full shrink-0 transition-colors duration-700 ${
-                isOpen
-                  ? 'bg-green-400 animate-pulse shadow-[0_0_8px_rgba(74,222,128,0.7)]'
-                  : 'bg-gray-600'
-              }`}
-            />
-            <span
-              className={`text-[9px] font-bold uppercase tracking-widest transition-colors duration-700 ${
-                isOpen ? 'text-green-400' : 'text-gray-500'
-              }`}
-            >
-              {isOpen
-                ? translations[lang].stats.activeStatus.split(':')[1]?.trim()
-                : translations[lang].stats.closedStatus.split(':')[1]?.trim()}
+          {/* Opening Soon pill */}
+          <div className="flex items-center gap-2.5 self-start sm:self-auto px-4 py-2.5 rounded-full border backdrop-blur-md bg-gold/[0.07] border-gold/25">
+            <div className="w-2 h-2 rounded-full bg-gold animate-pulse shadow-[0_0_8px_rgba(243,205,105,0.6)] shrink-0" />
+            <span className="text-[9px] font-bold uppercase tracking-widest text-gold">
+              {lang !== 'en' ? '即將開幕' : 'Opening Soon'}
             </span>
           </div>
         </div>
@@ -95,48 +74,44 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang, onBookClick }) => {
 
             <div className="flex flex-col lg:flex-row lg:items-start gap-8 lg:gap-12">
 
-              {/* Single session card */}
-              <div className={`flex-1 relative rounded-2xl border px-8 py-7 transition-all duration-700 ${
-                isOpen ? 'bg-gold/[0.07] border-gold/30 shadow-[0_0_40px_rgba(197,160,89,0.08)]' : 'bg-white/[0.02] border-white/[0.06]'
-              }`}>
-                {isOpen && (
-                  <div className="absolute top-5 right-5 flex items-center gap-1.5">
-                    <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                    <span className="text-[8px] uppercase tracking-widest text-green-400 font-bold">
-                      {lang !== 'en' ? '現在營業' : 'Open Now'}
+              {/* Planned hours card */}
+              <div className="flex-1 relative rounded-2xl border px-8 py-7 bg-white/[0.02] border-white/[0.06]">
+
+                {/* Tentative badge */}
+                <div className="absolute top-5 right-5 flex items-center gap-1.5 bg-white/[0.04] border border-white/10 rounded-lg px-3 py-1">
+                  <span className="text-[8px] uppercase tracking-widest text-white/30 font-bold">
+                    {lang !== 'en' ? '暫定' : 'Tentative'}
+                  </span>
+                </div>
+
+                <p className="text-[9px] uppercase tracking-[0.4em] text-gold/50 font-bold mb-5">
+                  {lang !== 'en' ? '計劃營業時間' : 'Planned Service Hours'}
+                </p>
+
+                {/* Hours display — dimmed to signal not-yet-active */}
+                <div className="flex items-baseline gap-4">
+                  <span className="font-mono text-4xl md:text-5xl lg:text-6xl text-white/50 font-bold tracking-tight">12:00</span>
+                  <span className="text-white/15 font-light text-2xl">—</span>
+                  <span className="font-mono text-4xl md:text-5xl lg:text-6xl text-white/50 font-bold tracking-tight">23:00</span>
+                </div>
+
+                {/* Tentative opening date */}
+                <div className="mt-6 pt-5 border-t border-white/[0.05]">
+                  <p className="text-[9px] uppercase tracking-[0.35em] text-white/25 font-bold mb-2">
+                    {lang !== 'en' ? '暫定開幕日期' : 'Tentative Opening Date'}
+                  </p>
+                  <div className="flex items-baseline gap-3">
+                    <span className="font-display text-2xl text-gold font-bold">
+                      {lang !== 'en' ? '2026年4月25日' : '25 April 2026'}
+                    </span>
+                    <span className="text-[9px] text-white/25 font-light">
+                      {lang !== 'en' ? '· 日期或有更改' : '· subject to change'}
                     </span>
                   </div>
-                )}
-                <p className="text-[9px] uppercase tracking-[0.4em] text-gold/50 font-bold mb-5">
-                  {lang !== 'en' ? '每天營業時間' : 'Daily Service Hours'}
-                </p>
-                <div className="flex items-baseline gap-4">
-                  <span className="font-mono text-4xl md:text-5xl lg:text-6xl text-white font-bold tracking-tight">12:00</span>
-                  <span className="text-white/20 font-light text-2xl">—</span>
-                  <span className="font-mono text-4xl md:text-5xl lg:text-6xl text-white font-bold tracking-tight">23:00</span>
-                </div>
-                {/* Progress bar */}
-                <div className="mt-6 h-px bg-white/[0.06] rounded-full overflow-visible relative">
-                  <div
-                    className="absolute inset-y-0 left-0 bg-gradient-to-r from-gold/30 via-gold/60 to-gold rounded-full transition-all duration-[1500ms] ease-out"
-                    style={{ width: isOpen ? `${progressPercent}%` : '0%' }}
-                  />
-                  {isOpen && (
-                    <div
-                      className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-2.5 h-2.5 transition-all duration-[1500ms] ease-out"
-                      style={{ left: `${progressPercent}%` }}
-                    >
-                      <div className="w-full h-full rounded-full bg-gold shadow-[0_0_10px_rgba(197,160,89,0.8)] animate-pulse" />
-                    </div>
-                  )}
-                </div>
-                <div className="flex justify-between mt-2.5">
-                  <span className="text-[8px] text-white/20 font-mono tracking-widest">12:00</span>
-                  <span className="text-[8px] text-white/20 font-mono tracking-widest">23:00</span>
                 </div>
               </div>
 
-              {/* Right side: clock + days badge */}
+              {/* Right side: clock + countdown */}
               <div className="flex flex-row lg:flex-col items-center lg:items-end justify-between lg:justify-start gap-4 lg:gap-5 shrink-0 lg:pt-1">
                 <div className="text-right">
                   <p className="text-[8px] uppercase tracking-[0.4em] text-white/25 font-bold mb-1">
@@ -146,9 +121,12 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang, onBookClick }) => {
                     {formatTime(currentTime)}
                   </div>
                 </div>
-                <div className="bg-gold/10 border border-gold/30 px-4 py-1.5 rounded-lg">
-                  <p className="text-[10px] md:text-[11px] uppercase tracking-[0.35em] text-gold font-black whitespace-nowrap">
-                    {translations[lang].common.sevenDays}
+                <div className="bg-gold/10 border border-gold/30 px-4 py-2.5 rounded-lg text-center min-w-[80px]">
+                  <p className="text-[8px] uppercase tracking-widest text-gold/50 font-bold mb-0.5">
+                    {lang !== 'en' ? '倒數' : 'Opens in'}
+                  </p>
+                  <p className="font-mono text-2xl text-gold font-bold leading-none">
+                    {daysUntilOpening}<span className="text-sm font-normal text-gold/60 ml-0.5">d</span>
                   </p>
                 </div>
               </div>
