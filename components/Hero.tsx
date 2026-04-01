@@ -140,35 +140,37 @@ export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
             </div>
           </div>
 
-          {/* CTAs */}
+          {/* CTAs + Booking notice */}
           <div
-            className={`flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 transition-all duration-700 delay-500 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+            className={`transition-all duration-700 delay-500 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
             style={{ opacity: isLoaded ? contentOpacity : 0, transform: `translateY(${contentY}px)` }}
           >
-            <a
-              href="https://book.bistrochat.com/vincenzo-capuano-wanchai-hk"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center gap-2.5 bg-gold hover:bg-white text-charcoal text-[10px] font-bold uppercase tracking-[0.2em] px-8 py-3.5 rounded-xl transition-all duration-300 shadow-lg shadow-gold/15 active:scale-[0.97]"
-            >
-              {t.bookNow}
-              <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform" />
-            </a>
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
+              <a
+                href="https://book.bistrochat.com/vincenzo-capuano-wanchai-hk"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center justify-center gap-2.5 bg-gold hover:bg-white text-charcoal text-[10px] font-bold uppercase tracking-[0.2em] px-8 py-3.5 rounded-xl transition-all duration-300 shadow-lg shadow-gold/15 active:scale-[0.97]"
+              >
+                {t.bookNow}
+                <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform" />
+              </a>
 
-            <button
-              onClick={onMenuClick}
-              className="inline-flex items-center justify-center gap-2.5 bg-white/8 hover:bg-white/14 backdrop-blur-md border border-white/15 hover:border-white/30 text-white text-[10px] font-bold uppercase tracking-[0.2em] px-8 py-3.5 rounded-xl transition-all duration-300 active:scale-[0.97]"
-            >
-              {translations[lang].nav.menu}
-            </button>
-          </div>
+              <button
+                onClick={onMenuClick}
+                className="inline-flex items-center justify-center gap-2.5 bg-white/8 hover:bg-white/14 backdrop-blur-md border border-white/15 hover:border-white/30 text-white text-[10px] font-bold uppercase tracking-[0.2em] px-8 py-3.5 rounded-xl transition-all duration-300 active:scale-[0.97]"
+              >
+                {translations[lang].nav.menu}
+              </button>
+            </div>
 
-          {/* Booking notice */}
-          <div className="flex items-center gap-2.5 mt-1">
-            <div className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse shrink-0" />
-            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-gold/70">
-              {lang !== 'en' ? '立即訂座 · 5月1日起接受預約' : 'Book Now · Reservations available from 1 May 2026'}
-            </p>
+            {/* Booking notice */}
+            <div className="flex items-center gap-2.5 mt-1">
+              <div className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse shrink-0" />
+              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-gold/70">
+                {lang !== 'en' ? '立即訂座 · 5月1日起接受預約' : 'Book Now · Reservations available from 1 May 2026'}
+              </p>
+            </div>
           </div>
 
         </div>

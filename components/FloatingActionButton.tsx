@@ -7,18 +7,21 @@ interface FloatingActionButtonProps {
   lang: Language;
 }
 
+const OPENING_DATE = new Date('2026-04-29');
+
 export const FloatingActionButton: React.FC<FloatingActionButtonProps> = ({ onClick, lang }) => {
   const [show, setShow] = useState(false);
   const t = translations[lang].nav;
+  const isPreOpening = new Date() < OPENING_DATE;
 
   useEffect(() => {
     const handleScroll = () => {
       setShow(window.scrollY > 200);
     };
-    
+
     // Check initial scroll position
     handleScroll();
-    
+
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -35,7 +38,9 @@ export const FloatingActionButton: React.FC<FloatingActionButtonProps> = ({ onCl
           <path id="fabTextPath" d="M 50, 50 m -45, 0 a 45,45 0 1,1 90,0 a 45,45 0 1,1 -90,0" fill="none" />
           <text className="text-[10px] font-bold tracking-[0.15em] uppercase fill-gold">
             <textPath href="#fabTextPath" startOffset="0%">
-              • 12:00–23:00 • 7 DAYS OPEN • 12:00–23:00 • 7 DAYS OPEN
+              {isPreOpening
+                ? '• RESERVATIONS OPEN • FROM 1 MAY 2026 • RESERVATIONS OPEN • FROM 1 MAY 2026 •'
+                : '• 12:00–23:00 • 7 DAYS OPEN • 12:00–23:00 • 7 DAYS OPEN'}
             </textPath>
           </text>
         </svg>
