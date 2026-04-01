@@ -111,7 +111,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <div className="flex items-center gap-3 lg:gap-4 border-l border-white/10 pl-4 lg:pl-6 ml-2 lg:ml-0">
             <button
               onClick={() => onLangChange(lang === 'en' ? 'hk' : 'en')}
-              className="text-[9px] lg:text-[10px] font-bold text-white/50 hover:text-gold transition-colors flex items-center gap-1.5"
+              className="text-[10px] lg:text-xs font-bold text-white/60 hover:text-gold transition-colors flex items-center gap-1.5"
             >
               <Languages size={14} className="text-gold/50" />
               <span className="hidden lg:inline uppercase">{lang === 'en' ? '繁體中文' : 'ENGLISH'}</span>
@@ -122,7 +122,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               href="https://book.bistrochat.com/vincenzo-capuano-wanchai-hk"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 lg:px-7 py-2.5 lg:py-3 bg-gold hover:bg-white text-charcoal text-[10px] lg:text-xs font-bold tracking-widest rounded-xl transition-all duration-300 shadow-lg shadow-gold/10 active:scale-[0.97] text-center uppercase block"
+              className="px-5 lg:px-7 py-2.5 lg:py-3 bg-gold hover:bg-white text-charcoal text-xs lg:text-sm font-bold tracking-widest rounded-xl transition-all duration-300 shadow-lg shadow-gold/10 active:scale-[0.97] text-center uppercase block"
             >
               {t.reservations}
             </a>
@@ -136,7 +136,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             aria-label={lang === 'en' ? 'Switch to Traditional Chinese' : 'Switch to English'}
           >
             <Languages size={18} />
-            <span className="text-[9px] font-bold uppercase">{lang === 'en' ? '繁' : 'EN'}</span>
+            <span className="text-[11px] font-bold uppercase">{lang === 'en' ? '繁' : 'EN'}</span>
           </button>
           <button 
             className="text-white p-2"
@@ -161,7 +161,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               style={{ transitionDelay: `${idx * 40}ms` }}
             >
               {link.name}
-              <span className="text-gold opacity-20 text-[10px] tracking-widest">0{idx+1}</span>
+              <span className="text-gold opacity-20 text-xs tracking-widest">0{idx+1}</span>
             </a>
           ))}
           
@@ -178,7 +178,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               href="https://book.bistrochat.com/vincenzo-capuano-wanchai-hk"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full py-4 bg-gold hover:bg-white text-charcoal text-[10px] font-bold tracking-widest rounded-xl transition-all duration-300 shadow-lg shadow-gold/10 active:scale-[0.97] text-center uppercase block"
+              className="w-full py-4 bg-gold hover:bg-white text-charcoal text-xs font-bold tracking-widest rounded-xl transition-all duration-300 shadow-lg shadow-gold/10 active:scale-[0.97] text-center uppercase block"
             >
               {t.reservations}
             </a>

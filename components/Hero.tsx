@@ -105,7 +105,7 @@ export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
             className={`mb-6 md:mb-8 transition-all duration-700 delay-100 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`}
             style={{ opacity: isLoaded ? contentOpacity : 0 }}
           >
-            <span className="inline-flex items-center gap-3 text-gold text-[9px] md:text-[10px] font-bold uppercase tracking-[0.35em]">
+            <span className="inline-flex items-center gap-3 text-gold text-[11px] md:text-xs font-bold uppercase tracking-[0.35em]">
               <span className="w-5 h-px bg-gold/50" />
               {lang === 'hk' ? '拿坡里 · 2022 世界薄餅冠軍' : 'Napoli · 2022 World Pizza Champion'}
             </span>
@@ -134,7 +134,7 @@ export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
           >
             <div className="flex items-start gap-4 md:gap-5 max-w-xs sm:max-w-sm md:max-w-lg">
               <span className="w-[3px] h-auto self-stretch bg-gold/40 rounded-full shrink-0 mt-1" />
-              <p className="text-white/40 font-sans font-bold text-[10px] sm:text-xs uppercase tracking-[0.25em] leading-relaxed">
+              <p className="text-white/55 font-sans font-bold text-xs sm:text-sm uppercase tracking-[0.25em] leading-relaxed">
                 {t.philosophy.replace(/^["「]|["」]$/g, '')}
               </p>
             </div>
@@ -150,7 +150,7 @@ export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
                 href="https://book.bistrochat.com/vincenzo-capuano-wanchai-hk"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center justify-center gap-2.5 bg-gold hover:bg-white text-charcoal text-[10px] font-bold uppercase tracking-[0.2em] px-8 py-3.5 rounded-xl transition-all duration-300 shadow-lg shadow-gold/15 active:scale-[0.97]"
+                className="group inline-flex items-center justify-center gap-2.5 bg-gold hover:bg-white text-charcoal text-xs font-bold uppercase tracking-[0.2em] px-8 py-3.5 rounded-xl transition-all duration-300 shadow-lg shadow-gold/15 active:scale-[0.97]"
               >
                 {t.bookNow}
                 <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform" />
@@ -158,7 +158,7 @@ export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
 
               <button
                 onClick={onMenuClick}
-                className="inline-flex items-center justify-center gap-2.5 bg-white/8 hover:bg-white/14 backdrop-blur-md border border-white/15 hover:border-white/30 text-white text-[10px] font-bold uppercase tracking-[0.2em] px-8 py-3.5 rounded-xl transition-all duration-300 active:scale-[0.97]"
+                className="inline-flex items-center justify-center gap-2.5 bg-white/8 hover:bg-white/14 backdrop-blur-md border border-white/15 hover:border-white/30 text-white text-xs font-bold uppercase tracking-[0.2em] px-8 py-3.5 rounded-xl transition-all duration-300 active:scale-[0.97]"
               >
                 {translations[lang].nav.menu}
               </button>
@@ -167,7 +167,7 @@ export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
             {/* Booking notice */}
             <div className="flex items-center gap-2.5 mt-4">
               <div className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse shrink-0" />
-              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-gold/70">
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-gold/80">
                 {lang !== 'en' ? '立即訂座 · 5月1日起接受預約' : 'Book Now · Reservations available from 1 May 2026'}
               </p>
             </div>
@@ -182,7 +182,7 @@ export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
         aria-label="Scroll down"
         className={`absolute bottom-8 left-1/2 -translate-x-1/2 z-40 flex flex-col items-center gap-2 text-white/30 hover:text-white/60 transition-all duration-500 delay-[1000ms] ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}
       >
-        <span className="text-[8px] uppercase tracking-[0.5em] font-bold">{translations[lang].nav.scroll}</span>
+        <span className="text-[10px] uppercase tracking-[0.5em] font-bold">{translations[lang].nav.scroll}</span>
         <ChevronDown size={14} className="animate-bounce" />
       </button>
 
