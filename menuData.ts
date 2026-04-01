@@ -26,50 +26,50 @@ export const menuItems: MenuItem[] = [
   {
     id: "pbs-1", name: "TETTI ILLUMINATI", nameZh: "燈光屋頂薄餅",
     description: "Base w/ fior di latte, topped w/ IGP mortadella, pistachio cream, pecorino romano flakes, evoo & basil",
-    price: "$ 32", mainCategory: "Ala-carte", category: "Pizza — The Bestseller", categoryZh: "暢銷薄餅", image: "https://images.unsplash.com/photo-1628840042765-356cda07504e?q=80&w=800&auto=format&fit=crop"
+    price: "$ 32", mainCategory: "Ala-carte", category: "Pizza — The Bestseller", categoryZh: "暢銷薄餅", image: "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/menu%20images/Pizza%20display%20(tetti%20illuminati%2C%20provola%20e%20pepe%2C%20Abbraccio%20e%20mamma%2C%20sogno%20vigano).webp"
   },
   {
     id: "pbs-2", name: "MARGHERITA", nameZh: "瑪格麗特薄餅",
     description: "San Marzano sauce, fior di latte, evoo & basil (+2 Add Garlic Chili Onion & Extra virgin olive oil)",
     descriptionZh: "手壓番茄、高山莫札瑞拉芝士、初榨橄欖油及羅勒。",
     price: "$ 28", mainCategory: "Ala-carte", category: "Pizza — The Bestseller", categoryZh: "暢銷薄餅",
-    image: "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?q=80&w=800&auto=format&fit=crop", 
+    image: "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/menu%20images/Margarita.webp", 
     popular: true, dietary: ["Vegetarian"], chefNoteZh: "薄餅之後。San Marzano 番茄和 Fior di Latte 芝士象徵著意大利的色彩。"
   },
   {
     id: "pbs-3", name: "MARGHERITA CON BUFALA", nameZh: "水牛芝士瑪格麗特薄餅",
     description: "Hand-crushed San Marzano tomatoes, bufala mozzarella DOP, evoo & basil (+2 Add Garlic Chili Onion & Extra virgin olive oil)",
-    price: "$ 32", mainCategory: "Ala-carte", category: "Pizza — The Bestseller", categoryZh: "暢銷薄餅", image: "https://images.unsplash.com/photo-1595854341625-f33eeeb2680a?q=80&w=800&auto=format&fit=crop", dietary: ["Vegetarian"]
+    price: "$ 32", mainCategory: "Ala-carte", category: "Pizza — The Bestseller", categoryZh: "暢銷薄餅", image: "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/menu%20images/Margarita%20con%20buffala.webp", dietary: ["Vegetarian"]
   },
   {
     id: "pbs-4", name: "CENTRO CALABRIA", nameZh: "卡拉布里亞之星",
     description: "For lovers of Calabrian Nduja. San Marzano sauce, smoked provola, Calabrian Nduja, Neapolitan sausage, evoo & basil",
     descriptionZh: "San Marzano 番茄醬、煙燻芝士、卡拉布里亞辣肉醬、拿坡里肉腸、橄欖油及羅勒。",
     price: "$ 33", mainCategory: "Ala-carte", category: "Pizza — The Bestseller", categoryZh: "暢銷薄餅",
-    image: "https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?q=80&w=800&auto=format&fit=crop", 
+    image: "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/menu%20images/Centro%20calabria.webp", 
     dietary: ["Spicy"], chefNoteZh: "香辣、大膽。卡拉布里亞辣肉醬融化在醬汁中，如同液態黃金。"
   },
   {
     id: "pbs-5", name: "DIAVOLA ALLA NONNO ENZO", nameZh: "祖父恩佐惡魔薄餅",
     description: "San Marzano sauce, fior di latte, spicy Napoli salami according to nonno Enzo tradition, evoo & basil",
-    price: "$ 33", mainCategory: "Ala-carte", category: "Pizza — The Bestseller", categoryZh: "暢銷薄餅", image: "https://images.unsplash.com/photo-1594007654729-407eedc4be65?q=80&w=800&auto=format&fit=crop", dietary: ["Spicy"]
+    price: "$ 33", mainCategory: "Ala-carte", category: "Pizza — The Bestseller", categoryZh: "暢銷薄餅", image: "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/menu%20images/Diavola.webp", dietary: ["Spicy"]
   },
 
   // THE TRADITIONAL
   {
     id: "ptr-1", name: "COME UNA CAPRICCIOSA", nameZh: "卡布里喬沙薄餅",
     description: "San Marzano sauce, fior di latte, taggiasca olives, button mushrooms, topped w/ artichoke heart, cooked ham, evoo & basil",
-    price: "$ 33", mainCategory: "Ala-carte", category: "Pizza — The Traditional", categoryZh: "傳統薄餅", image: "https://images.unsplash.com/photo-1590947132387-155cc02f3212?q=80&w=800&auto=format&fit=crop"
+    price: "$ 33", mainCategory: "Ala-carte", category: "Pizza — The Traditional", categoryZh: "傳統薄餅", image: "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/menu%20images/Come%20una%20capricciosa%20(closeup).webp"
   },
   {
     id: "ptr-2", name: "NAPOLI", nameZh: "拿坡里薄餅",
     description: "Hand-crushed San Marzano tomatoes, fior di latte from the mountains, anchovies, taggiasca olives, evoo & basil",
-    price: "$ 31", mainCategory: "Ala-carte", category: "Pizza — The Traditional", categoryZh: "傳統薄餅", image: GEN_PIZZA
+    price: "$ 31", mainCategory: "Ala-carte", category: "Pizza — The Traditional", categoryZh: "傳統薄餅", image: "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/menu%20images/Napoli.webp"
   },
   {
     id: "ptr-3", name: "DON VINCENZO", nameZh: "唐•文森佐薄餅",
     description: "Stuffed crust w/ ricotta cheese, yellow cherry tomatoes, bufala mozzarella DOP, Piennolo DOP cherry tomatoes, evoo & basil",
-    price: "$ 32", mainCategory: "Ala-carte", category: "Pizza — The Traditional", categoryZh: "傳統薄餅", image: GEN_PIZZA, dietary: ["Vegetarian"]
+    price: "$ 32", mainCategory: "Ala-carte", category: "Pizza — The Traditional", categoryZh: "傳統薄餅", image: "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/menu%20images/Don%20Vincenzo.webp", dietary: ["Vegetarian"]
   },
   {
     id: "ptr-4", name: "MARINARA CONTEMPORANEA", nameZh: "當代水手薄餅",
@@ -99,12 +99,12 @@ export const menuItems: MenuItem[] = [
   {
     id: "ptr-9", name: "BELLARIA", nameZh: "貝拉里亞薄餅",
     description: "Seasoned red datterino tomatoes, bufala mozzarella DOP, topped w/ burrata heart, 24 month prosciutto di parma, pesto, evoo & basil",
-    price: "$ 36", mainCategory: "Ala-carte", category: "Pizza — The Traditional", categoryZh: "傳統薄餅", image: GEN_PIZZA
+    price: "$ 36", mainCategory: "Ala-carte", category: "Pizza — The Traditional", categoryZh: "傳統薄餅", image: "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/menu%20images/Bellaria.webp"
   },
   {
     id: "ptr-10", name: "ABBRACCIO E MAMMA", nameZh: "媽媽的懷抱薄餅",
     description: "Stuffed crust w/ ricotta, fior di latte, classic meatballs by nonno Enzo, grana padano fondue, bufala mozzarella, evoo & basil",
-    price: "$ 33", mainCategory: "Ala-carte", category: "Pizza — The Traditional", categoryZh: "傳統薄餅", image: GEN_PIZZA
+    price: "$ 33", mainCategory: "Ala-carte", category: "Pizza — The Traditional", categoryZh: "傳統薄餅", image: "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/menu%20images/Abbraccio%20e%20mamma%20(closeup).webp"
   },
   {
     id: "ptr-11", name: "MELANZANELLA", nameZh: "茄子薄餅",
@@ -124,7 +124,7 @@ export const menuItems: MenuItem[] = [
   {
     id: "ptr-14", name: "DOMENICHE LONTANO", nameZh: "遙遠的星期日薄餅",
     description: "Base w/ bufala mozzarella DOP, baked potatoes, Neapolitan sausage, evoo & basil topped w/ bufala mozzarella DOP chunks",
-    price: "$ 31", mainCategory: "Ala-carte", category: "Pizza — The Traditional", categoryZh: "傳統薄餅", image: GEN_PIZZA, popular: true
+    price: "$ 31", mainCategory: "Ala-carte", category: "Pizza — The Traditional", categoryZh: "傳統薄餅", image: "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/menu%20images/Domeniche%20lontano.webp", popular: true
   },
 
   // THIN CRUST PIZZA
@@ -200,7 +200,7 @@ export const menuItems: MenuItem[] = [
   {
     id: "sal-1", name: "BURRATA CLASSICA", nameZh: "傳統布拉塔",
     description: "125g: 32 / 300g: 58 | Burrata cheese, rucola, cherry tomatoes, basil pesto, oil caviar, balsamic",
-    price: "$ 32", mainCategory: "Ala-carte", category: "The Salads", categoryZh: "精選沙律", image: "https://images.unsplash.com/photo-1608897013039-887f214b985c?q=80&w=800&auto=format&fit=crop", popular: true, dietary: ["Vegetarian"]
+    price: "$ 32", mainCategory: "Ala-carte", category: "The Salads", categoryZh: "精選沙律", image: "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/menu%20images/Burrata%20classica.webp", popular: true, dietary: ["Vegetarian"]
   },
   {
     id: "sal-2", name: "BURRATA PESCA E ARANCIA", nameZh: "水蜜桃橙香布拉塔",
@@ -232,7 +232,7 @@ export const menuItems: MenuItem[] = [
   {
     id: "pm-1", name: "GUANCIALE DI MANZO", nameZh: "和牛臉頰肉意粉",
     description: "Pappardelle, 12 hours slow-cooked wagyu beef cheek ragu, red wine, parmigiano",
-    price: "$ 36", mainCategory: "Ala-carte", category: "The Pastas & Mains", categoryZh: "手製意粉及主菜", image: "https://images.unsplash.com/photo-1626844131082-256783844137?q=80&w=800&auto=format&fit=crop", popular: true
+    price: "$ 36", mainCategory: "Ala-carte", category: "The Pastas & Mains", categoryZh: "手製意粉及主菜", image: "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/menu%20images/Guanciale%20di%20manzo.webp", popular: true
   },
   {
     id: "pm-2", name: "CARBONARA", nameZh: "傳統卡邦尼意粉",
