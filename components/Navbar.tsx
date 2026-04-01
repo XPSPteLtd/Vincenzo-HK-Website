@@ -165,9 +165,9 @@ export const Navbar: React.FC<NavbarProps> = ({
             </a>
           ))}
           
-          <button 
+          <button
             onClick={() => { setIsMobileMenuOpen(false); onHoursClick(); }}
-            className="text-24 font-serif text-white hover:text-gold transition-colors py-4 border-b border-white/5 flex justify-between items-center"
+            className="text-2xl font-serif text-white hover:text-gold transition-colors py-4 border-b border-white/5 flex justify-between items-center w-full text-left"
           >
             {lang !== 'en' ? '營業時間' : 'Hours'}
             <Clock size={16} className="text-gold/20" />

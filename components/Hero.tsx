@@ -98,7 +98,7 @@ export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
 
       {/* ── Main content ── */}
       <div className="relative z-30 flex-1 flex flex-col justify-end w-full">
-        <div className="px-8 md:px-16 lg:px-24 pb-28 md:pb-32 lg:pb-36">
+        <div className="px-6 sm:px-8 md:px-16 lg:px-24 pb-32 md:pb-32 lg:pb-36">
 
           {/* Eyebrow */}
           <div
@@ -165,7 +165,7 @@ export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
             </div>
 
             {/* Booking notice */}
-            <div className="flex items-center gap-2.5 mt-1">
+            <div className="flex items-center gap-2.5 mt-4">
               <div className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse shrink-0" />
               <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-gold/70">
                 {lang !== 'en' ? '立即訂座 · 5月1日起接受預約' : 'Book Now · Reservations available from 1 May 2026'}

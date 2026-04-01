@@ -70,12 +70,12 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang, onBookClick }) => {
         <div className="bg-white/[0.025] backdrop-blur-2xl border border-white/[0.07] rounded-[2.5rem] overflow-hidden shadow-[0_60px_120px_rgba(0,0,0,0.55)]">
 
           {/* ── Hours block ──────────────────────────────────── */}
-          <div className="relative px-8 sm:px-12 md:px-16 pt-12 md:pt-16 pb-10 md:pb-14 border-b border-white/5">
+          <div className="relative px-4 sm:px-10 md:px-16 pt-10 md:pt-16 pb-8 md:pb-14 border-b border-white/5">
 
             <div className="flex flex-col lg:flex-row lg:items-start gap-8 lg:gap-12">
 
               {/* Planned hours card */}
-              <div className="flex-1 relative rounded-2xl border px-8 py-7 bg-white/[0.02] border-white/[0.06]">
+              <div className="flex-1 relative rounded-2xl border px-4 sm:px-8 py-6 sm:py-7 bg-white/[0.02] border-white/[0.06]">
 
                 {/* Tentative badge */}
                 <div className="absolute top-5 right-5 flex items-center gap-1.5 bg-white/[0.04] border border-white/10 rounded-lg px-3 py-1">
@@ -89,10 +89,10 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang, onBookClick }) => {
                 </p>
 
                 {/* Hours display — dimmed to signal not-yet-active */}
-                <div className="flex items-baseline gap-4">
-                  <span className="font-mono text-4xl md:text-5xl lg:text-6xl text-white/50 font-bold tracking-tight">12:00</span>
-                  <span className="text-white/15 font-light text-2xl">—</span>
-                  <span className="font-mono text-4xl md:text-5xl lg:text-6xl text-white/50 font-bold tracking-tight">23:00</span>
+                <div className="flex items-baseline gap-2 sm:gap-4">
+                  <span className="font-mono text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white/50 font-bold tracking-tight">12:00</span>
+                  <span className="text-white/15 font-light text-xl sm:text-2xl">—</span>
+                  <span className="font-mono text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white/50 font-bold tracking-tight">23:00</span>
                 </div>
 
                 {/* Tentative opening date */}
@@ -207,12 +207,12 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang, onBookClick }) => {
         </div>
 
         {/* ── Cinematic Map Strip ─────────────────────────────── */}
-        <div className="mt-5 rounded-[2rem] overflow-hidden border border-white/[0.06] relative group/map" style={{ aspectRatio: '21/5' }}>
+        <div className="mt-5 rounded-[2rem] overflow-hidden border border-white/[0.06] relative group/map aspect-[4/3] sm:aspect-[16/9] md:aspect-[21/5]">
 
           <iframe
             title="Vincenzo Capuano HK Location"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1845.986!2d114.170!3d22.276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404005d0c0c0c0d%3A0x0!2sLee+Tung+Avenue!5e0!3m2!1sen!2shk!4v1711874288000!5m2!1sen!2shk"
-            className="w-full h-full grayscale opacity-20 group-hover/map:opacity-60 group-hover/map:grayscale-0 scale-110 group-hover/map:scale-100 transition-all duration-[1200ms] ease-out pointer-events-none group-hover/map:pointer-events-auto"
+            className="absolute inset-0 w-full h-full grayscale opacity-20 group-hover/map:opacity-60 group-hover/map:grayscale-0 scale-110 group-hover/map:scale-100 transition-all duration-[1200ms] ease-out pointer-events-none group-hover/map:pointer-events-auto"
             loading="lazy"
             allowFullScreen
           />

@@ -47,12 +47,13 @@ export const Footer: React.FC<FooterProps> = ({ lang, onPageChange }) => {
 
         {/* Nav row */}
         <nav className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 mb-12">
-          <button
-            onClick={() => onPageChange('home')}
-            className="text-white/60 hover:text-white text-[11px] font-bold tracking-[0.2em] uppercase transition-colors"
+          <a
+            href="/"
+            onClick={(e) => { e.preventDefault(); onPageChange('home'); }}
+            className="text-white/60 hover:text-white text-[11px] font-bold tracking-[0.2em] uppercase transition-colors py-2 px-1"
           >
             {t.nav.home}
-          </button>
+          </a>
           <button
             onClick={() => onPageChange('menu')}
             className="text-white/60 hover:text-white text-[11px] font-bold tracking-[0.2em] uppercase transition-colors"
