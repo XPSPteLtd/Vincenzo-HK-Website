@@ -9,7 +9,7 @@ export interface PageSEO {
 export const pageSEO: Record<string, PageSEO> = {
   '/': {
     en: {
-      title: 'Vincenzo Capuano Hong Kong | Contemporary Neapolitan Pizzeria',
+      title: 'Vincenzo Capuano | Best Pizza in Hong Kong',
       desc: 'Discover contemporary Neapolitan pizza in Hong Kong by Vincenzo Capuano — rooted in Naples, crafted with heritage, technique, and premium ingredients.',
       keywords: 'pizzeria hong kong, neapolitan pizza hong kong, pizza restaurant hong kong, italian pizza hong kong, authentic pizza hong kong, contemporary neapolitan pizza hong kong, wood fired pizza hong kong, pizza in hong kong, artisan pizza hong kong, naples style pizza hong kong, premium pizza hong kong, best pizzeria in hong kong, best neapolitan pizza hong kong, pizza chef from naples, authentic neapolitan pizzeria',
     },
@@ -77,18 +77,18 @@ export const pageSEO: Record<string, PageSEO> = {
       hasMap: 'https://maps.app.goo.gl/mWac4KcwCQSUUibU9',
       openingHoursSpecification: {
         '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
         opens: '12:00',
         closes: '23:00',
       },
-      servesCuisine: ['Neapolitan Pizza','Contemporary Neapolitan','Italian'],
+      servesCuisine: ['Neapolitan Pizza', 'Contemporary Neapolitan', 'Italian'],
       priceRange: '$$',
     },
   },
 
   '/pizza-wan-chai-hong-kong': {
     en: {
-      title: 'Neapolitan Pizza in Wan Chai | Vincenzo Capuano Hong Kong',
+      title: 'Best Neapolitan Pizza in Wan Chai | Vincenzo Capuano Hong Kong',
       desc: 'Looking for authentic Neapolitan pizza in Wan Chai, Hong Kong? Discover Vincenzo Capuano — a contemporary pizzeria rooted in Naples and crafted for modern dining.',
       keywords: 'pizza wan chai hong kong, neapolitan pizza wan chai, italian restaurant wan chai hong kong, pizza near lee tung avenue, wan chai pizzeria, pizza near wan chai mtr, authentic pizza wan chai, best pizza in wan chai, pizza dinner wan chai, date night pizza wan chai, family pizza restaurant hong kong, pizza restaurant hong kong',
     },
@@ -111,7 +111,7 @@ export const pageSEO: Record<string, PageSEO> = {
         addressRegion: 'Hong Kong',
         addressCountry: 'HK',
       },
-      servesCuisine: ['Neapolitan Pizza','Contemporary Neapolitan','Italian'],
+      servesCuisine: ['Neapolitan Pizza', 'Contemporary Neapolitan', 'Italian'],
       hasMap: 'https://maps.app.goo.gl/mWac4KcwCQSUUibU9',
     },
   },
@@ -142,7 +142,7 @@ export const pageSEO: Record<string, PageSEO> = {
         addressRegion: 'Hong Kong',
         addressCountry: 'HK',
       },
-      servesCuisine: ['Neapolitan Pizza','Contemporary Neapolitan','Italian'],
+      servesCuisine: ['Neapolitan Pizza', 'Contemporary Neapolitan', 'Italian'],
     },
   },
 
@@ -248,7 +248,7 @@ export const pageSEO: Record<string, PageSEO> = {
         addressRegion: 'Hong Kong',
         addressCountry: 'HK',
       },
-      servesCuisine: ['Neapolitan Pizza','Contemporary Neapolitan','Italian'],
+      servesCuisine: ['Neapolitan Pizza', 'Contemporary Neapolitan', 'Italian'],
       amenityFeature: [
         { '@type': 'LocationFeatureSpecification', name: 'Group Dining', value: true },
         { '@type': 'LocationFeatureSpecification', name: 'Private Events', value: true },
