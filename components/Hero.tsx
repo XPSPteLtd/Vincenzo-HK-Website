@@ -66,7 +66,7 @@ export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
               src={img}
               alt={`Vincenzo Capuano Hong Kong ${i + 1}`}
               fallbackPrompt="Cinematic shot of an authentic Neapolitan pizzeria"
-              className={`w-full h-full object-cover object-center brightness-[0.55] transition-transform duration-[10000ms] ease-out ${
+              className={`w-full h-full object-cover object-center brightness-[0.7] transition-transform duration-[10000ms] ease-out ${
                 i === currentSlide ? 'scale-[1.06]' : 'scale-100'
               }`}
             />
@@ -74,8 +74,8 @@ export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
         ))}
 
         {/* Gradient overlays — left-heavy for text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-r from-charcoal/85 via-charcoal/30 to-transparent z-20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/10 to-charcoal/35 z-20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-charcoal/60 via-charcoal/20 to-transparent z-20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/05 to-charcoal/25 z-20" />
       </div>
 
       {/* ── Slide indicators — right edge ── */}
