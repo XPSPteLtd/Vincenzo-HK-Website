@@ -88,7 +88,7 @@ export const menuItems: MenuItem[] = [
     id: "ptr-6", name: "SOGNO VEGANO", nameZh: "純素之夢薄餅",
     description: "Home-made courgette cream, aubergines, roasted red & yellow datterino tomatoes, vegan cheese, courgette chips, potato chips, evoo & basil",
     price: "$ 34", mainCategory: "Ala-carte", category: "Pizza — The Traditional", categoryZh: "傳統薄餅", 
-    image: "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/menu%20images/SOGNO%20VEGANO.webp", 
+    image: NO_IMAGE, 
     dietary: ["Vegetarian", "Vegan"]
   },
   {
@@ -145,7 +145,8 @@ export const menuItems: MenuItem[] = [
   {
     id: "ptc-2", name: "DON EGIDIO", nameZh: "唐•艾吉迪奧薄餅",
     description: "Base w/ home-made courgette cream, topped w/ zucchini chips, classic meatballs by nonno Enzo, burrata heart, evoo & basil",
-    price: "$ 31", mainCategory: "Ala-carte", category: "Pizza — Thin Crust Pizza", categoryZh: "薄底薄餅", image: NO_IMAGE
+    price: "$ 31", mainCategory: "Ala-carte", category: "Pizza — Thin Crust Pizza", categoryZh: "薄底薄餅", 
+    image: "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/menu%20images/Don%20egidio.webp"
   },
 
   // SINGAPORE SPECIAL PIZZA
@@ -169,7 +170,9 @@ export const menuItems: MenuItem[] = [
   {
     id: "st-1", name: "PATATINE FRITTE AL TARTUFO", nameZh: "松露薯條",
     description: "Thunder crunch fries infused w/ white truffle oil, parmigiano, served w/ chili and mayo",
-    price: "$ 17", mainCategory: "Ala-carte", category: "The Starters", categoryZh: "精選前菜", image: NO_IMAGE, dietary: ["Vegetarian"]
+    price: "$ 17", mainCategory: "Ala-carte", category: "The Starters", categoryZh: "精選前菜", 
+    image: "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/menu%20images/Patatine%20fritte%20al%20tartufo.webp", 
+    dietary: ["Vegetarian"]
   },
   {
     id: "st-2", name: "HOLY WINGS", nameZh: "脆炸雞翼",
@@ -179,7 +182,8 @@ export const menuItems: MenuItem[] = [
   {
     id: "st-3", name: "WAGYU POLPETTE", nameZh: "和牛肉丸",
     description: "Slow-cooked wagyu meatballs, San Marzano sauce, basil, parmigiano",
-    price: "$ 22", mainCategory: "Ala-carte", category: "The Starters", categoryZh: "精選前菜", image: NO_IMAGE
+    price: "$ 22", mainCategory: "Ala-carte", category: "The Starters", categoryZh: "精選前菜", 
+    image: "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/menu%20images/Wagyu%20polpette.webp"
   },
   {
     id: "st-4", name: "TRIS DI MONTANARE 3PCS", nameZh: "三款炸薄餅麵糰 (3件)",
@@ -231,7 +235,8 @@ export const menuItems: MenuItem[] = [
   {
     id: "sal-5", name: "CAESAR SALAD", nameZh: "凱撒沙律",
     description: "Baby romaine lettuce, grilled chicken breast, baked croutons, home-made caesar dressing, cherry tomatoes, parmigiano, evoo",
-    price: "$ 24", mainCategory: "Ala-carte", category: "The Salads", categoryZh: "精選沙律", image: NO_IMAGE
+    price: "$ 24", mainCategory: "Ala-carte", category: "The Salads", categoryZh: "精選沙律", 
+    image: "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/menu%20images/Caesar%20salad.webp"
   },
   {
     id: "sal-6", name: "POSITANO", nameZh: "波西塔諾海鮮沙律",
@@ -252,7 +257,7 @@ export const menuItems: MenuItem[] = [
     description: "Fettuccine, guanciale pork cheeks, egg yolk, parmigiano, pepper",
     descriptionZh: "自家製闊麵、慢煮伊比利亞豬頰肉、蛋黃及帕馬森芝士。",
     price: "$ 34", mainCategory: "Ala-carte", category: "The Pastas & Mains", categoryZh: "手製意粉及主菜",
-    image: NO_IMAGE, 
+    image: "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/menu%20images/Carbonara.webp", 
     popular: true, chefNoteZh: "絕不加忌廉！純粹以蛋黃、羊奶芝士和胡椒乳化而成。向羅馬傳統致敬。"
   },
   {
@@ -278,7 +283,9 @@ export const menuItems: MenuItem[] = [
   {
     id: "pm-7", name: "AGLIO E OLIO", nameZh: "香辣蒜油大蝦意粉",
     description: "Linguine, black tiger prawns, extra spicy eye chili, white wine, evoo",
-    price: "$ 32", mainCategory: "Ala-carte", category: "The Pastas & Mains", categoryZh: "手製意粉及主菜", image: NO_IMAGE, dietary: ["Spicy"]
+    price: "$ 32", mainCategory: "Ala-carte", category: "The Pastas & Mains", categoryZh: "手製意粉及主菜", 
+    image: "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/menu%20images/Aglio%20e%20olio.webp", 
+    dietary: ["Spicy"]
   },
   {
     id: "pm-8", name: "RAVIOLI AI PORCINI", nameZh: "牛肝菌松露餃子",
