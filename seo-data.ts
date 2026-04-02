@@ -1,8 +1,8 @@
 const BASE = 'https://vincenzocapuano.hk';
 
 export interface PageSEO {
-  en: { title: string; desc: string; keywords: string };
-  hk: { title: string; desc: string; keywords: string };
+  en: { title: string; desc: string; keywords: string; };
+  hk: { title: string; desc: string; keywords: string; };
   schema: Record<string, unknown> | null;
 }
 
@@ -18,7 +18,7 @@ export const pageSEO: Record<string, PageSEO> = {
       desc: '在香港灣仔利東街體驗由世界冠軍 Vincenzo Capuano 帶來的當代拿坡里薄餅。',
       keywords: '香港薄餅店, 香港拿坡里薄餅, 香港披薩餐廳, 香港意大利餐廳 薄餅, 灣仔薄餅, 香港正宗拿坡里披薩, 香港木烤披薩, 當代拿坡里薄餅',
     },
-    schema: null,
+    schema: null, // already in index.html
   },
 
   '/menu': {
@@ -36,26 +36,15 @@ export const pageSEO: Record<string, PageSEO> = {
       '@context': 'https://schema.org',
       '@type': 'Menu',
       '@id': `${BASE}/menu#menu`,
-      'name': 'Vincenzo Capuano Hong Kong Menu',
-      'description': 'Contemporary Neapolitan pizza menu featuring signature pizzas, classics from Naples, and starters.',
-      'url': `${BASE}/menu`,
-      'hasMenuSection': [
-        {
-          '@type': 'MenuSection',
-          'name': 'Signature Pizzas',
-          'description': 'House creations built on our signature Nuvola crust — high-hydration, 36-hour fermented dough.',
-        },
-        {
-          '@type': 'MenuSection',
-          'name': 'Classics from Naples',
-          'description': 'Time-honoured Neapolitan recipes prepared with premium Italian ingredients.',
-        },
-        {
-          '@type': 'MenuSection',
-          'name': 'Starters & Sharing',
-          'description': 'Italian-inspired starters and sharing plates to begin your meal.',
-        },
+      name: 'Vincenzo Capuano Hong Kong Menu',
+      description: 'Contemporary Neapolitan pizza menu featuring signature pizzas, classics from Naples, and starters.',
+      url: `${BASE}/menu`,
+      hasMenuSection: [
+        { '@type': 'MenuSection', name: 'Signature Pizzas', description: 'Our signature contemporary Neapolitan pizzas crafted with premium ingredients.' },
+        { '@type': 'MenuSection', name: 'Classics from Naples', description: 'Timeless Neapolitan pizza classics rooted in Naples tradition.' },
+        { '@type': 'MenuSection', name: 'Starters & Sharing', description: 'Starters and sharing plates to complement your pizza experience.' },
       ],
+      inLanguage: 'en',
     },
   },
 
@@ -73,28 +62,27 @@ export const pageSEO: Record<string, PageSEO> = {
     schema: {
       '@context': 'https://schema.org',
       '@type': 'LocalBusiness',
-      'name': 'Vincenzo Capuano Hong Kong',
-      'url': `${BASE}/contact`,
-      'telephone': '+852 9448 3165',
-      'address': {
+      '@id': `${BASE}/#localbusiness`,
+      name: 'Vincenzo Capuano Hong Kong',
+      url: BASE,
+      telephone: '+852 9448 3165',
+      address: {
         '@type': 'PostalAddress',
-        'streetAddress': 'Lee Tung Avenue, GF Unit 01 04 05',
-        'addressLocality': 'Wan Chai',
-        'addressRegion': 'Hong Kong',
-        'addressCountry': 'HK',
+        streetAddress: 'Lee Tung Avenue, 200 Queens Road East, GF Unit 01 04 05',
+        addressLocality: 'Wan Chai',
+        addressRegion: 'Hong Kong',
+        addressCountry: 'HK',
       },
-      'geo': {
-        '@type': 'GeoCoordinates',
-        'latitude': 22.276,
-        'longitude': 114.170,
-      },
-      'openingHoursSpecification': {
+      geo: { '@type': 'GeoCoordinates', latitude: 22.276, longitude: 114.170 },
+      hasMap: 'https://maps.app.goo.gl/mWac4KcwCQSUUibU9',
+      openingHoursSpecification: {
         '@type': 'OpeningHoursSpecification',
-        'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-        'opens': '12:00',
-        'closes': '23:00',
+        dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],
+        opens: '12:00',
+        closes: '23:00',
       },
-      'hasMap': 'https://maps.app.goo.gl/mWac4KcwCQSUUibU9',
+      servesCuisine: ['Neapolitan Pizza','Contemporary Neapolitan','Italian'],
+      priceRange: '$$',
     },
   },
 
@@ -112,17 +100,19 @@ export const pageSEO: Record<string, PageSEO> = {
     schema: {
       '@context': 'https://schema.org',
       '@type': 'Restaurant',
-      'name': 'Vincenzo Capuano Hong Kong',
-      'url': `${BASE}/pizza-wan-chai-hong-kong`,
-      'telephone': '+852 9448 3165',
-      'address': {
+      '@id': `${BASE}/pizza-wan-chai-hong-kong#restaurant`,
+      name: 'Vincenzo Capuano — Neapolitan Pizza in Wan Chai, Hong Kong',
+      url: `${BASE}/pizza-wan-chai-hong-kong`,
+      telephone: '+852 9448 3165',
+      address: {
         '@type': 'PostalAddress',
-        'streetAddress': 'Lee Tung Avenue, GF Unit 01 04 05',
-        'addressLocality': 'Wan Chai',
-        'addressRegion': 'Hong Kong',
-        'addressCountry': 'HK',
+        streetAddress: 'Lee Tung Avenue, 200 Queens Road East, GF Unit 01 04 05',
+        addressLocality: 'Wan Chai',
+        addressRegion: 'Hong Kong',
+        addressCountry: 'HK',
       },
-      'servesCuisine': ['Neapolitan Pizza', 'Contemporary Neapolitan', 'Italian'],
+      servesCuisine: ['Neapolitan Pizza','Contemporary Neapolitan','Italian'],
+      hasMap: 'https://maps.app.goo.gl/mWac4KcwCQSUUibU9',
     },
   },
 
@@ -140,17 +130,19 @@ export const pageSEO: Record<string, PageSEO> = {
     schema: {
       '@context': 'https://schema.org',
       '@type': 'FoodEstablishment',
-      'name': 'Vincenzo Capuano Hong Kong',
-      'url': `${BASE}/reservations`,
-      'reservationUrl': 'https://book.bistrochat.com/vincenzo-capuano-wanchai-hk',
-      'telephone': '+852 9448 3165',
-      'address': {
+      '@id': `${BASE}/reservations#foodestablishment`,
+      name: 'Vincenzo Capuano Hong Kong',
+      url: `${BASE}/reservations`,
+      reservationUrl: 'https://book.bistrochat.com/vincenzo-capuano-wanchai-hk',
+      telephone: '+852 9448 3165',
+      address: {
         '@type': 'PostalAddress',
-        'streetAddress': 'Lee Tung Avenue, GF Unit 01 04 05',
-        'addressLocality': 'Wan Chai',
-        'addressRegion': 'Hong Kong',
-        'addressCountry': 'HK',
+        streetAddress: 'Lee Tung Avenue, 200 Queens Road East, GF Unit 01 04 05',
+        addressLocality: 'Wan Chai',
+        addressRegion: 'Hong Kong',
+        addressCountry: 'HK',
       },
+      servesCuisine: ['Neapolitan Pizza','Contemporary Neapolitan','Italian'],
     },
   },
 
@@ -168,19 +160,16 @@ export const pageSEO: Record<string, PageSEO> = {
     schema: {
       '@context': 'https://schema.org',
       '@type': 'AboutPage',
-      'name': 'Our Story | Vincenzo Capuano Hong Kong',
-      'url': `${BASE}/our-story`,
-      'about': {
+      '@id': `${BASE}/our-story#aboutpage`,
+      url: `${BASE}/our-story`,
+      name: 'Our Story | Vincenzo Capuano Hong Kong',
+      about: {
         '@type': 'Person',
-        'name': 'Vincenzo Capuano',
-        'jobTitle': 'World Pizza Champion & Head Chef',
-        'description': '2022 World Pizza Champion and third-generation Neapolitan pizza maker born in Naples, Italy. Pioneer of the contemporary Neapolitan pizza movement.',
-        'birthPlace': {
-          '@type': 'Place',
-          'name': 'Naples, Italy',
-        },
-        'award': '2022 World Pizza Championship',
-        'url': `${BASE}/our-story`,
+        name: 'Vincenzo Capuano',
+        jobTitle: '2022 World Pizza Champion & Head Chef',
+        description: 'Third-generation Neapolitan pizza maker from Naples, Italy, and 2022 World Pizza Champion. Pioneer of the contemporary Neapolitan pizza movement.',
+        birthPlace: { '@type': 'Place', name: 'Naples, Italy' },
+        worksFor: { '@type': 'Restaurant', name: 'Vincenzo Capuano Hong Kong', url: BASE },
       },
     },
   },
@@ -199,54 +188,36 @@ export const pageSEO: Record<string, PageSEO> = {
     schema: {
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
-      'mainEntity': [
+      mainEntity: [
         {
           '@type': 'Question',
-          'name': 'What is contemporary Neapolitan pizza?',
-          'acceptedAnswer': {
-            '@type': 'Answer',
-            'text': 'Contemporary Neapolitan pizza is a modern evolution of traditional pizza napoletana. It uses high-hydration dough fermented for 36+ hours to create a dramatically airy, cloud-like cornicione (crust edge) while retaining the soft, flavourful base of the Neapolitan original. Vincenzo Capuano is one of its leading pioneers.',
-          },
+          name: 'What is contemporary Neapolitan pizza?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Contemporary Neapolitan pizza is an evolution of traditional Neapolitan pizza pioneered by chefs like Vincenzo Capuano. It uses high-hydration dough fermented for 36+ hours, creating a dramatically airy, cloud-like cornicione crust while staying true to the Naples tradition of simple, premium ingredients.' },
         },
         {
           '@type': 'Question',
-          'name': 'Do I need a reservation at Vincenzo Capuano Hong Kong?',
-          'acceptedAnswer': {
-            '@type': 'Answer',
-            'text': 'Reservations are strongly recommended, especially on weekends and public holidays. You can book online at vincenzocapuano.hk/reservations or call +852 9448 3165. We also reserve 30% of seating for walk-in guests.',
-          },
+          name: 'Do I need a reservation at Vincenzo Capuano Hong Kong?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Reservations are strongly recommended, especially on weekends. You can book online at vincenzocapuano.hk/reservations or call +852 9448 3165. We also reserve 30% of seating for walk-in guests.' },
         },
         {
           '@type': 'Question',
-          'name': 'Is Vincenzo Capuano Hong Kong good for groups?',
-          'acceptedAnswer': {
-            '@type': 'Answer',
-            'text': 'Yes — sharing pizza is at the heart of our dining experience. We welcome group bookings for birthdays, celebrations, and casual group dinners. Please contact us directly to arrange group dining.',
-          },
+          name: 'Is Vincenzo Capuano Hong Kong good for group dining?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Yes. Our space is well-suited for group dining, birthday dinners, and celebrations. Pizza is naturally designed for sharing, and we can accommodate groups of various sizes. Contact us in advance for larger group bookings.' },
         },
         {
           '@type': 'Question',
-          'name': 'Do you serve vegetarian pizza?',
-          'acceptedAnswer': {
-            '@type': 'Answer',
-            'text': 'Yes, we offer several vegetarian options including Margherita and Bufala. All dietary information is marked on our menu.',
-          },
+          name: 'Do you serve vegetarian pizza?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Yes, we offer several vegetarian pizza options including Margherita and Bufala. All dietary information is clearly indicated on our menu.' },
         },
         {
           '@type': 'Question',
-          'name': 'Where is Vincenzo Capuano in Wan Chai?',
-          'acceptedAnswer': {
-            '@type': 'Answer',
-            'text': 'We are located at Lee Tung Avenue, GF Unit 01 04 05, Wan Chai, Hong Kong. The nearest MTR station is Wan Chai Station, Exit D — approximately a 5-minute walk.',
-          },
+          name: 'Where is Vincenzo Capuano located in Wan Chai?',
+          acceptedAnswer: { '@type': 'Answer', text: 'We are located at Lee Tung Avenue, GF Unit 01 04 05, 200 Queens Road East, Wan Chai, Hong Kong. The nearest MTR station is Wan Chai Station, Exit D — approximately a 5-minute walk.' },
         },
         {
           '@type': 'Question',
-          'name': 'What are your opening hours?',
-          'acceptedAnswer': {
-            '@type': 'Answer',
-            'text': 'We are open 7 days a week from 12:00 to 23:00.',
-          },
+          name: 'What are your opening hours?',
+          acceptedAnswer: { '@type': 'Answer', text: 'We are open 7 days a week from 12:00 to 23:00 (noon to 11pm).' },
         },
       ],
     },
@@ -266,27 +237,23 @@ export const pageSEO: Record<string, PageSEO> = {
     schema: {
       '@context': 'https://schema.org',
       '@type': 'FoodEstablishment',
-      'name': 'Vincenzo Capuano Hong Kong',
-      'url': `${BASE}/group-dining`,
-      'telephone': '+852 9448 3165',
-      'address': {
+      '@id': `${BASE}/group-dining#foodestablishment`,
+      name: 'Vincenzo Capuano Hong Kong — Group Dining & Private Events',
+      url: `${BASE}/group-dining`,
+      telephone: '+852 9448 3165',
+      address: {
         '@type': 'PostalAddress',
-        'streetAddress': 'Lee Tung Avenue, GF Unit 01 04 05',
-        'addressLocality': 'Wan Chai',
-        'addressRegion': 'Hong Kong',
-        'addressCountry': 'HK',
+        streetAddress: 'Lee Tung Avenue, 200 Queens Road East, GF Unit 01 04 05',
+        addressLocality: 'Wan Chai',
+        addressRegion: 'Hong Kong',
+        addressCountry: 'HK',
       },
-      'servesCuisine': ['Neapolitan Pizza', 'Contemporary Neapolitan', 'Italian'],
-      'event': {
-        '@type': 'Event',
-        'name': 'Group Dining & Private Events at Vincenzo Capuano Hong Kong',
-        'description': 'Host birthdays, celebrations, and group dinners at our contemporary Neapolitan pizzeria in Wan Chai.',
-        'location': {
-          '@type': 'Place',
-          'name': 'Vincenzo Capuano Hong Kong',
-          'address': 'Lee Tung Avenue, GF Unit 01 04 05, Wan Chai, Hong Kong',
-        },
-      },
+      servesCuisine: ['Neapolitan Pizza','Contemporary Neapolitan','Italian'],
+      amenityFeature: [
+        { '@type': 'LocationFeatureSpecification', name: 'Group Dining', value: true },
+        { '@type': 'LocationFeatureSpecification', name: 'Private Events', value: true },
+        { '@type': 'LocationFeatureSpecification', name: 'Birthday Celebrations', value: true },
+      ],
     },
   },
 
@@ -304,22 +271,13 @@ export const pageSEO: Record<string, PageSEO> = {
     schema: {
       '@context': 'https://schema.org',
       '@type': 'Article',
-      'headline': 'What Is Neapolitan Pizza?',
-      'description': 'Learn what makes Neapolitan pizza unique — from its Naples origins to the contemporary evolution pioneered by Vincenzo Capuano.',
-      'url': `${BASE}/what-is-neapolitan-pizza`,
-      'author': {
-        '@type': 'Person',
-        'name': 'Vincenzo Capuano',
-      },
-      'publisher': {
-        '@type': 'Organization',
-        'name': 'Vincenzo Capuano Hong Kong',
-        'url': BASE,
-        'logo': {
-          '@type': 'ImageObject',
-          'url': "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo/LOGO-CAPUANO-white.png",
-        },
-      },
+      '@id': `${BASE}/what-is-neapolitan-pizza#article`,
+      headline: 'What Is Neapolitan Pizza?',
+      description: 'Learn what makes Neapolitan pizza unique — from its Naples origins to the contemporary evolution pioneered by Vincenzo Capuano.',
+      url: `${BASE}/what-is-neapolitan-pizza`,
+      author: { '@type': 'Person', name: 'Vincenzo Capuano' },
+      publisher: { '@type': 'Organization', name: 'Vincenzo Capuano Hong Kong', url: BASE },
+      inLanguage: 'en',
     },
   },
 
@@ -337,22 +295,13 @@ export const pageSEO: Record<string, PageSEO> = {
     schema: {
       '@context': 'https://schema.org',
       '@type': 'Article',
-      'headline': 'Contemporary Neapolitan Pizza in Hong Kong',
-      'description': 'Why contemporary Neapolitan pizza is finding a place in Hong Kong — and how Vincenzo Capuano is leading that movement in Wan Chai.',
-      'url': `${BASE}/contemporary-neapolitan-pizza-hong-kong`,
-      'author': {
-        '@type': 'Person',
-        'name': 'Vincenzo Capuano',
-      },
-      'publisher': {
-        '@type': 'Organization',
-        'name': 'Vincenzo Capuano Hong Kong',
-        'url': BASE,
-        'logo': {
-          '@type': 'ImageObject',
-          'url': "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo/LOGO-CAPUANO-white.png",
-        },
-      },
+      '@id': `${BASE}/contemporary-neapolitan-pizza-hong-kong#article`,
+      headline: 'Why Contemporary Neapolitan Pizza Is Finding a Place in Hong Kong',
+      description: 'Why contemporary Neapolitan pizza is finding a place in Hong Kong — and how Vincenzo Capuano is leading that movement in Wan Chai.',
+      url: `${BASE}/contemporary-neapolitan-pizza-hong-kong`,
+      author: { '@type': 'Person', name: 'Vincenzo Capuano' },
+      publisher: { '@type': 'Organization', name: 'Vincenzo Capuano Hong Kong', url: BASE },
+      inLanguage: 'en',
     },
   },
 
@@ -370,22 +319,13 @@ export const pageSEO: Record<string, PageSEO> = {
     schema: {
       '@context': 'https://schema.org',
       '@type': 'Article',
-      'headline': 'Why We Cut Pizza with Scissors',
-      'description': 'The golden scissors ritual explained — why cutting Neapolitan pizza with scissors preserves the cloud-like cornicione crust.',
-      'url': `${BASE}/why-we-cut-pizza-with-scissors`,
-      'author': {
-        '@type': 'Person',
-        'name': 'Vincenzo Capuano',
-      },
-      'publisher': {
-        '@type': 'Organization',
-        'name': 'Vincenzo Capuano Hong Kong',
-        'url': BASE,
-        'logo': {
-          '@type': 'ImageObject',
-          'url': "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo/LOGO-CAPUANO-white.png",
-        },
-      },
+      '@id': `${BASE}/why-we-cut-pizza-with-scissors#article`,
+      headline: 'Why We Cut Pizza with Scissors',
+      description: 'The golden scissors ritual explained — why cutting Neapolitan pizza with scissors preserves the cloud-like cornicione crust.',
+      url: `${BASE}/why-we-cut-pizza-with-scissors`,
+      author: { '@type': 'Person', name: 'Vincenzo Capuano' },
+      publisher: { '@type': 'Organization', name: 'Vincenzo Capuano Hong Kong', url: BASE },
+      inLanguage: 'en',
     },
   },
 
@@ -403,22 +343,13 @@ export const pageSEO: Record<string, PageSEO> = {
     schema: {
       '@context': 'https://schema.org',
       '@type': 'Article',
-      'headline': 'Best Pizza for Sharing in Hong Kong',
-      'description': 'Why pizza is one of the best meals for sharing in Hong Kong — and how to make the most of your group dining experience at Vincenzo Capuano Wan Chai.',
-      'url': `${BASE}/best-pizza-for-sharing-hong-kong`,
-      'author': {
-        '@type': 'Person',
-        'name': 'Vincenzo Capuano',
-      },
-      'publisher': {
-        '@type': 'Organization',
-        'name': 'Vincenzo Capuano Hong Kong',
-        'url': BASE,
-        'logo': {
-          '@type': 'ImageObject',
-          'url': "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo/LOGO-CAPUANO-white.png",
-        },
-      },
+      '@id': `${BASE}/best-pizza-for-sharing-hong-kong#article`,
+      headline: 'Why Pizza Is One of the Best Meals for Sharing in Hong Kong',
+      description: 'Why pizza is one of the best meals for sharing in Hong Kong — and how to make the most of your group dining experience at Vincenzo Capuano Wan Chai.',
+      url: `${BASE}/best-pizza-for-sharing-hong-kong`,
+      author: { '@type': 'Person', name: 'Vincenzo Capuano' },
+      publisher: { '@type': 'Organization', name: 'Vincenzo Capuano Hong Kong', url: BASE },
+      inLanguage: 'en',
     },
   },
 
@@ -436,30 +367,18 @@ export const pageSEO: Record<string, PageSEO> = {
     schema: {
       '@context': 'https://schema.org',
       '@type': 'ProfilePage',
-      'name': 'The Vincenzo Capuano Story',
-      'url': `${BASE}/vincenzo-capuano-story`,
-      'mainEntity': {
+      '@id': `${BASE}/vincenzo-capuano-story#profilepage`,
+      url: `${BASE}/vincenzo-capuano-story`,
+      name: 'The Vincenzo Capuano Story',
+      mainEntity: {
         '@type': 'Person',
-        'name': 'Vincenzo Capuano',
-        'jobTitle': 'World Pizza Champion & Head Chef',
-        'description': 'Third-generation Neapolitan pizza maker born in Naples, Italy, and 2022 World Pizza Champion. Pioneer of the contemporary Neapolitan pizza movement.',
-        'birthPlace': {
-          '@type': 'Place',
-          'name': 'Naples, Italy',
-        },
-        'award': '2022 World Pizza Championship',
-        'worksFor': {
-          '@type': 'Restaurant',
-          'name': 'Vincenzo Capuano Hong Kong',
-          'url': BASE,
-          'address': {
-            '@type': 'PostalAddress',
-            'streetAddress': 'Lee Tung Avenue, GF Unit 01 04 05',
-            'addressLocality': 'Wan Chai',
-            'addressRegion': 'Hong Kong',
-            'addressCountry': 'HK',
-          },
-        },
+        name: 'Vincenzo Capuano',
+        jobTitle: 'Head Chef & 2022 World Pizza Champion',
+        description: 'Third-generation Neapolitan pizza maker from Naples, Italy. 2022 World Pizza Champion and pioneer of the contemporary Neapolitan pizza movement.',
+        birthPlace: { '@type': 'Place', name: 'Naples, Italy' },
+        award: '2022 World Pizza Championship',
+        worksFor: { '@type': 'Restaurant', name: 'Vincenzo Capuano Hong Kong', url: BASE },
+        url: `${BASE}/vincenzo-capuano-story`,
       },
     },
   },
