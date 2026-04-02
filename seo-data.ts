@@ -11,12 +11,12 @@ export const pageSEO: Record<string, PageSEO> = {
     en: {
       title: 'Vincenzo Capuano Hong Kong | Contemporary Neapolitan Pizzeria',
       desc: 'Discover contemporary Neapolitan pizza in Hong Kong by Vincenzo Capuano — rooted in Naples, crafted with heritage, technique, and premium ingredients.',
-      keywords: 'pizzeria hong kong, neapolitan pizza hong kong, pizza restaurant hong kong, italian pizza hong kong, authentic pizza hong kong, contemporary neapolitan pizza hong kong, wood fired pizza hong kong, pizza in hong kong, artisan pizza hong kong, naples style pizza hong kong, premium pizza hong kong',
+      keywords: 'pizzeria hong kong, neapolitan pizza hong kong, pizza restaurant hong kong, italian pizza hong kong, authentic pizza hong kong, contemporary neapolitan pizza hong kong, wood fired pizza hong kong, pizza in hong kong, artisan pizza hong kong, naples style pizza hong kong, premium pizza hong kong, best pizzeria in hong kong, best neapolitan pizza hong kong, pizza chef from naples, authentic neapolitan pizzeria',
     },
     hk: {
       title: 'Vincenzo Capuano | 香港當代拿坡里薄餅冠軍',
-      desc: '在香港灣仔利東街體驗由世界冠軍 Vincenzo Capuano 帶來的當代拿坡里薄餅。',
-      keywords: '香港薄餅店, 香港拿坡里薄餅, 香港披薩餐廳, 香港意大利餐廳 薄餅, 灣仔薄餅, 香港正宗拿坡里披薩, 香港木烤披薩, 當代拿坡里薄餅',
+      desc: '在香港灣仔利東街體驗由世界冠軍 Vincenzo Capuano 帶來的當代拿坡里薄餅——植根那不勒斯，以傳承工藝與頂級食材呈現。',
+      keywords: '香港薄餅店, 香港拿坡里薄餅, 香港披薩餐廳, 香港意大利餐廳 薄餅, 灣仔薄餅, 香港正宗拿坡里披薩, 香港木烤披薩, 當代拿坡里薄餅, 香港最佳薄餅店, 香港最佳拿坡里薄餅, 世界薄餅冠軍, 那不勒斯薄餅師傅',
     },
     schema: null, // already in index.html
   },
@@ -25,12 +25,12 @@ export const pageSEO: Record<string, PageSEO> = {
     en: {
       title: 'Pizza Menu Hong Kong | Contemporary Neapolitan Pizza | Vincenzo Capuano',
       desc: 'Explore our contemporary Neapolitan pizza menu in Hong Kong — crafted with premium ingredients, signature crust, and modern Naples-inspired flavour.',
-      keywords: 'italian pizza hong kong, pizza menu hong kong, neapolitan pizza hong kong, wood fired pizza hong kong, authentic pizza hong kong, margherita pizza hong kong, burrata pizza hong kong, diavola pizza hong kong, truffle pizza hong kong, vegetarian pizza hong kong, spicy salami pizza hong kong, bufala pizza hong kong',
+      keywords: 'italian pizza hong kong, pizza menu hong kong, neapolitan pizza hong kong, wood fired pizza hong kong, authentic pizza hong kong, pizza restaurant hong kong, margherita pizza hong kong, bufala pizza hong kong, burrata pizza hong kong, diavola pizza hong kong, truffle pizza hong kong, vegetarian pizza hong kong, spicy salami pizza hong kong, napoli pizza hong kong, fresh mozzarella pizza hong kong',
     },
     hk: {
       title: '精選菜單 | Vincenzo Capuano 香港',
-      desc: '查看我們的當代拿坡里薄餅精選菜單，包括招牌薄餅、前菜及甜品。',
-      keywords: '香港薄餅菜單, 香港意大利薄餅, 香港拿坡里薄餅, 瑪格麗特薄餅香港, 布拉塔薄餅香港, 素食薄餅香港',
+      desc: '查看我們的當代拿坡里薄餅精選菜單，包括瑪格麗特、布拉塔、Diavola 招牌薄餅及前菜甜品。',
+      keywords: '香港薄餅菜單, 香港意大利薄餅, 香港拿坡里薄餅, 香港木烤薄餅, 瑪格麗特薄餅香港, 布拉塔薄餅香港, 素食薄餅香港, 松露薄餅香港, 那不勒斯薄餅菜單',
     },
     schema: {
       '@context': 'https://schema.org',
@@ -51,13 +51,13 @@ export const pageSEO: Record<string, PageSEO> = {
   '/contact': {
     en: {
       title: 'Location & Hours | Vincenzo Capuano Hong Kong | Wan Chai Pizzeria',
-      desc: 'Visit us at Lee Tung Avenue, Wan Chai. Check our opening hours, MTR directions, and book your table online.',
-      keywords: 'pizza wan chai, wan chai pizza restaurant, neapolitan pizza wan chai, italian restaurant wan chai, pizza near lee tung avenue, pizza wan chai hong kong, where to eat pizza wan chai',
+      desc: 'Visit Vincenzo Capuano at Lee Tung Avenue, Wan Chai — contemporary Neapolitan pizza in Hong Kong. Check opening hours, MTR directions, and book your table.',
+      keywords: 'pizza wan chai, wan chai pizza restaurant, neapolitan pizza wan chai, italian restaurant wan chai, pizza near lee tung avenue, pizza wan chai hong kong, where to eat pizza wan chai, pizza restaurant hong kong, italian restaurant hong kong, date night pizza wan chai, pizza dinner wan chai, best pizza wan chai',
     },
     hk: {
       title: '位置與營業時間 | Vincenzo Capuano 香港',
-      desc: '前往灣仔利東街門店，查看營業時間及交通資訊。',
-      keywords: '灣仔薄餅, 灣仔意大利餐廳, 香港灣仔薄餅店, 利東街薄餅, 灣仔附近薄餅',
+      desc: '前往灣仔利東街體驗當代拿坡里薄餅。查看我們的營業時間、港鐵交通指引及線上訂座。',
+      keywords: '灣仔薄餅, 灣仔意大利餐廳, 香港灣仔薄餅店, 利東街薄餅, 灣仔附近薄餅, 灣仔薄餅晚餐, 灣仔薄餅餐廳, 香港意大利薄餅店',
     },
     schema: {
       '@context': 'https://schema.org',
@@ -90,12 +90,12 @@ export const pageSEO: Record<string, PageSEO> = {
     en: {
       title: 'Neapolitan Pizza in Wan Chai | Vincenzo Capuano Hong Kong',
       desc: 'Looking for authentic Neapolitan pizza in Wan Chai, Hong Kong? Discover Vincenzo Capuano — a contemporary pizzeria rooted in Naples and crafted for modern dining.',
-      keywords: 'pizza wan chai hong kong, neapolitan pizza wan chai, italian restaurant wan chai hong kong, pizza near lee tung avenue, wan chai pizzeria, pizza near wan chai mtr, authentic pizza wan chai',
+      keywords: 'pizza wan chai hong kong, neapolitan pizza wan chai, italian restaurant wan chai hong kong, pizza near lee tung avenue, wan chai pizzeria, pizza near wan chai mtr, authentic pizza wan chai, best pizza in wan chai, pizza dinner wan chai, date night pizza wan chai, family pizza restaurant hong kong, pizza restaurant hong kong',
     },
     hk: {
       title: '灣仔拿坡里薄餅 | Vincenzo Capuano 香港',
-      desc: '在灣仔尋找正宗拿坡里薄餅？探索 Vincenzo Capuano——源自那不勒斯的當代薄餅店。',
-      keywords: '灣仔薄餅, 灣仔意大利餐廳, 灣仔拿坡里薄餅, 利東街薄餅店, 灣仔站薄餅',
+      desc: '在灣仔尋找正宗拿坡里薄餅？探索 Vincenzo Capuano——源自那不勒斯的當代薄餅店，位於利東街。',
+      keywords: '灣仔薄餅, 灣仔意大利餐廳, 灣仔拿坡里薄餅, 利東街薄餅店, 灣仔站薄餅, 灣仔最佳薄餅, 灣仔薄餅晚餐, 灣仔約會薄餅',
     },
     schema: {
       '@context': 'https://schema.org',
@@ -120,12 +120,12 @@ export const pageSEO: Record<string, PageSEO> = {
     en: {
       title: 'Book a Table | Pizza Reservation Hong Kong | Vincenzo Capuano',
       desc: 'Reserve your table at Vincenzo Capuano Hong Kong for contemporary Neapolitan pizza, date nights, group dining, and authentic Italian hospitality.',
-      keywords: 'pizza reservation hong kong, book pizza restaurant hong kong, italian restaurant reservation hong kong, pizza dinner hong kong, pizza date night hong kong, group dining pizza hong kong, reserve italian restaurant hong kong, casual italian dining hong kong',
+      keywords: 'pizza reservation hong kong, book pizza restaurant hong kong, italian restaurant reservation hong kong, pizza dinner hong kong, pizza date night hong kong, group dining pizza hong kong, reserve italian restaurant hong kong, casual italian dining hong kong, family pizza restaurant hong kong, pizza lunch hong kong',
     },
     hk: {
       title: '訂座 | 香港薄餅預訂 | Vincenzo Capuano',
-      desc: '在 Vincenzo Capuano 香港預訂餐桌，享用當代拿坡里薄餅、約會晚餐及正宗意式款待。',
-      keywords: '香港薄餅訂座, 預訂薄餅餐廳香港, 香港意大利餐廳預訂, 灣仔薄餅訂座',
+      desc: '在灣仔 Vincenzo Capuano 預訂餐桌，享用當代拿坡里薄餅、約會晚餐、團體聚餐及正宗意式款待。',
+      keywords: '香港薄餅訂座, 預訂薄餅餐廳香港, 香港意大利餐廳預訂, 灣仔薄餅訂座, 香港薄餅約會晚餐, 香港團體薄餅訂座',
     },
     schema: {
       '@context': 'https://schema.org',
@@ -150,12 +150,12 @@ export const pageSEO: Record<string, PageSEO> = {
     en: {
       title: 'Our Story | Vincenzo Capuano Hong Kong | Pizza Chef from Naples',
       desc: 'Discover the story behind Vincenzo Capuano — a contemporary Neapolitan pizza experience rooted in family tradition, Naples heritage, and modern craftsmanship.',
-      keywords: 'pizza chef from naples, authentic neapolitan pizzeria, contemporary neapolitan pizza, third generation pizza chef, pizza heritage naples, italian pizza chef hong kong, naples pizza experience, vincenzo capuano story',
+      keywords: 'pizza chef from naples, authentic neapolitan pizzeria, contemporary neapolitan pizza, third generation pizza chef, pizza heritage naples, italian pizza chef hong kong, naples pizza experience, vincenzo capuano story, best neapolitan pizza hong kong, artisan pizza hong kong',
     },
     hk: {
       title: '我們的故事 | Vincenzo Capuano 香港 | 來自那不勒斯的薄餅師傅',
       desc: '探索 Vincenzo Capuano 背後的故事——植根於家族傳統、那不勒斯遺產和現代工藝的當代拿坡里薄餅體驗。',
-      keywords: '拿坡里薄餅師傅, 那不勒斯薄餅傳承, 當代拿坡里薄餅, 意大利薄餅大廚香港',
+      keywords: '拿坡里薄餅師傅, 那不勒斯薄餅傳承, 當代拿坡里薄餅, 意大利薄餅大廚香港, 世界薄餅冠軍, 第三代薄餅師傅, 香港薄餅師傅',
     },
     schema: {
       '@context': 'https://schema.org',
@@ -177,13 +177,13 @@ export const pageSEO: Record<string, PageSEO> = {
   '/faq': {
     en: {
       title: 'FAQ | Neapolitan Pizza Hong Kong | Vincenzo Capuano',
-      desc: 'Answers to common questions about our contemporary Neapolitan pizza, reservations, menu, and dining experience in Hong Kong.',
-      keywords: 'neapolitan pizza hong kong, what is neapolitan pizza, authentic pizza hong kong, pizza reservation hong kong, vegetarian pizza hong kong, italian restaurant hong kong, pizza restaurant hong kong, group dining pizza hong kong',
+      desc: 'Common questions about Neapolitan pizza, reservations, the menu, and dining at Vincenzo Capuano — contemporary Neapolitan pizzeria in Wan Chai, Hong Kong.',
+      keywords: 'neapolitan pizza hong kong, what is neapolitan pizza, authentic pizza hong kong, pizza reservation hong kong, vegetarian pizza hong kong, italian restaurant hong kong, pizza restaurant hong kong, group dining pizza hong kong, best neapolitan pizza hong kong, where to eat neapolitan pizza in hong kong',
     },
     hk: {
       title: '常見問題 | 香港拿坡里薄餅 | Vincenzo Capuano',
-      desc: '關於我們的當代拿坡里薄餅、訂座、菜單及香港用餐體驗的常見問題解答。',
-      keywords: '香港拿坡里薄餅, 什麼是拿坡里薄餅, 香港薄餅訂座, 素食薄餅香港, 香港意大利餐廳',
+      desc: '關於當代拿坡里薄餅、訂座、菜單及在灣仔 Vincenzo Capuano 用餐體驗的常見問題解答。',
+      keywords: '香港拿坡里薄餅, 什麼是拿坡里薄餅, 香港薄餅訂座, 素食薄餅香港, 香港意大利餐廳, 香港薄餅店, 灣仔薄餅訂座',
     },
     schema: {
       '@context': 'https://schema.org',
@@ -227,12 +227,12 @@ export const pageSEO: Record<string, PageSEO> = {
     en: {
       title: 'Group Dining & Private Events | Vincenzo Capuano Hong Kong',
       desc: 'Host birthdays, celebrations, and group dinners at Vincenzo Capuano Hong Kong — a contemporary Neapolitan pizza destination built for sharing.',
-      keywords: 'group dining pizza hong kong, private dining italian restaurant hong kong, pizza party venue hong kong, birthday dinner pizza hong kong, casual private dining hong kong, pizza restaurant for groups hong kong, celebration dining hong kong',
+      keywords: 'group dining pizza hong kong, private dining italian restaurant hong kong, pizza party venue hong kong, birthday dinner pizza hong kong, casual private dining hong kong, pizza restaurant for groups hong kong, celebration dining hong kong, best pizza for sharing hong kong, family pizza restaurant hong kong, pizza dinner hong kong',
     },
     hk: {
       title: '團體用餐及私人活動 | Vincenzo Capuano 香港',
-      desc: '在 Vincenzo Capuano 香港舉辦生日宴、慶祝活動及團體晚餐——專為分享而設的當代拿坡里薄餅目的地。',
-      keywords: '香港團體薄餅用餐, 香港私人意大利餐廳, 香港薄餅派對場地, 香港生日薄餅晚餐',
+      desc: '在灣仔 Vincenzo Capuano 舉辦生日宴、慶祝活動及團體晚餐——專為分享而設的當代拿坡里薄餅目的地。',
+      keywords: '香港團體薄餅用餐, 香港私人意大利餐廳, 香港薄餅派對場地, 香港生日薄餅晚餐, 香港分享薄餅, 香港薄餅晚餐, 灣仔團體用餐',
     },
     schema: {
       '@context': 'https://schema.org',
@@ -261,12 +261,12 @@ export const pageSEO: Record<string, PageSEO> = {
     en: {
       title: 'What Is Neapolitan Pizza? | Vincenzo Capuano Hong Kong',
       desc: 'Learn what makes Neapolitan pizza unique — from its Naples origins to the contemporary evolution pioneered by Vincenzo Capuano.',
-      keywords: 'what is neapolitan pizza, authentic neapolitan pizza, contemporary neapolitan pizza, pizza from naples, neapolitan crust, cornicione pizza, neapolitan pizza hong kong, pizza napoletana',
+      keywords: 'what is neapolitan pizza, authentic neapolitan pizza, contemporary neapolitan pizza, pizza from naples, neapolitan crust, cornicione pizza, neapolitan pizza hong kong, pizza napoletana, authentic pizza hong kong, pizza heritage naples',
     },
     hk: {
       title: '什麼是拿坡里薄餅？| Vincenzo Capuano 香港',
       desc: '了解拿坡里薄餅的獨特之處——從其那不勒斯起源到 Vincenzo Capuano 引領的當代演進。',
-      keywords: '什麼是拿坡里薄餅, 正宗拿坡里薄餅, 當代拿坡里薄餅, 那不勒斯薄餅, 薄餅麵皮',
+      keywords: '什麼是拿坡里薄餅, 正宗拿坡里薄餅, 當代拿坡里薄餅, 那不勒斯薄餅, 薄餅麵皮, 香港拿坡里薄餅, 拿坡里薄餅特色',
     },
     schema: {
       '@context': 'https://schema.org',
@@ -285,12 +285,12 @@ export const pageSEO: Record<string, PageSEO> = {
     en: {
       title: 'Contemporary Neapolitan Pizza in Hong Kong | Vincenzo Capuano',
       desc: 'Why contemporary Neapolitan pizza is finding a place in Hong Kong — and how Vincenzo Capuano is leading that movement in Wan Chai.',
-      keywords: 'contemporary neapolitan pizza hong kong, authentic pizza hong kong, neapolitan pizza hong kong, modern pizza naples, best neapolitan pizza hong kong, artisan pizza hong kong, pizza wan chai',
+      keywords: 'contemporary neapolitan pizza hong kong, authentic pizza hong kong, neapolitan pizza hong kong, modern pizza naples, best neapolitan pizza hong kong, artisan pizza hong kong, pizza wan chai, pizza in hong kong, pizza restaurant hong kong',
     },
     hk: {
       title: '香港當代拿坡里薄餅 | Vincenzo Capuano',
       desc: '為什麼當代拿坡里薄餅在香港興起——以及 Vincenzo Capuano 如何在灣仔引領這一潮流。',
-      keywords: '香港當代拿坡里薄餅, 香港正宗薄餅, 香港拿坡里薄餅, 現代拿坡里薄餅',
+      keywords: '香港當代拿坡里薄餅, 香港正宗薄餅, 香港拿坡里薄餅, 現代拿坡里薄餅, 灣仔當代薄餅, 香港薄餅餐廳',
     },
     schema: {
       '@context': 'https://schema.org',
@@ -309,12 +309,12 @@ export const pageSEO: Record<string, PageSEO> = {
     en: {
       title: 'Why We Cut Pizza with Scissors | Vincenzo Capuano Hong Kong',
       desc: 'The golden scissors ritual explained — why cutting Neapolitan pizza with scissors preserves the cloud-like cornicione crust.',
-      keywords: 'why cut pizza with scissors, pizza scissors tradition, neapolitan pizza ritual, cornicione pizza, golden scissors pizza, pizza cutting technique naples, nuvola crust pizza',
+      keywords: 'why cut pizza with scissors, pizza scissors tradition, neapolitan pizza ritual, cornicione pizza, golden scissors pizza, pizza cutting technique naples, nuvola crust pizza, neapolitan pizza hong kong, contemporary neapolitan pizza, authentic neapolitan pizza',
     },
     hk: {
       title: '為什麼我們用剪刀切薄餅 | Vincenzo Capuano 香港',
       desc: '黃金剪刀儀式解析——為什麼用剪刀切拿坡里薄餅能保護如雲朵般的 cornicione 麵皮。',
-      keywords: '剪刀切薄餅, 拿坡里薄餅傳統, 薄餅切割技巧, 黃金剪刀薄餅',
+      keywords: '剪刀切薄餅, 拿坡里薄餅傳統, 薄餅切割技巧, 黃金剪刀薄餅, 拿坡里薄餅文化, 香港薄餅師傅, 當代拿坡里薄餅',
     },
     schema: {
       '@context': 'https://schema.org',
@@ -333,12 +333,12 @@ export const pageSEO: Record<string, PageSEO> = {
     en: {
       title: 'Best Pizza for Sharing in Hong Kong | Vincenzo Capuano',
       desc: 'Why pizza is one of the best meals for sharing in Hong Kong — and how to make the most of your group dining experience at Vincenzo Capuano Wan Chai.',
-      keywords: 'best pizza for sharing hong kong, pizza dinner hong kong, group dining pizza hong kong, date night pizza hong kong, sharing pizza hong kong, family pizza restaurant hong kong, pizza lunch hong kong',
+      keywords: 'best pizza for sharing hong kong, pizza dinner hong kong, group dining pizza hong kong, date night pizza hong kong, sharing pizza hong kong, family pizza restaurant hong kong, pizza lunch hong kong, pizza in hong kong, authentic pizza hong kong, contemporary neapolitan pizza hong kong',
     },
     hk: {
       title: '香港最佳分享薄餅 | Vincenzo Capuano',
       desc: '為什麼薄餅是香港最適合分享的美食之一——以及如何在 Vincenzo Capuano 灣仔充分享受團體用餐體驗。',
-      keywords: '香港分享薄餅, 香港薄餅晚餐, 香港團體薄餅用餐, 香港約會薄餅',
+      keywords: '香港分享薄餅, 香港薄餅晚餐, 香港團體薄餅用餐, 香港約會薄餅, 香港薄餅店, 當代拿坡里薄餅, 灣仔分享薄餅',
     },
     schema: {
       '@context': 'https://schema.org',
@@ -357,12 +357,12 @@ export const pageSEO: Record<string, PageSEO> = {
     en: {
       title: 'The Vincenzo Capuano Story | Pizza Chef from Naples',
       desc: 'The story of a third-generation pizza chef from Naples and 2022 World Pizza Champion who brought contemporary Neapolitan pizza to Hong Kong.',
-      keywords: 'pizza chef from naples, third generation pizza chef, pizza heritage naples, authentic neapolitan pizzeria, vincenzo capuano story, world pizza champion, naples pizza tradition, contemporary neapolitan pizza',
+      keywords: 'pizza chef from naples, third generation pizza chef, pizza heritage naples, authentic neapolitan pizzeria, vincenzo capuano story, world pizza champion, naples pizza tradition, contemporary neapolitan pizza, artisan pizza hong kong, italian pizza chef hong kong',
     },
     hk: {
       title: 'Vincenzo Capuano 的故事 | 來自那不勒斯的薄餅師傅',
       desc: 'Vincenzo Capuano 背後的故事——來自那不勒斯的第三代薄餅師傅及 2022 年世界薄餅冠軍，將當代拿坡里薄餅帶到香港。',
-      keywords: '那不勒斯薄餅師傅, 第三代薄餅師傅, 薄餅傳承, 世界薄餅冠軍, Vincenzo Capuano 故事',
+      keywords: '那不勒斯薄餅師傅, 第三代薄餅師傅, 薄餅傳承, 世界薄餅冠軍, Vincenzo Capuano 故事, 香港薄餅師傅, 拿坡里薄餅香港',
     },
     schema: {
       '@context': 'https://schema.org',
