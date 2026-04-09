@@ -6,7 +6,7 @@ export interface MenuItem {
   nameZh?: string;
   description: string;
   descriptionZh?: string;
-  price: string;
+  price?: string;
   category: string;
   categoryZh?: string;
   image: string;

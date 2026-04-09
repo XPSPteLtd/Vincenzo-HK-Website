@@ -338,10 +338,10 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
   const SECTIONS = [
     { label: lang === 'en' ? 'All' : '全部', value: 'all' },
     { label: lang === 'en' ? 'Pizzas' : '薄餅', value: 'pizza' },
-    { label: lang === 'en' ? 'Starters' : '前菜', value: 'starters' },
-    { label: lang === 'en' ? 'Salads' : '沙律', value: 'salads' },
+    { label: lang === 'en' ? 'Starters & Salads' : '前菜及沙律', value: 'appetizers' },
+    { label: lang === 'en' ? 'Pastas' : '意粉', value: 'pasta' },
     { label: lang === 'en' ? 'Mains' : '主菜', value: 'mains' },
-    { label: lang === 'en' ? 'Sweets' : '甜品', value: 'sweets' },
+    { label: lang === 'en' ? 'Dolci' : '甜品', value: 'dolci' },
   ];
 
   useEffect(() => {
@@ -391,11 +391,11 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
       const matchesPopular = showPopular ? item.popular === true : true;
       const lowerCat = item.category.toLowerCase();
       const matchesSection = activeSection === 'all' ||
-        (activeSection === 'pizza' && lowerCat.includes('pizza')) ||
-        (activeSection === 'starters' && lowerCat.includes('starter')) ||
-        (activeSection === 'salads' && lowerCat.includes('salad')) ||
+        (activeSection === 'pizza' && (lowerCat.includes('pizza') || lowerCat.includes('champion') || lowerCat.includes('seller') || lowerCat.includes('traditional'))) ||
+        (activeSection === 'appetizers' && (lowerCat.includes('starter') || lowerCat.includes('salad') || lowerCat.includes('dipper'))) ||
+        (activeSection === 'pasta' && lowerCat.includes('pasta')) ||
         (activeSection === 'mains' && lowerCat.includes('main')) ||
-        (activeSection === 'sweets' && (lowerCat.includes('sweet') || lowerCat.includes('dessert')));
+        (activeSection === 'dolci' && (lowerCat.includes('sweet') || lowerCat.includes('dessert') || lowerCat.includes('dolci')));
       return matchesCategory && matchesDietary && matchesPopular && matchesSection;
     });
   }, [activeCategory, activeDietary, activeSection, showPopular, items, lang]);
