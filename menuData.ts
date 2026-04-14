@@ -107,7 +107,7 @@ export const menuItems: MenuItem[] = [
     id: "ss-15", name: "WAGYU POLPETTE", nameZh: "和牛肉丸",
     description: "Slow cooked wagyu meatballs, San Marzano sauce, basil, parmigiano",
     mainCategory: "Ala-carte", category: "Starters & Salads", categoryZh: "精選前菜及沙律",
-    image: "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/drive-download-20260414T111937Z-3-001/Wagyu%20Polpette%20(Top%20pic).jpg"
+    image: "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/drive-download-20260414T111937Z-3-001/Wagyu%20Polpette%20(Close%20up)%202.jpg"
   },
 
   // CRUST DIPPER
