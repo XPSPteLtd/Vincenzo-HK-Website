@@ -16,7 +16,7 @@ interface HeroProps {
 //   "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/hero-section/Family%20Baker%20Capuano-53%20(1).webp",
 // ];
 
-const HERO_VIDEO = "https://storage.googleapis.com/xps-assets/gotti%27s%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/hero/Playing%20on%20TV%20%40VC%20(SG).mp4";
+const HERO_VIDEO = "/Playing%20on%20TV.mp4";
 
 export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
   const t = translations[lang].hero;
