@@ -134,7 +134,9 @@ export const Story: React.FC<StoryProps> = ({ lang }) => {
 
           {/* Handrawn Typography Background */}
           <div className="absolute right-0 top-[15%] z-0 pointer-events-none transform rotate-90 origin-right opacity-[0.03] select-none text-[#f5eedc]">
-            <h2 className="text-[10rem] md:text-[14rem] font-serif italic font-black leading-none whitespace-nowrap">Capuano</h2>
+            <h2 className="text-[10rem] md:text-[14rem] font-serif italic font-black leading-none whitespace-nowrap">
+              {lang === 'en' ? 'Capuano' : '文森佐'}
+            </h2>
           </div>
 
           {/* Primary Main Image */}
@@ -145,7 +147,7 @@ export const Story: React.FC<StoryProps> = ({ lang }) => {
 
             <SafeImage
               src="https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/Family%20Baker%20Capuano-147.webp"
-              alt="Vincenzo Capuano and Grandfather"
+              alt={lang === 'en' ? 'Vincenzo Capuano and Grandfather' : '文森佐 · 卡普阿諾與他的祖父'}
               className="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-[2000ms] ease-out"
             />
           </div>

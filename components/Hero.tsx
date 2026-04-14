@@ -116,7 +116,7 @@ export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
           >
             <span className="inline-flex items-center gap-2 text-gold text-[10px] font-bold uppercase tracking-[0.25em]">
               <span className="w-4 h-px bg-gold/50" />
-              {lang === 'hk' ? '拿坡里 · 2022 世界薄餅冠軍' : 'Napoli · 2022 World Pizza Champion'}
+              {t.champion}
             </span>
           </div>
 
@@ -128,10 +128,10 @@ export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
               transform: `translateY(${heroLogoY}px)`,
             }}
           >
-            <h1 className="sr-only">Vincenzo Capuano | Award-Winning Contemporary Neapolitan Pizza Hong Kong</h1>
+            <h1 className="sr-only">{translations[lang].common.brand} | {lang === 'en' ? 'Award-Winning Contemporary Neapolitan Pizza Hong Kong' : '屢獲殊榮的當代拿坡里薄餅店 | 香港'}</h1>
             <img
               src="https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo/LOGO-CAPUANO-white.png"
-              alt="Vincenzo Capuano"
+              alt={translations[lang].common.brand}
               className="h-16 md:h-20 w-auto object-contain drop-shadow-2xl"
             />
           </div>
@@ -177,7 +177,7 @@ export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
             <div className="flex items-center gap-2 mt-4">
               <div className="w-1 h-1 rounded-full bg-gold animate-pulse shrink-0" />
               <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-gold/80">
-                {lang !== 'en' ? '立即訂座 · 4月29日起接受預約' : 'Book Now · Reservations 29 April 2026'}
+                {t.bookingNotice}
               </p>
             </div>
           </div>
