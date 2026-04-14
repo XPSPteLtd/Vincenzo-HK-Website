@@ -58,20 +58,26 @@ export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
     const video = videoRef.current;
     if (!video) return;
 
-    // Set a baseline volume in case the user ever manually interacts/unmutes
-    video.volume = 0.25;
-
-    const playVideo = async () => {
-      try {
-        // Guarantee muted state to bypass strict browser autoplay blocks
-        video.muted = true;
-        await video.play();
-      } catch (err) {
-        console.warn("Autoplay totally blocked by browser", err);
-      }
+    // Baseline: muted must be true for autoplay
+    video.muted = true;
+    
+    // Attempt play immediately
+    const startVideo = () => {
+      video.play().catch(err => {
+        console.warn("Autoplay blocked, waiting for interaction", err);
+        // Fallback: try playing on any user interaction if blocked
+        const playOnInteraction = () => {
+          video.play().then(() => {
+            window.removeEventListener('touchstart', playOnInteraction);
+            window.removeEventListener('mousedown', playOnInteraction);
+          }).catch(() => {});
+        };
+        window.addEventListener('touchstart', playOnInteraction);
+        window.addEventListener('mousedown', playOnInteraction);
+      });
     };
 
-    playVideo();
+    startVideo();
   }, []);
 
   return (
@@ -87,11 +93,9 @@ export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
           loop
           playsInline
           preload="auto"
-          className="w-full h-full absolute inset-0 object-cover brightness-[0.7] opacity-100"
-          onEnded={(e) => {
-            e.currentTarget.currentTime = 0;
-            e.currentTarget.play();
-          }}
+          disablePictureInPicture
+          disableRemotePlayback
+          className="w-full h-full absolute inset-0 object-cover brightness-[0.7] opacity-100 pointer-events-none"
         />
 
         {/* Gradient overlays — refined for better visibility of the video */}
