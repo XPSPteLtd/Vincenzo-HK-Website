@@ -58,44 +58,27 @@ export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
     const video = videoRef.current;
     if (!video) return;
 
-    // Ensure muted for initial autoplay compatibility
-    video.muted = true;
+    // Set a baseline volume in case the user ever manually interacts/unmutes
+    video.volume = 0.25;
 
-    const startVideo = async () => {
+    const playVideo = async () => {
       try {
+        // Guarantee muted state to bypass strict browser autoplay blocks
+        video.muted = true;
         await video.play();
-        if (isDesktop) {
-          // Attempt to unmute for desktop
-          video.muted = false;
-          video.volume = 0.25;
-        }
       } catch (err) {
-        // Fallback for strict browser policies
-        const handleInteraction = () => {
-          video.play().then(() => {
-            if (isDesktop) {
-              video.muted = false;
-              video.volume = 0.25;
-            }
-          });
-          window.removeEventListener('click', handleInteraction);
-          window.removeEventListener('scroll', handleInteraction);
-          window.removeEventListener('touchstart', handleInteraction);
-        };
-        window.addEventListener('click', handleInteraction);
-        window.addEventListener('scroll', handleInteraction, { passive: true });
-        window.addEventListener('touchstart', handleInteraction);
+        console.warn("Autoplay totally blocked by browser", err);
       }
     };
 
-    startVideo();
-  }, [isDesktop]);
+    playVideo();
+  }, []);
 
   return (
     <section className="relative h-screen min-h-[680px] w-full overflow-hidden flex flex-col bg-charcoal">
 
       {/* ── Background Video ── */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
+      <div className="absolute inset-0 z-0 overflow-hidden bg-charcoal">
         <video
           ref={videoRef}
           src={HERO_VIDEO}
@@ -104,8 +87,7 @@ export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
           loop
           playsInline
           preload="auto"
-          className={`w-full h-full absolute inset-0 object-cover brightness-[0.7] transition-opacity duration-1000 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
-          onLoadedData={() => setIsLoaded(true)}
+          className="w-full h-full absolute inset-0 object-cover brightness-[0.7] opacity-100"
           onEnded={(e) => {
             e.currentTarget.currentTime = 0;
             e.currentTarget.play();
