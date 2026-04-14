@@ -26,7 +26,7 @@ export const translations = {
       evolution: 'Contemporary Neapolitan'
     },
     banner: {
-      launch: 'VINCENZO CAPUANO HONG KONG: OPENING 29 APRIL · NOW TAKING BOOKINGS FROM 1 MAY 2026 · LEE TUNG AVENUE, WAN CHAI'
+      launch: 'VINCENZO CAPUANO HONG KONG: OPENING 29 APRIL · NOW TAKING BOOKINGS FROM 29 APRIL 2026 · LEE TUNG AVENUE, WAN CHAI'
     },
     signature: {
       thePhilosophy: 'The Philosophy',
@@ -225,7 +225,7 @@ export const translations = {
       evolution: '當代拿坡里'
     },
     banner: {
-      launch: 'Vincenzo Capuano 香港店：4月29日盛大開幕 · 現接受5月1日起網上訂座 · 灣仔利東街'
+      launch: 'Vincenzo Capuano 香港店：4月29日盛大開幕 · 現接受4月29日起網上訂座 · 灣仔利東街'
     },
     signature: {
       thePhilosophy: '品牌理念',

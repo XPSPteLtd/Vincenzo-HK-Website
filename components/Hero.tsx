@@ -1,7 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, ChevronDown } from 'lucide-react';
-import { SafeImage } from './ui/SafeImage';
 import { Language, translations } from '../translations';
 
 interface HeroProps {
@@ -11,22 +10,25 @@ interface HeroProps {
   lang: Language;
 }
 
-const backgroundImages = [
-  "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/hero-section/Family%20Baker%20Capuano-119.webp",
-  "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/hero-section/Family%20Baker%20Capuano-121.webp",
-  "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/hero-section/Family%20Baker%20Capuano-53%20(1).webp",
-];
+// const backgroundImages = [
+//   "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/hero-section/Family%20Baker%20Capuano-119.webp",
+//   "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/hero-section/Family%20Baker%20Capuano-121.webp",
+//   "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/hero-section/Family%20Baker%20Capuano-53%20(1).webp",
+// ];
+
+const HERO_VIDEO = "https://storage.googleapis.com/xps-assets/gotti%27s%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/hero/Playing%20on%20TV%20%40VC%20(SG).mp4";
 
 export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
   const t = translations[lang].hero;
-  const [currentSlide, setCurrentSlide] = useState(0);
   const [scrollY, setScrollY] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
 
+  const [isDesktop, setIsDesktop] = useState(false);
+
   useEffect(() => {
-    const slideTimer = setInterval(() => {
-      setCurrentSlide((prev: number) => (prev + 1) % backgroundImages.length);
-    }, 6000);
+    const handleResize = () => setIsDesktop(window.innerWidth >= 1024);
+    handleResize();
+    window.addEventListener('resize', handleResize);
 
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -34,7 +36,7 @@ export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
     const loadTimer = setTimeout(() => setIsLoaded(true), 80);
 
     return () => {
-      clearInterval(slideTimer);
+      window.removeEventListener('resize', handleResize);
       window.removeEventListener('scroll', handleScroll);
       clearTimeout(loadTimer);
     };
@@ -50,70 +52,91 @@ export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
 
   const scrollToNext = () => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
 
+  const videoRef = React.useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    // Ensure muted for initial autoplay compatibility
+    video.muted = true;
+
+    const startVideo = async () => {
+      try {
+        await video.play();
+        if (isDesktop) {
+          // Attempt to unmute for desktop
+          video.muted = false;
+          video.volume = 0.25;
+        }
+      } catch (err) {
+        // Fallback for strict browser policies
+        const handleInteraction = () => {
+          video.play().then(() => {
+            if (isDesktop) {
+              video.muted = false;
+              video.volume = 0.25;
+            }
+          });
+          window.removeEventListener('click', handleInteraction);
+          window.removeEventListener('scroll', handleInteraction);
+          window.removeEventListener('touchstart', handleInteraction);
+        };
+        window.addEventListener('click', handleInteraction);
+        window.addEventListener('scroll', handleInteraction, { passive: true });
+        window.addEventListener('touchstart', handleInteraction);
+      }
+    };
+
+    startVideo();
+  }, [isDesktop]);
+
   return (
     <section className="relative h-screen min-h-[680px] w-full overflow-hidden flex flex-col bg-charcoal">
 
-      {/* ── Background Slider ── */}
-      <div className="absolute inset-0 z-0">
-        {backgroundImages.map((img, i) => (
-          <div
-            key={i}
-            className={`absolute inset-0 transition-opacity duration-[2000ms] ease-in-out ${
-              i === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
-            }`}
-          >
-            <SafeImage
-              src={img}
-              alt={`Vincenzo Capuano Hong Kong ${i + 1}`}
-              fallbackPrompt="Cinematic shot of an authentic Neapolitan pizzeria"
-              className={`w-full h-full object-cover object-center brightness-[0.7] transition-transform duration-[10000ms] ease-out ${
-                i === currentSlide ? 'scale-[1.06]' : 'scale-100'
-              }`}
-            />
-          </div>
-        ))}
+      {/* ── Background Video ── */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <video
+          ref={videoRef}
+          src={HERO_VIDEO}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className={`w-full h-full absolute inset-0 object-cover brightness-[0.7] transition-opacity duration-1000 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+          onLoadedData={() => setIsLoaded(true)}
+          onEnded={(e) => {
+            e.currentTarget.currentTime = 0;
+            e.currentTarget.play();
+          }}
+        />
 
-        {/* Gradient overlays — left-heavy for text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-r from-charcoal/60 via-charcoal/20 to-transparent z-20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/05 to-charcoal/25 z-20" />
+        {/* Gradient overlays — refined for better visibility of the video */}
+        <div className="absolute inset-0 bg-gradient-to-r from-charcoal/40 via-charcoal/10 to-transparent z-20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent z-20" />
       </div>
 
-      {/* ── Slide indicators — right edge ── */}
-      <div className="absolute right-8 md:right-12 top-1/2 -translate-y-1/2 z-40 hidden md:flex flex-col gap-3 items-center">
-        {backgroundImages.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setCurrentSlide(i)}
-            aria-label={`Slide ${i + 1}`}
-            className="group focus:outline-none"
-          >
-            <div className={`w-[2px] rounded-full transition-all duration-700 ${
-              i === currentSlide
-                ? 'h-10 bg-gold shadow-[0_0_10px_rgba(197,160,89,0.6)]'
-                : 'h-3 bg-white/20 group-hover:bg-white/50'
-            }`} />
-          </button>
-        ))}
-      </div>
+      {/* Slide indicators removed as we use video now */}
 
       {/* ── Main content ── */}
-      <div className="relative z-30 flex-1 flex flex-col justify-end w-full">
-        <div className="px-6 sm:px-8 md:px-16 lg:px-24 pb-32 md:pb-32 lg:pb-36">
+      <div className="relative z-30 mt-auto w-full">
+        <div className="px-6 md:px-16 lg:px-24 pb-16 md:pb-20 max-w-4xl">
 
           {/* Eyebrow */}
           <div
-            className={`mb-6 md:mb-8 transition-all duration-700 delay-100 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`}
+            className={`mb-3 md:mb-4 transition-all duration-700 delay-100 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`}
             style={{ opacity: isLoaded ? contentOpacity : 0 }}
           >
-            <span className="inline-flex items-center gap-3 text-gold text-xs md:text-sm font-bold uppercase tracking-[0.35em]">
-              <span className="w-5 h-px bg-gold/50" />
+            <span className="inline-flex items-center gap-2 text-gold text-[10px] font-bold uppercase tracking-[0.25em]">
+              <span className="w-4 h-px bg-gold/50" />
               {lang === 'hk' ? '拿坡里 · 2022 世界薄餅冠軍' : 'Napoli · 2022 World Pizza Champion'}
             </span>
           </div>
 
           {/* Logo — cross-fades with navbar logo */}
           <div
-            className={`mb-8 md:mb-10 transition-[opacity] duration-700 delay-200 ${isLoaded ? '' : 'opacity-0'}`}
+            className={`mb-5 md:mb-6 transition-[opacity] duration-700 delay-200 ${isLoaded ? '' : 'opacity-0'}`}
             style={{
               opacity: isLoaded ? heroLogoOpacity : 0,
               transform: `translateY(${heroLogoY}px)`,
@@ -123,18 +146,18 @@ export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
             <img
               src="https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo/LOGO-CAPUANO-white.png"
               alt="Vincenzo Capuano"
-              className="h-28 sm:h-36 md:h-44 lg:h-52 w-auto object-contain drop-shadow-2xl"
+              className="h-16 md:h-20 w-auto object-contain drop-shadow-2xl"
             />
           </div>
 
           {/* Quote */}
           <div
-            className={`mb-10 md:mb-12 transition-all duration-700 delay-300 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+            className={`mb-6 md:mb-8 transition-all duration-700 delay-300 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
             style={{ opacity: isLoaded ? contentOpacity : 0, transform: `translateY(${contentY}px)` }}
           >
-            <div className="flex items-start gap-4 md:gap-5 max-w-xs sm:max-w-sm md:max-w-lg">
-              <span className="w-[3px] h-auto self-stretch bg-gold/40 rounded-full shrink-0 mt-1" />
-              <p className="text-white/55 font-sans font-bold text-xs sm:text-sm uppercase tracking-[0.25em] leading-relaxed">
+            <div className="flex items-start gap-3 max-w-xs sm:max-w-sm md:max-w-md">
+              <span className="w-0.5 h-auto self-stretch bg-gold/30 rounded-full shrink-0 mt-1" />
+              <p className="text-white/55 font-sans font-bold text-xs md:text-[13px] uppercase tracking-[0.2em] leading-relaxed">
                 {t.philosophy.replace(/^["「]|["」]$/g, '')}
               </p>
             </div>
@@ -150,7 +173,7 @@ export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
                 href="https://book.bistrochat.com/vincenzo-capuano-wanchai-hk"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center justify-center gap-2.5 bg-gold hover:bg-white text-charcoal text-xs font-bold uppercase tracking-[0.2em] px-8 py-3.5 rounded-xl transition-all duration-300 shadow-lg shadow-gold/15 active:scale-[0.97]"
+                className="group inline-flex items-center justify-center gap-2 bg-gold hover:bg-white text-charcoal text-[11px] font-bold uppercase tracking-[0.15em] px-7 py-3 rounded-xl transition-all duration-300 shadow-lg shadow-gold/10 active:scale-[0.97]"
               >
                 {t.bookNow}
                 <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform" />
@@ -158,17 +181,17 @@ export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
 
               <button
                 onClick={onMenuClick}
-                className="inline-flex items-center justify-center gap-2.5 bg-white/8 hover:bg-white/14 backdrop-blur-md border border-white/15 hover:border-white/30 text-white text-xs font-bold uppercase tracking-[0.2em] px-8 py-3.5 rounded-xl transition-all duration-300 active:scale-[0.97]"
+                className="inline-flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 backdrop-blur-md border border-white/10 hover:border-white/20 text-white text-[11px] font-bold uppercase tracking-[0.15em] px-7 py-3 rounded-xl transition-all duration-300 active:scale-[0.97]"
               >
                 {translations[lang].nav.menu}
               </button>
             </div>
 
             {/* Booking notice */}
-            <div className="flex items-center gap-2.5 mt-4">
-              <div className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse shrink-0" />
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-gold/80">
-                {lang !== 'en' ? '立即訂座 · 5月1日起接受預約' : 'Book Now · Reservations available from 1 May 2026'}
+            <div className="flex items-center gap-2 mt-4">
+              <div className="w-1 h-1 rounded-full bg-gold animate-pulse shrink-0" />
+              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-gold/80">
+                {lang !== 'en' ? '立即訂座 · 4月29日起接受預約' : 'Book Now · Reservations 29 April 2026'}
               </p>
             </div>
           </div>

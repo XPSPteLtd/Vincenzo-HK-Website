@@ -197,7 +197,7 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang, onBookClick }) => {
                 <div className="flex items-center gap-2 mb-8 px-3 py-2.5 rounded-lg bg-gold/[0.06] border border-gold/20">
                   <div className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse shrink-0" />
                   <p className="text-xs font-bold uppercase tracking-[0.18em] text-gold/90">
-                    {lang !== 'en' ? '立即訂座 · 5月1日起接受預約' : 'Book Now · Reservations available from 1 May 2026'}
+                    {lang !== 'en' ? '立即訂座 · 4月29日起接受預約' : 'Book Now · Reservations available from 29 April 2026'}
                   </p>
                 </div>
               </div>

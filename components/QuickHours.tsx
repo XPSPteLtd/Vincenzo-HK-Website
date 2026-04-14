@@ -99,7 +99,7 @@ export const QuickHours: React.FC<QuickHoursProps> = ({ isOpen, onClose, lang })
           <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-gold/[0.06] border border-gold/20 mb-1">
             <div className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse shrink-0" />
             <p className="text-[9px] font-bold uppercase tracking-[0.18em] text-gold/80">
-              {lang !== 'en' ? '立即訂座 · 5月1日起接受預約' : 'Book Now · Reservations available from 1 May 2026'}
+              {lang !== 'en' ? '立即訂座 · 4月29日起接受預約' : 'Book Now · Reservations available from 29 April 2026'}
             </p>
           </div>
 
