@@ -132,7 +132,7 @@ const App: React.FC = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2500);
+    }, 200);
     return () => clearTimeout(timer);
   }, []);
 
