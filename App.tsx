@@ -80,13 +80,12 @@ const App: React.FC = () => {
     localStorage.setItem('app_lang', lang);
     document.documentElement.lang = lang === 'hk' ? 'zh-HK' : 'en';
 
-    const path = location.pathname;
-    const seo = pageSEO[path];
-    if (!seo) return;
-
-    const { title, desc, keywords } = lang === 'hk' ? seo.hk : seo.en;
+    // Normalize path to remove trailing slash for SEO matching, but keep original for URL
+    const rawPath = location.pathname;
+    const path = rawPath.endsWith('/') && rawPath.length > 1 ? rawPath.slice(0, -1) : rawPath;
     const fullUrl = `https://vincenzocapuano.hk${path}`;
 
+    // Helper for Meta Tags
     const setMeta = (attr: string, key: string, value: string) => {
       let el = document.querySelector(`meta[${attr}="${key}"]`);
       if (!el) {
@@ -97,18 +96,45 @@ const App: React.FC = () => {
       el.setAttribute('content', value);
     };
 
+    // 1. ALWAYS update the URLs dynamically so each page is canonical to itself
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) {
+      canonical.setAttribute('href', fullUrl);
+    } else {
+      const newCanonical = document.createElement('link');
+      newCanonical.setAttribute('rel', 'canonical');
+      newCanonical.setAttribute('href', fullUrl);
+      document.head.appendChild(newCanonical);
+    }
+
+    const langs = ['en', 'zh-HK', 'x-default'];
+    langs.forEach((langValue) => {
+      let alt = document.querySelector(`link[rel="alternate"][hreflang="${langValue}"]`);
+      if (!alt) {
+        alt = document.createElement('link');
+        alt.setAttribute('rel', 'alternate');
+        alt.setAttribute('hreflang', langValue);
+        document.head.appendChild(alt);
+      }
+      alt.setAttribute('href', fullUrl);
+    });
+
+    setMeta('property', 'og:url', fullUrl);
+    setMeta('property', 'twitter:url', fullUrl);
+
+    // 2. ONLY proceed to update explicit title/desc if it exists in our SEO data
+    const seo = pageSEO[path];
+    if (!seo) return;
+
+    const { title, desc, keywords } = lang === 'hk' ? seo.hk : seo.en;
+
     document.title = title;
     setMeta('name', 'description', desc);
     setMeta('name', 'keywords', keywords);
     setMeta('property', 'og:title', title);
     setMeta('property', 'og:description', desc);
-    setMeta('property', 'og:url', fullUrl);
     setMeta('property', 'twitter:title', title);
     setMeta('property', 'twitter:description', desc);
-    setMeta('property', 'twitter:url', fullUrl);
-
-    const canonical = document.querySelector('link[rel="canonical"]');
-    if (canonical) canonical.setAttribute('href', fullUrl);
 
     // Inject or remove per-page JSON-LD
     let pageSchema = document.getElementById('page-schema') as HTMLScriptElement | null;
