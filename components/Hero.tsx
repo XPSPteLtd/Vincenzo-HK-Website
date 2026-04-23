@@ -128,7 +128,7 @@ export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
               transform: `translateY(${heroLogoY}px)`,
             }}
           >
-            <h1 className="sr-only">{translations[lang].common.brand} | {lang === 'en' ? 'Award-Winning Contemporary Neapolitan Pizza Hong Kong' : '屢獲殊榮的當代拿坡里薄餅店 | 香港'}</h1>
+            <div className="sr-only">{translations[lang].common.brand} | {lang === 'en' ? 'Award-Winning Contemporary Neapolitan Pizza Hong Kong' : '屢獲殊榮的當代拿坡里薄餅店 | 香港'}</div>
             <img
               src="https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo/LOGO-CAPUANO-white.png"
               alt={translations[lang].common.brand}
@@ -143,9 +143,9 @@ export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
           >
             <div className="flex items-start gap-3 max-w-xs sm:max-w-sm md:max-w-md">
               <span className="w-0.5 h-auto self-stretch bg-gold/30 rounded-full shrink-0 mt-1" />
-              <p className="text-white/55 font-sans font-bold text-xs md:text-[13px] uppercase tracking-[0.2em] leading-relaxed">
+              <h1 className="text-white/55 font-sans font-bold text-xs md:text-[13px] uppercase tracking-[0.2em] leading-relaxed">
                 {t.philosophy.replace(/^["「]|["」]$/g, '')}
-              </p>
+              </h1>
             </div>
           </div>
 
