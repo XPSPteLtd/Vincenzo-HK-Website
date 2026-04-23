@@ -83,7 +83,7 @@ const App: React.FC = () => {
     // Normalize path to remove trailing slash for SEO matching, but keep original for URL
     const rawPath = location.pathname;
     const path = rawPath.endsWith('/') && rawPath.length > 1 ? rawPath.slice(0, -1) : rawPath;
-    const fullUrl = `https://vincenzocapuano.hk${path}`;
+    const canonicalUrl = window.location.origin + window.location.pathname;
 
     // Helper for Meta Tags
     const setMeta = (attr: string, key: string, value: string) => {
@@ -96,17 +96,6 @@ const App: React.FC = () => {
       el.setAttribute('content', value);
     };
 
-    // 1. ALWAYS update the URLs dynamically so each page is canonical to itself
-    const canonical = document.querySelector('link[rel="canonical"]');
-    if (canonical) {
-      canonical.setAttribute('href', fullUrl);
-    } else {
-      const newCanonical = document.createElement('link');
-      newCanonical.setAttribute('rel', 'canonical');
-      newCanonical.setAttribute('href', fullUrl);
-      document.head.appendChild(newCanonical);
-    }
-
     const langs = ['en', 'zh-HK', 'x-default'];
     langs.forEach((langValue) => {
       let alt = document.querySelector(`link[rel="alternate"][hreflang="${langValue}"]`);
@@ -116,11 +105,11 @@ const App: React.FC = () => {
         alt.setAttribute('hreflang', langValue);
         document.head.appendChild(alt);
       }
-      alt.setAttribute('href', fullUrl);
+      alt.setAttribute('href', canonicalUrl);
     });
 
-    setMeta('property', 'og:url', fullUrl);
-    setMeta('property', 'twitter:url', fullUrl);
+    setMeta('property', 'og:url', canonicalUrl);
+    setMeta('property', 'twitter:url', canonicalUrl);
 
     // 2. ONLY proceed to update explicit title/desc if it exists in our SEO data
     const seo = pageSEO[path];
@@ -198,8 +187,11 @@ const App: React.FC = () => {
     setIsHoursOpen(false);
   };
 
+  const canonicalUrl = window.location.origin + location.pathname;
+
   return (
     <main className="bg-charcoal min-h-screen text-white selection:bg-gold selection:text-charcoal relative pb-20 md:pb-0">
+      <link rel="canonical" href={canonicalUrl} />
       <AnnouncementBanner lang={lang} onDismiss={() => setIsBannerActive(false)} isActive={isBannerActive} />
       <Loader isLoading={isLoading} />
       
