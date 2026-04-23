@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Accolades } from './components/Accolades';
@@ -85,6 +86,7 @@ const App: React.FC = () => {
     const path = rawPath.endsWith('/') && rawPath.length > 1 ? rawPath.slice(0, -1) : rawPath;
     const canonicalUrl = window.location.origin + window.location.pathname;
 
+    // Hreflang and Open Graph URLs are now handled via Helmet below.
     // Helper for Meta Tags
     const setMeta = (attr: string, key: string, value: string) => {
       let el = document.querySelector(`meta[${attr}="${key}"]`);
@@ -95,22 +97,6 @@ const App: React.FC = () => {
       }
       el.setAttribute('content', value);
     };
-
-    const langs = ['en', 'zh-HK', 'x-default'];
-    langs.forEach((langValue) => {
-      let alt = document.querySelector(`link[rel="alternate"][hreflang="${langValue}"]`);
-      if (!alt) {
-        alt = document.createElement('link');
-        alt.setAttribute('rel', 'alternate');
-        alt.setAttribute('hreflang', langValue);
-        document.head.appendChild(alt);
-      }
-      alt.setAttribute('href', canonicalUrl);
-    });
-
-    setMeta('property', 'og:url', canonicalUrl);
-    setMeta('property', 'twitter:url', canonicalUrl);
-
     // 2. ONLY proceed to update explicit title/desc if it exists in our SEO data
     const seo = pageSEO[path];
     if (!seo) return;
@@ -191,7 +177,14 @@ const App: React.FC = () => {
 
   return (
     <main className="bg-charcoal min-h-screen text-white selection:bg-gold selection:text-charcoal relative pb-20 md:pb-0">
-      <link rel="canonical" href={canonicalUrl} />
+      <Helmet>
+        <link rel="canonical" href={canonicalUrl} />
+        <link rel="alternate" hreflang="en" href={canonicalUrl} />
+        <link rel="alternate" hreflang="zh-HK" href={canonicalUrl} />
+        <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="twitter:url" content={canonicalUrl} />
+      </Helmet>
       <AnnouncementBanner lang={lang} onDismiss={() => setIsBannerActive(false)} isActive={isBannerActive} />
       <Loader isLoading={isLoading} />
       
