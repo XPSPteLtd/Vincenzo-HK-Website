@@ -124,13 +124,27 @@ const App: React.FC = () => {
     const seo = pageSEO[path];
     if (!seo) return;
 
-    const { title, desc, keywords } = lang === 'hk' ? seo.hk : seo.en;
+    const { title, desc, keywords, image } = lang === 'hk' ? seo.hk : seo.en;
 
     document.title = title;
     setMeta('name', 'description', desc);
     setMeta('name', 'keywords', keywords);
     setMeta('property', 'og:title', title);
     setMeta('property', 'og:description', desc);
+    setMeta('property', 'og:site_name', 'Vincenzo Capuano Hong Kong');
+    setMeta('property', 'og:type', path.startsWith('/what-is-') || path.startsWith('/contemporary-') || path.startsWith('/why-') || path.startsWith('/best-pizza-for-') || path.startsWith('/vincenzo-') ? 'article' : 'website');
+    setMeta('property', 'og:locale', lang === 'hk' ? 'zh_HK' : 'en_HK');
+    
+    if (image) {
+      setMeta('property', 'og:image', image);
+      setMeta('property', 'twitter:image', image);
+    } else {
+      // Default brand image
+      const defaultImg = "https://storage.googleapis.com/xps-assets/gotti%27s%20assets%20/BRAND%20ASSETS/vincenzo/LOGO-CAPUANO-white.png";
+      setMeta('property', 'og:image', defaultImg);
+      setMeta('property', 'twitter:image', defaultImg);
+    }
+
     setMeta('property', 'twitter:title', title);
     setMeta('property', 'twitter:description', desc);
 
