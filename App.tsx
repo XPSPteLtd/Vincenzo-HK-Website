@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
@@ -82,13 +81,12 @@ const App: React.FC = () => {
     localStorage.setItem('app_lang', lang);
     document.documentElement.lang = lang === 'hk' ? 'zh-HK' : 'en';
 
-    const path = location.pathname;
-    const seo = pageSEO[path];
-    if (!seo) return;
+    // Normalize path to remove trailing slash for SEO matching, but keep original for URL
+    const rawPath = location.pathname;
+    const path = rawPath.endsWith('/') && rawPath.length > 1 ? rawPath.slice(0, -1) : rawPath;
+    const canonicalUrl = window.location.origin + window.location.pathname;
 
-    const { title, desc, keywords } = lang === 'hk' ? seo.hk : seo.en;
-    const fullUrl = `https://vincenzocapuano.hk${path}`;
-
+    // Helper for Meta Tags
     const setMeta = (attr: string, key: string, value: string) => {
       let el = document.querySelector(`meta[${attr}="${key}"]`);
       if (!el) {
@@ -99,18 +97,58 @@ const App: React.FC = () => {
       el.setAttribute('content', value);
     };
 
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) {
+      canonical.setAttribute('href', canonicalUrl);
+    } else {
+      const newCanonical = document.createElement('link');
+      newCanonical.setAttribute('rel', 'canonical');
+      newCanonical.setAttribute('href', canonicalUrl);
+      document.head.appendChild(newCanonical);
+    }
+
+    const langs = ['en', 'zh-HK', 'x-default'];
+    langs.forEach((langValue) => {
+      let alt = document.querySelector(`link[rel="alternate"][hreflang="${langValue}"]`);
+      if (!alt) {
+        alt = document.createElement('link');
+        alt.setAttribute('rel', 'alternate');
+        alt.setAttribute('hreflang', langValue);
+        document.head.appendChild(alt);
+      }
+      alt.setAttribute('href', canonicalUrl);
+    });
+
+    setMeta('property', 'og:url', canonicalUrl);
+    setMeta('property', 'twitter:url', canonicalUrl);
+
+    // 2. ONLY proceed to update explicit title/desc if it exists in our SEO data
+    const seo = pageSEO[path];
+    if (!seo) return;
+
+    const { title, desc, keywords, image } = lang === 'hk' ? seo.hk : seo.en;
+
     document.title = title;
     setMeta('name', 'description', desc);
     setMeta('name', 'keywords', keywords);
     setMeta('property', 'og:title', title);
     setMeta('property', 'og:description', desc);
-    setMeta('property', 'og:url', fullUrl);
+    setMeta('property', 'og:site_name', 'Vincenzo Capuano Hong Kong');
+    setMeta('property', 'og:type', path.startsWith('/what-is-') || path.startsWith('/contemporary-') || path.startsWith('/why-') || path.startsWith('/best-pizza-for-') || path.startsWith('/vincenzo-') ? 'article' : 'website');
+    setMeta('property', 'og:locale', lang === 'hk' ? 'zh_HK' : 'en_HK');
+    
+    if (image) {
+      setMeta('property', 'og:image', image);
+      setMeta('property', 'twitter:image', image);
+    } else {
+      // Default brand image
+      const defaultImg = "https://storage.googleapis.com/xps-assets/gotti%27s%20assets%20/BRAND%20ASSETS/vincenzo/LOGO-CAPUANO-white.png";
+      setMeta('property', 'og:image', defaultImg);
+      setMeta('property', 'twitter:image', defaultImg);
+    }
+
     setMeta('property', 'twitter:title', title);
     setMeta('property', 'twitter:description', desc);
-    setMeta('property', 'twitter:url', fullUrl);
-
-    const canonical = document.querySelector('link[rel="canonical"]');
-    if (canonical) canonical.setAttribute('href', fullUrl);
 
     // Inject or remove per-page JSON-LD
     let pageSchema = document.getElementById('page-schema') as HTMLScriptElement | null;
@@ -173,6 +211,8 @@ const App: React.FC = () => {
     setIsEventsOpen(false);
     setIsHoursOpen(false);
   };
+
+  const canonicalUrl = window.location.origin + window.location.pathname;
 
   return (
     <main className="bg-charcoal min-h-screen text-white selection:bg-gold selection:text-charcoal relative pb-20 md:pb-0">

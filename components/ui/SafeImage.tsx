@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect, useRef, useLayoutEffect } from 'react';
-import { getCachedImage } from '../../services/aiService';
+import { NO_IMAGE } from '../../menuData';
 import { Image as ImageIcon } from 'lucide-react';
 
 interface SafeImageProps {
@@ -41,31 +41,15 @@ export const SafeImage: React.FC<SafeImageProps> = ({
   });
 
   useEffect(() => {
-    const resolve = async () => {
-      if (isResolvingRef.current) return;
-      isResolvingRef.current = true;
-
-      try {
-        const cached = await getCachedImage(fallbackPrompt, aspectRatio);
-        const targetSrc = cached || src;
-
-        // Only update and reset loaded state if the source is truly different
-        if (targetSrc !== currentSrcRef.current) {
-          currentSrcRef.current = targetSrc;
-          setCurrentSrc(targetSrc);
-          setIsLoaded(false);
-          isLoadedRef.current = false;
-          setHasError(false);
-        }
-      } catch (e) {
-        console.warn("SafeImage: Cache resolution failed", e);
-      } finally {
-        isResolvingRef.current = false;
-      }
-    };
-
-    resolve();
-  }, [src, fallbackPrompt, aspectRatio]);
+    // Simply sync currentSrc with src prop if it changes
+    if (src !== currentSrcRef.current) {
+      currentSrcRef.current = src;
+      setCurrentSrc(src);
+      setIsLoaded(false);
+      isLoadedRef.current = false;
+      setHasError(false);
+    }
+  }, [src]);
 
   const handleLoad = () => {
     setIsLoaded(true);
@@ -80,9 +64,8 @@ export const SafeImage: React.FC<SafeImageProps> = ({
     setIsLoaded(false);
     isLoadedRef.current = false;
     
-    const fallback = "https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1000&auto=format&fit=crop";
-    if (currentSrc !== fallback) {
-      setCurrentSrc(fallback);
+    if (currentSrc !== NO_IMAGE) {
+      setCurrentSrc(NO_IMAGE);
     }
   };
 
