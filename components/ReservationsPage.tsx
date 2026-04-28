@@ -83,8 +83,8 @@ export const ReservationsPage: React.FC<ReservationsPageProps> = ({ lang, onBook
           <p className="text-white/50 text-xs font-sans font-light leading-relaxed mb-3">
             {isHK ? '如需協助，請致電：' : 'Prefer to call? Reach us directly at:'}
           </p>
-          <a href="tel:+85294483165" className="text-gold text-sm font-bold hover:text-white transition-colors">
-            +852 9448 3165
+          <a href="tel:+85228022802" className="text-gold text-sm font-bold hover:text-white transition-colors">
+            +852-2802 2802
           </a>
         </div>
       </section>
@@ -206,8 +206,8 @@ export const ReservationsPage: React.FC<ReservationsPageProps> = ({ lang, onBook
               {
                 q_en: 'Is this suitable for groups?',
                 q_hk: '適合團體用餐嗎？',
-                a_en: 'Absolutely. We welcome group dining for 4–12 guests. For larger parties or private events, please contact us directly at +852 9448 3165.',
-                a_hk: '非常適合。我們歡迎 4–12 人的團體用餐。如需更大規模或私人活動安排，請直接致電 +852 9448 3165 聯絡我們。',
+                a_en: 'Absolutely. We welcome group dining for 4–12 guests. For larger parties or private events, please contact us directly at +852-2802 2802.',
+                a_hk: '非常適合。我們歡迎 4–12 人的團體用餐。如需更大規模或私人活動安排，請直接致電 +852-2802 2802 聯絡我們。',
               },
               {
                 q_en: 'Can I book for a celebration?',

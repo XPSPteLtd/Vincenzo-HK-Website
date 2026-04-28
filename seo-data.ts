@@ -111,7 +111,7 @@ export const pageSEO: Record<string, PageSEO> = {
       '@id': `${BASE}/#restaurant`,
       name: 'Vincenzo Capuano Hong Kong',
       url: BASE,
-      telephone: '+852 9448 3165',
+      telephone: '+852-2802 2802',
       address: {
         '@type': 'PostalAddress',
         streetAddress: 'Lee Tung Avenue, 200 Queens Road East, GF Unit 01 04 05',
@@ -149,7 +149,7 @@ export const pageSEO: Record<string, PageSEO> = {
       '@id': `${BASE}/pizza-wan-chai-hong-kong#restaurant`,
       name: 'Vincenzo Capuano — Neapolitan Pizza in Wan Chai, Hong Kong',
       url: `${BASE}/pizza-wan-chai-hong-kong`,
-      telephone: '+852 9448 3165',
+      telephone: '+852-2802 2802',
       address: {
         '@type': 'PostalAddress',
         streetAddress: 'Lee Tung Avenue, 200 Queens Road East, GF Unit 01 04 05',
@@ -180,7 +180,7 @@ export const pageSEO: Record<string, PageSEO> = {
       name: 'Vincenzo Capuano Hong Kong',
       url: `${BASE}/reservations`,
       reservationUrl: 'https://book.bistrochat.com/vincenzo-capuano-wanchai-hk',
-      telephone: '+852 9448 3165',
+      telephone: '+852-2802 2802',
       address: {
         '@type': 'PostalAddress',
         streetAddress: 'Lee Tung Avenue, 200 Queens Road East, GF Unit 01 04 05',
@@ -243,7 +243,7 @@ export const pageSEO: Record<string, PageSEO> = {
         {
           '@type': 'Question',
           name: 'Do I need a reservation at Vincenzo Capuano Hong Kong?',
-          acceptedAnswer: { '@type': 'Answer', text: 'Reservations are strongly recommended, especially on weekends. You can book online at vincenzocapuano.hk/reservations or call +852 9448 3165. We also reserve 30% of seating for walk-in guests.' },
+          acceptedAnswer: { '@type': 'Answer', text: 'Reservations are strongly recommended, especially on weekends. You can book online at vincenzocapuano.hk/reservations or call +852-2802 2802. We also reserve 30% of seating for walk-in guests.' },
         },
         {
           '@type': 'Question',
@@ -286,7 +286,7 @@ export const pageSEO: Record<string, PageSEO> = {
       '@id': `${BASE}/group-dining#foodestablishment`,
       name: 'Vincenzo Capuano Hong Kong — Group Dining & Private Events',
       url: `${BASE}/group-dining`,
-      telephone: '+852 9448 3165',
+      telephone: '+852-2802 2802',
       address: {
         '@type': 'PostalAddress',
         streetAddress: 'Lee Tung Avenue, 200 Queens Road East, GF Unit 01 04 05',
@@ -429,7 +429,7 @@ export const pageSEO: Record<string, PageSEO> = {
       name: 'Vincenzo Capuano — Best Restaurant in Wan Chai',
       description: 'World #13 Pizzeria. Award-winning contemporary Neapolitan pizza restaurant in Wan Chai, Hong Kong, founded by 2022 World Pizza Champion Vincenzo Capuano.',
       url: `${BASE}/best-restaurant-wan-chai`,
-      telephone: '+852 9448 3165',
+      telephone: '+852-2802 2802',
       address: {
         '@type': 'PostalAddress',
         streetAddress: 'Lee Tung Avenue, 200 Queens Road East, GF Unit 01 04 05',
@@ -455,12 +455,12 @@ export const pageSEO: Record<string, PageSEO> = {
   '/pizza-near-me-hong-kong': {
     en: {
       title: 'Pizza Near Me in Hong Kong | Order Pizza Wan Chai | Vincenzo Capuano',
-      desc: 'Looking for pizza near you in Hong Kong? Vincenzo Capuano in Wan Chai serves world-ranked Neapolitan pizza for dine-in, collection, and delivery. Call +852 9448 3165.',
+      desc: 'Looking for pizza near you in Hong Kong? Vincenzo Capuano in Wan Chai serves world-ranked Neapolitan pizza for dine-in, collection, and delivery. Call +852-2802 2802.',
       keywords: 'pizza near me hong kong, pizza hong kong, pizza wan chai, pizza wanchai, pizzeria hong kong, pizza hk, pizza bar hong kong, pizza delivery hong kong, pizza takeaway hong kong, pizza 外賣 hong kong, pizza 外賣 電話 hong kong, pizza near wan chai mtr, neapolitan pizza near me, best pizza near me hong kong, pizza restaurant near me, order pizza hong kong, pizza collection wan chai, napoli pizza near me',
     },
     hk: {
       title: '香港附近薄餅 | 灣仔薄餅外賣 & 堂食 | Vincenzo Capuano',
-      desc: '在香港尋找附近薄餅？灣仔 Vincenzo Capuano 提供世界第 13 名當代拿坡里薄餅——堂食、外賣自取及外送。薄餅外賣電話：+852 9448 3165。',
+      desc: '在香港尋找附近薄餅？灣仔 Vincenzo Capuano 提供世界第 13 名當代拿坡里薄餅——堂食、外賣自取及外送。薄餅外賣電話：+852-2802 2802。',
       keywords: '香港附近薄餅, 灣仔薄餅, 薄餅外賣香港, 薄餅外賣 電話, 香港薄餅外賣, 灣仔薄餅外賣, 香港薄餅店, 薄餅外送香港, 香港薄餅自取, 灣仔外賣薄餅, 香港披薩外賣, 拿坡里薄餅外賣香港',
     },
     schema: {
@@ -470,7 +470,7 @@ export const pageSEO: Record<string, PageSEO> = {
       name: 'Vincenzo Capuano — Pizza Near You in Wan Chai, Hong Kong',
       description: 'World #13 Neapolitan pizza restaurant in Wan Chai offering dine-in, pizza collection, and delivery in Hong Kong.',
       url: `${BASE}/pizza-near-me-hong-kong`,
-      telephone: '+852 9448 3165',
+      telephone: '+852-2802 2802',
       address: {
         '@type': 'PostalAddress',
         streetAddress: 'Lee Tung Avenue, 200 Queens Road East, GF Unit 01 04 05',
@@ -492,7 +492,7 @@ export const pageSEO: Record<string, PageSEO> = {
         name: 'Pizza Ordering Options',
         itemListElement: [
           { '@type': 'Offer', name: 'Dine In', url: `${BASE}/reservations` },
-          { '@type': 'Offer', name: 'Pizza Collection / Takeaway', description: 'Call +852 9448 3165 to arrange collection' },
+          { '@type': 'Offer', name: 'Pizza Collection / Takeaway', description: 'Call +852-2802 2802 to arrange collection' },
           { '@type': 'Offer', name: 'Pizza Delivery', description: 'Available via delivery partners in Hong Kong' },
         ],
       },

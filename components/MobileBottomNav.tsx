@@ -76,7 +76,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
 
         {/* Call */}
         <a
-          href="tel:+85294483165"
+          href="tel:+85228022802"
           className="flex flex-col items-center justify-center flex-1 gap-1 transition-all active:scale-95"
         >
           <Phone size={18} className="text-gray-400" />

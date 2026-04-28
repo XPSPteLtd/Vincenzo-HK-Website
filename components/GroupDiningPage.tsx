@@ -38,11 +38,11 @@ export const GroupDiningPage: React.FC<GroupDiningPageProps> = ({ lang, onBookCl
             <ChevronRight size={14} />
           </button>
           <a
-            href="tel:+85294483165"
+            href="tel:+85228022802"
             className="inline-flex items-center gap-2 border border-white/20 text-white/70 text-xs font-bold tracking-[0.2em] uppercase px-7 py-3.5 hover:border-white/60 hover:text-white transition-colors"
           >
             <Phone size={14} />
-            +852 9448 3165
+            +852-2802 2802
           </a>
         </div>
       </section>
@@ -188,11 +188,11 @@ export const GroupDiningPage: React.FC<GroupDiningPageProps> = ({ lang, onBookCl
               <ChevronRight size={14} />
             </button>
             <a
-              href="tel:+85294483165"
+              href="tel:+85228022802"
               className="inline-flex items-center justify-center gap-2 border border-white/20 text-white/70 text-xs font-bold tracking-[0.2em] uppercase px-8 py-4 hover:border-white/60 hover:text-white transition-colors"
             >
               <Phone size={14} />
-              {isHK ? '致電我們' : 'Call +852 9448 3165'}
+              {isHK ? '致電我們' : 'Call +852-2802 2802'}
             </a>
           </div>
         </div>
@@ -209,8 +209,8 @@ export const GroupDiningPage: React.FC<GroupDiningPageProps> = ({ lang, onBookCl
               {
                 q_en: 'Can I book for a group?',
                 q_hk: '可以為團體訂座嗎？',
-                a_en: 'Yes. We welcome group dining for 4–12 guests. Simply use our online booking system or call +852 9448 3165 to arrange your group reservation.',
-                a_hk: '可以。我們歡迎 4–12 人的團體用餐。只需使用我們的在線訂座系統或致電 +852 9448 3165 安排您的團體訂座。',
+                a_en: 'Yes. We welcome group dining for 4–12 guests. Simply use our online booking system or call +852-2802 2802 to arrange your group reservation.',
+                a_hk: '可以。我們歡迎 4–12 人的團體用餐。只需使用我們的在線訂座系統或致電 +852-2802 2802 安排您的團體訂座。',
               },
               {
                 q_en: 'Do you host birthday dinners?',
@@ -221,8 +221,8 @@ export const GroupDiningPage: React.FC<GroupDiningPageProps> = ({ lang, onBookCl
               {
                 q_en: 'Is there a set menu for groups?',
                 q_hk: '團體用餐有套餐選擇嗎？',
-                a_en: 'We offer our full à la carte menu for group dining, which is ideal for sharing. For customised set menus or larger events, please contact us directly at +852 9448 3165.',
-                a_hk: '我們為團體用餐提供完整的單點菜單，非常適合分享。如需定制套餐或更大規模的活動，請直接致電 +852 9448 3165 聯絡我們。',
+                a_en: 'We offer our full à la carte menu for group dining, which is ideal for sharing. For customised set menus or larger events, please contact us directly at +852-2802 2802.',
+                a_hk: '我們為團體用餐提供完整的單點菜單，非常適合分享。如需定制套餐或更大規模的活動，請直接致電 +852-2802 2802 聯絡我們。',
               },
               {
                 q_en: 'What is the maximum group size?',

@@ -87,8 +87,8 @@ export const RestaurantWanchaiPage: React.FC<Props> = ({ lang, onBookClick }) =>
     {
       q_en: 'Where should I go for dinner in Wan Chai?',
       q_hk: '在灣仔晚餐可以去哪裡？',
-      a_en: 'For a world-class dinner in Wan Chai, Vincenzo Capuano is the answer. Located on Lee Tung Avenue, we offer a refined yet relaxed dining atmosphere perfect for date nights, family dinners, or celebrations. Reserve your table online or call +852 9448 3165.',
-      a_hk: '想在灣仔享用一頓世界級晚餐，Vincenzo Capuano 是您的不二之選。位於利東街，我們提供精緻而輕鬆的用餐環境，非常適合約會晚餐、家庭聚餐或慶祝活動。可在線上預訂或致電 +852 9448 3165。',
+      a_en: 'For a world-class dinner in Wan Chai, Vincenzo Capuano is the answer. Located on Lee Tung Avenue, we offer a refined yet relaxed dining atmosphere perfect for date nights, family dinners, or celebrations. Reserve your table online or call +852-2802 2802.',
+      a_hk: '想在灣仔享用一頓世界級晚餐，Vincenzo Capuano 是您的不二之選。位於利東街，我們提供精緻而輕鬆的用餐環境，非常適合約會晚餐、家庭聚餐或慶祝活動。可在線上預訂或致電 +852-2802 2802。',
     },
     {
       q_en: 'What are the best restaurants near me in Hong Kong?',
@@ -99,8 +99,8 @@ export const RestaurantWanchaiPage: React.FC<Props> = ({ lang, onBookClick }) =>
     {
       q_en: 'Do I need a reservation for dinner in Wan Chai?',
       q_hk: '在灣仔晚餐需要提前預訂嗎？',
-      a_en: 'Reservations are strongly recommended for dinner, especially on weekends. Book online at vincenzocapuano.hk/reservations or call +852 9448 3165. We also keep 30% of seating for walk-in guests.',
-      a_hk: '晚餐強烈建議提前預訂，尤其是週末。可在 vincenzocapuano.hk/reservations 網上預訂，或致電 +852 9448 3165。我們亦保留 30% 座位供即場客人使用。',
+      a_en: 'Reservations are strongly recommended for dinner, especially on weekends. Book online at vincenzocapuano.hk/reservations or call +852-2802 2802. We also keep 30% of seating for walk-in guests.',
+      a_hk: '晚餐強烈建議提前預訂，尤其是週末。可在 vincenzocapuano.hk/reservations 網上預訂，或致電 +852-2802 2802。我們亦保留 30% 座位供即場客人使用。',
     },
   ];
 
@@ -279,8 +279,8 @@ export const RestaurantWanchaiPage: React.FC<Props> = ({ lang, onBookClick }) =>
               {isHK ? '聯絡方式' : 'Contact & Booking'}
             </p>
           </div>
-          <a href="tel:+85294483165" className="text-white text-sm font-sans font-medium block mb-1 hover:text-gold transition-colors">
-            +852 9448 3165
+          <a href="tel:+85228022802" className="text-white text-sm font-sans font-medium block mb-1 hover:text-gold transition-colors">
+            +852-2802 2802
           </a>
           <p className="text-white/50 text-xs font-sans font-light mb-4">
             {isHK ? '或使用線上預訂系統' : 'or book online below'}
