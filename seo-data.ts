@@ -9,14 +9,14 @@ export interface PageSEO {
 export const pageSEO: Record<string, PageSEO> = {
   '/': {
     en: {
-      title: 'Vincenzo Capuano | Best Pizza in Hong Kong',
-      desc: 'Discover contemporary Neapolitan pizza in Hong Kong by Vincenzo Capuano — rooted in Naples, crafted with heritage, technique, and premium ingredients.',
-      keywords: 'pizzeria hong kong, neapolitan pizza hong kong, pizza restaurant hong kong, italian pizza hong kong, authentic pizza hong kong, contemporary neapolitan pizza hong kong, wood fired pizza hong kong, pizza in hong kong, artisan pizza hong kong, naples style pizza hong kong, premium pizza hong kong, best pizzeria in hong kong, best neapolitan pizza hong kong, pizza chef from naples, authentic neapolitan pizzeria',
+      title: 'Vincenzo Capuano | Best Pizza in Hong Kong | World #13 Pizzeria',
+      desc: 'Discover contemporary Neapolitan pizza in Hong Kong by Vincenzo Capuano — World #13 Pizzeria, 2022 World Pizza Champion. Dine in Wan Chai or order delivery.',
+      keywords: 'pizzeria hong kong, neapolitan pizza hong kong, pizza restaurant hong kong, italian pizza hong kong, authentic pizza hong kong, contemporary neapolitan pizza hong kong, pizza in hong kong, artisan pizza hong kong, naples style pizza hong kong, premium pizza hong kong, best pizzeria in hong kong, best neapolitan pizza hong kong, pizza chef from naples, authentic neapolitan pizzeria, world top 50 pizza, world #13 pizza, world pizza champion restaurant hong kong, best restaurants hong kong, best restaurant wan chai, italian restaurant wan chai, dinner wan chai, restaurants hong kong, dinner near me hong kong',
     },
     hk: {
-      title: 'Vincenzo Capuano | 香港當代拿坡里薄餅冠軍',
-      desc: '在香港灣仔利東街體驗由世界冠軍 Vincenzo Capuano 帶來的當代拿坡里薄餅——植根那不勒斯，以傳承工藝與頂級食材呈現。',
-      keywords: '香港薄餅店, 香港拿坡里薄餅, 香港披薩餐廳, 香港意大利餐廳 薄餅, 灣仔薄餅, 香港正宗拿坡里披薩, 香港木烤披薩, 當代拿坡里薄餅, 香港最佳薄餅店, 香港最佳拿坡里薄餅, 世界薄餅冠軍, 那不勒斯薄餅師傅',
+      title: 'Vincenzo Capuano | 香港當代拿坡里薄餅冠軍 | 全球第 13 名',
+      desc: '在香港灣仔利東街體驗由世界冠軍 Vincenzo Capuano 帶來的當代拿坡里薄餅——全球第 13 名薄餅店，2022 年世界薄餅冠軍。',
+      keywords: '香港薄餅店, 香港拿坡里薄餅, 香港披薩餐廳, 香港意大利餐廳 薄餅, 灣仔薄餅, 香港正宗拿坡里披薩, 當代拿坡里薄餅, 香港最佳薄餅店, 香港最佳拿坡里薄餅, 世界薄餅冠軍, 那不勒斯薄餅師傅, 全球第13名薄餅, 灣仔最好餐廳, 香港最佳餐廳, 灣仔意大利餐廳',
     },
     schema: null, // already in index.html
   },
@@ -52,12 +52,12 @@ export const pageSEO: Record<string, PageSEO> = {
     en: {
       title: 'Location & Hours | Vincenzo Capuano Hong Kong | Wan Chai Pizzeria',
       desc: 'Visit Vincenzo Capuano at Lee Tung Avenue, Wan Chai — contemporary Neapolitan pizza in Hong Kong. Check opening hours, MTR directions, and book your table.',
-      keywords: 'pizza wan chai, wan chai pizza restaurant, neapolitan pizza wan chai, italian restaurant wan chai, pizza near lee tung avenue, pizza wan chai hong kong, where to eat pizza wan chai, pizza restaurant hong kong, italian restaurant hong kong, date night pizza wan chai, pizza dinner wan chai, best pizza wan chai',
+      keywords: 'pizza wan chai, wan chai pizza restaurant, neapolitan pizza wan chai, italian restaurant wan chai, pizza near lee tung avenue, pizza wan chai hong kong, where to eat pizza wan chai, pizza restaurant hong kong, italian restaurant hong kong, date night pizza wan chai, pizza dinner wan chai, best pizza wan chai, best restaurant wan chai, restaurants near me wan chai, dinner near me wan chai, where to eat dinner wan chai, wan chai dining, award-winning restaurant wan chai',
     },
     hk: {
       title: '位置與營業時間 | Vincenzo Capuano 香港',
       desc: '前往灣仔利東街體驗當代拿坡里薄餅。查看我們的營業時間、港鐵交通指引及線上訂座。',
-      keywords: '灣仔薄餅, 灣仔意大利餐廳, 香港灣仔薄餅店, 利東街薄餅, 灣仔附近薄餅, 灣仔薄餅晚餐, 灣仔薄餅餐廳, 香港意大利薄餅店',
+      keywords: '灣仔薄餅, 灣仔意大利餐廳, 香港灣仔薄餅店, 利東街薄餅, 灣仔附近薄餅, 灣仔薄餅晚餐, 灣仔薄餅餐廳, 香港意大利薄餅店, 灣仔最好餐廳, 灣仔附近餐廳, 灣仔晚餐推薦',
     },
     schema: {
       '@context': 'https://schema.org',
@@ -90,12 +90,12 @@ export const pageSEO: Record<string, PageSEO> = {
     en: {
       title: 'Best Neapolitan Pizza in Wan Chai | Vincenzo Capuano Hong Kong',
       desc: 'Looking for authentic Neapolitan pizza in Wan Chai, Hong Kong? Discover Vincenzo Capuano — a contemporary pizzeria rooted in Naples and crafted for modern dining.',
-      keywords: 'pizza wan chai hong kong, neapolitan pizza wan chai, italian restaurant wan chai hong kong, pizza near lee tung avenue, wan chai pizzeria, pizza near wan chai mtr, authentic pizza wan chai, best pizza in wan chai, pizza dinner wan chai, date night pizza wan chai, family pizza restaurant hong kong, pizza restaurant hong kong',
+      keywords: 'pizza wan chai hong kong, neapolitan pizza wan chai, italian restaurant wan chai hong kong, pizza near lee tung avenue, wan chai pizzeria, pizza near wan chai mtr, authentic pizza wan chai, best pizza in wan chai, pizza dinner wan chai, date night pizza wan chai, family pizza restaurant hong kong, pizza restaurant hong kong, pizza wanchai, pizza hk, pizza bar wan chai, napoli pizza hong kong, pizza hong kong',
     },
     hk: {
       title: '灣仔拿坡里薄餅 | Vincenzo Capuano 香港',
       desc: '在灣仔尋找正宗拿坡里薄餅？探索 Vincenzo Capuano——源自那不勒斯的當代薄餅店，位於利東街。',
-      keywords: '灣仔薄餅, 灣仔意大利餐廳, 灣仔拿坡里薄餅, 利東街薄餅店, 灣仔站薄餅, 灣仔最佳薄餅, 灣仔薄餅晚餐, 灣仔約會薄餅',
+      keywords: '灣仔薄餅, 灣仔意大利餐廳, 灣仔拿坡里薄餅, 利東街薄餅店, 灣仔站薄餅, 灣仔最佳薄餅, 灣仔薄餅晚餐, 灣仔約會薄餅, 灣仔薄餅外賣, 香港薄餅店灣仔',
     },
     schema: {
       '@context': 'https://schema.org',
@@ -362,6 +362,94 @@ export const pageSEO: Record<string, PageSEO> = {
       author: { '@type': 'Person', name: 'Vincenzo Capuano', url: `${BASE}/our-story` },
       publisher: { '@type': 'Organization', name: 'Vincenzo Capuano Hong Kong', url: BASE, logo: { '@type': 'ImageObject', url: `https://storage.googleapis.com/xps-assets/gotti%27s%20assets%20/BRAND%20ASSETS/vincenzo/LOGO-CAPUANO-white.png` } },
       inLanguage: 'en',
+    },
+  },
+
+  '/best-restaurant-wan-chai': {
+    en: {
+      title: 'Best Restaurant in Wan Chai | Award-Winning Italian Dining | Vincenzo Capuano',
+      desc: 'Looking for the best restaurant in Wan Chai? Vincenzo Capuano — World #13 Pizzeria, founded by 2022 World Pizza Champion — is Wan Chai\'s most acclaimed dining destination.',
+      keywords: 'best restaurant wan chai, best restaurants hong kong, restaurants wan chai, italian restaurant wan chai, dinner wan chai, restaurants near me hong kong, best restaurants in hong kong, dinner near me hong kong, award-winning restaurant hong kong, wan chai dining, wan chai restaurant, italian dining hong kong, where to eat wan chai, best italian restaurant hong kong, wan chai dinner, top restaurant wan chai, world top 50 pizza hong kong, world pizza champion restaurant, neapolitan pizza restaurant hong kong',
+    },
+    hk: {
+      title: '灣仔最好的餐廳 | 獲獎意大利餐廳 | Vincenzo Capuano',
+      desc: '尋找灣仔最好的餐廳？Vincenzo Capuano——全球第 13 名薄餅店，由 2022 年世界薄餅冠軍創立——是灣仔最受好評的美食目的地。',
+      keywords: '灣仔最好餐廳, 香港最佳餐廳, 灣仔餐廳, 灣仔意大利餐廳, 灣仔晚餐, 香港附近餐廳, 香港最佳餐廳, 灣仔美食, 世界冠軍薄餅店香港, 灣仔意大利餐飲, 灣仔用餐, 香港最好意大利餐廳, 香港獲獎餐廳',
+    },
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'Restaurant',
+      '@id': `${BASE}/best-restaurant-wan-chai#restaurant`,
+      name: 'Vincenzo Capuano — Best Restaurant in Wan Chai',
+      description: 'World #13 Pizzeria. Award-winning contemporary Neapolitan pizza restaurant in Wan Chai, Hong Kong, founded by 2022 World Pizza Champion Vincenzo Capuano.',
+      url: `${BASE}/best-restaurant-wan-chai`,
+      telephone: '+852 9448 3165',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Lee Tung Avenue, 200 Queens Road East, GF Unit 01 04 05',
+        addressLocality: 'Wan Chai',
+        addressRegion: 'Hong Kong',
+        addressCountry: 'HK',
+      },
+      geo: { '@type': 'GeoCoordinates', latitude: 22.276, longitude: 114.170 },
+      hasMap: 'https://maps.app.goo.gl/mWac4KcwCQSUUibU9',
+      openingHoursSpecification: {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+        opens: '12:00',
+        closes: '23:00',
+      },
+      servesCuisine: ['Neapolitan Pizza', 'Contemporary Neapolitan', 'Italian'],
+      priceRange: '$$',
+      aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '120' },
+      award: 'World #13 Pizzeria — Top 50 Pizza',
+    },
+  },
+
+  '/pizza-near-me-hong-kong': {
+    en: {
+      title: 'Pizza Near Me in Hong Kong | Order Pizza Wan Chai | Vincenzo Capuano',
+      desc: 'Looking for pizza near you in Hong Kong? Vincenzo Capuano in Wan Chai serves world-ranked Neapolitan pizza for dine-in, collection, and delivery. Call +852 9448 3165.',
+      keywords: 'pizza near me hong kong, pizza hong kong, pizza wan chai, pizza wanchai, pizzeria hong kong, pizza hk, pizza bar hong kong, pizza delivery hong kong, pizza takeaway hong kong, pizza 外賣 hong kong, pizza 外賣 電話 hong kong, pizza near wan chai mtr, neapolitan pizza near me, best pizza near me hong kong, pizza restaurant near me, order pizza hong kong, pizza collection wan chai, napoli pizza near me',
+    },
+    hk: {
+      title: '香港附近薄餅 | 灣仔薄餅外賣 & 堂食 | Vincenzo Capuano',
+      desc: '在香港尋找附近薄餅？灣仔 Vincenzo Capuano 提供世界第 13 名當代拿坡里薄餅——堂食、外賣自取及外送。薄餅外賣電話：+852 9448 3165。',
+      keywords: '香港附近薄餅, 灣仔薄餅, 薄餅外賣香港, 薄餅外賣 電話, 香港薄餅外賣, 灣仔薄餅外賣, 香港薄餅店, 薄餅外送香港, 香港薄餅自取, 灣仔外賣薄餅, 香港披薩外賣, 拿坡里薄餅外賣香港',
+    },
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'Restaurant',
+      '@id': `${BASE}/pizza-near-me-hong-kong#restaurant`,
+      name: 'Vincenzo Capuano — Pizza Near You in Wan Chai, Hong Kong',
+      description: 'World #13 Neapolitan pizza restaurant in Wan Chai offering dine-in, pizza collection, and delivery in Hong Kong.',
+      url: `${BASE}/pizza-near-me-hong-kong`,
+      telephone: '+852 9448 3165',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Lee Tung Avenue, 200 Queens Road East, GF Unit 01 04 05',
+        addressLocality: 'Wan Chai',
+        addressRegion: 'Hong Kong',
+        addressCountry: 'HK',
+      },
+      geo: { '@type': 'GeoCoordinates', latitude: 22.276, longitude: 114.170 },
+      hasMap: 'https://maps.app.goo.gl/mWac4KcwCQSUUibU9',
+      openingHoursSpecification: {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+        opens: '12:00',
+        closes: '23:00',
+      },
+      servesCuisine: ['Neapolitan Pizza', 'Contemporary Neapolitan', 'Italian'],
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Pizza Ordering Options',
+        itemListElement: [
+          { '@type': 'Offer', name: 'Dine In', url: `${BASE}/reservations` },
+          { '@type': 'Offer', name: 'Pizza Collection / Takeaway', description: 'Call +852 9448 3165 to arrange collection' },
+          { '@type': 'Offer', name: 'Pizza Delivery', description: 'Available via delivery partners in Hong Kong' },
+        ],
+      },
     },
   },
 
