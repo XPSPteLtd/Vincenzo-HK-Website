@@ -26,7 +26,7 @@ export const translations = {
       evolution: 'Contemporary Neapolitan'
     },
     banner: {
-      launch: 'VINCENZO CAPUANO HONG KONG: OPENING 29 APRIL · NOW TAKING BOOKINGS FROM 1 MAY 2026 · LEE TUNG AVENUE, WAN CHAI'
+      launch: 'VINCENZO CAPUANO HONG KONG — NOW OPEN · LEE TUNG AVENUE, WAN CHAI · BOOK YOUR TABLE TODAY'
     },
     signature: {
       thePhilosophy: 'The Philosophy',
@@ -123,7 +123,7 @@ export const translations = {
       callNow: 'Call Now',
       navigate: 'Navigate',
       viewDetails: 'View Branch Details',
-      addressShort: "Lee Tung Avenue, 200 Queens Road East, GF Unit 01 04 05, Wan Chai, Hong Kong",
+      addressShort: 'Lee Tung Avenue, 200 Queens Road East, GF Unit 01 04 05, Wan Chai, Hong Kong',
       operations: 'Operations',
       opens: 'Opens',
       nowInHK: 'Now in HK',
@@ -135,9 +135,9 @@ export const translations = {
       reservationLoading: 'Authenticating Secure Reservation',
       reservationChecking: 'Opening Shortly',
       deliveryTitle: 'Delivery Service',
-      deliveryAnywhere: 'Starting in 3 weeks after opening',
-      deliverySelect: 'Stay tuned for updates',
-      comingSoonTitle: 'Coming Soon',
+      deliveryAnywhere: 'Delivery Now Available',
+      deliverySelect: 'Order via your preferred platform below',
+      comingSoonTitle: 'Order Delivery',
       instagramPrompt: 'Follow us on Instagram for the latest updates and reservation announcements.',
       followUs: 'Follow Us',
       cateringTitle: 'Catering & Events',
@@ -199,6 +199,7 @@ export const translations = {
       title: 'Follow The\nJourney'
     }
   },
+
   hk: {
     nav: {
       philosophy: '品牌理念',
@@ -206,26 +207,25 @@ export const translations = {
       menu: '精選菜單',
       location: '位置',
       order: '網上訂餐',
-      reservations: '預約座席',
-      events: '活動預約',
-      hours: '營業時間',
+      reservations: '立即訂座',
       callUs: '致電預約',
       book: '訂座',
       events_short: '活動',
       home: '主頁',
       contact: '聯絡我們',
-      scroll: '向下滾動'
+      scroll: '向下滾動',
+      hours: '營業時間'
     },
     hero: {
       champion: '拿坡里 • 2022 世界冠軍',
       philosophy: '「當代薄餅不只是一個流派，更是一套哲學。」',
-      bookNow: '預約座席',
+      bookNow: '立即訂座',
       orderDelivery: '外賣服務',
       worldChampionBadge: '世界薄餅冠軍',
       evolution: '當代拿坡里'
     },
     banner: {
-      launch: 'Vincenzo Capuano 香港店：4月29日盛大開幕 · 現接受5月1日起網上訂座 · 灣仔利東街'
+      launch: 'Vincenzo Capuano 香港店現已開幕 · 灣仔利東街 · 立即預訂您的座位'
     },
     signature: {
       thePhilosophy: '品牌理念',
@@ -236,7 +236,7 @@ export const translations = {
       nuvolaDesc: '選用專門的麵粉配方，經過36小時以上的發酵。成果是結構極其柔軟、輕盈，且易於消化。',
       scissorsTitle: '黃金剪刀',
       scissorsDesc: '使用滾輪切割會壓碎氣孔。我們堅持使用黃金剪刀輕輕剪開薄餅，以保留雲朵般的質感。',
-      quote: "Vivere di pizza è meraviglioso (為薄餅而活是美妙的)"
+      quote: "Vivere di pizza è meraviglioso（為薄餅而活是美妙的）"
     },
     story: {
       eyebrow: '從拿坡里到香港',
@@ -264,9 +264,9 @@ export const translations = {
       pizzas: '雲朵薄餅創作',
       pizzasDesc: '道地手工剪裁薄餅',
       tomatoes: 'San Marzano 黃金番茄',
-      tomatoesDesc: '來自拿坡里陽光的番茄原汁 (公升)',
+      tomatoesDesc: '來自拿坡里陽光的番茄原汁（公升）',
       flour: 'Nuvola 頂級麵粉',
-      flourDesc: '進口專業麵粉消耗量 (公噸)',
+      flourDesc: '進口專業麵粉消耗量（公噸）',
       activeStatus: '實時廚房狀態：營業中',
       closedStatus: '系統待命：目前暫停營業'
     },
@@ -287,7 +287,7 @@ export const translations = {
       spicy: '辛辣：含有辣椒或辛辣香料。',
       containsNuts: '含堅果：可能含有花生、堅果或種子。',
       vegan: '純素：不含任何動物成分。',
-      info: '飲食提示',
+      info: '飲食資訊',
       alcoholic: '含酒精：成分含有烈酒或葡萄酒。',
       nonAlcoholic: '無酒精：清涼零酒精。',
       refreshing: '清新：設計輕盈且解渴。',
@@ -296,7 +296,7 @@ export const translations = {
     location: {
       findUs: '每週 7 天營業',
       hkCentral: '12:00 — 23:00',
-      address: '香港灣仔皇后大道東200號, 利東街地下 G01, 04, 05 號舖, 香港',
+      address: '香港灣仔皇后大道東 200 號利東街地下 G01、04、05 號舖',
       hours: '營業時間',
       lunch: '每日營業',
       dinner: '每週 7 天',
@@ -311,7 +311,7 @@ export const translations = {
       people: '位',
       today: '今日',
       locationLabel: '門店地址',
-      mtrInfo: '港鐵灣仔站 — D 出口 (步行約 5 分鐘)',
+      mtrInfo: '港鐵灣仔站 — D 出口（步行約 5 分鐘）',
       reservationDesc: '立即預約，體驗屢獲殊榮的當代拿坡里薄餅。'
     },
     common: {
@@ -322,7 +322,7 @@ export const translations = {
       callNow: '立即致電',
       navigate: '開啟導航',
       viewDetails: '查看分店詳情',
-      addressShort: '香港灣仔皇后大道東200號, 利東街地下 G01, 04, 05 號舖, 香港',
+      addressShort: '香港灣仔皇后大道東 200 號利東街地下 G01、04、05 號舖',
       operations: '營運資訊',
       opens: '開始營業',
       nowInHK: '香港目前時間',
@@ -334,9 +334,10 @@ export const translations = {
       reservationLoading: '正在建立安全連線',
       reservationChecking: '即將開放',
       deliveryTitle: '外賣服務',
-      deliveryAnywhere: '開業後三週隆重推出',
-      deliverySelect: '敬請期待最新消息',
-      comingSoonTitle: '即將開幕',
+      deliveryAnywhere: '外賣服務現已開通',
+      deliverySelect: '請選擇您偏好的外賣平台',
+      comingSoonTitle: '立即外賣',
+      instagramPrompt: '關注我們的 Instagram，獲取最新消息及訂座公告。',
       followUs: '立即關注',
       cateringTitle: '餐飲外送及活動',
       cateringDesc: '大額訂單專人服務',
@@ -363,7 +364,7 @@ export const translations = {
         dinner: '晚市',
         lastOrder: '最後點餐',
         walkInTitle: '入座守則',
-        walkInDesc: '我們保留 30% 的座位供客滿時現場候補。如欲直接到店品嚐我們的當代系列，建議於各時段開始後的 45 分鐘內抵達。',
+        walkInDesc: '我們保留 30% 的座位供即場客人使用。如欲直接到店品嚐我們的當代薄餅，建議於各時段開始後的 45 分鐘內抵達。',
         liveAvailability: '實時供應查詢'
       },
       heritage: {
@@ -377,6 +378,15 @@ export const translations = {
         }
       }
     },
+    accolades: {
+      impastoTitle: '我們的麵團',
+      impastoDesc: '我們的薄餅擁有柔軟輕盈的麵團，選用優質的 Caputo 麵粉製作。美味、芬芳且令人難以抗拒。',
+      rankingTitle: '全球 50 大手工薄餅品牌',
+      rankingDesc: '獲 50 Top Pizza 評為全球第 12 位（2024年）及第 13 位（2025年）。並榮獲 2024 年度最佳營銷獎及 2025 年度最佳啤酒服務獎。',
+      gamberoTitle: '大紅蝦 2 Spicchi 評級',
+      gamberoDesc: '拿坡里是薄餅的發源地，我們自豪地將其傳承帶向世界。一場深入拿坡里心靈的旅程。',
+      worldChampion: '世界薄餅冠軍'
+    },
     testimonials: {
       retrieving: '正在獲取食客評論',
       authenticating: '正在驗證意見回饋',
@@ -386,15 +396,6 @@ export const translations = {
     social: {
       badge: '社群互動',
       title: '緊隨我們的\n美食旅程'
-    },
-    accolades: {
-      impastoTitle: '我們的麵團',
-      impastoDesc: '我們的薄餅擁有柔軟輕盈的麵團，選用優質的 Caputo 麵粉製作。美味、芬芳且令人難以抗拒。',
-      rankingTitle: '全球 50 大手工薄餅品牌',
-      rankingDesc: '獲 50 Top Pizza 評為全球第 12 位 (2024) 及第 13 位 (2025)。並榮獲 2024 年度最佳營銷獎及 2025 年度最佳啤酒服務獎。',
-      gamberoTitle: '大紅蝦 2 Spicchi 評級',
-      gamberoDesc: '拿坡里是薄餅的發源地，我們自豪地將其傳承帶向世界。一場深入拿坡里心靈的旅程。',
-      worldChampion: '世界薄餅冠軍'
     }
   }
 };

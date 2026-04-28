@@ -1,12 +1,108 @@
+# Vincenzo Capuano Hong Kong — robots.txt
+# https://vincenzocapuano.hk
+
 User-agent: *
 Allow: /
-
-# Sitemap location
 Sitemap: https://vincenzocapuano.hk/sitemap.xml
 
-# AI Agent Specifics (Optional but good practice)
-User-agent: GPTBot
-Allow: /
+# --- Traditional Search Engines ---
 
 User-agent: Googlebot
 Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# --- AI Search & Answer Engines ---
+
+# OpenAI / ChatGPT
+User-agent: GPTBot
+Allow: /
+
+# OpenAI SearchGPT
+User-agent: OAI-SearchBot
+Allow: /
+
+# OpenAI ChatGPT plugin crawler
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic / Claude
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Google AI (Gemini / AI Overviews / Bard training)
+User-agent: Google-Extended
+Allow: /
+
+# Microsoft Bing / Copilot
+User-agent: BingPreview
+Allow: /
+
+# Meta AI
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# Apple AI (Siri, Spotlight, Apple Intelligence)
+User-agent: Applebot-Extended
+Allow: /
+
+# You.com AI Search
+User-agent: YouBot
+Allow: /
+
+# DuckDuckGo AI Answer
+User-agent: DuckAssistBot
+Allow: /
+
+# Cohere AI
+User-agent: cohere-ai
+Allow: /
+
+# Common Crawl (used by AI training datasets)
+User-agent: CCBot
+Allow: /
+
+# Diffbot (AI data extraction)
+User-agent: Diffbot
+Allow: /
+
+# Bytedance / TikTok AI
+User-agent: Bytespider
+Allow: /
+
+# AI content enrichment
+User-agent: ImagesiftBot
+Allow: /
+
+# --- LLMs.txt for AI Agents ---
+# AI-readable site summary available at:
+# https://vincenzocapuano.hk/llms.txt

@@ -132,11 +132,11 @@ export const LocationPage: React.FC<LocationPageProps> = ({ lang, onBookClick })
             </div>
           </div>
           <a
-            href="tel:+85294483165"
+            href="tel:+85228022802"
             className="inline-flex items-center gap-2 text-white/60 hover:text-white text-[11px] font-bold tracking-[0.1em] mt-5 transition-colors"
           >
             <Phone size={12} />
-            +852 9448 3165
+            +852-2802 2802
           </a>
         </div>
       </section>
@@ -251,8 +251,8 @@ export const LocationPage: React.FC<LocationPageProps> = ({ lang, onBookClick })
                 <Phone size={16} className="text-gold mt-0.5 shrink-0" />
                 <div>
                   <p className="text-white font-medium">{isHK ? '聯絡電話' : 'Phone'}</p>
-                  <a href="tel:+85294483165" className="text-white/50 hover:text-gold transition-colors font-light mt-0.5 block">
-                    +852 9448 3165
+                  <a href="tel:+85228022802" className="text-white/50 hover:text-gold transition-colors font-light mt-0.5 block">
+                    +852-2802 2802
                   </a>
                 </div>
               </div>

@@ -73,8 +73,8 @@ const faqs: FAQItem[] = [
     category: 'booking',
     q_en: 'Do you take reservations?',
     q_hk: '你們接受訂座嗎？',
-    a_en: 'Yes. We strongly recommend making a reservation, especially for evenings and weekends. You can book online via our reservations page or call us at +852 9448 3165.',
-    a_hk: '是的。我們強烈建議提前訂座，尤其是在晚上和週末。您可以通過我們的訂座頁面在線預訂，或致電 +852 9448 3165。',
+    a_en: 'Yes. We strongly recommend making a reservation, especially for evenings and weekends. You can book online via our reservations page or call us at +852-2802 2802.',
+    a_hk: '是的。我們強烈建議提前訂座，尤其是在晚上和週末。您可以通過我們的訂座頁面在線預訂，或致電 +852-2802 2802。',
   },
   {
     category: 'booking',
@@ -94,8 +94,8 @@ const faqs: FAQItem[] = [
     category: 'booking',
     q_en: 'Is this good for groups?',
     q_hk: '適合團體用餐嗎？',
-    a_en: 'Yes, we welcome group dining. For groups of 4–12 guests, please book via our reservations page. For larger parties or private events, please contact us directly at +852 9448 3165.',
-    a_hk: '是的，我們歡迎團體用餐。4–12 人的團體請通過我們的訂座頁面預訂。更大規模的聚會或私人活動，請直接致電 +852 9448 3165 與我們聯絡。',
+    a_en: 'Yes, we welcome group dining. For groups of 4–12 guests, please book via our reservations page. For larger parties or private events, please contact us directly at +852-2802 2802.',
+    a_hk: '是的，我們歡迎團體用餐。4–12 人的團體請通過我們的訂座頁面預訂。更大規模的聚會或私人活動，請直接致電 +852-2802 2802 與我們聯絡。',
   },
   // Brand / Experience
   {
@@ -217,7 +217,7 @@ export const FAQPage: React.FC<FAQPageProps> = ({ lang, onBookClick }) => {
           <p className="text-white/50 text-sm font-sans font-light max-w-md mx-auto mb-8">
             {isHK
               ? '如有任何疑問，歡迎致電或直接前來灣仔利東街的門店。'
-              : 'Call us at +852 9448 3165 or visit us at Lee Tung Avenue, Wan Chai. We\'d love to see you.'}
+              : 'Call us at +852-2802 2802 or visit us at Lee Tung Avenue, Wan Chai. We\'d love to see you.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
@@ -228,7 +228,7 @@ export const FAQPage: React.FC<FAQPageProps> = ({ lang, onBookClick }) => {
               <ChevronRight size={14} />
             </button>
             <a
-              href="tel:+85294483165"
+              href="tel:+85228022802"
               className="inline-flex items-center justify-center gap-2 border border-white/20 text-white/70 text-xs font-bold tracking-[0.2em] uppercase px-8 py-4 hover:border-white/60 hover:text-white transition-colors"
             >
               {isHK ? '致電我們' : 'Call Us'}

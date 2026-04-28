@@ -28,7 +28,7 @@ export const PizzaNearMePage: React.FC<Props> = ({ lang, onBookClick, onDelivery
       en: 'Collect / Takeaway',
       hk: '外賣自取',
       en_sub: 'Order ahead and collect your pizza at Lee Tung Avenue, Wan Chai. Call us to arrange.',
-      hk_sub: '提前致電，在灣仔利東街自取薄餅。電話：+852 9448 3165',
+      hk_sub: '提前致電，在灣仔利東街自取薄餅。電話：+852-2802 2802',
       action_en: 'Call to Order',
       action_hk: '致電訂購',
       isPhone: true,
@@ -62,14 +62,14 @@ export const PizzaNearMePage: React.FC<Props> = ({ lang, onBookClick, onDelivery
     {
       q_en: 'Do you do pizza takeaway or delivery in Hong Kong?',
       q_hk: '你們在香港有薄餅外賣或送餐服務嗎？',
-      a_en: 'Yes. You can collect your pizza at our Wan Chai restaurant, or order delivery through our delivery partners. Call +852 9448 3165 to arrange a takeaway collection.',
-      a_hk: '有的。您可以在我們的灣仔餐廳自取，或通過外賣合作平台訂購送餐。外賣自取請致電 +852 9448 3165 預先安排。',
+      a_en: 'Yes. You can collect your pizza at our Wan Chai restaurant, or order delivery through our delivery partners. Call +852-2802 2802 to arrange a takeaway collection.',
+      a_hk: '有的。您可以在我們的灣仔餐廳自取，或通過外賣合作平台訂購送餐。外賣自取請致電 +852-2802 2802 預先安排。',
     },
     {
       q_en: 'What is the phone number for pizza takeaway? (薄餅外賣電話)',
       q_hk: '薄餅外賣電話是多少？',
-      a_en: 'For pizza takeaway collection at our Wan Chai location, call us on +852 9448 3165. We will confirm your order and have it ready for collection at Lee Tung Avenue.',
-      a_hk: '如需在灣仔自取薄餅，請致電 +852 9448 3165。我們將確認您的訂單，並在利東街為您準備好。',
+      a_en: 'For pizza takeaway collection at our Wan Chai location, call us on +852-2802 2802. We will confirm your order and have it ready for collection at Lee Tung Avenue.',
+      a_hk: '如需在灣仔自取薄餅，請致電 +852-2802 2802。我們將確認您的訂單，並在利東街為您準備好。',
     },
     {
       q_en: 'Where is your pizza restaurant in Wan Chai?',
@@ -100,7 +100,7 @@ export const PizzaNearMePage: React.FC<Props> = ({ lang, onBookClick, onDelivery
         </h1>
         <p className="text-white/60 text-base md:text-lg max-w-2xl leading-relaxed mb-8 font-sans font-light">
           {isHK
-            ? '在香港尋找附近的薄餅？Vincenzo Capuano 坐落於灣仔利東街，提供堂食、外賣自取及送餐服務。由世界冠軍主廚主理，榮獲全球第 13 名。薄餅外賣電話：+852 9448 3165。'
+            ? '在香港尋找附近的薄餅？Vincenzo Capuano 坐落於灣仔利東街，提供堂食、外賣自取及送餐服務。由世界冠軍主廚主理，榮獲全球第 13 名。薄餅外賣電話：+852-2802 2802。'
             : "Searching for pizza near you in Hong Kong? Vincenzo Capuano in Wan Chai serves world-ranked Neapolitan pizza — available for dine-in, collection, and delivery. Ranked #13 in the world by Top 50 Pizza."}
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
@@ -142,11 +142,11 @@ export const PizzaNearMePage: React.FC<Props> = ({ lang, onBookClick, onDelivery
               </p>
               {opt.isPhone ? (
                 <a
-                  href="tel:+85294483165"
+                  href="tel:+85228022802"
                   className="inline-flex items-center gap-2 border border-gold/40 text-gold text-xs font-bold tracking-[0.15em] uppercase px-5 py-3 hover:border-gold hover:bg-gold hover:text-charcoal transition-colors self-start"
                 >
                   <Phone size={12} />
-                  +852 9448 3165
+                  +852-2802 2802
                 </a>
               ) : (
                 <button
@@ -231,8 +231,8 @@ export const PizzaNearMePage: React.FC<Props> = ({ lang, onBookClick, onDelivery
               {isHK ? '外賣電話' : 'Order by Phone'}
             </p>
           </div>
-          <a href="tel:+85294483165" className="text-white text-xl font-sans font-bold block mb-2 hover:text-gold transition-colors">
-            +852 9448 3165
+          <a href="tel:+85228022802" className="text-white text-xl font-sans font-bold block mb-2 hover:text-gold transition-colors">
+            +852-2802 2802
           </a>
           <p className="text-white/50 text-sm font-sans font-light leading-relaxed">
             {isHK
