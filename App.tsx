@@ -18,6 +18,8 @@ import { MobileBottomNav } from './components/MobileBottomNav';
 import { AnnouncementBanner } from './components/AnnouncementBanner';
 import { FloatingActionButton } from './components/FloatingActionButton';
 import { LocationPage } from './components/LocationPage';
+import { RestaurantWanchaiPage } from './components/RestaurantWanchaiPage';
+import { PizzaNearMePage } from './components/PizzaNearMePage';
 import { ReservationsPage } from './components/ReservationsPage';
 import { OurStoryPage } from './components/OurStoryPage';
 import { FAQPage } from './components/FAQPage';
@@ -268,6 +270,14 @@ const App: React.FC = () => {
         {/* SEO Landing Pages */}
         <Route path="/pizza-wan-chai-hong-kong" element={
           <LocationPage lang={lang} onBookClick={openModal} />
+        } />
+
+        <Route path="/best-restaurant-wan-chai" element={
+          <RestaurantWanchaiPage lang={lang} onBookClick={openModal} />
+        } />
+
+        <Route path="/pizza-near-me-hong-kong" element={
+          <PizzaNearMePage lang={lang} onBookClick={openModal} onDeliveryClick={openDelivery} />
         } />
 
         <Route path="/reservations" element={
