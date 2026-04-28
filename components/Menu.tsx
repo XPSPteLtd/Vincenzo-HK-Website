@@ -39,35 +39,59 @@ const formatTitle = (name: string) => {
 };
 
 const getChefNote = (item: MenuItem, lang: Language) => {
-  if (lang !== 'en' && (item.chefNoteZh || item.chefNote)) return item.chefNoteZh || item.chefNote;
+  if (lang !== 'en' && item.chefNoteZh) return item.chefNoteZh;
   if (lang === 'en' && item.chefNote) return item.chefNote;
 
   const notes: Record<string, string> = {
-    "Beverages": "Expertly curated to pair perfectly with our specialized dough and robust flavors."
+    "Beverages": lang === 'hk' ? "專為配合我們的特製麵糰和濃郁口味而精心挑選。" : "Expertly curated to pair perfectly with our specialized dough and robust flavors."
   };
 
-  const uniqueNotes = [
-    "Vivere di pizza è meraviglioso. This is my life, my passion, in one bite.",
-    "Contemporary pizza is an emotion. We don't just cook; we create feelings.",
-    "Observe the cornicione—it's like a cloud. Light, airy, and full of Neapolitan soul.",
-    "I cut this with my golden scissors specifically to protect these air pockets.",
-    "A tribute to my roots in Naples. This is the flavor of my childhood.",
-    "We broke the tradition to achieve a new level of excellence. This is the future.",
-    "Simplicity is the ultimate complexity. Three ingredients, a thousand stories.",
-    "My dough is a living thing. It needs 36 hours of love before it reaches your plate.",
-    "Born in the shadow of Vesuvius, perfected for the heart of Hong Kong.",
-    "Every ingredient is hand-picked. If it's not the best of Italy, it's not on my pizza.",
-    "This dish is a hug from Naples. Warm, authentic, and unforgettable.",
-    "081—the code of my city, the rhythm of my heart. Taste the tradition.",
-    "We use Nuvola Super flour because my pizza should feel like it's defying gravity.",
-    "Don't just eat. Experience the ritual. The scissors, the scrocchia, the joy.",
-    "A bridge between generations. My grandfather's hands, my contemporary vision.",
-    "The perfect hydration is a secret, but the perfect taste is for everyone.",
-    "Contemporary Neapolitan at its finest—the evolution of the craft.",
-    "If you are normal, people forget. If you move people with emotion, you are eternal.",
-    "Naples is not a place, it's a feeling. I put that feeling inside this crust.",
-    "Crispy on the outside, a cloud on the inside. The Capuano signature."
-  ];
+  const uniqueNotes: Record<Language, string[]> = {
+    en: [
+      "Vivere di pizza è meraviglioso. This is my life, my passion, in one bite.",
+      "Contemporary pizza is an emotion. We don't just cook; we create feelings.",
+      "Observe the cornicione—it's like a cloud. Light, airy, and full of Neapolitan soul.",
+      "I cut this with my golden scissors specifically to protect these air pockets.",
+      "A tribute to my roots in Naples. This is the flavor of my childhood.",
+      "We broke the tradition to achieve a new level of excellence. This is the future.",
+      "Simplicity is the ultimate complexity. Three ingredients, a thousand stories.",
+      "My dough is a living thing. It needs 36 hours of love before it reaches your plate.",
+      "Born in the shadow of Vesuvius, perfected for the heart of Hong Kong.",
+      "Every ingredient is hand-picked. If it's not the best of Italy, it's not on my pizza.",
+      "This dish is a hug from Naples. Warm, authentic, and unforgettable.",
+      "081—the code of my city, the rhythm of my heart. Taste the tradition.",
+      "We use Nuvola Super flour because my pizza should feel like it's defying gravity.",
+      "Don't just eat. Experience the ritual. The scissors, the scrocchia, the joy.",
+      "A bridge between generations. My grandfather's hands, my contemporary vision.",
+      "The perfect hydration is a secret, but the perfect taste is for everyone.",
+      "Contemporary Neapolitan at its finest—the evolution of the craft.",
+      "If you are normal, people forget. If you move people with emotion, you are eternal.",
+      "Naples is not a place, it's a feeling. I put that feeling inside this crust.",
+      "Crispy on the outside, a cloud on the inside. The Capuano signature."
+    ],
+    hk: [
+      "為薄餅而活是美妙的。這是我的人生，我的熱情，盡在這一口之中。",
+      "當代薄餅是一種情感。我們不只是在烹飪；我們在創造感受。",
+      "觀察這餅皮（cornicione）——它像雲朵一樣。輕盈、蓬鬆，充滿拿坡里的靈魂。",
+      "我特意用黃金剪刀剪開，是為了保護這些充滿空氣感的氣孔。",
+      "向我在拿坡里的根致敬。這是童年的味道。",
+      "我們打破傳統，只為達到卓越的新境界。這就是未來。",
+      "簡約即是極致的複雜。三種食材，一千個故事。",
+      "我的麵糰是生命。在呈上您的餐盤前，它需要36小時的愛與發酵。",
+      "誕生於維蘇威火山的陰影下，在香港的心臟地帶臻於完美。",
+      "每一種食材都經過親手挑選。如果不是意大利最好的，就不會出現在我的薄餅上。",
+      "這道菜是來自拿坡里的擁抱。溫暖、地道且難忘。",
+      "081——我城市的代碼，我心臟的律動。品味傳統。",
+      "我們使用 Nuvola Super 麵粉，因為我的薄餅應該感覺像是在對抗地心引力。",
+      "不只是進食。體驗這套儀式。剪刀、香脆聲、還有那份喜悅。",
+      "世代之間的橋樑。祖父的手與我當代的視野。",
+      "完美的含水量是個秘密，但完美的味道是屬於每個人的。",
+      "當代拿坡里風格的巔峰——工藝的進化。",
+      "如果您只是普通，人們會遺忘。如果您用情感打動人心，您就是永恆。",
+      "拿坡里不是一個地方，它是一種感覺。我把那種感覺封裝在餅皮裡。",
+      "外脆內輕，如雲朵般的手感。這是 Capuano 的標誌。"
+    ]
+  };
 
   if (item.mainCategory === 'Beverages') return notes.Beverages;
 
@@ -76,9 +100,17 @@ const getChefNote = (item: MenuItem, lang: Language) => {
   for (let i = 0; i < item.id.length; i++) {
     hash = item.id.charCodeAt(i) + ((hash << 5) - hash);
   }
-  const index = Math.abs(hash) % uniqueNotes.length;
+  const langNotes = uniqueNotes[lang];
+  const index = Math.abs(hash) % langNotes.length;
   
-  return uniqueNotes[index];
+  return langNotes[index];
+};
+
+const toLocalizedNumber = (n: number, lang: Language) => {
+  if (lang === 'en') return n.toString();
+  const chineseNums = ['〇', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二', '十三', '十四', '十五', '十六', '十七', '十八', '十九', '二十'];
+  if (n <= 20) return chineseNums[n];
+  return n.toString();
 };
 
 const MenuItemCard: React.FC<{
@@ -158,7 +190,7 @@ const MenuItemCard: React.FC<{
                   </p>
                   <div className="mt-2.5 flex items-center gap-2">
                     <span className="h-px w-4 bg-[#3d6b42]/50" />
-                    <span className="text-[7px] uppercase tracking-[0.3em] font-bold text-[#6aab6e]/50">Vincenzo</span>
+                    <span className="text-[7px] uppercase tracking-[0.3em] font-bold text-[#6aab6e]/50">{t.chefSignature}</span>
                   </div>
                 </div>
               </div>
@@ -181,7 +213,7 @@ const MenuItemCard: React.FC<{
                   <div className="flex items-center gap-2 mb-3">
                     <Scissors className="w-3 h-3 text-[#6aab6e]/70 rotate-90 shrink-0" />
                     <span className="text-[8px] font-bold uppercase tracking-[0.28em] text-[#6aab6e]/70">
-                      {lang === 'hk' ? '主廚筆記' : "Chef's Note"}
+                      {t.chefNote}
                     </span>
                   </div>
 
@@ -194,7 +226,7 @@ const MenuItemCard: React.FC<{
                   <div className="mt-3 flex items-center gap-2.5">
                     <span className="h-px w-5 bg-[#3d6b42]/50" />
                     <span className="font-display italic text-[#6aab6e]/60 text-[12px] leading-none">
-                      Vincenzo
+                      {t.chefSignature}
                     </span>
                   </div>
                 </div>
@@ -216,10 +248,8 @@ const BeverageCard: React.FC<{
 
   return (
     <div className="group flex flex-col h-full bg-white/[0.02] border border-white/[0.06] rounded-xl md:rounded-2xl p-2 sm:p-3 md:p-5 transition-all duration-500 hover:border-gold/20 hover:bg-white/[0.04]">
-
       {/* Text content */}
       <div className="flex-1 flex flex-col">
-
         {/* Name + divider */}
         <h3 className="font-sans uppercase text-[13px] sm:text-[15px] md:text-xl font-bold text-white group-hover:text-gold transition-colors leading-tight mb-1.5 md:mb-3">
           {itemName}
@@ -230,7 +260,7 @@ const BeverageCard: React.FC<{
         <div className="flex flex-wrap gap-1.5 mb-2 md:mb-3">
           {item.alcohol !== undefined && (
             <span className={`px-2 py-0.5 border text-[7px] md:text-[9px] font-bold uppercase tracking-widest rounded ${item.alcohol ? 'border-red/40 text-red/80 bg-red/[0.06]' : 'border-green-500/30 text-green-400/80 bg-green-500/[0.05]'}`}>
-              {item.alcohol ? (lang !== 'en' ? '含酒精' : 'Alcoholic') : (lang !== 'en' ? '無酒精' : 'Non-Alcoholic')}
+              {item.alcohol ? (translations[lang].dietary.alcoholic.split(':')[0]) : (translations[lang].dietary.nonAlcoholic.split(':')[0])}
             </span>
           )}
           {item.profiles?.map((profile: string, idx: number) => {
@@ -241,9 +271,12 @@ const BeverageCard: React.FC<{
               'border-amber-400/30 text-amber-300/70 bg-amber-400/[0.05]',
               'border-cyan-400/30 text-cyan-300/70 bg-cyan-400/[0.05]',
             ];
+            const profileKey = profile.toLowerCase() as keyof typeof translations[typeof lang]['dietary'];
+            const profileLabel = (translations[lang].dietary[profileKey] as string) || profile;
+            
             return (
               <span key={idx} className={`px-2 py-0.5 border text-[7px] md:text-[9px] font-bold uppercase tracking-widest rounded ${profileColors[idx % profileColors.length]}`}>
-                {profile}
+                {profileLabel}
               </span>
             );
           })}
@@ -277,37 +310,27 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
   }, [items]);
 
   const getCategoryLabel = (cat: string) => {
-    if (lang === 'hk') {
-      if (cat === 'Ala-carte') return '單點菜單';
-      if (cat === 'Beverages') return '飲品';
-    }
-    return cat;
+    return (t.categories as any)[cat] || cat;
   };
 
   const getDietaryLabel = (tag: string) => {
-    if (lang === 'hk') {
-      const map: Record<string, string> = {
-        'Vegetarian': '素食', 'Vegan': '純素', 'Spicy': '辛辣', 'Contains Nuts': '含堅果',
-        'Alcoholic': '含酒精', 'Non-Alcoholic': '無酒精', 'Refreshing': '清新', 'Strong': '濃郁',
-      };
-      return map[tag] || tag;
-    }
-    return tag;
+    const d = translations[lang].dietary;
+    const map: Record<string, string> = {
+      'Vegetarian': d.vegetarian.split(':')[0],
+      'Vegan': d.vegan.split(':')[0],
+      'Spicy': d.spicy.split(':')[0],
+      'Contains Nuts': d.containsNuts.split(':')[0],
+      'Alcoholic': d.alcoholic.split(':')[0],
+      'Non-Alcoholic': d.nonAlcoholic.split(':')[0],
+      'Refreshing': d.refreshing,
+      'Strong': d.strong,
+    };
+    return map[tag] || tag;
   };
 
   const getBeverageCategoryLabel = (cat: string) => {
-    if (lang === 'hk') {
-      const map: Record<string, string> = {
-        'Cocktails': '雞尾酒', 'Whiskies': '威士忌', 'Gin': '琴酒', 'Vodka': '伏特加',
-        'Rum': '冧酒', 'Agave': '龍舌蘭', 'Bitters': '苦酒', 'Beer': '啤酒',
-        'Non-Alcoholic': '無酒精飲品', 'Coffee': '咖啡', 'Tea': '茶',
-        'Wine — Prosecco': '氣泡酒', 'Wine — Champagne': '香檳',
-        'Wine — Rosato': '玫瑰紅酒', 'Wine — House White': '精選白酒',
-        'Wine — House Red': '精選紅酒', 'Wine — White': '白酒', 'Wine — Red': '紅酒',
-      };
-      return map[cat] || cat;
-    }
-    return cat;
+    const cleanCat = cat.replace('Wine — ', '').replace('Pizza — ', '');
+    return (t.beverageCats as any)[cleanCat] || cleanCat;
   };
 
   const dietaryTags = useMemo(() => {
@@ -336,12 +359,12 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
   const [currentPage, setCurrentPage] = useState<number>(1);
 
   const SECTIONS = [
-    { label: lang === 'en' ? 'All' : '全部', value: 'all' },
-    { label: lang === 'en' ? 'Pizzas' : '薄餅', value: 'pizza' },
-    { label: lang === 'en' ? 'Starters' : '前菜', value: 'starters' },
-    { label: lang === 'en' ? 'Salads' : '沙律', value: 'salads' },
-    { label: lang === 'en' ? 'Mains' : '主菜', value: 'mains' },
-    { label: lang === 'en' ? 'Sweets' : '甜品', value: 'sweets' },
+    { label: translations[lang].menu.sections.all, value: 'all' },
+    { label: translations[lang].menu.sections.pizza, value: 'pizza' },
+    { label: translations[lang].menu.sections.appetizers, value: 'appetizers' },
+    { label: translations[lang].menu.sections.pasta, value: 'pasta' },
+    { label: translations[lang].menu.sections.mains, value: 'mains' },
+    { label: translations[lang].menu.sections.dolci, value: 'dolci' },
   ];
 
   useEffect(() => {
@@ -391,11 +414,11 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
       const matchesPopular = showPopular ? item.popular === true : true;
       const lowerCat = item.category.toLowerCase();
       const matchesSection = activeSection === 'all' ||
-        (activeSection === 'pizza' && lowerCat.includes('pizza')) ||
-        (activeSection === 'starters' && lowerCat.includes('starter')) ||
-        (activeSection === 'salads' && lowerCat.includes('salad')) ||
+        (activeSection === 'pizza' && (lowerCat.includes('pizza') || lowerCat.includes('champion') || lowerCat.includes('seller') || lowerCat.includes('traditional'))) ||
+        (activeSection === 'appetizers' && (lowerCat.includes('starter') || lowerCat.includes('salad') || lowerCat.includes('dipper'))) ||
+        (activeSection === 'pasta' && lowerCat.includes('pasta')) ||
         (activeSection === 'mains' && lowerCat.includes('main')) ||
-        (activeSection === 'sweets' && (lowerCat.includes('sweet') || lowerCat.includes('dessert')));
+        (activeSection === 'dolci' && (lowerCat.includes('sweet') || lowerCat.includes('dessert') || lowerCat.includes('dolci')));
       return matchesCategory && matchesDietary && matchesPopular && matchesSection;
     });
   }, [activeCategory, activeDietary, activeSection, showPopular, items, lang]);
@@ -471,7 +494,7 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
 
         {/* Horizontal Scroll Filter Bar for Mobile */}
         <div className="flex items-center gap-3 md:gap-4 mb-10 md:mb-16 overflow-x-auto scrollbar-hide -mx-5 px-5 md:mx-0 md:px-0" id="menu-grid-top">
-          <span className="text-gray-500 text-[10px] uppercase tracking-widest self-center mr-2 shrink-0 font-bold hidden sm:inline">{lang === 'hk' ? '篩選：' : 'Filter:'}</span>
+          <span className="text-gray-500 text-[10px] uppercase tracking-widest self-center mr-2 shrink-0 font-bold hidden sm:inline">{t.filter}</span>
           
           <div className="flex flex-nowrap items-center gap-3 min-w-max">
             <button
@@ -568,7 +591,7 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
                       }}
                       className="text-gold text-[10px] font-bold uppercase tracking-mega hover:text-white transition-colors"
                     >
-                      {lang === 'hk' ? '清除篩選' : 'Clear All Filters'}
+                      {t.clearFilters}
                     </button>
                 </div>
               )}
@@ -596,7 +619,7 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
                         : 'border-white/10 text-gray-500 hover:border-gold/40 hover:text-white'
                     }`}
                   >
-                    {page}
+                    {toLocalizedNumber(page, lang)}
                   </button>
                 ))}
               </div>

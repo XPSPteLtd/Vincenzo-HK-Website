@@ -18,15 +18,16 @@ export const translations = {
       hours: 'Hours'
     },
     hero: {
-      champion: 'Napoli • 2022 Champion',
+      champion: 'Napoli · 2022 World Pizza Champion',
       philosophy: '"Contemporary Pizza is not just a style, it is a philosophy."',
       bookNow: 'Book Now',
       orderDelivery: 'Order Delivery',
       worldChampionBadge: 'World Pizza Champion',
-      evolution: 'Contemporary Neapolitan'
+      evolution: 'Contemporary Neapolitan',
+      bookingNotice: 'Book Now · Reservations 29 April 2026'
     },
     banner: {
-      launch: 'VINCENZO CAPUANO HONG KONG: OPENING 29 APRIL · NOW TAKING BOOKINGS FROM 1 MAY 2026 · LEE TUNG AVENUE, WAN CHAI'
+      launch: 'VINCENZO CAPUANO HONG KONG: OPENING 29 APRIL · NOW TAKING BOOKINGS FROM 29 APRIL 2026 · LEE TUNG AVENUE, WAN CHAI'
     },
     signature: {
       thePhilosophy: 'The Philosophy',
@@ -78,10 +79,45 @@ export const translations = {
       signature: 'Signature',
       noItems: 'No items found',
       chefNote: "Chef's Note",
+      chefSignature: "Vincenzo",
       readNote: "Read Chef's Note",
       hideNote: "Hide Note",
       aboutDrinks: 'About Our Drinks Service',
-      drinksDesc: 'Our premium spirits and curated wine selections are available by both the Glass and Bottle, offering ultimate flexibility for your dining experience.'
+      drinksDesc: 'Our premium spirits and curated wine selections are available by both the Glass and Bottle, offering ultimate flexibility for your dining experience.',
+      filter: 'Filter:',
+      clearFilters: 'Clear All Filters',
+      categories: {
+        'Ala-carte': 'Ala-carte',
+        'Beverages': 'Beverages'
+      },
+      beverageCats: {
+        'Cocktails': 'Cocktails',
+        'Whiskies': 'Whiskies',
+        'Gin': 'Gin',
+        'Vodka': 'Vodka',
+        'Rum': 'Rum',
+        'Agave': 'Agave',
+        'Bitters': 'Bitters',
+        'Beer': 'Beer',
+        'Non-Alcoholic': 'Non-Alcoholic',
+        'Coffee': 'Coffee',
+        'Tea': 'Tea',
+        'Prosecco': 'Prosecco',
+        'Champagne': 'Champagne',
+        'Rosato': 'Rosato',
+        'House White': 'House White',
+        'House Red': 'House Red',
+        'White': 'White',
+        'Red': 'Red'
+      },
+      sections: {
+        all: 'All',
+        pizza: 'Pizzas',
+        appetizers: 'Starters & Salads',
+        pasta: 'Pastas',
+        mains: 'Mains',
+        dolci: 'Dolci'
+      }
     },
     dietary: {
       vegetarian: 'Vegetarian: Contains no meat or fish products.',
@@ -91,8 +127,24 @@ export const translations = {
       info: 'Dietary Information',
       alcoholic: 'Contains Alcohol: Spirits or wine.',
       nonAlcoholic: 'Non-Alcoholic: Zero alcohol content.',
-      refreshing: 'Refreshing: Light and thirst-quenching.',
-      strong: 'Strong: Resolute spirit profile.'
+      refreshing: 'Refreshing',
+      strong: 'Strong',
+      bittersweet: 'Bittersweet',
+      sparkling: 'Sparkling',
+      light: 'Light',
+      complex: 'Complex',
+      herbal: 'Herbal',
+      citrusy: 'Citrusy',
+      cool: 'Cool',
+      minty: 'Minty',
+      zesty: 'Zesty',
+      chill: 'Chill',
+      bold: 'Bold',
+      smooth: 'Smooth',
+      aromatic: 'Aromatic',
+      elegant: 'Elegant',
+      fruity: 'Fruity',
+      clean: 'Clean'
     },
     location: {
       findUs: 'OPEN 7 DAYS A WEEK',
@@ -113,7 +165,19 @@ export const translations = {
       today: 'Today',
       locationLabel: 'LOCATION',
       mtrInfo: 'MTR Wan Chai — Exit D (5 min walk)',
-      reservationDesc: 'Secure your seat and experience award-winning contemporary Neapolitan pizza.'
+      reservationDesc: 'Secure your seat and experience award-winning contemporary Neapolitan pizza.',
+      openingSoon: 'Opening Soon',
+      plannedHours: 'Planned Service Hours',
+      tentative: 'Tentative',
+      tentativeOpeningDate: 'Tentative Opening Date',
+      openingDateValue: '29 April 2026',
+      dateSubjectToChange: '· subject to change',
+      nowInHK: 'Now in HK',
+      countdown: 'Opens in',
+      bookingNotice: 'Book Now · Reservations available from 29 April 2026',
+      street: 'Lee Tung Avenue',
+      unit: 'GF Unit 01 04 05',
+      district: '200 Queens Road East · Wan Chai, HK'
     },
     common: {
       operatingHours: 'Operating Hours',
@@ -125,9 +189,12 @@ export const translations = {
       viewDetails: 'View Branch Details',
       addressShort: "Lee Tung Avenue, 200 Queens Road East, GF Unit 01 04 05, Wan Chai, Hong Kong",
       operations: 'Operations',
+      brand: 'Vincenzo Capuano',
       opens: 'Opens',
       nowInHK: 'Now in HK',
-      sevenDays: '7 Days a Week'
+      sevenDays: '7 Days a Week',
+      page: 'Page',
+      of: 'of'
     },
     modals: {
       reservationTitle: 'Reserve Your Cloud',
@@ -217,15 +284,16 @@ export const translations = {
       scroll: '向下滾動'
     },
     hero: {
-      champion: '拿坡里 • 2022 世界冠軍',
+      champion: '拿坡里 · 2022 世界薄餅冠軍',
       philosophy: '「當代薄餅不只是一個流派，更是一套哲學。」',
       bookNow: '預約座席',
       orderDelivery: '外賣服務',
       worldChampionBadge: '世界薄餅冠軍',
-      evolution: '當代拿坡里'
+      evolution: '當代拿坡里',
+      bookingNotice: '立即訂座 · 4月29日起接受預約'
     },
     banner: {
-      launch: 'Vincenzo Capuano 香港店：4月29日盛大開幕 · 現接受5月1日起網上訂座 · 灣仔利東街'
+      launch: 'Vincenzo Capuano 香港店：4月29日盛大開幕 · 現接受4月29日起網上訂座 · 灣仔利東街'
     },
     signature: {
       thePhilosophy: '品牌理念',
@@ -244,8 +312,8 @@ export const translations = {
       p1: '在拿坡里家族烤爐的節奏中成長，Vincenzo Capuano 為香港帶來了當代風格的拿坡里薄餅——輕盈、充滿表現力且深耕手工技藝。每一份麵團、每一片餅皮、每一種食材，都反映了世代相傳並為今天所昇華的傳統。',
       p2: '這不僅是傳統的重複，更是傳統的進化。專為當代味蕾打造的現代拿坡里傳奇。',
       pullQuote: '"薄餅代表傳承、技藝與喜悅。"',
-      author: 'Vincenzo Capuano',
-      experienceTitle: 'Capuano 體驗',
+      author: '文森佐 (Vincenzo Capuano)',
+      experienceTitle: '文森佐 Capuano 體驗',
       exp1: '當代拿坡里風格',
       exp2: '標誌性雲朵餅皮',
       exp3: '獨特金剪刀儀式',
@@ -277,10 +345,45 @@ export const translations = {
       signature: '招牌推薦',
       noItems: '未找到相關項目',
       chefNote: '主廚筆記',
+      chefSignature: "文森佐 (Vincenzo)",
       readNote: '查看主廚筆記',
       hideNote: '收起筆記',
       aboutDrinks: '關於我們的飲品服務',
-      drinksDesc: '所有優質烈酒和精選葡萄酒均可按杯或整瓶形式供應，讓您靈活搭配用餐體驗。'
+      drinksDesc: '所有優質烈酒和精選葡萄酒均可按杯或整瓶形式供應，讓您靈活搭配用餐體驗。',
+      filter: '篩選：',
+      clearFilters: '清除篩選',
+      categories: {
+        'Ala-carte': '單點菜單',
+        'Beverages': '飲品'
+      },
+      beverageCats: {
+        'Cocktails': '雞尾酒',
+        'Whiskies': '威士忌',
+        'Gin': '琴酒',
+        'Vodka': '伏特加',
+        'Rum': '冧酒',
+        'Agave': '龍舌蘭',
+        'Bitters': '苦酒',
+        'Beer': '啤酒',
+        'Non-Alcoholic': '無酒精飲品',
+        'Coffee': '咖啡',
+        'Tea': '茶',
+        'Prosecco': '氣泡酒',
+        'Champagne': '香檳',
+        'Rosato': '玫瑰紅酒',
+        'House White': '精選白酒',
+        'House Red': '精選紅酒',
+        'White': '白酒',
+        'Red': '紅酒'
+      },
+      sections: {
+        all: '全部',
+        pizza: '薄餅',
+        appetizers: '前菜及沙律',
+        pasta: '意粉',
+        mains: '主菜',
+        dolci: '甜品'
+      }
     },
     dietary: {
       vegetarian: '素食：不含肉類或魚類產品。',
@@ -290,8 +393,24 @@ export const translations = {
       info: '飲食提示',
       alcoholic: '含酒精：成分含有烈酒或葡萄酒。',
       nonAlcoholic: '無酒精：清涼零酒精。',
-      refreshing: '清新：設計輕盈且解渴。',
-      strong: '濃郁：風味厚實濃郁。'
+      refreshing: '清爽',
+      strong: '強勁',
+      bittersweet: '苦甜平衡',
+      sparkling: '氣泡',
+      light: '輕盈',
+      complex: '豐富層次',
+      herbal: '草本',
+      citrusy: '柑橘',
+      cool: '冷冽',
+      minty: '薄荷',
+      zesty: '酸甜',
+      chill: '冰涼',
+      bold: '大膽',
+      smooth: '順滑',
+      aromatic: '芳香',
+      elegant: '優雅',
+      fruity: '果香',
+      clean: '純淨'
     },
     location: {
       findUs: '每週 7 天營業',
@@ -312,7 +431,19 @@ export const translations = {
       today: '今日',
       locationLabel: '門店地址',
       mtrInfo: '港鐵灣仔站 — D 出口 (步行約 5 分鐘)',
-      reservationDesc: '立即預約，體驗屢獲殊榮的當代拿坡里薄餅。'
+      reservationDesc: '立即預約，體驗屢獲殊榮的當代拿坡里薄餅。',
+      openingSoon: '即將開幕',
+      plannedHours: '計劃營業時間',
+      tentative: '暫定',
+      tentativeOpeningDate: '暫定開幕日期',
+      openingDateValue: '2026年4月29日',
+      dateSubjectToChange: '· 日期或有更改',
+      nowInHK: '香港現在',
+      countdown: '倒數',
+      bookingNotice: '立即訂座 · 4月29日起接受預約',
+      street: '利東街',
+      unit: '地下 G01, 04, 05 號舖',
+      district: '皇后大道東200號 · 灣仔, 香港'
     },
     common: {
       operatingHours: '營業時間',
@@ -324,9 +455,12 @@ export const translations = {
       viewDetails: '查看分店詳情',
       addressShort: '香港灣仔皇后大道東200號, 利東街地下 G01, 04, 05 號舖, 香港',
       operations: '營運資訊',
+      brand: '文森佐 · 卡普阿諾 (Vincenzo Capuano)',
       opens: '開始營業',
       nowInHK: '香港目前時間',
-      sevenDays: '每週七天營業'
+      sevenDays: '每週七天營業',
+      page: '第',
+      of: '頁 / 共'
     },
     modals: {
       reservationTitle: '雲朵預約專區',

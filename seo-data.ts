@@ -1,8 +1,8 @@
 const BASE = 'https://vincenzocapuano.hk';
 
 export interface PageSEO {
-  en: { title: string; desc: string; keywords: string; };
-  hk: { title: string; desc: string; keywords: string; };
+  en: { title: string; desc: string; keywords: string; image?: string; };
+  hk: { title: string; desc: string; keywords: string; image?: string; };
   schema: Record<string, unknown> | null;
 }
 
@@ -18,7 +18,53 @@ export const pageSEO: Record<string, PageSEO> = {
       desc: '在香港灣仔利東街體驗由世界冠軍 Vincenzo Capuano 帶來的當代拿坡里薄餅——全球第 13 名薄餅店，2022 年世界薄餅冠軍。',
       keywords: '香港薄餅店, 香港拿坡里薄餅, 香港披薩餐廳, 香港意大利餐廳 薄餅, 灣仔薄餅, 香港正宗拿坡里披薩, 當代拿坡里薄餅, 香港最佳薄餅店, 香港最佳拿坡里薄餅, 世界薄餅冠軍, 那不勒斯薄餅師傅, 全球第13名薄餅, 灣仔最好餐廳, 香港最佳餐廳, 灣仔意大利餐廳',
     },
-    schema: null, // already in index.html
+    schema: {
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'Organization',
+          '@id': `${BASE}/#organization`,
+          name: 'Vincenzo Capuano',
+          url: BASE,
+          logo: {
+            '@type': 'ImageObject',
+            url: 'https://storage.googleapis.com/xps-assets/gotti%27s%20assets%20/BRAND%20ASSETS/vincenzo/LOGO-CAPUANO-white.png',
+            width: 512,
+            height: 512
+          },
+          sameAs: [
+            'https://www.instagram.com/vincenzocapuano.hk',
+            'https://www.facebook.com/vincenzocapuano.hk'
+          ]
+        },
+        {
+          '@type': 'WebSite',
+          '@id': `${BASE}/#website`,
+          url: BASE,
+          name: 'Vincenzo Capuano Hong Kong',
+          publisher: { '@id': `${BASE}/#organization` },
+          potentialAction: {
+            '@type': 'SearchAction',
+            target: `${BASE}/search?q={search_term_string}`,
+            'query-input': 'required name=search_term_string'
+          }
+        },
+        {
+          '@type': 'Restaurant',
+          '@id': `${BASE}/#restaurant`,
+          name: 'Vincenzo Capuano Hong Kong',
+          url: BASE,
+          telephone: '+852 9448 3165',
+          address: {
+            '@type': 'PostalAddress',
+            streetAddress: 'Lee Tung Avenue, 200 Queens Road East, GF Unit 01 04 05',
+            addressLocality: 'Wan Chai',
+            addressRegion: 'Hong Kong',
+            addressCountry: 'HK'
+          }
+        }
+      ]
+    },
   },
 
   '/menu': {
