@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import { MapPin, Users, ArrowRight, Calendar, ExternalLink, Train } from 'lucide-react';
+import { MapPin, Users, ArrowRight, Calendar, ExternalLink, Train, CheckCircle } from 'lucide-react';
 import { Language, translations } from '../translations';
 
 interface InfoHubProps {
@@ -8,22 +8,14 @@ interface InfoHubProps {
   onBookClick?: () => void;
 }
 
-const TENTATIVE_OPENING = new Date('2026-04-29T00:00:00+08:00');
-
 export const InfoHub: React.FC<InfoHubProps> = ({ lang, onBookClick }) => {
   const t = translations[lang].location;
   const infoT = translations[lang].infoHub;
 
   const [currentTime, setCurrentTime] = useState(new Date());
-  const [daysUntilOpening, setDaysUntilOpening] = useState(0);
 
   useEffect(() => {
-    const tick = () => {
-      const now = new Date();
-      setCurrentTime(now);
-      const diff = Math.ceil((TENTATIVE_OPENING.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
-      setDaysUntilOpening(Math.max(0, diff));
-    };
+    const tick = () => setCurrentTime(new Date());
     tick();
     const interval = setInterval(tick, 60000);
     return () => clearInterval(interval);
@@ -57,9 +49,9 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang, onBookClick }) => {
             </h2>
           </div>
 
-          {/* Opening Soon pill */}
+          {/* Now Open pill */}
           <div className="flex items-center gap-2.5 self-start sm:self-auto px-4 py-2.5 rounded-full border backdrop-blur-md bg-gold/[0.07] border-gold/25">
-            <div className="w-2 h-2 rounded-full bg-gold animate-pulse shadow-[0_0_8px_rgba(243,205,105,0.6)] shrink-0" />
+            <CheckCircle size={14} className="text-gold shrink-0" />
             <span className="text-[11px] font-bold uppercase tracking-widest text-gold">
               {t.openingSoon}
             </span>
@@ -74,59 +66,57 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang, onBookClick }) => {
 
             <div className="flex flex-col lg:flex-row lg:items-start gap-8 lg:gap-12">
 
-              {/* Planned hours card */}
+              {/* Service hours card */}
               <div className="flex-1 relative rounded-2xl border px-4 sm:px-8 py-6 sm:py-7 bg-white/[0.02] border-white/[0.06]">
 
                 <div className="flex items-center justify-between gap-3 mb-5">
                   <p className="text-[11px] uppercase tracking-[0.4em] text-gold/65 font-bold">
                     {t.plannedHours}
                   </p>
-                  <div className="flex items-center gap-1.5 bg-white/[0.04] border border-white/10 rounded-lg px-3 py-1 shrink-0">
-                    <span className="text-xs uppercase tracking-widest text-white/55 font-bold">
+                  <div className="flex items-center gap-1.5 bg-gold/[0.08] border border-gold/20 rounded-lg px-3 py-1 shrink-0">
+                    <span className="text-xs uppercase tracking-widest text-gold/70 font-bold">
                       {t.tentative}
                     </span>
                   </div>
                 </div>
 
-                {/* Hours display — dimmed to signal not-yet-active */}
+                {/* Hours display */}
                 <div className="flex items-baseline gap-2 sm:gap-4">
-                  <span className="font-mono text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white/50 font-bold tracking-tight">12:00</span>
-                  <span className="text-white/15 font-light text-xl sm:text-2xl">—</span>
-                  <span className="font-mono text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white/50 font-bold tracking-tight">23:00</span>
+                  <span className="font-mono text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-bold tracking-tight">12:00</span>
+                  <span className="text-white/30 font-light text-xl sm:text-2xl">—</span>
+                  <span className="font-mono text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-bold tracking-tight">23:00</span>
                 </div>
 
-                {/* Tentative opening date */}
+                {/* Open 7 days note */}
                 <div className="mt-6 pt-5 border-t border-white/[0.05]">
                   <p className="text-xs uppercase tracking-[0.35em] text-white/55 font-bold mb-2">
-                    {t.tentativeOpeningDate}
+                    {lang !== 'en' ? '最後點餐' : 'Last Order'}
                   </p>
                   <div className="flex items-baseline gap-3">
-                    <span className="font-display text-2xl text-gold font-bold">
-                      {t.openingDateValue}
-                    </span>
+                    <span className="font-display text-2xl text-gold font-bold">22:30</span>
                     <span className="text-[10px] text-white/35 font-light">
-                      {t.dateSubjectToChange}
+                      {lang !== 'en' ? '· 每週七天' : '· 7 days a week'}
                     </span>
                   </div>
                 </div>
               </div>
 
-              {/* Right side: clock + countdown */}
+              {/* Right side: clock */}
               <div className="flex flex-row lg:flex-col items-center lg:items-end justify-between lg:justify-start gap-4 lg:gap-5 shrink-0 lg:pt-1">
                 <div className="text-right">
                   <p className="text-xs uppercase tracking-[0.4em] text-white/55 font-bold mb-1">
                     {t.nowInHK}
                   </p>
-                  <div className="font-mono text-2xl md:text-3xl text-white/50 font-bold tabular-nums leading-none">
+                  <div className="font-mono text-2xl md:text-3xl text-white font-bold tabular-nums leading-none">
                     {formatTime(currentTime)}
                   </div>
                 </div>
                 <div className="bg-gold/10 border border-gold/30 px-4 py-2.5 rounded-lg text-center min-w-[80px]">
                   <p className="text-[10px] uppercase tracking-widest text-gold/65 font-bold mb-0.5">
-                    {t.countdown}
+                    {lang !== 'en' ? '每週' : 'Open'}
                   </p>
                   <p className="font-mono text-2xl text-gold font-bold leading-none">
-                    {daysUntilOpening}<span className="text-sm font-normal text-gold/60 ml-0.5">d</span>
+                    7<span className="text-sm font-normal text-gold/60 ml-0.5">{lang !== 'en' ? '天' : 'd'}</span>
                   </p>
                 </div>
               </div>
