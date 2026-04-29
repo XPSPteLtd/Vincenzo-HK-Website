@@ -9,8 +9,8 @@ export interface PageSEO {
 export const pageSEO: Record<string, PageSEO> = {
   '/': {
     en: {
-      title: 'Vincenzo Capuano | Best Pizza in Hong Kong | World #13 Pizzeria',
-      desc: 'Discover contemporary Neapolitan pizza in Hong Kong by Vincenzo Capuano — World #13 Pizzeria, 2022 World Pizza Champion. Dine in Wan Chai or order delivery.',
+      title: 'Best Pizza in Hong Kong | Vincenzo Capuano Pizza HK',
+      desc: 'Looking for great pizza in Hong Kong? Enjoy authentic Neapolitan pizza at Vincenzo Capuano, one of the best pizza restaurants in the city. Visit today for an unforgettable taste!',
       keywords: 'pizzeria hong kong, neapolitan pizza hong kong, pizza restaurant hong kong, italian pizza hong kong, authentic pizza hong kong, contemporary neapolitan pizza hong kong, pizza in hong kong, artisan pizza hong kong, naples style pizza hong kong, premium pizza hong kong, best pizzeria in hong kong, best neapolitan pizza hong kong, pizza chef from naples, authentic neapolitan pizzeria, world top 50 pizza, world #13 pizza, world pizza champion restaurant hong kong, best restaurants hong kong, best restaurant wan chai, italian restaurant wan chai, dinner wan chai, restaurants hong kong, dinner near me hong kong',
     },
     hk: {
@@ -69,8 +69,8 @@ export const pageSEO: Record<string, PageSEO> = {
 
   '/menu': {
     en: {
-      title: 'Pizza Menu Hong Kong | Contemporary Neapolitan Pizza | Vincenzo Capuano',
-      desc: 'Explore our contemporary Neapolitan pizza menu in Hong Kong — crafted with premium ingredients, signature crust, and modern Naples-inspired flavour.',
+      title: 'Vincenzo Capuano Menu Hong Kong | Authentic Pizza Menu HK',
+      desc: 'Explore the Vincenzo Capuano restaurant menu in Hong Kong. Discover authentic Neapolitan pizza, Italian dishes, and a true Italian dining experience.',
       keywords: 'italian pizza hong kong, pizza menu hong kong, neapolitan pizza hong kong, wood fired pizza hong kong, authentic pizza hong kong, pizza restaurant hong kong, margherita pizza hong kong, bufala pizza hong kong, burrata pizza hong kong, diavola pizza hong kong, truffle pizza hong kong, vegetarian pizza hong kong, spicy salami pizza hong kong, napoli pizza hong kong, fresh mozzarella pizza hong kong',
     },
     hk: {
@@ -96,8 +96,8 @@ export const pageSEO: Record<string, PageSEO> = {
 
   '/contact': {
     en: {
-      title: 'Location & Hours | Vincenzo Capuano Hong Kong | Wan Chai Pizzeria',
-      desc: 'Visit Vincenzo Capuano at Lee Tung Avenue, Wan Chai — contemporary Neapolitan pizza in Hong Kong. Check opening hours, MTR directions, and book your table.',
+      title: 'Contact Vincenzo Capuano Pizza Hong Kong | Best Pizza HK',
+      desc: 'Contact Vincenzo Capuano Pizza in Hong Kong for reservations, inquiries, and orders. Visit one of the best pizza restaurants in Hong Kong today!',
       keywords: 'pizza wan chai, wan chai pizza restaurant, neapolitan pizza wan chai, italian restaurant wan chai, pizza near lee tung avenue, pizza wan chai hong kong, where to eat pizza wan chai, pizza restaurant hong kong, italian restaurant hong kong, date night pizza wan chai, pizza dinner wan chai, best pizza wan chai, best restaurant wan chai, restaurants near me wan chai, dinner near me wan chai, where to eat dinner wan chai, wan chai dining, award-winning restaurant wan chai',
     },
     hk: {
@@ -271,8 +271,8 @@ export const pageSEO: Record<string, PageSEO> = {
 
   '/group-dining': {
     en: {
-      title: 'Group Dining & Private Events | Vincenzo Capuano Hong Kong',
-      desc: 'Host birthdays, celebrations, and group dinners at Vincenzo Capuano Hong Kong — a contemporary Neapolitan pizza destination built for sharing.',
+      title: 'Pizza Dining Hong Kong | Best Group Dining Pizza',
+      desc: 'Enjoy the best pizza dining experience in Hong Kong. Perfect for groups, parties, and events at a top pizza restaurant near you. Book now!',
       keywords: 'group dining pizza hong kong, private dining italian restaurant hong kong, pizza party venue hong kong, birthday dinner pizza hong kong, casual private dining hong kong, pizza restaurant for groups hong kong, celebration dining hong kong, best pizza for sharing hong kong, family pizza restaurant hong kong, pizza dinner hong kong',
     },
     hk: {
