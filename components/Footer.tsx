@@ -111,7 +111,7 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
         {/* Bottom bar */}
         <div className="w-full border-t border-white/[0.06] pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-xs text-white/50 uppercase tracking-[0.3em] font-bold">
-            © {new Date().getFullYear()} HK Capvin Private Limited
+            © {new Date().getFullYear()} HK Capvin Limited
           </p>
           <a
             href="https://pulsenpixels.com?utm_source=vincenzo-capuano-hk&utm_medium=website&utm_campaign=footer-credit"
