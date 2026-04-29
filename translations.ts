@@ -24,7 +24,7 @@ export const translations = {
       orderDelivery: 'Order Delivery',
       worldChampionBadge: 'World Pizza Champion',
       evolution: 'Contemporary Neapolitan',
-      bookingNotice: 'Book Now · Reservations 29 April 2026'
+      bookingNotice: 'Book Now · Reserve Your Table'
     },
     banner: {
       launch: 'VINCENZO CAPUANO HONG KONG — NOW OPEN · LEE TUNG AVENUE, WAN CHAI · BOOK YOUR TABLE TODAY'
@@ -166,15 +166,15 @@ export const translations = {
       locationLabel: 'LOCATION',
       mtrInfo: 'MTR Wan Chai — Exit D (5 min walk)',
       reservationDesc: 'Secure your seat and experience award-winning contemporary Neapolitan pizza.',
-      openingSoon: 'Opening Soon',
-      plannedHours: 'Planned Service Hours',
-      tentative: 'Tentative',
-      tentativeOpeningDate: 'Tentative Opening Date',
+      openingSoon: 'Now Open',
+      plannedHours: 'Service Hours',
+      tentative: 'Daily',
+      tentativeOpeningDate: 'Opened',
       openingDateValue: '29 April 2026',
-      dateSubjectToChange: '· subject to change',
+      dateSubjectToChange: '',
       nowInHK: 'Now in HK',
-      countdown: 'Opens in',
-      bookingNotice: 'Book Now · Reservations available from 29 April 2026',
+      countdown: 'Open Days',
+      bookingNotice: 'Now Taking Reservations',
       street: 'Lee Tung Avenue',
       unit: 'GF Unit 01 04 05',
       district: '200 Queens Road East · Wan Chai, HK'
@@ -290,7 +290,7 @@ export const translations = {
       orderDelivery: '外賣服務',
       worldChampionBadge: '世界薄餅冠軍',
       evolution: '當代拿坡里',
-      bookingNotice: '立即訂座 · 4月29日起接受預約'
+      bookingNotice: '立即訂座 · 即時預訂'
     },
     banner: {
       launch: 'Vincenzo Capuano 香港店現已開幕 · 灣仔利東街 · 立即預訂您的座位'
@@ -430,17 +430,17 @@ export const translations = {
       people: '位',
       today: '今日',
       locationLabel: '門店地址',
-      mtrInfo: '港鐵灣仔站 — D 出口 (步行約 5 分鐘)',
+      mtrInfo: '港鐵灣仔站 — D 出口（步行約 5 分鐘）',
       reservationDesc: '立即預約，體驗屢獲殊榮的當代拿坡里薄餅。',
-      openingSoon: '即將開幕',
-      plannedHours: '計劃營業時間',
-      tentative: '暫定',
-      tentativeOpeningDate: '暫定開幕日期',
+      openingSoon: '現已開幕',
+      plannedHours: '營業時間',
+      tentative: '每日',
+      tentativeOpeningDate: '開幕日期',
       openingDateValue: '2026年4月29日',
-      dateSubjectToChange: '· 日期或有更改',
+      dateSubjectToChange: '',
       nowInHK: '香港現在',
-      countdown: '倒數',
-      bookingNotice: '立即訂座 · 4月29日起接受預約',
+      countdown: '開業日',
+      bookingNotice: '立即訂座 · 即時確認',
       street: '利東街',
       unit: '地下 G01, 04, 05 號舖',
       district: '皇后大道東200號 · 灣仔, 香港'
