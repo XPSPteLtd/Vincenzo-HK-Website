@@ -27,11 +27,7 @@ export const translations = {
       bookingNotice: 'Book Now · Reservations 29 April 2026'
     },
     banner: {
-<<<<<<< HEAD
       launch: 'VINCENZO CAPUANO HONG KONG — NOW OPEN · LEE TUNG AVENUE, WAN CHAI · BOOK YOUR TABLE TODAY'
-=======
-      launch: 'VINCENZO CAPUANO HONG KONG: OPENING 29 APRIL · NOW TAKING BOOKINGS FROM 29 APRIL 2026 · LEE TUNG AVENUE, WAN CHAI'
->>>>>>> bc3598669d52ec8e7267924e8e1e624340875c31
     },
     signature: {
       thePhilosophy: 'The Philosophy',
@@ -297,11 +293,7 @@ export const translations = {
       bookingNotice: '立即訂座 · 4月29日起接受預約'
     },
     banner: {
-<<<<<<< HEAD
       launch: 'Vincenzo Capuano 香港店現已開幕 · 灣仔利東街 · 立即預訂您的座位'
-=======
-      launch: 'Vincenzo Capuano 香港店：4月29日盛大開幕 · 現接受4月29日起網上訂座 · 灣仔利東街'
->>>>>>> bc3598669d52ec8e7267924e8e1e624340875c31
     },
     signature: {
       thePhilosophy: '品牌理念',
@@ -438,10 +430,6 @@ export const translations = {
       people: '位',
       today: '今日',
       locationLabel: '門店地址',
-<<<<<<< HEAD
-      mtrInfo: '港鐵灣仔站 — D 出口（步行約 5 分鐘）',
-      reservationDesc: '立即預約，體驗屢獲殊榮的當代拿坡里薄餅。'
-=======
       mtrInfo: '港鐵灣仔站 — D 出口 (步行約 5 分鐘)',
       reservationDesc: '立即預約，體驗屢獲殊榮的當代拿坡里薄餅。',
       openingSoon: '即將開幕',
@@ -456,7 +444,6 @@ export const translations = {
       street: '利東街',
       unit: '地下 G01, 04, 05 號舖',
       district: '皇后大道東200號 · 灣仔, 香港'
->>>>>>> bc3598669d52ec8e7267924e8e1e624340875c31
     },
     common: {
       operatingHours: '營業時間',
