@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { X, Clock, MapPin, ChevronRight, Calendar, ExternalLink, Scissors } from 'lucide-react';
-import { Language } from '../translations';
+import { Language, translations } from '../translations';
 
 interface QuickHoursProps {
   isOpen: boolean;
@@ -8,7 +8,44 @@ interface QuickHoursProps {
   lang: Language;
 }
 
+type RestaurantStatus = 'closed' | 'warming_up' | 'opening_soon' | 'now_open' | 'kitchen_closing_soon' | 'kitchen_closed' | 'closing_soon';
+
+const getRestaurantStatus = (date: Date): RestaurantStatus => {
+  const hkMin = (date.getUTCHours() * 60 + date.getUTCMinutes() + 8 * 60) % (24 * 60);
+  if (hkMin < 690 || hkMin >= 1380) return 'closed';
+  if (hkMin < 710) return 'warming_up';
+  if (hkMin < 720) return 'opening_soon';
+  if (hkMin < 1290) return 'now_open';
+  if (hkMin < 1305) return 'kitchen_closing_soon';
+  if (hkMin < 1365) return 'kitchen_closed';
+  return 'closing_soon';
+};
+
 export const QuickHours: React.FC<QuickHoursProps> = ({ isOpen, onClose, lang }) => {
+  const t = translations[lang].location;
+  const [currentTime, setCurrentTime] = useState(new Date());
+
+  useEffect(() => {
+    const tick = () => setCurrentTime(new Date());
+    tick();
+    const interval = setInterval(tick, 60000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const restaurantStatus = getRestaurantStatus(currentTime);
+  const isClosedState = restaurantStatus === 'closed' || restaurantStatus === 'kitchen_closed';
+  const isWarningState = restaurantStatus === 'kitchen_closing_soon' || restaurantStatus === 'closing_soon';
+
+  const statusKey: Record<RestaurantStatus, keyof typeof t> = {
+    closed: 'statusClosed',
+    warming_up: 'statusWarmingUp',
+    opening_soon: 'statusOpeningSoon',
+    now_open: 'statusNowOpen',
+    kitchen_closing_soon: 'statusKitchenClosingSoon',
+    kitchen_closed: 'statusKitchenClosed',
+    closing_soon: 'statusClosingSoon',
+  };
+
   const openGoogleMaps = () => {
     const url = `https://maps.app.goo.gl/mWac4KcwCQSUUibU9`;
     window.open(url, '_blank');
@@ -41,14 +78,14 @@ export const QuickHours: React.FC<QuickHoursProps> = ({ isOpen, onClose, lang })
           </div>
 
           {/* Status Badge */}
-          <div className="mb-8 flex items-center gap-4 bg-gold/[0.05] p-4 rounded-2xl border border-gold/20">
-            <div className="w-3 h-3 rounded-full bg-gold shadow-[0_0_10px_rgba(243,205,105,0.5)] animate-pulse shrink-0"></div>
+          <div className={`mb-8 flex items-center gap-4 p-4 rounded-2xl border ${isClosedState ? 'bg-white/[0.03] border-white/10' : isWarningState ? 'bg-amber-500/[0.06] border-amber-400/20' : 'bg-gold/[0.05] border-gold/20'}`}>
+            <div className={`w-3 h-3 rounded-full shrink-0 animate-pulse ${isClosedState ? 'bg-white/30' : isWarningState ? 'bg-amber-400 shadow-[0_0_10px_rgba(251,191,36,0.5)]' : 'bg-gold shadow-[0_0_10px_rgba(243,205,105,0.5)]'}`}></div>
             <div>
               <p className="text-[10px] uppercase font-bold tracking-widest text-gray-400 mb-0.5">
                 {lang !== 'en' ? '廚房狀態' : 'Kitchen Status'}
               </p>
-              <p className="text-sm font-bold uppercase tracking-widest text-gold">
-                {lang !== 'en' ? '現已開幕' : 'Now Open'}
+              <p className={`text-sm font-bold uppercase tracking-widest ${isClosedState ? 'text-white/40' : isWarningState ? 'text-amber-400' : 'text-gold'}`}>
+                {t[statusKey[restaurantStatus]]}
               </p>
             </div>
           </div>
@@ -71,7 +108,7 @@ export const QuickHours: React.FC<QuickHoursProps> = ({ isOpen, onClose, lang })
                   {lang !== 'en' ? '最後點餐' : 'Last Order'}
                 </span>
               </div>
-              <span className="font-mono text-white/70">22:30</span>
+              <span className="font-mono text-white/70">21:45</span>
             </div>
           </div>
 

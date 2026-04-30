@@ -177,7 +177,14 @@ export const translations = {
       bookingNotice: 'Now Taking Reservations',
       street: 'Lee Tung Avenue',
       unit: 'GF Unit 01 04 05',
-      district: '200 Queens Road East · Wan Chai, HK'
+      district: '200 Queens Road East · Wan Chai, HK',
+      statusClosed: 'Closed',
+      statusWarmingUp: 'Warming Up',
+      statusOpeningSoon: 'Opening Soon',
+      statusNowOpen: 'Now Open',
+      statusKitchenClosingSoon: 'Kitchen Closing Soon',
+      statusKitchenClosed: 'Kitchen Closed',
+      statusClosingSoon: 'Closing Soon',
     },
     common: {
       operatingHours: 'Operating Hours',
@@ -443,7 +450,14 @@ export const translations = {
       bookingNotice: '立即訂座 · 即時確認',
       street: '利東街',
       unit: '地下 G01, 04, 05 號舖',
-      district: '皇后大道東200號 · 灣仔, 香港'
+      district: '皇后大道東200號 · 灣仔, 香港',
+      statusClosed: '暫停營業',
+      statusWarmingUp: '準備開業',
+      statusOpeningSoon: '即將開幕',
+      statusNowOpen: '現已開幕',
+      statusKitchenClosingSoon: '廚房即將停止接單',
+      statusKitchenClosed: '廚房已停止接單',
+      statusClosingSoon: '即將打烊',
     },
     common: {
       operatingHours: '營業時間',
