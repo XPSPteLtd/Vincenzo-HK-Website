@@ -24,6 +24,34 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang, onBookClick }) => {
   const formatTime = (date: Date) =>
     date.toLocaleTimeString('en-HK', { hour: '2-digit', minute: '2-digit', hour12: false });
 
+  type RestaurantStatus = 'closed' | 'warming_up' | 'opening_soon' | 'now_open' | 'kitchen_closing_soon' | 'kitchen_closed' | 'closing_soon';
+
+  const getRestaurantStatus = (date: Date): RestaurantStatus => {
+    const hkMin = (date.getUTCHours() * 60 + date.getUTCMinutes() + 8 * 60) % (24 * 60);
+    if (hkMin < 690 || hkMin >= 1380) return 'closed';
+    if (hkMin < 710) return 'warming_up';
+    if (hkMin < 720) return 'opening_soon';
+    if (hkMin < 1290) return 'now_open';
+    if (hkMin < 1305) return 'kitchen_closing_soon';
+    if (hkMin < 1365) return 'kitchen_closed';
+    return 'closing_soon';
+  };
+
+  const statusKey: Record<RestaurantStatus, keyof typeof t> = {
+    closed: 'statusClosed',
+    warming_up: 'statusWarmingUp',
+    opening_soon: 'statusOpeningSoon',
+    now_open: 'statusNowOpen',
+    kitchen_closing_soon: 'statusKitchenClosingSoon',
+    kitchen_closed: 'statusKitchenClosed',
+    closing_soon: 'statusClosingSoon',
+  };
+
+  const restaurantStatus = getRestaurantStatus(currentTime);
+  const isOpenState = restaurantStatus === 'now_open' || restaurantStatus === 'opening_soon' || restaurantStatus === 'warming_up';
+  const isWarningState = restaurantStatus === 'kitchen_closing_soon' || restaurantStatus === 'closing_soon';
+  const isClosedState = restaurantStatus === 'closed' || restaurantStatus === 'kitchen_closed';
+
   const openGoogleMaps = () => {
     window.open('https://maps.app.goo.gl/mWac4KcwCQSUUibU9', '_blank');
   };
@@ -49,11 +77,11 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang, onBookClick }) => {
             </h2>
           </div>
 
-          {/* Now Open pill */}
-          <div className="flex items-center gap-2.5 self-start sm:self-auto px-4 py-2.5 rounded-full border backdrop-blur-md bg-gold/[0.07] border-gold/25">
-            <CheckCircle size={14} className="text-gold shrink-0" />
-            <span className="text-[11px] font-bold uppercase tracking-widest text-gold">
-              {t.openingSoon}
+          {/* Status pill */}
+          <div className={`flex items-center gap-2.5 self-start sm:self-auto px-4 py-2.5 rounded-full border backdrop-blur-md ${isClosedState ? 'bg-white/[0.04] border-white/15' : isWarningState ? 'bg-amber-500/[0.08] border-amber-400/25' : 'bg-gold/[0.07] border-gold/25'}`}>
+            <CheckCircle size={14} className={`shrink-0 ${isClosedState ? 'text-white/40' : isWarningState ? 'text-amber-400' : 'text-gold'}`} />
+            <span className={`text-[11px] font-bold uppercase tracking-widest ${isClosedState ? 'text-white/40' : isWarningState ? 'text-amber-400' : 'text-gold'}`}>
+              {t[statusKey[restaurantStatus]]}
             </span>
           </div>
         </div>
@@ -93,7 +121,7 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang, onBookClick }) => {
                     {lang !== 'en' ? '最後點餐' : 'Last Order'}
                   </p>
                   <div className="flex items-baseline gap-3">
-                    <span className="font-display text-2xl text-gold font-bold">22:30</span>
+                    <span className="font-display text-2xl text-gold font-bold">21:45</span>
                     <span className="text-[10px] text-white/35 font-light">
                       {lang !== 'en' ? '· 每週七天' : '· 7 days a week'}
                     </span>

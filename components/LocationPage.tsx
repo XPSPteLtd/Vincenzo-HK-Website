@@ -103,7 +103,7 @@ export const LocationPage: React.FC<LocationPageProps> = ({ lang, onBookClick })
           <div className="space-y-1.5 text-xs font-sans text-white/55">
             <p>{isHK ? '午餐：12:00 — 15:00' : 'Lunch: 12:00 — 15:00'}</p>
             <p>{isHK ? '晚餐：17:00 — 23:00' : 'Dinner: 17:00 — 23:00'}</p>
-            <p>{isHK ? '最後落單：22:30' : 'Last order: 22:30'}</p>
+            <p>{isHK ? '最後落單：21:45' : 'Last order: 21:45'}</p>
           </div>
         </div>
 
