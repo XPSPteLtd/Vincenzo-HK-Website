@@ -188,7 +188,7 @@ export const RestaurantWanchaiPage: React.FC<Props> = ({ lang, onBookClick }) =>
             { icon: <Utensils size={18} className="text-gold" />, en: 'Authentic Craft', hk: '正宗工藝', en_sub: 'Naples technique, premium Italian ingredients', hk_sub: '那不勒斯工藝，頂級意大利食材' },
             { icon: <Users size={18} className="text-gold" />, en: 'Every Occasion', hk: '適合各種場合', en_sub: 'Dates, groups, families, events', hk_sub: '約會、團體、家庭、活動' },
             { icon: <MapPin size={18} className="text-gold" />, en: 'Central Wan Chai', hk: '灣仔中心', en_sub: '5 min walk from MTR Exit D', hk_sub: '距港鐵 D 出口步行 5 分鐘' },
-            { icon: <Clock size={18} className="text-gold" />, en: 'Open Daily', hk: '每天開放', en_sub: '12:00 — 23:00, 7 days a week', hk_sub: '每週 7 天，12:00 — 23:00' },
+            { icon: <Clock size={18} className="text-gold" />, en: 'Open Daily', hk: '每天開放', en_sub: 'Lunch 12:00–15:00 · Dinner 18:00–23:00', hk_sub: '午市 12:00–15:00 · 晚市 18:00–23:00' },
             { icon: <Star size={18} className="text-gold" />, en: 'Walk-Ins Welcome', hk: '歡迎即場', en_sub: '30% seating reserved for walk-ins', hk_sub: '30% 座位保留供即場客人' },
           ].map((item, i) => (
             <div key={i} className="bg-surface border border-white/[0.07] p-5 flex flex-col gap-3">
@@ -262,11 +262,9 @@ export const RestaurantWanchaiPage: React.FC<Props> = ({ lang, onBookClick }) =>
           <p className="text-white text-sm font-sans font-medium mb-1">
             {isHK ? '每週 7 天' : 'Open 7 Days a Week'}
           </p>
-          <p className="text-white/50 text-sm font-sans font-light mb-4">12:00 — 23:00</p>
-          <div className="space-y-1.5 text-xs font-sans text-white/55">
-            <p>{isHK ? '午餐：12:00 — 15:00' : 'Lunch: 12:00 — 15:00'}</p>
-            <p>{isHK ? '晚餐：17:00 — 23:00' : 'Dinner: 17:00 — 23:00'}</p>
-            <p>{isHK ? '最後落單：21:45' : 'Last order: 21:45'}</p>
+          <div className="space-y-1.5 text-xs font-sans text-white/55 mb-4">
+            <p>{isHK ? '午市：12:00 — 15:00（最後落單 14:30）' : 'Lunch: 12:00 — 15:00 (last order 14:30)'}</p>
+            <p>{isHK ? '晚市：18:00 — 23:00（最後落單 21:45）' : 'Dinner: 18:00 — 23:00 (last order 21:45)'}</p>
           </div>
         </div>
 

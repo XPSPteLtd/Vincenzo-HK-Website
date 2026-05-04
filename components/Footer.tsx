@@ -104,7 +104,7 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
           </a>
           <span className="hidden sm:block w-1 h-1 rounded-full bg-white/20" />
           <p className="text-xs font-bold tracking-[0.15em] uppercase text-white/50">
-            {hk ? '每週 7 天 · 12:00 — 23:00' : 'OPEN 7 DAYS · 12:00 — 23:00'}
+            {hk ? '每週 7 天 · 午市 12:00–15:00 · 晚市 18:00–23:00' : 'OPEN 7 DAYS · LUNCH 12:00–15:00 · DINNER 18:00–23:00'}
           </p>
         </div>
 

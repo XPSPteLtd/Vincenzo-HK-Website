@@ -28,9 +28,18 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang, onBookClick }) => {
 
   const getRestaurantStatus = (date: Date): RestaurantStatus => {
     const hkMin = (date.getUTCHours() * 60 + date.getUTCMinutes() + 8 * 60) % (24 * 60);
-    if (hkMin < 690 || hkMin >= 1380) return 'closed';
+    // Overnight, or afternoon break 15:00–17:50
+    if (hkMin < 700 || (hkMin >= 900 && hkMin < 1070) || hkMin >= 1380) return 'closed';
+    // Lunch warm-up / opening (11:40–12:00)
     if (hkMin < 710) return 'warming_up';
     if (hkMin < 720) return 'opening_soon';
+    // Lunch service 12:00–14:15, then last-order window 14:15–14:30, kitchen closed 14:30–15:00
+    if (hkMin < 855) return 'now_open';
+    if (hkMin < 870) return 'kitchen_closing_soon';
+    if (hkMin < 900) return 'kitchen_closed';
+    // Dinner opening soon 17:50–18:00
+    if (hkMin < 1080) return 'opening_soon';
+    // Dinner service 18:00–21:30, last-order window 21:30–21:45, kitchen closed 21:45–22:45
     if (hkMin < 1290) return 'now_open';
     if (hkMin < 1305) return 'kitchen_closing_soon';
     if (hkMin < 1365) return 'kitchen_closed';
@@ -109,19 +118,36 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang, onBookClick }) => {
                 </div>
 
                 {/* Hours display */}
-                <div className="flex items-baseline gap-2 sm:gap-4">
-                  <span className="font-mono text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-bold tracking-tight">12:00</span>
-                  <span className="text-white/30 font-light text-xl sm:text-2xl">—</span>
-                  <span className="font-mono text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-bold tracking-tight">23:00</span>
+                <div className="space-y-3">
+                  <div className="flex items-baseline gap-2 sm:gap-3">
+                    <span className="text-[10px] uppercase tracking-widest text-white/40 font-bold w-14 shrink-0">{lang !== 'en' ? '午市' : 'Lunch'}</span>
+                    <span className="font-mono text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white font-bold tracking-tight">12:00</span>
+                    <span className="text-white/30 font-light text-lg sm:text-xl">—</span>
+                    <span className="font-mono text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white font-bold tracking-tight">15:00</span>
+                  </div>
+                  <div className="flex items-baseline gap-2 sm:gap-3">
+                    <span className="text-[10px] uppercase tracking-widest text-white/40 font-bold w-14 shrink-0">{lang !== 'en' ? '晚市' : 'Dinner'}</span>
+                    <span className="font-mono text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white font-bold tracking-tight">18:00</span>
+                    <span className="text-white/30 font-light text-lg sm:text-xl">—</span>
+                    <span className="font-mono text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white font-bold tracking-tight">23:00</span>
+                  </div>
                 </div>
 
-                {/* Open 7 days note */}
+                {/* Last order note */}
                 <div className="mt-6 pt-5 border-t border-white/[0.05]">
                   <p className="text-xs uppercase tracking-[0.35em] text-white/55 font-bold mb-2">
                     {lang !== 'en' ? '最後點餐' : 'Last Order'}
                   </p>
-                  <div className="flex items-baseline gap-3">
-                    <span className="font-display text-2xl text-gold font-bold">21:45</span>
+                  <div className="flex items-baseline gap-4">
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-[10px] text-white/35">{lang !== 'en' ? '午市' : 'Lunch'}</span>
+                      <span className="font-display text-xl text-gold/80 font-bold">14:30</span>
+                    </div>
+                    <span className="text-white/20">·</span>
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-[10px] text-white/35">{lang !== 'en' ? '晚市' : 'Dinner'}</span>
+                      <span className="font-display text-xl text-gold font-bold">21:45</span>
+                    </div>
                     <span className="text-[10px] text-white/35 font-light">
                       {lang !== 'en' ? '· 每週七天' : '· 7 days a week'}
                     </span>

@@ -12,9 +12,18 @@ type RestaurantStatus = 'closed' | 'warming_up' | 'opening_soon' | 'now_open' | 
 
 const getRestaurantStatus = (date: Date): RestaurantStatus => {
   const hkMin = (date.getUTCHours() * 60 + date.getUTCMinutes() + 8 * 60) % (24 * 60);
-  if (hkMin < 690 || hkMin >= 1380) return 'closed';
+  // Overnight, or afternoon break 15:00–17:50
+  if (hkMin < 700 || (hkMin >= 900 && hkMin < 1070) || hkMin >= 1380) return 'closed';
+  // Lunch warm-up / opening (11:40–12:00)
   if (hkMin < 710) return 'warming_up';
   if (hkMin < 720) return 'opening_soon';
+  // Lunch service 12:00–14:15, then last-order window 14:15–14:30, kitchen closed 14:30–15:00
+  if (hkMin < 855) return 'now_open';
+  if (hkMin < 870) return 'kitchen_closing_soon';
+  if (hkMin < 900) return 'kitchen_closed';
+  // Dinner opening soon 17:50–18:00
+  if (hkMin < 1080) return 'opening_soon';
+  // Dinner service 18:00–21:30, last-order window 21:30–21:45, kitchen closed 21:45–22:45
   if (hkMin < 1290) return 'now_open';
   if (hkMin < 1305) return 'kitchen_closing_soon';
   if (hkMin < 1365) return 'kitchen_closed';
@@ -96,19 +105,25 @@ export const QuickHours: React.FC<QuickHoursProps> = ({ isOpen, onClose, lang })
               <div className="flex items-center gap-3">
                 <Calendar size={16} className="text-gold/50" />
                 <span className="text-xs uppercase tracking-widest text-gray-300 font-bold">
-                  {lang !== 'en' ? '每日營業時間' : 'Service Hours'}
+                  {lang !== 'en' ? '午市' : 'Lunch'}
                 </span>
               </div>
-              <span className="font-mono text-white">12:00 — 23:00</span>
+              <div className="text-right">
+                <span className="font-mono text-white">12:00 — 15:00</span>
+                <p className="text-[10px] text-white/40 mt-0.5">{lang !== 'en' ? '最後點餐 14:30' : 'Last order 14:30'}</p>
+              </div>
             </div>
             <div className="flex justify-between items-center py-3 border-b border-white/5">
               <div className="flex items-center gap-3">
                 <Clock size={16} className="text-gold/50" />
                 <span className="text-xs uppercase tracking-widest text-gray-300 font-bold">
-                  {lang !== 'en' ? '最後點餐' : 'Last Order'}
+                  {lang !== 'en' ? '晚市' : 'Dinner'}
                 </span>
               </div>
-              <span className="font-mono text-white/70">21:45</span>
+              <div className="text-right">
+                <span className="font-mono text-white">18:00 — 23:00</span>
+                <p className="text-[10px] text-white/40 mt-0.5">{lang !== 'en' ? '最後點餐 21:45' : 'Last order 21:45'}</p>
+              </div>
             </div>
           </div>
 

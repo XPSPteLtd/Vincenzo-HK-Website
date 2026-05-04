@@ -80,8 +80,8 @@ export const PizzaNearMePage: React.FC<Props> = ({ lang, onBookClick, onDelivery
     {
       q_en: 'What are your opening hours for pizza in Wan Chai?',
       q_hk: '你們灣仔薄餅店的營業時間是什麼？',
-      a_en: 'We are open 7 days a week from 12:00 to 23:00 (noon to 11pm). Last order is at 21:45. Both dine-in and takeaway are available during all opening hours.',
-      a_hk: '我們每週 7 天開放，從中午 12:00 至晚上 23:00，最後落單時間為 21:45。所有營業時間內均提供堂食及外賣服務。',
+      a_en: 'We are open 7 days a week. Lunch runs 12:00 to 15:00 (last order 14:30), and dinner runs 18:00 to 23:00 (last order 21:45). Both dine-in and takeaway are available during all service hours.',
+      a_hk: '我們每週 7 天營業。午市為 12:00 至 15:00（最後落單 14:30），晚市為 18:00 至 23:00（最後落單 21:45）。所有營業時間均提供堂食及外賣服務。',
     },
   ];
 
@@ -258,11 +258,9 @@ export const PizzaNearMePage: React.FC<Props> = ({ lang, onBookClick, onDelivery
           <p className="text-white text-sm font-sans font-medium mb-1">
             {isHK ? '每週 7 天' : '7 Days a Week'}
           </p>
-          <p className="text-white/50 text-sm font-sans font-light mb-4">12:00 — 23:00</p>
-          <div className="space-y-1.5 text-xs font-sans text-white/55">
-            <p>{isHK ? '午餐：12:00 — 15:00' : 'Lunch: 12:00 — 15:00'}</p>
-            <p>{isHK ? '晚餐：17:00 — 23:00' : 'Dinner: 17:00 — 23:00'}</p>
-            <p>{isHK ? '最後落單：21:45' : 'Last order: 21:45'}</p>
+          <div className="space-y-1.5 text-xs font-sans text-white/55 mb-4">
+            <p>{isHK ? '午市：12:00 — 15:00（最後落單 14:30）' : 'Lunch: 12:00 — 15:00 (last order 14:30)'}</p>
+            <p>{isHK ? '晚市：18:00 — 23:00（最後落單 21:45）' : 'Dinner: 18:00 — 23:00 (last order 21:45)'}</p>
           </div>
         </div>
       </section>

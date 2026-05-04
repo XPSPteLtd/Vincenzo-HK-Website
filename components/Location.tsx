@@ -99,9 +99,8 @@ export const Location: React.FC<LocationProps> = ({ lang }) => {
                 <h3 className="text-[10px] font-bold tracking-[0.3em] uppercase">{t.hours}</h3>
               </div>
               <div className="pl-7 space-y-1 text-sm font-light text-gray-400">
-                <p>
-                  <span className="text-white/60 font-bold mr-2">{t.lunch}:</span>12:00 — 23:00
-                </p>
+                <p><span className="text-white/60 font-bold mr-2">{t.lunch}:</span>12:00 — 15:00</p>
+                <p><span className="text-white/60 font-bold mr-2">{t.dinner}:</span>18:00 — 23:00</p>
               </div>
             </div>
 
