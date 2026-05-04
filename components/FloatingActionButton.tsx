@@ -40,7 +40,7 @@ export const FloatingActionButton: React.FC<FloatingActionButtonProps> = ({ onCl
             <textPath href="#fabTextPath" startOffset="0%">
               {isPreOpening
                 ? 'RESERVATIONS OPEN FROM 29 APRIL 2026. RESERVATIONS OPEN FROM 29 APRIL 2026.'
-                : '• 12:00–23:00 • 7 DAYS OPEN • 12:00–23:00 • 7 DAYS OPEN '}
+                : '• LUNCH 12:00–15:00 • DINNER 18:00–23:00 • 7 DAYS OPEN • LUNCH 12:00–15:00 • DINNER 18:00–23:00 '}
             </textPath>
           </text>
         </svg>

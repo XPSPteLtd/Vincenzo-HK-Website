@@ -65,8 +65,8 @@ const faqs: FAQItem[] = [
     category: 'visit',
     q_en: 'What are your opening hours?',
     q_hk: '你們的營業時間是什麼？',
-    a_en: 'We are open 7 days a week from 12:00 to 23:00 (last order 21:45). Lunch service runs from 12:00 to 15:00, and dinner from 17:00 to 23:00.',
-    a_hk: '我們每週 7 天，中午 12:00 至晚上 23:00 營業（最後落單時間 21:45）。午餐服務時間為 12:00 至 15:00，晚餐時間為 17:00 至 23:00。',
+    a_en: 'We are open 7 days a week. Lunch runs 12:00 to 15:00 (last order 14:30), and dinner runs 18:00 to 23:00 (last order 21:45).',
+    a_hk: '我們每週 7 天營業。午市為 12:00 至 15:00（最後落單 14:30），晚市為 18:00 至 23:00（最後落單 21:45）。',
   },
   // Booking
   {

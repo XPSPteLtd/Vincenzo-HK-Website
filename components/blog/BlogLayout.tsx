@@ -67,8 +67,8 @@ export const BlogLayout: React.FC<BlogLayoutProps> = ({
           </h2>
           <p className="text-white/50 text-sm font-sans font-light mb-8">
             {isHK
-              ? 'Lee Tung Avenue, GF Unit 01 04 05, 灣仔 • 每週 7 天 12:00–23:00'
-              : 'Lee Tung Avenue, GF Unit 01 04 05, Wan Chai • Open 7 Days, 12:00–23:00'}
+              ? 'Lee Tung Avenue, GF Unit 01 04 05, 灣仔 • 午市 12:00–15:00 · 晚市 18:00–23:00'
+              : 'Lee Tung Avenue, GF Unit 01 04 05, Wan Chai • Lunch 12:00–15:00 · Dinner 18:00–23:00'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
