@@ -39,7 +39,6 @@ export type Page = 'home' | 'menu' | 'contact';
 
 const App: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isDeliveryOpen, setIsDeliveryOpen] = useState(false);
   const [isEventsOpen, setIsEventsOpen] = useState(false);
   const [isHoursOpen, setIsHoursOpen] = useState(false);
   const [isBannerActive, setIsBannerActive] = useState(false);
@@ -183,12 +182,6 @@ const App: React.FC = () => {
   
   const closeModal = () => setIsModalOpen(false);
   
-  const openDelivery = () => {
-    clearOverlays();
-    setIsDeliveryOpen(true);
-  };
-  
-  const closeDelivery = () => setIsDeliveryOpen(false);
 
   const openEvents = () => {
     clearOverlays();
@@ -207,7 +200,6 @@ const App: React.FC = () => {
   // Helper to clear all overlays when navigating to a section or switching tasks
   const clearOverlays = () => {
     setIsModalOpen(false);
-    setIsDeliveryOpen(false);
     setIsEventsOpen(false);
     setIsHoursOpen(false);
   };
@@ -221,7 +213,6 @@ const App: React.FC = () => {
       
       <Navbar 
         onBookClick={openModal} 
-        onDeliveryClick={openDelivery} 
         onEventsClick={openEvents}
         onHoursClick={openHours}
         lang={lang} 
@@ -236,7 +227,6 @@ const App: React.FC = () => {
           <>
             <Hero 
               onBookClick={openModal} 
-              onDeliveryClick={openDelivery} 
               onMenuClick={() => handlePageChange('menu')}
               lang={lang} 
             />
@@ -251,7 +241,6 @@ const App: React.FC = () => {
         <Route path="/menu/*" element={
           <div className="pt-24 lg:pt-64">
             <Menu 
-              onDeliveryClick={openDelivery} 
               lang={lang} 
             />
           </div>
@@ -277,7 +266,7 @@ const App: React.FC = () => {
         } />
 
         <Route path="/pizza-near-me-hong-kong" element={
-          <PizzaNearMePage lang={lang} onBookClick={openModal} onDeliveryClick={openDelivery} />
+          <PizzaNearMePage lang={lang} onBookClick={openModal} />
         } />
 
         <Route path="/reservations" element={
@@ -339,7 +328,6 @@ const App: React.FC = () => {
       <FloatingActionButton onClick={openModal} lang={lang} />
       
       <ReservationModal isOpen={isModalOpen} onClose={closeModal} lang={lang} />
-      <DeliveryModal isOpen={isDeliveryOpen} onClose={closeDelivery} lang={lang} />
       <EventsModal isOpen={isEventsOpen} onClose={closeEvents} lang={lang} />
       <QuickHours isOpen={isHoursOpen} onClose={closeHours} lang={lang} />
       

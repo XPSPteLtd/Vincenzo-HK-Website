@@ -176,10 +176,6 @@ export const LocationPage: React.FC<LocationPageProps> = ({ lang, onBookClick })
               label: isHK ? '預留 30% 即場座位' : 'Walk-Ins Welcome',
               detail: isHK ? '我們保留 30% 座位予即場客人' : 'We reserve 30% of seating for walk-in guests',
             },
-            {
-              label: isHK ? '薄餅外賣服務' : 'Delivery Available',
-              detail: isHK ? '提供外賣送餐服務' : 'Order pizza delivery to your door',
-            },
           ].map((item, i) => (
             <div key={i} className="flex items-start gap-4 p-5 bg-surface border border-white/[0.07]">
               <div className="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0" />

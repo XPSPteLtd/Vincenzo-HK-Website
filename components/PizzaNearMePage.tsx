@@ -6,10 +6,9 @@ import { Language } from '../translations';
 interface Props {
   lang: Language;
   onBookClick: () => void;
-  onDeliveryClick: () => void;
 }
 
-export const PizzaNearMePage: React.FC<Props> = ({ lang, onBookClick, onDeliveryClick }) => {
+export const PizzaNearMePage: React.FC<Props> = ({ lang, onBookClick }) => {
   const isHK = lang === 'hk';
 
   const orderOptions = [
@@ -33,16 +32,6 @@ export const PizzaNearMePage: React.FC<Props> = ({ lang, onBookClick, onDelivery
       action_hk: '致電訂購',
       isPhone: true,
     },
-    {
-      icon: <Bike size={22} className="text-gold" />,
-      en: 'Pizza Delivery',
-      hk: '外賣送餐',
-      en_sub: 'We partner with delivery platforms to bring our pizza to your door in Hong Kong.',
-      hk_sub: '我們與外賣平台合作，將薄餅送到您的門口。',
-      action_en: 'Order Delivery',
-      action_hk: '立即外賣',
-      onClick: onDeliveryClick,
-    },
   ];
 
   const signaturePizzas = [
@@ -60,10 +49,10 @@ export const PizzaNearMePage: React.FC<Props> = ({ lang, onBookClick, onDelivery
       a_hk: '如果您在灣仔附近，利東街的 Vincenzo Capuano 是香港頂級薄餅目的地之一——被 Top 50 Pizza 評為全球第 13 名。距灣仔港鐵站 D 出口步行僅 5 分鐘。',
     },
     {
-      q_en: 'Do you do pizza takeaway or delivery in Hong Kong?',
-      q_hk: '你們在香港有薄餅外賣或送餐服務嗎？',
-      a_en: 'Yes. You can collect your pizza at our Wan Chai restaurant, or order delivery through our delivery partners. Call +852-2802 2802 to arrange a takeaway collection.',
-      a_hk: '有的。您可以在我們的灣仔餐廳自取，或通過外賣合作平台訂購送餐。外賣自取請致電 +852-2802 2802 預先安排。',
+      q_en: 'Do you do pizza takeaway in Hong Kong?',
+      q_hk: '你們在香港有薄餅外賣服務嗎？',
+      a_en: 'Yes. You can collect your pizza at our Wan Chai restaurant. Call +852-2802 2802 to arrange a takeaway collection.',
+      a_hk: '有的。您可以在我們的灣仔餐廳自取。外賣自取請致電 +852-2802 2802 預先安排。',
     },
     {
       q_en: 'What is the phone number for pizza takeaway? (薄餅外賣電話)',
@@ -80,7 +69,7 @@ export const PizzaNearMePage: React.FC<Props> = ({ lang, onBookClick, onDelivery
     {
       q_en: 'What are your opening hours for pizza in Wan Chai?',
       q_hk: '你們灣仔薄餅店的營業時間是什麼？',
-      a_en: 'We are open 7 days a week. Lunch runs 12:00 to 15:00 (last order 14:30), and dinner runs 18:00 to 23:00 (last order 21:45). Both dine-in and takeaway are available during all service hours.',
+      a_en: 'We are open 7 days a week. Lunch runs 12:00 to 15:00 (last order 14:30), and dinner runs 18:00 to 23:00 (last order 21:45). Dine-in and takeaway are available during all service hours.',
       a_hk: '我們每週 7 天營業。午市為 12:00 至 15:00（最後落單 14:30），晚市為 18:00 至 23:00（最後落單 21:45）。所有營業時間均提供堂食及外賣服務。',
     },
   ];
@@ -91,7 +80,7 @@ export const PizzaNearMePage: React.FC<Props> = ({ lang, onBookClick, onDelivery
       {/* Hero */}
       <section className="max-w-6xl mx-auto px-6 pt-10 pb-16">
         <p className="text-gold text-[10px] font-bold tracking-[0.35em] uppercase mb-4">
-          {isHK ? '灣仔 · 香港 · 外賣 & 堂食' : 'Wan Chai · Hong Kong · Dine In & Takeaway'}
+          {isHK ? '灣仔 · 香港 · 外賣自取 & 堂食' : 'Wan Chai · Hong Kong · Dine In & Takeaway'}
         </p>
         <h1 className="font-display text-5xl md:text-7xl text-white leading-none mb-6">
           {isHK
@@ -100,8 +89,8 @@ export const PizzaNearMePage: React.FC<Props> = ({ lang, onBookClick, onDelivery
         </h1>
         <p className="text-white/60 text-base md:text-lg max-w-2xl leading-relaxed mb-8 font-sans font-light">
           {isHK
-            ? '在香港尋找附近的薄餅？Vincenzo Capuano 坐落於灣仔利東街，提供堂食、外賣自取及送餐服務。由世界冠軍主廚主理，榮獲全球第 13 名。薄餅外賣電話：+852-2802 2802。'
-            : "Searching for pizza near you in Hong Kong? Vincenzo Capuano in Wan Chai serves world-ranked Neapolitan pizza — available for dine-in, collection, and delivery. Ranked #13 in the world by Top 50 Pizza."}
+            ? '在香港尋找附近的薄餅？Vincenzo Capuano 坐落於灣仔利東街，提供堂食及外賣自取服務。由世界冠軍主廚主理，榮獲全球第 13 名。薄餅外賣電話：+852-2802 2802。'
+            : "Searching for pizza near you in Hong Kong? Vincenzo Capuano in Wan Chai serves world-ranked Neapolitan pizza — available for dine-in and collection. Ranked #13 in the world by Top 50 Pizza."}
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
           <button
@@ -110,12 +99,6 @@ export const PizzaNearMePage: React.FC<Props> = ({ lang, onBookClick, onDelivery
           >
             {isHK ? '預訂座位' : 'Dine In — Reserve Now'}
             <ChevronRight size={14} />
-          </button>
-          <button
-            onClick={onDeliveryClick}
-            className="inline-flex items-center gap-2 border border-white/20 text-white/70 text-xs font-bold tracking-[0.2em] uppercase px-7 py-3.5 hover:border-white/60 hover:text-white transition-colors"
-          >
-            {isHK ? '薄餅外賣' : 'Order Pizza Delivery'}
           </button>
         </div>
       </section>
@@ -130,7 +113,7 @@ export const PizzaNearMePage: React.FC<Props> = ({ lang, onBookClick, onDelivery
           {isHK ? '訂購方式' : 'How to Order'}
         </p>
         <h2 className="font-display text-4xl text-white mb-10">
-          {isHK ? '堂食、外賣自取或外送到家' : 'Dine In, Collect, or Get Delivery'}
+          {isHK ? '堂食或外賣自取' : 'Dine In or Collect'}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {orderOptions.map((opt, i) => (
@@ -236,12 +219,12 @@ export const PizzaNearMePage: React.FC<Props> = ({ lang, onBookClick, onDelivery
           </a>
           <p className="text-white/50 text-sm font-sans font-light leading-relaxed">
             {isHK
-              ? '致電預訂外賣自取，或查詢更多外送詳情。'
-              : 'Call to arrange pizza collection or ask about delivery options.'}
+              ? '致電預訂外賣自取。'
+              : 'Call to arrange pizza collection.'}
           </p>
           <div className="mt-4 pt-4 border-t border-white/[0.07]">
             <p className="text-white/40 text-[11px] font-sans">
-              {isHK ? '薄餅外賣 · 外賣自取 · 外送服務' : 'Takeaway · Collection · Delivery'}
+              {isHK ? '薄餅外賣 · 外賣自取' : 'Takeaway · Collection'}
             </p>
           </div>
         </div>
@@ -292,8 +275,8 @@ export const PizzaNearMePage: React.FC<Props> = ({ lang, onBookClick, onDelivery
         </h2>
         <p className="text-white/50 text-sm font-sans font-light max-w-xl mx-auto mb-10">
           {isHK
-            ? '堂食、外賣自取或外送——Vincenzo Capuano 當代拿坡里薄餅，全球第 13 名，近在灣仔。'
-            : 'Dine in, collect, or order delivery. World #13 Neapolitan pizza, right here in Wan Chai, Hong Kong.'}
+            ? '堂食或外賣自取——Vincenzo Capuano 當代拿坡里薄餅，全球第 13 名，近在灣仔。'
+            : 'Dine in or collect. World #13 Neapolitan pizza, right here in Wan Chai, Hong Kong.'}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button
@@ -302,12 +285,6 @@ export const PizzaNearMePage: React.FC<Props> = ({ lang, onBookClick, onDelivery
           >
             {isHK ? '訂座堂食' : 'Reserve a Table'}
             <ChevronRight size={14} />
-          </button>
-          <button
-            onClick={onDeliveryClick}
-            className="inline-flex items-center justify-center gap-2 border border-white/20 text-white/70 text-xs font-bold tracking-[0.2em] uppercase px-8 py-4 hover:border-white/60 hover:text-white transition-colors"
-          >
-            {isHK ? '薄餅外賣' : 'Order Delivery'}
           </button>
         </div>
       </section>

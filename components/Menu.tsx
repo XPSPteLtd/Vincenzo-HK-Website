@@ -2,13 +2,12 @@
 import React, { useMemo, useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { menuItems } from '../menuData';
-import { Leaf, Flame, Star, ChevronLeft, ChevronRight, SearchX, ShoppingBag, Scissors, Info } from 'lucide-react';
+import { Leaf, Flame, Star, ChevronLeft, ChevronRight, SearchX, ShoppingBag, Scissors, Info, Download, FileText } from 'lucide-react';
 import { MenuItem } from '../types';
 import { SafeImage } from './ui/SafeImage';
 import { Language, translations } from '../translations';
 
 interface MenuProps {
-  onDeliveryClick?: () => void;
   lang: Language;
 }
 
@@ -116,8 +115,7 @@ const toLocalizedNumber = (n: number, lang: Language) => {
 const MenuItemCard: React.FC<{
   item: MenuItem;
   lang: Language;
-  onDeliveryClick?: () => void;
-}> = ({ item, lang, onDeliveryClick }) => {
+}> = ({ item, lang }) => {
   const t = translations[lang].menu;
   const [isNoteOpen, setIsNoteOpen] = useState(false);
 
@@ -144,12 +142,6 @@ const MenuItemCard: React.FC<{
             {t.signature}
           </div>
         )}
-        <button
-          onClick={(e) => { e.stopPropagation(); onDeliveryClick?.(); }}
-          className="absolute bottom-2 right-2 md:bottom-3 md:right-3 bg-white/10 backdrop-blur-md hover:bg-gold p-1.5 md:p-2.5 rounded-full border border-white/20 transition-all duration-300 opacity-100 md:opacity-0 group-hover:opacity-100 md:translate-y-1 group-hover:translate-y-0"
-        >
-          <ShoppingBag size={11} className="text-white group-hover:text-charcoal md:w-3.5 md:h-3.5" />
-        </button>
       </div>
 
       {/* Text content */}
@@ -300,7 +292,75 @@ const BeverageCard: React.FC<{
   );
 };
 
-export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
+const MenuDownloadBanner: React.FC<{ lang: Language }> = ({ lang }) => {
+  const isHK = lang === 'hk';
+  const foodPdf = "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/hk%20menu/DEPLIANT%20MENU%20-2%20QFile_web.pdf";
+  const drinksPdf = "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/hk%20menu/Drinks%20Menu%20HK_Final_web.pdf";
+
+  return (
+    <div className="mb-12 md:mb-20 animate-in fade-in slide-in-from-top-4 duration-1000">
+      <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-white/[0.05] via-white/[0.02] to-transparent border border-white/10 p-8 md:p-12 lg:p-16">
+        {/* Background Decorative Element */}
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-gold/5 to-transparent pointer-events-none" />
+        <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-gold/5 rounded-full blur-3xl pointer-events-none" />
+        
+        <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-10">
+          <div className="text-center lg:text-left max-w-2xl">
+            <div className="flex items-center justify-center lg:justify-start gap-3 mb-6">
+               <div className="p-3 rounded-2xl bg-gold/10 border border-gold/20 shadow-inner">
+                 <FileText className="text-gold" size={24} />
+               </div>
+               <div className="h-px w-8 bg-gold/30 hidden sm:block" />
+               <span className="text-gold text-[10px] md:text-xs font-bold tracking-[0.4em] uppercase">
+                 {isHK ? '下載菜單 (PDF)' : 'Download Menu (PDF)'}
+               </span>
+            </div>
+            <h3 className="text-3xl md:text-5xl font-display text-white mb-6 leading-[1.1]">
+              {isHK ? '在高清 PDF 中體驗完整系列' : 'Experience the full collection in high-resolution PDF'}
+            </h3>
+            <p className="text-white/50 text-sm md:text-lg font-light font-sans max-w-lg mx-auto lg:mx-0 leading-relaxed">
+              {isHK ? '隨時隨地查看我們的當代拿坡里薄餅、手製意粉及精選飲品。' : 'Browse our award-winning pizzas, handmade pastas, and curated beverage selection at your convenience.'}
+            </p>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-5 w-full lg:w-auto">
+            <a
+              href={foodPdf}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center justify-center gap-4 px-10 py-6 bg-gold hover:bg-white text-charcoal rounded-2xl transition-all duration-500 shadow-2xl shadow-gold/10 hover:shadow-white/10 active:scale-[0.98]"
+            >
+              <div className="flex flex-col items-start leading-none">
+                <span className="text-[9px] font-black uppercase tracking-[0.2em] opacity-50 mb-1.5">{isHK ? '完整菜單' : 'Full Menu'}</span>
+                <span className="text-sm md:text-base font-bold uppercase tracking-wider">{isHK ? '食品菜單' : 'Food Menu'}</span>
+              </div>
+              <div className="p-2 bg-charcoal/10 rounded-lg group-hover:bg-charcoal/5 transition-colors">
+                <Download size={20} className="group-hover:translate-y-0.5 transition-transform duration-300" />
+              </div>
+            </a>
+
+            <a
+              href={drinksPdf}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center justify-center gap-4 px-10 py-6 bg-white/5 hover:bg-white/10 backdrop-blur-md border border-white/10 text-white rounded-2xl transition-all duration-500 hover:border-white/30 active:scale-[0.98]"
+            >
+              <div className="flex flex-col items-start leading-none">
+                <span className="text-[9px] font-black uppercase tracking-[0.2em] opacity-30 mb-1.5">{isHK ? '精選飲品' : 'Curated Selection'}</span>
+                <span className="text-sm md:text-base font-bold uppercase tracking-wider">{isHK ? '飲品菜單' : 'Drinks Menu'}</span>
+              </div>
+              <div className="p-2 bg-white/10 rounded-lg group-hover:bg-white/20 transition-colors">
+                <Download size={20} className="group-hover:translate-y-0.5 transition-transform duration-300" />
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export const Menu: React.FC<MenuProps> = ({ lang }) => {
   const t = translations[lang].menu;
   const items = menuItems;
   const ITEMS_PER_PAGE = 6;
@@ -471,6 +531,9 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
           </div>
         </div>
 
+        {/* PDF Download Banner */}
+        <MenuDownloadBanner lang={lang} />
+
         {/* Section Filter — only shown for non-Beverages views */}
         {activeCategory !== 'Beverages' && (
           <div className="overflow-x-auto scrollbar-hide -mx-5 px-5 md:mx-0 md:px-0 mb-8 md:mb-10">
@@ -574,7 +637,6 @@ export const Menu: React.FC<MenuProps> = ({ onDeliveryClick, lang }) => {
                     <MenuItemCard 
                       item={item} 
                       lang={lang} 
-                      onDeliveryClick={onDeliveryClick} 
                     />
                   </div>
                 ))

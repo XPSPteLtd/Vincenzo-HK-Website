@@ -5,7 +5,6 @@ import { Language, translations } from '../translations';
 
 interface HeroProps {
   onBookClick: () => void;
-  onDeliveryClick: () => void;
   onMenuClick: () => void;
   lang: Language;
 }

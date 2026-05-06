@@ -6,7 +6,6 @@ import { Page } from '../App';
 
 interface NavbarProps {
   onBookClick: () => void;
-  onDeliveryClick: () => void;
   onEventsClick: () => void;
   onHoursClick: () => void;
   lang: Language;
@@ -18,7 +17,6 @@ interface NavbarProps {
 
 export const Navbar: React.FC<NavbarProps> = ({ 
   onBookClick, 
-  onDeliveryClick, 
   onEventsClick,
   onHoursClick,
   lang, 
