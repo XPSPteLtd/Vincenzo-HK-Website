@@ -13,24 +13,27 @@ export const Accolades: React.FC<AccoladesProps> = ({ lang }) => {
 
   const items = [
     {
-      logo: <img src="/caputo.webp" alt="Caputo 1924" className="h-8 w-auto object-contain opacity-80" />,
+      logo: <img src="https://www.capvin.com/wp-content/uploads/2023/11/logo-caputo@2x.png" alt="Caputo 1924" className="h-14 md:h-16 w-auto object-contain opacity-100" />,
       title: t.impastoTitle,
       desc: t.impastoDesc,
       accent: 'text-gold',
     },
     {
-      logo: (
-        <div className="flex flex-col items-center leading-none">
-          <span className="text-white font-sans font-black text-2xl leading-none">#13</span>
-          <span className="text-white/30 text-[8px] uppercase tracking-widest font-bold mt-0.5">World</span>
-        </div>
-      ),
+      logo: <img src="https://www.capvin.com/wp-content/uploads/2026/01/top-50-capuano.png" alt="50 Top Pizza" className="h-14 md:h-16 w-auto object-contain opacity-100" />,
       title: t.rankingTitle,
       desc: t.rankingDesc,
       accent: 'text-red',
     },
     {
-      logo: <img src="/gambero_rosso.webp" alt="Gambero Rosso" className="h-8 w-auto object-contain opacity-80" />,
+      logo: (
+        <div className="bg-white px-4 py-2 rounded-xl flex items-center justify-center shadow-lg">
+          <img 
+            src="https://www.capvin.com/wp-content/uploads/2026/01/254AD26A-3572-4DBC-995C-1390FFB9A480.png" 
+            alt="Gambero Rosso" 
+            className="h-10 md:h-12 w-auto object-contain" 
+          />
+        </div>
+      ),
       title: t.gamberoTitle,
       desc: t.gamberoDesc,
       accent: 'text-gold',
@@ -61,7 +64,7 @@ export const Accolades: React.FC<AccoladesProps> = ({ lang }) => {
             <div key={i} className="flex flex-col md:px-10 py-8 md:py-0 gap-5 group first:md:pl-0 last:md:pr-0">
 
               {/* Logo / badge */}
-              <div className="h-10 flex items-center">
+              <div className="h-16 md:h-20 flex items-center">
                 {item.logo}
               </div>
 
@@ -71,7 +74,7 @@ export const Accolades: React.FC<AccoladesProps> = ({ lang }) => {
                   {item.title}
                 </h3>
                 <div className="h-px w-8 bg-white/10 mb-4 group-hover:w-full transition-all duration-700" />
-                <p className="text-white/65 text-sm md:text-base leading-relaxed font-light">
+                <p className="text-white/65 text-sm md:text-base leading-relaxed font-light whitespace-pre-line">
                   {item.desc}
                 </p>
               </div>

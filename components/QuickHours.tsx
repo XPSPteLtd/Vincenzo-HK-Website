@@ -79,7 +79,7 @@ export const QuickHours: React.FC<QuickHoursProps> = ({ isOpen, onClose, lang })
           <div className="flex justify-between items-center mb-8">
             <div className="flex items-center gap-3">
               <Clock size={20} className="text-gold" />
-              <h3 className="font-display text-xl text-white uppercase tracking-widest">Operating Hours</h3>
+              <h3 className="font-display text-xl text-white uppercase tracking-widest">Opening Hours</h3>
             </div>
             <button onClick={onClose} className="p-2 hover:bg-white/5 rounded-full transition-colors">
               <X size={20} className="text-gray-400" />

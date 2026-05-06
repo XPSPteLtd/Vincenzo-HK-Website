@@ -15,7 +15,7 @@ export const translations = {
       home: 'Home',
       contact: 'Contact',
       scroll: 'Scroll',
-      hours: 'Hours'
+      hours: 'Opening Hours'
     },
     hero: {
       champion: 'Napoli · 2022 World Pizza Champion',
@@ -35,7 +35,7 @@ export const translations = {
       neapolitan: 'Neapolitan',
       description: "We don't just make pizza; we define an era. Contemporary pizza differs from the traditional for its visually pronounced crust (cornicione) and high hydration dough.",
       nuvolaTitle: 'Nuvola Super',
-      nuvolaDesc: 'A specialized flour blend fermented for 36+ hours. The result is a structure that is incredibly soft, airy, and light on the stomach.',
+      nuvolaDesc: 'A specialized flour blend fermented for up to 30 hours. The result is a structure that is incredibly soft, airy, and light on the stomach.',
       scissorsTitle: 'The Golden Scissors',
       scissorsDesc: 'Cutting with a wheel crushes the alveoli. We use golden scissors to gently slice the pizza, preserving the cloud-like texture.',
       quote: "Vivere di pizza è meraviglioso"
@@ -167,7 +167,7 @@ export const translations = {
       mtrInfo: 'MTR Wan Chai — Exit D (5 min walk)',
       reservationDesc: 'Secure your seat and experience award-winning contemporary Neapolitan pizza.',
       openingSoon: 'Now Open',
-      plannedHours: 'Service Hours',
+      plannedHours: 'Opening Hours',
       tentative: 'Daily',
       tentativeOpeningDate: 'Opened',
       openingDateValue: '29 April 2026',
@@ -232,9 +232,9 @@ export const translations = {
         heritage: 'Heritage'
       },
       badge: 'Vincenzo Capuano Hub',
-      title: 'Service Hours',
+      title: 'Opening Hours',
       operations: {
-        title: 'Service Hours',
+        title: 'Opening Hours',
         lunch: 'Lunch',
         dinner: 'Dinner',
         lastOrder: 'Last Order',
@@ -255,11 +255,11 @@ export const translations = {
     },
     accolades: {
       impastoTitle: 'Our Dough',
-      impastoDesc: 'Our pizza features a soft and light dough, made with the excellence of Caputo flour. Savory, fragrant, and irresistible.',
-      rankingTitle: 'Top 50 World Artisan Pizza Chains',
-      rankingDesc: 'Ranked #12 (2024) and #13 (2025) globally by 50 Top Pizza. Also awarded Best Marketing 2024 and Best Beer Service 2025.',
+      impastoDesc: 'Crafted with Caputo Nuvola Super Flour and fermented for up to 30 hours. Incredibly soft, airy and light on the stomach — with a signature pronounced cornicione.',
+      rankingTitle: '50 Top Pizza',
+      rankingDesc: '• World Pizza Champion 2022\n• #12 World Artisan Pizza Chains 2024\n• #13 World Artisan Pizza Chains 2025\n• Best Marketing Award 2024',
       gamberoTitle: '2 Spicchi Gambero Rosso',
-      gamberoDesc: 'Naples is the cradle of pizza, and we are proud to bring its tradition to the world. A journey into the heart of Partenope.',
+      gamberoDesc: "Awarded 2 Spicchi by Gambero Rosso — one of Italy's most prestigious food guides, recognising outstanding quality and authenticity.",
       worldChampion: 'World Pizza Champion'
     },
     testimonials: {
@@ -308,7 +308,7 @@ export const translations = {
       neapolitan: '拿坡里薄餅',
       description: '我們不僅在製作薄餅，更在定義一個時代。當代薄餅與傳統風格的不同之處在於其顯著的餅皮（cornicione）和高含水量的麵團。',
       nuvolaTitle: 'Nuvola Super 麵粉',
-      nuvolaDesc: '選用專門的麵粉配方，經過36小時以上的發酵。成果是結構極其柔軟、輕盈，且易於消化。',
+      nuvolaDesc: '選用專門的麵粉配方，經過 30 小時以上的發酵。成果是結構極其柔軟、輕盈，且易於消化。',
       scissorsTitle: '黃金剪刀',
       scissorsDesc: '使用滾輪切割會壓碎氣孔。我們堅持使用黃金剪刀輕輕剪開薄餅，以保留雲朵般的質感。',
       quote: "Vivere di pizza è meraviglioso（為薄餅而活是美妙的）"
@@ -528,11 +528,11 @@ export const translations = {
     },
     accolades: {
       impastoTitle: '我們的麵團',
-      impastoDesc: '我們的薄餅擁有柔軟輕盈的麵團，選用優質的 Caputo 麵粉製作。美味、芬芳且令人難以抗拒。',
-      rankingTitle: '全球 50 大手工薄餅品牌',
-      rankingDesc: '獲 50 Top Pizza 評為全球第 12 位（2024年）及第 13 位（2025年）。並榮獲 2024 年度最佳營銷獎及 2025 年度最佳啤酒服務獎。',
+      impastoDesc: '選用 Caputo Nuvola Super 麵粉並經過長達 30 小時發酵。口感極其柔軟、輕盈且易於消化，並帶有標誌性的雲朵餅皮 (cornicione)。',
+      rankingTitle: '50 Top Pizza',
+      rankingDesc: '• 2022 世界薄餅冠軍\n• 2024 全球 50 大手工薄餅連鎖店第 12 位\n• 2025 全球 50 大手工薄餅連鎖店第 13 位\n• 2024 年度最佳營銷獎',
       gamberoTitle: '大紅蝦 2 Spicchi 評級',
-      gamberoDesc: '拿坡里是薄餅的發源地，我們自豪地將其傳承帶向世界。一場深入拿坡里心靈的旅程。',
+      gamberoDesc: '榮獲意大利最權威美食指南 Gambero Rosso (大紅蝦) 頒發 2 Spicchi 評級，表揚其卓越品質與正宗風味。',
       worldChampion: '世界薄餅冠軍'
     },
     testimonials: {

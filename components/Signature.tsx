@@ -80,7 +80,7 @@ export const Signature: React.FC<SignatureProps> = ({ lang }) => {
           {/* Image fills the entire right column */}
           <div className="absolute inset-0 overflow-hidden lg:rounded-l-3xl shadow-[0_0_60px_rgba(0,0,0,0.6)] group">
             <SafeImage
-              src="/philosophy-pizza.webp"
+              src="https://vincenzocapuano.sg/philosophy-pizza.webp"
               alt="Vincenzo Capuano Signature Pizza Experience"
               fallbackPrompt="Professional lifestyle shot of someone enjoying an authentic Neapolitan pizza, contemporary setting, warm lighting"
               aspectRatio="auto"
