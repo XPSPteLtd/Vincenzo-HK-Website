@@ -24,25 +24,9 @@ export const menuItems: MenuItem[] = [
     popular: true, dietary: ["Vegetarian", "Contains Nuts"]
   },
   {
-    id: "ss-3", name: "BURRATA CLASSICA 300G", nameZh: "傳統布拉塔 300G",
-    description: "Burrata cheese 300g, rucola, cherry tomatoes, basil pesto, oil caviar, balsamic",
-    descriptionZh: "布拉塔芝士 (300克) 配芝麻菜、車厘茄、羅勒青醬、油魚子及意大利香醋",
-    mainCategory: "Ala-carte", category: "Starters & Salads", categoryZh: "精選前菜及沙律",
-    image: "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/drive-download-20260414T111937Z-3-001/Burrata%20Classica%20(300g).jpg",
-    dietary: ["Vegetarian", "Contains Nuts"]
-  },
-  {
     id: "ss-4", name: "BURRATA PESCA E ARANCIA 125G", nameZh: "水蜜桃橙香布拉塔 125G",
     description: "Burrata cheese 125g, spicy peach salsa, orange pulp, roasted beetroot, pecan, cayenne honey glaze, oil caviar",
     descriptionZh: "布拉塔芝士 (125克) 配香辣水蜜桃莎莎醬、橙肉、烤紅甜菜、核桃、辣椒蜂蜜及油魚子",
-    mainCategory: "Ala-carte", category: "Starters & Salads", categoryZh: "精選前菜及沙律",
-    image: "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/drive-download-20260414T111937Z-3-001/Burrata%20Pesca%20e%20arancia%20(125g).jpg",
-    dietary: ["Vegetarian", "Spicy", "Contains Nuts"]
-  },
-  {
-    id: "ss-5", name: "BURRATA PESCA E ARANCIA 300G", nameZh: "水蜜桃橙香布拉塔 300G",
-    description: "Burrata cheese 300g, spicy peach salsa, orange pulp, roasted beetroot, pecan, cayenne honey glaze, oil caviar",
-    descriptionZh: "布拉塔芝士 (300克) 配香辣水蜜桃莎莎醬、橙肉、烤紅甜菜、核桃、辣椒蜂蜜及油魚子",
     mainCategory: "Ala-carte", category: "Starters & Salads", categoryZh: "精選前菜及沙律",
     image: "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/drive-download-20260414T111937Z-3-001/Burrata%20Pesca%20e%20arancia%20(125g).jpg",
     dietary: ["Vegetarian", "Spicy", "Contains Nuts"]
