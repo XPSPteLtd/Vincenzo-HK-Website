@@ -237,7 +237,7 @@ export const RestaurantWanchaiPage: React.FC<Props> = ({ lang, onBookClick }) =>
             {isHK ? '利東街, GF Unit 01 04 05' : 'Lee Tung Avenue, GF Unit 01 04 05'}
           </p>
           <p className="text-white/50 text-sm font-sans font-light">
-            {isHK ? '200 皇后大道東, 灣仔, 香港' : '200 Queens Road East, Wan Chai, HK'}
+            {isHK ? '200 皇后大道東, 灣仔, 香港' : '200 Queens Road East, Wan Chai, Hong Kong'}
           </p>
           <a
             href="https://maps.app.goo.gl/mWac4KcwCQSUUibU9"

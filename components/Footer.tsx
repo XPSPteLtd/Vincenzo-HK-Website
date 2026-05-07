@@ -99,7 +99,7 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
           >
             <MapPin size={13} className="text-white/30 group-hover:text-gold transition-colors shrink-0" />
             <span className="text-xs font-light tracking-wide">
-              {hk ? '利東街, GF Unit 01 04 05, 灣仔, 香港' : 'Lee Tung Avenue, GF Unit 01 04 05, Wan Chai, HK'}
+              {hk ? '利東街, GF Unit 01 04 05, 灣仔, 香港' : 'Lee Tung Avenue, GF Unit 01 04 05, Wan Chai, Hong Kong'}
             </span>
           </a>
           <span className="hidden sm:block w-1 h-1 rounded-full bg-white/20" />

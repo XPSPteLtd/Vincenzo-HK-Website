@@ -177,7 +177,7 @@ export const translations = {
       bookingNotice: 'Now Taking Reservations',
       street: 'Lee Tung Avenue',
       unit: 'GF Unit 01 04 05',
-      district: '200 Queens Road East · Wan Chai, HK',
+      district: '200 Queens Road East · Wan Chai, Hong Kong',
       statusClosed: 'Closed',
       statusWarmingUp: 'Warming Up',
       statusOpeningSoon: 'Opening Soon',
