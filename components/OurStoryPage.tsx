@@ -55,8 +55,8 @@ export const OurStoryPage: React.FC<OurStoryPageProps> = ({ lang, onBookClick, o
               </p>
               <p>
                 {isHK
-                  ? '他的薄餅以高水分麵糰、36 小時以上發酵工藝著稱，製作出那標誌性的雲朵般輕盈麵皮（cornicione）。這不是簡單的複製傳統，而是傳統的進化。'
-                  : 'His hallmark is the high-hydration dough fermented for 36+ hours, producing the signature Nuvola crust — a cornicione so light, airy, and digestible that it changed what people expect from Neapolitan pizza. This is not tradition repeated. It is tradition evolved.'}
+                  ? '他的薄餅以高水分麵糰、30 小時以上發酵工藝著稱，製作出那標誌性的雲朵般輕盈麵皮（cornicione）。這不是簡單的複製傳統，而是傳統的進化。'
+                  : 'His hallmark is the high-hydration dough fermented for 30+ hours, producing the signature Nuvola crust — a cornicione so light, airy, and digestible that it changed what people expect from Neapolitan pizza. This is not tradition repeated. It is tradition evolved.'}
               </p>
             </div>
           </div>
@@ -114,8 +114,8 @@ export const OurStoryPage: React.FC<OurStoryPageProps> = ({ lang, onBookClick, o
               {
                 title_en: 'Nuvola Super Flour',
                 title_hk: 'Nuvola Super 麵粉',
-                body_en: 'A specialised flour blend fermented for 36+ hours. The result is a dough structure that is incredibly soft, airy, and light on the stomach.',
-                body_hk: '專屬麵粉配方，經過 36 小時以上發酵。造就出令人難以置信的柔軟、充滿空氣感且易於消化的麵糰結構。',
+                body_en: 'A specialised flour blend fermented for 30+ hours. The result is a dough structure that is incredibly soft, airy, and light on the stomach.',
+                body_hk: '專屬麵粉配方，經過 30 小時以上發酵。造就出令人難以置信的柔軟、充滿空氣感且易於消化的麵糰結構。',
               },
               {
                 title_en: 'The Golden Scissors',
@@ -215,8 +215,8 @@ export const OurStoryPage: React.FC<OurStoryPageProps> = ({ lang, onBookClick, o
             {
               q_en: 'What makes Vincenzo Capuano different from other pizzerias?',
               q_hk: 'Vincenzo Capuano 與其他薄餅店有何不同？',
-              a_en: 'Our pizzas are defined by the contemporary Neapolitan style — a pronounced, airy cornicione crust produced from high-hydration dough fermented for 36+ hours. We use the signature golden scissors for cutting and source only premium Italian ingredients including Caputo flour and San Marzano tomatoes.',
-              a_hk: '我們的薄餅以當代拿坡里風格為特色——明顯突出的 cornicione 麵皮由高水分麵糰經 36 小時以上發酵製成。我們使用標誌性的黃金剪刀切薄餅，並只使用頂級意大利食材，包括 Caputo 麵粉和 San Marzano 番茄。',
+              a_en: 'Our pizzas are defined by the contemporary Neapolitan style — a pronounced, airy cornicione crust produced from high-hydration dough fermented for 30+ hours. We use the signature golden scissors for cutting and source only premium Italian ingredients including Caputo flour and San Marzano tomatoes.',
+              a_hk: '我們的薄餅以當代拿坡里風格為特色——明顯突出的 cornicione 麵皮由高水分麵糰經 30 小時以上發酵製成。我們使用標誌性的黃金剪刀切薄餅，並只使用頂級意大利食材，包括 Caputo 麵粉和 San Marzano 番茄。',
             },
             {
               q_en: 'Why is your pizza style called contemporary Neapolitan?',

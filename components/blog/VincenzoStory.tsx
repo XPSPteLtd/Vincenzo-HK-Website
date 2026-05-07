@@ -27,7 +27,7 @@ export const VincenzoStory: React.FC<Props> = ({ lang, onBookClick }) => {
           <BlogP>Vincenzo 並不滿足於簡單地重複傳統。他深入研究麵糰發酵的科學、麵粉的特性和烘焙技術，最終開發出自己獨特的當代拿坡里薄餅風格。</BlogP>
           <BlogList items={[
             '高水分麵糰配方——突破傳統拿坡里薄餅的水分比例',
-            '36 小時以上的長時間低溫發酵——創造出獨特的麵皮結構',
+            '30 小時以上的長時間低溫發酵——創造出獨特的麵皮結構',
             'Nuvola Super 麵粉——專為當代拿坡里薄餅研發的特殊麵粉',
             '黃金剪刀切割技術——保護 cornicione 麵皮的完整性',
           ]} />
@@ -51,7 +51,7 @@ export const VincenzoStory: React.FC<Props> = ({ lang, onBookClick }) => {
           <BlogP>What set Vincenzo apart was an unwillingness to simply repeat tradition. He studied dough fermentation as a science. He interrogated flour properties, hydration ratios, and oven dynamics. He experimented relentlessly — and in doing so, developed a style of Neapolitan pizza that was simultaneously deeply rooted in Naples and entirely forward-looking.</BlogP>
           <BlogList items={[
             'High-hydration dough pushing beyond traditional Neapolitan ratios',
-            '36+ hour cold fermentation for a complex, airy, digestible structure',
+            '30+ hour cold fermentation for a complex, airy, digestible structure',
             'Nuvola Super flour developed specifically for this contemporary style',
             'Golden scissors as a technical and aesthetic statement',
           ]} />

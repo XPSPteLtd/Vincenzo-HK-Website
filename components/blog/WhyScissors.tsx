@@ -22,7 +22,7 @@ export const WhyScissors: React.FC<Props> = ({ lang, onBookClick }) => {
           <BlogHighlight>「切割方式決定了最終呈現在您面前的薄餅質感。」</BlogHighlight>
           <BlogH2>輪刀為何不適合拿坡里薄餅</BlogH2>
           <BlogP>傳統的薄餅輪刀在切割時，會以旋轉滾動的方式對麵糰施加壓力。對於一般薄餅來說，這沒有問題。但對於當代拿坡里薄餅來說，這是一種破壞。</BlogP>
-          <BlogP>Vincenzo Capuano 的 Nuvola 薄餅麵皮，經過 36 小時以上的發酵，內部充滿了數以百計的細小氣泡孔洞（alveoli）。正是這些氣泡，造就了那如雲朵般輕盈、充滿空氣感的麵皮質感。</BlogP>
+          <BlogP>Vincenzo Capuano 的 Nuvola 薄餅麵皮，經過 30 小時以上的發酵，內部充滿了數以百計的細小氣泡孔洞（alveoli）。正是這些氣泡，造就了那如雲朵般輕盈、充滿空氣感的麵皮質感。</BlogP>
           <BlogP>當輪刀滾過這些氣泡時，壓力會立即將它們壓扁，破壞麵皮的結構，讓那精心培育的空氣感瞬間消失。薄餅師傅花費數十年完善的工藝，在最後一刀中被毀於一旦。</BlogP>
           <BlogH2>剪刀如何保護薄餅的靈魂</BlogH2>
           <BlogP>黃金剪刀的切割方式完全不同。剪刀以「咬合」的方式切割，而非「滾壓」——它只在精確的切割點施力，不對周圍的麵糰施加任何壓力。</BlogP>
@@ -44,8 +44,8 @@ export const WhyScissors: React.FC<Props> = ({ lang, onBookClick }) => {
           <BlogHighlight>"The way you cut the pizza determines the quality on the plate."</BlogHighlight>
           <BlogH2>Why a Pizza Wheel Doesn't Work Here</BlogH2>
           <BlogP>A standard pizza wheel cuts by rolling with continuous pressure across the dough. For a regular pizza, this works fine. For a contemporary Neapolitan pizza — especially the Nuvola crust — it is destructive.</BlogP>
-          <BlogP>Our Nuvola dough is fermented for 36+ hours and contains hundreds of carefully developed alveoli — tiny air pockets distributed throughout the dough structure. These alveoli are responsible for the cloud-like, dramatically airy texture that defines our crust.</BlogP>
-          <BlogP>When a pizza wheel rolls over those alveoli, the pressure collapses them. Instantly. The result is a flattened, dense section of crust — and the destruction of the very thing the dough spent 36 hours creating.</BlogP>
+          <BlogP>Our Nuvola dough is fermented for 30+ hours and contains hundreds of carefully developed alveoli — tiny air pockets distributed throughout the dough structure. These alveoli are responsible for the cloud-like, dramatically airy texture that defines our crust.</BlogP>
+          <BlogP>When a pizza wheel rolls over those alveoli, the pressure collapses them. Instantly. The result is a flattened, dense section of crust — and the destruction of the very thing the dough spent 30 hours creating.</BlogP>
           <BlogH2>How the Scissors Preserve the Pizza</BlogH2>
           <BlogP>The scissors operate on an entirely different principle. Rather than rolling pressure, scissors apply a precise, contained shear force — only at the exact point of the cut, with no crushing pressure on the surrounding dough.</BlogP>
           <BlogList items={[

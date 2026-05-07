@@ -238,7 +238,7 @@ export const pageSEO: Record<string, PageSEO> = {
         {
           '@type': 'Question',
           name: 'What is contemporary Neapolitan pizza?',
-          acceptedAnswer: { '@type': 'Answer', text: 'Contemporary Neapolitan pizza is an evolution of traditional Neapolitan pizza pioneered by chefs like Vincenzo Capuano. It uses high-hydration dough fermented for 36+ hours, creating a dramatically airy, cloud-like cornicione crust while staying true to the Naples tradition of simple, premium ingredients.' },
+          acceptedAnswer: { '@type': 'Answer', text: 'Contemporary Neapolitan pizza is an evolution of traditional Neapolitan pizza pioneered by chefs like Vincenzo Capuano. It uses high-hydration dough fermented for 30+ hours, creating a dramatically airy, cloud-like cornicione crust while staying true to the Naples tradition of simple, premium ingredients.' },
         },
         {
           '@type': 'Question',

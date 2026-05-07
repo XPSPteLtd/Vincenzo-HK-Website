@@ -29,15 +29,15 @@ const faqs: FAQItem[] = [
     category: 'pizza',
     q_en: 'What makes contemporary Neapolitan pizza different?',
     q_hk: '當代拿坡里薄餅與傳統拿坡里薄餅有何不同？',
-    a_en: 'Contemporary Neapolitan pizza is an evolution of the traditional style. It features a more pronounced, visually striking cornicione (crust edge), achieved through high-hydration dough and extended fermentation of 36+ hours. The result is a crust that is dramatically more airy, light, and digestible than traditional styles.',
-    a_hk: '當代拿坡里薄餅是傳統風格的進化版本。它以更明顯、視覺上更突出的 cornicione（麵皮邊緣）為特色，這是通過高水分麵糰和 36 小時以上的長時間發酵實現的。結果是麵皮比傳統風格更加充滿空氣感、輕盈且易於消化。',
+    a_en: 'Contemporary Neapolitan pizza is an evolution of the traditional style. It features a more pronounced, visually striking cornicione (crust edge), achieved through high-hydration dough and extended fermentation of 30+ hours. The result is a crust that is dramatically more airy, light, and digestible than traditional styles.',
+    a_hk: '當代拿坡里薄餅是傳統風格的進化版本。它以更明顯、視覺上更突出的 cornicione（麵皮邊緣）為特色，這是通過高水分麵糰和 30 小時以上的長時間發酵實現的。結果是麵皮比傳統風格更加充滿空氣感、輕盈且易於消化。',
   },
   {
     category: 'pizza',
     q_en: 'What makes your crust different?',
     q_hk: '你們的薄餅麵皮有什麼特別之處？',
-    a_en: 'Our signature crust — the Nuvola (meaning "cloud" in Italian) — is produced from a specialised flour blend fermented for 36+ hours. The extended fermentation creates a highly aerated, incredibly soft dough that bakes into a dramatically tall, light cornicione. It is the defining characteristic of the Vincenzo Capuano style.',
-    a_hk: '我們的招牌麵皮——Nuvola（意大利語意為「雲朵」）——由特殊麵粉配方經 36 小時以上發酵製成。長時間發酵產生出高度充氣、極為柔軟的麵糰，烤出極高、輕盈的 cornicione 麵皮。這是 Vincenzo Capuano 風格的標誌性特色。',
+    a_en: 'Our signature crust — the Nuvola (meaning "cloud" in Italian) — is produced from a specialised flour blend fermented for 30+ hours. The extended fermentation creates a highly aerated, incredibly soft dough that bakes into a dramatically tall, light cornicione. It is the defining characteristic of the Vincenzo Capuano style.',
+    a_hk: '我們的招牌麵皮——Nuvola（意大利語意為「雲朵」）——由特殊麵粉配方經 30 小時以上發酵製成。長時間發酵產生出高度充氣、極為柔軟的麵糰，烤出極高、輕盈的 cornicione 麵皮。這是 Vincenzo Capuano 風格的標誌性特色。',
   },
   {
     category: 'pizza',
@@ -109,8 +109,8 @@ const faqs: FAQItem[] = [
     category: 'brand',
     q_en: 'What makes Vincenzo Capuano different from other Hong Kong pizzerias?',
     q_hk: 'Vincenzo Capuano 與香港其他薄餅店有何不同？',
-    a_en: 'Vincenzo Capuano is Hong Kong\'s only authentic contemporary Neapolitan pizzeria with direct lineage to the World Pizza Champion himself. The combination of 36-hour fermented dough, Nuvola Super flour, premium Italian ingredients, and the golden scissors ritual creates a pizza experience unlike any other in Hong Kong.',
-    a_hk: 'Vincenzo Capuano 是香港唯一一家由世界薄餅冠軍親自傳授的正宗當代拿坡里薄餅店。36 小時發酵麵糰、Nuvola Super 麵粉、頂級意大利食材以及黃金剪刀儀式的結合，創造出香港獨一無二的薄餅體驗。',
+    a_en: 'Vincenzo Capuano is Hong Kong\'s only authentic contemporary Neapolitan pizzeria with direct lineage to the World Pizza Champion himself. The combination of 30-hour fermented dough, Nuvola Super flour, premium Italian ingredients, and the golden scissors ritual creates a pizza experience unlike any other in Hong Kong.',
+    a_hk: 'Vincenzo Capuano 是香港唯一一家由世界薄餅冠軍親自傳授的正宗當代拿坡里薄餅店。30 小時發酵麵糰、Nuvola Super 麵粉、頂級意大利食材以及黃金剪刀儀式的結合，創造出香港獨一無二的薄餅體驗。',
   },
 ];
 

@@ -172,8 +172,8 @@ export const RestaurantWanchaiPage: React.FC<Props> = ({ lang, onBookClick }) =>
           <div className="space-y-4 text-white/60 text-sm font-sans font-light leading-relaxed">
             <p>
               {isHK
-                ? 'Vincenzo Capuano 是灣仔最受讚譽的美食體驗之一。我們的當代拿坡里薄餅由第三代那不勒斯薄餅師傅、2022 年世界薄餅冠軍親自監製，以 36 小時以上發酵麵糰製作出獨特的 Nuvola 雲朵麵皮。'
-                : 'Vincenzo Capuano is one of the most celebrated dining experiences in Wan Chai. Our contemporary Neapolitan pizza is personally overseen by a third-generation Neapolitan pizza maker and 2022 World Pizza Champion — using 36-hour fermented dough to create a signature airy Nuvola crust.'}
+                ? 'Vincenzo Capuano 是灣仔最受讚譽的美食體驗之一。我們的當代拿坡里薄餅由第三代那不勒斯薄餅師傅、2022 年世界薄餅冠軍親自監製，以 30 小時以上發酵麵糰製作出獨特的 Nuvola 雲朵麵皮。'
+                : 'Vincenzo Capuano is one of the most celebrated dining experiences in Wan Chai. Our contemporary Neapolitan pizza is personally overseen by a third-generation Neapolitan pizza maker and 2022 World Pizza Champion — using 30-hour fermented dough to create a signature airy Nuvola crust.'}
             </p>
             <p>
               {isHK
