@@ -8,7 +8,7 @@ import { InfoHub } from './components/InfoHub';
 import { Social } from './components/Social';
 import { Testimonials } from './components/Testimonials';
 import { Footer } from './components/Footer';
-import { ReservationModal } from './components/ReservationModal';
+// import { ReservationModal } from './components/ReservationModal';
 import { DeliveryModal } from './components/DeliveryModal';
 import { EventsModal } from './components/EventsModal';
 import { QuickHours } from './components/QuickHours';
@@ -38,7 +38,7 @@ export type Page = 'home' | 'menu' | 'contact';
 
 
 const App: React.FC = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  // const [isModalOpen, setIsModalOpen] = useState(false);
   const [isEventsOpen, setIsEventsOpen] = useState(false);
   const [isHoursOpen, setIsHoursOpen] = useState(false);
   const [isBannerActive, setIsBannerActive] = useState(false);
@@ -177,10 +177,10 @@ const App: React.FC = () => {
 
   const openModal = () => {
     clearOverlays();
-    setIsModalOpen(true);
+    window.open('https://book.bistrochat.com/vincenzo-capuano-wanchai-hk', '_blank');
   };
   
-  const closeModal = () => setIsModalOpen(false);
+  // const closeModal = () => setIsModalOpen(false);
   
 
   const openEvents = () => {
@@ -199,7 +199,7 @@ const App: React.FC = () => {
 
   // Helper to clear all overlays when navigating to a section or switching tasks
   const clearOverlays = () => {
-    setIsModalOpen(false);
+    // setIsModalOpen(false);
     setIsEventsOpen(false);
     setIsHoursOpen(false);
   };
@@ -327,7 +327,7 @@ const App: React.FC = () => {
 
       <FloatingActionButton onClick={openModal} lang={lang} />
       
-      <ReservationModal isOpen={isModalOpen} onClose={closeModal} lang={lang} />
+      {/* <ReservationModal isOpen={isModalOpen} onClose={closeModal} lang={lang} /> */}
       <EventsModal isOpen={isEventsOpen} onClose={closeEvents} lang={lang} />
       <QuickHours isOpen={isHoursOpen} onClose={closeHours} lang={lang} />
       
