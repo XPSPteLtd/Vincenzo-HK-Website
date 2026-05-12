@@ -178,6 +178,7 @@ export const translations = {
       street: 'Lee Tung Avenue',
       unit: 'GF Unit 01 04 05',
       district: '200 Queens Road East · Wan Chai, HK',
+      sevenDays: 'Open daily · 7 days a week',
       statusClosed: 'Closed',
       statusWarmingUp: 'Warming Up',
       statusOpeningSoon: 'Opening Soon',
@@ -271,6 +272,55 @@ export const translations = {
     social: {
       badge: 'Social Media',
       title: 'Follow The\nJourney'
+    },
+    contactPage: {
+      eyebrow: 'Get in Touch',
+      title: 'Contact Us',
+      subtitle: "Choose the reason for your enquiry below and we'll make sure it reaches the right person.",
+      reasons: {
+        general: {
+          title: 'General Enquiry',
+          desc: 'Questions, feedback, or anything else — our team will respond within 24 hours.'
+        },
+        group: {
+          title: 'Group Dining',
+          desc: 'Dining for 4 or more guests, birthdays, celebrations, and team gatherings.'
+        },
+        events: {
+          title: 'Private Events',
+          desc: 'Corporate buyouts, product launches, private celebrations, and bespoke packages.'
+        }
+      },
+      form: {
+        title: 'Send Us a Message',
+        fullName: 'Full Name',
+        fullNamePlaceholder: 'Your full name',
+        email: 'Email Address',
+        emailPlaceholder: 'your@email.com',
+        phone: 'Phone Number',
+        phonePlaceholder: '+852 0000 0000',
+        subject: 'Subject',
+        subjectPlaceholder: 'Select a subject',
+        subjects: {
+          general: 'General Enquiry',
+          reservation: 'Reservation Question',
+          feedback: 'Feedback',
+          other: 'Other'
+        },
+        message: 'Message',
+        messagePlaceholder: 'How can we help you?',
+        submit: 'Send Message',
+        success: 'Thank you! Your message has been sent.',
+        error: 'Sorry, there was an error sending your message. Please try again or call us directly.'
+      },
+      visit: {
+        title: 'Visit Us',
+        location: 'Location',
+        mtrInfo: 'MTR Wan Chai — Exit D (5 min walk)',
+        phone: 'Phone',
+        hours: 'Hours',
+        callDirect: 'Prefer to call us directly?'
+      }
     }
   },
 
@@ -451,6 +501,7 @@ export const translations = {
       street: '利東街',
       unit: '地下 G01, 04, 05 號舖',
       district: '皇后大道東200號 · 灣仔, 香港',
+      sevenDays: '每日營業 · 每週 7 天',
       statusClosed: '暫停營業',
       statusWarmingUp: '準備開業',
       statusOpeningSoon: '即將開幕',
@@ -544,6 +595,55 @@ export const translations = {
     social: {
       badge: '社群互動',
       title: '緊隨我們的\n美食旅程'
+    },
+    contactPage: {
+      eyebrow: '聯絡我們',
+      title: '聯絡我們',
+      subtitle: "請選擇您的查詢原因，我們將確保由合適的團隊為您服務。",
+      reasons: {
+        general: {
+          title: '一般查詢',
+          desc: '疑問、意見回饋或其他事宜 —— 我們的團隊將於 24 小時內回覆。'
+        },
+        group: {
+          title: '團體用餐',
+          desc: '4 位或以上賓客用餐、生日、慶祝活動及團隊聚會。'
+        },
+        events: {
+          title: '私人活動',
+          desc: '公司包場、產品發佈會、私人慶祝活動及專屬套餐。'
+        }
+      },
+      form: {
+        title: '發送訊息',
+        fullName: '全名',
+        fullNamePlaceholder: '您的全名',
+        email: '電子郵件地址',
+        emailPlaceholder: 'your@email.com',
+        phone: '電話號碼',
+        phonePlaceholder: '+852 0000 0000',
+        subject: '主題',
+        subjectPlaceholder: '請選擇主題',
+        subjects: {
+          general: '一般查詢',
+          reservation: '訂座疑問',
+          feedback: '意見回饋',
+          other: '其他'
+        },
+        message: '訊息',
+        messagePlaceholder: '我們能如何協助您？',
+        submit: '發送訊息',
+        success: '謝謝！您的訊息已發送。',
+        error: '抱歉，發送訊息時發生錯誤。請重試或直接致電我們。'
+      },
+      visit: {
+        title: '親臨門店',
+        location: '位置',
+        mtrInfo: '港鐵灣仔站 — D 出口（步行約 5 分鐘）',
+        phone: '電話',
+        hours: '營業時間',
+        callDirect: '想直接致電我們？'
+      }
     }
   }
 };

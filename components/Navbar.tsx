@@ -66,6 +66,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   const navLinks: { name: string; page: Page }[] = [
     { name: t.home, page: 'home' },
     { name: t.menu, page: 'menu' },
+    { name: t.contact, page: 'contact' },
   ];
 
   return (

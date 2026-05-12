@@ -96,14 +96,14 @@ export const pageSEO: Record<string, PageSEO> = {
 
   '/contact': {
     en: {
-      title: 'Contact Vincenzo Capuano Pizza Hong Kong | Best Pizza HK',
-      desc: 'Contact Vincenzo Capuano Pizza in Hong Kong for reservations, inquiries, and orders. Visit one of the best pizza restaurants in Hong Kong today!',
-      keywords: 'pizza wan chai, wan chai pizza restaurant, neapolitan pizza wan chai, italian restaurant wan chai, pizza near lee tung avenue, pizza wan chai hong kong, where to eat pizza wan chai, pizza restaurant hong kong, italian restaurant hong kong, date night pizza wan chai, pizza dinner wan chai, best pizza wan chai, best restaurant wan chai, restaurants near me wan chai, dinner near me wan chai, where to eat dinner wan chai, wan chai dining, award-winning restaurant wan chai',
+      title: 'Contact Us | Vincenzo Capuano Pizza Hong Kong | Best Pizza HK',
+      desc: 'Get in touch with Vincenzo Capuano Hong Kong. Contact us for general enquiries, group dining, birthday celebrations, and private events at our Wan Chai pizzeria.',
+      keywords: 'contact vincenzo capuano hong kong, pizza wan chai, group dining wan chai, private events wan chai, birthday celebration wan chai, neapolitan pizza wan chai, italian restaurant wan chai, contact pizza restaurant hong kong, wanchai dining contact',
     },
     hk: {
-      title: '位置與營業時間 | Vincenzo Capuano 香港',
-      desc: '前往灣仔利東街體驗當代拿坡里薄餅。查看我們的營業時間、港鐵交通指引及線上訂座。',
-      keywords: '灣仔薄餅, 灣仔意大利餐廳, 香港灣仔薄餅店, 利東街薄餅, 灣仔附近薄餅, 灣仔薄餅晚餐, 灣仔薄餅餐廳, 香港意大利薄餅店, 灣仔最好餐廳, 灣仔附近餐廳, 灣仔晚餐推薦',
+      title: '聯絡我們 | Vincenzo Capuano 香港 | 灣仔當代拿坡里薄餅',
+      desc: '聯絡 Vincenzo Capuano 香港分店。如有一般查詢、團體聚餐、生日慶祝或私人活動需求，歡迎與我們位於灣仔利東街的團隊聯絡。',
+      keywords: '聯絡文森佐香港, 灣仔薄餅, 灣仔團體聚餐, 灣仔私人活動, 灣仔生日慶祝, 拿坡里薄餅灣仔, 灣仔意大利餐廳, 香港薄餅店聯絡, 灣仔餐廳查詢',
     },
     schema: {
       '@context': 'https://schema.org',

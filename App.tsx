@@ -24,6 +24,7 @@ import { ReservationsPage } from './components/ReservationsPage';
 import { OurStoryPage } from './components/OurStoryPage';
 import { FAQPage } from './components/FAQPage';
 import { GroupDiningPage } from './components/GroupDiningPage';
+import { ContactPage } from './components/ContactPage';
 import { WhatIsNeapolitanPizza } from './components/blog/WhatIsNeapolitanPizza';
 import { ContemporaryNeapolitanHK } from './components/blog/ContemporaryNeapolitanHK';
 import { WhyScissors } from './components/blog/WhyScissors';
@@ -247,13 +248,7 @@ const App: React.FC = () => {
         } />
 
         <Route path="/contact" element={
-          <div className="pt-24 lg:pt-64">
-            <InfoHub 
-              onBookClick={openModal} 
-              lang={lang} 
-            />
-            <Social lang={lang} />
-          </div>
+          <ContactPage lang={lang} />
         } />
 
         {/* SEO Landing Pages */}
