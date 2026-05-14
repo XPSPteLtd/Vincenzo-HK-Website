@@ -12,7 +12,7 @@ type ContactType = 'general' | 'group' | 'event';
 type FormState = 'idle' | 'loading' | 'success' | 'error';
 
 const FORM_API = 'https://gotti-website-form-handler.azurewebsites.net/api/processForm';
-const RECIPIENTS = 'rm@vincenzocapuano.sg,hello@vincenzocapuano.sg,arvind@kuisinekoncepts.com,ritesh@kuisinekoncepts.com,rohan@kuisinekoncepts.com';
+const RECIPIENTS = 'gianluca@vincenzocapuano.hk,arvind@kuisinekoncepts.com,hello@vincenzocapuano.hk,rohan@kuisinekoncepts.com,ss@vincenzocapuano.hk';
 
 const inputCls = 'w-full bg-black/40 border border-white/10 text-white text-sm font-sans px-4 py-3 placeholder-white/20 focus:border-gold/50 focus:outline-none transition-colors';
 const lblCls   = 'block text-[10px] font-bold uppercase tracking-[0.2em] text-gold/70 mb-1.5';
