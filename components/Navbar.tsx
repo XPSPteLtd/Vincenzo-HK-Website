@@ -99,17 +99,27 @@ export const Navbar: React.FC<NavbarProps> = ({
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-4 lg:gap-8">
           <div className="flex items-center gap-4 lg:gap-6">
-            {navLinks.map((link) => (
-              <a 
-                key={link.name} 
-                href={link.page === 'home' ? '/' : `/${link.page}`}
-                onClick={(e) => handleNavLinkClick(e, link.page)}
-                className={`text-[11px] lg:text-[13px] font-semibold tracking-[0.15em] hover:text-gold transition-colors uppercase cursor-pointer ${
-                  activePage === link.page ? 'text-gold' : 'text-white'
-                }`}
-              >
-                {link.name}
-              </a>
+            {navLinks.map((link, index) => (
+              <div key={link.name} className="flex items-center">
+                {index === 0 && (
+                  <div className={`transition-all duration-500 flex items-center overflow-hidden ${isScrolled || activePage !== 'home' ? 'opacity-100 max-w-[150px] mr-1.5' : 'opacity-0 max-w-0 mr-0'}`}>
+                    <img 
+                      src="https://www.capvin.com/wp-content/uploads/2026/01/top-50-capuano.png" 
+                      alt="50 Top Pizza" 
+                      className="h-[46px] lg:h-[76px] w-auto object-contain drop-shadow-sm shrink-0" 
+                    />
+                  </div>
+                )}
+                <a 
+                  href={link.page === 'home' ? '/' : `/${link.page}`}
+                  onClick={(e) => handleNavLinkClick(e, link.page)}
+                  className={`text-[11px] lg:text-[13px] font-semibold tracking-[0.15em] hover:text-gold transition-colors uppercase cursor-pointer ${
+                    activePage === link.page ? 'text-gold' : 'text-white'
+                  }`}
+                >
+                  {link.name}
+                </a>
+              </div>
             ))}
             <button 
               onClick={onHoursClick}
@@ -256,14 +266,22 @@ export const Navbar: React.FC<NavbarProps> = ({
       <div className={`md:hidden fixed inset-0 top-[57px] bg-charcoal/98 backdrop-blur-xl z-[60] transition-all duration-500 ${isMobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
         <div className="flex flex-col p-8 gap-4 h-full">
           {navLinks.map((link) => (
-            <a 
-              key={link.name}
-              href={link.page === 'home' ? '/' : `/${link.page}`}
-              onClick={(e) => handleNavLinkClick(e, link.page)}
-              className="text-2xl font-serif text-white hover:text-gold transition-colors py-3 border-b border-white/5"
-            >
-              {link.name}
-            </a>
+            <div key={link.name} className="border-b border-white/5 py-3 flex items-center gap-2">
+              {link.page === 'home' && (
+                <img 
+                  src="https://www.capvin.com/wp-content/uploads/2026/01/top-50-capuano.png" 
+                  alt="50 Top Pizza" 
+                  className="h-[46px] w-auto object-contain shrink-0" 
+                />
+              )}
+              <a 
+                href={link.page === 'home' ? '/' : `/${link.page}`}
+                onClick={(e) => handleNavLinkClick(e, link.page)}
+                className="text-2xl font-serif text-white hover:text-gold transition-colors"
+              >
+                {link.name}
+              </a>
+            </div>
           ))}
           <button onClick={() => { setIsMobileMenuOpen(false); onHoursClick(); }} className="text-2xl font-serif text-white hover:text-gold py-4 border-b border-white/5 text-left">
             {lang !== 'en' ? '營業時間' : 'Hours'}

@@ -1,30 +1,57 @@
-import React from 'react';
-import { Scissors } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
 
 interface LoaderProps {
   isLoading: boolean;
 }
 
 export const Loader: React.FC<LoaderProps> = ({ isLoading }) => {
+  const [showLocation, setShowLocation] = useState(false);
+
+  useEffect(() => {
+    // Reveal location text shortly after loader appears
+    const timer = setTimeout(() => {
+      setShowLocation(true);
+    }, 800);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div 
-      className={`fixed inset-0 z-[100] bg-charcoal flex flex-col items-center justify-center transition-all duration-1000 ease-in-out ${
+      className={`fixed inset-0 z-[100] bg-[#111111] flex flex-col items-center justify-center transition-all duration-[1200ms] ease-in-out ${
         isLoading ? 'opacity-100' : 'opacity-0 pointer-events-none'
       }`}
     >
-      <div className="relative">
-        {/* Animated Rings */}
-        <div className="absolute inset-0 border border-gold/20 rounded-full animate-[ping_3s_cubic-bezier(0,0,0.2,1)_infinite]"></div>
-        <div className="absolute inset-0 border border-gold/10 rounded-full animate-[ping_2s_cubic-bezier(0,0,0.2,1)_infinite] delay-150"></div>
+      <div className="relative flex flex-col items-center">
+        {/* Glowing Background */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gold/5 rounded-full blur-3xl mix-blend-screen" />
         
-        {/* Main Container */}
-        <div className="relative z-10 p-8">
-            {/* Brand Logo */}
+        {/* Main Brand Logo */}
+        <div className="relative z-10 overflow-hidden mb-8">
+          <img 
+            src="https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo/LOGO-CAPUANO-white.png" 
+            alt="Vincenzo Capuano" 
+            className="h-24 md:h-32 lg:h-40 w-auto object-contain animate-[pulse_3s_ease-in-out_infinite] drop-shadow-[0_0_15px_rgba(197,160,89,0.3)]"
+          />
+        </div>
+
+        {/* Location Element */}
+        <div 
+          className={`flex flex-col items-center transition-all duration-[1500ms] ease-out ${
+            showLocation ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+          }`}
+        >
+          <div className="w-px h-8 bg-gradient-to-b from-transparent via-gold/50 to-transparent mb-4" />
+          
+          <div className="flex flex-col items-center gap-2.5">
             <img 
-              src="https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo/LOGO-CAPUANO-white.png" 
-              alt="Vincenzo Capuano Loading Logo" 
-              className="h-28 md:h-44 lg:h-56 w-auto mx-auto object-contain animate-pulse drop-shadow-[0_0_30px_rgba(255,255,255,0.1)]"
+              src="https://flagcdn.com/w160/hk.png" 
+              alt="Hong Kong" 
+              className="h-3.5 md:h-4 w-auto rounded-[2px] shadow-sm mb-0.5" 
             />
+            <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.4em] text-gold/80">
+              Hong Kong
+            </span>
+          </div>
         </div>
       </div>
     </div>

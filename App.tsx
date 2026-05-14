@@ -170,10 +170,26 @@ const App: React.FC = () => {
   }, [location.pathname]);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    const handleLoad = () => {
+      // Small delay to ensure smooth transition after everything is parsed
+      setTimeout(() => setIsLoading(false), 300);
+    };
+
+    if (document.readyState === 'complete') {
+      handleLoad();
+    } else {
+      window.addEventListener('load', handleLoad);
+    }
+    
+    // Fallback timer just in case load event fails or takes too long
+    const fallbackTimer = setTimeout(() => {
       setIsLoading(false);
-    }, 200);
-    return () => clearTimeout(timer);
+    }, 5000);
+
+    return () => {
+      window.removeEventListener('load', handleLoad);
+      clearTimeout(fallbackTimer);
+    };
   }, []);
 
   const openModal = () => {

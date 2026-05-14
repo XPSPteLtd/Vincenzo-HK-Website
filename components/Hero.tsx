@@ -119,20 +119,43 @@ export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
             </span>
           </div>
 
-          {/* Logo — cross-fades with navbar logo */}
+          {/* Logos — cross-fades with navbar logo */}
           <div
-            className={`mb-5 md:mb-6 transition-[opacity] duration-700 delay-200 ${isLoaded ? '' : 'opacity-0'}`}
+            className={`flex items-center gap-2 md:gap-3 lg:gap-4 mb-5 md:mb-6 transition-[opacity] duration-700 delay-200 ${isLoaded ? '' : 'opacity-0'} max-w-full overflow-hidden`}
             style={{
               opacity: isLoaded ? heroLogoOpacity : 0,
               transform: `translateY(${heroLogoY}px)`,
             }}
           >
             <div className="sr-only">{translations[lang].common.brand} | {lang === 'en' ? 'Award-Winning Contemporary Neapolitan Pizza Hong Kong' : '屢獲殊榮的當代拿坡里薄餅店 | 香港'}</div>
+            
             <img
               src="https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo/LOGO-CAPUANO-white.png"
               alt={translations[lang].common.brand}
-              className="h-16 md:h-20 w-auto object-contain drop-shadow-2xl"
+              className="h-[70px] md:h-[90px] lg:h-[120px] w-auto object-contain drop-shadow-2xl shrink-0"
             />
+            
+            <div className="w-px h-16 md:h-20 lg:h-[100px] bg-white/20 shrink-0" />
+            
+            <div className="flex items-center gap-2 md:gap-3 shrink-0">
+              <img 
+                src="https://www.capvin.com/wp-content/uploads/2023/11/logo-caputo@2x.png" 
+                alt="Caputo 1924" 
+                className="h-[50px] md:h-[70px] lg:h-[90px] w-auto object-contain opacity-90 drop-shadow-md" 
+              />
+              <img 
+                src="https://www.capvin.com/wp-content/uploads/2026/01/top-50-capuano.png" 
+                alt="50 Top Pizza" 
+                className="h-[50px] md:h-[70px] lg:h-[90px] w-auto object-contain opacity-90 drop-shadow-md" 
+              />
+              <div className="bg-white/95 px-2 md:px-3 py-1.5 md:py-2.5 rounded-lg shadow-lg flex items-center justify-center">
+                <img 
+                  src="https://www.capvin.com/wp-content/uploads/2026/01/254AD26A-3572-4DBC-995C-1390FFB9A480.png" 
+                  alt="Gambero Rosso" 
+                  className="h-[36px] md:h-[50px] lg:h-[68px] w-auto object-contain" 
+                />
+              </div>
+            </div>
           </div>
 
           {/* Quote */}
