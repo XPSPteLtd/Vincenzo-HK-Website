@@ -131,7 +131,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             
             <div className="flex items-center gap-4">
               <a
-                href="https://book.bistrochat.com/vincenzo-capuano-wanchai-hk"
+                href="https://www.sevenrooms.com/explore/vincenzocapuanohk/reservations/create/search/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-5 lg:px-7 py-2.5 lg:py-3 bg-gold hover:bg-white text-charcoal text-xs lg:text-sm font-bold tracking-widest rounded-xl transition-all duration-300 shadow-lg shadow-gold/10 active:scale-[0.97] text-center uppercase block"
@@ -269,7 +269,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             {lang !== 'en' ? '營業時間' : 'Hours'}
           </button>
           <div className="mt-auto pb-24">
-            <a href="https://book.bistrochat.com/vincenzo-capuano-wanchai-hk" target="_blank" rel="noopener noreferrer" className="w-full py-4 bg-gold text-charcoal text-xs font-bold tracking-widest rounded-xl text-center block uppercase">
+            <a href="https://www.sevenrooms.com/explore/vincenzocapuanohk/reservations/create/search/" target="_blank" rel="noopener noreferrer" className="w-full py-4 bg-gold text-charcoal text-xs font-bold tracking-widest rounded-xl text-center block uppercase">
               {t.reservations}
             </a>
           </div>

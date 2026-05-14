@@ -138,7 +138,7 @@ export const QuickHours: React.FC<QuickHoursProps> = ({ isOpen, onClose, lang })
           {/* Quick Actions */}
           <div className="grid grid-cols-2 gap-4">
             <a
-              href="https://book.bistrochat.com/vincenzo-capuano-wanchai-hk"
+              href="https://www.sevenrooms.com/explore/vincenzocapuanohk/reservations/create/search/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex flex-col items-center justify-center p-4 bg-gold/5 border border-gold/20 rounded-2xl hover:bg-gold/10 hover:border-gold/30 transition-all group"

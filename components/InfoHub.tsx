@@ -240,7 +240,7 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang, onBookClick }) => {
                 </div>
               </div>
               <a
-                href="https://book.bistrochat.com/vincenzo-capuano-wanchai-hk"
+                href="https://www.sevenrooms.com/explore/vincenzocapuanohk/reservations/create/search/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group/cta flex items-center justify-between w-full bg-gold hover:bg-white text-charcoal py-4 px-6 font-bold text-xs uppercase tracking-widest rounded-xl transition-all shadow-xl shadow-gold/10 active:scale-[0.98]"

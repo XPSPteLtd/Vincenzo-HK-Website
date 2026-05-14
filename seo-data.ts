@@ -179,7 +179,7 @@ export const pageSEO: Record<string, PageSEO> = {
       '@id': `${BASE}/reservations#foodestablishment`,
       name: 'Vincenzo Capuano Hong Kong',
       url: `${BASE}/reservations`,
-      reservationUrl: 'https://book.bistrochat.com/vincenzo-capuano-wanchai-hk',
+      reservationUrl: 'https://www.sevenrooms.com/explore/vincenzocapuanohk/reservations/create/search/',
       telephone: '+852-2802 2802',
       address: {
         '@type': 'PostalAddress',

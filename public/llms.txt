@@ -49,7 +49,7 @@ Full menu: https://vincenzocapuano.hk/menu
 ## Reservations & Ordering
 
 - **Book online:** https://vincenzocapuano.hk/reservations
-- **Direct booking system:** https://book.bistrochat.com/vincenzo-capuano-wanchai-hk
+- **Direct booking system:** https://www.sevenrooms.com/explore/vincenzocapuanohk/reservations/create/search/
 - **Phone:** +852-2802 2802
 - **Walk-ins:** 30% of seating always reserved for walk-in guests
 - **Pizza takeaway phone:** +852-2802 2802
@@ -89,7 +89,7 @@ A: Vincenzo Capuano is a third-generation Neapolitan pizza maker from Naples, It
 A: Lee Tung Avenue, GF Unit 01 04 05, 200 Queens Road East, Wan Chai, Hong Kong. Nearest MTR: Wan Chai Station, Exit D (5-minute walk).
 
 **Q: How do I reserve a table at Vincenzo Capuano Hong Kong?**
-A: Book online at vincenzocapuano.hk/reservations, via the direct booking system at book.bistrochat.com/vincenzo-capuano-wanchai-hk, or call +852-2802 2802. Walk-ins are welcome — 30% of seating is always reserved.
+A: Book online at vincenzocapuano.hk/reservations, via the direct booking system at https://www.sevenrooms.com/explore/vincenzocapuanohk/reservations/create/search/, or call +852-2802 2802. Walk-ins are welcome — 30% of seating is always reserved.
 
 **Q: What is contemporary Neapolitan pizza?**
 A: Contemporary Neapolitan pizza is an evolution of traditional Neapolitan pizza, pioneered by chefs like Vincenzo Capuano. It uses high-hydration dough (70–80% hydration) fermented for 36+ hours, producing a dramatically airy, cloud-like cornicione (crust edge). It maintains the simple, premium-ingredient tradition of Naples but with refined, modern technique.

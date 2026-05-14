@@ -155,7 +155,7 @@ export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
           >
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
               <a
-                href="https://book.bistrochat.com/vincenzo-capuano-wanchai-hk"
+                href="https://www.sevenrooms.com/explore/vincenzocapuanohk/reservations/create/search/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center justify-center gap-2 bg-gold hover:bg-white text-charcoal text-[11px] font-bold uppercase tracking-[0.15em] px-7 py-3 rounded-xl transition-all duration-300 shadow-lg shadow-gold/10 active:scale-[0.97]"

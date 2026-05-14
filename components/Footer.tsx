@@ -58,7 +58,7 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
           <Link to="/contact" className={linkClass}>{hk ? '位置' : 'Location'}</Link>
           <Link to="/faq" className={linkClass}>{hk ? '常見問題' : 'FAQ'}</Link>
           <a
-            href="https://book.bistrochat.com/vincenzo-capuano-wanchai-hk"
+            href="https://www.sevenrooms.com/explore/vincenzocapuanohk/reservations/create/search/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gold text-xs font-bold tracking-[0.2em] uppercase border-b border-gold pb-0.5 hover:text-white hover:border-white transition-colors"

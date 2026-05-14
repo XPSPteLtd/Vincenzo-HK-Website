@@ -93,7 +93,7 @@ export const Legacy: React.FC<LegacyProps> = ({ lang }) => {
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
             <a
-              href="https://book.bistrochat.com/vincenzo-capuano-wanchai-hk"
+              href="https://www.sevenrooms.com/explore/vincenzocapuanohk/reservations/create/search/"
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center justify-center gap-2.5 bg-[#c1272d] hover:bg-white text-white hover:text-[#c1272d] text-xs font-bold uppercase tracking-[0.2em] px-7 py-3.5 rounded-xl transition-all duration-300 shadow-[0_8px_24px_rgba(193,39,45,0.25)] active:scale-[0.97]"
