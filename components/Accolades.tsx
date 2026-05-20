@@ -85,7 +85,7 @@ export const Accolades: React.FC<AccoladesProps> = ({ lang }) => {
 
         {/* Bottom strip */}
         <div className="mt-14 md:mt-20 pt-8 border-t border-white/[0.06] flex flex-wrap items-center gap-x-8 gap-y-2">
-          {['Napoli 2022', 'Champion of Champions', '#12 World Chain 2024', '#13 World Chain 2025', '2 Spicchi Gambero Rosso'].map((badge, i) => (
+          {['NAPOLI 2022', 'CHAMPION OF CHAMPIONS', '#12 WORLD CHAIN 2024', '#13 WORLD CHAIN 2025', '2 SPICCHI GAMBERO ROSSO'].map((badge, i) => (
             <span key={i} className="text-[10px] font-bold uppercase tracking-[0.25em] text-white/30">
               {badge}
             </span>

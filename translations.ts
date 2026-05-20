@@ -258,7 +258,7 @@ export const translations = {
       impastoTitle: 'Our Dough',
       impastoDesc: 'Crafted with Caputo Nuvola Super Flour and fermented for up to 30 hours. Incredibly soft, airy and light on the stomach — with a signature pronounced cornicione.',
       rankingTitle: '50 Top Pizza',
-      rankingDesc: '• World Pizza Champion 2022\n• #12 World Artisan Pizza Chains 2024\n• #13 World Artisan Pizza Chains 2025\n• Best Marketing Award 2024',
+      rankingDesc: 'World Pizza Champion 2022\n#12 – 50 Top World Artisan Pizza Chains 2024\n#13 – 50 Top World Artisan Pizza Chains 2025\nBest Marketing Award – 2024',
       gamberoTitle: '2 Spicchi Gambero Rosso',
       gamberoDesc: "Awarded 2 Spicchi by Gambero Rosso — one of Italy's most prestigious food guides, recognising outstanding quality and authenticity.",
       worldChampion: 'World Pizza Champion'
