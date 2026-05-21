@@ -1,4 +1,4 @@
-
+﻿
 import React, { useEffect, useState } from 'react';
 import { MapPin, Users, ArrowRight, Calendar, ExternalLink, Train, CheckCircle } from 'lucide-react';
 import { Language, translations } from '../translations';
@@ -62,7 +62,7 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang, onBookClick }) => {
   const isClosedState = restaurantStatus === 'closed' || restaurantStatus === 'kitchen_closed';
 
   const openGoogleMaps = () => {
-    window.open('https://maps.app.goo.gl/mWac4KcwCQSUUibU9', '_blank');
+    window.open('https://maps.app.goo.gl/YXNiZqsVJb7GVnMaA', '_blank');
   };
 
   return (
@@ -240,7 +240,7 @@ export const InfoHub: React.FC<InfoHubProps> = ({ lang, onBookClick }) => {
                 </div>
               </div>
               <a
-                href="https://www.sevenrooms.com/explore/vincenzocapuanohk/reservations/create/search/"
+                href="https://www.sevenrooms.com/reservations/vincenzocapuanohk"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group/cta flex items-center justify-between w-full bg-gold hover:bg-white text-charcoal py-4 px-6 font-bold text-xs uppercase tracking-widest rounded-xl transition-all shadow-xl shadow-gold/10 active:scale-[0.98]"

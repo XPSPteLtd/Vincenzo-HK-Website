@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Accolades } from './components/Accolades';
@@ -194,7 +194,7 @@ const App: React.FC = () => {
 
   const openModal = () => {
     clearOverlays();
-    window.open('https://www.sevenrooms.com/explore/vincenzocapuanohk/reservations/create/search/', '_blank', 'noopener,noreferrer');
+    window.open('https://www.sevenrooms.com/reservations/vincenzocapuanohk', '_blank', 'noopener,noreferrer');
   };
   
   // const closeModal = () => setIsModalOpen(false);

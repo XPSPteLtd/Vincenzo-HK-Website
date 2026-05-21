@@ -1,4 +1,4 @@
-
+﻿
 import React from 'react';
 import { MapPin, Clock, Phone, ArrowRight, CalendarDays, Users, ExternalLink, TrainFront } from 'lucide-react';
 import { Language, translations } from '../translations';
@@ -12,7 +12,7 @@ export const Location: React.FC<LocationProps> = ({ lang }) => {
   const t = translations[lang].location;
 
   const openGoogleMaps = () => {
-    window.open('https://maps.app.goo.gl/mWac4KcwCQSUUibU9', '_blank');
+    window.open('https://maps.app.goo.gl/YXNiZqsVJb7GVnMaA', '_blank');
   };
 
   return (
@@ -107,7 +107,7 @@ export const Location: React.FC<LocationProps> = ({ lang }) => {
           </div>
 
           <a
-            href="https://www.sevenrooms.com/explore/vincenzocapuanohk/reservations/create/search/"
+            href="https://www.sevenrooms.com/reservations/vincenzocapuanohk"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-10 md:mt-14 group flex items-center gap-4 text-white hover:text-gold transition-colors w-fit"
@@ -133,7 +133,7 @@ export const Location: React.FC<LocationProps> = ({ lang }) => {
 
             <div className="space-y-3">
               <a
-                href="https://www.sevenrooms.com/explore/vincenzocapuanohk/reservations/create/search/"
+                href="https://www.sevenrooms.com/reservations/vincenzocapuanohk"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/5 p-4 border border-white/8 flex items-center justify-between group hover:border-gold/30 hover:bg-white/[0.07] transition-all rounded-xl"
@@ -149,7 +149,7 @@ export const Location: React.FC<LocationProps> = ({ lang }) => {
               </a>
 
               <a
-                href="https://www.sevenrooms.com/explore/vincenzocapuanohk/reservations/create/search/"
+                href="https://www.sevenrooms.com/reservations/vincenzocapuanohk"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/5 p-4 border border-white/8 flex items-center justify-between group hover:border-gold/30 hover:bg-white/[0.07] transition-all rounded-xl"
@@ -165,7 +165,7 @@ export const Location: React.FC<LocationProps> = ({ lang }) => {
               </a>
 
               <a
-                href="https://www.sevenrooms.com/explore/vincenzocapuanohk/reservations/create/search/"
+                href="https://www.sevenrooms.com/reservations/vincenzocapuanohk"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full bg-gold hover:bg-white text-charcoal py-4 font-bold tracking-widest uppercase text-[10px] transition-all duration-300 shadow-xl shadow-gold/10 rounded-xl active:scale-[0.98] text-center block mt-2"

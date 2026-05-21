@@ -1,4 +1,4 @@
-
+﻿
 import React from 'react';
 import { MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -58,7 +58,7 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
           <Link to="/contact" className={linkClass}>{hk ? '位置' : 'Location'}</Link>
           <Link to="/faq" className={linkClass}>{hk ? '常見問題' : 'FAQ'}</Link>
           <a
-            href="https://www.sevenrooms.com/explore/vincenzocapuanohk/reservations/create/search/"
+            href="https://www.sevenrooms.com/reservations/vincenzocapuanohk"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gold text-xs font-bold tracking-[0.2em] uppercase border-b border-gold pb-0.5 hover:text-white hover:border-white transition-colors"
@@ -92,7 +92,7 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
         {/* Location + hours row */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-10 mb-16">
           <a
-            href="https://maps.app.goo.gl/mWac4KcwCQSUUibU9"
+            href="https://maps.app.goo.gl/YXNiZqsVJb7GVnMaA"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2.5 text-white/55 hover:text-white/80 transition-colors group"

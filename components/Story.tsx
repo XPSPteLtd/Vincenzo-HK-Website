@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { ArrowRight, Scissors, Trophy } from 'lucide-react';
 import { SafeImage } from './ui/SafeImage';
 import { Language, translations } from '../translations';
@@ -109,7 +109,7 @@ export const Story: React.FC<StoryProps> = ({ lang }) => {
 
           <div className="flex flex-col sm:flex-row items-center gap-4 md:gap-5 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-700">
             <a
-              href="https://www.sevenrooms.com/explore/vincenzocapuanohk/reservations/create/search/"
+              href="https://www.sevenrooms.com/reservations/vincenzocapuanohk"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto px-7 py-3.5 bg-[#c1272d] text-white font-bold uppercase tracking-[0.2em] text-[9px] md:text-xs hover:bg-white hover:text-[#c1272d] transition-colors text-center shadow-[0_10px_30px_rgba(193,39,45,0.25)] flex items-center justify-center gap-3 group"

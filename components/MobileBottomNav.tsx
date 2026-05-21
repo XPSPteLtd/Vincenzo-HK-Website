@@ -1,4 +1,4 @@
-
+﻿
 import React from 'react';
 import { Home, MapPin, Utensils, CalendarDays, Clock, Phone } from 'lucide-react';
 import { Language, translations } from '../translations';
@@ -65,7 +65,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
 
         {/* Navigate */}
         <a
-          href="https://maps.app.goo.gl/mWac4KcwCQSUUibU9"
+          href="https://maps.app.goo.gl/YXNiZqsVJb7GVnMaA"
           target="_blank"
           rel="noopener noreferrer"
           className="flex flex-col items-center justify-center flex-1 gap-1 transition-all active:scale-95"

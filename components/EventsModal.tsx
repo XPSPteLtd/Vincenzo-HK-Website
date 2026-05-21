@@ -1,4 +1,4 @@
-
+﻿
 import React, { useEffect } from 'react';
 import { X, Users, Mail, Download, ChevronRight, Scissors, Star, Award, MapPin, ExternalLink } from 'lucide-react';
 import { Language, translations } from '../translations';
@@ -42,7 +42,7 @@ export const EventsModal: React.FC<EventsModalProps> = ({ isOpen, onClose, lang 
   };
 
   const openGoogleMaps = () => {
-    const url = `https://maps.app.goo.gl/mWac4KcwCQSUUibU9`;
+    const url = `https://maps.app.goo.gl/YXNiZqsVJb7GVnMaA`;
     window.open(url, '_blank');
   };
 

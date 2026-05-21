@@ -1,4 +1,4 @@
-
+﻿
 import React from 'react';
 import { MapPin, Clock, Phone, Train, ChevronRight } from 'lucide-react';
 import { Language } from '../translations';
@@ -38,7 +38,7 @@ export const LocationPage: React.FC<LocationPageProps> = ({ lang, onBookClick })
             <ChevronRight size={14} />
           </button>
           <a
-            href="https://maps.app.goo.gl/mWac4KcwCQSUUibU9"
+            href="https://maps.app.goo.gl/YXNiZqsVJb7GVnMaA"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 border border-white/20 text-white/70 text-xs font-bold tracking-[0.2em] uppercase px-7 py-3.5 hover:border-white/60 hover:text-white transition-colors"
@@ -76,7 +76,7 @@ export const LocationPage: React.FC<LocationPageProps> = ({ lang, onBookClick })
             {isHK ? '200 皇后大道東, 灣仔, 香港' : '200 Queens Road East, Wan Chai, Hong Kong'}
           </p>
           <a
-            href="https://maps.app.goo.gl/mWac4KcwCQSUUibU9"
+            href="https://maps.app.goo.gl/YXNiZqsVJb7GVnMaA"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-gold text-[10px] font-bold tracking-[0.15em] uppercase mt-5 hover:text-white transition-colors"
@@ -253,7 +253,7 @@ export const LocationPage: React.FC<LocationPageProps> = ({ lang, onBookClick })
             </div>
 
             <a
-              href="https://maps.app.goo.gl/mWac4KcwCQSUUibU9"
+              href="https://maps.app.goo.gl/YXNiZqsVJb7GVnMaA"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 mt-8 bg-gold text-charcoal text-xs font-bold tracking-[0.2em] uppercase px-6 py-3 hover:bg-white transition-colors"

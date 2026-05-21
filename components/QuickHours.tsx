@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+﻿import React, { useEffect, useState } from 'react';
 import { X, Clock, MapPin, ChevronRight, Calendar, ExternalLink, Scissors } from 'lucide-react';
 import { Language, translations } from '../translations';
 
@@ -56,7 +56,7 @@ export const QuickHours: React.FC<QuickHoursProps> = ({ isOpen, onClose, lang })
   };
 
   const openGoogleMaps = () => {
-    const url = `https://maps.app.goo.gl/mWac4KcwCQSUUibU9`;
+    const url = `https://maps.app.goo.gl/YXNiZqsVJb7GVnMaA`;
     window.open(url, '_blank');
   };
 
@@ -138,7 +138,7 @@ export const QuickHours: React.FC<QuickHoursProps> = ({ isOpen, onClose, lang })
           {/* Quick Actions */}
           <div className="grid grid-cols-2 gap-4">
             <a
-              href="https://www.sevenrooms.com/explore/vincenzocapuanohk/reservations/create/search/"
+              href="https://www.sevenrooms.com/reservations/vincenzocapuanohk"
               target="_blank"
               rel="noopener noreferrer"
               className="flex flex-col items-center justify-center p-4 bg-gold/5 border border-gold/20 rounded-2xl hover:bg-gold/10 hover:border-gold/30 transition-all group"

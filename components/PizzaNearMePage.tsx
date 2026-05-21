@@ -1,4 +1,4 @@
-
+﻿
 import React from 'react';
 import { MapPin, Clock, Phone, ChevronRight, Bike, UtensilsCrossed, ShoppingBag } from 'lucide-react';
 import { Language } from '../translations';
@@ -195,7 +195,7 @@ export const PizzaNearMePage: React.FC<Props> = ({ lang, onBookClick }) => {
             {isHK ? '港鐵灣仔站 D 出口，步行約 5 分鐘' : 'MTR Wan Chai Exit D, 5 min walk'}
           </p>
           <a
-            href="https://maps.app.goo.gl/mWac4KcwCQSUUibU9"
+            href="https://maps.app.goo.gl/YXNiZqsVJb7GVnMaA"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-gold text-[10px] font-bold tracking-[0.15em] uppercase mt-5 hover:text-white transition-colors"

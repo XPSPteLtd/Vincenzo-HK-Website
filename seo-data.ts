@@ -1,4 +1,4 @@
-const BASE = 'https://vincenzocapuano.hk';
+﻿const BASE = 'https://vincenzocapuano.hk';
 
 export interface PageSEO {
   en: { title: string; desc: string; keywords: string; image?: string; };
@@ -120,7 +120,7 @@ export const pageSEO: Record<string, PageSEO> = {
         addressCountry: 'HK',
       },
       geo: { '@type': 'GeoCoordinates', latitude: 22.276, longitude: 114.170 },
-      hasMap: 'https://maps.app.goo.gl/mWac4KcwCQSUUibU9',
+      hasMap: 'https://maps.app.goo.gl/YXNiZqsVJb7GVnMaA',
       openingHoursSpecification: {
         '@type': 'OpeningHoursSpecification',
         dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
@@ -158,7 +158,7 @@ export const pageSEO: Record<string, PageSEO> = {
         addressCountry: 'HK',
       },
       servesCuisine: ['Neapolitan Pizza', 'Contemporary Neapolitan', 'Italian'],
-      hasMap: 'https://maps.app.goo.gl/mWac4KcwCQSUUibU9',
+      hasMap: 'https://maps.app.goo.gl/YXNiZqsVJb7GVnMaA',
     },
   },
 
@@ -179,7 +179,7 @@ export const pageSEO: Record<string, PageSEO> = {
       '@id': `${BASE}/reservations#foodestablishment`,
       name: 'Vincenzo Capuano Hong Kong',
       url: `${BASE}/reservations`,
-      reservationUrl: 'https://www.sevenrooms.com/explore/vincenzocapuanohk/reservations/create/search/',
+      reservationUrl: 'https://www.sevenrooms.com/reservations/vincenzocapuanohk',
       telephone: '+852-2802 2802',
       address: {
         '@type': 'PostalAddress',
@@ -438,7 +438,7 @@ export const pageSEO: Record<string, PageSEO> = {
         addressCountry: 'HK',
       },
       geo: { '@type': 'GeoCoordinates', latitude: 22.276, longitude: 114.170 },
-      hasMap: 'https://maps.app.goo.gl/mWac4KcwCQSUUibU9',
+      hasMap: 'https://maps.app.goo.gl/YXNiZqsVJb7GVnMaA',
       openingHoursSpecification: {
         '@type': 'OpeningHoursSpecification',
         dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
@@ -479,7 +479,7 @@ export const pageSEO: Record<string, PageSEO> = {
         addressCountry: 'HK',
       },
       geo: { '@type': 'GeoCoordinates', latitude: 22.276, longitude: 114.170 },
-      hasMap: 'https://maps.app.goo.gl/mWac4KcwCQSUUibU9',
+      hasMap: 'https://maps.app.goo.gl/YXNiZqsVJb7GVnMaA',
       openingHoursSpecification: {
         '@type': 'OpeningHoursSpecification',
         dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
