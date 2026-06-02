@@ -499,6 +499,117 @@ export const pageSEO: Record<string, PageSEO> = {
     },
   },
 
+  '/best-neapolitan-pizza-hong-kong': {
+    en: {
+      title: 'Best Neapolitan Pizza Hong Kong | Vincenzo Capuano',
+      desc: 'Vincenzo Capuano is Hong Kong\'s best Neapolitan pizza — world champion credentials, airy cornicione crust, and authentic Naples flavour in Wan Chai.',
+      keywords: 'best neapolitan pizza hong kong, authentic italian pizza hong kong, world champion pizza hk, airy crust pizza hong kong, vincenzo capuano hong kong, pizza restaurant wan chai, best pizza in hong kong, naples style pizza hk, contemporary neapolitan pizza hong kong',
+    },
+    hk: {
+      title: '香港最佳拿坡里薄餅 | Vincenzo Capuano 灣仔',
+      desc: 'Vincenzo Capuano 是香港最佳拿坡里薄餅——世界冠軍認可、輕盈 cornicione 麵皮、正宗那不勒斯風味，盡在灣仔。',
+      keywords: '香港最佳拿坡里薄餅, 香港正宗意大利薄餅, 香港世界冠軍薄餅, 香港輕盈麵皮薄餅, 灣仔薄餅餐廳, 香港最佳薄餅, 那不勒斯風格薄餅',
+    },
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      '@id': `${BASE}/best-neapolitan-pizza-hong-kong#article`,
+      url: `${BASE}/best-neapolitan-pizza-hong-kong`,
+      headline: 'Best Neapolitan Pizza in Hong Kong: Why Vincenzo Capuano Is Going Viral',
+      description: 'Discover why Vincenzo Capuano is widely regarded as the best Neapolitan pizza in Hong Kong — airy crust, world champion credentials, and authentic Naples flavour in Wan Chai.',
+      datePublished: '2026-06-02T12:00:00+08:00',
+      dateModified: '2026-06-02T12:00:00+08:00',
+      author: { '@type': 'Organization', name: 'Vincenzo Capuano Hong Kong', url: BASE },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Vincenzo Capuano Hong Kong',
+        url: BASE,
+        logo: { '@type': 'ImageObject', url: 'https://storage.googleapis.com/xps-assets/gotti%27s%20assets%20/BRAND%20ASSETS/vincenzo/LOGO-CAPUANO-white.png' },
+      },
+      mainEntityOfPage: { '@type': 'WebPage', '@id': `${BASE}/best-neapolitan-pizza-hong-kong` },
+      about: { '@type': 'Restaurant', name: 'Vincenzo Capuano Hong Kong', url: BASE },
+      keywords: 'best neapolitan pizza hong kong, world champion pizza, airy crust pizza, authentic neapolitan, contemporary neapolitan pizza hong kong',
+    },
+  },
+
+  '/vincenzo-capuano-hong-kong-review': {
+    en: {
+      title: 'Vincenzo Capuano Hong Kong Review | World Champion',
+      desc: 'Vincenzo Capuano Hong Kong review: world champion pizza, airy Neapolitan crust, and the famous scissors presentation — what to expect in Wan Chai.',
+      keywords: 'vincenzo capuano hong kong, hong kong pizza review, viral pizza hong kong, italian restaurant hong kong, luxury pizza hong kong, contemporary neapolitan pizza, best italian food hk, pizza scissors presentation, vincenzo capuano review',
+    },
+    hk: {
+      title: 'Vincenzo Capuano 香港評論 | 世界冠軍薄餅',
+      desc: 'Vincenzo Capuano 香港評論：世界冠軍薄餅、輕盈拿坡里麵皮、標誌性剪刀呈現——帶你了解灣仔這家必到餐廳的一切。',
+      keywords: '灣仔薄餅評論, 香港病毒式薄餅, 香港意大利餐廳評論, 香港奢華薄餅, 當代拿坡里薄餅評論, 香港最佳意大利美食, 薄餅剪刀呈現',
+    },
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'Review',
+      '@id': `${BASE}/vincenzo-capuano-hong-kong-review#review`,
+      url: `${BASE}/vincenzo-capuano-hong-kong-review`,
+      name: 'Vincenzo Capuano Hong Kong Review',
+      reviewBody: 'An editorial review of Vincenzo Capuano Hong Kong, covering the pizza quality, the scissors-and-stand presentation, the world champion story, and what to order on your first visit.',
+      datePublished: '2026-06-02T12:00:00+08:00',
+      author: { '@type': 'Organization', name: 'Vincenzo Capuano Hong Kong', url: BASE },
+      publisher: { '@type': 'Organization', name: 'Vincenzo Capuano Hong Kong', url: BASE },
+      itemReviewed: {
+        '@type': 'Restaurant',
+        name: 'Vincenzo Capuano Hong Kong',
+        url: BASE,
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'Lee Tung Avenue, GF Unit 01 04 05, 200 Queens Road East',
+          addressLocality: 'Wan Chai',
+          addressRegion: 'Hong Kong',
+          addressCountry: 'HK',
+        },
+        servesCuisine: ['Contemporary Neapolitan Pizza', 'Italian'],
+      },
+      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5', worstRating: '1' },
+    },
+  },
+
+  '/best-pizza-restaurants-hong-kong': {
+    en: {
+      title: 'Top 10 Best Pizza Restaurants in Hong Kong (2026)',
+      desc: 'The best pizza restaurants in Hong Kong for 2026 — from world-class Neapolitan at Vincenzo Capuano to NY-style slices, ranked for every pizza lover.',
+      keywords: 'best pizza restaurants hong kong, best pizza hong kong, authentic neapolitan pizza, artisan pizza restaurant, italian wood fired pizza, world champion pizza, viral italian pizza, luxury italian restaurant hong kong, pizza guide hong kong 2026',
+    },
+    hk: {
+      title: '香港十大最佳薄餅餐廳 2026 年指南',
+      desc: '2026 年香港最佳薄餅餐廳指南——從 Vincenzo Capuano 的世界級拿坡里薄餅到紐約風格，為每位薄餅愛好者排名推薦。',
+      keywords: '香港最佳薄餅餐廳, 香港最佳薄餅, 正宗拿坡里薄餅, 手工薄餅餐廳, 意大利柴燒薄餅, 世界冠軍薄餅, 香港奢華意大利餐廳, 香港薄餅指南 2026',
+    },
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      '@id': `${BASE}/best-pizza-restaurants-hong-kong#article`,
+      url: `${BASE}/best-pizza-restaurants-hong-kong`,
+      headline: 'Top 10 Best Pizza Restaurants in Hong Kong (2026 Guide)',
+      description: 'A complete guide to the best pizza restaurants in Hong Kong in 2026, covering every style and occasion.',
+      datePublished: '2026-06-02T12:00:00+08:00',
+      dateModified: '2026-06-02T12:00:00+08:00',
+      author: { '@type': 'Organization', name: 'Vincenzo Capuano Hong Kong', url: BASE },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Vincenzo Capuano Hong Kong',
+        url: BASE,
+        logo: { '@type': 'ImageObject', url: 'https://storage.googleapis.com/xps-assets/gotti%27s%20assets%20/BRAND%20ASSETS/vincenzo/LOGO-CAPUANO-white.png' },
+      },
+      mainEntityOfPage: { '@type': 'WebPage', '@id': `${BASE}/best-pizza-restaurants-hong-kong` },
+      about: {
+        '@type': 'ItemList',
+        name: 'Best Pizza Restaurants in Hong Kong',
+        numberOfItems: 10,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Vincenzo Capuano Hong Kong', url: BASE },
+        ],
+      },
+      keywords: 'best pizza restaurants hong kong, neapolitan pizza, artisan pizza, italian pizza hong kong, pizza guide 2026',
+    },
+  },
+
   '/vincenzo-capuano-story': {
     en: {
       title: 'The Vincenzo Capuano Story | Pizza Chef from Naples',

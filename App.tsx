@@ -30,6 +30,9 @@ import { ContemporaryNeapolitanHK } from './components/blog/ContemporaryNeapolit
 import { WhyScissors } from './components/blog/WhyScissors';
 import { BestPizzaForSharing } from './components/blog/BestPizzaForSharing';
 import { VincenzoStory } from './components/blog/VincenzoStory';
+import { BestNeapolitanPizzaHK } from './components/blog/BestNeapolitanPizzaHK';
+import { VincenzoCapuanoReview } from './components/blog/VincenzoCapuanoReview';
+import { BestPizzaRestaurantsHK } from './components/blog/BestPizzaRestaurantsHK';
 import { Language } from './translations';
 import { pageSEO } from './seo-data';
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
@@ -134,7 +137,7 @@ const App: React.FC = () => {
     setMeta('property', 'og:title', title);
     setMeta('property', 'og:description', desc);
     setMeta('property', 'og:site_name', 'Vincenzo Capuano Hong Kong');
-    setMeta('property', 'og:type', path.startsWith('/what-is-') || path.startsWith('/contemporary-') || path.startsWith('/why-') || path.startsWith('/best-pizza-for-') || path.startsWith('/vincenzo-') ? 'article' : 'website');
+    setMeta('property', 'og:type', path.startsWith('/what-is-') || path.startsWith('/contemporary-') || path.startsWith('/why-') || path.startsWith('/best-pizza-for-') || path.startsWith('/vincenzo-') || path.startsWith('/best-neapolitan-') || path.startsWith('/best-pizza-restaurants-') ? 'article' : 'website');
     setMeta('property', 'og:locale', lang === 'hk' ? 'zh_HK' : 'en_HK');
     
     if (image) {
@@ -315,6 +318,18 @@ const App: React.FC = () => {
 
         <Route path="/vincenzo-capuano-story" element={
           <VincenzoStory lang={lang} onBookClick={openModal} />
+        } />
+
+        <Route path="/best-neapolitan-pizza-hong-kong" element={
+          <BestNeapolitanPizzaHK lang={lang} onBookClick={openModal} />
+        } />
+
+        <Route path="/vincenzo-capuano-hong-kong-review" element={
+          <VincenzoCapuanoReview lang={lang} onBookClick={openModal} />
+        } />
+
+        <Route path="/best-pizza-restaurants-hong-kong" element={
+          <BestPizzaRestaurantsHK lang={lang} onBookClick={openModal} />
         } />
 
         <Route path="*" element={<NotFound />} />

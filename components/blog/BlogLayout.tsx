@@ -92,9 +92,14 @@ export const BlogLayout: React.FC<BlogLayoutProps> = ({
   );
 };
 
-// Reusable prose helpers for blog content
+// ─── Prose helpers ────────────────────────────────────────────────────────────
+
 export const BlogH2: React.FC<{ children: React.ReactNode }> = ({ children }) => (
   <h2 className="font-display text-3xl text-white mt-12 mb-5">{children}</h2>
+);
+
+export const BlogH3: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+  <h3 className="font-sans text-base font-semibold text-white/90 mt-7 mb-3 tracking-wide">{children}</h3>
 );
 
 export const BlogP: React.FC<{ children: React.ReactNode }> = ({ children }) => (
@@ -107,13 +112,44 @@ export const BlogHighlight: React.FC<{ children: React.ReactNode }> = ({ childre
   </blockquote>
 );
 
-export const BlogList: React.FC<{ items: string[] }> = ({ items }) => (
+export const BlogList: React.FC<{ items: React.ReactNode[] }> = ({ items }) => (
   <ul className="space-y-3 mb-6 ml-2">
     {items.map((item, i) => (
       <li key={i} className="flex items-start gap-3 text-white/60 text-sm font-sans font-light">
         <span className="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0" />
-        {item}
+        <span>{item}</span>
       </li>
     ))}
   </ul>
+);
+
+export const BlogImage: React.FC<{ src: string; alt: string; caption?: string }> = ({ src, alt, caption }) => (
+  <figure className="my-10">
+    <img
+      src={src}
+      alt={alt}
+      loading="lazy"
+      className="w-full object-cover max-h-[480px] rounded-sm"
+    />
+    {caption && (
+      <figcaption className="text-white/30 text-xs font-sans text-center mt-3 tracking-wide">
+        {caption}
+      </figcaption>
+    )}
+  </figure>
+);
+
+export interface FAQItem { q: string; a: React.ReactNode; }
+export const BlogFAQ: React.FC<{ title: string; items: FAQItem[] }> = ({ title, items }) => (
+  <div className="mt-12">
+    <h2 className="font-display text-3xl text-white mb-8">{title}</h2>
+    <div>
+      {items.map((item, i) => (
+        <div key={i} className="border-b border-white/[0.08] py-5">
+          <h3 className="text-white text-sm font-sans font-semibold mb-2">{item.q}</h3>
+          <div className="text-white/60 text-sm font-sans font-light leading-relaxed">{item.a}</div>
+        </div>
+      ))}
+    </div>
+  </div>
 );
