@@ -15,71 +15,87 @@ export const BestPizzaRestaurantsHK: React.FC<Props> = ({ lang, onBookClick }) =
 
   const faqsEN: FAQItem[] = [
     {
-      q: 'What is the best pizza restaurant in Hong Kong?',
-      a: <>Vincenzo Capuano Hong Kong is widely regarded as the <strong className="text-white font-semibold">best pizza restaurant in Hong Kong</strong> for authentic Neapolitan pizza — ranked #13 globally in the Top 50 Pizza list and built on the standards of the 2022 World Pizza Champion. For other styles, the city has strong options across NY-style, Italian dining, and casual pizza.</>,
+      q: 'What is the best pizza restaurant in Hong Kong right now?',
+      a: <>For contemporary Neapolitan style, <strong className="text-white font-semibold">Vincenzo Capuano in Wan Chai</strong> is currently the strongest pick. For traditional Naples-style, Pizza Trilogy and Motorino remain top picks. The best for you depends on the style you prefer.</>,
     },
     {
-      q: 'Where can I get authentic Neapolitan pizza in Hong Kong?',
-      a: <>The clearest destination for <strong className="text-white font-semibold">authentic Neapolitan pizza in Hong Kong</strong> is Vincenzo Capuano at Lee Tung Avenue, Wan Chai — a world-champion contemporary Neapolitan restaurant ranked among the top 15 globally. <a href="/pizza-wan-chai-hong-kong" className={lnk}>See full location details here</a>.</>,
+      q: 'Where can I find the best Neapolitan pizza in Hong Kong?',
+      a: 'Vincenzo Capuano leads the contemporary version. Motorino and Pizza Trilogy lead the traditional version. All three are worth the trip.',
     },
     {
-      q: 'Is Vincenzo Capuano the best pizza in Hong Kong overall?',
-      a: <>For <strong className="text-white font-semibold">Neapolitan and contemporary Neapolitan pizza</strong>, the answer is an unambiguous yes. Vincenzo Capuano holds the #13 global ranking and the 2022 World Pizza Championship. No other pizza restaurant in Hong Kong holds credentials at this level. <a href="/vincenzo-capuano-hong-kong-review" className={lnk}>Read the full review here</a>.</>,
+      q: 'What does artisan pizza restaurant actually mean?',
+      a: 'It usually means hand-stretched dough, long fermentation, high-quality imported ingredients, wood-fired or specialty ovens, and a focus on craft over volume. Vincenzo Capuano is a textbook example.',
     },
     {
-      q: 'What is the difference between Neapolitan and New York-style pizza?',
-      a: 'Neapolitan pizza has a soft, foldable centre, a raised airy cornicione, and bakes in under 90 seconds at over 400°C. NY-style pizza is larger, with a thinner, crispier base that can be folded lengthwise — designed for the slice format. Both are excellent in different contexts; they represent distinct pizza philosophies rather than quality differences.',
+      q: 'Is Hong Kong good for pizza compared to other cities?',
+      a: 'In 2026, yes. Hong Kong now has multiple world-class pizzaiolos in residence and a competitive market that has pushed quality up across the board. It compares well to Singapore, Tokyo, and Sydney for Italian wood-fired pizza.',
     },
     {
-      q: 'Are there good pizza places near MTR stations in Hong Kong?',
-      a: <>Yes. Vincenzo Capuano is a <strong className="text-white font-semibold">5-minute walk from Wan Chai MTR Station</strong>, Exit D. Several other restaurants on this list are also within short walking distance of major MTR stations across Hong Kong Island and Kowloon.</>,
+      q: 'What is contemporary Neapolitan pizza?',
+      a: <>It is a modern style of Neapolitan pizza using higher hydration dough, often <strong className="text-white font-semibold">75 to 80 percent water</strong>, and longer fermentation, typically 24 to 36 hours. The result is a taller, airier, more digestible crust. Vincenzo Capuano won the world title in this category in 2022.</>,
     },
     {
-      q: 'Which Hong Kong pizza restaurants are good for large groups?',
-      a: <>For group dining, Vincenzo Capuano Hong Kong accommodates shared pizza dining well — the scissors presentation and sharing format suits group tables naturally. For private events and larger groups, <a href="/group-dining" className={lnk}>see our group dining page</a> for details.</>,
+      q: 'How much does pizza cost in Hong Kong?',
+      a: 'A casual slice runs HKD 80 to 150. Mid-tier wood-fired pizzerias sit at HKD 200 to 350 per person. High-end pizza experiences like Vincenzo Capuano or Italian Club land at HKD 300 to 600 per person.',
     },
     {
-      q: 'How much does pizza cost at Vincenzo Capuano Hong Kong?',
-      a: <>Pizzas at Vincenzo Capuano use imported Italian ingredients and are priced at a premium level commensurate with the quality. For specific pricing, <a href="/menu" className={lnk}>view the full menu here</a>. Walk-ins and reservations are both available.</>,
+      q: 'Do I need to book ahead?',
+      a: <>For <strong className="text-white font-semibold">Vincenzo Capuano</strong>, yes, definitely, especially for dinner and weekends. For most other spots on this list, walk-ins work outside peak hours, but bookings are safer. <a href="/reservations" className={lnk}>Book Vincenzo Capuano here</a>.</>,
     },
     {
-      q: 'Which pizza restaurant in Hong Kong has the best atmosphere for a date?',
-      a: <>Vincenzo Capuano offers a refined, intimate atmosphere with an open kitchen and the memorable scissors presentation — making it one of the best choices for a date in Wan Chai. The combination of world-class pizza and considered dining experience sets the right tone for a special evening. <a href="/reservations" className={lnk}>Book your table here</a>.</>,
+      q: 'Are there good gluten-free pizza options in Hong Kong?',
+      a: 'A few of the restaurants on this list offer gluten-free crust options. Call ahead to confirm, since menus change.',
+    },
+    {
+      q: 'Which is the best pizza for a date night?',
+      a: <>Vincenzo Capuano for the wow factor, Pici for casual charm, The Macaroni Club for natural wine vibes. All three deliver. <a href="/reservations" className={lnk}>Reserve at Vincenzo Capuano</a> for the full experience.</>,
+    },
+    {
+      q: 'Which is the best pizza in Hong Kong for groups?',
+      a: <>The Italian Club Steak and Seafood handles big groups well, and <strong className="text-white font-semibold">Vincenzo Capuano has 80 seats across two floors</strong>, so it can accommodate larger bookings if reserved. See our <a href="/group-dining" className={lnk}>group dining page</a> for details.</>,
     },
   ];
 
   const faqsHK: FAQItem[] = [
     {
-      q: '香港最佳薄餅餐廳是哪家？',
-      a: <>就正宗拿坡里薄餅而言，Vincenzo Capuano 香港被廣泛認為是<strong className="text-white font-semibold">香港最佳薄餅餐廳</strong>——全球前 50 薄餅榜排名第 13，由 2022 年世界薄餅冠軍制定標準。其他風格方面，香港在紐約風格、意式餐廳薄餅和休閒薄餅各有強項。</>,
+      q: '目前香港最佳薄餅餐廳是哪家？',
+      a: <>就當代拿坡里風格而言，<strong className="text-white font-semibold">灣仔 Vincenzo Capuano</strong> 目前是最強的選擇。傳統那不勒斯風格方面，Pizza Trilogy 和 Motorino 仍是首選。最適合你的取決於你偏好的風格。</>,
     },
     {
-      q: '在香港哪裡可以找到正宗拿坡里薄餅？',
-      a: <>香港最清晰的<strong className="text-white font-semibold">正宗拿坡里薄餅</strong>目的地是位於灣仔利東街的 Vincenzo Capuano——世界冠軍當代拿坡里薄餅餐廳，全球排名前 15。<a href="/pizza-wan-chai-hong-kong" className={lnk}>在此查看完整位置詳情</a>。</>,
+      q: '在香港哪裡可以找到最佳拿坡里薄餅？',
+      a: 'Vincenzo Capuano 引領當代版本。Motorino 和 Pizza Trilogy 引領傳統版本。三家都值得一去。',
     },
     {
-      q: 'Vincenzo Capuano 是否是香港整體最佳薄餅？',
-      a: <>就<strong className="text-white font-semibold">拿坡里及當代拿坡里薄餅</strong>而言，答案毫無疑問是肯定的。Vincenzo Capuano 持有全球第 13 位排名和 2022 年世界薄餅冠軍頭銜。香港沒有其他薄餅餐廳擁有這個水準的資格。<a href="/vincenzo-capuano-hong-kong-review" className={lnk}>在此閱讀完整評論</a>。</>,
+      q: '手工薄餅餐廳究竟是什麼意思？',
+      a: '通常指手拉麵糰、長時間發酵、高品質進口食材、柴燒或特製烤爐，以及注重工藝而非產量。Vincenzo Capuano 是最典型的例子。',
     },
     {
-      q: '拿坡里薄餅和紐約風格薄餅有什麼區別？',
-      a: '拿坡里薄餅有柔軟可折疊的中心、隆起的輕盈 cornicione，在超過 400°C 的烤爐中 90 秒內烤製完成。紐約風格薄餅更大，底部更薄更酥脆，可以對折食用——專為切件格式設計。兩者各有所長，代表不同的薄餅哲學而非品質高低之分。',
+      q: '與其他城市相比，香港的薄餅水準如何？',
+      a: '2026 年，答案是肯定的。香港現有多位世界級薄餅師傅駐場，競爭市場推動整體品質大幅提升，可與新加坡、東京和悉尼媲美。',
     },
     {
-      q: '香港有哪些靠近港鐵站的好薄餅餐廳？',
-      a: <>有。Vincenzo Capuano 距離<strong className="text-white font-semibold">灣仔港鐵站 D 出口步行約 5 分鐘</strong>。本指南中的多家餐廳也位於港鐵站附近。</>,
+      q: '當代拿坡里薄餅是什麼？',
+      a: <>這是那不勒斯薄餅的現代風格，使用更高水分比例的麵糰，通常達<strong className="text-white font-semibold">75至80%水分</strong>，及更長發酵時間，通常24至36小時。成果是更高、更輕盈、更易消化的麵皮。Vincenzo Capuano 於2022年在此類別贏得世界冠軍。</>,
     },
     {
-      q: '香港哪些薄餅餐廳適合大型聚餐？',
-      a: <>Vincenzo Capuano 香港非常適合共享用餐——剪刀呈現和分享格式天然適合多人桌。如需私人活動和大型聚餐，<a href="/group-dining" className={lnk}>請查看我們的團體用餐頁面</a>了解詳情。</>,
+      q: '香港薄餅的價格如何？',
+      a: '休閒切片每份約港幣80至150元。中檔柴燒薄餅餐廳每人約港幣200至350元。高端薄餅體驗如 Vincenzo Capuano 或意大利會所每人約港幣300至600元。',
     },
     {
-      q: 'Vincenzo Capuano 香港的薄餅價格如何？',
-      a: <>Vincenzo Capuano 的薄餅使用進口意大利食材，定價屬高端水準，與品質相符。具體定價請<a href="/menu" className={lnk}>在此查看完整菜單</a>。即場入座和預訂均可。</>,
+      q: '需要提前訂座嗎？',
+      a: <><strong className="text-white font-semibold">Vincenzo Capuano</strong> 絕對需要，尤其是晚餐和週末。本列表大多數其他餐廳在非繁忙時段可接受即場入座，但提前訂位更保險。<a href="/reservations" className={lnk}>在此預訂 Vincenzo Capuano</a>。</>,
     },
     {
-      q: '香港哪家薄餅餐廳最適合約會？',
-      a: <>Vincenzo Capuano 提供精緻、親密的用餐環境，開放式廚房和令人印象深刻的剪刀呈現方式，是灣仔最佳約會選擇之一。世界級薄餅與精心設計的用餐體驗相結合，為特別夜晚定下完美基調。<a href="/reservations" className={lnk}>在此訂座</a>。</>,
+      q: '香港有無麩質薄餅選擇嗎？',
+      a: '本列表部分餐廳提供無麩質麵皮選項。由於菜單會變更，請提前致電確認。',
+    },
+    {
+      q: '約會之夜最佳薄餅選擇是哪家？',
+      a: <>Vincenzo Capuano 帶來震撼效果，Pici 輕鬆自在，The Macaroni Club 配以自然葡萄酒氛圍。三家皆佳。<a href="/reservations" className={lnk}>在 Vincenzo Capuano 訂座</a>獲得完整體驗。</>,
+    },
+    {
+      q: '香港哪家薄餅餐廳最適合大型聚餐？',
+      a: <>意大利會所牛排及海鮮餐廳能容納大型聚餐，而<strong className="text-white font-semibold">Vincenzo Capuano 兩層共80個座位</strong>，如提前預訂可接待較大型訂位。詳見我們的<a href="/group-dining" className={lnk}>團體用餐頁面</a>。</>,
     },
   ];
 
@@ -89,66 +105,80 @@ export const BestPizzaRestaurantsHK: React.FC<Props> = ({ lang, onBookClick }) =
       onBookClick={onBookClick}
       eyebrow={isHK ? '2026 年香港薄餅指南' : '2026 Hong Kong Pizza Guide'}
       title={isHK ? '香港十大最佳薄餅餐廳（2026 年指南）' : 'Top 10 Best Pizza Restaurants in Hong Kong (2026 Guide)'}
-      readTime={isHK ? '閱讀時間約 7 分鐘' : '7 minute read'}
+      readTime={isHK ? '閱讀時間約 9 分鐘' : '9 minute read'}
     >
       {isHK ? (
         <>
           <BlogImage
             src="https://storage.googleapis.com/xps-assets/gotti%27s%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/detto-fatto-pizza.png"
             alt="香港最佳薄餅餐廳 2026 — Vincenzo Capuano 當代拿坡里薄餅"
-            caption="2026 年香港最佳薄餅餐廳指南"
+            caption="2026 年香港最佳薄餅餐廳完整指南"
           />
 
-          <BlogP>香港是全球美食最密集的城市之一，而薄餅文化在過去十年間發生了根本性的轉變。曾幾何時，香港的薄餅選擇主要局限於國際連鎖和將薄餅當作配角的意大利餐廳。今天，<strong className="text-white font-semibold">香港最佳薄餅餐廳</strong>的名單已截然不同——更認真對待食材、更有技術深度，食客對正宗口味的要求也遠高於以往。這份 2026 年指南涵蓋了不同風格、不同場合、不同預算的最佳薄餅目的地，幫你在不走冤枉路的情況下找到最適合自己的那一家。</BlogP>
+          <BlogP>香港的薄餅文化終於成熟了。五年前，在這個城市找到一塊像樣的拿坡里薄餅，意味著長途跋涉、抱有希望、往往只能將就。2026 年，香港令人應接不暇：<strong className="text-white font-semibold">最佳薄餅餐廳</strong>、世界冠軍薄餅師傅、柴燒麵糰狂熱者、真正使用意大利麵粉的街坊小店，甚至幾家執着的紐約風格據點。如果你正在尋找香港今年最值得去的薄餅餐廳，這就是那份指南。我為你吃了很多薄餅。值得的。</BlogP>
 
-          <BlogHighlight>「香港的薄餅文化已經成熟。這座城市現在值得一份真正認真的薄餅指南。」</BlogHighlight>
+          <BlogHighlight>「香港正在經歷一場真正的薄餅革命。世界冠軍已經落戶，其他人也在奮力追趕。」</BlogHighlight>
 
-          <BlogH2>1. Vincenzo Capuano 香港 — 最佳正宗拿坡里薄餅</BlogH2>
-          <BlogP>作為這份指南的主辦方，我們坦然將自己排在首位——但數字和口碑支持這個排名。<strong className="text-white font-semibold">Vincenzo Capuano</strong> 是全球前 50 薄餅排名<strong className="text-white font-semibold">第 13 位</strong>的餐廳，由 2022 年世界薄餅錦標賽冠軍 Vincenzo Capuano 親自建立食譜和標準。香港分店位於<strong className="text-white font-semibold">灣仔利東街</strong>，是目前城中最接近那不勒斯本地薄餅體驗的地方。</BlogP>
-          <BlogH3>為何排第一？</BlogH3>
-          <BlogP>答案在三個方面：麵糰、食材和技術深度。那個標誌性的 cornicione 麵皮輕盈如雲，由長時間冷藏發酵而來，一口下去滿是發酵的微酸和麵粉的自然甜味。剪刀切薄餅的呈現方式已成為城中最多人討論的用餐儀式。使用從意大利精選進口的頂級食材——San Marzano 番茄、水牛莫扎里拉——沒有任何妥協。如需更詳細評論，<a href="/vincenzo-capuano-hong-kong-review" className={lnk}>閱讀我們的完整評論</a>，或直接<a href="/reservations" className={lnk}>訂座體驗</a>。</BlogP>
+          <BlogH2>評分標準</BlogH2>
+          <BlogP>我從四個維度為每家餐廳評分。麵糰品質排第一，因為麵皮決定一切。其次是配料和食材來源。再次是氛圍和服務。最後是性價比。無偏見，無付費排名，只是一個為了大量莫扎里拉而拼命的美食人。我們開始吧。</BlogP>
+
+          <BlogH2>1. Vincenzo Capuano（灣仔）</BlogH2>
+          <BlogP>這是香港<strong className="text-white font-semibold">當代拿坡里薄餅</strong>的新王者，老實說，目前根本沒有競爭者。Vincenzo Capuano 是 2022 年 Caputo Trophy 當代薄餅世界冠軍，他在利東街的香港分店於 2026 年 4 月 29 日開業。麵糰水分高達 80%，發酵 24 至 36 小時，烤出那個人人都在 Instagram 上拍攝的標誌性輕盈雲朵麵皮。</BlogP>
+          <BlogP><strong className="text-white font-semibold">Provola E Peppe</strong> 是必點的薄餅。煙燻波蘿伏洛芝士、San Marzano 番茄、甜椒、羅勒、橄欖油。每塊薄餅整塊送到桌前，用金色剪刀切開。這是一場表演，也是香港前所未有的薄餅體驗。</BlogP>
           <BlogList items={[
-            '地址：灣仔皇后大道東 200 號利東街地下 01 04 05 號舖',
-            '最適合：正宗拿坡里薄餅、精緻意式用餐、約會及特別場合',
-            '必試：Margherita（了解真正的拿坡里水準）、Diavola（個性之選）',
-            '交通：灣仔港鐵站 D 出口步行約 5 分鐘',
-            '評級：全球第 13 位 / 2022 年世界薄餅冠軍',
+            '必點薄餅：Provola E Peppe、Margherita、Abbraccio E Mamma',
+            '人均消費：港幣 300 至 450 元',
+            '地址：灣仔利東街',
+            '資格：2022 年世界薄餅冠軍，全球排名第 13',
           ]} />
 
-          <BlogH2>2. Motorino — 另一個可靠拿坡里選項</BlogH2>
-          <BlogP>Motorino 在全球多個城市設有分店，以其直接、誠實的拿坡里風格薄餅著稱。對於希望在灣仔以外地區尋找拿坡里薄餅的食客，這是一個值得了解的選項。食材紮實，風格清晰，適合日常薄餅需求。與 Vincenzo Capuano 相比，整體技術深度和食材精度有所不同，但在自己的定位上做得誠實。</BlogP>
+          <BlogH2>2. Pizza Trilogy</BlogH2>
+          <BlogP>香港傳統那不勒斯風格薄餅的長期寵兒。這裡的麵皮是經典 AVPN 風格，比 Vincenzo 的當代版本更有嚼勁、更質樸。紮實的 Margherita、漂亮的 Marinara，以及一份不過分複雜的意大利葡萄酒單。這家店靠穩定性悄悄建立了自己的聲譽——沒有噱頭，只有好薄餅。必點：Margherita、Diavola。人均：港幣 200 至 350 元。</BlogP>
 
-          <BlogH2>3. Homeslice — 最佳紐約風格薄餅</BlogH2>
-          <BlogP>如果你更偏向美式薄餅文化，Homeslice 是香港最受歡迎的<strong className="text-white font-semibold">紐約風格薄餅</strong>目的地之一。大件、薄底、配料豐富的 NY-style 薄餅，適合輕鬆的午餐或非正式聚會。這是完全不同的薄餅哲學，在自己的類別裡執行得很好。想了解兩種風格的根本差異，<a href="/what-is-neapolitan-pizza" className={lnk}>閱讀我們的拿坡里薄餅指南</a>。</BlogP>
+          <BlogH2>3. Pici</BlogH2>
+          <BlogP>Pici 現在遍布多個街區。以意麵為主，但薄餅也不遜色。麵糰偏輕薄的羅馬風格而非拿坡里風格，口感更酥脆更薄。輕鬆午餐或預算有限的約會之選。氛圍熱鬧友善，帶有鮮明的意式香港融合氣息。杯裝葡萄酒性價比不錯。必點：布拉塔薄餅、辣薩拉米。人均：港幣 200 至 320 元。</BlogP>
 
-          <BlogH2>4. CIAK — In The Kitchen — 最佳意式餐廳薄餅體驗</BlogH2>
-          <BlogP>CIAK 是香港最受尊重的意大利餐廳之一，薄餅在整個菜單中佔有重要地位。柴燒烤爐帶來的焦香、嚴選意大利食材，讓這裡的薄餅有別於一般連鎖選項。適合希望在完整意式用餐體驗中同時享用薄餅的食客——薄餅是菜單的重要組成部分而非點綴。</BlogP>
+          <BlogH2>4. The Italian Club Steak and Seafood</BlogH2>
+          <BlogP>這裡的薄餅默默無聞，因為所有人都是為牛排而來。這是個錯誤。柴燒意大利薄餅相當出色，尤其是 Quattro Formaggi。餐廳老派蘭桂坊風格，在銅鑼灣亦有分店，員工在此服務已久——這本身就說明了一切。帶一群人來，點薄餅、意麵和一份牛排，皆大歡喜。必點：Quattro Formaggi、Prosciutto e Funghi。人均：港幣 350 至 600 元。</BlogP>
 
-          <BlogH2>5. 8½ Otto e Mezzo Bombana — 最佳奢華場合</BlogH2>
-          <BlogP>對於希望在最精緻框架下體驗薄餅的食客，8½ Otto e Mezzo Bombana 提供了香港最頂尖的意大利餐廳體驗之一。這裡的<strong className="text-white font-semibold">木烤薄餅</strong>不是菜單主角，但在米芝蓮星級的整體水準下，每一個細節都反映出最高的食材標準和廚師技藝。適合真正特別的場合。</BlogP>
+          <BlogH2>5. Motorino</BlogH2>
+          <BlogP>香港正宗拿坡里薄餅的老牌機構。Motorino 存在夠久，已有種熟悉感，但品質始終穩定。麵糰是真正那不勒斯風格，柔軟有彈性，cornicione 有漂亮的豹紋焦斑。如果你想要一頓不帶炒作感的薄餅晚餐，這是可靠之選。必點：球芽甘藍薄餅、Margherita。人均：港幣 250 至 400 元。</BlogP>
 
-          <BlogH2>6. Grissini（君悅酒店）— 最佳酒店意大利薄餅</BlogH2>
-          <BlogP>灣仔君悅酒店的 Grissini 是香港歷史最悠久的高端意大利餐廳之一，以其柴燒窯烤薄餅和精選意大利食材著稱。對於正在灣仔一帶下榻或希望在酒店環境中享用精緻意大利料理的旅客，Grissini 是穩妥而出色的選擇。</BlogP>
+          <BlogH2>6. Posto Pubblico</BlogH2>
+          <BlogP>蘇豪區的經典，風格偏意大利裔美國人。薄餅不是嚴格的那不勒斯風格，更大、更豐腴、非常令人滿足——更像是安慰食物而非手工薄餅劇場。如果你從小吃東岸美式意大利食物，這裡有家的感覺。必點：Pepperoni、白松露薄餅。人均：港幣 300 至 500 元。</BlogP>
 
-          <BlogH2>7. Isola Bar & Grill — 最佳景觀薄餅體驗</BlogH2>
-          <BlogP>位於中環 IFC 商場的 Isola，以維多利亞港的壯闊景色著稱。薄餅在這裡是意大利式休閒用餐的一部分，食材講究，環境開闊。如果你希望在用餐時同時欣賞香港最令人嘆為觀止的天際線，這裡提供了一個難以複製的背景。</BlogP>
+          <BlogH2>7. Frantzen's Kitchen（薄餅之夜）</BlogH2>
+          <BlogP>嚴格來說不是薄餅店，但他們偶爾舉辦的薄餅之夜已建立起一批安靜的忠實粉絲。麵糰偏當代風格，配料以當季食材為主，廚房受過米芝蓮訓練，你能從中感受到那份精準。去之前請查看他們的社交媒體，薄餅並非每天都有。有的時候，它是特別的。必點：廚師本週作品。人均：港幣 500 至 800 元。</BlogP>
 
-          <BlogH2>8. Posto Pubblico — 最佳社區意大利氛圍</BlogH2>
-          <BlogP>Posto Pubblico 位於中環蘇豪區，以輕鬆的社區意大利餐廳氛圍著稱，深受本地居民喜愛。薄餅是菜單核心之一，選用新鮮食材，風格直接。適合一個不需要儀式感但希望好好吃一塊薄餅的夜晚。</BlogP>
+          <BlogH2>8. Paisano's Pizzeria</BlogH2>
+          <BlogP>全城多個據點的紐約切片薄餅店。對折切片、超大薄餅、深夜氛圍，以及在蘭桂坊喝多幾杯後的可靠體驗。這不是嚴格意義上的手工薄餅，但它能滿足一種柴燒薄餅無法滿足的特定需求。有時候你只想要一塊油紙碟上的大切片，沒什麼問題。必點：Pepperoni 切片、夏威夷切片。人均：港幣 80 至 150 元。</BlogP>
 
-          <BlogH2>9. Pizza Express — 最可靠的連鎖選項</BlogH2>
-          <BlogP>Pizza Express 在香港擁有多個分店，以其穩定的品質和親民的價格長期獲得家庭食客的青睞。薄底、食材紮實，不會讓你驚喜，但也不會讓你失望。適合預算有限或需要快速可靠選擇的日常薄餅需求。</BlogP>
+          <BlogH2>9. Pizza Mike's</BlogH2>
+          <BlogP>西營盤的街坊最愛。空間小、氛圍溫暖、家庭式經營。麵糰手拉，配料簡單但份量足，價格親民。如果你住附近，你已經知道了。這是那種你穿著運動褲在週二晚上去的地方，沒有人評判你。必點：Margherita、菌菇薄餅。人均：港幣 150 至 250 元。</BlogP>
 
-          <BlogH2>10. Al Molo（W 香港酒店）— 最佳海港景色意大利料理</BlogH2>
-          <BlogP>位於九龍 W 酒店的 Al Molo，提供面向維多利亞港的開闊海景意大利用餐體驗。薄餅是整個意式菜單的一部分，環境和景色為用餐增添難忘氛圍。適合特別場合或希望在九龍側享用意大利料理的食客。</BlogP>
+          <BlogH2>10. The Macaroni Club</BlogH2>
+          <BlogP>本榜單最新成員。現代意大利風格，主打自然葡萄酒，薄餅選擇不多但每款都經過深思熟慮。麵糰偏當代風格，沒有 Vincenzo 那麼進取，但比傳統拿坡里更輕盈。全菜單食材採購用心。年輕、設計感強的用餐空間，非常適合群體晚餐。必點：Mortadella 和開心果青醬薄餅。人均：港幣 350 至 550 元。</BlogP>
 
-          <BlogH2>如何做出最適合你的選擇</BlogH2>
-          <BlogP>這份名單涵蓋了不同風格、不同場合和不同預算的薄餅選擇，因為並非每個薄餅夜晚都需要同樣的東西。但如果問題只是「<strong className="text-white font-semibold">香港最佳薄餅餐廳</strong>是哪家」，大多數認真對待飲食的人都會給出同一個答案。Vincenzo Capuano 帶來了一種其他選項無法複製的東西：由世界冠軍親自建立的當代拿坡里薄餅哲學，在香港的土地上完整呈現。其餘九個選項各有所長——而第一名，有它不可撼動的理由。直接<a href="/reservations" className={lnk}>訂座親身體驗</a>，或先<a href="/menu" className={lnk}>查看菜單</a>了解更多。</BlogP>
+          <BlogH2>快速比較一覽</BlogH2>
+          <BlogP>時間有限？這是速查表。</BlogP>
+          <BlogList items={[
+            '爆款拿坡里薄餅及香港最佳當代薄餅：Vincenzo Capuano',
+            '傳統那不勒斯經典風格：Pizza Trilogy 或 Motorino',
+            '羅馬或薄脆麵皮風格：試試 Pici',
+            '紐約切片渴望：去 Paisano\'s',
+            '特殊場合奢華意大利餐廳體驗（附薄餅）：意大利會所或 The Macaroni Club',
+          ]} />
 
-          <BlogFAQ
-            title="常見問題"
-            items={faqsHK}
-          />
+          <BlogH2>如何選擇適合你的薄餅風格</BlogH2>
+          <BlogP>這讓很多薄餅新手困惑，簡單說明。傳統拿坡里薄餅有柔軟、略帶濕潤的中心和有嚼勁的麵皮——正宗、經典，但有些人覺得中心太軟。<strong className="text-white font-semibold">當代拿坡里薄餅</strong>是 Vincenzo Capuano 的專長，使用更高水分麵糰和更長發酵時間。麵皮更高、更輕盈、更易消化。羅馬風格薄餅更薄更酥脆，適合喜歡脆皮的人。紐約風格可以對折、多油、芝士豐富，為深夜和快速進食而生。沒有最好的風格，只有最適合你心情的風格。</BlogP>
+
+          <BlogH2>2026 年香港薄餅的面貌</BlogH2>
+          <BlogP>過去兩年有三件事發生了變化。首先，<strong className="text-white font-semibold">當代拿坡里薄餅的崛起</strong>。Vincenzo Capuano 是頭條，但其他手工薄餅餐廳正跟隨這股潮流，推出更高水分麵糰計劃。其次，<strong className="text-white font-semibold">更好的進口食材</strong>。意大利麵粉、San Marzano 番茄和 fior di latte 現在已是頂級餐廳的標準配備，採購已跟上野心。第三，<strong className="text-white font-semibold">更多透明度</strong>。菜單越來越多地告知你麵粉品種、發酵時間甚至烤爐溫度。薄餅迷正在被餵飽，這對所有人都是好事。</BlogP>
+
+          <BlogFAQ title="常見問題" items={faqsHK} />
+
+          <BlogH2>最後一口</BlogH2>
+          <BlogP>香港正在經歷真正的薄餅時刻。Vincenzo Capuano 的到來讓整個場景更加銳利，老牌餐廳也因此提升了水準，而我們其餘的人得以吃得非常好。如果你今年只有時間吃一頓薄餅晚餐，就去灣仔的 Vincenzo Capuano。如果你有時間吃十頓，按本榜單往下走。你最終會成為一個更快樂的人。祝胃口大開。</BlogP>
         </>
       ) : (
         <>
@@ -158,56 +188,106 @@ export const BestPizzaRestaurantsHK: React.FC<Props> = ({ lang, onBookClick }) =
             caption="The definitive 2026 guide to the best pizza restaurants in Hong Kong"
           />
 
-          <BlogP>Hong Kong is one of the world's great food cities, and the question of the <strong className="text-white font-semibold">best pizza restaurants in Hong Kong</strong> now has genuinely compelling answers. A decade ago, the options were limited to international chains and Italian restaurants where pizza was an afterthought. Today, the city has a real pizza scene — driven by better ingredients, more serious technique, and a dining public that knows the difference between a good pizza and a great one. This 2026 guide covers the top 10 destinations across every style, occasion, and budget, so you can stop searching and start eating.</BlogP>
+          <BlogP>Pizza in Hong Kong has finally grown up. Five years ago, finding a proper Neapolitan slice meant trekking, hoping, and often settling. In 2026, the city is spoiled. We have world champion pizzaiolos, wood-fired dough cults, neighbourhood joints with real Italian flour, and even a few rebellious New York-style holdouts. If you are looking for the <strong className="text-white font-semibold">best pizza restaurants Hong Kong</strong> has to offer this year, this is the guide. I ate a lot of pizza for you. Worth it.</BlogP>
 
-          <BlogHighlight>"Hong Kong's pizza culture has grown up. This city now deserves a guide that takes it seriously."</BlogHighlight>
+          <BlogHighlight>"Hong Kong is having a real pizza moment. The arrival of a world champion sharpened the whole scene."</BlogHighlight>
 
-          <BlogH2>1. Vincenzo Capuano Hong Kong — Best for Authentic Neapolitan Pizza</BlogH2>
-          <BlogP>As the author of this guide, we'll acknowledge the obvious — and the numbers back it up without apology. <strong className="text-white font-semibold">Vincenzo Capuano</strong> is ranked <strong className="text-white font-semibold">#13 globally</strong> in the Top 50 Pizza panel, founded on the recipes and standards of 2022 World Pizza Champion Vincenzo Capuano. The Hong Kong location at <strong className="text-white font-semibold">Lee Tung Avenue, Wan Chai</strong> is the most credentialed pizza restaurant this city has ever had — and the pizza justifies every credential it holds.</BlogP>
-          <BlogH3>Why It Takes the Top Spot</BlogH3>
-          <BlogP>Three things separate it: dough, ingredients, and technical depth. The signature cornicione is airy and dramatically raised, produced by an extended cold fermentation that builds flavour alongside structure. The scissors-and-stand presentation has become one of Hong Kong's most talked-about dining rituals. Ingredients are imported Italian — San Marzano tomatoes, buffalo mozzarella — sourced to the same specifications as the Naples originals. For the full picture, <a href="/vincenzo-capuano-hong-kong-review" className={lnk}>read our complete review here</a>, or <a href="/reservations" className={lnk}>book your table directly</a>.</BlogP>
+          <BlogH2>How I Ranked These</BlogH2>
+          <BlogP>I scored each place on four things. Dough quality first, because crust is everything. Then toppings and ingredient sourcing. Then atmosphere and service. Then value for the price. No bias. No paid placements. Just one foodie working through a lot of mozzarella. Let's go.</BlogP>
+
+          <BlogH2>1. Vincenzo Capuano (Wan Chai)</BlogH2>
+          <BlogP>This is the new king of <strong className="text-white font-semibold">contemporary Neapolitan pizza</strong> in Hong Kong, and honestly, it is not even close right now. Vincenzo Capuano is a 2022 Caputo Trophy World Champion, and his Lee Tung Avenue outpost opened on 29 April 2026. The dough hits 80 percent hydration, ferments for 24 to 36 hours, and comes out with that famous airy cloud crust everyone is filming for Instagram.</BlogP>
+          <BlogP>The <strong className="text-white font-semibold">Provola E Peppe</strong> pizza is the one to order. Smoked provolone, San Marzano tomatoes, sweet peppers, basil, olive oil. Each pizza comes whole to your table and gets sliced with golden scissors. It is a show. It is also genuinely better pizza than most of what Hong Kong has had before. This is <strong className="text-white font-semibold">viral Italian pizza</strong> done right. The world champion pizza title is not marketing. He actually won. <a href="/vincenzo-capuano-hong-kong-review" className={lnk}>Read our full review here</a>.</BlogP>
           <BlogList items={[
-            'Address: Lee Tung Avenue, GF Unit 01 04 05, 200 Queens Road East, Wan Chai',
-            'Best for: authentic Neapolitan pizza, refined Italian dining, date nights, special occasions',
-            'Must-order: Margherita (the benchmark) and Diavola (for personality)',
-            'Getting there: Wan Chai MTR Exit D, 5-minute walk',
-            'Ranking: #13 globally / 2022 World Pizza Champion',
+            'Pizza to order: Provola E Peppe, Margherita, Abbraccio E Mamma',
+            'Budget: HKD 300 to 450 per person',
+            'Location: Lee Tung Avenue, Wan Chai',
+            'Ranked #13 globally / 2022 World Pizza Champion',
           ]} />
 
-          <BlogH2>2. Motorino — A Solid Neapolitan Alternative</BlogH2>
-          <BlogP>Motorino operates across multiple cities and has built a following in Hong Kong for its direct, honest approach to <strong className="text-white font-semibold">Neapolitan-style pizza</strong>. It is a reliable choice for those searching for a Neapolitan option outside of Wan Chai, with a straightforward menu and consistent quality. The ingredient depth and technical precision sit at a different level to Vincenzo Capuano, but for a good-quality pizza night without the wait, it serves the purpose well.</BlogP>
+          <BlogH2>2. Pizza Trilogy</BlogH2>
+          <BlogP>A long-time favourite for traditional Naples-style pizza in Hong Kong. The crust here is the classic AVPN style, slightly chewier and more rustic than Vincenzo's contemporary version. Solid Margheritas, beautiful Marinara, and a tight wine list that nods Italian without overcomplicating. This place quietly built its reputation on consistency. No drama. Just good pizza.</BlogP>
+          <BlogList items={[
+            'Pizza to order: Margherita, Diavola',
+            'Budget: HKD 200 to 350 per person',
+          ]} />
 
-          <BlogH2>3. Homeslice — Best for New York-Style Pizza</BlogH2>
-          <BlogP>For diners drawn to the American pizza tradition, Homeslice has established itself as one of Hong Kong's go-to destinations for <strong className="text-white font-semibold">NY-style pizza</strong> — large, thin-based, generously loaded, and built for the fold. It is an entirely different philosophy to Neapolitan, and one that Homeslice executes well within its category. A great option for casual lunches and relaxed group dinners. To understand how the two styles differ fundamentally, <a href="/what-is-neapolitan-pizza" className={lnk}>read our guide to Neapolitan pizza</a>.</BlogP>
+          <BlogH2>3. Pici</BlogH2>
+          <BlogP>You will find Pici across multiple neighbourhoods now. It is more pasta-led than the others on this list, but the pizzas hold their own. The dough is lighter Roman style rather than Neapolitan, so the texture is crisper and thinner. Good for a casual lunch. Good for a date that needs to stay under a budget. The vibe is loud, friendly, and the wine by the carafe is decent value. To understand how Roman and Neapolitan styles differ, <a href="/what-is-neapolitan-pizza" className={lnk}>read our Neapolitan pizza guide here</a>.</BlogP>
+          <BlogList items={[
+            'Pizza to order: Burrata pizza, Spicy salami',
+            'Budget: HKD 200 to 320 per person',
+          ]} />
 
-          <BlogH2>4. CIAK — In The Kitchen — Best Italian Restaurant Pizza</BlogH2>
-          <BlogP>CIAK is one of Hong Kong's most respected Italian restaurants, and the pizza earns its place on a menu that takes Italian cooking seriously. <strong className="text-white font-semibold">Wood-fired oven</strong> charring, carefully sourced Italian ingredients, and a dining environment that elevates the occasion — this is the right choice when you want pizza as part of a complete Italian meal rather than as the evening's sole focus. The service and atmosphere are polished throughout.</BlogP>
+          <BlogH2>4. The Italian Club Steak and Seafood</BlogH2>
+          <BlogP>The pizza here flies under the radar because everyone comes for the steak. That is a mistake. The <strong className="text-white font-semibold">wood-fired Italian pizza</strong> pies are quietly excellent, especially the Quattro Formaggi. The dining room is old-school Lan Kwai Fong, with a Causeway Bay branch as well, and the staff have been there forever, which always tells you something good. Bring a group. Order pizza, pasta, and one steak. Everyone wins.</BlogP>
+          <BlogList items={[
+            'Pizza to order: Quattro Formaggi, Prosciutto e Funghi',
+            'Budget: HKD 350 to 600 per person',
+          ]} />
 
-          <BlogH2>5. 8½ Otto e Mezzo Bombana — Best for a Luxury Occasion</BlogH2>
-          <BlogP>For those treating dinner as a genuine event, <strong className="text-white font-semibold">8½ Otto e Mezzo Bombana</strong> offers Hong Kong's most refined Italian dining experience — and the pizza, while not the centrepiece of the menu, reflects the Michelin-starred attention to detail that runs through everything here. This is the choice when the occasion calls for the city's very finest Italian cooking in a setting that matches it. Book well in advance.</BlogP>
+          <BlogH2>5. Motorino</BlogH2>
+          <BlogP>A Hong Kong institution for <strong className="text-white font-semibold">authentic Neapolitan pizza</strong>. Motorino has been around long enough to feel familiar, but the quality has stayed strong. The dough is true Naples style, soft and yielding, with a properly leoparded cornicione. If you want a quick pizza dinner that does not feel like a hype trip, this is the dependable choice.</BlogP>
+          <BlogList items={[
+            'Pizza to order: Brussels Sprout pizza, Margherita',
+            'Budget: HKD 250 to 400 per person',
+          ]} />
 
-          <BlogH2>6. Grissini (Grand Hyatt) — Best Hotel Italian Pizza</BlogH2>
-          <BlogP>One of Hong Kong's longest-standing fine Italian restaurants, <strong className="text-white font-semibold">Grissini</strong> at the Grand Hyatt is known for its wood-fired oven pizzas and carefully curated Italian pantry. A polished, consistent choice for hotel guests and diners seeking a premium Italian experience in Wan Chai. The service standard is high, the room is comfortable, and the pizza is reliably well-made throughout.</BlogP>
+          <BlogH2>6. Posto Pubblico</BlogH2>
+          <BlogP>A SoHo classic that goes a little more Italian-American in spirit. The pizzas are not strict Naples style. They are bigger, a touch richer, and very satisfying. Comfort food more than <strong className="text-white font-semibold">artisan pizza restaurant</strong> theatre. If you grew up on east-coast American Italian food, this place feels like home.</BlogP>
+          <BlogList items={[
+            'Pizza to order: Pepperoni, White pizza with truffle',
+            'Budget: HKD 300 to 500 per person',
+          ]} />
 
-          <BlogH2>7. Isola Bar & Grill — Best Views with Your Pizza</BlogH2>
-          <BlogP>Perched above Central at IFC Mall, <strong className="text-white font-semibold">Isola</strong> is as well known for its Victoria Harbour panorama as for its Italian menu. Pizza here sits within a relaxed Italian dining context, backed by quality ingredients and an ambiance that makes the meal feel effortlessly special. If you want your pizza alongside one of Hong Kong's most extraordinary views, there is no better backdrop in the city.</BlogP>
+          <BlogH2>7. Frantzen's Kitchen (Pizza Nights)</BlogH2>
+          <BlogP>Not strictly a pizzeria, but their occasional pizza nights have built a quiet cult following. The dough leans contemporary, the toppings are seasonally driven, and the kitchen is Michelin-trained, so you can taste the precision. Check their socials before going. Pizza is not always on the menu. When it is, it is special.</BlogP>
+          <BlogList items={[
+            'Pizza to order: Whatever the chef is doing that week',
+            'Budget: HKD 500 to 800 per person',
+          ]} />
 
-          <BlogH2>8. Posto Pubblico — Best Neighbourhood Italian Atmosphere</BlogH2>
-          <BlogP>Tucked into SoHo, <strong className="text-white font-semibold">Posto Pubblico</strong> has long been a fixture for locals looking for an unfussy, neighbourhood Italian with solid pizza at its core. No ceremony, no complicated menu — just fresh ingredients, a relaxed setting, and a pizza that delivers without overreaching. The kind of place you return to on a Tuesday without needing a reason.</BlogP>
+          <BlogH2>8. Paisano's Pizzeria</BlogH2>
+          <BlogP>A New York slice spot with a few outlets across the city. Folded slices, oversized pies, late-night energy, and a reliable vibe after one too many cocktails in Lan Kwai Fong. This is not artisan pizza in the strict sense, but it scratches a specific itch that <strong className="text-white font-semibold">Italian wood-fired pizza</strong> cannot. Sometimes you just want a giant slice with grease on a paper plate. No shame.</BlogP>
+          <BlogList items={[
+            'Pizza to order: Pepperoni slice, Hawaiian slice',
+            'Budget: HKD 80 to 150 per person',
+          ]} />
 
-          <BlogH2>9. Pizza Express — Most Reliable Chain Option</BlogH2>
-          <BlogP>With multiple locations across Hong Kong, <strong className="text-white font-semibold">Pizza Express</strong> remains the city's most consistent pizza chain — thin-based, well-portioned, and accessible enough for families and anyone who wants a reliable meal without the fuss of a reservation. It won't surprise you, but it also won't disappoint. For everyday pizza needs on a straightforward budget, it is the most dependable chain option available.</BlogP>
+          <BlogH2>9. Pizza Mike's</BlogH2>
+          <BlogP>A neighbourhood favourite in Sai Ying Pun. Small, warm, family-run energy. The dough is hand-stretched, the toppings are simple but generous, and the prices are kind. If you live nearby, you already know. This is the kind of place you go on a Tuesday in track pants. Nobody is judging.</BlogP>
+          <BlogList items={[
+            'Pizza to order: Margherita, Funghi',
+            'Budget: HKD 150 to 250 per person',
+          ]} />
 
-          <BlogH2>10. Al Molo (W Hong Kong) — Best Harbour-View Italian</BlogH2>
-          <BlogP>Located in the W Hong Kong hotel in Kowloon, <strong className="text-white font-semibold">Al Molo</strong> offers an Italian dining experience with sweeping Victoria Harbour views that make every meal feel like an event. Pizza is part of a broader Italian menu, and the waterfront setting adds an atmosphere that is hard to replicate. Worth visiting for special occasions or when hosting guests who want the full Hong Kong skyline as their backdrop.</BlogP>
+          <BlogH2>10. The Macaroni Club</BlogH2>
+          <BlogP>The newest entry on this list. Modern Italian, big on natural wines, with a small but well-judged pizza section. The dough leans contemporary in style, not as aggressive as Vincenzo's, but lighter than traditional Neapolitan. Strong ingredient sourcing across the menu. A young, design-forward room that pairs nicely with a group dinner.</BlogP>
+          <BlogList items={[
+            'Pizza to order: Mortadella and pistachio pesto pizza',
+            'Budget: HKD 350 to 550 per person',
+          ]} />
 
-          <BlogH2>How to Choose the Right One for You</BlogH2>
-          <BlogP>This list covers different styles, occasions, and price points — because not every pizza night calls for the same thing. But if the question is simply which of these is the <strong className="text-white font-semibold">best pizza restaurant in Hong Kong</strong>, one answer returns consistently. Vincenzo Capuano brings something the other entries on this list cannot replicate: a world-champion contemporary Neapolitan philosophy, fully intact, in the heart of Wan Chai. The rest of this list each has its own strengths — and that #1 spot has reasons that hold up on every visit. <a href="/reservations" className={lnk}>Reserve a table here</a> to find out for yourself, or <a href="/menu" className={lnk}>explore the menu first</a>.</BlogP>
+          <BlogH2>Quick Comparison: At a Glance</BlogH2>
+          <BlogP>If you are short on time, here is the cheat sheet.</BlogP>
+          <BlogList items={[
+            <><strong className="text-white font-semibold">Viral Italian pizza and best Neapolitan pizza in Hong Kong right now:</strong> Vincenzo Capuano</>,
+            <><strong className="text-white font-semibold">Traditional Naples-style classics:</strong> Pizza Trilogy or Motorino</>,
+            <><strong className="text-white font-semibold">Roman or thinner crust styles:</strong> Pici</>,
+            <><strong className="text-white font-semibold">New York slice cravings:</strong> Paisano's</>,
+            <><strong className="text-white font-semibold">Special-occasion luxury Italian restaurant with pizza:</strong> Italian Club or The Macaroni Club</>,
+          ]} />
 
-          <BlogFAQ
-            title="Frequently Asked Questions"
-            items={faqsEN}
-          />
+          <BlogH2>How to Pick the Right Pizza Style for You</BlogH2>
+          <BlogP>Traditional Neapolitan pizza has a soft, slightly wet centre and a chewy crust. Authentic, classic, but some people find the middle too soft. <strong className="text-white font-semibold">Contemporary Neapolitan pizza</strong>, which is Vincenzo Capuano's specialty, uses higher hydration dough and longer fermentation. The crust is taller, airier, and lighter. Easier on the stomach. Roman style is thinner and crispier. New York style is foldable, oily, and loaded with cheese. There is no best style. Only the best style for your mood.</BlogP>
+
+          <BlogH2>What Hong Kong Pizza Looks Like in 2026</BlogH2>
+          <BlogP>Three things have shifted in the last two years. First, the rise of <strong className="text-white font-semibold">contemporary Neapolitan pizza</strong>. Vincenzo Capuano is the headline, but other artisan pizza restaurant openings are following the trend with higher-hydration dough programs. Second, better imports. Italian flour, San Marzano tomatoes, and fior di latte are now standard at the top tier. Third, more transparency. Menus increasingly tell you the flour, the fermentation time, and even the oven temperature. Pizza nerds are being fed, and that is a good thing for everyone. <a href="/best-neapolitan-pizza-hong-kong" className={lnk}>Read our deep-dive on Neapolitan pizza in Hong Kong here</a>.</BlogP>
+
+          <BlogFAQ title="FAQ: Best Pizza Restaurants Hong Kong 2026" items={faqsEN} />
+
+          <BlogH2>Final Slice</BlogH2>
+          <BlogP>Hong Kong is having a real pizza moment. The arrival of Vincenzo Capuano sharpened the whole scene, the older spots have raised their game in response, and the rest of us get to eat very well. If you only have time for one pizza dinner this year, make it <strong className="text-white font-semibold">Vincenzo Capuano in Wan Chai</strong>. If you have time for ten, work down this list. You will be a happier human at the end of it. <a href="/reservations" className={lnk}>Reserve your table here</a>. Buon appetito.</BlogP>
         </>
       )}
     </BlogLayout>

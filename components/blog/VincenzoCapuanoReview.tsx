@@ -15,63 +15,87 @@ export const VincenzoCapuanoReview: React.FC<Props> = ({ lang, onBookClick }) =>
 
   const faqsEN: FAQItem[] = [
     {
-      q: 'What is the scissors pizza presentation at Vincenzo Capuano Hong Kong?',
-      a: 'The pizza arrives on a raised metal stand and is cut at the table using scissors rather than a wheel. The stand keeps the base crisp by allowing air beneath the pizza; the scissors preserve the airy cornicione structure that a rolling blade would compress. It is both practical and theatrical — and entirely deliberate.',
+      q: 'Where is Vincenzo Capuano located in Hong Kong?',
+      a: <>Lee Tung Avenue, Wan Chai. The address is <strong className="text-white font-semibold">Shop G04-05 on the ground floor and F01A on the first floor, 200 Queen's Road East</strong>. It is a five-minute walk from Wan Chai MTR.</>,
     },
     {
-      q: 'Is Vincenzo Capuano Hong Kong worth the price?',
-      a: <>Every pizza uses imported Italian ingredients including San Marzano tomatoes and buffalo mozzarella, prepared using the techniques of a <strong className="text-white font-semibold">2022 World Pizza Champion</strong>. The quality justifies the price fully. This is premium pizza made at a world-class standard — not a premium price for a standard product.</>,
+      q: 'Is the world champion pizza title legit?',
+      a: <>Yes. <strong className="text-white font-semibold">Vincenzo Capuano won the Caputo Trophy World Championship for Contemporary Pizza in 2022</strong>. He has over 40 industry awards across his career.</>,
     },
     {
-      q: 'What are the must-order pizzas at Vincenzo Capuano?',
-      a: <>The <strong className="text-white font-semibold">Margherita</strong> is essential on a first visit — it shows ingredient quality and dough precision most clearly. The Diavola is a strong follow-up. <a href="/menu" className={lnk}>View the full menu</a> to plan your visit in advance.</>,
+      q: 'What is the pizza scissors presentation about?',
+      a: 'The pizzas arrive whole and are cut at the table with large golden scissors. It protects the airy contemporary crust from being crushed by a wheel, and it makes for a memorable, social moment. It is both functional and a nice show.',
     },
     {
-      q: 'Does Vincenzo Capuano Hong Kong take walk-ins?',
-      a: <>Walk-ins are welcome when seats are available. However, to guarantee your preferred time — especially on evenings and weekends — <a href="/reservations" className={lnk}>making a reservation in advance</a> is strongly recommended.</>,
+      q: 'Is it worth the hype?',
+      a: 'Yes. The dough quality, the toppings, and the overall experience justify the buzz. The price is higher than average, but you are paying for a championship-level product.',
     },
     {
-      q: 'What time does Vincenzo Capuano open in Hong Kong?',
-      a: <>Open <strong className="text-white font-semibold">7 days a week</strong>: Lunch 12:00–15:00 and Dinner 18:00–23:00. See our <a href="/contact" className={lnk}>contact page</a> for full details.</>,
+      q: 'How is the pizza different from regular Neapolitan?',
+      a: <>It uses <strong className="text-white font-semibold">contemporary Neapolitan pizza techniques</strong>: higher hydration dough, around 80 percent water, and 24 to 36 hour fermentation. The crust comes out lighter, airier, and easier to digest than traditional Naples style.</>,
     },
     {
-      q: 'Who is Vincenzo Capuano and what makes him a world champion?',
-      a: <>Vincenzo Capuano is a third-generation pizza maker from Naples who won the <strong className="text-white font-semibold">2022 World Pizza Championship</strong> — the highest competitive stage in the global pizza world. His techniques and ingredient standards are the foundation of every pizza served in Hong Kong. <a href="/vincenzo-capuano-story" className={lnk}>Read the full story here</a>.</>,
+      q: 'Do they take reservations?',
+      a: <>Yes, and strongly recommended, especially for dinner and weekends. <a href="/reservations" className={lnk}>Book your table here</a>.</>,
     },
     {
-      q: 'Is the food at Vincenzo Capuano Hong Kong authentic Neapolitan?',
-      a: <>Yes. The pizza uses imported Italian ingredients, the same fermentation methods developed by Vincenzo Capuano in Naples, and the contemporary Neapolitan technique that earned him the world title. For background on what distinguishes authentic Neapolitan pizza, <a href="/what-is-neapolitan-pizza" className={lnk}>read our guide here</a>.</>,
+      q: 'What should I order on my first visit?',
+      a: <>Margherita, <strong className="text-white font-semibold">Provola E Peppe</strong>, and tiramisu. Add an Aperol Spritz to start. That is a clean introduction without over-ordering. <a href="/menu" className={lnk}>See the full menu here</a>.</>,
+    },
+    {
+      q: 'Is this the best Italian food Hong Kong has right now?',
+      a: <>For pizza specifically, it is at the top of the conversation. <a href="/best-pizza-restaurants-hong-kong" className={lnk}>See our full Hong Kong pizza guide</a> for the wider picture.</>,
+    },
+    {
+      q: 'Can I get takeaway?',
+      a: 'Yes, but not recommended. The airy contemporary crust loses its texture quickly in a box. Eat in if you can.',
+    },
+    {
+      q: 'How much does it cost?',
+      a: 'Pizzas are roughly HKD 180 to 320. Most diners spend HKD 300 to 450 per person including a drink and dessert.',
     },
   ];
 
   const faqsHK: FAQItem[] = [
     {
-      q: 'Vincenzo Capuano 香港的剪刀薄餅呈現方式是什麼？',
-      a: '薄餅放在升高的金屬架上，在桌邊用剪刀而非滾輪刀切開。架子讓底部保持酥脆；剪刀保護 cornicione 的空氣結構不被壓扁。這是實用與儀式感的完美結合，完全是有意為之。',
+      q: 'Vincenzo Capuano 香港店在哪裡？',
+      a: <>灣仔利東街。地址為<strong className="text-white font-semibold">皇后大道東 200 號地下 G04-05 號舖及一樓 F01A</strong>。距灣仔港鐵站步行約五分鐘。</>,
     },
     {
-      q: 'Vincenzo Capuano 香港的消費是否物有所值？',
-      a: <>每塊薄餅使用進口意大利食材，包括 San Marzano 番茄和水牛莫扎里拉，以<strong className="text-white font-semibold">2022 年世界薄餅冠軍</strong>的技術製作。品質完全值得其價格——這是世界級水準的頂級薄餅，而非普通產品的溢價。</>,
+      q: '世界冠軍薄餅稱號是否真實？',
+      a: <>是的。<strong className="text-white font-semibold">Vincenzo Capuano 於 2022 年贏得 Caputo Trophy 當代薄餅世界冠軍</strong>，職業生涯中獲得超過 40 個行業獎項。</>,
     },
     {
-      q: '在 Vincenzo Capuano 必點哪些薄餅？',
-      a: <><strong className="text-white font-semibold">Margherita</strong> 是第一次到訪的必選——最清晰地展示食材品質和麵糰精確度。Diavola 是很好的後續選擇。<a href="/menu" className={lnk}>查看完整菜單</a>提前計劃。</>,
+      q: '薄餅剪刀呈現方式是什麼？',
+      a: '薄餅整塊送到桌前，用大型金色剪刀在桌邊切開。這保護了輕盈的當代麵皮不被滾輪壓扁，同時製造出難忘的社交時刻。既實用，又是一場精彩表演。',
     },
     {
-      q: 'Vincenzo Capuano 香港接受即場入座嗎？',
-      a: <>有空位時歡迎即場入座。但為保證您偏好的時間——尤其是晚上和週末——強烈建議<a href="/reservations" className={lnk}>提前訂座</a>。</>,
+      q: '值得這樣的炒作嗎？',
+      a: '值得。麵糰品質、配料和整體體驗都印證了這份聲譽。價格高於平均，但你付出的是世界冠軍級別的產品。',
     },
     {
-      q: 'Vincenzo Capuano 香港的開放時間是什麼？',
-      a: <><strong className="text-white font-semibold">每週 7 天</strong>開放：午市 12:00–15:00，晚市 18:00–23:00。詳情請瀏覽我們的<a href="/contact" className={lnk}>聯絡頁面</a>。</>,
+      q: '這裡的薄餅與普通拿坡里薄餅有何不同？',
+      a: <>採用<strong className="text-white font-semibold">當代拿坡里薄餅技術</strong>：更高水分麵糰（約 80% 水分）及 24 至 36 小時發酵。麵皮比傳統那不勒斯風格更輕盈、更充滿空氣感、更易消化。</>,
     },
     {
-      q: 'Vincenzo Capuano 是誰？他的世界冠軍稱號是如何獲得的？',
-      a: <>Vincenzo Capuano 是來自那不勒斯的第三代薄餅師傅，赢得了<strong className="text-white font-semibold">2022 年世界薄餅錦標賽</strong>冠軍——全球薄餅界最高競技舞台。他的技術和食材標準是香港每塊薄餅的基礎。<a href="/vincenzo-capuano-story" className={lnk}>在此閱讀完整故事</a>。</>,
+      q: '可以訂座嗎？',
+      a: <>可以，強烈建議，尤其是晚餐和週末。<a href="/reservations" className={lnk}>在此預訂</a>。</>,
     },
     {
-      q: 'Vincenzo Capuano 香港的薄餅是否正宗拿坡里風格？',
-      a: <>是的。薄餅使用進口意大利食材，採用 Vincenzo Capuano 在那不勒斯開創的相同發酵方法，以及為他贏得世界冠軍稱號的當代拿坡里技術。有關正宗拿坡里薄餅有何獨特之處，<a href="/what-is-neapolitan-pizza" className={lnk}>請閱讀我們的指南</a>。</>,
+      q: '第一次到訪應該點什麼？',
+      a: <>Margherita、<strong className="text-white font-semibold">Provola E Peppe</strong> 和提拉米蘇。加一杯 Aperol Spritz 開始。這是不過量點餐的完美入門組合。<a href="/menu" className={lnk}>在此查看完整菜單</a>。</>,
+    },
+    {
+      q: '這是香港目前最好的意大利食物嗎？',
+      a: <>就薄餅而言，它絕對是話題頂端。<a href="/best-pizza-restaurants-hong-kong" className={lnk}>查看我們的香港薄餅完整指南</a>了解更廣泛的全局。</>,
+    },
+    {
+      q: '可以外賣嗎？',
+      a: '可以，但不建議。輕盈的當代麵皮在盒子裡很快失去質感。盡量堂食。',
+    },
+    {
+      q: '費用大概是多少？',
+      a: '薄餅約港幣 180 至 320 元。包括一杯飲料和甜品，大多數食客每人消費約港幣 300 至 450 元。',
     },
   ];
 
@@ -81,121 +105,125 @@ export const VincenzoCapuanoReview: React.FC<Props> = ({ lang, onBookClick }) =>
       onBookClick={onBookClick}
       eyebrow={isHK ? '餐廳評論' : 'Restaurant Review'}
       title={isHK ? 'Vincenzo Capuano 香港評論：每個人都在談論的世界冠軍薄餅' : 'Vincenzo Capuano Hong Kong Review: The World Champion Pizza Everyone Is Talking About'}
-      readTime={isHK ? '閱讀時間約 6 分鐘' : '6 minute read'}
+      readTime={isHK ? '閱讀時間約 8 分鐘' : '8 minute read'}
     >
       {isHK ? (
         <>
           <BlogImage
             src="https://storage.googleapis.com/xps-assets/gotti%27s%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/detto-fatto-pizza.png"
             alt="Vincenzo Capuano 香港評論 — 灣仔世界冠軍當代拿坡里薄餅"
-            caption="Vincenzo Capuano 香港 — 灣仔利東街世界冠軍薄餅"
+            caption="Vincenzo Capuano 香港 — 皇后大道東 200 號利東街"
           />
 
-          <BlogP>每隔一段時間，香港就會出現一家讓整個城市停下來認真討論的餐廳。不靠名人效應，不靠豪華裝潢，就靠食物本身。<strong className="text-white font-semibold">Vincenzo Capuano 香港</strong>位於灣仔利東街，帶著一個明確的主張而來：由世界冠軍薄餅師傅直接從那不勒斯帶來的當代拿坡里薄餅。它在開業後迅速成為全城最多人討論的餐廳之一，原因不需要複雜解釋——薄餅本身就是答案。</BlogP>
+          <BlogP>我在香港吃薄餅已經多年了。深夜的 Pepperoni、上環的新拿坡里風格、從那不勒斯紅眼班機回來時的機場切片。所以當灣仔 <strong className="text-white font-semibold">Vincenzo Capuano 香港</strong> 開業的消息開始流傳時，我有點不以為然。又一個世界冠軍薄餅開業？好吧。然後我去了。然後我閉嘴了。然後我又去了。這篇香港薄餅評論會很誠實，但劇透一下——這波炒作大部分是有根據的。</BlogP>
 
-          <BlogHighlight>「這不是薄餅快餐。這是薄餅藝術。」</BlogHighlight>
+          <BlogHighlight>「剪刀是個小玩笑。麵皮才是真正的故事。去嚐嚐吧。」</BlogHighlight>
 
-          <BlogH2>第一印象：空間與氛圍</BlogH2>
-          <BlogP><strong className="text-white font-semibold">Vincenzo Capuano 香港</strong>的用餐空間精心設計而不矯揉造作——深色調、乾淨線條，以及讓你看到師傅處理麵糰過程的開放式廚房。這裡不試圖以裝潢分散你的注意力。所有的自信都放在產品本身，整個空間的設計都在讓薄餅成為主角。它感覺像一個認真對待自己所做之事、同時又不過分嚴肅的地方——這種平衡比看起來更難達到。</BlogP>
+          <BlogH2>你應該先了解的背景故事</BlogH2>
+          <BlogP>Vincenzo Capuano 不是什麼隨機的 Instagram 廚師。他是 2022 年 Caputo Trophy 當代薄餅世界冠軍，在那不勒斯長大，從祖父和父親那裡學習製作麵糰，花了十多年時間完善高水分麵糰的可能性。他的集團現在在意大利至迪拜運營超過 20 家薄餅店。<strong className="text-white font-semibold">灣仔利東街的香港分店</strong>於 2026 年 4 月 29 日開業，是品牌在香港的首家分店，也是亞洲少數幾家之一。所以當你看到那些<strong className="text-white font-semibold">香港爆款薄餅視頻</strong>在網絡上流傳，這就是那個地方。</BlogP>
 
-          <BlogH2>標誌性呈現方式：剪刀與薄餅架</BlogH2>
-          <BlogP>這是每次到訪都會被拍照的一幕。薄餅放在一個升高的金屬架上送到桌前，服務員用剪刀在桌邊逐份切開。這在社交媒體上已被分享無數次——但它不只是一個噱頭。每個細節背後都有充分的道理。</BlogP>
-          <BlogH3>為何用剪刀而非滾輪刀？</BlogH3>
-          <BlogP>金屬架讓底部在上菜過程中持續透氣，防止蒸汽積聚令底部軟化。剪刀避免了滾輪刀切割時施加的壓力——滾輪會壓扁 cornicione 的空氣結構，而這個結構正是整塊薄餅最珍貴的部分。一旦你理解這個系統在保護什麼，你看到的就不只是一個表演動作，而是一個每個環節都服務於薄餅本身的完整思考。</BlogP>
+          <BlogH2>第一印象：走進餐廳</BlogH2>
+          <BlogP>我在一個週三下午 6 點 45 分走進去。空間已經熱鬧起來。溫暖的木材、赤陶色調、柔和燈光，以及在進門前就撲面而來的柴燒麵糰香氣。開放式廚房驕傲地佇立在中央。你可以看到那台手工建造的 Pasquale Fazzone 烤爐——那台從意大利一磚一瓦運來的烤爐。那台烤爐是整個空間的中心，理所當然。</BlogP>
+          <BlogP>氛圍比一家那不勒斯後街小店更精緻，但不僵硬。它感覺像一家<strong className="text-white font-semibold">奢華薄餅餐廳</strong>，卻仍然希望你用手吃飯。兩層樓，80 個座位，門口的主人能量友善。作為香港意大利餐廳的格局，它完美平衡了休閒與特殊場合。</BlogP>
+
+          <BlogH2>薄餅剪刀呈現方式</BlogH2>
+          <BlogP>讓我先處理這個話題。是的，他們真的整塊把薄餅端到桌前，然後服務員用這些巨大的金色剪刀把它切開。一些美食評論家稱之為噱頭。我不同意。以下是它重要的原因：<strong className="text-white font-semibold">當代拿坡里薄餅的麵皮在結構上非常脆弱</strong>，充滿了大型不規則氣孔。標準的滾輪刀會壓碎這些氣孔。剪刀讓輕盈的麵皮保持完整。這是一個功能性選擇，碰巧也很上鏡。是的，它能拍出很棒的視頻。它也讓你的薄餅吃起來更好。</BlogP>
+
+          <BlogH2>食物：我點了什麼</BlogH2>
+
+          <BlogH3>Margherita</BlogH3>
+          <BlogP>我總是從這裡開始。麵糰是主角：高高的、帶有焦斑的 cornicione，柔軟的內部有真實的嚼勁。San Marzano 醬汁明亮而有酸度。fior di latte 融化成一個個奶池而不是讓切片變油。一個乾淨、自信的經典。這個 Margherita 勝過很多所謂的<strong className="text-white font-semibold">香港最佳意大利食物</strong>競爭者。</BlogP>
+
+          <BlogH3>Provola E Peppe</BlogH3>
+          <BlogP>招牌薄餅。煙燻波蘿伏洛芝士、手壓 San Marzano 番茄、甜椒、烤車厘茄、羅勒、橄欖油。波蘿伏洛增添深度而不喧賓奪主。甜椒帶來甜味。麵皮承接所有汁水而不會變軟。這是我<strong className="text-white font-semibold">在約會時會點的薄餅</strong>。<a href="/menu" className={lnk}>在此查看完整菜單</a>探索更多選擇。</BlogP>
+
+          <BlogH3>Abbraccio E Mamma</BlogH3>
+          <BlogP>填充了瑞可達芝士的麵皮邊、那不勒斯肉丸、格拉納帕達諾芝士、水牛莫扎里拉。這是薄餅形式的縱欲。光是填充麵皮就是一頓飯。我和兩位朋友分享，還是吃得很飽。為了體驗點一次，然後在以後的到訪中與較輕盈的選擇交替。</BlogP>
+
+          <BlogH3>提拉米蘇</BlogH3>
+          <BlogP>是的，要點甜品。放在玻璃杯裡，適當浸泡，咖啡與馬斯卡彭的比例恰到好處。不太甜。是真正的提拉米蘇。</BlogP>
+
+          <BlogH2>服務與節奏</BlogH2>
+          <BlogP>服務周到而不令人窒息。薄餅師傅團隊工作迅速，所以即使在繁忙的夜晚，課程之間的等待也是合理的。服務員可以帶你了解菜單，這一點很重要，因為對香港食客來說，菜名並不都是一目了然的。酒吧節目小但紮實。Negroni 苦得恰到好處，Aperol Spritz 真的是冰的。葡萄酒偏意大利風格，這說得通。</BlogP>
+
+          <BlogH2>與其他香港薄餅的比較</BlogH2>
+          <BlogP>香港在過去五年對薄餅變得認真了。傳統拿坡里選項很容易找到。羅馬風格和紐約風格也有各自的支持者。那麼 Vincenzo Capuano 在哪個位置？對我來說，這是目前城中最強的<strong className="text-white font-semibold">當代拿坡里薄餅</strong>。其他地方提供出色的傳統那不勒斯薄餅。Vincenzo 的優勢在於更高水分、更長發酵的麵糰，產生出城中其他任何地方都無法匹敵的麵皮。如果你曾經覺得拿坡里薄餅讓你的胃很重，這個版本解決了這個問題。它的定價也像一個<strong className="text-white font-semibold">奢華薄餅</strong>產品——薄餅約港幣 180 至 320 元，包括一杯飲料和甜品，每人約港幣 300 至 450 元。</BlogP>
+
+          <BlogH2>我不太喜歡的地方</BlogH2>
+          <BlogP>我不會假裝它完美無瑕。地下層在高峰時段會很嘈雜。如果你想安靜地聊天，請要求安排在上層。如果你與一個不是所有人都想吃薄餅的大型聚餐，菜單有點窄。有前菜和幾款意麵，但薄餅顯然是主角。週末即場入座的等待時間是真實的。提前訂座，或在非高峰時間到來。這些只是小問題，不會改變結論。</BlogP>
+
+          <BlogH2>這家餐廳適合哪些人</BlogH2>
           <BlogList items={[
-            '金屬架讓底部持續透氣，保持酥脆不積水',
-            '剪刀完整保留 cornicione 的空氣結構，不造成壓扁',
-            '均勻份量分配，非常適合多人共享',
-            '整個過程本身就是一種精心設計的用餐儀式',
+            '尋找下一個大事物的美食愛好者——顯然，是的',
+            '想要給人留下深刻印象但不太正式的約會夜——剪刀時刻是內建的話題引子',
+            '帶孩子的家庭聚餐——開放式廚房和薄餅表演讓小孩保持興奮',
+            '厭倦了普通 Margherita 的意大利食物愛好者——這是一個升級',
+            '想嚐嚐香港正在做的不同之處的訪客——這在名單上',
           ]} />
 
-          <BlogH2>我們點了什麼</BlogH2>
-          <BlogH3>Margherita：基準測試</BlogH3>
-          <BlogP>從 <strong className="text-white font-semibold">Margherita</strong> 開始——始終如一的正確起點。San Marzano 番茄帶著乾淨的甜酸平衡，水牛莫扎里拉有真實的濃郁奶香，新鮮羅勒清爽提香——三種元素在那個誇張的 cornicione 之下找到了完美比例。那塊麵皮本身有著發酵帶來的微酸感、麵粉的自然甜味，以及讓你在思考「這真的是薄餅嗎」的同時把每一口邊角都吃得精光的滿足感。</BlogP>
-          <BlogH3>Diavola：個性之選</BlogH3>
-          <BlogP><strong className="text-white font-semibold">Diavola</strong> 緊隨其後。辣味薩拉米在烘烤中微微出油，滲入麵糰邊緣，帶來一種豐腴而不膩的辛辣層次感。如果你希望在傳統拿坡里框架內感受個性，這是不二之選。出發前<a href="/menu" className={lnk}>查看我們的完整菜單</a>，探索更多可能。</BlogP>
+          <BlogFAQ title="常見問題：Vincenzo Capuano 香港" items={faqsHK} />
 
-          <BlogH2>Vincenzo Capuano 是誰？</BlogH2>
-          <BlogP>這家餐廳背後的名字，是一位來自那不勒斯的第三代薄餅師傅。<strong className="text-white font-semibold">Vincenzo Capuano</strong> 在 2022 年世界薄餅錦標賽中奪冠——全球薄餅界最高競技舞台，評審標準涵蓋麵糰技術、食材品質和最終產品。這不是名譽頭銜，而是在直接競技中贏得的成就。香港分店的每塊薄餅都按照他的規格和方法製作，沒有任何授權稀釋，也沒有妥協。</BlogP>
-          <BlogP>全球前 50 薄餅排名第 13 位，這個數字在香港的餐廳名單中是獨一無二的。想深入了解這位師傅的背景與傳承，<a href="/vincenzo-capuano-story" className={lnk}>在此閱讀 Vincenzo Capuano 的完整故事</a>。</BlogP>
-
-          <BlogH2>服務與整體氛圍</BlogH2>
-          <BlogP>服務沉穩而周到，沒有過分熱情，但也絕不疏離。團隊對薄餅有清晰的理解，能夠回答關於麵糰、食材和製作工藝的問題，而不只是複述菜單描述。這種自信本身就是品質的一部分。整體氛圍輕鬆精緻——適合特別場合，但也不排斥一個普通的週二晚上。</BlogP>
-
-          <BlogH2>誰應該來？</BlogH2>
-          <BlogP>如果你曾在意大利吃過真正的拿坡里薄餅，並在香港苦苦找不到能與之媲美的——這裡是你的答案。如果你從未嘗過正宗拿坡里薄餅，想要親身體驗到底有何不同——從這裡開始。它同樣完美適合希望給對方留下深刻印象的約會場合、慶生晚宴，或帶著外地朋友感受香港最頂尖的意大利料理。<a href="/reservations" className={lnk}>提前訂座</a>確保最佳體驗。</BlogP>
-
-          <BlogH2>總結評分</BlogH2>
-          <BlogList items={[
-            <><strong className="text-white font-semibold">薄餅品質</strong> — 頂級，技術精確，食材主導，每塊均達世界冠軍水準</>,
-            <><strong className="text-white font-semibold">食材</strong> — 進口意大利頂級食材，無妥協</>,
-            <><strong className="text-white font-semibold">體驗</strong> — 剪刀儀式為每次到訪增添場合感</>,
-            <><strong className="text-white font-semibold">位置</strong> — 灣仔利東街，港鐵站 D 出口步行 5 分鐘</>,
-            <><strong className="text-white font-semibold">性價比</strong> — 頂級定價對應頂級產品，每分錢都有交代</>,
-          ]} />
-          <BlogP><strong className="text-white font-semibold">Vincenzo Capuano 香港</strong>不是一個潮流故事。它是一家以真實世界級資格到來的餐廳，製作的產品始終如一地達到那些資格所承諾的水準。去試一次，你會明白為何全城都在談論它——然後你會發現自己比計劃更快地回訪。</BlogP>
-
-          <BlogFAQ
-            title="常見問題"
-            items={faqsHK}
-          />
+          <BlogH2>最終評語</BlogH2>
+          <BlogP><strong className="text-white font-semibold">Vincenzo Capuano 香港</strong>名副其實。麵糰真的特別。配料誠實。用餐空間有趣。價格對於盤子裡的東西而言是公平的。如果你在香港，即使只是週末到訪，這也是值得安排行程的美食體驗之一。剪刀是個玩笑，麵皮才是真正的故事。去嚐嚐吧。<a href="/reservations" className={lnk}>在此訂座</a>。</BlogP>
         </>
       ) : (
         <>
           <BlogImage
             src="https://storage.googleapis.com/xps-assets/gotti%27s%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/detto-fatto-pizza.png"
             alt="Vincenzo Capuano Hong Kong review — world champion contemporary Neapolitan pizza in Wan Chai"
-            caption="Vincenzo Capuano Hong Kong — Lee Tung Avenue, Wan Chai"
+            caption="Vincenzo Capuano Hong Kong — 200 Queen's Road East, Lee Tung Avenue, Wan Chai"
           />
 
-          <BlogP>Every so often, a restaurant opens in Hong Kong that makes the whole city stop and pay attention — not because of a celebrity endorsement or a lavish fit-out, but because the food is genuinely worth talking about. <strong className="text-white font-semibold">Vincenzo Capuano Hong Kong</strong>, on Lee Tung Avenue in Wan Chai, arrived with a very specific claim: world-champion Neapolitan pizza, brought directly from Naples. It has spent every service since proving that claim true — and it has become one of the most recommended restaurants in the city as a result.</BlogP>
+          <BlogP>I have been eating pizza in Hong Kong for years. Pepperoni at midnight, neo-Neapolitan in Sheung Wan, sad airport slices on red eyes back from Naples. So when the buzz started about <strong className="text-white font-semibold">Vincenzo Capuano Hong Kong</strong> opening in Wan Chai, I rolled my eyes a little. Another world champion pizza opening? Sure. Then I went. Then I shut up. Then I went back. This Hong Kong pizza review is going to be honest, but spoiler — the hype is mostly earned.</BlogP>
 
-          <BlogHighlight>"This isn't fast pizza. This is pizza as a craft."</BlogHighlight>
+          <BlogHighlight>"The scissors are a wink. The crust is the real story. Go taste it."</BlogHighlight>
 
-          <BlogH2>First Impressions: The Space</BlogH2>
-          <BlogP>The dining room at <strong className="text-white font-semibold">Vincenzo Capuano Hong Kong</strong> is composed and deliberate — dark tones, clean lines, and an open kitchen that lets you watch the dough work as part of the experience. There is no attempt to distract you with décor or clever lighting. The confidence here is placed entirely in the product, and the room is designed to let the pizza take centre stage. It feels like a place that takes what it does seriously without taking itself too seriously — and that is a harder balance to strike than it sounds.</BlogP>
+          <BlogH2>The Backstory You Should Know First</BlogH2>
+          <BlogP>Vincenzo Capuano is not some random Instagram chef. He is a <strong className="text-white font-semibold">Caputo Trophy World Champion from 2022 for Contemporary Pizza</strong>. He grew up in Naples, learned from his grandfather and dad, and has spent more than a decade refining what high-hydration dough can do. His group now runs over 20 pizzerias from Italy to Dubai. The Hong Kong outpost at Lee Tung Avenue opened on 29 April 2026, making it the brand's first stop in Hong Kong and one of their few in Asia. So when you see <strong className="text-white font-semibold">viral pizza Hong Kong</strong> videos floating around, this is the place.</BlogP>
 
-          <BlogH2>The Scissors and the Stand — A Ritual with Purpose</BlogH2>
-          <BlogP>This is the moment that gets photographed. The pizza arrives on an elevated metal stand, scissors placed alongside it, and a server cuts each portion at the table. It has been shared across Instagram and across dining conversations more times than we can count — but it is not just theatre. Every element of the system serves the pizza.</BlogP>
-          <BlogH3>Why Scissors, Not a Wheel?</BlogH3>
-          <BlogP>The elevated stand keeps the base crisp throughout service by allowing air to circulate beneath the pizza — something a flat surface prevents. The scissors protect the cornicione from the compression that a rolling blade applies, preserving the airy, hollow structure that makes the crust the talking point of every table. Once you understand what the system is protecting, you stop seeing it as a gimmick and start seeing it as a decision made in complete service of the product.</BlogP>
+          <BlogH2>First Impression: Walking In</BlogH2>
+          <BlogP>I walked in around 6.45pm on a Wednesday. The space was already buzzing. Warm wood, terracotta accents, soft lighting, the smell of wood-fired dough hitting the door before you do. The open kitchen sits proud in the middle. You can see the hand-built <strong className="text-white font-semibold">Pasquale Fazzone oven</strong>, the one they shipped from Italy brick by brick. That oven is the centrepiece, and rightly so.</BlogP>
+          <BlogP>The vibe is more polished than a back-street Naples joint, but not stiff. It feels like a <strong className="text-white font-semibold">luxury pizza Hong Kong</strong> restaurant that still wants you to use your hands. Two floors, 80 seats, friendly host energy at the door. As an <strong className="text-white font-semibold">Italian restaurant Hong Kong</strong> setting goes, it nails the balance between casual and special-occasion.</BlogP>
+
+          <BlogH2>The Pizza Scissors Presentation</BlogH2>
+          <BlogP>Let me address the elephant in the room. Yes, they really do bring the pizza to your table whole, then a server slices it open with these massive golden scissors. Some food snobs are calling this gimmicky. I disagree. Here is why it matters: the crust on a contemporary Neapolitan pizza is structurally fragile. It is full of large irregular air pockets. A standard pizza cutter crushes those pockets. <strong className="text-white font-semibold">Scissors leave the airy crust intact</strong>. It is a functional choice that happens to be photogenic. Yes, it makes for a great video. It also keeps your pizza tasting better.</BlogP>
+
+          <BlogH2>The Food: What I Ordered</BlogH2>
+
+          <BlogH3>Margherita</BlogH3>
+          <BlogP>I always start here. The dough is the star. Tall, blistered cornicione, a soft interior with real chew. The San Marzano sauce is bright and acidic. The fior di latte melts in pools rather than greasing the slice. A clean, confident classic. This Margherita beats a lot of so-called <strong className="text-white font-semibold">best Italian food HK</strong> contenders.</BlogP>
+
+          <BlogH3>Provola E Peppe</BlogH3>
+          <BlogP>The signature. Smoked provolone, hand-crushed San Marzano, sweet peppers, roasted cherry tomatoes, basil, olive oil. The provola adds depth without overwhelming. The peppers bring sweetness. The crust catches all the juice without going soggy. This is the one I would order on a date. <a href="/menu" className={lnk}>See the full menu here</a> to plan your visit.</BlogP>
+
+          <BlogH3>Abbraccio E Mamma</BlogH3>
+          <BlogP>Ricotta-stuffed crust, Neapolitan meatballs, Grana Padano, buffalo mozzarella. This is gluttony in pizza form. The stuffed crust alone is a meal. I shared this with two friends and we still left full. Order it once for the experience, then alternate with something lighter on future visits.</BlogP>
+
+          <BlogH3>Tiramisu</BlogH3>
+          <BlogP>Yes, get dessert. It comes in a glass, properly soaked, with the right ratio of coffee to mascarpone. Not too sweet. A real one.</BlogP>
+
+          <BlogH2>Service and Pace</BlogH2>
+          <BlogP>Service was attentive without hovering. The pizzaiolo team works fast, so even on a busy night the wait between courses was reasonable. Servers can talk you through the menu, which matters because the names are not all immediately obvious to a Hong Kong diner. The bar program is small but tight. The Negroni was properly bitter. The Aperol Spritz was actually cold. Wines lean Italian, which makes sense.</BlogP>
+
+          <BlogH2>How It Stacks Up Against Other Hong Kong Pizza</BlogH2>
+          <BlogP>Hong Kong has gotten serious about pizza in the last five years. Traditional Neapolitan options are easy to find. Roman style and New York style have their fans. So where does <strong className="text-white font-semibold">Vincenzo Capuano</strong> sit? For me, this is the strongest <strong className="text-white font-semibold">contemporary Neapolitan pizza</strong> in the city right now. Other spots do excellent traditional Naples-style pies. Vincenzo's edge is the higher-hydration, longer-fermented dough that produces a crust nobody else in town is quite matching yet. If you have ever felt that Neapolitan pizza sits heavy in your stomach, this version solves that. It is also priced like a <strong className="text-white font-semibold">luxury pizza Hong Kong</strong> product — pizzas land at roughly HKD 180 to 320, with HKD 300 to 450 per person for a drink and dessert. See where it ranks in our <a href="/best-pizza-restaurants-hong-kong" className={lnk}>full Hong Kong pizza guide</a>.</BlogP>
+
+          <BlogH2>What I Did Not Love</BlogH2>
+          <BlogP>I will not pretend it was flawless. The ground floor gets loud at peak hours — if you want a quieter conversation, request the upper level. The menu is a little narrow if you are dining with a group that does not all want pizza; there are antipasti and a few pastas, but the pizza is clearly the headline. Wait times for walk-ins on weekends are real. Book ahead, or come at off-peak. These are quibbles. They do not change the conclusion.</BlogP>
+
+          <BlogH2>Who This Restaurant Is For</BlogH2>
           <BlogList items={[
-            'Elevated stand allows air circulation — base stays crisp, no moisture build-up',
-            'Scissors preserve the cornicione structure that a wheel would compress',
-            'Even portioning across the whole pizza — every share equal',
-            'The ritual adds ceremony to a meal that is worth celebrating',
+            'Foodies hunting the next big thing — yes, obviously',
+            'Date nights where you want to impress without being too formal — the pizza-scissors moment is a built-in conversation starter',
+            'Family dinners with kids — the open kitchen and pizza show keeps small humans entertained',
+            'Italian food lovers tired of average Margheritas — this is a step up',
+            'Visitors who want to taste something Hong Kong is doing differently right now — this is on the list',
           ]} />
 
-          <BlogH2>What We Ordered</BlogH2>
-          <BlogH3>The Margherita: The Benchmark</BlogH3>
-          <BlogP>The <strong className="text-white font-semibold">Margherita</strong> first — always the right starting point. San Marzano tomato with its clean, balanced acidity, buffalo mozzarella with a genuine milky depth, fresh basil, and that cornicione: dramatically raised, hollow inside, with a charred outer shell giving way to a soft, pillowy crumb. The dough carries its own flavour — a faint sourness from the long ferment, a slight natural sweetness, and a chew that makes the crust the best part of the meal rather than something to leave behind.</BlogP>
-          <BlogH3>The Diavola: Character and Heat</BlogH3>
-          <BlogP>The <strong className="text-white font-semibold">Diavola</strong> followed. Spicy salami rendered just enough during the bake that its oils seeped into the dough at the edges, creating a richness that balanced the heat without overwhelming it. This is a pizza that rewards diners who want personality within the Neapolitan tradition. <a href="/menu" className={lnk}>View the full menu here</a> to plan your order before arriving.</BlogP>
+          <BlogFAQ title="FAQ: Vincenzo Capuano Hong Kong" items={faqsEN} />
 
-          <BlogH2>The Story Behind the Name</BlogH2>
-          <BlogP><strong className="text-white font-semibold">Vincenzo Capuano</strong> is a third-generation pizza maker from Naples who won the 2022 World Pizza Championship — the most prestigious competition in the global pizza world, judged on dough handling, ingredient quality, and final product at the highest level. This is not a ceremonial title. It was earned in direct competition against the world's best. Every pizza served in Hong Kong is made to his specifications, using his methods. No licensing dilution. No compromise. <a href="/vincenzo-capuano-story" className={lnk}>Read the full story of Vincenzo Capuano here</a>.</BlogP>
-          <BlogP>Ranked <strong className="text-white font-semibold">#13 globally</strong> in the Top 50 Pizza list, this is a credential that stands alone in Hong Kong's restaurant landscape. It shapes every decision made in the kitchen — ingredient sourcing, fermentation timing, dough hydration — and it shows in the product that arrives at your table.</BlogP>
-
-          <BlogH2>Service and Atmosphere</BlogH2>
-          <BlogP>The service is assured and attentive without being intrusive. The team understands the pizza well — able to answer questions about the dough, the ingredients, and the craft rather than simply reciting menu descriptions. That level of knowledge is itself a signal of quality. The overall atmosphere is relaxed and refined — right for a special occasion but equally comfortable for a casual midweek dinner. <a href="/reservations" className={lnk}>Booking in advance</a> is recommended to secure your preferred seating.</BlogP>
-
-          <BlogH2>Who Should Visit</BlogH2>
-          <BlogP>If you have eaten pizza in Naples and spent years in Hong Kong unable to find anything close — this is where you have been waiting for. If you have never had authentic Neapolitan pizza and want to understand what sets it apart from everything else, start here. It works for a considered date, a birthday dinner, a group gathering, or showing a visiting friend what Hong Kong's dining scene is genuinely capable of. The pizza at <strong className="text-white font-semibold">Vincenzo Capuano Hong Kong</strong> is the kind that earns repeat visits without needing a special occasion as justification.</BlogP>
-
-          <BlogH2>The Verdict</BlogH2>
-          <BlogList items={[
-            <><strong className="text-white font-semibold">Pizza quality</strong> — exceptional, technically precise, and ingredient-led throughout</>,
-            <><strong className="text-white font-semibold">Ingredients</strong> — imported Italian produce, no shortcuts taken anywhere on the menu</>,
-            <><strong className="text-white font-semibold">Experience</strong> — the scissors presentation adds occasion to every single visit</>,
-            <><strong className="text-white font-semibold">Location</strong> — Lee Tung Avenue, Wan Chai, 5-minute walk from MTR Exit D</>,
-            <><strong className="text-white font-semibold">Value</strong> — premium pricing for a demonstrably premium product, every dollar accounted for</>,
-          ]} />
-          <BlogP><strong className="text-white font-semibold">Vincenzo Capuano Hong Kong</strong> is not a trend. It is a restaurant that arrived with legitimate world-class credentials, makes a product that consistently lives up to them, and has earned its place as the standout pizza experience in Hong Kong. Visit once. You will understand immediately why everyone is talking about it — and you will find yourself planning a return visit before you have finished the first.</BlogP>
-
-          <BlogFAQ
-            title="Frequently Asked Questions"
-            items={faqsEN}
-          />
+          <BlogH2>Final Verdict</BlogH2>
+          <BlogP><strong className="text-white font-semibold">Vincenzo Capuano Hong Kong</strong> earns the hype. The dough is genuinely special. The toppings are honest. The room is fun. The price is fair for what is on the plate. If you are in Hong Kong, even just visiting for a weekend, this is one of those food experiences worth planning your day around. The scissors are a wink. The crust is the real story. Go taste it. <a href="/reservations" className={lnk}>Book your table here</a>.</BlogP>
         </>
       )}
     </BlogLayout>

@@ -16,62 +16,78 @@ export const BestNeapolitanPizzaHK: React.FC<Props> = ({ lang, onBookClick }) =>
   const faqsEN: FAQItem[] = [
     {
       q: 'What makes Neapolitan pizza different from regular pizza?',
-      a: 'Neapolitan pizza follows a protected tradition recognised by UNESCO: 00 flour dough, San Marzano tomatoes, fresh buffalo mozzarella, and a wood-fired oven above 400°C. It bakes in under 90 seconds, producing a soft centre and a characteristically raised, airy crust edge — the cornicione — with natural charring.',
+      a: <>Neapolitan pizza uses a specific flour, simple San Marzano tomatoes, fresh mozzarella, and is cooked in a wood-fired oven at very high heat for under 90 seconds. The result is a <strong className="text-white font-semibold">soft, chewy crust with a charred, blistered edge</strong> called the cornicione. It is protected by UNESCO as an Intangible Cultural Heritage.</>,
     },
     {
-      q: 'Is Vincenzo Capuano the best Neapolitan pizza in Hong Kong?',
-      a: <>Vincenzo Capuano is ranked <strong className="text-white font-semibold">#13 globally</strong> in the Top 50 Pizza list and was built on the standards of the 2022 World Pizza Champion. It is consistently named by food critics and regulars as the best Neapolitan pizza in Hong Kong — based on dough quality, ingredient sourcing, and technical precision unmatched elsewhere in the city.</>,
+      q: 'What is contemporary Neapolitan pizza?',
+      a: <>Contemporary Neapolitan, which is what Vincenzo Capuano specialises in, takes the traditional method and adds higher hydration dough (up to 80% water) and longer fermentation (24 to 36 hours). The result is a <strong className="text-white font-semibold">lighter, airier crust</strong> that is easier to digest and more complex in flavour.</>,
     },
     {
-      q: 'Where is Vincenzo Capuano Hong Kong located?',
-      a: <>We are at Lee Tung Avenue, GF Unit 01 04 05, 200 Queens Road East, Wan Chai. The nearest MTR is <strong className="text-white font-semibold">Wan Chai Station, Exit D</strong> — approximately a 5-minute walk along Queens Road East.</>,
+      q: 'Where exactly is Vincenzo Capuano Hong Kong?',
+      a: <>Lee Tung Avenue, Wan Chai. The full address is <strong className="text-white font-semibold">Shop G04-05/F01A, 200 Queen's Road East, Wan Chai</strong>. A five-minute walk from Wan Chai MTR exit A3.</>,
     },
     {
-      q: 'What should I order on my first visit?',
-      a: <>Start with the Margherita — it shows dough quality and ingredient balance most clearly. The Diavola is an excellent second choice. <a href="/menu" className={lnk}>View our full menu</a> before you arrive to plan ahead.</>,
+      q: 'Do I need to book in advance?',
+      a: <>Yes, especially for dinner and weekends. <a href="/reservations" className={lnk}>Book your table here</a>. Walk-ins are taken on availability but waits can be long.</>,
     },
     {
-      q: 'Do I need a reservation at Vincenzo Capuano Hong Kong?',
-      a: <>Reservations are strongly recommended, especially on evenings and weekends. Walk-ins are welcome where seats are available. <a href="/reservations" className={lnk}>Book a table online</a> to secure your preferred time and avoid waiting.</>,
+      q: 'What is the best pizza to order at Vincenzo Capuano?',
+      a: <>Start with the <strong className="text-white font-semibold">Provola E Peppe</strong> for the signature smoked provolone and peppers combination. Then try Abbraccio E Mamma for the ricotta-stuffed crust experience. Classic Margherita is essential to benchmark the dough. <a href="/menu" className={lnk}>See the full menu here</a>.</>,
     },
     {
-      q: 'What are the opening hours at Vincenzo Capuano Hong Kong?',
-      a: <>We are open <strong className="text-white font-semibold">7 days a week</strong> — Lunch 12:00–15:00 and Dinner 18:00–23:00. Visit our <a href="/contact" className={lnk}>contact page</a> for the latest hours and any updates.</>,
+      q: 'Why is the pizza cut with scissors?',
+      a: 'The high-hydration contemporary Neapolitan crust is full of large air pockets. A rolling cutter would crush them. Scissors cut cleanly without destroying the structure. It is functional first, visually memorable second.',
     },
     {
-      q: 'Who is Vincenzo Capuano?',
-      a: <>Vincenzo Capuano is a third-generation pizza maker from Naples, Italy, and the <strong className="text-white font-semibold">2022 World Pizza Champion</strong>. He pioneered the contemporary Neapolitan style now served in Hong Kong. <a href="/vincenzo-capuano-story" className={lnk}>Read his full story here</a>.</>,
+      q: 'Is it expensive?',
+      a: 'Pizzas are roughly HKD 180 to 320. Budget around HKD 300 to 450 per person including a drink and dessert. It is priced as a premium dining experience.',
+    },
+    {
+      q: 'Is there parking nearby?',
+      a: "Lee Tung Avenue has access to the Queen's Road East carpark. Public transport is recommended — Wan Chai MTR is a five-minute walk.",
+    },
+    {
+      q: 'Can I visit with children?',
+      a: 'Yes. The open kitchen, the pizza oven, and the scissors presentation tend to keep children engaged. The menu also includes approachable options for younger diners.',
     },
   ];
 
   const faqsHK: FAQItem[] = [
     {
-      q: '拿坡里薄餅與普通薄餅有何不同？',
-      a: '拿坡里薄餅遵循 UNESCO 認可的受保護傳統：使用 00 麵粉麵糰、San Marzano 番茄、新鮮水牛莫扎里拉芝士，並在超過 400°C 的薪柴烤爐中烘烤不超過 90 秒。這造就了柔軟的中心和標誌性的隆起、充滿空氣感的 cornicione 麵皮邊緣，帶有天然焦斑。',
+      q: '那不勒斯薄餅與普通薄餅有什麼不同？',
+      a: <>那不勒斯薄餅使用特定麵粉、簡單的 San Marzano 番茄、新鮮馬蘇里拉芝士，並在高溫柴燒烤爐中以不到 90 秒的時間烤製。結果是<strong className="text-white font-semibold">柔軟有嚼勁的麵皮，帶有焦黑、起泡的邊緣</strong>，稱為 cornicione。它受到聯合國教科文組織非物質文化遺產保護。</>,
     },
     {
-      q: 'Vincenzo Capuano 是香港最佳拿坡里薄餅嗎？',
-      a: <> Vincenzo Capuano 在全球前 50 薄餅榜上排名 <strong className="text-white font-semibold">第 13 位</strong>，由 2022 年世界薄餅冠軍創立並制定標準。它被食評人和常客一致評為香港最佳拿坡里薄餅——基於麵糰品質、食材標準和在香港無可匹敵的技術精確度。</>,
+      q: '什麼是當代拿坡里薄餅？',
+      a: <>當代拿坡里薄餅是 Vincenzo Capuano 的專長，在傳統方法基礎上加入了更高水分麵糰（高達 80% 水分）和更長發酵時間（24 至 36 小時）。結果是更<strong className="text-white font-semibold">輕盈、更充滿空氣感的麵皮</strong>，更易消化，風味更複雜。</>,
     },
     {
-      q: 'Vincenzo Capuano 香港店在哪裡？',
-      a: <>我們位於灣仔皇后大道東 200 號利東街地下 01 04 05 號舖。最近的港鐵站是<strong className="text-white font-semibold">灣仔站 D 出口</strong>——沿皇后大道東步行約 5 分鐘。</>,
-    },
-    {
-      q: '第一次去應該點什麼？',
-      a: <>從 Margherita 開始——它最清晰地展示麵糰品質和食材平衡。Diavola 是很好的第二選擇。<a href="/menu" className={lnk}>在到訪前查看我們的完整菜單</a>提前計劃。</>,
+      q: 'Vincenzo Capuano 香港的確切地址在哪裡？',
+      a: <>灣仔利東街。完整地址為<strong className="text-white font-semibold">灣仔皇后大道東 200 號 G04-05/F01A 舖</strong>。距灣仔港鐵站 A3 出口步行約五分鐘。</>,
     },
     {
       q: '需要提前訂座嗎？',
-      a: <>強烈建議訂座，尤其是晚上和週末。有空位時歡迎即場入座。<a href="/reservations" className={lnk}>網上訂座</a>以確保您偏好的時間。</>,
+      a: <>是的，尤其是晚餐和週末。<a href="/reservations" className={lnk}>在此訂座</a>。即場入座視乎座位供應情況，等待時間可能較長。</>,
     },
     {
-      q: 'Vincenzo Capuano 香港的開放時間是什麼？',
-      a: <>我們<strong className="text-white font-semibold">每週 7 天</strong>開放——午市 12:00–15:00，晚市 18:00–23:00。請瀏覽我們的<a href="/contact" className={lnk}>聯絡頁面</a>獲取最新時間。</>,
+      q: '在 Vincenzo Capuano 最好點什麼薄餅？',
+      a: <>從<strong className="text-white font-semibold">Provola E Peppe</strong>開始，體驗煙燻波蘿伏洛芝士和甜椒的招牌組合。然後嚐試 Abbraccio E Mamma 的瑞可達填充麵皮體驗。經典 Margherita 是測試麵糰質量的必點之選。<a href="/menu" className={lnk}>在此查看完整菜單</a>。</>,
     },
     {
-      q: 'Vincenzo Capuano 是誰？',
-      a: <>Vincenzo Capuano 是來自那不勒斯的第三代薄餅師傅，<strong className="text-white font-semibold">2022 年世界薄餅冠軍</strong>。他開創了香港現正供應的當代拿坡里薄餅風格。<a href="/vincenzo-capuano-story" className={lnk}>在此閱讀他的完整故事</a>。</>,
+      q: '為什麼薄餅用剪刀切？',
+      a: '高水分當代拿坡里麵皮充滿大型氣孔。滾輪刀會壓碎這些氣孔。剪刀可以乾淨地切割而不破壞結構。功能性第一，視覺效果第二。',
+    },
+    {
+      q: '費用昂貴嗎？',
+      a: '薄餅約港幣 180 至 320 元。包括一杯飲料和甜品，每人預算約港幣 300 至 450 元。定位為高端用餐體驗。',
+    },
+    {
+      q: '附近有停車場嗎？',
+      a: '利東街可使用皇后大道東停車場。建議乘坐公共交通——灣仔港鐵站步行約五分鐘。',
+    },
+    {
+      q: '可以帶小孩嗎？',
+      a: '可以。開放式廚房、薄餅烤爐和剪刀表演通常讓小孩保持興趣。菜單也有適合年幼食客的選擇。',
     },
   ];
 
@@ -80,114 +96,128 @@ export const BestNeapolitanPizzaHK: React.FC<Props> = ({ lang, onBookClick }) =>
       lang={lang}
       onBookClick={onBookClick}
       eyebrow={isHK ? '香港美食指南' : 'Hong Kong Food Guide'}
-      title={isHK ? '香港最佳拿坡里薄餅：Vincenzo Capuano 為何爆紅？' : 'Best Neapolitan Pizza in Hong Kong: Why Vincenzo Capuano Is Going Viral'}
-      readTime={isHK ? '閱讀時間約 6 分鐘' : '6 minute read'}
+      title={isHK ? '香港最佳拿坡里薄餅：Vincenzo Capuano 為何正在爆紅' : 'Best Neapolitan Pizza in Hong Kong: Why Vincenzo Capuano Is Going Viral'}
+      readTime={isHK ? '閱讀時間約 7 分鐘' : '7 minute read'}
     >
       {isHK ? (
         <>
           <BlogImage
-            src="https://storage.googleapis.com/xps-assets/gotti%27s%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/oven-pizza.jpg"
-            alt="香港最佳拿坡里薄餅 — Vincenzo Capuano 灣仔柴燒窯烤薄餅"
-            caption="Vincenzo Capuano 灣仔 — 香港最受推崇的拿坡里薄餅"
+            src="https://storage.googleapis.com/xps-assets/gotti%27s%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/napoli-pizza-hong-kong.png"
+            alt="香港最佳拿坡里薄餅 — 灣仔 Vincenzo Capuano 的雲朵般麵皮當代拿坡里薄餅"
+            caption="Vincenzo Capuano 香港 — 皇后大道東 200 號 G04-05/F01A 舖，灣仔利東街"
           />
 
-          <BlogP>對於認真對待飲食的人來說，在香港找到<strong className="text-white font-semibold">香港最佳拿坡里薄餅</strong>一直是一個挑戰。這不是說香港沒有薄餅——薄餅選擇到處都是。但真正意義上的拿坡里薄餅，那種根植於幾個世紀傳統、以正宗工藝製作的薄餅，卻始終是稀缺品。Vincenzo Capuano 在灣仔利東街的開業改變了這個狀況。全球前 50 薄餅榜排名第 13、由 2022 年世界薄餅冠軍親自制定標準，這家餐廳不靠噱頭吸引食客——它靠薄餅本身說話。</BlogP>
+          <BlogP>好，說真的。如果你這個月在香港刷過 Instagram，你已經看過那個薄餅了。那個麵皮高得不合理的那個。那個被金色大剪刀切開的那個。那個你的三個朋友各自發給你看，彷彿你還沒有看過一樣的那個。那個薄餅是來自<strong className="text-white font-semibold">灣仔 Vincenzo Capuano 香港</strong>，而在我實際去試之後，我明白了為什麼它爆紅了。</BlogP>
 
-          <BlogHighlight>「當你嚐到那塊薄餅，你會明白為何那不勒斯人如此驕傲。」</BlogHighlight>
+          <BlogHighlight>「如果你以為你懂拿坡里薄餅，這個會讓你重新思考。」</BlogHighlight>
 
-          <BlogH2>拿坡里薄餅與其他薄餅有何不同？</BlogH2>
-          <BlogP>拿坡里薄餅不只是一種薄餅風格——它是一種受保護的烹飪傳統。由<a href="https://ich.unesco.org/en/RL/art-of-neapolitan-pizzaiuolo-00722" target="_blank" rel="noopener noreferrer" className={lnk}>聯合國教科文組織認定為人類非物質文化遺產</a>，<strong className="text-white font-semibold">正宗拿坡里薄餅</strong>有嚴格要求：00 麵粉、維蘇威火山山麓的 San Marzano 番茄、坎帕尼亞新鮮水牛莫扎里拉芝士，以及在超過 400°C 的薪柴烤爐中烘烤。整個烘烤過程不超過 90 秒，造就了柔軟可折疊的中心和標誌性的隆起麵皮邊緣——cornicione——帶有天然豹紋焦斑。</BlogP>
+          <BlogH2>快速介紹：Vincenzo Capuano 是誰？</BlogH2>
+          <BlogP>Vincenzo Capuano 是 2022 年 Caputo Trophy 當代薄餅世界冠軍，職業生涯中獲得超過 40 個獎項。他在那不勒斯長大，在家族廚房裡學習製作麵糰。在國際上建立了聲譽之後，他的集團現在在意大利、迪拜及其他地區運營超過 20 家薄餅店。<strong className="text-white font-semibold">Vincenzo Capuano 香港</strong>於 2026 年 4 月 29 日開業，是品牌在香港的首家分店，也是亞洲少數幾家之一。這不是個人主廚的快閃活動。這是一個在本城市正式落地的完整概念。</BlogP>
 
-          <BlogH3>當代拿坡里：傳統之上的突破</BlogH3>
-          <BlogP>在這個傳統框架內，一代革新派薄餅師傅發展出了<strong className="text-white font-semibold">當代拿坡里</strong>風格——進一步提升麵糰水分比例和發酵時間，讓 cornicione 更加誇張地隆起、更輕盈、製作技術要求也更高。Vincenzo Capuano 是這個運動的代表人物之一。想深入了解這個風格如何演進，可<a href="/what-is-neapolitan-pizza" className={lnk}>閱讀我們的拿坡里薄餅完整指南</a>。</BlogP>
-
-          <BlogH2>每塊薄餅背後的世界冠軍</BlogH2>
-          <BlogP>2022 年，Vincenzo Capuano 贏得了<a href="https://www.pizzaworld.it/" target="_blank" rel="noopener noreferrer" className={lnk}>世界薄餅錦標賽</a>冠軍——全球薄餅界最高競技舞台。這不是社交媒體榮譽或地區性認可，而是在直接與全球頂尖薄餅師傅競技中，以麵糰技術、食材品質和最終產品奪得的成就。他在那不勒斯建立的配方標準、發酵工藝和食材規格，在香港分店得到完整保留——沒有任何妥協或調整。</BlogP>
-          <BlogP>這正是在搜尋<strong className="text-white font-semibold">香港最佳拿坡里薄餅</strong>時 Vincenzo Capuano 脫穎而出的原因。其他餐廳也許使用好食材，部分也許訓練有素——但香港只有一家餐廳的產品建立在世界冠軍標準之上。<a href="/vincenzo-capuano-story" className={lnk}>了解 Vincenzo Capuano 的故事</a>，可以幫助你理解這份傳承的深度。</BlogP>
-
-          <BlogH2>那塊麵皮 — 改變一切的 Cornicione</BlogH2>
-          <BlogP>問任何一位 Vincenzo Capuano 的常客，他們記憶最深的是什麼，答案幾乎如出一轍：那塊麵皮。<strong className="text-white font-semibold">Cornicione</strong>——拿坡里薄餅的隆起外緣——是整塊薄餅技術難度最高的部分，也是最能清晰體現品質差異的地方。在 Vincenzo Capuano 香港，這個麵皮是非凡的：誇張地隆起，薄薄的外殼內藏著輕盈、充滿空氣的蜂巢結構，由長時間發酵麵糰而來。這是香港最出色的<strong className="text-white font-semibold">輕盈麵皮薄餅</strong>體驗，也是這家餐廳成為城中最多人討論的薄餅店的核心原因。</BlogP>
-          <BlogP>麵糰本身有風味：來自長時間低溫發酵的微酸感、麵粉帶來的自然甜味，以及那種讓你把每一口麵皮邊角都吃個精光的滿足咀嚼感。大多數薄餅會在桌上留下麵皮。這裡的薄餅不會。</BlogP>
-
-          <BlogH2>如何到達及何時到訪</BlogH2>
-          <BlogP>Vincenzo Capuano 香港店位於<strong className="text-white font-semibold">灣仔利東街地下 01 04 05 號舖</strong>——香港島上交通最便利的社區之一。使用公共交通的食客，<strong className="text-white font-semibold">灣仔港鐵站 D 出口</strong>步行約 5 分鐘可達。利東街本身是一條行人友好的街道，餐廳位置一目了然。</BlogP>
+          <BlogH2>什麼是當代拿坡里薄餅（以及為何它讓人着迷）</BlogH2>
+          <BlogP>傳統那不勒斯薄餅已經很出色了。San Marzano 番茄、新鮮馬蘇里拉、柴燒烤爐、快速烤製。<a href="/what-is-neapolitan-pizza" className={lnk}>了解更多關於拿坡里薄餅傳統的知識</a>。但 Vincenzo Capuano 的方法加入了在過去十年真正改變了薄餅的東西：</BlogP>
           <BlogList items={[
-            '地址：灣仔皇后大道東 200 號利東街地下 01 04 05 號舖',
-            '交通：灣仔港鐵站 D 出口，步行約 5 分鐘',
-            '每週 7 天全天開放',
-            '午市 12:00–15:00 · 晚市 18:00–23:00',
+            <><strong className="text-white font-semibold">高水分麵糰</strong>：大約 80% 的水分。普通薄餅麵糰大約是 55-60%。</>,
+            <><strong className="text-white font-semibold">長時間發酵</strong>：24 至 36 小時。這讓麩質有時間發展出更複雜的風味。</>,
+            <><strong className="text-white font-semibold">Pasquale Fazzone 手工烤爐</strong>：從意大利一磚一瓦運來，在灣仔重建。這台烤爐是整個廚房的心臟。</>,
+            <>結果：麵皮充滿大型不規則氣孔，高高的焦黑 cornicione，以及一種傳統拿坡里薄餅根本無法比擬的輕盈感。</>,
           ]} />
 
-          <BlogH2>第一次到訪應該點什麼</BlogH2>
-          <BlogP>在任何一家<a href="/pizza-wan-chai-hong-kong" className={lnk}>灣仔拿坡里薄餅餐廳</a>，<strong className="text-white font-semibold">Margherita</strong> 永遠是正確的起點。只有三種主要元素——San Marzano 番茄、新鮮水牛莫扎里拉芝士和羅勒——沒有任何東西可以掩蓋麵糰品質和食材選材的優劣。在 Vincenzo Capuano，Margherita 展示了你需要知道的一切。</BlogP>
-          <BlogP>之後，<strong className="text-white font-semibold">Diavola</strong> 是推薦的第二選擇——辣味薩拉米在烘烤中微微出油，滲入麵糰邊緣，帶來平衡辛辣的豐腴感。白醬系列則提供截然不同的方向，非常值得在第二次到訪時探索。出發前<a href="/menu" className={lnk}>查看完整菜單</a>以提前計劃你的點選。</BlogP>
+          <BlogH2>薄餅在哪裡，確切地說</BlogH2>
+          <BlogP>餐廳坐落在灣仔利東街——那條以美食而非購物聞名的步行街。地址是<strong className="text-white font-semibold">皇后大道東 200 號 G04-05/F01A 舖</strong>。兩層樓，80 個座位，從 Wan Chai 港鐵站步行五分鐘。你進入建築物的那一刻就能聞到柴燒香氣。如果你不確定那是否對的地方，你走對了。</BlogP>
+
+          <BlogH2>應該點的三個薄餅</BlogH2>
+
+          <BlogH3>Margherita — 基準測試</BlogH3>
+          <BlogP>從這裡開始了解麵糰。San Marzano 番茄醬、fior di latte 馬蘇里拉、羅勒、橄欖油。經典組合，讓你了解麵皮本身的特質。高高的、輕盈的 cornicione，比你預期更多嚼勁，比你以為可能的更易消化。在你評論任何其他薄餅之前先評判這個。</BlogP>
+
+          <BlogH3>Provola E Peppe — 招牌</BlogH3>
+          <BlogP>煙燻波蘿伏洛芝士、手壓 San Marzano 番茄、甜椒、烤車厘茄、羅勒、橄欖油。這是讓視頻瘋傳的組合。波蘿伏洛增添煙燻深度。甜椒帶來甜味反差。麵皮承接所有汁水而不會變軟，因為高水分麵糰製造出足夠的結構。<a href="/menu" className={lnk}>在此查看完整菜單</a>。</BlogP>
+
+          <BlogH3>Abbraccio E Mamma — 當你想要一切的時候</BlogH3>
+          <BlogP>瑞可達填充麵皮邊、那不勒斯肉丸、格拉納帕達諾、水牛馬蘇里拉。這是 Vincenzo Capuano 真正超越限制的時候。光是填充麵皮邊就是完整的一道菜。這是你與朋友分享的那道菜，然後你們爭論誰能再多吃一片。</BlogP>
+
+          <BlogH2>為什麼它正在爆紅</BlogH2>
           <BlogList items={[
-            <><strong className="text-white font-semibold">Margherita</strong> — 評估水準的基準，San Marzano 番茄配水牛莫扎里拉</>,
-            <><strong className="text-white font-semibold">Diavola</strong> — 辣味薩拉米，適合尋求個性的食客</>,
-            <><strong className="text-white font-semibold">白醬系列</strong> — 季節性食材驅動，第二次到訪的理想選擇</>,
+            <><strong className="text-white font-semibold">剪刀時刻</strong>：薄餅整塊送到桌前，然後在桌邊用金色剪刀切開。每個人都在拍攝這個視頻。它既有功能性（保護輕盈麵皮的氣孔），也是完美的內容。</>,
+            <><strong className="text-white font-semibold">麵皮本身</strong>：你從未見過這麼高的 cornicione。它像麵包一樣站立，焦黑和充滿空氣的內部。這是完美的薄餅照片素材。</>,
+            <><strong className="text-white font-semibold">世界冠軍故事</strong>：人們喜歡吃有故事的東西。2022 年世界冠軍在灣仔開了一家薄餅店，這是一個值得分享的事實。</>,
+            <><strong className="text-white font-semibold">香港是對的時機</strong>：城市在過去幾年對薄餅變得認真了。有識別力的觀眾準備好了一個真正的世界級選擇。</>,
           ]} />
 
-          <BlogH2>剪刀呈現方式背後的用意</BlogH2>
-          <BlogP>第一次到訪 Vincenzo Capuano 這家<strong className="text-white font-semibold">灣仔薄餅餐廳</strong>的食客幾乎都會注意到：薄餅被放在一個升高的金屬架上端至桌前，服務員用剪刀而非滾輪刀逐份切開。這引來好奇，有時也有疑問。但背後邏輯清晰——架子讓底部在上菜過程中持續透氣，防止蒸汽讓底部軟化；剪刀避免了滾輪刀施加的壓力，保護 cornicione 的空氣結構一直完好地送達桌面。</BlogP>
-          <BlogP>每個細節都服務於薄餅本身。這正是 Vincenzo Capuano 能夠獲得<strong className="text-white font-semibold">香港最佳拿坡里薄餅</strong>這個稱號的最誠實解釋——不只是一次，而是每一次到訪都如此。</BlogP>
+          <BlogH2>到訪的實用貼士</BlogH2>
+          <BlogList items={[
+            <><strong className="text-white font-semibold">提前訂座</strong>。晚餐和週末人氣很旺。<a href="/reservations" className={lnk}>在此訂座</a>。</>,
+            <>平日午市到訪，享受更安靜的用餐體驗——非常適合工作午餐或第一次探訪。</>,
+            <>如果可以，要求安排在上層以獲得更好的對話空間——地下層在高峰時段會比較嘈雜。</>,
+            <>不要太快點太多。麵糰雖然輕盈，但一個薄餅已經足夠作為一人份量，加上前菜是完整的一餐。</>,
+            <>留有空間給甜品。提拉米蘇值得你的胃的 10% 空間。</>,
+          ]} />
 
-          <BlogFAQ
-            title="常見問題"
-            items={faqsHK}
-          />
+          <BlogH2>它與香港其他拿坡里薄餅的比較</BlogH2>
+          <BlogP>香港有出色的傳統那不勒斯薄餅。但 Vincenzo Capuano 做的是<strong className="text-white font-semibold">當代拿坡里薄餅</strong>，這是一個不同的、更近期發展的風格。更高水分的麵糰、更長的發酵時間，以及一個幾十年工藝帶來的技術邊緣，讓任何普通薄餅店都無法輕易複製。<a href="/best-pizza-restaurants-hong-kong" className={lnk}>查看我們的香港薄餅完整指南</a>，了解其他值得訪問的地點。</BlogP>
+
+          <BlogFAQ title="常見問題：香港拿坡里薄餅" items={faqsHK} />
         </>
       ) : (
         <>
           <BlogImage
-            src="https://storage.googleapis.com/xps-assets/gotti%27s%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/oven-pizza.jpg"
-            alt="Best Neapolitan pizza in Hong Kong — Vincenzo Capuano Wan Chai wood-fired pizza"
-            caption="Vincenzo Capuano Wan Chai — Hong Kong's most acclaimed Neapolitan pizza restaurant"
+            src="https://storage.googleapis.com/xps-assets/gotti%27s%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/napoli-pizza-hong-kong.png"
+            alt="Best Neapolitan pizza Hong Kong — cloud crust contemporary Neapolitan pizza at Vincenzo Capuano Wan Chai"
+            caption="Vincenzo Capuano Hong Kong — Shop G04-05/F01A, 200 Queen's Road East, Lee Tung Avenue, Wan Chai"
           />
 
-          <BlogP>For anyone serious about eating well in this city, finding the <strong className="text-white font-semibold">best Neapolitan pizza in Hong Kong</strong> has always been harder than it should be. Not pizza — Hong Kong has pizza everywhere. But <em>genuine</em> Neapolitan pizza, built on centuries of tradition and made with the craft that gave this dish its world reputation — that is rarer. The arrival of Vincenzo Capuano at Lee Tung Avenue in Wan Chai changed that conversation for good. Ranked <strong className="text-white font-semibold">#13 globally</strong> in the Top 50 Pizza panel and built on the recipes of a 2022 World Pizza Champion, this is the restaurant Hong Kong food lovers had been waiting for.</BlogP>
+          <BlogP>Okay, real talk. If you have scrolled Instagram in Hong Kong this month, you have already seen that pizza. The one with the impossibly tall crust. The one being cut open with those big golden scissors. The one that three of your friends sent you separately as if you had not already saved it. That pizza is from <strong className="text-white font-semibold">Vincenzo Capuano Hong Kong</strong> in Wan Chai, and after I actually went and tried it, I get why it went viral.</BlogP>
 
-          <BlogHighlight>"When you taste the pizza, you understand why Neapolitans are so proud of it."</BlogHighlight>
+          <BlogHighlight>"If you think you know Neapolitan pizza, this will make you rethink it."</BlogHighlight>
 
-          <BlogH2>What Makes Neapolitan Pizza Different</BlogH2>
-          <BlogP>Neapolitan pizza is not simply a style of pizza — it is a protected culinary tradition. Recognised by <a href="https://ich.unesco.org/en/RL/art-of-neapolitan-pizzaiuolo-00722" target="_blank" rel="noopener noreferrer" className={lnk}>UNESCO as an Intangible Cultural Heritage of Humanity</a>, <strong className="text-white font-semibold">authentic Neapolitan pizza</strong> requires specific flour, San Marzano tomatoes from the slopes of Mount Vesuvius, fresh buffalo mozzarella from Campania, and a wood-fired oven at over 400°C. The bake takes under 90 seconds — producing a soft, foldable centre and a raised outer crust edge, the <em>cornicione</em>, with the natural leopard-spot charring that signals a correctly made pizza.</BlogP>
+          <BlogH2>A Quick Story: Who Is Vincenzo Capuano?</BlogH2>
+          <BlogP>Vincenzo Capuano is the <strong className="text-white font-semibold">Caputo Trophy World Champion for Contemporary Pizza from 2022</strong>, with over 40 industry awards across his career. He grew up in Naples, learned to make dough in his family's kitchen, built an international reputation, and now runs a group of over 20 pizzerias from Italy to Dubai. The Hong Kong outpost opened on 29 April 2026, making it the brand's first stop in the city and one of their few in Asia. This is not a pop-up or a ghost kitchen. This is a full concept that has properly landed in our city.</BlogP>
 
-          <BlogH3>Contemporary Neapolitan: A Step Further</BlogH3>
-          <BlogP>Within this tradition, a generation of forward-thinking pizza makers has developed the <strong className="text-white font-semibold">contemporary Neapolitan</strong> style — pushing dough hydration and fermentation further, producing a cornicione that is even more dramatically raised, lighter, and more technically demanding. Vincenzo Capuano is one of the defining figures of this movement. To understand how this style differs from the traditional version, <a href="/what-is-neapolitan-pizza" className={lnk}>read our full guide to Neapolitan pizza here</a>.</BlogP>
-
-          <BlogH2>A World Champion Behind Every Pizza</BlogH2>
-          <BlogP>In 2022, Vincenzo Capuano won the <a href="https://www.pizzaworld.it/" target="_blank" rel="noopener noreferrer" className={lnk}>World Pizza Championship</a> — the highest competitive stage in the global pizza world. This is not a social media recognition or a local award. It is a title earned through direct competition against the world's best pizza makers, judged on dough handling, ingredient quality, and final product at the highest level. The recipe standards, fermentation approach, and ingredient specifications that earned that title are preserved completely at the Hong Kong location. No adaptation. No compromise.</BlogP>
-          <BlogP>That is what separates Vincenzo Capuano from the other options when searching for the <strong className="text-white font-semibold">best Neapolitan pizza in Hong Kong</strong>. Other restaurants may use good ingredients. Some may have well-trained teams. But only one restaurant in this city builds its product on a world-championship standard — and that restaurant is in Wan Chai. The <a href="/vincenzo-capuano-story" className={lnk}>story of Vincenzo Capuano</a>, a third-generation pizza maker from Naples, gives you the full depth behind what ends up on your plate.</BlogP>
-
-          <BlogH2>The Cornicione — The Crust That Changes Everything</BlogH2>
-          <BlogP>Ask anyone who has eaten at Vincenzo Capuano what they remember most, and the answer is almost always the same: the crust. The <em>cornicione</em> — the raised outer edge of a Neapolitan pizza — is the single most technically demanding element and the clearest indicator of quality. At Vincenzo Capuano Hong Kong, it is genuinely extraordinary: dramatically raised, with a thin outer shell giving way to a hollow, airy interior produced by the extended cold fermentation. This is the finest <strong className="text-white font-semibold">airy crust pizza</strong> experience in Hong Kong, and it is the feature that keeps people coming back.</BlogP>
-          <BlogP>The dough carries its own flavour — a subtle sourness from the long ferment, a natural sweetness from the carefully sourced flour, and a chew that makes the crust the best part of the meal rather than an afterthought left on the plate. Most pizza leaves crust behind. This pizza does not.</BlogP>
-
-          <BlogH2>How to Get There and When to Visit</BlogH2>
-          <BlogP>Vincenzo Capuano Hong Kong is at <strong className="text-white font-semibold">Lee Tung Avenue, GF Unit 01 04 05</strong>, Wan Chai — one of Hong Kong Island's most accessible and well-connected neighbourhoods. Public transport users will find <strong className="text-white font-semibold">Wan Chai MTR Station, Exit D</strong> is approximately a 5-minute walk. Lee Tung Avenue is a pedestrian-friendly street and the restaurant is straightforward to find once you reach the avenue.</BlogP>
+          <BlogH2>What Contemporary Neapolitan Pizza Actually Is (And Why It Matters)</BlogH2>
+          <BlogP>Traditional Neapolitan pizza is already great. San Marzano tomatoes, fresh mozzarella, wood-fired oven, fast cook. <a href="/what-is-neapolitan-pizza" className={lnk}>Learn more about the Neapolitan pizza tradition here</a>. But the <strong className="text-white font-semibold">contemporary Neapolitan approach</strong> Vincenzo Capuano specialises in adds something that has genuinely changed pizza over the last decade:</BlogP>
           <BlogList items={[
-            'Address: Lee Tung Avenue, GF Unit 01 04 05, 200 Queens Road East, Wan Chai',
-            'MTR: Wan Chai Station, Exit D — approximately 5-minute walk',
-            'Open 7 days a week, no exceptions',
-            'Lunch 12:00–15:00 · Dinner 18:00–23:00',
+            <><strong className="text-white font-semibold">High-hydration dough</strong>: around 80% water. Standard pizza dough is roughly 55–60%.</>,
+            <><strong className="text-white font-semibold">Long fermentation</strong>: 24 to 36 hours. This gives the gluten time to relax and develop more complex flavours.</>,
+            <><strong className="text-white font-semibold">Pasquale Fazzone hand-built oven</strong>: shipped from Italy brick by brick, reassembled in Wan Chai. This oven is the heart of the whole kitchen.</>,
+            <>The result: a crust full of large irregular air pockets, a tall blistered cornicione, and a lightness that traditional Neapolitan simply cannot match.</>,
           ]} />
 
-          <BlogH2>What to Order on Your First Visit</BlogH2>
-          <BlogP>At any <a href="/pizza-wan-chai-hong-kong" className={lnk}>Neapolitan pizza restaurant in Wan Chai</a>, the <strong className="text-white font-semibold">Margherita</strong> is always the right starting point. With only three primary components — San Marzano tomato, fresh buffalo mozzarella, and basil — there is nowhere to hide. Every aspect of dough quality and ingredient selection is fully visible. At Vincenzo Capuano, the Margherita tells you everything you need to know.</BlogP>
-          <BlogP>After the Margherita, the <strong className="text-white font-semibold">Diavola</strong> is the recommended follow-up — spicy salami that renders slightly during the bake, letting its oils seep into the dough at the edges and creating a richness that balances the heat. The white-sauce selections offer another direction entirely and are worth exploring on a second visit. <a href="/menu" className={lnk}>View the full menu here</a> before you arrive to plan your order.</BlogP>
+          <BlogH2>Where the Pizza Lives, Exactly</BlogH2>
+          <BlogP>The restaurant sits on Lee Tung Avenue in Wan Chai, the pedestrian street known more for food than for shopping. The address is <strong className="text-white font-semibold">Shop G04-05/F01A, 200 Queen's Road East</strong>. Two floors, 80 seats, a five-minute walk from Wan Chai MTR. You will smell the wood-fired dough before you see the sign. If you are unsure you have the right place, you do.</BlogP>
+
+          <BlogH2>Three Pizzas to Order</BlogH2>
+
+          <BlogH3>Margherita — The Benchmark</BlogH3>
+          <BlogP>Start here to understand the dough. San Marzano tomato sauce, fior di latte mozzarella, basil, olive oil. The classic combination so you can taste what the crust is doing on its own. Tall, light cornicione, more chew than you expected, more digestible than you thought possible. Judge this before you judge anything else.</BlogP>
+
+          <BlogH3>Provola E Peppe — The Signature</BlogH3>
+          <BlogP>Smoked provolone, hand-crushed San Marzano, sweet peppers, roasted cherry tomatoes, basil, olive oil. This is the combination making videos go viral. The provolone adds smoky depth. The peppers bring sweet contrast. The crust catches all the juice without going soggy because the high-hydration dough creates enough structure. <a href="/menu" className={lnk}>See the full menu here</a> to plan ahead.</BlogP>
+
+          <BlogH3>Abbraccio E Mamma — When You Want Everything</BlogH3>
+          <BlogP>Ricotta-stuffed crust, Neapolitan meatballs, Grana Padano, buffalo mozzarella. This is where Vincenzo Capuano pushes past any reasonable restraint. The stuffed crust alone is a full course. This is the one you share with friends and then argue over who gets the last piece.</BlogP>
+
+          <BlogH2>Why It Is Going Viral</BlogH2>
           <BlogList items={[
-            <><strong className="text-white font-semibold">Margherita</strong> — the benchmark: San Marzano tomato and buffalo mozzarella</>,
-            <><strong className="text-white font-semibold">Diavola</strong> — spicy salami with fior di latte, for those who want personality</>,
-            <><strong className="text-white font-semibold">White-sauce selection</strong> — seasonal and ingredient-led, ideal for a second visit</>,
+            <><strong className="text-white font-semibold">The scissors moment</strong>: the pizza arrives whole, then a server cuts it open at the table with large golden scissors. Everyone is filming this. It is functional (it protects the airy crust's air pockets) and it is perfect content.</>,
+            <><strong className="text-white font-semibold">The crust itself</strong>: you have never seen a cornicione this tall. It stands up like bread, charred and airy inside. It is made for food photography.</>,
+            <><strong className="text-white font-semibold">The world champion angle</strong>: people love eating things with a story. A 2022 world champion opens a pizza place in Wan Chai is a shareable fact.</>,
+            <><strong className="text-white font-semibold">Hong Kong was ready</strong>: the city has gotten serious about pizza over the last few years. A discerning audience was primed for a genuinely world-class option.</>,
           ]} />
 
-          <BlogH2>The Scissors Presentation — Why It Matters</BlogH2>
-          <BlogP>One element surprises nearly every first-time visitor to this <strong className="text-white font-semibold">pizza restaurant in Wan Chai</strong>: the pizza arrives on a raised metal stand, and a server cuts each portion using scissors rather than a wheel. This draws curiosity — occasionally scepticism. But the logic is clear. The stand keeps the base crisp during service by allowing air to circulate beneath the pizza. The scissors protect the cornicione from the compression that a rolling blade applies — preserving that airy structure all the way from the oven to the table.</BlogP>
-          <BlogP>Details like this separate a restaurant that genuinely cares about the product from one that simply makes a pizza and puts it down. Every operational decision at Vincenzo Capuano serves the pizza. That is the most honest explanation for why it consistently earns the title of <strong className="text-white font-semibold">best Neapolitan pizza in Hong Kong</strong> — not just once, but on every single visit.</BlogP>
+          <BlogH2>Practical Tips for Your Visit</BlogH2>
+          <BlogList items={[
+            <><strong className="text-white font-semibold">Book ahead</strong>. Dinner and weekends fill up fast. <a href="/reservations" className={lnk}>Reserve your table here</a>.</>,
+            <>Weekday lunches are quieter — great for a work lunch or a first visit without the noise.</>,
+            <>Request the upper floor if you want conversation — the ground floor gets loud at peak hours.</>,
+            <>Do not rush your ordering. The dough is light but one pizza per person plus a starter is a full meal.</>,
+            <>Leave room for dessert. The tiramisu earns the 10% of stomach space you give it.</>,
+          ]} />
 
-          <BlogFAQ
-            title="Frequently Asked Questions"
-            items={faqsEN}
-          />
+          <BlogH2>How It Compares to Other Neapolitan Pizza in Hong Kong</BlogH2>
+          <BlogP>Hong Kong has solid traditional Neapolitan options. But Vincenzo Capuano is doing <strong className="text-white font-semibold">contemporary Neapolitan pizza</strong>, which is a distinct and more recent evolution. The higher hydration, the longer fermentation, and the technical edge that comes from decades of focused craft is not something a typical pizzeria can easily replicate. <a href="/best-pizza-restaurants-hong-kong" className={lnk}>See our full Hong Kong pizza guide</a> for other places worth visiting.</BlogP>
+
+          <BlogFAQ title="FAQ: Neapolitan Pizza Hong Kong" items={faqsEN} />
         </>
       )}
     </BlogLayout>
