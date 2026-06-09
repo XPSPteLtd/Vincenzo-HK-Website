@@ -57,6 +57,7 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
           <Link to="/group-dining" className={linkClass}>{hk ? '團體用餐' : 'Group Dining'}</Link>
           <Link to="/contact" className={linkClass}>{hk ? '位置' : 'Location'}</Link>
           <Link to="/faq" className={linkClass}>{hk ? '常見問題' : 'FAQ'}</Link>
+          <Link to="/blog" className={linkClass}>{hk ? '部落格' : 'Blog'}</Link>
           <a
             href="https://www.sevenrooms.com/reservations/vincenzocapuanohk"
             target="_blank"

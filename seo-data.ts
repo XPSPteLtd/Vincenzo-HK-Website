@@ -610,6 +610,33 @@ export const pageSEO: Record<string, PageSEO> = {
     },
   },
 
+  '/blog': {
+    en: {
+      title: 'Pizza Blog | Guides, Reviews & Stories | Vincenzo Capuano HK',
+      desc: 'Pizza guides, restaurant reviews, and Neapolitan pizza stories from Vincenzo Capuano Hong Kong in Wan Chai. Your source for everything pizza in Hong Kong.',
+      keywords: 'pizza blog hong kong, neapolitan pizza guide, vincenzo capuano blog, pizza review hong kong, italian food blog hong kong',
+    },
+    hk: {
+      title: '薄餅部落格 | 指南、評論與故事 | Vincenzo Capuano HK',
+      desc: '來自灣仔 Vincenzo Capuano 香港的薄餅指南、餐廳評論和拿坡里薄餅故事。您在香港了解一切薄餅知識的最佳來源。',
+      keywords: '香港薄餅部落格, 拿坡里薄餅指南, vincenzo capuano 博客, 香港薄餅評論, 香港意大利美食博客',
+    },
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      '@id': `${BASE}/blog#page`,
+      url: `${BASE}/blog`,
+      name: 'Pizza Blog | Vincenzo Capuano Hong Kong',
+      description: 'Pizza guides, restaurant reviews, and Neapolitan pizza stories from Vincenzo Capuano Hong Kong.',
+      publisher: {
+        '@type': 'Organization',
+        name: 'Vincenzo Capuano Hong Kong',
+        url: BASE,
+        logo: { '@type': 'ImageObject', url: 'https://storage.googleapis.com/xps-assets/gotti%27s%20assets%20/BRAND%20ASSETS/vincenzo/LOGO-CAPUANO-white.png' },
+      },
+    },
+  },
+
   '/vincenzo-capuano-story': {
     en: {
       title: 'The Vincenzo Capuano Story | Pizza Chef from Naples',

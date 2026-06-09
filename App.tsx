@@ -33,6 +33,7 @@ import { VincenzoStory } from './components/blog/VincenzoStory';
 import { BestNeapolitanPizzaHK } from './components/blog/BestNeapolitanPizzaHK';
 import { VincenzoCapuanoReview } from './components/blog/VincenzoCapuanoReview';
 import { BestPizzaRestaurantsHK } from './components/blog/BestPizzaRestaurantsHK';
+import { BlogIndex } from './components/blog/BlogIndex';
 import { Language } from './translations';
 import { pageSEO } from './seo-data';
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
@@ -330,6 +331,10 @@ const App: React.FC = () => {
 
         <Route path="/best-pizza-restaurants-hong-kong" element={
           <BestPizzaRestaurantsHK lang={lang} onBookClick={openModal} />
+        } />
+
+        <Route path="/blog" element={
+          <BlogIndex lang={lang} onBookClick={openModal} />
         } />
 
         <Route path="*" element={<NotFound />} />
