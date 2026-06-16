@@ -22,7 +22,8 @@ export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
   const [scrollY, setScrollY] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
 
-  const [isDesktop, setIsDesktop] = useState(false);
+  // Initialise immediately so first render is correct (avoids 1-frame flash on desktop)
+  const [isDesktop, setIsDesktop] = useState(() => window.innerWidth >= 1024);
 
   useEffect(() => {
     const handleResize = () => setIsDesktop(window.innerWidth >= 1024);
@@ -54,52 +55,54 @@ export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
   const videoRef = React.useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
+    if (!isDesktop) return;
     const video = videoRef.current;
     if (!video) return;
 
-    // Baseline: muted must be true for autoplay
     video.muted = true;
-    
-    // Attempt play immediately
-    const startVideo = () => {
-      video.play().catch(err => {
-        console.warn("Autoplay blocked, waiting for interaction", err);
-        // Fallback: try playing on any user interaction if blocked
-        const playOnInteraction = () => {
-          video.play().then(() => {
-            window.removeEventListener('touchstart', playOnInteraction);
-            window.removeEventListener('mousedown', playOnInteraction);
-          }).catch(() => {});
-        };
-        window.addEventListener('touchstart', playOnInteraction);
-        window.addEventListener('mousedown', playOnInteraction);
-      });
-    };
-
-    startVideo();
-  }, []);
+    video.play().catch(() => {
+      const playOnInteraction = () => {
+        video.play().then(() => {
+          window.removeEventListener('touchstart', playOnInteraction);
+          window.removeEventListener('mousedown', playOnInteraction);
+        }).catch(() => {});
+      };
+      window.addEventListener('touchstart', playOnInteraction, { once: true });
+      window.addEventListener('mousedown', playOnInteraction, { once: true });
+    });
+  }, [isDesktop]);
 
   return (
     <section className="relative h-screen min-h-[680px] w-full overflow-hidden flex flex-col bg-charcoal">
 
-      {/* ── Background Video ── */}
+      {/* ── Background ── video on desktop, static image on mobile ── */}
       <div className="absolute inset-0 z-0 overflow-hidden bg-charcoal">
-        <video
-          ref={videoRef}
-          src={HERO_VIDEO}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          disablePictureInPicture
-          disableRemotePlayback
-          className="w-full h-full absolute inset-0 object-cover brightness-[0.7] opacity-100 pointer-events-none"
-        />
+        {isDesktop ? (
+          <video
+            ref={videoRef}
+            src={HERO_VIDEO}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            disablePictureInPicture
+            disableRemotePlayback
+            className="w-full h-full absolute inset-0 object-cover brightness-[0.7] opacity-100 pointer-events-none"
+          />
+        ) : (
+          <img
+            src="https://storage.googleapis.com/xps-assets/gotti%27s%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/detto-fatto-pizza.png"
+            alt=""
+            aria-hidden="true"
+            fetchPriority="high"
+            className="w-full h-full absolute inset-0 object-cover brightness-[0.5] pointer-events-none"
+          />
+        )}
 
-        {/* Gradient overlays — refined for better visibility of the video */}
-        <div className="absolute inset-0 bg-gradient-to-r from-charcoal/40 via-charcoal/10 to-transparent z-20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent z-20" />
+        {/* Gradient overlays */}
+        <div className="absolute inset-0 bg-gradient-to-r from-charcoal/60 via-charcoal/20 to-transparent z-20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-transparent to-transparent z-20" />
       </div>
 
       {/* Slide indicators removed as we use video now */}
@@ -130,8 +133,11 @@ export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
             <div className="sr-only">{translations[lang].common.brand} | {lang === 'en' ? 'Award-Winning Contemporary Neapolitan Pizza Hong Kong' : '屢獲殊榮的當代拿坡里薄餅店 | 香港'}</div>
             
             <img
-              src="https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo/LOGO-CAPUANO-white.png"
+              src="https://storage.googleapis.com/xps-assets/gotti%27s%20assets%20/BRAND%20ASSETS/vincenzo/LOGO-CAPUANO-white.png"
               alt={translations[lang].common.brand}
+              fetchPriority="high"
+              width={120}
+              height={120}
               className="h-[70px] md:h-[90px] lg:h-[120px] w-auto object-contain drop-shadow-2xl shrink-0"
             />
             

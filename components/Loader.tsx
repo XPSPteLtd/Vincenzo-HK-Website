@@ -16,8 +16,8 @@ export const Loader: React.FC<LoaderProps> = ({ isLoading }) => {
   }, []);
 
   return (
-    <div 
-      className={`fixed inset-0 z-[100] bg-[#111111] flex flex-col items-center justify-center transition-all duration-[1200ms] ease-in-out ${
+    <div
+      className={`fixed inset-0 z-[100] bg-[#111111] flex flex-col items-center justify-center transition-opacity duration-500 ease-in-out ${
         isLoading ? 'opacity-100' : 'opacity-0 pointer-events-none'
       }`}
     >
@@ -35,23 +35,15 @@ export const Loader: React.FC<LoaderProps> = ({ isLoading }) => {
         </div>
 
         {/* Location Element */}
-        <div 
-          className={`flex flex-col items-center transition-all duration-[1500ms] ease-out ${
+        <div
+          className={`flex flex-col items-center transition-all duration-700 ease-out ${
             showLocation ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}
         >
           <div className="w-px h-8 bg-gradient-to-b from-transparent via-gold/50 to-transparent mb-4" />
-          
-          <div className="flex flex-col items-center gap-2.5">
-            <img 
-              src="https://flagcdn.com/w160/hk.png" 
-              alt="Hong Kong" 
-              className="h-3.5 md:h-4 w-auto rounded-[2px] shadow-sm mb-0.5" 
-            />
-            <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.4em] text-gold/80">
-              Hong Kong
-            </span>
-          </div>
+          <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.4em] text-gold/80">
+            Hong Kong
+          </span>
         </div>
       </div>
     </div>

@@ -188,7 +188,7 @@ const App: React.FC = () => {
     // Fallback timer just in case load event fails or takes too long
     const fallbackTimer = setTimeout(() => {
       setIsLoading(false);
-    }, 5000);
+    }, 2000);
 
     return () => {
       window.removeEventListener('load', handleLoad);
