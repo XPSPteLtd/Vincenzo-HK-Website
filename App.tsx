@@ -1,15 +1,11 @@
-﻿import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Accolades } from './components/Accolades';
 import { Legacy } from './components/Legacy';
-import { Menu } from './components/Menu';
 import { InfoHub } from './components/InfoHub';
 import { Social } from './components/Social';
-import { Testimonials } from './components/Testimonials';
 import { Footer } from './components/Footer';
-// import { ReservationModal } from './components/ReservationModal';
-import { DeliveryModal } from './components/DeliveryModal';
 import { EventsModal } from './components/EventsModal';
 import { QuickHours } from './components/QuickHours';
 import { Loader } from './components/Loader';
@@ -17,27 +13,29 @@ import { Maintenance } from './components/Maintenance';
 import { MobileBottomNav } from './components/MobileBottomNav';
 import { AnnouncementBanner } from './components/AnnouncementBanner';
 import { FloatingActionButton } from './components/FloatingActionButton';
-import { LocationPage } from './components/LocationPage';
-import { RestaurantWanchaiPage } from './components/RestaurantWanchaiPage';
-import { PizzaNearMePage } from './components/PizzaNearMePage';
-import { ReservationsPage } from './components/ReservationsPage';
-import { OurStoryPage } from './components/OurStoryPage';
-import { FAQPage } from './components/FAQPage';
-import { GroupDiningPage } from './components/GroupDiningPage';
-import { ContactPage } from './components/ContactPage';
-import { WhatIsNeapolitanPizza } from './components/blog/WhatIsNeapolitanPizza';
-import { ContemporaryNeapolitanHK } from './components/blog/ContemporaryNeapolitanHK';
-import { WhyScissors } from './components/blog/WhyScissors';
-import { BestPizzaForSharing } from './components/blog/BestPizzaForSharing';
-import { VincenzoStory } from './components/blog/VincenzoStory';
-import { BestNeapolitanPizzaHK } from './components/blog/BestNeapolitanPizzaHK';
-import { VincenzoCapuanoReview } from './components/blog/VincenzoCapuanoReview';
-import { BestPizzaRestaurantsHK } from './components/blog/BestPizzaRestaurantsHK';
-import { BlogIndex } from './components/blog/BlogIndex';
 import { Language } from './translations';
 import { pageSEO } from './seo-data';
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
-import { NotFound } from './components/NotFound';
+
+const Menu = lazy(() => import('./components/Menu').then(m => ({ default: m.Menu })));
+const ContactPage = lazy(() => import('./components/ContactPage').then(m => ({ default: m.ContactPage })));
+const LocationPage = lazy(() => import('./components/LocationPage').then(m => ({ default: m.LocationPage })));
+const RestaurantWanchaiPage = lazy(() => import('./components/RestaurantWanchaiPage').then(m => ({ default: m.RestaurantWanchaiPage })));
+const PizzaNearMePage = lazy(() => import('./components/PizzaNearMePage').then(m => ({ default: m.PizzaNearMePage })));
+const ReservationsPage = lazy(() => import('./components/ReservationsPage').then(m => ({ default: m.ReservationsPage })));
+const OurStoryPage = lazy(() => import('./components/OurStoryPage').then(m => ({ default: m.OurStoryPage })));
+const FAQPage = lazy(() => import('./components/FAQPage').then(m => ({ default: m.FAQPage })));
+const GroupDiningPage = lazy(() => import('./components/GroupDiningPage').then(m => ({ default: m.GroupDiningPage })));
+const WhatIsNeapolitanPizza = lazy(() => import('./components/blog/WhatIsNeapolitanPizza').then(m => ({ default: m.WhatIsNeapolitanPizza })));
+const ContemporaryNeapolitanHK = lazy(() => import('./components/blog/ContemporaryNeapolitanHK').then(m => ({ default: m.ContemporaryNeapolitanHK })));
+const WhyScissors = lazy(() => import('./components/blog/WhyScissors').then(m => ({ default: m.WhyScissors })));
+const BestPizzaForSharing = lazy(() => import('./components/blog/BestPizzaForSharing').then(m => ({ default: m.BestPizzaForSharing })));
+const VincenzoStory = lazy(() => import('./components/blog/VincenzoStory').then(m => ({ default: m.VincenzoStory })));
+const BestNeapolitanPizzaHK = lazy(() => import('./components/blog/BestNeapolitanPizzaHK').then(m => ({ default: m.BestNeapolitanPizzaHK })));
+const VincenzoCapuanoReview = lazy(() => import('./components/blog/VincenzoCapuanoReview').then(m => ({ default: m.VincenzoCapuanoReview })));
+const BestPizzaRestaurantsHK = lazy(() => import('./components/blog/BestPizzaRestaurantsHK').then(m => ({ default: m.BestPizzaRestaurantsHK })));
+const BlogIndex = lazy(() => import('./components/blog/BlogIndex').then(m => ({ default: m.BlogIndex })));
+const NotFound = lazy(() => import('./components/NotFound').then(m => ({ default: m.NotFound })));
 
 export type Page = 'home' | 'menu' | 'contact';
 
@@ -174,24 +172,18 @@ const App: React.FC = () => {
   }, [location.pathname]);
 
   useEffect(() => {
-    const handleLoad = () => {
-      // Small delay to ensure smooth transition after everything is parsed
-      setTimeout(() => setIsLoading(false), 300);
-    };
+    const hide = () => { setTimeout(() => setIsLoading(false), 200); };
 
-    if (document.readyState === 'complete') {
-      handleLoad();
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', hide, { once: true });
     } else {
-      window.addEventListener('load', handleLoad);
+      hide();
     }
-    
-    // Fallback timer just in case load event fails or takes too long
-    const fallbackTimer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
+
+    const fallbackTimer = setTimeout(() => setIsLoading(false), 1200);
 
     return () => {
-      window.removeEventListener('load', handleLoad);
+      document.removeEventListener('DOMContentLoaded', hide);
       clearTimeout(fallbackTimer);
     };
   }, []);
@@ -243,6 +235,7 @@ const App: React.FC = () => {
         isBannerActive={isBannerActive}
       />
       
+      <Suspense fallback={<div className="bg-charcoal min-h-screen" />}>
       <Routes>
         <Route path="/" element={
           <>
@@ -339,6 +332,7 @@ const App: React.FC = () => {
 
         <Route path="*" element={<NotFound />} />
       </Routes>
+      </Suspense>
       
       <Footer lang={lang} onPageChange={handlePageChange} />
       

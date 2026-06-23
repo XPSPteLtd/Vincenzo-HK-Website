@@ -13,13 +13,13 @@ export const Accolades: React.FC<AccoladesProps> = ({ lang }) => {
 
   const items = [
     {
-      logo: <img src="https://www.capvin.com/wp-content/uploads/2023/11/logo-caputo@2x.png" alt="Caputo 1924" className="h-14 md:h-16 w-auto object-contain opacity-100" />,
+      logo: <img src="https://www.capvin.com/wp-content/uploads/2023/11/logo-caputo@2x.png" alt="Caputo 1924" width={160} height={64} loading="lazy" decoding="async" className="h-14 md:h-16 w-auto object-contain opacity-100" />,
       title: t.impastoTitle,
       desc: t.impastoDesc,
       accent: 'text-gold',
     },
     {
-      logo: <img src="https://www.capvin.com/wp-content/uploads/2026/01/top-50-capuano.png" alt="50 Top Pizza" className="h-14 md:h-16 w-auto object-contain opacity-100" />,
+      logo: <img src="https://www.capvin.com/wp-content/uploads/2026/01/top-50-capuano.png" alt="50 Top Pizza" width={160} height={64} loading="lazy" decoding="async" className="h-14 md:h-16 w-auto object-contain opacity-100" />,
       title: t.rankingTitle,
       desc: t.rankingDesc,
       accent: 'text-red',
@@ -27,10 +27,12 @@ export const Accolades: React.FC<AccoladesProps> = ({ lang }) => {
     {
       logo: (
         <div className="bg-white px-4 py-2 rounded-xl flex items-center justify-center shadow-lg">
-          <img 
-            src="https://www.capvin.com/wp-content/uploads/2026/01/254AD26A-3572-4DBC-995C-1390FFB9A480.png" 
-            alt="Gambero Rosso" 
-            className="h-10 md:h-12 w-auto object-contain" 
+          <img
+            src="https://www.capvin.com/wp-content/uploads/2026/01/254AD26A-3572-4DBC-995C-1390FFB9A480.png"
+            alt="Gambero Rosso"
+            width={120} height={48}
+            loading="lazy" decoding="async"
+            className="h-10 md:h-12 w-auto object-contain"
           />
         </div>
       ),

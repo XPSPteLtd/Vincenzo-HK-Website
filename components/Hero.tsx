@@ -1,5 +1,5 @@
 ﻿
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import { Language, translations } from '../translations';
 
@@ -19,18 +19,39 @@ const HERO_VIDEO = "https://storage.googleapis.com/xps-assets/gotti's%20assets%2
 
 export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
   const t = translations[lang].hero;
-  const [scrollY, setScrollY] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
 
   // Initialise immediately so first render is correct (avoids 1-frame flash on desktop)
   const [isDesktop, setIsDesktop] = useState(() => window.innerWidth >= 1024);
+
+  // Refs for scroll-driven opacity/transform — avoids React re-renders on every scroll event
+  const logoRef = useRef<HTMLDivElement>(null);
+  const eyebrowRef = useRef<HTMLDivElement>(null);
+  const quoteRef = useRef<HTMLDivElement>(null);
+  const ctasRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleResize = () => setIsDesktop(window.innerWidth >= 1024);
     handleResize();
     window.addEventListener('resize', handleResize);
 
-    const handleScroll = () => setScrollY(window.scrollY);
+    const handleScroll = () => {
+      const y = window.scrollY;
+      const lo = Math.max(0, 1 - y / 150);
+      const lt = -(y * 0.12);
+      const co = Math.max(0, 1 - (y - 280) / 280);
+      const ct = Math.min(50, y / 10);
+      if (logoRef.current) {
+        logoRef.current.style.opacity = String(lo);
+        logoRef.current.style.transform = `translateY(${lt}px)`;
+      }
+      [eyebrowRef, quoteRef, ctasRef].forEach(ref => {
+        if (ref.current) {
+          ref.current.style.opacity = String(co);
+          ref.current.style.transform = `translateY(${ct}px)`;
+        }
+      });
+    };
     window.addEventListener('scroll', handleScroll, { passive: true });
 
     const loadTimer = setTimeout(() => setIsLoaded(true), 80);
@@ -41,14 +62,6 @@ export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
       clearTimeout(loadTimer);
     };
   }, []);
-
-  // Logo: fades out of hero as it fades into navbar (0–150px)
-  const heroLogoOpacity = Math.max(0, 1 - scrollY / 150);
-  const heroLogoY = -(scrollY * 0.12);
-
-  // Content: fades out later (300–600px)
-  const contentOpacity = Math.max(0, 1 - (scrollY - 280) / 280);
-  const contentY = Math.min(50, scrollY / 10);
 
   const scrollToNext = () => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
 
@@ -113,8 +126,8 @@ export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
 
           {/* Eyebrow */}
           <div
+            ref={eyebrowRef}
             className={`mb-3 md:mb-4 transition-all duration-700 delay-100 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`}
-            style={{ opacity: isLoaded ? contentOpacity : 0 }}
           >
             <span className="inline-flex items-center gap-2 text-gold text-[10px] font-bold uppercase tracking-[0.25em]">
               <span className="w-4 h-px bg-gold/50" />
@@ -124,11 +137,8 @@ export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
 
           {/* Logos — cross-fades with navbar logo */}
           <div
+            ref={logoRef}
             className={`flex items-center gap-2 md:gap-3 lg:gap-4 mb-5 md:mb-6 transition-[opacity] duration-700 delay-200 ${isLoaded ? '' : 'opacity-0'} max-w-full overflow-hidden`}
-            style={{
-              opacity: isLoaded ? heroLogoOpacity : 0,
-              transform: `translateY(${heroLogoY}px)`,
-            }}
           >
             <div className="sr-only">{translations[lang].common.brand} | {lang === 'en' ? 'Award-Winning Contemporary Neapolitan Pizza Hong Kong' : '屢獲殊榮的當代拿坡里薄餅店 | 香港'}</div>
             
@@ -166,8 +176,8 @@ export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
 
           {/* Quote */}
           <div
+            ref={quoteRef}
             className={`mb-6 md:mb-8 transition-all duration-700 delay-300 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
-            style={{ opacity: isLoaded ? contentOpacity : 0, transform: `translateY(${contentY}px)` }}
           >
             <div className="flex items-start gap-3 max-w-xs sm:max-w-sm md:max-w-md">
               <span className="w-0.5 h-auto self-stretch bg-gold/30 rounded-full shrink-0 mt-1" />
@@ -179,8 +189,8 @@ export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
 
           {/* CTAs + Booking notice */}
           <div
+            ref={ctasRef}
             className={`transition-all duration-700 delay-500 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
-            style={{ opacity: isLoaded ? contentOpacity : 0, transform: `translateY(${contentY}px)` }}
           >
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
               <a
