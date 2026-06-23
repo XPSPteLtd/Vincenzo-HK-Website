@@ -6,10 +6,10 @@ import { Legacy } from './components/Legacy';
 import { InfoHub } from './components/InfoHub';
 import { Social } from './components/Social';
 import { Footer } from './components/Footer';
-import { EventsModal } from './components/EventsModal';
-import { QuickHours } from './components/QuickHours';
+const EventsModal = lazy(() => import('./components/EventsModal').then(m => ({ default: m.EventsModal })));
+const QuickHours = lazy(() => import('./components/QuickHours').then(m => ({ default: m.QuickHours })));
 import { Loader } from './components/Loader';
-import { Maintenance } from './components/Maintenance';
+const Maintenance = lazy(() => import('./components/Maintenance').then(m => ({ default: m.Maintenance })));
 import { MobileBottomNav } from './components/MobileBottomNav';
 import { AnnouncementBanner } from './components/AnnouncementBanner';
 import { FloatingActionButton } from './components/FloatingActionButton';
@@ -172,7 +172,7 @@ const App: React.FC = () => {
   }, [location.pathname]);
 
   useEffect(() => {
-    const hide = () => { setTimeout(() => setIsLoading(false), 200); };
+    const hide = () => { setTimeout(() => setIsLoading(false), 50); };
 
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', hide, { once: true });
@@ -353,10 +353,14 @@ const App: React.FC = () => {
       <FloatingActionButton onClick={openModal} lang={lang} />
       
       {/* <ReservationModal isOpen={isModalOpen} onClose={closeModal} lang={lang} /> */}
-      <EventsModal isOpen={isEventsOpen} onClose={closeEvents} lang={lang} />
-      <QuickHours isOpen={isHoursOpen} onClose={closeHours} lang={lang} />
+      <Suspense fallback={null}>
+        <EventsModal isOpen={isEventsOpen} onClose={closeEvents} lang={lang} />
+        <QuickHours isOpen={isHoursOpen} onClose={closeHours} lang={lang} />
+      </Suspense>
       
-      <Maintenance />
+      <Suspense fallback={null}>
+        <Maintenance />
+      </Suspense>
     </main>
   );
 };

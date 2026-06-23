@@ -89,20 +89,6 @@ export default defineConfig(({ mode }) => {
         host: '0.0.0.0',
       },
       plugins: [react(), prerenderPlugin()],
-      build: {
-        rollupOptions: {
-          output: {
-            manualChunks(id: string) {
-              if (id.includes('node_modules/react') || id.includes('node_modules/react-dom') || id.includes('node_modules/react-router')) {
-                return 'vendor-react';
-              }
-              if (id.includes('node_modules/lucide-react')) {
-                return 'vendor-lucide';
-              }
-            },
-          },
-        },
-      },
       define: {
         'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
         'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)

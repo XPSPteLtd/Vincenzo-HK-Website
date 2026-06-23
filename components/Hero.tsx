@@ -88,9 +88,9 @@ export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
   return (
     <section className="relative h-screen min-h-[680px] w-full overflow-hidden flex flex-col bg-charcoal">
 
-      {/* ── Background ── video on desktop, static image on mobile ── */}
+      {/* ── Background ── video on desktop, dark gradient on mobile (2.4MB PNG skipped for LCP) ── */}
       <div className="absolute inset-0 z-0 overflow-hidden bg-charcoal">
-        {isDesktop ? (
+        {isDesktop && (
           <video
             ref={videoRef}
             src={HERO_VIDEO}
@@ -102,14 +102,6 @@ export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
             disablePictureInPicture
             disableRemotePlayback
             className="w-full h-full absolute inset-0 object-cover brightness-[0.7] opacity-100 pointer-events-none"
-          />
-        ) : (
-          <img
-            src="https://storage.googleapis.com/xps-assets/gotti%27s%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/detto-fatto-pizza.png"
-            alt=""
-            aria-hidden="true"
-            fetchPriority="high"
-            className="w-full h-full absolute inset-0 object-cover brightness-[0.5] pointer-events-none"
           />
         )}
 
