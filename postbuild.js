@@ -1,65 +1,51 @@
+// Post-build: notify Bing IndexNow about the routes that were just built.
+//
+// This file used to also write per-route index.html files. It no longer does:
+// the prerender plugin in vite.config.ts already generates every route from
+// pageSEO with its own title, description, keywords, OG/Twitter tags, canonical,
+// hreflang and JSON-LD. This script ran afterwards and overwrote 13 of those
+// with a copy of the homepage, so /menu, /faq and 11 others all shipped the
+// homepage title and description. Prerendering lives in vite.config.ts only.
+
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const distDir = path.resolve(__dirname, 'dist');
-const indexFile = path.join(distDir, 'index.html');
+const baseUrl = 'https://vincenzocapuano.hk';
+const indexNowKey = 'b80d5e01376b4531a02a4770859569de';
 
-if (!fs.existsSync(indexFile)) {
-  console.error('index.html not found in dist/');
+if (!fs.existsSync(path.join(distDir, 'index.html'))) {
+  console.error('index.html not found in dist/ — did the build run?');
   process.exit(1);
 }
 
-const html = fs.readFileSync(indexFile, 'utf-8');
-
-const routes = [
-  '/',
-  '/menu',
-  '/contact',
-  '/pizza-wan-chai-hong-kong',
-  '/reservations',
-  '/our-story',
-  '/faq',
-  '/group-dining',
-  '/what-is-neapolitan-pizza',
-  '/contemporary-neapolitan-pizza-hong-kong',
-  '/why-we-cut-pizza-with-scissors',
-  '/best-pizza-for-sharing-hong-kong',
-  '/vincenzo-capuano-story'
-];
-
-const baseUrl = 'https://vincenzocapuano.hk';
-
-// Remove any existing canonical tag to prevent duplicates
-const baseHtml = html.replace(/<link\s+rel="canonical"[^>]*>/i, '');
-
-routes.forEach(route => {
-  const isRoot = route === '/';
-  const routeDir = isRoot ? distDir : path.join(distDir, route.substring(1));
-
-  if (!isRoot && !fs.existsSync(routeDir)) {
-    fs.mkdirSync(routeDir, { recursive: true });
+// Derive the URL list from what was actually built, so routes added to
+// pageSEO are submitted automatically instead of needing a second list here.
+const routes = ['/'];
+for (const entry of fs.readdirSync(distDir, { withFileTypes: true })) {
+  if (entry.isDirectory() && fs.existsSync(path.join(distDir, entry.name, 'index.html'))) {
+    routes.push(`/${entry.name}`);
   }
+}
+routes.sort();
 
-  const canonicalUrl = `${baseUrl}${route === '/' ? '/' : route}`; // Keep exact paths
-
-  // Inject the correct canonical tag
-  const newHtml = baseHtml.replace(
-    /<\/title>/i,
-    `</title>\n    <link rel="canonical" href="${canonicalUrl}" />`
+// IndexNow verifies ownership by fetching the key file and comparing its body
+// to the key. An empty file is what produced "403 Forbidden" previously.
+const keyFile = path.join(distDir, `${indexNowKey}.txt`);
+const keyFileBody = fs.existsSync(keyFile) ? fs.readFileSync(keyFile, 'utf-8').trim() : '';
+if (keyFileBody !== indexNowKey) {
+  console.warn(
+    `[indexnow] skipped: dist/${indexNowKey}.txt must contain "${indexNowKey}" ` +
+    `(found ${keyFileBody === '' ? 'an empty file' : `"${keyFileBody}"`})`
   );
+  process.exit(0);
+}
 
-  const outFile = path.join(routeDir, 'index.html');
-  fs.writeFileSync(outFile, newHtml);
-  console.log(`Generated ${outFile} with canonical ${canonicalUrl}`);
-});
-
-// Notify Bing IndexNow
-const indexNowKey = 'b80d5e01376b4531a02a4770859569de';
-const urlList = routes.map(r => `${baseUrl}${r}`);
+const urlList = routes.map(r => `${baseUrl}${r === '/' ? '/' : r}`);
+console.log(`[indexnow] submitting ${urlList.length} URLs`);
 
 fetch('https://api.indexnow.org/indexnow', {
   method: 'POST',
@@ -71,5 +57,14 @@ fetch('https://api.indexnow.org/indexnow', {
     urlList,
   }),
 })
-  .then(res => console.log(`IndexNow: ${res.status} ${res.statusText}`))
-  .catch(err => console.warn(`IndexNow failed: ${err.message}`));
+  .then(res => {
+    console.log(`[indexnow] ${res.status} ${res.statusText}`);
+    if (res.status === 403) {
+      console.warn(
+        `[indexnow] 403 means Bing could not verify ${baseUrl}/${indexNowKey}.txt — ` +
+        `expected until DNS points at the live host.`
+      );
+    }
+  })
+  // Never fail the build over a search-engine ping.
+  .catch(err => console.warn(`[indexnow] request failed: ${err.message}`));
