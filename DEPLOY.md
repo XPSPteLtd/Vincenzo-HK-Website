@@ -137,8 +137,18 @@ Details worth knowing:
   Submit manually with `npm run indexnow` (add `-- --dry-run` to list the URLs
   without sending). The key file
   `public/b80d5e01376b4531a02a4770859569de.txt` must **contain the key as its
-  body** — it was empty, which is what produced `IndexNow: 403 Forbidden`. The
+  body**; it was empty until 2026-07-27, so no verification ever succeeded. The
   script now refuses to send rather than repeat that silently.
+  A `403 UserForbiddedToAccessSite` means Bing has not verified ownership yet,
+  *not* that the request is malformed — it clears once Bing re-fetches the key
+  file. Verified correct on 2026-07-27: the file returns 200, `text/plain`,
+  32 bytes, over a valid certificate. If 403 persists beyond ~24h, rotate to a
+  new key (rename the `.txt` in `public/` and update `indexNowKey` in
+  `scripts/indexnow.js`).
+- **Google does not use IndexNow.** Google indexing comes from `sitemap.xml` and
+  crawling, so the generated sitemap is what matters there — submit it once in
+  Search Console (`vincenzocapuano.hk` is already verified via the
+  `google-site-verification` meta tag in `index.html`).
 - **Rollback**: `git revert` on `main` and let Hostinger rebuild, or redeploy an
   earlier commit from the hPanel deployment panel.
 - **Manual fallback** if the pipeline is ever unavailable:

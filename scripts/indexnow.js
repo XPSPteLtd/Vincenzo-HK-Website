@@ -69,10 +69,19 @@ const res = await fetch('https://api.indexnow.org/indexnow', {
   process.exit(0);
 });
 
-console.log(`[indexnow] ${res.status} ${res.statusText}`);
+const body = await res.text().catch(() => '');
+console.log(`[indexnow] ${res.status} ${res.statusText}${body ? ` ${body}` : ''}`);
+
 if (res.status === 403) {
+  // UserForbiddedToAccessSite means Bing has not yet verified the key file.
+  // It does not mean the request was malformed: the key file was empty until
+  // 2026-07-27, so every earlier verification attempt failed. Bing clears this
+  // once it successfully re-fetches the file.
   console.warn(
-    `[indexnow] 403 means Bing could not verify ${baseUrl}/${indexNowKey}.txt — ` +
-    `check that the key file is reachable and DNS points at the live host.`
+    `[indexnow] 403 — Bing has not verified ownership yet. Confirm the key file ` +
+    `serves the key as plain text:\n` +
+    `           curl -s ${baseUrl}/${indexNowKey}.txt\n` +
+    `           If that is correct and 403 persists beyond ~24h, rotate to a new ` +
+    `key (rename the .txt in public/ and update indexNowKey here).`
   );
 }
