@@ -2,19 +2,33 @@
 <img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
 </div>
 
-# Run and deploy your AI Studio app
+# Vincenzo Capuano Hong Kong
 
-This contains everything you need to run your app locally.
-
-View your app in AI Studio: https://ai.studio/apps/drive/1p_v1jqURhLdz-zGnmkPEOjw5-vEDKO2p
+Static Vite + React site for [vincenzocapuano.hk](https://vincenzocapuano.hk),
+with per-route pre-rendered HTML for SEO.
 
 ## Run Locally
 
-**Prerequisites:**  Node.js
-
+**Prerequisites:** Node.js 22
 
 1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+   `npm install --legacy-peer-deps`
+2. Set `GEMINI_API_KEY` in `.env.local` to your Gemini API key
 3. Run the app:
    `npm run dev`
+
+## Build
+
+```bash
+npm run build      # -> dist/ (pre-renders every route in seo-data.ts)
+npm run preview    # serve the build locally
+npm run package    # build + zip dist/ for manual upload
+```
+
+## Deploy
+
+Hosted on **Hostinger** (static files in `public_html/`). See
+[DEPLOY.md](DEPLOY.md) for setup, deployment and verification steps.
+
+Routing, HTTPS, redirects, caching and compression are configured in
+[public/.htaccess](public/.htaccess), which Vite copies into `dist/` on build.

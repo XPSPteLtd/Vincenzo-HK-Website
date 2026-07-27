@@ -23,6 +23,12 @@ dist-ssr
 *.sln
 *.sw?
 
-# Firebase
-.firebase/
+# Env
+.env
+.env.*
+!.env.example
+
+# Deploy artifacts
+vincenzo-hk-site.zip
+
 seo changes
