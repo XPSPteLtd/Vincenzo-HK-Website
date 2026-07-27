@@ -10,7 +10,6 @@
     "package": "npm run build && rm -f vincenzo-hk-site.zip && cd dist && zip -rq ../vincenzo-hk-site.zip . -x '**/.DS_Store' && cd .. && echo 'Created vincenzo-hk-site.zip — upload to public_html/ and extract in Hostinger File Manager.'"
   },
   "dependencies": {
-    "@google/genai": "^1.34.0",
     "lucide-react": "^0.562.0",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",

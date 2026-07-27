@@ -246,7 +246,6 @@ const App: React.FC = () => {
             />
             <Accolades lang={lang} />
             <Legacy lang={lang} />
-            {/* <Testimonials lang={lang} /> */}
             <InfoHub lang={lang} onBookClick={openModal} />
             <Social lang={lang} />
           </>

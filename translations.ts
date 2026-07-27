@@ -263,12 +263,6 @@ export const translations = {
       gamberoDesc: "Awarded 2 Spicchi by Gambero Rosso — one of Italy's most prestigious food guides, recognising outstanding quality and authenticity.",
       worldChampion: 'World Pizza Champion'
     },
-    testimonials: {
-      retrieving: 'Retrieving Guest Chronicles',
-      authenticating: 'Authenticating Feedback',
-      verified: 'Verified Guest Experience',
-      viewSource: 'View Source'
-    },
     social: {
       badge: 'Social Media',
       title: 'Follow The\nJourney'
@@ -585,12 +579,6 @@ export const translations = {
       gamberoTitle: '大紅蝦 2 Spicchi 評級',
       gamberoDesc: '榮獲意大利最權威美食指南 Gambero Rosso (大紅蝦) 頒發 2 Spicchi 評級，表揚其卓越品質與正宗風味。',
       worldChampion: '世界薄餅冠軍'
-    },
-    testimonials: {
-      retrieving: '正在獲取食客評論',
-      authenticating: '正在驗證意見回饋',
-      verified: '已驗證的賓客評論',
-      viewSource: '查看原文'
     },
     social: {
       badge: '社群互動',
