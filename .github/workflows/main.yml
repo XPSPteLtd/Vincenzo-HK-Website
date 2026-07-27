@@ -1,9 +1,15 @@
-name: Build check
+name: Build check & post-deploy indexing
 
-# Hostinger builds and deploys the site itself (npm install + npm run build in
-# its own pipeline, publishing dist/). This workflow does NOT deploy — it just
-# builds the same way Hostinger does, so a broken build is caught here rather
-# than by a failed deployment leaving the live site on stale files.
+# Hostinger builds and deploys the site itself (npm install + npm run build on
+# its own server, publishing dist/). This workflow does not deploy. It:
+#   1. builds the same way Hostinger does, so a broken build is caught here
+#      rather than by a failed deployment leaving the live site on stale files;
+#   2. waits until the live site is actually serving this commit, then pings
+#      Bing IndexNow.
+#
+# Step 2 is why the ping is not in `npm run build`. Hostinger builds before it
+# publishes, so a ping fired during the build asks Bing to recrawl content that
+# is not live yet — it would re-index the previous version of every page.
 
 on:
   push:
@@ -18,6 +24,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # The build stamps HEAD into <meta name="build-commit">, which the
+          # deploy check below polls for.
+          fetch-depth: 0
 
       - name: Use Node.js
         uses: actions/setup-node@v4
@@ -38,4 +48,37 @@ jobs:
           test -f dist/.htaccess
           # IndexNow key file must contain the key, or Bing returns 403.
           test -s dist/b80d5e01376b4531a02a4770859569de.txt
+          # sitemap.xml is generated; it must cover every prerendered route.
+          test -f dist/sitemap.xml
+          built=$(find dist -mindepth 2 -name index.html | wc -l)
+          listed=$(grep -c '<loc>' dist/sitemap.xml)
+          echo "prerendered routes: $((built + 1)), sitemap URLs: $listed"
+          test "$((built + 1))" -eq "$listed"
           echo "Build output OK"
+
+      - name: Wait for Hostinger to publish this commit
+        # Only after a real push to main — PRs are never deployed.
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        id: wait
+        run: |
+          echo "waiting for build-commit=$GITHUB_SHA at https://vincenzocapuano.hk/"
+          for i in $(seq 1 40); do
+            live=$(curl -sf --max-time 15 https://vincenzocapuano.hk/ \
+                   | grep -o 'name="build-commit" content="[0-9a-f]*"' \
+                   | grep -o '[0-9a-f]\{40\}' || true)
+            if [ "$live" = "$GITHUB_SHA" ]; then
+              echo "live=true" >> "$GITHUB_OUTPUT"
+              echo "deployed after ~$((i * 15))s"
+              exit 0
+            fi
+            echo "[$i/40] live=${live:-none}"
+            sleep 15
+          done
+          # Not a build failure — the site may simply deploy on a different
+          # schedule, or auto-deploy may be off.
+          echo "live=false" >> "$GITHUB_OUTPUT"
+          echo "::warning::Timed out waiting for $GITHUB_SHA to go live; skipping IndexNow."
+
+      - name: Ping IndexNow
+        if: steps.wait.outputs.live == 'true'
+        run: npm run indexnow

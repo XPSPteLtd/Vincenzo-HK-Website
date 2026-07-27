@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node postbuild.js",
+    "build": "vite build",
     "preview": "vite preview",
+    "indexnow": "node scripts/indexnow.js",
     "package": "npm run build && rm -f vincenzo-hk-site.zip && cd dist && zip -rq ../vincenzo-hk-site.zip . -x '**/.DS_Store' && cd .. && echo 'Created vincenzo-hk-site.zip — upload to public_html/ and extract in Hostinger File Manager.'"
   },
   "dependencies": {

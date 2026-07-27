@@ -19,8 +19,33 @@ push to main ──► Hostinger: npm install → npm run build ──► publis
 ```
 
 `.github/workflows/main.yml` builds the same way but **does not deploy**. It
-exists so a broken build shows up as a failed check rather than as a failed
-Hostinger deployment that leaves the live site on stale files.
+exists to (1) catch a broken build as a failed check rather than as a failed
+Hostinger deployment that leaves the live site on stale files, and (2) ping Bing
+IndexNow once the new build is confirmed live.
+
+### Why IndexNow is not part of the build
+
+Hostinger builds *then* publishes. A ping fired during the build tells Bing to
+recrawl content that is not live yet, so it re-indexes the previous version of
+every page. Instead the build stamps the commit into every page:
+
+```html
+<meta name="build-commit" content="<sha>" />
+```
+
+CI polls the live site until that matches its own commit, then runs
+`npm run indexnow`. If it times out (auto-deploy off, or a slow deploy) the job
+warns and skips the ping rather than failing.
+
+### sitemap.xml is generated
+
+Written by the prerender plugin from `pageSEO`, so it can never drift from what
+was built — it previously lagged by four live pages. `lastmod` follows the
+commit date, so rebuilding without changes does not advertise every page as
+freshly updated. CI asserts the URL count matches the prerendered route count.
+**Do not edit `sitemap.xml` by hand**; add the route to `seo-data.ts` instead,
+and give it a priority in `SITEMAP_META` in `vite.config.ts` if the default
+(`monthly`/`0.7`) is wrong.
 
 ## 1. One-time setup
 
@@ -108,11 +133,12 @@ Details worth knowing:
   (`vite.config.ts` `define` inlines it), and the prompt asks Gemini to invent
   5-star reviews for *"Vincenzo Capuano **Singapore**"* — wrong city, and
   AI-generated text rendered as genuine Google reviews with star ratings.
-- **IndexNow** (`postbuild.js`) pings Bing on every build. The key file
+- **IndexNow** runs from CI after the deploy is verified, not from the build.
+  Submit manually with `npm run indexnow` (add `-- --dry-run` to list the URLs
+  without sending). The key file
   `public/b80d5e01376b4531a02a4770859569de.txt` must **contain the key as its
-  body** — it was empty, which is what produced `IndexNow: 403 Forbidden`.
-  Expect 403s to continue until DNS points at Hostinger and Bing can fetch
-  `https://vincenzocapuano.hk/b80d5e01376b4531a02a4770859569de.txt`.
+  body** — it was empty, which is what produced `IndexNow: 403 Forbidden`. The
+  script now refuses to send rather than repeat that silently.
 - **Rollback**: `git revert` on `main` and let Hostinger rebuild, or redeploy an
   earlier commit from the hPanel deployment panel.
 - **Manual fallback** if the pipeline is ever unavailable:
