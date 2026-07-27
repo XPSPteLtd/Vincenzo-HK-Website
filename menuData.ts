@@ -310,14 +310,6 @@ export const menuItems: MenuItem[] = [
     image: "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/drive-download-20260414T111937Z-3-001/Tartufo.jpg",
     dietary: ["Vegetarian"]
   },
-  {
-    id: "hk-4", name: "ANATRA AFFUMICATA", nameZh: "煙燻鴨胸薄餅",
-    description: "Base with San Marzano sauce, fior di latte, smoked duck breast, cayenna honey glaze, rucola, parmigiano",
-    descriptionZh: "聖馬扎諾番茄醬底、莫扎瑞拉芝士、煙燻鴨胸、辣椒蜂蜜、芝麻菜及帕馬森芝士",
-    mainCategory: "Ala-carte", category: "Hong Kong Special Pizza", categoryZh: "香港特式薄餅",
-    image: NO_IMAGE
-  },
-
   // PASTA
   {
     id: "pas-1", name: "AGLIO E OLIO CON GAMBERI", nameZh: "香辣蒜油大蝦意粉",

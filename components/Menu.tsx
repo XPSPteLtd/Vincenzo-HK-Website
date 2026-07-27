@@ -294,7 +294,7 @@ const BeverageCard: React.FC<{
 
 const MenuDownloadBanner: React.FC<{ lang: Language }> = ({ lang }) => {
   const isHK = lang === 'hk';
-  const foodPdf = "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/hk%20menu/DEPLIANT%20MENU%20-2%20QFile_web.pdf";
+  const foodPdf = "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/VCHK%20MAIN%20MENU%20LATEST%202026.pdf";
   const drinksPdf = "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/hk%20menu/Drinks%20Menu%20HK_Final_web.pdf";
 
   return (
