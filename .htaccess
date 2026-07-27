@@ -1,0 +1,162 @@
+# ============================================================================
+#  Vincenzo Capuano Hong Kong — Apache / LiteSpeed config for Hostinger
+#  Lives in public/ so Vite copies it into dist/ on every build.
+#  Upload target: public_html/
+# ============================================================================
+
+# ----------------------------------------------------------------------------
+# 0. Basics
+# ----------------------------------------------------------------------------
+Options -Indexes
+AddDefaultCharset UTF-8
+
+<IfModule mod_dir.c>
+  DirectoryIndex index.html
+  # Never let mod_dir issue its own 301 from /menu to /menu/ — the rewrite
+  # below serves the pre-rendered file directly instead.
+  DirectorySlash Off
+</IfModule>
+
+# ----------------------------------------------------------------------------
+# 1. Routing
+# ----------------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # -- 1a. Force HTTPS (both conditions must fail for a redirect to fire, so
+  #        this stays loop-safe behind Hostinger's TLS terminator).
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+  RewriteRule ^ https://vincenzocapuano.hk%{REQUEST_URI} [L,R=301]
+
+  # -- 1b. Force the bare domain — canonicals, sitemap.xml and the IndexNow
+  #        ping all use vincenzocapuano.hk without www.
+  RewriteCond %{HTTP_HOST} ^www\. [NC]
+  RewriteRule ^ https://vincenzocapuano.hk%{REQUEST_URI} [L,R=301]
+
+  # -- 1c. Block dotfiles first, before any other rule can redirect them.
+  #        Hostinger's Git deploy clones into public_html, so .git/ sits INSIDE
+  #        the web root — serving it would leak the whole repository.
+  #        .well-known stays reachable for SSL issuance/renewal.
+  RewriteCond %{REQUEST_URI} !^/\.well-known/
+  RewriteRule (^|/)\. - [R=404,L]
+
+  # -- 1d. Strip trailing slashes. Canonical URLs are /menu, not /menu/.
+  RewriteCond %{REQUEST_URI} !^/$
+  RewriteRule ^(.+?)/+$ /$1 [L,R=301]
+
+  # -- 1e. Serve pre-rendered routes (dist/menu/index.html etc.) internally,
+  #        so /menu keeps its clean URL and its own <title>/canonical.
+  RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
+  RewriteRule ^(.+?)/?$ /$1/index.html [L]
+
+  # -- 1f. SPA fallback for every client-side route without a pre-rendered
+  #        folder (e.g. /menu/pizze). React Router renders it, including 404s.
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^ /index.html [L]
+</IfModule>
+
+# Only reached if mod_rewrite is unavailable.
+ErrorDocument 404 /index.html
+
+# ----------------------------------------------------------------------------
+# 2. Compression
+# ----------------------------------------------------------------------------
+# AddOutputFilterByType comes from mod_filter, NOT mod_deflate — guarding on
+# mod_deflate alone throws "Invalid command" and 500s every request.
+<IfModule mod_filter.c>
+  <IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
+    AddOutputFilterByType DEFLATE text/javascript application/javascript
+    AddOutputFilterByType DEFLATE application/json application/ld+json
+    AddOutputFilterByType DEFLATE application/xml application/rss+xml
+    AddOutputFilterByType DEFLATE application/manifest+json image/svg+xml
+    AddOutputFilterByType DEFLATE font/ttf font/otf application/vnd.ms-fontobject
+  </IfModule>
+
+  <IfModule mod_brotli.c>
+    AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/css text/xml
+    AddOutputFilterByType BROTLI_COMPRESS text/javascript application/javascript
+    AddOutputFilterByType BROTLI_COMPRESS application/json application/ld+json
+    AddOutputFilterByType BROTLI_COMPRESS application/xml image/svg+xml
+  </IfModule>
+</IfModule>
+
+# ----------------------------------------------------------------------------
+# 3. Caching
+#    dist/assets/*.js|css are content-hashed by Vite -> cache forever.
+#    HTML must revalidate, otherwise a deploy won't reach returning visitors.
+#    Images (incl. /assets/regions/*.png) are NOT hashed -> medium TTL.
+# ----------------------------------------------------------------------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault                          "access plus 1 month"
+  ExpiresByType text/html                 "access plus 0 seconds"
+  ExpiresByType application/xml           "access plus 1 hour"
+  ExpiresByType text/plain                "access plus 1 hour"
+  ExpiresByType text/css                  "access plus 1 year"
+  ExpiresByType text/javascript           "access plus 1 year"
+  ExpiresByType application/javascript    "access plus 1 year"
+  ExpiresByType font/woff2                "access plus 1 year"
+  ExpiresByType image/webp                "access plus 30 days"
+  ExpiresByType image/png                 "access plus 30 days"
+  ExpiresByType image/jpeg                "access plus 30 days"
+  ExpiresByType image/svg+xml             "access plus 30 days"
+</IfModule>
+
+<IfModule mod_headers.c>
+  # Content-hashed build output.
+  <FilesMatch "\.(js|mjs|css|woff|woff2|ttf|otf|eot)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # Every HTML entry point, including pre-rendered route folders.
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache, must-revalidate, max-age=0"
+  </FilesMatch>
+
+  # Crawler-facing files — short TTL so SEO edits go live quickly.
+  <FilesMatch "^(robots\.txt|sitemap\.xml|llms\.txt)$">
+    Header set Cache-Control "public, max-age=3600"
+  </FilesMatch>
+
+  # Unhashed imagery.
+  <FilesMatch "\.(png|jpe?g|webp|avif|gif|ico|svg)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+</IfModule>
+
+# ----------------------------------------------------------------------------
+# 4. Security headers
+# ----------------------------------------------------------------------------
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), interest-cohort=()"
+  Header always unset X-Powered-By
+  Header unset X-Powered-By
+
+  # Enable only once you are certain the site will stay on HTTPS forever —
+  # browsers cache this for the full max-age and it cannot be undone quickly.
+  # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+</IfModule>
+
+# ----------------------------------------------------------------------------
+# 5. MIME types (LiteSpeed usually knows these; harmless belt-and-braces)
+# ----------------------------------------------------------------------------
+<IfModule mod_mime.c>
+  AddType image/webp                  .webp
+  AddType image/avif                  .avif
+  AddType image/svg+xml               .svg
+  AddType application/manifest+json   .webmanifest
+  AddType font/woff2                  .woff2
+  AddType text/plain                  .txt
+</IfModule>
+
+# ----------------------------------------------------------------------------
+# 6. Block dotfiles — but keep .well-known reachable (SSL/ACME validation).
+# ----------------------------------------------------------------------------
+RedirectMatch 404 /\.(?!well-known)
