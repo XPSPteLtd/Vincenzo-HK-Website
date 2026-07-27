@@ -21,9 +21,6 @@ export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
   const t = translations[lang].hero;
   const [isLoaded, setIsLoaded] = useState(false);
 
-  // Initialise immediately so first render is correct (avoids 1-frame flash on desktop)
-  const [isDesktop, setIsDesktop] = useState(() => window.innerWidth >= 1024);
-
   // Refs for scroll-driven opacity/transform — avoids React re-renders on every scroll event
   const logoRef = useRef<HTMLDivElement>(null);
   const eyebrowRef = useRef<HTMLDivElement>(null);
@@ -31,10 +28,6 @@ export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
   const ctasRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleResize = () => setIsDesktop(window.innerWidth >= 1024);
-    handleResize();
-    window.addEventListener('resize', handleResize);
-
     const handleScroll = () => {
       const y = window.scrollY;
       const lo = Math.max(0, 1 - y / 150);
@@ -57,7 +50,6 @@ export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
     const loadTimer = setTimeout(() => setIsLoaded(true), 80);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
       window.removeEventListener('scroll', handleScroll);
       clearTimeout(loadTimer);
     };
@@ -68,10 +60,12 @@ export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
   const videoRef = React.useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    if (!isDesktop) return;
     const video = videoRef.current;
     if (!video) return;
 
+    // muted + playsInline are what allow autoplay on iOS/Android. When autoplay
+    // is still refused (iOS Low Power Mode, Android Data Saver), fall back to
+    // starting on the first interaction.
     video.muted = true;
     video.play().catch(() => {
       const playOnInteraction = () => {
@@ -83,27 +77,30 @@ export const Hero: React.FC<HeroProps> = ({ lang, onMenuClick }) => {
       window.addEventListener('touchstart', playOnInteraction, { once: true });
       window.addEventListener('mousedown', playOnInteraction, { once: true });
     });
-  }, [isDesktop]);
+  }, []);
 
   return (
     <section className="relative h-screen min-h-[680px] w-full overflow-hidden flex flex-col bg-charcoal">
 
-      {/* ── Background ── video on desktop, dark gradient on mobile (2.4MB PNG skipped for LCP) ── */}
+      {/* ── Background ── hero video on all breakpoints.
+           NOTE: HERO_VIDEO is ~78 MB. It was previously desktop-only for that
+           reason; showing it on mobile is a deliberate choice. preload="metadata"
+           keeps the initial request small and lets it buffer progressively
+           rather than pulling the whole file up front. A compressed (~2-4 MB)
+           mobile encode would make this far cheaper for phone users. ── */}
       <div className="absolute inset-0 z-0 overflow-hidden bg-charcoal">
-        {isDesktop && (
-          <video
-            ref={videoRef}
-            src={HERO_VIDEO}
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            disablePictureInPicture
-            disableRemotePlayback
-            className="w-full h-full absolute inset-0 object-cover brightness-[0.7] opacity-100 pointer-events-none"
-          />
-        )}
+        <video
+          ref={videoRef}
+          src={HERO_VIDEO}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          disablePictureInPicture
+          disableRemotePlayback
+          className="w-full h-full absolute inset-0 object-cover brightness-[0.7] opacity-100 pointer-events-none"
+        />
 
         {/* Gradient overlays */}
         <div className="absolute inset-0 bg-gradient-to-r from-charcoal/60 via-charcoal/20 to-transparent z-20" />
