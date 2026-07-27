@@ -1,35 +1,23 @@
-name: Deploy to Production
+name: Build check
 
-# Hostinger's Git integration does NOT build anything — it clones a branch
-# straight into public_html. So this workflow builds on CI and publishes the
-# contents of dist/ to the `deploy` branch, whose root IS the live site.
-#
-# Point Hostinger at branch: deploy    (NOT main — main holds source only)
+# Hostinger builds and deploys the site itself (npm install + npm run build in
+# its own pipeline, publishing dist/). This workflow does NOT deploy — it just
+# builds the same way Hostinger does, so a broken build is caught here rather
+# than by a failed deployment leaving the live site on stale files.
 
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 
-concurrency:
-  group: deploy-branch
-  cancel-in-progress: false
-
-permissions:
-  contents: write
-
-env:
-  DEPLOY_BRANCH: deploy
-
 jobs:
-  deploy:
-    name: Build & publish to deploy branch
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          # Full history — pushing from a shallow clone is rejected by GitHub.
-          fetch-depth: 0
 
       - name: Use Node.js
         uses: actions/setup-node@v4
@@ -38,58 +26,16 @@ jobs:
 
       - run: npm install --legacy-peer-deps
 
-      - name: Build
-        run: npm run build
-        # No secrets needed. vite.config.ts can inline GEMINI_API_KEY, but its
-        # only consumer (fetchGoogleReviews -> <Testimonials/>) is commented out
-        # in App.tsx, so @google/genai is tree-shaken out of the bundle entirely.
-        # If <Testimonials/> is ever re-enabled, add a GEMINI_API_KEY secret here
-        # — and note the key is publicly readable in the shipped JS.
+      - run: npm run build
 
       - name: Verify build output
         run: |
           test -f dist/index.html
-          test -f dist/.htaccess
           test -f dist/menu/index.html
           test -f dist/robots.txt
-          echo "dist/ looks good:" && ls -la dist
-
-      - name: Publish dist/ to ${{ env.DEPLOY_BRANCH }}
-        run: |
-          set -euo pipefail
-
-          git config user.name  "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          # Stash the build somewhere the branch switch can't touch.
-          BUILD=$(mktemp -d)
-          cp -a dist/. "$BUILD/"
-
-          # Check out the deploy branch into a worktree, creating it on first run.
-          # History stays linear so Hostinger's `git pull` always fast-forwards —
-          # a force-pushed orphan branch would break its pull with
-          # "refusing to merge unrelated histories".
-          if git ls-remote --exit-code --heads origin "$DEPLOY_BRANCH" >/dev/null 2>&1; then
-            git fetch origin "$DEPLOY_BRANCH"
-            git worktree add wt "origin/$DEPLOY_BRANCH" -b "$DEPLOY_BRANCH"
-          else
-            echo "Creating $DEPLOY_BRANCH for the first time"
-            git worktree add --detach wt
-            git -C wt checkout --orphan "$DEPLOY_BRANCH"
-            git -C wt rm -rqf . || true
-          fi
-
-          # --delete drops files that are no longer part of the build.
-          rsync -a --delete --exclude '.git' "$BUILD/" wt/
-
-          cd wt
-          git add -A
-          if git diff --cached --quiet; then
-            echo "No changes to publish."
-          else
-            git commit -m "Deploy ${GITHUB_SHA::7} — $(git -C .. log -1 --pretty=%s ${GITHUB_SHA})"
-            git push origin "$DEPLOY_BRANCH"
-          fi
-
-          echo "Published files:"
-          git ls-tree -r --name-only HEAD | head -30
+          # .htaccess drives all routing on Hostinger — if Vite ever stops
+          # copying it out of public/, every route except / would 404.
+          test -f dist/.htaccess
+          # IndexNow key file must contain the key, or Bing returns 403.
+          test -s dist/b80d5e01376b4531a02a4770859569de.txt
+          echo "Build output OK"
