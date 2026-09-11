@@ -115,7 +115,7 @@ export const BestNeapolitanPizzaHK: React.FC<Props> = ({ lang, onBookClick }) =>
           <BlogP>Vincenzo Capuano 是 2022 年 Caputo Trophy 當代薄餅世界冠軍，職業生涯中獲得超過 40 個獎項。他在那不勒斯長大，在家族廚房裡學習製作麵糰。在國際上建立了聲譽之後，他的集團現在在意大利、迪拜及其他地區運營超過 20 家薄餅店。<strong className="text-white font-semibold">Vincenzo Capuano 香港</strong>於 2026 年 4 月 29 日開業，是品牌在香港的首家分店，也是亞洲少數幾家之一。這不是個人主廚的快閃活動。這是一個在本城市正式落地的完整概念。</BlogP>
 
           <BlogH2>什麼是當代拿坡里薄餅（以及為何它讓人着迷）</BlogH2>
-          <BlogP>傳統那不勒斯薄餅已經很出色了。San Marzano 番茄、新鮮馬蘇里拉、柴燒烤爐、快速烤製。<a href="/what-is-neapolitan-pizza" className={lnk}>了解更多關於拿坡里薄餅傳統的知識</a>。但 Vincenzo Capuano 的方法加入了在過去十年真正改變了薄餅的東西：</BlogP>
+          <BlogP>傳統那不勒斯薄餅已經很出色了。San Marzano 番茄、新鮮馬蘇里拉、柴燒烤爐、快速烤製。但 Vincenzo Capuano 的方法加入了在過去十年真正改變了薄餅的東西：</BlogP>
           <BlogList items={[
             <><strong className="text-white font-semibold">高水分麵糰</strong>：大約 80% 的水分。普通薄餅麵糰大約是 55-60%。</>,
             <><strong className="text-white font-semibold">長時間發酵</strong>：24 至 36 小時。這讓麩質有時間發展出更複雜的風味。</>,
@@ -175,7 +175,7 @@ export const BestNeapolitanPizzaHK: React.FC<Props> = ({ lang, onBookClick }) =>
           <BlogP>Vincenzo Capuano is the <strong className="text-white font-semibold">Caputo Trophy World Champion for Contemporary Pizza from 2022</strong>, with over 40 industry awards across his career. He grew up in Naples, learned to make dough in his family's kitchen, built an international reputation, and now runs a group of over 20 pizzerias from Italy to Dubai. The Hong Kong outpost opened on 29 April 2026, making it the brand's first stop in the city and one of their few in Asia. This is not a pop-up or a ghost kitchen. This is a full concept that has properly landed in our city.</BlogP>
 
           <BlogH2>What Contemporary Neapolitan Pizza Actually Is (And Why It Matters)</BlogH2>
-          <BlogP>Traditional Neapolitan pizza is already great. San Marzano tomatoes, fresh mozzarella, wood-fired oven, fast cook. <a href="/what-is-neapolitan-pizza" className={lnk}>Learn more about the Neapolitan pizza tradition here</a>. But the <strong className="text-white font-semibold">contemporary Neapolitan approach</strong> Vincenzo Capuano specialises in adds something that has genuinely changed pizza over the last decade:</BlogP>
+          <BlogP>Traditional Neapolitan pizza is already great. San Marzano tomatoes, fresh mozzarella, wood-fired oven, fast cook. But the <strong className="text-white font-semibold">contemporary Neapolitan approach</strong> Vincenzo Capuano specialises in adds something that has genuinely changed pizza over the last decade:</BlogP>
           <BlogList items={[
             <><strong className="text-white font-semibold">High-hydration dough</strong>: around 80% water. Standard pizza dough is roughly 55–60%.</>,
             <><strong className="text-white font-semibold">Long fermentation</strong>: 24 to 36 hours. This gives the gluten time to relax and develop more complex flavours.</>,

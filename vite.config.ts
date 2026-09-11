@@ -27,11 +27,6 @@ const SITEMAP_META: Record<string, { changefreq: string; priority: string }> = {
   '/blog': { changefreq: 'weekly', priority: '0.8' },
   '/contact': { changefreq: 'monthly', priority: '0.7' },
   '/group-dining': { changefreq: 'monthly', priority: '0.7' },
-  '/vincenzo-capuano-story': { changefreq: 'yearly', priority: '0.7' },
-  '/what-is-neapolitan-pizza': { changefreq: 'yearly', priority: '0.7' },
-  '/contemporary-neapolitan-pizza-hong-kong': { changefreq: 'yearly', priority: '0.7' },
-  '/why-we-cut-pizza-with-scissors': { changefreq: 'yearly', priority: '0.6' },
-  '/best-pizza-for-sharing-hong-kong': { changefreq: 'yearly', priority: '0.6' },
 };
 
 // Commit the site was built from. Lets a deploy be identified from the live

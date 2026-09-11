@@ -26,11 +26,6 @@ const ReservationsPage = lazy(() => import('./components/ReservationsPage').then
 const OurStoryPage = lazy(() => import('./components/OurStoryPage').then(m => ({ default: m.OurStoryPage })));
 const FAQPage = lazy(() => import('./components/FAQPage').then(m => ({ default: m.FAQPage })));
 const GroupDiningPage = lazy(() => import('./components/GroupDiningPage').then(m => ({ default: m.GroupDiningPage })));
-const WhatIsNeapolitanPizza = lazy(() => import('./components/blog/WhatIsNeapolitanPizza').then(m => ({ default: m.WhatIsNeapolitanPizza })));
-const ContemporaryNeapolitanHK = lazy(() => import('./components/blog/ContemporaryNeapolitanHK').then(m => ({ default: m.ContemporaryNeapolitanHK })));
-const WhyScissors = lazy(() => import('./components/blog/WhyScissors').then(m => ({ default: m.WhyScissors })));
-const BestPizzaForSharing = lazy(() => import('./components/blog/BestPizzaForSharing').then(m => ({ default: m.BestPizzaForSharing })));
-const VincenzoStory = lazy(() => import('./components/blog/VincenzoStory').then(m => ({ default: m.VincenzoStory })));
 const BestNeapolitanPizzaHK = lazy(() => import('./components/blog/BestNeapolitanPizzaHK').then(m => ({ default: m.BestNeapolitanPizzaHK })));
 const VincenzoCapuanoReview = lazy(() => import('./components/blog/VincenzoCapuanoReview').then(m => ({ default: m.VincenzoCapuanoReview })));
 const BestPizzaRestaurantsHK = lazy(() => import('./components/blog/BestPizzaRestaurantsHK').then(m => ({ default: m.BestPizzaRestaurantsHK })));
@@ -293,26 +288,6 @@ const App: React.FC = () => {
         } />
 
         {/* Blog / Editorial */}
-        <Route path="/what-is-neapolitan-pizza" element={
-          <WhatIsNeapolitanPizza lang={lang} onBookClick={openModal} />
-        } />
-
-        <Route path="/contemporary-neapolitan-pizza-hong-kong" element={
-          <ContemporaryNeapolitanHK lang={lang} onBookClick={openModal} />
-        } />
-
-        <Route path="/why-we-cut-pizza-with-scissors" element={
-          <WhyScissors lang={lang} onBookClick={openModal} />
-        } />
-
-        <Route path="/best-pizza-for-sharing-hong-kong" element={
-          <BestPizzaForSharing lang={lang} onBookClick={openModal} />
-        } />
-
-        <Route path="/vincenzo-capuano-story" element={
-          <VincenzoStory lang={lang} onBookClick={openModal} />
-        } />
-
         <Route path="/best-neapolitan-pizza-hong-kong" element={
           <BestNeapolitanPizzaHK lang={lang} onBookClick={openModal} />
         } />

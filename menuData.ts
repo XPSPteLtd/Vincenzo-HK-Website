@@ -101,13 +101,6 @@ export const menuItems: MenuItem[] = [
     image: "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/drive-download-20260414T111937Z-3-001/Tris%20Di%20Montanare.jpg",
     dietary: ["Contains Nuts"]
   },
-  {
-    id: "ss-15", name: "WAGYU POLPETTE", nameZh: "和牛肉丸",
-    description: "Slow cooked wagyu meatballs, San Marzano sauce, basil, parmigiano",
-    descriptionZh: "慢煮和牛肉丸、聖馬扎諾番茄醬、羅勒及帕馬森芝士",
-    mainCategory: "Ala-carte", category: "Starters & Salads", categoryZh: "精選前菜及沙律",
-    image: "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/drive-download-20260414T111937Z-3-001/Wagyu%20Polpette%20(Close%20up)%202.jpg"
-  },
 
   // CRUST DIPPER
   {
@@ -295,14 +288,6 @@ export const menuItems: MenuItem[] = [
     dietary: ["Vegetarian", "Contains Nuts"]
   },
   {
-    id: "hk-2", name: "QUATTRO FORMAGGI", nameZh: "四款芝士薄餅",
-    description: "Base w/ fior di latte, gorgonzola, provola, topped w/ pecorino, served with roasted walnuts and honey",
-    descriptionZh: "四款芝士：莫扎瑞拉、哥根蘇拿、普羅伏羅及羊奶芝士底，配烤核桃及蜂蜜",
-    mainCategory: "Ala-carte", category: "Hong Kong Special Pizza", categoryZh: "香港特式薄餅",
-    image: "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/drive-download-20260414T111937Z-3-001/Quattro%20Formaggi.jpg",
-    dietary: ["Vegetarian", "Contains Nuts"]
-  },
-  {
     id: "hk-3", name: "TARTUFO", nameZh: "松露薄餅",
     description: "Truffle cream, fior di latte, mushrooms, truffle burrata, rucola, parmigiano",
     descriptionZh: "松露奶油、莫扎瑞拉芝士、蘑菇、松露布拉塔芝士、芝麻菜及帕馬森芝士",
@@ -335,28 +320,12 @@ export const menuItems: MenuItem[] = [
     image: "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/drive-download-20260414T111937Z-3-001/Carbonara.jpg"
   },
   {
-    id: "pas-4", name: "GAMBERO ALLA MARINARA", nameZh: "水手黑虎蝦意粉",
-    description: "Linguine, black tiger prawns, cherry tomatoes, tomato coulis, lobster bisque sauce, brandy",
-    descriptionZh: "扁意粉、黑虎蝦、車厘茄、番茄精華、龍蝦濃湯醬及白蘭地",
-    mainCategory: "Ala-carte", category: "Pasta", categoryZh: "手製意粉",
-    image: "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/drive-download-20260414T111937Z-3-001/Gambero%20Alla%20Marinara.jpg",
-    dietary: ["Spicy"]
-  },
-  {
     id: "pas-5", name: "GNOCCHI", nameZh: "香辣薯糰",
     description: "Potato gnocchi, signature spicy sauce, cherry tomatoes, cream, parmigiano, basil",
     descriptionZh: "馬鈴薯薯糰配招牌香辣醬、車厘茄、奶油、帕馬森芝士及羅勒",
     mainCategory: "Ala-carte", category: "Pasta", categoryZh: "手製意粉",
     image: "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/drive-download-20260414T111937Z-3-001/Gnocchi.jpg",
     dietary: ["Vegetarian", "Spicy"]
-  },
-  {
-    id: "pas-6", name: "GUANCIALE DI MANZO", nameZh: "和牛臉頰肉意粉",
-    description: "Pappardelle, 12 hours slow cooked wagyu beef cheek ragu, red wine, parmigiano",
-    descriptionZh: "闊條麵配12小時慢煮和牛臉頰肉醬、紅酒及帕馬森芝士",
-    mainCategory: "Ala-carte", category: "Pasta", categoryZh: "手製意粉",
-    image: "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/drive-download-20260414T111937Z-3-001/Guanciale%20di%20Manzo.jpg",
-    popular: true
   },
   {
     id: "pas-7", name: "RAVIOLI AI PORCINI", nameZh: "牛肝菌松露餃子",
@@ -367,22 +336,6 @@ export const menuItems: MenuItem[] = [
     dietary: ["Vegetarian"]
   },
 
-  // MAINS
-  {
-    id: "mn-1", name: "FILETTO DI MANZO", nameZh: "烤牛柳",
-    description: "Grilled & sliced beef tenderloin, roasted baby potatoes, cherry tomatoes, sauteed mushrooms, mustard, rucola, red wine sauce",
-    descriptionZh: "香烤切片牛柳配烤小馬鈴薯、車厘茄、炒蘑菇、芥末、芝麻菜及紅酒汁",
-    mainCategory: "Ala-carte", category: "Mains", categoryZh: "精選主菜",
-    image: "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/drive-download-20260414T111937Z-3-001/Filetto%20di%20Manzo.jpg"
-  },
-  {
-    id: "mn-2", name: "MAIALE IBERICO", nameZh: "慢煮伊比利亞豬頰",
-    description: "Slow-cooked Iberico pork jowl, house salad, balsamic onions, red wine sauce, pistachio",
-    descriptionZh: "慢煮伊比利亞豬頸肉配田園沙律、香醋洋蔥、紅酒汁及開心果碎",
-    mainCategory: "Ala-carte", category: "Mains", categoryZh: "精選主菜",
-    image: "https://storage.googleapis.com/xps-assets/gotti's%20assets%20/BRAND%20ASSETS/vincenzo%20h%26k/drive-download-20260414T111937Z-3-001/Maiale%20Iberico.jpg",
-    dietary: ["Contains Nuts"]
-  },
 
   // DOLCI
   {

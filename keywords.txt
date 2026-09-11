@@ -1437,117 +1437,7 @@ Link to:
 
 ⸻
 
-8) BLOG / SEO SUPPORTING CONTENT MAP
-
-This is where you build authority — but only if it supports actual search intent.
-
-Blog 1
-
-URL
-
-/what-is-neapolitan-pizza
-
-Primary Keyword
-
-what is neapolitan pizza
-
-Secondary Keywords
-	•	authentic neapolitan pizza
-	•	contemporary neapolitan pizza
-	•	pizza from naples
-	•	neapolitan crust
-
-H1
-
-What Is Neapolitan Pizza?
-
-⸻
-
-Blog 2
-
-URL
-
-/contemporary-neapolitan-pizza-hong-kong
-
-Primary Keyword
-
-contemporary neapolitan pizza hong kong
-
-Secondary Keywords
-	•	authentic pizza hong kong
-	•	neapolitan pizza hong kong
-	•	modern pizza naples
-
-H1
-
-Why Contemporary Neapolitan Pizza Is Finding a Place in Hong Kong
-
-⸻
-
-Blog 3
-
-URL
-
-/why-we-cut-pizza-with-scissors
-
-Primary Keyword
-
-why cut pizza with scissors
-
-Secondary Keywords
-	•	pizza scissors tradition
-	•	neapolitan pizza ritual
-	•	cornicione pizza
-
-H1
-
-Why We Cut Pizza with Scissors
-
-⸻
-
-Blog 4
-
-URL
-
-/best-pizza-for-sharing-hong-kong
-
-Primary Keyword
-
-best pizza for sharing hong kong
-
-Secondary Keywords
-	•	pizza dinner hong kong
-	•	group dining pizza hong kong
-	•	date night pizza hong kong
-
-H1
-
-Why Pizza Is One of the Best Meals for Sharing in Hong Kong
-
-⸻
-
-Blog 5
-
-URL
-
-/vincenzo-capuano-story
-
-Primary Keyword
-
-pizza chef from naples
-
-Secondary Keywords
-	•	third generation pizza chef
-	•	pizza heritage naples
-	•	authentic neapolitan pizzeria
-
-H1
-
-The Story Behind Vincenzo Capuano
-
-⸻
-
-9) INTERNAL LINKING RULES
+8) INTERNAL LINKING RULES
 
 This matters more than people think.
 
@@ -1579,7 +1469,7 @@ Avoid lazy anchors like:
 
 ⸻
 
-10) SCHEMA / TECHNICAL SEO YOU SHOULD IMPLEMENT
+9) SCHEMA / TECHNICAL SEO YOU SHOULD IMPLEMENT
 
 Your developer should add:
 

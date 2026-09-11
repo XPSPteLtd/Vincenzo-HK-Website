@@ -213,7 +213,7 @@ export const BestPizzaRestaurantsHK: React.FC<Props> = ({ lang, onBookClick }) =
           ]} />
 
           <BlogH2>3. Pici</BlogH2>
-          <BlogP>You will find Pici across multiple neighbourhoods now. It is more pasta-led than the others on this list, but the pizzas hold their own. The dough is lighter Roman style rather than Neapolitan, so the texture is crisper and thinner. Good for a casual lunch. Good for a date that needs to stay under a budget. The vibe is loud, friendly, and the wine by the carafe is decent value. To understand how Roman and Neapolitan styles differ, <a href="/what-is-neapolitan-pizza" className={lnk}>read our Neapolitan pizza guide here</a>.</BlogP>
+          <BlogP>You will find Pici across multiple neighbourhoods now. It is more pasta-led than the others on this list, but the pizzas hold their own. The dough is lighter Roman style rather than Neapolitan, so the texture is crisper and thinner. Good for a casual lunch. Good for a date that needs to stay under a budget. The vibe is loud, friendly, and the wine by the carafe is decent value.</BlogP>
           <BlogList items={[
             'Pizza to order: Burrata pizza, Spicy salami',
             'Budget: HKD 200 to 320 per person',
